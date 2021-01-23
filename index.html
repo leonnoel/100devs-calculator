@@ -5,14 +5,50 @@
   	<meta name="description" content="Your description goes here">
   	<meta name="keywords" content="one, two, three">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+
 		<title>Blank Template</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<body>
+	<body class = "flex-container">
+
+		<main class = "calculator">
+			<section class="screen">
+				<p id="chain"></p>
+		    <p id="result"></p>
+			</section>
+			<section class="buttons">
+				<section class="row">
+					<button id="num7" type="button">7</button>
+			    <button id="num8" type="button">8</button>
+			    <button id="num9" type="button">9</button>
+			    <button id="division" class="operator" type="button">/</button>
+				</section>
+
+				<section class="row">
+					<button id="num4" type="button">4</button>
+					<button id="num5" type="button">5</button>
+					<button id="num6" type="button">6</button>
+					<button id="multiplication" class="operator" type="button">x</button>
+				</section>
+
+				<section class="row">
+					<button id="num1" type="button">1</button>
+      		<button id="num2" type="button">2</button>
+      		<button id="num3" type="button">3</button>
+					<button id="addition" class="operator" type="button">+</button>
+				</section>
+
+				<section class="row">
+					<button id="num0" class="zero" type="button">0</button>
+      		<button id="dot" class="operator" type="button">.</button>
+      		<button id="equals" class="operator" type="button">=</button>
+					<button id="addition" class="operator" type="button">+</button>
+				</section>
+			</section>
+		</main>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>

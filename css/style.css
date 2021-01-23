@@ -40,3 +40,129 @@ footer {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+html {
+  font-size: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+html,
+body {
+  height: 100%;
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1800px) {
+  html {
+    font-size: 22px;
+  }
+}
+
+body {
+  position: relative;
+  margin: 0;
+}
+
+footer {
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.brand {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-size: 1.4rem;
+}
+/* .operator {
+  font-size: 1.2rem;
+} */
+
+button {
+  width: 4rem;
+  height: 4rem;
+  color: black;
+  background-color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  border: none;
+  margin: 0.1rem;
+  border-radius: 100%;
+}
+/* button:active {
+  background-color: #468506;
+} */
+button:focus {
+  outline: none;
+}
+/* button:hover {
+  border: 0.1rem solid #067c07;
+} */
+
+
+.calculator {
+  margin: auto;
+  align-self: center;
+  padding: 0 2rem;
+  padding-top: 4rem;
+  padding-bottom: 3rem;
+  background-color: #1e1e1e;
+  border: 0.1rem solid #292929;
+  border-radius: 7.5%;
+}
+.calculator .screen {
+  background-color: white;
+  color: white;
+  border-top: 0.1rem solid #067c07;
+  margin-bottom: 1rem;
+  margin-left: 0.1rem;
+  margin-right: 0.1rem;
+}
+.screen p {
+  margin: 0;
+}
+
+#chain,
+#result {
+  text-align: right;
+  padding-right: 0.5rem;
+}
+#chain {
+  font-size: 1.26rem;
+  height: 3.26rem;
+  padding-top: 0.5rem;
+}
+#result {
+  font-size: 3rem;
+  padding-top: 0.5rem;
+}
