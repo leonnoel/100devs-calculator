@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  	<meta charset="utf-8">
+  	<meta name="description" content="A simple, functional calculator">
+  	<meta name="keywords" content="one, two, three">
+	<meta name="viewport" content="width=device-width">
+	<title>Calculator</title>
+	
+	<!-- external CSS link -->
+	
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous"/>
+	</head>
+	<body>
+		
+		<div id='border-toggle' class='calculator'>
+			<header>
+				<div id='reveal' class='hidden'>
+					<label for='fix'>Fix it</label>
+					<input type='checkbox' id='fix' name='fix'>
+				</div>
+				<div>
+					<label class="switch">
+						<input type="checkbox" id='toggle'>
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</header>
+			<div class='h1-container'>
+				<h1>Calculator</h1>
+			</div>
+			<div>
+				<input id='result' type='text' placeholder= 0 readonly>
+				<hr>
+			</div>
+			<div class='rows'>
+				<div class='butans'  id='ac'>
+					<span>AC</span>
+				</div>
+				<div class='butans' id='del'>
+					<span>Del</span>
+				</div>
+				<div class='butans' id='change'>
+					<span>+/-</span>
+				</div>
+				<div class='butans' id='div'>
+					<i class="fas fa-divide"></i>
+				</div>
+			</div>
+			<div class='rows'>
+				<div class='butans' id='sev'>
+					<span>7</span>
+				</div>
+				<div class='butans' id='eight'>
+					<span>8</span>
+				</div>
+				<div class='butans' id='nine'>
+					<span>9</span>
+				</div>
+				<div class='butans' id='times'>
+					<i class="fas fa-times"></i>
+				</div>
+			</div>
+			<div class='rows'>
+				<div class='butans' id='four'>
+					<span>4</span>
+				</div>
+				<div class='butans' id='five'>
+					<span>5</span>
+				</div>
+				<div class='butans' id='six'>
+					<span>6</span>
+				</div>
+				<div class='butans' id='subtract'>
+					<i class="fas fa-minus"></i>
+				</div>
+			</div>
+			<div class='rows'>
+				<div class='butans' id='one'>
+					<span>1</span>
+				</div>
+				<div class='butans' id='two'>
+					<span>2</span>
+				</div>
+				<div class='butans' id='three'>
+					<span>3</span>
+				</div>
+				<div class='butans' id='plus'>
+					<i class="fas fa-plus"></i>
+				</div>
+			</div>
+			<div class='rows'>
+				<div class='butans' id='zero'>
+					<span>0</span>
+				</div>
+				<div class='butans' id='decimal'>
+					<span>.</span>
+				</div>
+				<div class='butans' id='equals'>
+					<i class="fas fa-equals"></i>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
+
+
+
