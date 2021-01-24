@@ -154,12 +154,13 @@ button:focus {
 
 #chain,
 #result {
+  color:black;
   text-align: right;
   padding-right: 0.5rem;
+  height: 3.26rem;
 }
 #chain {
-  font-size: 1.26rem;
-  height: 3.26rem;
+  font-size: 1.5rem;
   padding-top: 0.5rem;
 }
 #result {
