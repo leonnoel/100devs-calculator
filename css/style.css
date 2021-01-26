@@ -1,0 +1,125 @@
+/* Box Model Hack */
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg');
+    object-fit: cover;
+}
+
+button:active{
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.397);
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.calc-button{
+    width: 25%;
+    background-color: rgb(107, 106, 106);
+    border: 1px solid black;
+    border-radius: 100%;
+    display: inline;
+    color: white;
+    text-align: right;
+    font-size: 5vh;
+    padding-top: .25rem;
+    padding-right: .25rem;
+    transition: .1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+.calc-button:hover{
+    text-shadow: 0 0 5px white; 
+}
+
+.other{
+    background-color: lightgray;
+    color: black;
+    
+}
+#screen{
+    background-color: black;
+    color: white;
+    width: 100%;
+    font-size: 9vh;
+    vertical-align: bottom;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.calc-row.screen-container{
+    height: 13vh;
+    overflow: hidden;
+}
+
+
+.calc-row{
+    display: flex;
+    height:11.66vh;
+}
+
+#calculator-wrapper{
+    margin-top: 2rem;
+    height: 70vh;
+    width: 25%;
+    min-width: 112px;
+    background-color: black;
+    box-shadow: 6px 10px 9px rgba(0, 0, 0, 0.534);
+    width: 100vw; 
+    height:177.78vw ; /* height:width ratio = 9/16 = .5625  */
+    max-height: 70vh;
+    max-width: 56.25vh; /* 16/9 = 1.778 */
+
+    
+    
+}
+
+.shadow{
+    box-shadow: inset 0 0 7px black;
+    
+}
+
+.downscale{
+    transform: scale(.95);
+}
+
