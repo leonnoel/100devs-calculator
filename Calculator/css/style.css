@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+#calcu{
+  margin: auto;
+  background: black;
+  border-radius: 30px;
+  height: 520px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+#result{
+  background: white;
+  margin: 50px 35px;
+  height: 80px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.num{
+  background: white;
+  font-size: 40px;
+  width: 55px;
+  height: 55px;
+  border-radius: 40px;
+  margin: 10px;
+  text-align: center;
+  cursor: pointer;
+}
