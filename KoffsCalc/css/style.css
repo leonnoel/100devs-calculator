@@ -1,0 +1,113 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html{
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+body {
+  font-size: 2rem;
+  background: gray;
+}
+span, a{
+  display: block;
+  text-decoration: none;
+}
+/******************************************
+/* STYLE
+/*******************************************/
+h1{
+  font-size: 5rem;
+  text-align: center;
+  margin: 5px 0;
+}
+.grid{
+  width: 450px;
+  height: 650px;
+  margin: auto;
+  background: black;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(6, 100px);
+  border-radius: 2.5%;
+}
+.grid > input{
+  cursor: crosshair;
+  font-size: 4rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  margin: 10px;
+  border: 2px solid black;
+  border-radius: 50%;
+  background: white;
+}
+.grid > input[name="delete"]{
+  border-radius: 25%;
+  margin-right: 3px;
+  font-size: 3.5rem;
+}
+.grid > input[name="multiplication"]{
+  padding: 18px 0 0 3px;
+}
+.grid > input:hover{
+  background: rgba(250, 250, 0, 0.7);
+}
+.grid .wide{
+  grid-column: span 2;
+  border-radius: 25%;
+}
+.output{
+  grid-column: 1/-1;
+  background: rgba(255, 255, 255, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  margin-bottom: 15px;
+  padding: 5px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.output .previous{
+  font-weight: bold;
+}
+.output .current{
+  font-size: 3.5rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+@media screen and (max-width: 600px){
+  .grid{
+    width: 350px;
+    height: 520px;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(6, 80px);
+  }
+  .grid > input{
+    margin: 5px;
+  }
+  .output{
+    width: 320px;
+  }
+}
