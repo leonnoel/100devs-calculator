@@ -97,3 +97,17 @@ h1{
   font-family: sans-serif;
   font-weight: bold;
 }
+@media screen and (max-width: 600px){
+  .grid{
+    width: 350px;
+    height: 520px;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(6, 80px);
+  }
+  .grid > input{
+    margin: 5px;
+  }
+  .output{
+    width: 320px;
+  }
+}
