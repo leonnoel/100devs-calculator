@@ -1,0 +1,148 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  font-size: 3vh;
+  /* border: 1 solid black; */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: safe center;
+  min-height: 100vh;
+
+  background-color: grey;
+  background: url("../images/background-3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  /* padding-left: 10px; */
+  /* padding-right: 10px; */
+  /* zoom: %; */
+}
+body * {
+  /* align-items: center; */
+  /* border: 0.5px solid black; */
+}
+
+button {
+  border-color: rgba(0, 0, 0, 0);
+  outline: none;
+}
+button:hover {
+  filter: brightness(0.0005);
+}
+
+table {
+  width: 60vh;
+
+  max-width: 100vw;
+
+  height: 90vh;
+  max-height: 150vw;
+  border-collapse: collapse;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+}
+
+tbody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+tr {
+  height: 15vh;
+  max-height: 25vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* min-width: 40vh; */
+}
+
+tr > td {
+  width: 15vh;
+  max-width: 25vw;
+  display: flex;
+  padding: 1vh;
+}
+tr:nth-of-type(6) > td:first-of-type {
+  /* flex-grow: 2; */
+  width: 30vh;
+  max-width: 50vw;
+}
+tr > td > * {
+  background-color: rgba(58, 58, 58, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+td:last-of-type > * {
+  background-color: rgba(243, 175, 53, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+td:last-of-type > button:hover {
+  filter: brightness(0.9);
+}
+td > * {
+  flex-grow: 1;
+  /* margin: 1vh; */
+  border-radius: 7.5vh;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+}
+
+footer {
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/******************************************
+/* 1st ROW - DISPLAY ROW
+/*******************************************/
+
+tr:nth-of-type(1) > td {
+  display: flex;
+  width: 60vh;
+  max-width: 100vw;
+  align-items: center;
+  background-color: rgba(243, 175, 53, 0.7);
+  margin: 1vh;
+  border-radius: 7.5vh;
+}
+tr:nth-of-type(1) > td > * {
+  flex-grow: 1;
+  /* align-items: center; */
+  text-align: center;
+  background-color: rgba(243, 175, 53, 0);
+  backdrop-filter: unset;
+  -webkit-backdrop-filter: unset;
+  /* min-height: 100%; */
+  font-size: 100%;
+}
