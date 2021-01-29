@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <div class="container">
+        <div id="calculator">
+            <div class="display">0</div>
+            <div class="keys">
+                <button id="add" class="operators key" data-action="add">+</button>
+                <button id="minus" class="operators key" data-action="minus">-</button>
+                <button id="multiply" class="operators key" data-action="multiply">&times;</button>
+                <button id="divide" class="operators key" data-action="divide">÷</button>
+                <button id="seven" class="numbers key">7</button>
+                <button id="" class="numbers key">8</button>
+                <button id="nine" class="numbers key">9</button>
+                <button id="four" class="numbers key">4</button>
+                <button id="five" class="numbers key">5</button>
+                <button id="six" class="numbers key">6</button>
+                <button id="one" class="numbers key">1</button>
+                <button id="two" class="numbers key">2</button>
+                <button id="three" class="numbers key">3</button>
+                <button id="decimal" class="decimal key" data-action="decimal">.</button>
+                <button id="zero" class="numbers key">0</button>
+                <button id="clearing" class="clearing key" data-action="clear">C</button>
+                <button id="equal" class="equal key" data-action="calculate">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
