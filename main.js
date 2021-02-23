@@ -1,60 +1,63 @@
 
 class Calculator{
-    constructor(){
+    constructor(a){
+        this.store = [];
         this.value = "0";
-        this.value0 = "";
         this.op = "";
         document.querySelector(".display").innerHTML = this.value;
     }
-    updateOp(e){
-        this.value0 = this.value;
-        switch (e.target.id){
-            case "divide":
-                this.op = "/"
-                break;
-            case "multiply":
-                this.op = "*"
-                break;
-            case "add":
-                this.op = "+"
-                break;
-            case "minus":
-                this.op = "-"
-                break;
-            case "equal":
-                this.doCalculation();
-                break;
-        }
-
-    }
-    doCalculation(){
-                
-    }
     showNum(e){
-        if(this.value != "0") {
-            this.value += e.target.id
-        }else{
+        if(this.value === "0"){
             this.value = e.target.id
+        }else{
+            this.value += e.target.id
         }
-        document.querySelector(".display").innerHTML = this.value
+        this.display(this.value)     
     }
-    
+    updateOp(e){
+        let operatorList = ["+","-","*","/","="]
+        let index = operatorList.indexOf(e.target.id);
+        if (index != 4){
+            this.op = operatorList[index];
+            
+            if (this.store.length === 2){
+                this.doCalculation(this.store.join("")+this.value);
+                this.store.push(this.value, this.op) 
+            } else if(this.store.length === 1){
+                this.store.push(this.op)
+            } else{
+                this.store.push(this.value, this.op)
+            }
+        }else{
+            this.doCalculation(this.store.join("")+this.value);
+            this.store.push(this.value)
+            this.op ="";
+        }
+        this.value = "0"
+    }
+    display(value){
+        document.querySelector(".display").innerHTML = value;
+    }
+    doCalculation(exp){
+        let result = eval(exp);
+        this.store = [];
+        this.display(result.toString().slice(0,13))
+        this.value = result  
+    }
 }
-const calculator = new Calculator("yo");
+const calculator = new Calculator();
 
 document.querySelectorAll(".num").forEach(item=>item.addEventListener("click", displayNum))
 document.querySelectorAll(".operate").forEach(item=>item.addEventListener("click", changeLook))
 
-function displayNum(e, obj = calculator){obj.showNum(e)}
+function displayNum(e, obj = calculator){
+    document.querySelector(".clicked")?.classList.toggle("clicked")
+    obj.showNum(e)
+}
 function doCal(e, obj = calculator){obj.doCalculation(e)}
-function changeLook(e){
+function changeLook(e, obj = calculator){
     let clickedOperator = document.querySelector(".clicked")
-    if (clickedOperator?.id === e.target.id) {
-        clickedOperator?.classList.toggle("clicked")
-        
-    }else{
-        clickedOperator?.classList.toggle("clicked")
-        e.target.classList.add("clicked")
-        obj.updateUp(e)
-    }
+    clickedOperator?.classList.toggle("clicked")
+    e.target.classList.add("clicked")
+    obj.updateOp(e)
 }
