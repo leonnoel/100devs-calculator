@@ -1,0 +1,71 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after{
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+.calculator{
+  width:500px;
+  height:600px;
+  background:url("calculator.jpg") no-repeat;
+  overflow: hidden;
+}
+
+.display, .buttons{
+  margin: 0 0 0 80px;
+  height: 81px;
+  width: 332px;
+  
+}
+
+.display{
+  margin: 134px 0 0 80px;
+  font-size:50px;
+  padding-top:16px;
+  text-align: end;
+}
+
+.buttons{
+  height: 330px;
+  padding: 26px 0 26px 24px;
+  ;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.button{
+  width: 63px;
+  height: 63px;
+  margin: 1px 11px 8px 0;
+  float: left;
+  
+}
+
+.clicked{
+  background:rgba(0,0,0,0.3);
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.num.button:active{
+  background:rgba(0,0,0,0.3);
+}
