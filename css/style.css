@@ -1,0 +1,63 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+table {
+  padding: 15px;
+  border-spacing: 7px
+}
+
+td {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.calculator {
+  display: inline-block;
+  margin-top: 100px;
+  padding: 20px;
+  background-color: black;
+  border-radius: 20px;
+}
+
+input {
+  width: 240px;
+  padding: 10px;
+  margin-top: 30px;
+  text-align: right;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
