@@ -134,8 +134,11 @@ class EvaluateOperatorButton extends OperatorButton {
 
 	activate(_, calculator, ...args) {
 		const expression = calculator.output.replace(/[÷×]/g, char => char === '÷' ? '/' : '*')
-		calculator.prevOutput = expression + ' ='
-		calculator.output = eval(expression);
+
+		try {
+			calculator.output = eval(expression);
+			calculator.prevOutput = expression + ' ='
+		} catch (_) { }
 		return true;
 	}
 }
