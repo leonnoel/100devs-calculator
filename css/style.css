@@ -51,9 +51,10 @@
   display: block;
   border-radius: 100%;
   background: white;
-  padding: 6%;
+  padding: 5%;
   font-family: sans-serif;
-  font-size: 2rem;
+  font-size: 2.3rem;
+  font-weight: bold;
   flex: 1 0 calc(25% - 20px); 
   text-align: center;
   text-decoration: none;
