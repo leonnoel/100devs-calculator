@@ -1,0 +1,103 @@
+
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+	font-family: 'Coolvetica', sans-serif;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+}
+
+main {
+	background: black;
+	color: white;
+	border-radius: 1rem;
+	font-size: 2rem;
+	width: 410px;
+	height: 575px;
+	margin: auto;
+	overflow: auto;
+}
+
+	.output-container {
+		background: white;
+		color: black;
+		width: 335px;
+		height: 80px;
+		margin: auto;
+		display: flex;
+		margin-top: 75px;
+		margin-bottom: 30px;
+		flex-direction: column;
+	}
+
+		.rtl-wrapper {
+			flex: 1;
+			white-space: nowrap;
+		}
+
+			.rtl-wrapper > div {
+				float: right;
+			}
+
+				.rtl-wrapper > div > p {
+					text-align: right;
+					flex: 1;
+					margin: 0;
+					padding: 0;
+					padding-right: 1ch;
+					font-size: 2.5rem;
+				}
+
+				#previous {
+					font-size: 1.5rem;
+				}
+
+.buttons-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	width: max-content;
+	margin: auto;
+	gap: 10px;
+}
+
+	button {
+		border-radius: 100%;
+		background: white;
+		color: black;
+		width: 62px;
+		height: 62px;
+		font-size: 4rem;
+		font-weight: bold;
+		border: 0;
+		cursor: pointer;
+		line-height: 62px;
+	}
+
+		button:is(:hover, :active, :focus) {
+			background: hsl(0, 0%, 75%);
+		}
+
+
+@media (max-width: 450px) {
+	main {
+		width: 90vw;
+		height: max-content;
+		padding-bottom: 7.5vw;
+	}
+	.output-container {
+		width: 82.5%;
+	}
+	button {
+		width: 14vmin;
+		height: 14vmin;
+		font-size: 11vmin;
+		line-height: 14vmin;
+	}
+}
