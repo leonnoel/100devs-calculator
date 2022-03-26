@@ -2,7 +2,7 @@ document.querySelectorAll('td').forEach(e => {
     e.addEventListener('click', handleClick)
 })
 
-function Caclculator() {
+function Calculator() {
     let display = "";
     let valid = false;
     let methods = {
@@ -40,7 +40,7 @@ function Caclculator() {
     });
 }
 
-const calc = new Caclculator();
+const calc = new Calculator();
 
 function handleClick(e) {
     let key = e.target.innerHTML;
