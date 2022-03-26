@@ -63,7 +63,7 @@ function handlePress(event) {
     case '=': evaluate()
       break;
     default: //digits
-      if (/\d|[.]/.test(equation[equation.length-1]) || /-/.test(equation[equation.length-1]) && equation.length -1 % 2 === 0) {
+      if (/\d|[.]/.test(equation[equation.length-1]) || /-/.test(equation[equation.length-1]) && equation.length % 2 === 1) {
         equation[equation.length-1] += value 
       } else {
         equation.push(value)
