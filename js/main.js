@@ -12,12 +12,11 @@ function Caclculator() {
         'x': (a,b) => a * b,
     };
     this.calculate = function() {
-        const [arg1, arg2] = display.split(/\+|\/|-|x/);
-        const op = display[arg1.length]
-        const num1 = Number(arg1);
-        const num2 = Number(arg2);
+        const [arg1, op, arg2] = display.split(' ');
+        const num1 = parseFloat(arg1);
+        const num2 = parseFloat(arg2);
         const fn = methods[op];
-        if (!num1 || !num2 || !fn) {
+        if (isNaN(num1) || isNaN(num2) || !fn) {
             display = "Invalid";
             return;
         }
@@ -25,7 +24,7 @@ function Caclculator() {
         valid = true
     };
     this.read = function(input) {
-        if (display === "Invalid" || (valid && !'+-x/'.includes(input))) {
+        if (display === "Invalid" || (valid && !' + - x / '.includes(input))) {
             // reset display after any input is entered following an invalid result
             // or a new number is entered after a valid calculation
             display = input;
