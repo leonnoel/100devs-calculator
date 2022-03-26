@@ -14,7 +14,7 @@ body {
 	display: flex;
 }
 
-main {
+form {
 	background: black;
 	color: white;
 	border-radius: 1rem;
@@ -86,7 +86,7 @@ main {
 
 
 @media (max-width: 450px) {
-	main {
+	form {
 		width: 90vw;
 		height: max-content;
 		padding-bottom: 7.5vw;

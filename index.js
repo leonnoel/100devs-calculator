@@ -1,11 +1,21 @@
 class Button {
-	constructor(element, value) {
+	constructor(element, value, ...keys) {
 		this.element = element;
 		this.value = value ?? element.textContent;
+		this.keys = new Set(keys);
 	}
 
 	attachEventListener(...args) {
-		this.element.addEventListener('click', this.activate.bind(this, this.value, ...args));
+		const activator = this.activate.bind(this, this.value, ...args);
+
+		this.element.addEventListener('click', activator);
+		this.keys.size && window.addEventListener('keydown', (event) => {
+			if (!this.keys.has(event.key.toUpperCase())) return;
+			event.preventDefault()
+			activator()
+		});
+
+		return activator;
 	}
 
 	canActivate(..._) {
@@ -22,10 +32,6 @@ class Button {
 }
 
 class NumericButton extends Button {
-	constructor(...args) {
-		super(...args)
-	}
-
 	canActivate(_, calculator, ...args) {
 		if (!super.canActivate(_, calculator, ...args)) return false;
 
@@ -49,10 +55,6 @@ class NumericButton extends Button {
 }
 
 class DecimalButton extends NumericButton {
-	constructor(...args) {
-		super(...args)
-	}
-
 	canActivate(_, calculator, ...args) {
 		if (!super.canActivate(_, calculator, ...args)) return false;
 
@@ -63,14 +65,18 @@ class DecimalButton extends NumericButton {
 	}
 }
 
-class OperatorButton extends Button {
-	static token = ''
+class TokenButton extends Button {
+	static token = '';
+	static keys = new Set();
 	static canPrefixNumbers = true;
 	static canPrefixOperators = false;
-	constructor(...args) {
-		super(...args)
+	constructor(element, value, ...keys) {
+		super(element, value, ...keys)
+		if (!keys.length) this.keys = new Set([...this.constructor.keys, this.constructor.token]);
 	}
+}
 
+class OperatorButton extends TokenButton {
 	canActivate(_, calculator, ...args) {
 		if (!super.canActivate(_, calculator, ...args)) return false;
 		if (OPERATOR_BUTTONS.some(cls => !cls.canPrefixOperators && cls.token === calculator.tokens.at(-1))) return false;
@@ -86,16 +92,10 @@ class OperatorButton extends Button {
 
 class AdditionOperatorButton extends OperatorButton {
 	static token = '+'
-	constructor(...args) {
-		super(...args)
-	}
 }
 
 class SubtractionOperatorButton extends OperatorButton {
 	static token = '-'
-	constructor(...args) {
-		super(...args)
-	}
 
 	canActivate(_, calculator, ...args) {
 		const lastTwoTokens = calculator.tokens.slice(-2);
@@ -107,29 +107,28 @@ class SubtractionOperatorButton extends OperatorButton {
 
 class MultiplicationOperatorButton extends OperatorButton {
 	static token = '×'
-	constructor(...args) {
-		super(...args)
-	}
+	static keys = new Set('*')
 }
 
 class DivisionOperatorButton extends OperatorButton {
 	static token = '÷'
-	constructor(...args) {
-		super(...args)
-	}
+	static keys = new Set('/')
 }
 
 class ModulusOperatorButton extends OperatorButton {
 	static token = '%'
-	constructor(...args) {
-		super(...args)
-	}
 }
 
 class EvaluateOperatorButton extends OperatorButton {
 	static token = '='
-	constructor(...args) {
-		super(...args)
+	static keys = new Set(['RETURN', 'ENTER'])
+
+	attachEventListener(calculator, ...args) {
+		const activator = super.attachEventListener(calculator, ...args)
+		calculator.formElement.addEventListener('submit', (event) => {
+			event.preventDefault();
+			return activator();
+		});
 	}
 
 	activate(_, calculator, ...args) {
@@ -145,9 +144,7 @@ class EvaluateOperatorButton extends OperatorButton {
 
 class ClearOperatorButton extends OperatorButton {
 	static token = 'C'
-	constructor(...args) {
-		super(...args)
-	}
+	static keys = new Set(['BACKSPACE', 'DELETE', 'ESCAPE'])
 
 	activate(_, calculator, ...args) {
 		const lastToken = calculator.tokens.at(-1);
@@ -161,11 +158,8 @@ class ClearOperatorButton extends OperatorButton {
 	}
 }
 
-class ParenthesisButton extends Button {
+class ParenthesisButton extends TokenButton {
 	static canPrefixNumbers = false;
-	constructor(...args) {
-		super(...args)
-	}
 
 	activate(value, calculator, ...args) {
 		if (!super.activate(value, calculator, ...args)) return false;
@@ -176,9 +170,6 @@ class ParenthesisButton extends Button {
 
 class OpenParenthesisOperatorButton extends ParenthesisButton {
 	static token = '(';
-	constructor(...args) {
-		super(...args)
-	}
 
 	activate(value, calculator, ...args) {
 		if (!super.activate(value, calculator, ...args)) return false;
@@ -194,9 +185,6 @@ class OpenParenthesisOperatorButton extends ParenthesisButton {
 class CloseParenthesisOperatorButton extends ParenthesisButton {
 	static token = ')';
 	static canPrefixOperators = true;
-	constructor(...args) {
-		super(...args)
-	}
 
 	activate(value, calculator, ...args) {
 		if (!super.activate(value, calculator, ...args)) return false;
@@ -218,7 +206,8 @@ class CloseParenthesisOperatorButton extends ParenthesisButton {
 const OPERATOR_BUTTONS = [AdditionOperatorButton, SubtractionOperatorButton, MultiplicationOperatorButton, DivisionOperatorButton, EvaluateOperatorButton, ClearOperatorButton, ModulusOperatorButton, OpenParenthesisOperatorButton, CloseParenthesisOperatorButton]
 
 class Calculator {
-	constructor(previousSelector, currentSelector) {
+	constructor(formSelector, previousSelector, currentSelector) {
+		this.formElement = document.querySelector(formSelector);
 		this.previousElement = document.querySelector(previousSelector);
 		this.currentElement = document.querySelector(currentSelector);
 
@@ -260,14 +249,14 @@ class Calculator {
 
 function buttonFactory(element) {
 	if (element.textContent.match(/^\d$/)) {
-		return new NumericButton(element, +element.textContent);
+		return new NumericButton(element, +element.textContent, element.textContent);
 	}
 	else if (element.textContent === '.') {
-		return new DecimalButton(element);
+		return new DecimalButton(element, element.textContent, element.textContent);
 	}
 
 	const token = element.textContent;
 	return new (OPERATOR_BUTTONS.find(cls => cls.token === token))(element);
 }
 
-const calculator = new Calculator('#previous', '#current').addButtons(...[...document.querySelectorAll('button')].map(buttonFactory))
+new Calculator('form', '#previous', '#current').addButtons(...[...document.querySelectorAll('button')].map(buttonFactory))
