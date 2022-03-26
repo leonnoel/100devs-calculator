@@ -1,0 +1,43 @@
+#container {
+	display: grid;
+	background-color: grey;
+	width: 500px;
+	height: 700px;
+	grid-template-columns: 125px 125px 125px 125px;
+	grid-template-rows: repeat(6, 116px);
+	padding: 25px;
+	border: 3px solid black;
+}
+
+#display {
+	grid-area: 1/1/1/5;
+	background-color: lightblue;
+	border-style: inset;
+	display: flex;
+	align-items: flex-end;
+	justify-content: right;
+	font-size: 60px;	
+}
+
+#zero {
+	grid-area: 6/1/7/3;
+}
+
+#equal {
+	background-color: #3366ff;
+}
+
+.func {
+	background-color: #6699ff;
+}
+
+.num {
+	background-color: #00e6e6;
+}
+
+button {
+	color: #f0f0f0;
+	border: 1px solid gray;
+	border-radius: 20px;
+	font-size: 40px;
+}
