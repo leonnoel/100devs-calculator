@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>#100Devs Calculator</title>
+	</head>
+
+	<style>
+		html {
+			font-size: 62.5%;
+			box-sizing: border-box;
+		}
+
+		* {
+			box-sizing: inherit;
+			font-family: 'Coolvetica', sans-serif;
+		}
+
+		main {
+			background: black;
+			color: white;
+			border-radius: 1rem;
+			font-size: 2rem;
+			width: 410px;
+			height: 575px;
+			margin: auto;
+			overflow: auto;
+		}
+
+			.output-container {
+				background: white;
+				color: black;
+				width: 335px;
+				height: 80px;
+				margin: auto;
+				display: flex;
+				margin-top: 75px;
+				margin-bottom: 30px;
+				flex-direction: column;
+			}
+
+				.rtl-wrapper {
+					flex: 1;
+					white-space: nowrap;
+				}
+
+					.rtl-wrapper > div {
+						float: right;
+					}
+
+						.rtl-wrapper > div > p {
+							text-align: right;
+							flex: 1;
+							margin: 0;
+							padding: 0;
+							padding-right: 1ch;
+							font-size: 2.5rem;
+						}
+
+						#previous {
+							font-size: 1.5rem;
+						}
+
+		.buttons-container {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			width: max-content;
+			margin: auto;
+			gap: 10px;
+		}
+
+			button {
+				border-radius: 100%;
+				background: white;
+				color: black;
+				width: 62px;
+				height: 62px;
+				font-size: 4rem;
+				font-weight: bold;
+				border: 0;
+				cursor: pointer;
+				line-height: 140%;
+			}
+
+			button:is(:nth-of-type(1), :nth-of-type(2)) {
+				line-height: 100%;
+			}
+	</style>
+	<link href="http://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
+
+	<body>
+		<main>
+			<div class="output-container">
+				<div class="rtl-wrapper">
+					<div>
+						<p id="previous"></p>
+					</div>
+				</div>
+				<div class="rtl-wrapper">
+					<div>
+						<p id="current">0</p>
+					</div>
+				</div>
+			</div>
+			<div class="buttons-container">
+				<button>(</button>
+				<button>)</button>
+				<button>%</button>
+				<button>C</button>
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+				<button>÷</button>
+				<button>4</button>
+				<button>5</button>
+				<button>6</button>
+				<button>×</button>
+				<button>1</button>
+				<button>2</button>
+				<button>3</button>
+				<button>+</button>
+				<button>0</button>
+				<button>.</button>
+				<button>=</button>
+				<button>-</button>
+			</div>
+		</main>
+		<!--
+		<calculator>
+			<output></output>
+			<div>
+				<number-button>7</number-button>
+				<number-button>8</number-button>
+				<number-button>9</number-button>
+				<operator-button>/</operator-button>
+				<number-button>4</number-button>
+				<number-button>5</number-button>
+				<number-button>6</number-button>
+				<operator-button>x</operator-button>
+				<number-button>1</number-button>
+				<number-button>2</number-button>
+				<number-button>3</number-button>
+				<operator-button>+</operator-button>
+				<number-button>0</number-button>
+				<button>.</button>
+				<number-button>=</number-button>
+				<operator-button>-</operator-button>
+			</div>
+		</calculator>
+	-->
+		<script src="index.js"></script>
+	</body>
+
+</html>
