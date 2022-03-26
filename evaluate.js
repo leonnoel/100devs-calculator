@@ -4,6 +4,7 @@ const OPERATOR_PRECEDENCE = {
 	'^': 0,
 	'*': 1,
 	'/': 1,
+	'%': 1,
 	'+': 2,
 	'-': 2,
 }
@@ -19,6 +20,7 @@ function performOperation(left, op, right){
 		case '^': return left ** right;
 		case '*': return left * right;
 		case '/': return left / right;
+		case '%': return left % right;
 		case '+': return left + right;
 		case '-': return left - right;
 		default: throw new Error(`Unknown operator: ${op}`);
