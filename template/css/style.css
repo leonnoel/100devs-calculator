@@ -1,0 +1,57 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 900;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.calculator {
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: fit-content;
+  background-color: black;
+}
+h2 {
+  background-color: white;
+  text-align: right;
+  margin: 10px 40px;
+  padding: 30px;
+  margin-top: 50px;
+  font-size: 50px;
+  overflow:auto;
+}
+
+.btn {
+  border: 1px solid black;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  list-style: none;
+  font-size: 40px;
+  background-color: white;
+}
+.calculator-keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  top: 100px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
