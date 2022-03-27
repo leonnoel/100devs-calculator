@@ -33,17 +33,7 @@ function makeCalc(equation) {
         'x' : (a, b) => a * b,
         "/" : (a, b) => a / b,
     }
-    this.splitEquation = function() {
-        eq = this.equation.split(/([x+\-*/])/)
-        eq = eq.map(item => item.trim())
-        return eq
-    }
-
-    this.calculate = function() { // Called when 'equals button' is pressed 
-        eq = this.splitEquation();
-        return String(this.operations[eq[1]](BigInt(eq[0]), BigInt(eq[2])));
-    }
-
+    
     this.addToEquation = function(input) {  // Called whenever a button other than '=' is pressed
         if ((input in this.operations || input == '=') && this.isCompleteEquation()) {    // If complete equation, evaluate before adding.
             this.equation = this.calculate()
@@ -53,6 +43,17 @@ function makeCalc(equation) {
             this.equation = this.equation + input
         }
         return this.equation
+    }
+
+    this.splitEquation = function() {
+        eq = this.equation.split(/([x+\-*/])/)
+        eq = eq.map(item => item.trim())
+        return eq
+    }
+
+    this.calculate = function() { // Called when 'equals button' is pressed 
+        eq = this.splitEquation();
+        return String(this.operations[eq[1]](BigInt(eq[0]), BigInt(eq[2])));
     }
 
     this.isCompleteEquation = function() {
