@@ -1,9 +1,9 @@
 function Calculator() {
   let enteredValues = [];
-  let currentValue = "0";
+  let currentNumber = "0";
   const operators = ["/", "*", "+", "-"];
 
-  let calcs = {
+  const calcs = {
     "/": (a, b) => a / b,
     "*": (a, b) => a * b,
     "+": (a, b) => a + b,
@@ -11,47 +11,46 @@ function Calculator() {
   };
 
   this.calculate = function () {
-    for (let operator of operators) {
+    for (const operator of operators) {
       while (enteredValues.indexOf(operator) >= 0) {
-        let actionIndex = enteredValues.indexOf(operator);
-        let action = enteredValues[actionIndex];
-        let result = calcs[action](
-          enteredValues[actionIndex - 1],
-          enteredValues[actionIndex + 1]
+        const actionIndex = enteredValues.indexOf(operator);
+        // get the the values either side of the required action
+        const [first, action, second] = enteredValues.slice(
+          actionIndex - 1,
+          actionIndex + 2
         );
+        const result = calcs[action](first, second);
+        // Replace the 3 values with the result of the operation
         enteredValues[actionIndex - 1] = result;
         enteredValues.splice(actionIndex, 2);
       }
     }
-    let answer = enteredValues[0];
-    currentValue = answer;
+    const answer = enteredValues.pop();
+    currentNumber = answer;
     console.log(answer);
   };
 
   this.enterValue = function (value) {
     if (value === "=") {
-      // if "=" selected complete computation
-      enteredValues.push(parseFloat(currentValue));
-      // enteredValues.push(value);
+      enteredValues.push(parseFloat(currentNumber));
       this.calculate();
     } else if (operators.includes(value)) {
-      // if operand add previous pending value to enteredValues, add operand after
-      enteredValues.push(parseFloat(currentValue));
+      enteredValues.push(parseFloat(currentNumber));
       enteredValues.push(value);
-      currentValue = "0";
+      currentNumber = "0";
     } else {
       // if number store number in string
-      currentValue += value;
+      currentNumber += value;
     }
   };
 
   this.reset = function () {
     enteredValues = [];
-    currentValue = "0";
+    currentNumber = "0";
   };
 }
 
-let calc = new Calculator();
+const calc = new Calculator();
 
 for (let char of "9/3*4+3-2=") {
   calc.enterValue(char); // returns 13
