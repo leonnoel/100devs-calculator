@@ -1,4 +1,4 @@
-function Calculator() {
+function Calculator(display) {
   let enteredValues = [];
   let currentNumber = "0";
   const operators = ["/", "*", "+", "-"];
@@ -8,6 +8,10 @@ function Calculator() {
     "*": (a, b) => a * b,
     "+": (a, b) => a + b,
     "-": (a, b) => a - b,
+  };
+
+  let updateDisplay = () => {
+    if (display) display.innerText = currentNumber;
   };
 
   this.calculate = function () {
@@ -40,24 +44,29 @@ function Calculator() {
       currentNumber = "0";
     } else {
       // if number store number in string
-      currentNumber += value;
+      if (currentNumber === "0" && value !== ".") {
+        currentNumber = value;
+      } else {
+        currentNumber += value;
+      }
     }
+    updateDisplay();
   };
 
   this.reset = function () {
     enteredValues = [];
     currentNumber = "0";
+    updateDisplay();
   };
 }
 
-const calc = new Calculator();
+const display = document.querySelector(".calc-display");
 
-for (let char of "9/3*4+3-2=") {
-  calc.enterValue(char); // returns 13
-}
+const calc = new Calculator(display);
 
-calc.reset();
-
-for (let char of "9-3*4+3/2=") {
-  calc.enterValue(char); // returns -4.5
+const buttons = document.querySelectorAll(".calc-value");
+for (let button of buttons) {
+  button.addEventListener("click", (e) => {
+    calc.enterValue(e.target.value);
+  });
 }
