@@ -1,20 +1,20 @@
 /* Box Model Hack */
 * {
-     box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -22,21 +22,63 @@
 /*******************************************/
 
 body {
-
 }
 
+html {
+  font-size: 162.5%;
+  /* font-weight: 550; */
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-
 }
 
 footer {
-
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+.flex {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-block: 1.5rem;
+}
+
+.calc {
+  color: white;
+  background-color: black;
+  border-radius: 2rem;
+  width: 10rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calc-display {
+  width: 95%;
+  background-color: white;
+  color: black;
+  display: block;
+  text-align: end;
+  padding: 0.5rem;
+}
+
+.calc-buttons {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+
+.calc-value {
+  border-radius: 100%;
+  width: 1.5rem;
+  background-color: white;
+  color: black;
+}
