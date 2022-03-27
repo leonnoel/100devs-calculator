@@ -55,6 +55,7 @@ section {
 output {
   position: absolute;
   inset: 5px;
+  word-wrap: break-word;
   font-size: 30px;
   font-family: sans-serif;
   font-weight: bold;
