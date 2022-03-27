@@ -7,14 +7,15 @@ let value = ""
 function Calculator() {
     if (this.innerText === "X") {
         value += "*"
+        document.querySelector('.result').innerHTML = value
     }
-    if (this.innerText !== "=") {
+    if (this.innerText !== "=" && this.innerText !== "X") {
         value += this.innerText
         document.querySelector('.result').innerHTML = value
     }
     if (this.innerText === "=") {
         let calc = eval(value)
-        document.querySelector('.result').innerHTML = calc.toFixed(9)
+        document.querySelector('.result').innerHTML = calc.toFixed(6)
         value = ""
     }
 }
