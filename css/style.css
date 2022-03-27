@@ -21,41 +21,73 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
-
-}
-
 
 /******************************************
 /* Top Level Layout
 /*******************************************/
-header {
 
+/* Yes I used px for everything don't hurt me */
+section {
+  width: 400px;
+  height: 550px;
+  background-color: black;
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 0.05px;
 }
 
-footer {
-
+#output-window {
+  background-color: white;
+  height: 75px;
+  width: 90%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
+.button-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 
-/******************************************
-/* Individual Element Layout/padding
-/*******************************************/
-
-
-/******************************************
-/* Typography
-/*******************************************/
-
-
-/******************************************
-/* Backgrounds and Borders
-/*******************************************/
+output {
+  position: absolute;
+  inset: 5px;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align:right;
+}
 
 
 /******************************************
 /* Components (buttons)
 /*******************************************/
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
 
 
 /******************************************
