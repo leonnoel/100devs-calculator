@@ -1,0 +1,80 @@
+/* Basic Styles */
+
+* {
+    font-size: 1.5rem;
+    font-weight: bold;
+} 
+
+li {
+    list-style-type: none;
+}
+
+section {
+    background: black;
+    border: 1px solid black;
+    border-radius: 7%;
+
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+li {
+    background: white;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+
+/* Positioning */
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;
+}
+
+section {
+    width: 14rem;
+    padding: 3rem 1rem 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.display{
+    background: white;
+    width: 80%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 1rem;
+}
+
+div.inputs {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    width: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    width: 2.5rem;
+}
