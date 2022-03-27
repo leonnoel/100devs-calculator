@@ -1,3 +1,11 @@
+// General functionality:
+    // Calculator values and operations are stored in the calc object.
+    // There is an event listener for buttons. The input from each button is the value of the inner HTML text.
+    // calc.addToEquation() is the main function that wraps around most other methods in the object.
+        // addToEquation checks in the input and, if valid, either adds the input to the equation or evaluates the equation.
+        // Evaluates only 1 operation at a time (ie., [term1] [operator] [term2]). If there is a complete operation and  another operator is clicked, the operation will evaluate before the new operator is added (I was too lazy to deal with order of operations).
+    // Supports ~40 characters afterwhich they go offscreen.
+
 // Improvements
     // Features
         // Handle addition of new operators such as **, ()
@@ -12,6 +20,8 @@
         // if equation is invalid throw error
         // If using 2 operators in a row, overwrite the first operator
 
+
+document.addEventListener('click', buttonClick)
 
 
 function makeCalc(equation) {
@@ -31,7 +41,7 @@ function makeCalc(equation) {
 
     this.calculate = function() { // Called when 'equals button' is pressed 
         eq = this.splitEquation();
-        return String(this.operations[eq[1]](+eq[0], +eq[2]))
+        return String(this.operations[eq[1]](BigInt(eq[0]), BigInt(eq[2])));
     }
 
     this.addToEquation = function(input) {  // Called whenever a button other than '=' is pressed
@@ -60,9 +70,7 @@ function makeCalc(equation) {
     }
 }
 
-calc = new makeCalc('')
-
-
+const calc = new makeCalc('')
 
 
 function buttonClick(e) {
@@ -76,7 +84,5 @@ function buttonClick(e) {
 function updateDisplay() {
     document.querySelector('output').innerText = calc.equation
 }
-
-document.addEventListener('click', buttonClick)
 
 
