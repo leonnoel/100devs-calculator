@@ -1,0 +1,30 @@
+.container{
+    background-color:black;
+    border-radius:40px;
+    height:500px;
+    width:400px;
+    padding:70px 40px;
+    font-size: 2rem;
+}
+
+.display{
+    background-color:white;
+    height: 10%;
+    text-align:right;
+    padding:10px;
+}
+
+.button-container{
+    padding-top:40px;
+    display:grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.button-container button{
+    font-size: 2rem;
+    border-radius: 50%;
+    height:90px;
+    width:90px;
+}
