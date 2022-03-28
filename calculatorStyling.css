@@ -1,0 +1,28 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+	font-family: 'Coolvetica', sans-serif;
+}
+
+#body{
+    background: black;
+    border-radius: 5%;
+    height: 90vh;
+    width: 50vw;
+    display: flex;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+button{
+    height: 4rem;
+    width: 4rem;
+}
