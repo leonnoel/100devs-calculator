@@ -42,9 +42,12 @@ function makeCalc(equation) {
         // evaluate operation before concatenating next operator
         if ((this.isValidOperator(input) || input === '=') && this.isCompleteEquation()) { 
             this.equation = this.calculate()
-            this.equation = (input === '=') ? this.equation : this.equation + input;
-            return this.equation
         }
+        
+        if (input === '=') return this.equation
+
+        this.equation = this.equation + input
+        return this.equation
     }
 
     this.splitEquation = function() {
