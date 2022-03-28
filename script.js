@@ -77,7 +77,7 @@ function Calculator () {
     }
 
     this.divide = function (a, b) {
-        return a /= b;
+        return (b === 0) ? "Undefined" : a /= b;
     }
 
     this.add = function (a, b) {
