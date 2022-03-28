@@ -1,38 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>OOP Calculator</title>
 </head>
+
 <body>
     <main>
-        <div>
-            <section>
-                <article class="display"></article>
-                <article class="cal num">0</article>
-                <article class="cal num">1</article>
-                <article class="cal num">2</article>
-                <article class="cal num">3</article>
-                <article class="cal num">4</article>
-                <article class="cal num">5</article>
-                <article class="cal num">6</article>
-                <article class="cal num">7</article>
-                <article class="cal num">8</article>
-                <article class="cal num">9</article>
-                <article class="cal op">/</article>
-                <article class="cal op">x</article>
-                <article class="cal op">+</article>
-                <article class="cal op">-</article>
-                <article class="cal dot">.</article>
-                <article class="cal eq">=</article>
-            </section>
-        </div>
+        <section>
+                <ul>
+                <li class="display">0</li>
+                    <li class="cal num zero" data-number"">0</li>
+                    <li class="cal num one" data-number"">1</li>
+                    <li class="cal num two" data-number"">2</li>
+                    <li class="cal num three" data-number"">3</li>
+                    <li class="cal num four" data-number"">4</li>
+                    <li class="cal num five" data-number"">5</li>
+                    <li class="cal num six" data-number"">6</li>
+                    <li class="cal num seven" data-number"">7</li>
+                    <li class="cal num eight" data-number"">8</li>
+                    <li class="cal num nine" data-number"">9</li>
+                    <li class="cal op div" data-operator>/</li>
+                    <li class="cal op mul" data-operator>x</li>
+                    <li class="cal op plus" data-operator>+</li>
+                    <li class="cal op minus" data-operator>-</li>
+                    <li class="cal dot " data-action>.</li>
+                    <li class="cal eq" data-action>=</li>
+                    <li class="cal ac" data-action>AC</li>
+                    <li class="cal del" data-action>DEL</li>
+                </ul>
+        </section>
     </main>
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
