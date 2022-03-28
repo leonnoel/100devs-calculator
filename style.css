@@ -10,11 +10,33 @@
   /******************************************
   /* LAYOUT
   /*******************************************/
-  img{
-    display: block;
-    margin: 0 auto;
-    width: 25%;
-  }
+body{
+      background: darkblue;
+}
+.calculator{
+    margin: auto;
+     background: red;
+     height: 50vh;
+     width: 30vh;
+}
+.display{
+    background-color: black;
+    color: white;
+    text-align: right;
+    font-size: 2.0rem;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+a{
+
+}
   
   
   /******************************************
