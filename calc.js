@@ -8,36 +8,18 @@ class Calculator {
     // ----------------------------
     setupButtonEvents() {
         document.querySelectorAll('.button').forEach(button => {
-            button.addEventListener('click', () => {
-                this.displayLengthCheck()
-            })
+            button.addEventListener('click', () => this.displayLengthCheck())
         })
         document.querySelectorAll('.number').forEach(number => {
-            number.addEventListener('click', () => {
-                this.pressButton(number.innerHTML)
-            })
+            number.addEventListener('click', () => this.pressButton(number.innerHTML))
         })
-        document.querySelector('.clear').addEventListener('click', () => {
-            this.clearDisplay()
-        })
-        document.querySelector('.add').addEventListener('click', () => {
-            this.add()
-        })
-        document.querySelector('.subtract').addEventListener('click', () => {
-            this.subtract()
-        })
-        document.querySelector('.multiply').addEventListener('click', () => {
-            this.multiply()
-        })
-        document.querySelector('.divide').addEventListener('click', () => {
-            this.divide()
-        })
-        document.querySelector('.equal').addEventListener('click', () => {
-            this.equal()
-        })
-        document.querySelector('.decimal').addEventListener('click', () => {
-            this.pressButton('.')
-        })
+        document.querySelector('.clear').addEventListener('click', () => this.clearDisplay())
+        document.querySelector('.add').addEventListener('click', () => this.add())
+        document.querySelector('.subtract').addEventListener('click', () => this.subtract())
+        document.querySelector('.multiply').addEventListener('click', () => this.multiply())
+        document.querySelector('.divide').addEventListener('click', () => this.divide())
+        document.querySelector('.equal').addEventListener('click', () => this.equal())
+        document.querySelector('.decimal').addEventListener('click', () => this.pressButton('.'))
     }
     // ----------------------------
     displayLengthCheck() {
