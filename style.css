@@ -9,7 +9,7 @@
 
 .display{
     background-color:white;
-    height: 10%;
+    height: 15%;
     text-align:right;
     padding:10px;
 }
@@ -20,11 +20,12 @@
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    padding: 70px 10px;
 }
 
 .button-container button{
     font-size: 2rem;
     border-radius: 50%;
-    height:90px;
-    width:90px;
+    height:80px;
+    width:80px;
 }
