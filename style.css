@@ -1,0 +1,87 @@
+body {
+    background-color: #181818;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.calc-body {
+    background: #2c2c2c;
+    margin: 10rem auto;
+    width: 20rem;
+    border-radius: 1rem;
+    padding: 1rem;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #3c3c3c;
+    color: #fff;
+    padding: 10px;
+    font-size: 3.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.button:hover {
+    background: #fff;
+    color: #2c2c2c;
+    transform: translateY(-5px);
+}
+
+.button-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 1rem;
+    user-select: none;
+}
+.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}
+/* "Clear" button row. */
+.button-row:first-child {
+    margin-top: 0;
+    justify-content: flex-end;
+}
+.display {
+    width: 90%;
+    height: 3.5rem;
+    font-size: 3.5rem;
+    text-align: right;
+    padding: 1rem;
+    background: #414141;
+    color: white;
+    border-radius: 1.5rem;
+    margin: 1rem auto;
+    transition: all 0.2s ease-in-out;
+}
+.display.flash {
+    background: #4acd98;
+    color: #2c2c2c;
+    transition: all 0s ease-in-out;
+}
+.display.cancel {
+    background: #ff607c;
+    color: #2c2c2c;
+    transition: all 0s ease-in-out;
+}
+.display.error {
+    background: #292929;
+    color: #b50029;
+    transition: all 0.2s ease-in-out;
+}
+.display.instant-transition {
+    transition: all 0s ease-in-out;
+}
+.display.too-long {
+    color: #ff6a87;
+}
