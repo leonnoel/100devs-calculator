@@ -3,10 +3,18 @@ class Calculator {
     // ----------------------------
     constructor() {
         this.display = document.querySelector('.display')
-        this.equalButton = document.querySelector('.equal')
         this.errorMessage = 'wat'
         this.disableEvaluation = false
         this.result = 0
+
+        this.buttonClear = document.querySelector('.clear')
+        this.buttonUndo = document.querySelector('.undo')
+        this.buttonAdd = document.querySelector('.add')
+        this.buttonSubtract = document.querySelector('.subtract')
+        this.buttonMultiply = document.querySelector('.multiply')
+        this.buttonDivide = document.querySelector('.divide')
+        this.buttonDecimal = document.querySelector('.decimal')
+        this.buttonEqual = document.querySelector('.equal')
     }
     // ----------------------------
     setupButtonEvents() {
@@ -20,14 +28,14 @@ class Calculator {
         document.querySelectorAll('.number').forEach(number => {
             number.addEventListener('click', () => this.pressButton(number.innerHTML))
         })
-        document.querySelector('.clear').addEventListener('click', () => this.clearDisplay())
-        document.querySelector('.backspace').addEventListener('click', () => this.backspace())
-        document.querySelector('.add').addEventListener('click', () => this.add())
-        document.querySelector('.subtract').addEventListener('click', () => this.subtract())
-        document.querySelector('.multiply').addEventListener('click', () => this.multiply())
-        document.querySelector('.divide').addEventListener('click', () => this.divide())
-        document.querySelector('.decimal').addEventListener('click', () => this.pressButton('.'))
-        this.equalButton.addEventListener('click', () => {
+        this.buttonClear.addEventListener('click', () => this.clearDisplay())
+        this.buttonUndo.addEventListener('click', () => this.undo())
+        this.buttonAdd.addEventListener('click', () => this.add())
+        this.buttonSubtract.addEventListener('click', () => this.subtract())
+        this.buttonMultiply.addEventListener('click', () => this.multiply())
+        this.buttonDivide.addEventListener('click', () => this.divide())
+        this.buttonDecimal.addEventListener('click', () => this.pressButton('.'))
+        this.buttonEqual.addEventListener('click', () => {
             if (!this.disableEvaluation)
                 this.evaluate()
         })
@@ -44,15 +52,14 @@ class Calculator {
         this.clearErrorStyles()
     }
     clearErrorStyles() {
-        this.display.classList.remove('error')
-        this.display.classList.remove('too-long')
-        this.equalButton.classList.remove('error')
+        this.display.classList.remove('error', 'too-long')
+        this.buttonEqual.classList.remove('error')
     }
     clearErrorText() {
         if (this.display.innerHTML.includes(this.errorMessage))
             this.clearDisplay()
     }
-    backspace() {
+    undo() {
         this.clearErrorText()
         // Check if display is zeroed out first, so we don't also delete the default 0.
         this.display.innerHTML.length > 1 ?
@@ -91,7 +98,7 @@ class Calculator {
             this.disableEvaluation = false
         } catch (SyntaxError) {
             this.display.classList.add('error')
-            this.equalButton.classList.add('error')
+            this.buttonEqual.classList.add('error')
             this.disableEvaluation = true
         }
     }
