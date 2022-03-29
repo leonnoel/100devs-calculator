@@ -71,11 +71,17 @@ a:hover {
      
      border-radius: 30px;
 }
-#display {
+#display-container {
      height: 75px;
      width: 325px;
-
      background-color: white;
+     position: relative;
+}
+#display {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     font-size: 32px;
 }
 
 #button-container {
@@ -106,4 +112,10 @@ button {
      display: flex;
      justify-content: center;
      align-items: center;
+}
+button:hover {
+     color: gray;
+}
+button:active {
+     color: #00acee;
 }
