@@ -11,19 +11,29 @@
   /* LAYOUT
   /*******************************************/
 body{
-      background: darkblue;
+      background: lightgray;
 }
 .calculator{
     margin: auto;
-     background: red;
-     height: 50vh;
-     width: 30vh;
+     background: white;
+     height: 500px;
+     width: 350px;
+     border-radius: 20px;
 }
+.calculator{
+  background: black;
+}
+.spacetop{
+  padding-top: 5%;
+}
+
 .display{
-    background-color: black;
-    color: white;
+     margin: 7%;
+    background-color: white;
+    color: black;
     text-align: right;
-    font-size: 2.0rem;
+    font-size: 1.5rem;
+    height: 60px;
 }
 .buttons{
     display: flex;
@@ -31,11 +41,20 @@ body{
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    margin: 15%;
     
 }
 
 a{
-
+  background: white;
+  width: 60px;
+  height: 60px;
+  padding: 20px;
+  border-radius: 50% 50%;
+  font-size: 2.2rem;
+  text-align: center;
+  font-weight: bold;
+  line-height: 50%;
 }
   
   
