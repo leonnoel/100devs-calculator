@@ -1,4 +1,6 @@
-# 🔢 #100Devs Push Project001: Calculator
+# Deployed to [https://pan-alex.github.io/100devs-calculator/](https://pan-alex.github.io/100devs-calculator/)
+
+## 🔢 #100Devs Push Project001: Calculator
 
 ### Goal: Build a Simple Calculator using JS OOP best practices
 
@@ -19,6 +21,7 @@
   - Anything specific on which you want feedback!
 
 Example:
+
 ```
 I completed the challenge: 5
 I feel good about my code: 4
