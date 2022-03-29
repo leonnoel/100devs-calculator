@@ -35,7 +35,7 @@ body {
     .button.equal.error:hover {
         transform: none;
     }
-.button.backspace {
+.button.undo {
     font-size: 1.2rem
 }
     .button:hover {
