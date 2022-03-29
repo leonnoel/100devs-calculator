@@ -1,0 +1,96 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+
+/******************************************
+/* Top Level Layout
+/*******************************************/
+
+/* Yes I used px for everything don't hurt me */
+section {
+  width: 400px;
+  height: 550px;
+  background-color: black;
+  margin: 0 auto;
+  border-radius: 25px;
+  padding: 0.05px;
+}
+
+#output-window {
+  background-color: white;
+  height: 75px;
+  width: 90%;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.button-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+output {
+  position: absolute;
+  inset: 5px;
+  word-wrap: break-word;
+  font-size: 30px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align:right;
+}
+
+
+/******************************************
+/* Components (buttons)
+/*******************************************/
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+}
+
+button {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+/******************************************
+/* Additional Styles
+/*******************************************/
