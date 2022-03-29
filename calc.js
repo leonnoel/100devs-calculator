@@ -71,7 +71,7 @@ class Calculator {
         try {
             flashDisplay(this.display, 'flash')
             // Eval is a bad idea, but it's fine for this project!
-            this.display.innerHTML = eval(this.display.innerHTML)
+            this.display.innerHTML = eval(this.display.innerHTML).toFixed(2)
         } catch (SyntaxError) {
             // Since the display line is evaluated with eval(),
             // we should give feedback if the input was completely invalid. Eg: "2+4++".
