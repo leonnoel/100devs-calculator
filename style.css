@@ -87,8 +87,7 @@ body {
     transition: all 0s ease-in-out;
 }
 .display.error {
-    background: #292929;
-    color: #b50029;
+    color: #838383;
     transition: all 0.2s ease-in-out;
 }
 .display.instant-transition {
