@@ -1,0 +1,60 @@
+/********************
+======  BASE STYLES ======
+********************/
+
+.body {
+    font-size: 62.5%;
+}
+
+.calc {
+    background-color: black;
+    border-radius: 25px;
+}
+
+.interface {
+    font-size: 2.5rem;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.display {
+    background-color: white;
+}
+
+.button {
+    background: white;
+    border-radius: 50px;
+    padding: 15px 25px;
+}
+
+/********************
+======  LAYOUT ======
+********************/
+
+.calc {
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.interface {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+}
+
+.display {
+    width: 80%;
+    height: 100px;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.button {
+    flex-basis: 30px;
+}
