@@ -23,7 +23,8 @@ function Calculator() {
         defaultOperator = null;
     let current = defaultCurrent,
         memory = defaultMemory,
-        calcMemory = null,
+        lastInput = null,
+        lastOperator = null
         operator = defaultOperator;
     
     this.add = (a, b) => (Number(a) + Number(b)).toString();
@@ -45,43 +46,55 @@ function Calculator() {
             if (INPUTS.includes(val)) {
                 if (current === '0') {
                     if (val !== '0' && val !== '.') current = val;
+                    else if (val === '.') current = current.concat(val);
                 } else if (current.length < 9) {
                     if (val !== '.' || (val === '.' && !current.includes('.'))) current = current.concat(val);
                 }
                 this.setDisplay(current);
-            } else {
-                if (calcMemory && current === '0') current = calcMemory;
-                if (!memory) {
-                    if (val !== '=') {
+            } else { // on an operation or = input
+                if (!memory && !operator) {
+                    if (val === '=') { // if = is entered
+                        if (lastInput && lastOperator) { // repeat last operation if stored
+                            memory = current
+                            current = lastInput;
+                            operator = lastOperator;
+                        }
+                    } else { // if an operation is entered
                         memory = current;
+                        operator = val;
                         current = '0';
                         this.setDisplay(current);
-                        operator = val;
                     }
-                } else if (operator) {
+                }
+                if (current === '0' && val !== operator) operator = val;
+                if (current !== '0') { // calculation happens if memory and operator are occupied and current is not zero
+                    lastInput = current; //need to figure out how to preserve lastInput
+                    lastOperator = operator
                     switch (operator) {
                         case '+':
-                            memory = this.add(memory, current);
+                            current = this.add(memory, current);
                             break;
                         case '-':
-                            memory = this.sub(memory, current);
+                            current = this.sub(memory, current);
                             break;
                         case '/':
-                            memory = this.div(memory, current);
+                            current = this.div(memory, current);
                             break;
                         case 'x':
-                            memory = this.mul(memory, current);
+                            current = this.mul(memory, current);
                             break;
                     }
-                    this.setDisplay(memory);
+                    this.setDisplay(current)
+                    memory = null;
+                    operator = null;
                     if (val !== '=') {
+                        memory = current;
                         operator = val;
+                        current = '0';
                     }
-                    calcMemory = current;
-                    current = '0';
                 }
             }
-            console.log(current, memory, operator, calcMemory);
+            console.log(current, memory, operator, lastInput, lastOperator);
         }
     });
 }
