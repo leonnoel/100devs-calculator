@@ -1,0 +1,43 @@
+body{
+    display: grey;
+}
+
+.shell{
+    background-color: black;
+    padding: 5px 0 5px 0;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.button{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 2px 2px;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+}
+
+.display{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid grey;
+    margin: 5px 10% ;
+    background-color: white;
+}
+
+.clr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear{
+    width: 90px;
+    border-radius: 20px;
+}
