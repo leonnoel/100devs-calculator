@@ -29,12 +29,25 @@ body {
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-
+body {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
 }
 
-footer {
+h1, h2 {
+     margin: 10px;
+}
 
+a {
+     text-decoration: none;
+     color: black;
+}
+
+a:hover {
+     text-decoration: underline;
+     color: #00acee;
 }
 
 /******************************************
