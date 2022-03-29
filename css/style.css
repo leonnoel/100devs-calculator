@@ -82,6 +82,8 @@ a:hover {
      right: 0;
      bottom: 0;
      font-size: 32px;
+
+     padding: 0 5px 0 5px;
 }
 
 #button-container {
@@ -117,5 +119,8 @@ button:hover {
      color: gray;
 }
 button:active {
+     color: #00acee;
+}
+button.clicked {
      color: #00acee;
 }
