@@ -20,11 +20,13 @@ BTN_INPUTS.forEach(b => b.addEventListener('click', e => {
 function Calculator() {
     const defaultCurrent = '0',
         defaultMemory = null,
-        defaultOperator = null;
+        defaultOperator = null,
+        defaultLastInput = null,
+        defaultLastOperator = null;
     let current = defaultCurrent,
         memory = defaultMemory,
-        lastInput = null,
-        lastOperator = null
+        lastInput = defaultLastInput,
+        lastOperator = defaultLastOperator,
         operator = defaultOperator;
     
     this.add = (a, b) => (Number(a) + Number(b)).toString();
@@ -38,6 +40,8 @@ function Calculator() {
         current = defaultCurrent;
         memory = defaultMemory;
         operator = defaultOperator;
+        lastInput = defaultLastInput;
+        lastOperator = defaultLastOperator;
     }
 
     Object.defineProperty(this, 'btnInput', {
