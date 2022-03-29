@@ -3,13 +3,19 @@ class Calculator {
     // ----------------------------
     constructor() {
         this.display = document.querySelector('.display')
+        this.equalButton = document.querySelector('.equal')
         this.errorMessage = 'wat'
+        this.disableEvaluation = false
         this.result = 0
     }
     // ----------------------------
     setupButtonEvents() {
         document.querySelectorAll('.button').forEach(button => {
-            button.addEventListener('click', () => this.displayLengthCheck())
+            button.addEventListener('click', () => {
+                this.displayLengthCheck()
+                // Delay invalid input check to allow for innerHTML to update.
+                setTimeout(this.invalidInputCheck.bind(this), 20)
+            })
         })
         document.querySelectorAll('.number').forEach(number => {
             number.addEventListener('click', () => this.pressButton(number.innerHTML))
@@ -20,8 +26,11 @@ class Calculator {
         document.querySelector('.subtract').addEventListener('click', () => this.subtract())
         document.querySelector('.multiply').addEventListener('click', () => this.multiply())
         document.querySelector('.divide').addEventListener('click', () => this.divide())
-        document.querySelector('.equal').addEventListener('click', () => this.evaluate())
         document.querySelector('.decimal').addEventListener('click', () => this.pressButton('.'))
+        this.equalButton.addEventListener('click', () => {
+            if (!this.disableEvaluation)
+                this.evaluate()
+        })
     }
     // ----------------------------
     displayLengthCheck() {
@@ -37,6 +46,7 @@ class Calculator {
     clearErrorStyles() {
         this.display.classList.remove('error')
         this.display.classList.remove('too-long')
+        this.equalButton.classList.remove('error')
     }
     clearErrorText() {
         if (this.display.innerHTML.includes(this.errorMessage))
@@ -75,20 +85,32 @@ class Calculator {
         if (this.result.includes('.') && this.result.endsWith('0'))
             this.result = this.result.slice(0, -1)
     }
-    evaluate() {
-        this.clearErrorText()
+    invalidInputCheck() {
         try {
-            flashDisplay(this.display, 'flash')
-            // Eval is a bad idea, but it's fine for this project!
-            this.result = eval(this.display.innerHTML).toFixed(2)
-            this.removeTrailingZeros()
-            this.display.innerHTML = this.result
+            eval(this.display.innerHTML)
+            this.disableEvaluation = false
         } catch (SyntaxError) {
-            // Since the display line is evaluated with eval(),
-            // we should give feedback if the input was completely invalid. Eg: "2+4++".
-            flashDisplay(this.display, 'cancel')
             this.display.classList.add('error')
-            this.display.innerHTML = this.errorMessage
+            this.equalButton.classList.add('error')
+            this.disableEvaluation = true
+        }
+    }
+    evaluate() {
+        if (!this.disableEvaluation) {
+            this.clearErrorText()
+            try {
+                flashDisplay(this.display, 'flash')
+                // Eval is a bad idea, but it's fine for this project!
+                this.result = eval(this.display.innerHTML).toFixed(2)
+                this.removeTrailingZeros()
+                this.display.innerHTML = this.result
+            } catch (SyntaxError) {
+                // Since the display line is evaluated with eval(),
+                // we should give feedback if the input was completely invalid. Eg: "2+4++".
+                flashDisplay(this.display, 'cancel')
+                this.display.classList.add('error')
+                this.display.innerHTML = this.errorMessage
+            }
         }
     }
 }

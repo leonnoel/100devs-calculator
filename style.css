@@ -26,14 +26,23 @@ body {
     border: none;
     transition: all 0.2s ease-in-out;
 }
+.button.equal.error {
+    background: #2c2c2c;
+    color: #3d3d3d;
+    user-select: none;
+    cursor: default;
+}
+    .button.equal.error:hover {
+        transform: none;
+    }
 .button.backspace {
     font-size: 1.2rem
 }
-.button:hover {
-    background: #fff;
-    color: #2c2c2c;
-    transform: translateY(-5px);
-}
+    .button:hover {
+        background: #fff;
+        color: #2c2c2c;
+        transform: translateY(-5px);
+    }
 
 .button-grid {
     display: flex;
