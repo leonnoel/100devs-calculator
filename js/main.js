@@ -98,17 +98,18 @@ function makeCalc(equation) {
 
     this.hasDecimal = function() {
         eq = this.splitEquation()
-        for (i=0; i < eq.length; i++) {
-            let splits = eq[i].split('.').length
-            if(splits > 1) return false
+        last = eq.pop()
+        if (last.split('.').length > 1) {
+            return true
+        } else {
+            return false
         }
-        return true
     }
 
     this.isValidInput = function(input) {
         const validOperator = this.isValidOperator(input);
         if (this.endsWithOperator() && validOperator) return false    // check if 2 operators in a row
-        if (! this.hasDecimal() && input ==='.') return false     // Check if term has a decimal & is adding a new one. No more than 1 per term.
+        if (this.hasDecimal() && input ==='.') return false     // Check if term has a decimal & is adding a new one. No more than 1 per term.
         return true
     }
 }
