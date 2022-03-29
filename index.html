@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Blank Template</title>
+
+		<!-- needed to make calculator work -->
+		<script src=https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.3.0/math.min.js></script>
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<main>
+			<section class="main-screen" id="screen"></section>
+			<section class="btn-container">
+				<div class="white-button" id="seven">7</div>
+				<div class="white-button" id="eight">8</div>
+				<div class="white-button" id="nine">9</div>
+				<div class="white-button" id="divide">/</div>
+				<div class="white-button" id="four">4</div>
+				<div class="white-button" id="five">5</div>
+				<div class="white-button" id="six">6</div>
+				<div class="white-button" id="times">x</div>
+				<div class="white-button" id="one">1</div>
+				<div class="white-button" id="two">2</div>
+				<div class="white-button" id="three">3</div>
+				<div class="white-button" id="plus">+</div>
+				<div class="white-button" id="zero">0</div>
+				<div class="white-button" id="decimal">.</div>
+				<div class="white-button" id="equals">=</div>
+				<div class="white-button" id="minus">-</div>
+			</section>
+			<section class="reset" id="reset">reset</section>
+
+		</main>
+		<script type="text/javascript" src="js/main.js"></script>
+		
+	<!-- Code injected by live-server -->
+<script type="text/javascript">
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script></body>
+</html>

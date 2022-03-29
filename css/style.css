@@ -1,0 +1,94 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     font-size: 5em;
+     font-family: sans-serif;
+     font-weight: bold;
+ }
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+main {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: flex-end;
+     align-items: flex-start;
+     height: 800px;
+     max-width: 600px;
+     min-width: 600px;
+     background-color: black;
+     margin: 100px auto;
+     border-radius: 45px;
+ }
+ .main-screen {
+     height: 125px;
+     text-align: right;
+     padding-right: 10px;
+     padding-top: 7px;
+     background: white;
+     flex: 1 1 100%;
+     margin: 120px 50px 0px;
+     border-radius: 3px;
+ }
+ .btn-container {
+     display: flex;
+     flex-basis: 100%;
+     flex-wrap: wrap;
+     background: black;
+     margin: 0px 50px;
+ }
+ .white-button {
+     height: 100px;
+     color: black;
+     text-align: center;
+     background: white;
+     flex: 1 1 20%;
+     border-radius: 120px;
+     padding: 5px;
+     margin: 10px;
+ }
+ .reset {
+     color: white;
+     font-size: 0.5em;
+     border-width: 2px;
+     border-style: solid;
+     border-color: white;
+     border-image: initial;
+     padding: 0px 15px;
+     margin: 0px 60px 10px 0px;
+ }
