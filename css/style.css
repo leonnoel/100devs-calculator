@@ -54,7 +54,7 @@ section{
      margin: 50px auto;
      margin-bottom: 30px;
      width: 400px;
-     height: 500px;
+     height: 575px;
      border-radius: 25px;
      padding-top: 25px;
 }
@@ -91,7 +91,12 @@ btn {
      font-size: 36px;
      font-weight: bold;
      cursor: pointer;
-}     
+}
+
+.AC {
+     width: 300px;
+     border-radius: 30px;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

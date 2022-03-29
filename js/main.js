@@ -1,7 +1,7 @@
 //create two variables, a & b, that store the numerical values that are input into the calculator & third variable total.
 
-let a = 0
-let b = 0
+let a = ''
+let b = ''
 let total
 
 //create a variable that stores whether numbers should be input into storage a or b
@@ -17,7 +17,6 @@ function findNumber (click) {
     let num = click.target.innerText;
     storeNumber(num, ph);
 }
-
 function storeNumber (number, pM) {
    switch (pM) {
         case 1: 
@@ -30,14 +29,12 @@ function storeNumber (number, pM) {
             break;
    }
 }
-
 function displayNumber (x) {
     document.querySelector('#answerBox').innerText = x;
 }
 function displayOp (x) {
     document.querySelector('#opHolder').innerText = x;
 }
-
 //operator functions
 const ops = document.querySelectorAll('.op')
 Array.from(ops).forEach(op => op.addEventListener('click', findOperation))
@@ -47,7 +44,6 @@ function findOperation(click) {
     ph = 2;
     displayOp(op);
 }
-
 document.querySelector('.equals').addEventListener('click', result)
 function result() {
     let total;
@@ -70,6 +66,16 @@ function result() {
             break;
     }
     a = total;
-    b = 0;
+    b = '';
     ph = 1;
+}
+document.querySelector('.AC').addEventListener('click', allClear)
+function allClear() {
+    a = '';
+    b = '';
+    total = 0;
+    op = '';
+    ph = 1;
+    displayNumber(a);
+    displayOp(op);
 }
