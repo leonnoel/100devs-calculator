@@ -56,7 +56,15 @@ a{
   font-weight: bold;
   line-height: 50%;
 }
-  
+
+a:hover{
+  cursor: pointer;
+  background: darkorange;
+}
+
+a:active{
+  background: red;
+}
   
   /******************************************
   /* ADDITIONAL STYLES
