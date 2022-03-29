@@ -8,16 +8,43 @@
 		<title>#100Devs Calculator</title>
 
 		<!-- external CSS link -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-        <h1>#100Devs Calculator</h1>
-        <h2>by: Ji Ho Yoo</h2>
-        <a href="https://twitter.com/jhruvsphysics">
-            <h2>twitter: @jhruvsphysics</h2>
-        </a>
-        <img id="calculator" src="calculator.jpg">
+        <div class="intro">
+            <h1>#100Devs Calculator</h1>
+            <h2>by: Ji Ho Yoo</h2>
+            <a href="https://twitter.com/jhruvsphysics" target="_blank">
+                <h2>twitter: @jhruvsphysics</h2>
+            </a>
+        </div>
+        <div id="calculator" >
+            <div id="display">
+                Display
+            </div>
+            <div id="button-container">
+                <button id="7">7</button>
+                <button id="8">8</button>
+                <button id="9">9</button>
+                <button id="/">/</button>
+                <button id="4">4</button>
+                <button id="5">5</button>
+                <button id="6">6</button>
+                <button id="*">&#xd7;</button>
+                <button id="1">1</button>
+                <button id="2">2</button>
+                <button id="3">3</button>
+                <button id="+">+</button>
+                <button id="0">0</button>
+                <button id=".">.</button>
+                <button id="=">=</button>
+                <button id="-">-</button>
+            </div>
+        </div>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

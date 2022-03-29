@@ -22,18 +22,19 @@
 /*******************************************/
 
 body {
-
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
 }
 
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-body {
-     display: flex;
-     flex-direction: column;
-     justify-content: center;
-     align-items: center;
+
+.intro {
+     font-family: 'Palette Mosaic', sans-serif;
 }
 
 h1, h2 {
@@ -53,3 +54,56 @@ a:hover {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+#calculator {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+
+     height: 500px;
+     width: 400px;
+
+     margin: 50px;
+     padding-top: 50px;
+
+     background-color: black;
+     
+     border-radius: 30px;
+}
+#display {
+     height: 75px;
+     width: 325px;
+
+     background-color: white;
+}
+
+#button-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+
+     height: 300px;
+     width: 300px;
+
+     margin-top: 20px;
+}
+
+button {
+
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+
+     background-color: white;
+     border: 0;
+     margin: 3px 5px 3px 5px;
+
+     font-weight: bold;
+     font-size: 46px;
+     font-family: sans-serif;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
