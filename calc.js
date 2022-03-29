@@ -96,21 +96,19 @@ class Calculator {
         }
     }
     evaluate() {
-        if (!this.disableEvaluation) {
-            this.clearErrorText()
-            try {
-                flashDisplay(this.display, 'flash')
-                // Eval is a bad idea, but it's fine for this project!
-                this.result = eval(this.display.innerHTML).toFixed(2)
-                this.removeTrailingZeros()
-                this.display.innerHTML = this.result
-            } catch (SyntaxError) {
-                // Since the display line is evaluated with eval(),
-                // we should give feedback if the input was completely invalid. Eg: "2+4++".
-                flashDisplay(this.display, 'cancel')
-                this.display.classList.add('error')
-                this.display.innerHTML = this.errorMessage
-            }
+        this.clearErrorText()
+        try {
+            flashDisplay(this.display, 'flash')
+            // Eval is a bad idea, but it's fine for this project!
+            this.result = eval(this.display.innerHTML).toFixed(2)
+            this.removeTrailingZeros()
+            this.display.innerHTML = this.result
+        } catch (SyntaxError) {
+            // Since the display line is evaluated with eval(),
+            // we should give feedback if the input was completely invalid. Eg: "2+4++".
+            flashDisplay(this.display, 'cancel')
+            this.display.classList.add('error')
+            this.display.innerHTML = this.errorMessage
         }
     }
 }
