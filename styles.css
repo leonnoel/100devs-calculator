@@ -1,0 +1,81 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+body {
+    padding: none;
+    margin: none; 
+    background:white;
+}
+
+.tamagotchi {
+    width: 800px;
+    height: 1000px;
+    margin: 0 auto;
+    padding: 300px 175px 50px 175px;
+    background-color:black;
+    background-image: url(tamagotchi.jpg);
+    background-position: bottom;
+    background-size: 140%;
+    border-radius: 70% 70% 60% 60%;
+
+}
+
+.calculator-grid {
+    margin-top:25px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 103px);
+    grid-template-rows: minmax(100px, auto) repeat(5, 60px)
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid purple;
+    outline: none;
+    background: linear-gradient(to top, #9DC4B9, #D2B7AE);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(250, 250, 250, .9);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color:#CCC36A;
+    background: linear-gradient(to top, #CCC370,#F2E961);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: white;
+    border-radius: 12px 12px 0 0;
+}
+
+.output .previous-operand {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: black;
+    font-size: 2.5rem;
+}
+
+.dot {
+    border-radius: 0 0 0 12px;
+}
+
+.equals {
+    border-radius: 0 0 12px 0;
+}
