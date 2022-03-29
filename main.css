@@ -60,8 +60,11 @@ body {
 .inputs {
     background: white;
     width: 80%;
-    height: 5em;
+    height: 2em;
     margin: 0 auto;
+    font-size: 3em;
+    text-align: right;
+    line-height: 2em;
 }
 /* buttons */
 .buttons {
@@ -81,4 +84,16 @@ button {
     border-radius: 100%;
     font-weight: bold;
     font-size: 2em;
+}
+.seven, .eight, .nine, .divide {
+    order: -1;
+}
+.four, .five, .six, .multiply {
+    order: 0;
+}
+.one, .two, .three, .plus {
+    order: 1;
+}
+.zero, .decimal, .equal, .minus {
+    order: 2;
 }
