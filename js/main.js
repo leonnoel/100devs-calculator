@@ -42,6 +42,7 @@ function Calculator() {
         operator = defaultOperator;
         lastInput = defaultLastInput;
         lastOperator = defaultLastOperator;
+        this.setDisplay(current);
     }
 
     Object.defineProperty(this, 'btnInput', {
