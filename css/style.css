@@ -51,11 +51,12 @@ footer {
   background: white;
   width: 75%;
   height: 55px;
-  display: flex;
   font-size: 45px;
-  /* color: red; */
+  display: block;
+  text-align: end;
+  /* display: flex;
   justify-content: flex-end;
-  align-items: flex-end;
+  align-items: flex-end; */
   margin-bottom: 0;
   padding-right: 11px;
 }
