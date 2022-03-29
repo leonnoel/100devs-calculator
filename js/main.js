@@ -1,21 +1,23 @@
-// General functionality:
-    // Calculator values and operations are stored in the calc object.
-    // There is an event listener for buttons. The input from each button is the value of the inner HTML text.
-    // calc.addToEquation() is the main function that wraps around most other methods in the object.
-        // addToEquation checks in the input and, if valid, either adds the input to the equation or evaluates the equation.
-        // Evaluates only 1 operation at a time (ie., [term1] [operator] [term2]). If there is a complete operation and  another operator is clicked, the operation will evaluate before the new operator is added (I was too lazy to deal with order of operations).
+/* 
+General functionality:
+    - Calculator values and operations are stored in the calc object.
+    - There is an event listener for buttons. The input from each button is the value in the HTML tag.
+    - calc.addToEquation() is the main function that wraps around most other methods in the object.
+        - addToEquation checks in the input and, if valid, either adds the input to the equation or evaluates the equation.
+        - Evaluates only 1 operation at a time (ie., [term1] [operator] [term2]). If there is a complete operation and
+            another operator is clicked, the operation will evaluate before the new operator is added (I was too lazy 
+            to deal with order of operations).
+    - Press '=' twice to clear equation.
 
-// Improvements
-    // Features
-        // Handle addition of new operators such as **, ()
-        // Pressing '=' twice clears the equation
+- Improvements
+    - Features
+        - Handle addition of new operators such as **, ()
 
-    // Known issues
-        // Supports ~40 characters afterwhich they go offscreen.
-        // Once values become too large for `number` they are converted to Scientific notation and calculations break
-        // Leading negative sign breaks calculations
+    - Known issues
+        - Supports ~40 characters afterwhich they go offscreen.
+        - Once values become too large for `number` they are converted to Scientific notation and calculations break
 
-
+*/
 
 document.addEventListener('click', buttonClick)
 
@@ -25,8 +27,7 @@ function makeCalc(equation) {
     this.equalsCounter = 0;
     this.operations = {
         '+' : (a, b) => a + b,
-        '-' : (a, b) => a - b,
-        '*' : (a, b) => a * b,
+        '−' : (a, b) => a - b,  // Note: purposely uses minus sign '−' (U+2212) not hyphen '-' to avoid conflict with hyphen on negative numbers
         'x' : (a, b) => a * b,
         "/" : (a, b) => a / b,
     }
@@ -43,7 +44,7 @@ function makeCalc(equation) {
         if ((this.isValidOperator(input) || input === '=') && this.isCompleteEquation()) { 
             this.equation = this.calculate()
         }
-        
+
         if (input === '=') return this.equation
 
         this.equation = this.equation + input
@@ -51,7 +52,7 @@ function makeCalc(equation) {
     }
 
     this.splitEquation = function() {
-        eq = this.equation.split(/([x+\-*/])/)
+        eq = this.equation.split(/([x+−*/])/)
         eq = eq.map(item => item.trim())
         return eq
     }
@@ -62,21 +63,13 @@ function makeCalc(equation) {
     }
 
     this.isCompleteEquation = function() {
-        eq = this.splitEquation();
-        // A complete equation is: [term1] [operator] [term2]
-        // Cases handled: 
-            // Equation has 1 operator.
-            // The first term is either empty or a valid number (treated as 0 if omitted)
-            // The second term is non-empty and a valid number
-            // The operator is valid.
-        if (eq.length != 3 
-            || isNaN(+eq[0]) 
-            || eq[2] == '' 
-            || isNaN(+eq[2]) 
-            || !'+-*/x'.includes(eq[1])) {
-            return false // not a valid equation
+        eq = this.splitEquation();           
+        if (eq.length != 3         // A complete equation is: [term1] [operator] [term2]
+            || isNaN(+eq[0])       // The first term is either a valid number or empty (treated as 0 if omitted)
+            || eq[2] == '' || isNaN(+eq[2])) {    // The second term is non-empty and a valid number
+            return false
         } else {
-         return true 
+            return true 
         }
     }
 
@@ -117,7 +110,6 @@ function makeCalc(equation) {
         if (! this.hasDecimal() && input ==='.') return false     // Check if term has a decimal & is adding a new one. No more than 1 per term.
         return true
     }
-
 }
 
 
@@ -126,7 +118,7 @@ const calc = new makeCalc('')
 
 function buttonClick(e) {
     if (e.target.tagName === 'BUTTON') {
-        value = e.target.innerText
+        value = e.target.value
         calc.equation = calc.addToEquation(value);
         updateDisplay()
     }
