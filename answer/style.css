@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.calculator {
+  height: 800px;
+  width: 600px;
+  background: black;
+  border-radius: 10%;
+  text-align: center;
+}
+
+.screen {
+  height: 30%;
+  width: 90%;
+  background: white;
+  color: black;
+  border: 40px solid black;
+  border-top: 100px solid black;
+  justify-content: center;
+  margin: auto;
+  border-radius: 10%;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 30px;
+}
+
+.buttons > * {
+  display: flex;
+  justify-content: center;
+  height: 8rem;
+}
+
+button {
+  width: 18%;
+  height: 80%;
+  border-radius: 100%;
+  border: 10px solid black;
+  font-size: 2rem;
+  font-weight: 800;
+}
