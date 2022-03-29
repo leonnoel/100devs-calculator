@@ -76,11 +76,9 @@ function Calculator() {
                     this.setDisplay(memory);
                     if (val !== '=') {
                         operator = val;
-                        current = '0';
-                    } else {
-                        calcMemory = memory;
-                        this.reset();
                     }
+                    calcMemory = current;
+                    current = '0';
                 }
             }
             console.log(current, memory, operator, calcMemory);
