@@ -4,6 +4,7 @@ class Calculator {
     constructor() {
         this.display = document.querySelector('.display')
         this.errorMessage = 'wat'
+        this.result = 0
     }
     // ----------------------------
     setupButtonEvents() {
@@ -66,12 +67,22 @@ class Calculator {
     divide() {
         this.display.innerHTML += '/'
     }
+    removeTrailingZeros() {
+        // Ensures we don't end up with "5.00" instead of "5", for example.
+        if (this.result.endsWith('.00'))
+                this.result = this.result.slice(0, -3)
+        // Ensures we don't end up with "5.50" instead of "5.5", for example.
+        if (this.result.includes('.') && this.result.endsWith('0'))
+            this.result = this.result.slice(0, -1)
+    }
     evaluate() {
         this.clearErrorText()
         try {
             flashDisplay(this.display, 'flash')
             // Eval is a bad idea, but it's fine for this project!
-            this.display.innerHTML = eval(this.display.innerHTML).toFixed(2)
+            this.result = eval(this.display.innerHTML).toFixed(2)
+            this.removeTrailingZeros()
+            this.display.innerHTML = this.result
         } catch (SyntaxError) {
             // Since the display line is evaluated with eval(),
             // we should give feedback if the input was completely invalid. Eg: "2+4++".
