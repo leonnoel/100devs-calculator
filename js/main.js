@@ -16,6 +16,7 @@ General functionality:
     - Known issues
         - Supports ~40 characters afterwhich they go offscreen.
         - Once values become too large for `number` they are converted to Scientific notation and calculations break
+        - Does not hide any decimal places, leading to excessive space occupied by decimal values.
 
 */
 
