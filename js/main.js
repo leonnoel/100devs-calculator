@@ -64,6 +64,14 @@ const calculator = {
         }
         this.updateReadOut(total)
     },
+    divideValues: function(readOutString) {
+        let stringArray = readOutString.split('/')
+        let total = stringArray[0]
+        for (i = 1; i < stringArray.length; i++) {
+            total /= Number(stringArray[i])
+        }
+        this.updateReadOut(total)
+    },
     checkOperationType: function(readOutString) {
         if (readOutString.includes('+')) {
             this.addValues(readOutString)
@@ -71,6 +79,8 @@ const calculator = {
             this.subtractValues(readOutString)
         }else if (readOutString.includes('x')) {
             this.multiplyValues(readOutString)
+        }else if (readOutString.includes('/')) {
+            this.divideValues(readOutString)
         }
     },
     updateReadOut(output) {
@@ -79,6 +89,8 @@ const calculator = {
     }
     
 }
+// TODO need to limit amount of characters to be output
+// TODO need to get multiple operations working in one string and order of ops correct
 
 // user presses number
     // readout updates
