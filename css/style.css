@@ -36,6 +36,13 @@
      width: 335px;
      margin-top: 132px;
      margin-left: 78px;
+     text-align: right;
+     padding-top: 20px;
+     padding-right: 5px;
+}
+
+.window span {
+     font-size: 60px;
 }
 
 
