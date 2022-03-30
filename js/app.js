@@ -95,13 +95,11 @@ let calc = new Calc(firstValue, operand, secondValue)
 numberKeys.forEach((key) =>
     key.addEventListener('click', () => calc.appEndValue(key.textContent))
 );
-
 operatorKeys.forEach(opKey => {
     opKey.addEventListener('click', () => {
         calc.operator(opKey.textContent)
     })
 });
-
 equalKey.addEventListener('click', () => calc.evaluate())
 actionAc.addEventListener('click', () => calc.aC())
 actionDel.addEventListener('click', () => calc.del())
