@@ -1,0 +1,51 @@
+
+*{
+    box-sizing: border-box;
+  }
+  
+  ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+  /*   justify-content: center; */
+  }
+  li{
+    background:white;
+    text-align: center;
+    border:1px gray solid;
+    flex-basis:25%;
+    border-radius:100px;
+    cursor: pointer;
+  }
+  li:hover{
+    background-color:gray;
+  }
+  li:active{
+    background-color:green;
+  }
+  
+  
+  .wow {
+    width: 100px;
+  }
+  .row{
+    height: 400px;
+    width: 100%;
+    text-align:center;
+  
+    border: 1px solid red;
+  }
+  .calculator{
+    margin: 0 auto;
+    width: 70%;
+    text-align:center;
+    border: 1px black solid;
+    background:black;
+  }
+  
+  h2{
+    border: green 1px solid;
+    background:white;
+  }
