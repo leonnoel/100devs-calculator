@@ -176,10 +176,27 @@ function decimal () {
 }
 
 function equals() {
-  switch(op) {
-    case '/': document.querySelector('span').innerText = first / second
-    case '*': document.querySelector('span').innerText = first * second
-    case '+': document.querySelector('span').innerText = first + second
-    case '-': document.querySelector('span').innerText = first - second
-  }
+  if (op === '/') {
+    if (second != 0) {
+      document.querySelector('span').innerText = first / second
+    } else {
+      document.querySelector('span').innerText = 'Error: Div by 0'
+    }
+    
+  } else if (op === '*') {
+    document.querySelector('span').innerText = first * second
+  } else if (op === '+') {
+    document.querySelector('span').innerText = first + second
+  } else if (op === '-') {
+    document.querySelector('span').innerText = first - second
+  } 
+
+
+
+  // switch(op) {
+  //   case '/': document.querySelector('span').innerText = first / second
+  //   case '*': document.querySelector('span').innerText = first * second
+  //   case '+': document.querySelector('span').innerText = first + second
+  //   case '-': document.querySelector('span').innerText = first - second
+  // }
 }
