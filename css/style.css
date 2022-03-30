@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+}
+
+#calculator {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    height: 50rem;
+    background-color: black;
+    margin: 5rem auto;
+    border-radius: 10%;
+}
+
+#display {
+    background-color: white;
+    height: 7rem;
+    width: 30rem;
+    margin: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+}
+
+#numberPad {
+    width: 30rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#numberPad button {
+    width: 6rem;
+    height: 6rem;
+    margin: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span,
+button {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: arial;
+}
