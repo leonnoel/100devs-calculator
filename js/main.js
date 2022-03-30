@@ -56,11 +56,21 @@ const calculator = {
         }
         this.updateReadOut(total)
     },
+    multiplyValues: function(readOutString) {
+        let stringArray = readOutString.split('x')
+        let total = stringArray[0]
+        for (i = 1; i < stringArray.length; i++) {
+            total *= Number(stringArray[i])
+        }
+        this.updateReadOut(total)
+    },
     checkOperationType: function(readOutString) {
         if (readOutString.includes('+')) {
             this.addValues(readOutString)
         }else if (readOutString.includes('-')) {
             this.subtractValues(readOutString)
+        }else if (readOutString.includes('x')) {
+            this.multiplyValues(readOutString)
         }
     },
     updateReadOut(output) {
