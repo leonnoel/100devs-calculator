@@ -10,19 +10,30 @@
     display: flex;
     flex-wrap:wrap;
   /*   justify-content: center; */
+  
   }
   li{
+      flex-basis:25%;
+     
+
+  }
+  li div{
     background:white;
-    text-align: center;
+    margin: 0 auto;
     border:1px gray solid;
-    flex-basis:25%;
+    width: 50%;
     border-radius:100px;
     cursor: pointer;
+    font-size: 5rem;
+
+    text-align: center;
+    padding: 0;
   }
-  li:hover{
+   
+  li div:hover{
     background-color:gray;
   }
-  li:active{
+  li div:active{
     background-color:green;
   }
   
@@ -38,8 +49,10 @@
     border: 1px solid red;
   }
   .calculator{
+    display: inline-block;
     margin: 0 auto;
-    width: 70%;
+    min-width: 600px;
+    min-height: 600px;
     text-align:center;
     border: 1px black solid;
     background:black;
