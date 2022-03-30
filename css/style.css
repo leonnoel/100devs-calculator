@@ -8,7 +8,7 @@
     align-items: center;
     justify-content: center;
     width: 40rem;
-    height: 50rem;
+    height: 55rem;
     background-color: black;
     margin: 5rem auto;
     border-radius: 10%;
@@ -17,12 +17,17 @@
 #display {
     background-color: white;
     height: 7rem;
-    width: 30rem;
+    width: 34rem;
     margin: 2rem;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
     padding: 1rem;
+    overflow-x: scroll;
+    overflow-y: scroll;
+}
+
+#display span {
+    margin: auto 0;
+    margin-left: auto;
 }
 
 #numberPad {
@@ -35,7 +40,7 @@
 #numberPad button {
     width: 6rem;
     height: 6rem;
-    margin: 0.5rem;
+    margin: 0.7rem;
     border-radius: 50%;
     border: none;
     display: flex;
@@ -43,9 +48,12 @@
     align-items: center;
 }
 
+button:last-of-type {
+    background-color: rgb(255, 217, 0);
+}
 span,
 button {
-    font-size: 4rem;
+    font-size: 3.5rem;
     font-weight: bold;
     font-family: arial;
 }
