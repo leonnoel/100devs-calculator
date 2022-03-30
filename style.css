@@ -38,8 +38,21 @@ body {
 .calculator-window {
 	height: 75px;
 	width: 300px;
+	padding: 2.4rem 1.2rem;
 	background-color: #fff;
 	margin-bottom: 3.6rem;
+	border: 0;
+	font-size: 3.6rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	border-radius: 10px;
+	text-align: right;
+}
+
+.calculator-window::placeholder {
+	color: #000;
+	opacity: 1;
 }
 
 .calculator-buttons {
