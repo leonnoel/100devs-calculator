@@ -2,8 +2,8 @@ function Calculator () {
     let baseElement = document.querySelector('#calcBase');
     let displayElement = document.querySelector('.calc-display');
 
-    let operand, prevNum, curNum; 
-    let tmpNum = '';
+    let operand, prevNum;
+    let curNum = '';
 
     let methods = {
         "*": (a, b) => +a * +b,
@@ -17,15 +17,15 @@ function Calculator () {
         if (key === "+" || key === "-" || key === "*" || key === "/" ) {
             operand = key;
             displayElement.innerHTML = key;
-            prevNum = tmpNum;
-            tmpNum = '';
+            prevNum = curNum;
+            curNum = '';
         } else if (key === "=") {           
-            displayElement.innerHTML = methods[operand](prevNum, tmpNum);
+            displayElement.innerHTML = methods[operand](prevNum, curNum);
             prevNum = '';
-            tmpNum = '';
+            curNum = '';
         } else {
-            tmpNum += key;
-            displayElement.innerHTML = tmpNum;
+            curNum += key;
+            displayElement.innerHTML = curNum;
         }
     }
 
