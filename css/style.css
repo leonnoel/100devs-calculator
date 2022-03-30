@@ -121,6 +121,6 @@ button:hover {
 button:active {
      color: #00acee;
 }
-button.clicked {
-     color: #00acee;
+.operator.clicked {
+     background-color: #00acee;
 }
