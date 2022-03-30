@@ -12,7 +12,7 @@ function buttonClicked (event) {
     let readOut = document.querySelector('.readOut')
     let readOutValue = readOut.innerHTML
 
-    // check if operator is last button clicked
+    // Making sure operators don't repeat
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     }
@@ -40,17 +40,27 @@ const calculator = {
     clearReadOut: false,
     previousButton: null,
     // object has methods of add, subtract, multiply, divide, equals, check operation type, update readout
-    addValues: function(readOutString, currentValue = 0) {
+    addValues: function(readOutString) {
         let stringArray = readOutString.split('+')
-        let total = currentValue;
+        let total = 0
         for (i = 0; i < stringArray.length; i++) {
             total += Number(stringArray[i])
+        }
+        this.updateReadOut(total)
+    },
+    subtractValues: function(readOutString) {
+        let stringArray = readOutString.split('-')
+        let total = stringArray[0]
+        for (i = 1; i < stringArray.length; i++) {
+            total -= Number(stringArray[i])
         }
         this.updateReadOut(total)
     },
     checkOperationType: function(readOutString) {
         if (readOutString.includes('+')) {
             this.addValues(readOutString)
+        }else if (readOutString.includes('-')) {
+            this.subtractValues(readOutString)
         }
     },
     updateReadOut(output) {
