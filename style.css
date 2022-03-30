@@ -43,13 +43,14 @@ table {
 }
 /* ====== PAGE STYLING ===== */
 body {
-    background-color: rgb(44, 8, 44);
+    background-color: #8a628f;
     color: white;
 }
 
 h1 {
     text-align: center;
-    margin-top: 55px;
+    /* margin-top: 55px; */
+    display: block;
 }
 
 h2 {
@@ -61,16 +62,28 @@ h2 {
     right: 1rem;
 }
 
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted white;
+    color: white;
+    transition: 400ms ease;
+}
+
+a:hover {
+    border-bottom: 0;
+    color: #FFD2FF;
+}
+
 /* ====== CALCULATOR FORMATTING ===== */
 section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     width: 100%;
 }
 #calculator-base {
-    height: 500px;
+    height: 530px;
     width: 400px;
     background-color: black;
     border-radius: 20px;
@@ -97,10 +110,10 @@ ul {
     grid-template-rows: repeat(4, 60px);
     /* justify-items: center; */
     gap: 1rem;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
-li {
+.button {
     background-color: white;
     border-radius: 50%;
     color: black;
@@ -108,6 +121,7 @@ li {
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    cursor: pointer;
 }
 
 /* .button {
