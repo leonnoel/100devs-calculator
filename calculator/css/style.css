@@ -58,6 +58,7 @@ section#result {
 section#result h1 {
   margin: 0;
   font-size: 5rem;
+  /* overflow: hidden; */
 }
 
 ul {

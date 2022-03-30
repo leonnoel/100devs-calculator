@@ -25,23 +25,26 @@ function Calculator() {
   this.currentOp = "";
 
   this.collectNum = function (val) {
+    // enhancement :) if the result is in the screen consider it the num1 to accept another operation on the result
+    if (this.currentOp !== "" && this.result !== "") {
+      this.num1 = this.result;
+      this.updateScreen();
+    } else {
+      this.result = "";
+    }
     let num = this.currentOp === "" ? "num1" : "num2";
     if (this[num].length === 10) {
       return;
     } else if (val === ".") {
+      //   check to stop add  more than one dot
       this[num].indexOf(".") === -1 ? (this[num] += val) : (this[num] += "");
     } else {
       this[num] += val;
     }
-    console.log(this.num1 + " " + this.currentOp + " " + this.num2);
     this.updateScreen();
   };
   this.collectOp = function (op) {
     this.currentOp = op;
-    console.log(this.num1);
-    console.log(this.num2);
-    console.log(this.currentOp);
-    console.log(this.result);
   };
 
   this.updateScreen = function () {
@@ -55,45 +58,55 @@ function Calculator() {
     h1.innerText = screen;
   };
 
-  this.sum = function () {
-    this.result = this.num1 + this.num2;
+  this.checkNumLength = function (num) {
+    if (num.length <= 10) {
+      this.result = num;
+    } else {
+      //   use toExponential to shtrim the number to fixed on the screen and show the scientific form of the num :)
+      this.result = String(Number(num).toExponential(6));
+      //   if (num.indexOf(".") !== -1) {
+      //     this.result = Number(num).toFixed(num.length - 10);
+      //   } else {
+      //     console.log(String(Number(num).toExponential(6)));
+      //     this.result = String(Number(num).toExponential(6));
+      //   }
+    }
     this.clear();
+  };
+  this.sum = function () {
+    this.checkNumLength(String(+this.num1 + +this.num2));
   };
   this.sub = function () {
-    this.result = this.num1 - this.num2;
-    this.clear();
+    this.checkNumLength(String(+this.num1 - +this.num2));
   };
   this.multi = function () {
-    this.result = this.num1 * this.num2;
-    this.clear();
+    this.checkNumLength(String(+this.num1 * +this.num2));
   };
   this.divide = function () {
-    this.result = this.num1 / this.num2;
-    this.clear();
+    this.checkNumLength(String(+this.num1 / +this.num2));
   };
 
   this.calculate = function () {
-    // console.log(this.num1);
-    // console.log(this.num2);
-    console.log(this.currentOp);
-    // console.log(this.result);
     switch (this.currentOp) {
       case "+":
         this.sum();
+        this.updateScreen();
         break;
       case "-":
         this.sub();
+        this.updateScreen();
         break;
       case "×":
         this.multi();
+        this.updateScreen();
         break;
       case "÷":
         this.divide();
+        this.updateScreen();
         break;
     }
   };
   this.clear = function () {
-    console.log("reached");
     this.num1 = "";
     this.num2 = "";
     this.currentOp = "";
@@ -112,4 +125,4 @@ document
   .forEach((e) =>
     e.addEventListener("click", (e) => cal.collectOp(e.target.innerText))
   );
-document.querySelector(".eq").addEventListener("click", cal.calculate);
+document.querySelector(".eq").addEventListener("click", (e) => cal.calculate());
