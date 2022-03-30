@@ -4,30 +4,22 @@ class Calculator {
         this.op = ""
         this.buffer = ""
         this.displayBuffer = false
+        this.answer = "none"
     }
     display() {
         if (!this.displayBuffer) {document.getElementById("display").innerText = this.val} 
         else {document.getElementById("display").innerText = this.buffer}
-
-        const style = {
-            backgroundColor: "#00acee"
-        }
-        if (this.op) {
-            console.log(document.getElementById(`${this.op}`).style = {color: "#00acee"})
-            
-        }
     }
     numClicked(num) {
-        if (this.buffer) {
-            // buffer not empty
+        if (this.op) {
             this.displayBuffer = true
-            if (!/\./.test(this.buffer) && this.buffer==0 && num!=".") {this.setThis('buffer', num)} 
+            if (!/\./.test(this.buffer) && this.buffer==='0' && num!=".") {this.setThis('buffer', num)} 
             else if (num!=".") {this.setThis('buffer', num, true)}
             else if (num=="." && !/\./.test(this.buffer)) {this.setThis('buffer', num, true)}
         } else {
-            // buffer empty
             this.displayBuffer = false
-            if (this.val==0 && num!=".") {this.setThis('val', num)} 
+            if (this.val == this.answer) {this.setThis('val', num)}
+            else if (this.val==='0' && num!=".") {this.setThis('val', num)} 
             else if (num != ".") {this.setThis('val', num, true)}
             else if (num == "." && !/\./.test(this.val)) {this.setThis('val', num, true)}
         } 
@@ -43,6 +35,7 @@ class Calculator {
         if (this.op && this.buffer) {
             this.displayBuffer = false
             this.val = (this.calculate(this.val, this.buffer)).toString()
+            this.answer = this.val
             this.buffer = ""
             this.op = ""
         }
