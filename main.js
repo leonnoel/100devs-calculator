@@ -178,18 +178,24 @@ function decimal () {
 function equals() {
   if (op === '/') {
     if (second != 0) {
-      document.querySelector('span').innerText = first / second
+      first = first / second
+      document.querySelector('span').innerText = first
     } else {
       document.querySelector('span').innerText = 'Error: Div by 0'
     }
     
   } else if (op === '*') {
-    document.querySelector('span').innerText = first * second
+    first = first / second
+    document.querySelector('span').innerText = first
   } else if (op === '+') {
-    document.querySelector('span').innerText = first + second
+    first = first + second
+    document.querySelector('span').innerText = first
   } else if (op === '-') {
-    document.querySelector('span').innerText = first - second
+    first = first - second
+    document.querySelector('span').innerText = first
   } 
+  second = '0'
+  op = ''
 
 
 
