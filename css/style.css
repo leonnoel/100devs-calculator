@@ -1,0 +1,126 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.intro {
+     font-family: 'Palette Mosaic', sans-serif;
+}
+
+h1, h2 {
+     margin: 10px;
+}
+
+a {
+     text-decoration: none;
+     color: black;
+}
+
+a:hover {
+     text-decoration: underline;
+     color: #00acee;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+#calculator {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+
+     height: 500px;
+     width: 400px;
+
+     margin: 50px;
+     padding-top: 50px;
+
+     background-color: black;
+     
+     border-radius: 30px;
+}
+#display-container {
+     height: 75px;
+     width: 325px;
+     background-color: white;
+     position: relative;
+}
+#display {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     font-size: 32px;
+
+     padding: 0 5px 0 5px;
+}
+
+#button-container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+
+     height: 300px;
+     width: 300px;
+
+     margin-top: 20px;
+}
+
+button {
+
+     width: 60px;
+     height: 60px;
+     border-radius: 50%;
+
+     background-color: white;
+     border: 0;
+     margin: 3px 5px 3px 5px;
+
+     font-weight: bold;
+     font-size: 46px;
+     font-family: sans-serif;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+button:hover {
+     color: gray;
+}
+button:active {
+     color: #00acee;
+}
+.operator.clicked {
+     background-color: #00acee;
+}
