@@ -1,3 +1,11 @@
 * {
   box-sizing: border-box;
 }
+
+body {
+  background: #000;
+}
+
+.calc-display {
+  text-align: right;
+}
