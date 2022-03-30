@@ -378,10 +378,25 @@ template {
   left: 101px;
 }
 
-button {
+.buttons button {
   width: 25%;
   border-radius: 50%;
   font-size: 32px;
   font-weight: 700;
 }
 
+.reset, .neg {
+  font-size: 24px;
+  position: absolute;
+  top: 528px;
+  left: 100px;
+}
+
+.reset {
+  width: 10%;
+}
+
+.neg {
+  width: 5%;
+  left: 250px;
+}

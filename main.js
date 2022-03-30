@@ -20,6 +20,25 @@ document.querySelector('#add').addEventListener('click', add)
 document.querySelector('#sub').addEventListener('click', sub)
 document.querySelector('#decimal').addEventListener('click', decimal)
 document.querySelector('#equals').addEventListener('click', equals)
+document.querySelector('.reset').addEventListener('click', reset)
+document.querySelector('.neg').addEventListener('click', neg)
+
+function reset() {
+  first = 0
+  second = 0
+  op = ''
+  document.querySelector('span').innerText = first
+}
+
+function neg() {
+  if (op === '') {
+    first = -first
+    document.querySelector('span').innerText = first
+  } else {
+    second = -second
+    document.querySelector('span').innerText = second
+  }
+}
 
 function zero(){
   if (op === '') {
