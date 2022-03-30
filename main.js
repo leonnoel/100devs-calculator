@@ -1,0 +1,1 @@
+document.querySelector('span').innerText = '0'
