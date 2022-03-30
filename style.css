@@ -18,11 +18,9 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 .calculator-frame {
-	width: 400px;
-	height: 550px;
 	background-color: #000;
 	border-radius: 20px;
-	padding: 5rem 0;
+	padding: 5rem 5rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
