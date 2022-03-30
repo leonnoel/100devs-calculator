@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+section {
+    background: grey;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ul {
+    background: grey;
+    list-style: none;
+    margin: 0 auto;
+    padding-left: 0;
+    display: grid;
+    max-width: 327px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 6px;
+    grid-template-areas:
+        'display display display display'
+        'ac ac del div'
+        'seven eight nine mul'
+        'four five six plus'
+        'one two three minus'
+        'z z punto eq'
+    ;
+}
+
+li {
+    border-radius: 5px;
+    display: grid;
+    align-items: center;
+    font-size: 2rem;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: solid lightgrey 3px;
+    background: lightgrey;
+    box-shadow: 0px 3px 1px 0 rgb(0, 0, 0, .6);
+}
+
+li:hover{
+    border: white solid 3px;
+  }
+
+  li:active{
+    box-shadow: 0px 1px 1px 0 rgb(0, 0, 0, .5);
+    border:  rgba(255, 255, 255, 0.2) solid 3px;
+  }
+
+  .display {
+      grid-area: display;
+    background-color: rgb(200, 255, 200);
+    height: 40px;
+    width: auto;
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 5px;
+    padding: 0 5px;
+    box-shadow: none;
+    cursor: auto;
+}
+.display:hover{
+    border: solid lightgrey 3px;
+  }
+  .display:active{
+    border: solid lightgrey 3px;
+  }
+.zero {
+    grid-area: z;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.div {
+    grid-area: div;
+}
+
+.mul {
+    grid-area: mul;
+}
+
+.plus {
+    grid-area: plus;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.dot {
+    grid-area: punto;
+}
+
+.eq {
+    grid-area: eq;
+    color: white;
+    background-color: crimson;
+    border: crimson solid 3px;
+}
+
+.ac {
+    grid-area: ac;
+
+}
+
+.del {
+    grid-area: del;
+}
