@@ -18,32 +18,32 @@ class Calc {
     // this shows the number on #placeToPutResult
     appEndValue(number) {
         if (display.textContent === '0') {
-            display.textContent = number
+            display.textContent = number;
         } else {
-            display.textContent += number
+            display.textContent += number;
         }
 
         if (equalKey.className.includes('pressed')) {
-            display.textContent = number
-            equalKey.classList.remove('pressed')
+            display.textContent = number;
+            equalKey.classList.remove('pressed');
         }
     }
     operator(operand) {
         firstValue = display.textContent;
         currentOperand = operand;
         if (display.textContent !== '0') {
-            display.textContent = '0'
+            display.textContent = '0';
         }
     }
 
     del() {
         display.textContent = display.textContent.toString().slice(0, -1)
         if(display.textContent === ''){
-            display.textContent = 0
+            display.textContent = '0';
         }
     }
     aC() {
-        display.textContent = '0'
+        display.textContent = '0';
         firstValue = '';
         secondValue = '';
         currentOperand = '';
