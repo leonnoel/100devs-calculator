@@ -24,21 +24,19 @@
 .outer {
      background-image: url("calculator.jpg");
      background-repeat: no-repeat;
-     border: 2px solid black;
+     border: 2px solid white;
      height: 615px;
      width: 492px;
      margin: 0 auto;
 }
 
 .window {
-     border: 2px solid red;
      height: 85px;
      width: 335px;
      margin-top: 132px;
      margin-left: 78px;
      text-align: right;
      padding-top: 20px;
-     padding-right: 5px;
 }
 
 .window span {
