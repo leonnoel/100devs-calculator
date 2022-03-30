@@ -39,7 +39,7 @@ const calculator = {
     currentValue: 0,
     clearReadOut: false,
     previousButton: null,
-    // object has methods of add, subtract, multiply, divide, equals, check operation type, update readout
+    // object has methods of add, subtract, multiply, divide, equals, check operation type, update readout, total length check
     addValues: function(readOutString) {
         let stringArray = readOutString.split('+')
         let total = 0
@@ -86,6 +86,15 @@ const calculator = {
     updateReadOut(output) {
         document.querySelector('.readOut').innerHTML = output
         this.clearReadOut = true
+    },
+    totalLengthCheck(num) {
+        if (String(num).length < 15) {
+            return num
+        } else if (String(num).includes('.')) {
+            // need to figure out home many characters in front of dot and behind dot
+            let splitArray = String(num).split('.')
+            // TODO need to figure out how much to round the decimals places
+        }
     }
     
 }
