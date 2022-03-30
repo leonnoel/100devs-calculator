@@ -7,29 +7,26 @@ class Calculator {
         this.answer = "none"
     }
     display() {
-        if (!this.displayBuffer) {document.getElementById("display").innerText = this.val} 
-        else {document.getElementById("display").innerText = this.buffer}
+        if (!this.displayBuffer) {
+            document.getElementById("display").innerText = this.val
+        } else {
+            document.getElementById("display").innerText = this.buffer
+        }
     }
     numClicked(num) {
         if (this.op) {
             this.displayBuffer = true
             if (!/\./.test(this.buffer) && this.buffer==='0' && num!=".") {this.setThis('buffer', num)} 
-            else if (num!=".") {this.setThis('buffer', num, true)}
-            else if (num=="." && !/\./.test(this.buffer)) {this.setThis('buffer', num, true)}
+            else if ( (num=="." && !/\./.test(this.buffer)) || num!=".") {this.setThis('buffer', num, true)}
         } else {
             this.displayBuffer = false
-            if (this.val == this.answer) {this.setThis('val', num)}
-            else if (this.val==='0' && num!=".") {this.setThis('val', num)} 
-            else if (num != ".") {this.setThis('val', num, true)}
-            else if (num == "." && !/\./.test(this.val)) {this.setThis('val', num, true)}
+            if ((this.val==='0' && num!=".") || this.val == this.answer) {this.setThis('val', num)} 
+            else if ( (num == "." && !/\./.test(this.val)) || num != ".") {this.setThis('val', num, true)}
         } 
     }
     opClicked(op) {
-        if (!this.buffer) {this.op = op} 
-        else if (this.op) {
-            this.equal()
-            this.op = op
-        }
+        if (!this.buffer || !this.op) {this.op = op} 
+        else if (this.op) {this.equal(); this.op = op}
     }
     equal() {
         if (this.op && this.buffer) {
@@ -50,7 +47,6 @@ class Calculator {
         if (concat) {this[prop] += val}
         else {this[prop] = val}
     }
-    
 }
 function calculatorOnClick(click) {
     if (/[0-9\.]/.test(click.target.id)) {
