@@ -56,7 +56,7 @@ body {
 .btn {
 	background-color: #fff;
 	color: #000;
-	font-weight: bold;
+	font-weight: 600;
 	font-size: 3.6rem;
 	padding: 2.4rem;
 	height: 60px;
@@ -66,4 +66,24 @@ body {
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
+	transition: 100ms ease;
+}
+
+.btn:hover {
+	transform: scale(1.05);
+}
+
+.btn:active {
+	transform: scale(1);
+}
+
+/* Social media container */
+
+.social-media {
+	position: absolute;
+	bottom: 5%;
+}
+
+.social-media a {
+	color: #000;
 }
