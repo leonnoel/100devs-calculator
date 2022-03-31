@@ -5,18 +5,19 @@ body {
     padding: 0;
 }
 .calc-body {
-    background: #2c2c2c;
+    background: #bdbab1;
     margin: 10rem auto;
     width: 20rem;
     border-radius: 1rem;
     padding: 1rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
 .button {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    background: #3c3c3c;
+    background: #262a29;
     color: #fff;
     padding: 10px;
     font-size: 2rem;
@@ -25,12 +26,17 @@ body {
     border-radius: 50%;
     border: none;
     transition: all 0.2s ease-in-out;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
+}
+.button.operation {
+    background: #992355;
 }
 .button.equal.error {
-    background: #2c2c2c;
-    color: #3d3d3d;
+    background: #bdbab1;
+    color: #aeaba2;
     user-select: none;
     cursor: default;
+    box-shadow: none;
 }
     .button.equal.error:hover {
         transform: none;
@@ -42,6 +48,12 @@ body {
         background: #fff;
         color: #2c2c2c;
         transform: translateY(-5px);
+    }
+    .button.pressed {
+        background: #4acd98;
+        color: #2c2c2c;
+        transform: translateY(5px);
+        box-shadow: 0 0 0 1px #2c2c2c;
     }
 
 .button-grid {
@@ -70,11 +82,12 @@ body {
     font-size: 3.5rem;
     text-align: right;
     padding: 1rem;
-    background: #414141;
-    color: white;
+    background: #849857;
+    color: #3c3c3c;
     border-radius: 1.5rem;
     margin: 1rem auto;
     transition: all 0.2s ease-in-out;
+    box-shadow: inset 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
 .display.flash {
     background: #4acd98;
@@ -87,7 +100,7 @@ body {
     transition: all 0s ease-in-out;
 }
 .display.error {
-    color: #838383;
+    color: #a5ba73;
     transition: all 0.2s ease-in-out;
 }
 .display.instant-transition {

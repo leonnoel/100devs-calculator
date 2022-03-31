@@ -4,7 +4,7 @@ class Calculator {
     constructor() {
         this.display = document.querySelector('.display')
         this.errorMessage = 'wat'
-        this.disableEvaluation = false
+        this.enableEvaluation = true
         this.result = 0
 
         this.allButtons = document.querySelectorAll('.button')
@@ -25,6 +25,7 @@ class Calculator {
                 this.displayLengthCheck()
                 // Delay invalid input check to allow for innerHTML to update.
                 setTimeout(this.invalidInputCheck.bind(this), 20)
+                applyAnimationClass(button, 'pressed', 100)
             })
         })
         this.numberButtons.forEach(number => {
@@ -38,7 +39,7 @@ class Calculator {
         this.buttonDivide.addEventListener('click', () => this.divide())
         this.buttonDecimal.addEventListener('click', () => this.pressButton('.'))
         this.buttonEqual.addEventListener('click', () => {
-            if (!this.disableEvaluation)
+            if (this.enableEvaluation)
                 this.evaluate()
         })
     }
@@ -50,7 +51,7 @@ class Calculator {
     }
     clearDisplay() {
         this.display.innerHTML = '0'
-        flashDisplay(this.display, 'cancel')
+        applyAnimationClass(this.display, 'cancel')
         this.clearErrorStyles()
     }
     clearErrorStyles() {
@@ -67,7 +68,7 @@ class Calculator {
         this.display.innerHTML.length > 1 ?
             this.display.innerHTML = this.display.innerHTML.slice(0, -1) :
             this.clearDisplay()
-        flashDisplay(this.display, 'cancel')
+        applyAnimationClass(this.display, 'cancel')
     }
     // ----------------------------
     pressButton(number) {
@@ -97,17 +98,17 @@ class Calculator {
     invalidInputCheck() {
         try {
             eval(this.display.innerHTML)
-            this.disableEvaluation = false
+            this.enableEvaluation = true
         } catch (SyntaxError) {
             this.display.classList.add('error')
             this.buttonEqual.classList.add('error')
-            this.disableEvaluation = true
+            this.enableEvaluation = false
         }
     }
     evaluate() {
         this.clearErrorText()
         try {
-            flashDisplay(this.display, 'flash')
+            applyAnimationClass(this.display, 'flash')
             // Eval is a bad idea, but it's fine for this project!
             this.result = eval(this.display.innerHTML).toFixed(2)
             this.removeTrailingZeros()
@@ -115,7 +116,7 @@ class Calculator {
         } catch (SyntaxError) {
             // Since the display line is evaluated with eval(),
             // we should give feedback if the input was completely invalid. Eg: "2+4++".
-            flashDisplay(this.display, 'cancel')
+            applyAnimationClass(this.display, 'cancel')
             this.display.classList.add('error')
             this.display.innerHTML = this.errorMessage
         }
@@ -123,11 +124,11 @@ class Calculator {
 }
 
 // ------------------------------------------------------------
-function flashDisplay(element, className = 'flash') {
+function applyAnimationClass(element, className, duration = 20) {
     element.classList.add(className)
     setTimeout(() => {
         element.classList.remove(className)
-    }, 20)
+    }, duration)
 }
 
 // ------------------------------------------------------------
