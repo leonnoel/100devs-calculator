@@ -9,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: lightgray;
 }
 
 
@@ -19,7 +20,7 @@ body{
     max-width: 200px;
     margin: 0 auto;
     background-color: black;
-    background-image: linear-gradient(45deg, rgb(218, 218, 218), rgb(202, 202, 202));
+    background-image: linear-gradient(45deg, rgb(80, 80, 80), rgb(121, 121, 121));
     padding: 2rem 1rem;
     border-radius: 10px;
     gap: 1.5rem;
@@ -59,11 +60,9 @@ body{
     background-color: transparent;
     font-weight: bolder;
     cursor: pointer;
-    box-shadow: 8px 8px 24px 0 rgba(0, 0, 0, 0.2),
-    -5px -5px 24px 0 rgba(255, 255, 255, 0.5);
 }
 
 .btn:active{
-    box-shadow: inset 6px 6px 18px 0 rgba(141, 141, 141, 0.2),
-    inset -6px -6px 18px 0 rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    background-color: rgb(145, 145, 145);
 }
