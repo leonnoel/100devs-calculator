@@ -1,0 +1,84 @@
+/* 
+Outer Box
+*/
+
+main {
+    width: 600px;
+    height:720px;
+    background-color: black;
+    margin: auto;
+    margin-top: 200px;
+    border-radius: 30px;
+}
+
+/* 
+Display
+*/
+
+main > div {
+    position: relative;
+    width: 500px;
+    height: 120px;
+    background-color: white;
+    margin: auto;
+    top: 80px;
+}
+
+div > h2 {
+    float: right;
+    font-size: 120px;
+    padding-right: 10px;
+}
+
+/* 
+Buttons
+*/
+
+section {
+    position: relative;
+    top: 120px;
+}
+section > ul {
+    width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+section > ul > li {
+    display: flex;
+    font-size: 60px;
+    font-weight: 600;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+li:hover {
+    background-color: grey;
+    color: white;
+}
+
+.reset {
+    display: flex;
+    width: 80px;
+    height: 80px;
+    margin-left: 425px;
+    background-color: white;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.reset:hover {
+    background-color: orange;
+    color: white;
+}
