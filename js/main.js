@@ -127,14 +127,73 @@ function keyDown(key) {
 
   // fucntion to handle click events
   function clicked(e) {
-    let buttonPressed = e.target.classList;
+    let classes = e.target.classList;
+    let buttonPressed = classes[0];
+
+    // if there's already a result in the window and key 0-9 is pressed
+    // clear the window
+    if( resultInWindow && classes.contains('number'))  {
+        windowText.innerText = '';
+        resultInWindow = false;
+    }
 
     // if key pressed is 0-9 concat key to string
     // else we move into the switch to handle other key presses
-    if(buttonPressed.contains('number')) {
-        windowText.innerText += buttonPressed[0];
+    if(classes.contains('number')) {
+        windowText.innerText += buttonPressed;
+    }else {
+        switch (buttonPressed) {
+
+            case '.':
+                // if there isn't already a point in the current operand or there
+                // is an operand, concat a point into window
+                // DOESN'T WORK RIGHT, multiple points can be added to 2nd operand
+                if(!windowText.innerText.includes('.') || calc.includesOperator(windowText.innerText)) {
+                        windowText.innerText += '.';
+                }
+                break;
+
+            case '+':
+                // if window isn't blank and doesn't already contain + sign then add + sign
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
+                    windowText.innerText += '+';
+                    resultInWindow = false;
+                }
+                break;
+
+            case '-':
+                // if window isn't blank and doesn't already contain - sign then add - sign
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
+                    windowText.innerText += '-';
+                    resultInWindow = false;
+                }
+                break;
+                
+            case 'x':
+                // if window isn't blank and doesn't already contain *, x, or X then add * sign
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
+                    windowText.innerText += '*';
+                    resultInWindow = false;
+                }
+                break;
+
+            case '/':
+                // if window isn't blank and doesn't already contain / sign then add / sign
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
+                    windowText.innerText += '/';
+                    resultInWindow = false;
+                }
+                break;
+
+            // equals or enter key is pressed (do calculation and show in window)
+            case '=':
+                windowText.innerText = calc.calculate(windowText.innerText);
+                resultInWindow = true;
+                break;
+        }
     }
-  }
+
+}
 
 
 
