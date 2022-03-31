@@ -35,6 +35,10 @@ class Calculator {
             }  
         }
     }
+    //function to check if an operator already exists in string 
+    includesOperator(str) {
+        return str.includes('+') || str.includes('-') || str.includes('*') || str.includes('/');
+    }
 }
 
 // define global variables
@@ -45,10 +49,6 @@ let windowText = document.querySelector('.window span');
 // add keystroke event listener
 document.addEventListener('keydown', keyDown);
 
-//function to check if an operator already exists in string 
-function includesOperator(str) {
-    return str.includes('+') || str.includes('-') || str.includes('*') || str.includes('/');
-}
 
 // function to handle key press events
 function keyDown(key) {
@@ -70,7 +70,7 @@ function keyDown(key) {
                 // if there isn't already a point in the current operand or there
                 // is an operand, concat a point into window
                 // DOESN'T WORK RIGHT, multiple points can be added to 2nd operand
-                if(!windowText.innerText.includes('.') || includesOperator(windowText.innerText)) {
+                if(!windowText.innerText.includes('.') || calc.includesOperator(windowText.innerText)) {
                         windowText.innerText += '.';
                 }
                 break;
@@ -82,14 +82,14 @@ function keyDown(key) {
                 break;
             case '+':
                 // if window isn't blank and doesn't already contain + sign then add + sign
-                if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
                     windowText.innerText += '+';
                     resultInWindow = false;
                 }
                 break;
             case '-':
                 // if window isn't blank and doesn't already contain - sign then add - sign
-                if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
                     windowText.innerText += '-';
                     resultInWindow = false;
                 }
@@ -98,14 +98,14 @@ function keyDown(key) {
             case 'x':
             case '*':
                 // if window isn't blank and doesn't already contain *, x, or X then add * sign
-                if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
                     windowText.innerText += '*';
                     resultInWindow = false;
                 }
                 break;
             case '/':
                 // if window isn't blank and doesn't already contain / sign then add / sign
-                if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
+                if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
                     windowText.innerText += '/';
                     resultInWindow = false;
                 }
