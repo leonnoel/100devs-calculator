@@ -5,13 +5,37 @@
     	<meta name="description" content="Your description goes here">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Blank Template</title>
+		<title>Calculator</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<div class="calcBody">
+			<div class="output">
+				<div data-previous-operand class="prevOperand"></div>
+				<div data-current-operand class="currentOperand"></div>
+			</div>
+			<div class="inputs">
+				<button data-number>7</button>
+				<button data-number>8</button>
+				<button data-number data-number>9</button>
+				<button data-operation>/</button>
+				<button data-number>4</button>
+				<button data-number>5</button>
+				<button data-number>6</button>
+				<button data-operation>x</button>
+				<button data-number>1</button>
+				<button data-number>2</button>
+				<button data-number>3</button>
+				<button data-operation>+</button>
+				<button data-number>0</button>
+				<button data-number>.</button>
+				<button data-equals>=</button>
+				<button data-operation>-</button>
+			</div>			
+		</div>
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
