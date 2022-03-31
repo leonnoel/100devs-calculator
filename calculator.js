@@ -1,5 +1,12 @@
-document.querySelector(".seven").addEventListener("click", logIt)
+
+let secondNumber = 0
 
 function logIt(){
-    document.querySelector(".result").innerText='Clickity'
+    let firstNumber = (this).value
+    document.querySelector(".result").innerText=firstNumber
 }
+
+document.querySelectorAll('.buttons').forEach(item => {
+    item.addEventListener("click", logIt)
+});
+
