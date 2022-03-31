@@ -29,6 +29,9 @@ let calculator = {
                     inputSplit.splice(0, 3, answer)
                     return  calculate(inputSplit.join(""))
                 }
+            } else if (/[0-9]/.test(num1) && inputSplit.length === 1) {
+                // Special case: if there is only number, return input
+                return input
             } else {
                 // Otherwise, show syntax error
                 return "Syntax Error"
@@ -59,12 +62,12 @@ function showInput(e) {
 function showAnswer() {
     // Set calculator display to answer or syntax error
     let result = roundAnswer(calculator.getAnswer())
-    calculator.display =  Number.isNaN(result) ? "Syntax Error" : result
+    calculator.display =  result === "NaN" ? "Syntax Error" : result
     // Show current calculator display
     display.innerHTML = calculator.display
 }
 
 function roundAnswer(x) {
     // Round answer to 10 decimal places, only when necessay
-    return Math.round((x + Number.EPSILON) * 10000000000) / 10000000000
+    return (Math.round((+x + Number.EPSILON) * 10000000000) / 10000000000).toString()
 }
