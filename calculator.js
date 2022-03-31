@@ -95,10 +95,11 @@ class Interface {
   }
 
   handleButtonClick() {
-    this.displayEl.textContent += this.currentInput[0];
+    let currentNum = this.currentInput[0];
+    this.displayEl.textContent += currentNum;
     this.deactivateEqual();
     this.numberHandler(this.currentInput.shift());
-
+    if (currentNum.trim() === '=') this.displayAnswer(this.runCalc());
     this.deactivateDecimal();
   }
 
@@ -111,10 +112,14 @@ class Interface {
       this.equalEl.disabled = true;
   }
   numberHandler(num) {
+    // if in an operator or = combine previous entered numbers into a full number
     if (this.#operationArr.indexOf(num.trim()) !== -1 || num.trim() === '=') {
-      this.displayArr.push(Number(this.#tempNum.join('')));
+      // push full number into display array
+      if (this.#tempNum.length > 0)
+        this.displayArr.push(Number(this.#tempNum.join('')));
       this.#tempNum = [];
-      this.displayArr.push(num.trim());
+      // push the operator
+      num.trim() !== '=' ? this.displayArr.push(num.trim()) : '';
       return;
     }
     num === '.' ? this.#tempNum.push(num) : this.#tempNum.push(Number(num));
@@ -127,7 +132,15 @@ class Interface {
     if (this.#tempNum.includes('.')) this.decimalEl.disabled = true;
   }
 
-  runCalc() {}
+  runCalc() {
+    return this.calculator.calculate(this.displayArr);
+  }
+
+  displayAnswer(answer) {
+    this.displayEl.textContent = answer;
+    this.displayArr = [];
+    this.displayArr.push(answer);
+  }
 }
 
 // setup
@@ -146,6 +159,6 @@ calculatorBtnContainer.addEventListener(
 );
 
 // prettier-ignore
-let test = [56, '+', 36, 'x', 5, '/', 2, '-', 8, '+', 51, 'x', 7, '/', 0.2]
+// let test = [56, '+', 36, 'x', 5, '/', 2, '-', 8, '+', 51, 'x', 7, '/', 0.2]
 
-console.log(calc.calculate(test));
+// console.log(calc.calculate(test));
