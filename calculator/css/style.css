@@ -1,0 +1,82 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+html{
+  width: 100%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+
+div {
+
+  margin-top: 5rem;
+
+  width: 75rem;
+  display: flex;  
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-grow: 1; */
+  /* margin: -25px 0 0 -25px; */
+  background: black;
+  padding-bottom: 10rem;
+  border-radius: 5%;
+}
+
+h2,
+h3 {
+  font-size: 75px;
+  text-align: center;
+  border-radius:50%;
+  background: white;
+  width: 10rem;
+  height: 10rem;
+  padding: 1rem;
+  margin: 3px;
+  margin-top: 15px;
+
+}
+h1 {
+  font-size: 100px;
+  text-align: right;
+  width: 100%;
+  background: white;
+  color: black;
+  margin: 55px;
+
+}
+
+.calculator-keys {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 70%;
+}
+
+
+.calculator-keys h2:hover {
+  background: orange;
+}
+
+.calculator-keys h2:active {
+  background: red;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+
