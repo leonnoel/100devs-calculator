@@ -32,7 +32,7 @@ html {
 }
 
 /******************************************
-/* BASE STYLES
+/* STYLES
 /*******************************************/
 
 body {
@@ -51,6 +51,7 @@ body {
      flex-direction: column;
      gap: 2rem;
 }
+
 .output {
      height: 6rem;
      background: white;
@@ -60,6 +61,7 @@ body {
      align-items: flex-end;
      padding: .5rem;
 }
+
 .inputs {
      display: grid;
      grid-template-columns: repeat(4, 6rem);
@@ -67,6 +69,7 @@ body {
      grid-gap: .5rem;
      justify-content: center;
 }
+
 .key {
      display: inline-block;
      width: 5rem;
@@ -78,6 +81,7 @@ body {
      margin: auto;
      border: none;
 }
+
 .key:active {
      transform: scale(0.9);
      box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
