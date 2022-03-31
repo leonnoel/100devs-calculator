@@ -87,6 +87,7 @@ section {
     width: 400px;
     background-color: black;
     border-radius: 20px;
+    /* box-shadow: 0px 0px 43px 17px rgb(0, 0, 0); */
 }
 #answer-box {
     height: 100px;
@@ -122,6 +123,11 @@ ul {
     align-items: center;
     font-size: 2rem;
     cursor: pointer;
+    transition: 300ms ease;
+}
+
+.button:hover {
+    background-color: #b4b4b4;
 }
 
 /* .button {
