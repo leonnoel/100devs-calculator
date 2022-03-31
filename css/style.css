@@ -1,0 +1,38 @@
+*{
+  box-sizing: border-box;
+}
+
+.calculator{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 65px 0 0 20px;
+  width: 500px;
+  height: 600px;
+  background-image: url("calculator.jpg");
+}
+
+.calculator > *{
+  width: 100%;
+}
+
+.display{
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  padding-top: 85px;
+  font-size: 2.5rem;
+}
+
+.buttonpad{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 100px 0 70px;
+}
+
+.button{
+  width: 25%;
+  height: 70px;
+}
