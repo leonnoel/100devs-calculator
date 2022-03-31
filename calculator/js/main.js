@@ -44,15 +44,23 @@ function Calculator() {
     this.updateScreen();
   };
   this.collectOp = function (op) {
-    this.currentOp = op;
+    // handle the negative numbers (when press - before the first num)
+    if (this.num1 === "" && this.result === "" && op === "-") {
+      console.log("here : ", op);
+      this.num1 = "-";
+    } else {
+      this.currentOp = op;
+    }
   };
 
   this.updateScreen = function () {
     let h1 = document.querySelector("h1");
     let screen =
+      // for the enhancement about make operation on the result
       this.result !== "" && this.currentOp !== ""
         ? this.num2
-        : this.result !== ""
+        : // normal flow
+        this.result !== ""
         ? this.result
         : this.num2 == ""
         ? this.num1
