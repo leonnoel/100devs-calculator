@@ -50,7 +50,9 @@ function Calculator() {
   this.updateScreen = function () {
     let h1 = document.querySelector("h1");
     let screen =
-      this.result !== ""
+      this.result !== "" && this.currentOp !== ""
+        ? this.num2
+        : this.result !== ""
         ? this.result
         : this.num2 == ""
         ? this.num1
