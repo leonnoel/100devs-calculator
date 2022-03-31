@@ -1,0 +1,36 @@
+section {
+    border-radius: 15px;
+    background-color: black;
+    height: 400px;
+    width: 300px;
+    border: 1px solid black; 
+}
+
+h1 {
+    height: 50px; 
+    width: 250px;
+    background-color: white; 
+    margin-top: 50px;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+
+div {
+    margin-left: 30px;
+}
+div span {
+    display: inline-block;
+    background-color: white; 
+    font-size: 30px;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    margin: 5px;
+}
+
+span:active{
+    background-color: rgb(40, 40, 40);
+    color:white;
+    
+}
