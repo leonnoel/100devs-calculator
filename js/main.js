@@ -87,14 +87,18 @@ const calculator = {
         document.querySelector('.readOut').innerHTML = output
         this.clearReadOut = true
     },
+    // String needs to be 14 characters or less
     totalLengthCheck(num) {
         if (String(num).length < 15) {
             return num
         } else if (String(num).includes('.')) {
             // need to figure out home many characters in front of dot and behind dot
             let splitArray = String(num).split('.')
-            // TODO need to figure out how much to round the decimals places
+            // Figure out how much to round the decimals places, 
+            let decicalPlaces = 14 - splitArray[0] - 1
+            // TODO
         }
+        // checkout
     }
     
 }
