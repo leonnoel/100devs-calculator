@@ -84,6 +84,10 @@ li {
   background-color: white;
   border-radius: 50%;
   cursor: pointer;
+  /* stop highllight the number with speed clicks */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; /* Safari */
 }
 
 /******************************************
