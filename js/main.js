@@ -10,50 +10,30 @@ class Calculator {
         if(text.includes('+')) {
             operands = text.split('+');
             if(operands[1] !== '') {
-                let sum = this.add(+operands[0], +operands[1]);
-                return sum;
+                return +operands[0] + +operands[1];
             }  
         }
         // if subtraction, subtract and return result
         if(text.includes('-')) {
             operands = text.split('-');
             if(operands[1] !== '') {
-                let difference = this.subtract(+operands[0], +operands[1]);
-                return difference;
+                return +operands[0] - +operands[1];
             }  
         }
         // if multiplication, multiply and return result
         if(text.includes('*')) {
             operands = text.split('*');
             if(operands[1] !== '') {
-                let product = this.multiply(+operands[0], +operands[1]);
-                return product;
+                return +operands[0] * +operands[1];
             }  
         }
         // if division, divide and return result
         if(text.includes('/')) {
             operands = text.split('/');
             if(operands[1] !== '') {
-                let quotient = this.divide(+operands[0], +operands[1]);
-                return quotient;
+                return operands[1] > 0 ? +operands[0] / +operands[1] : undefined;
             }  
         }
-    }
-
-    #add(a,b) {
-        return a + b;
-    }
-
-    #subtract(a,b) {
-        return a - b;
-    }
-
-    #multiply(a,b) {
-        return a * b;
-    }
-
-    #divide (a,b) {
-        return a / b;
     }
 }
 
@@ -61,9 +41,11 @@ class Calculator {
 let calc = new Calculator();
 let resultInWindow = false;
 let windowText = document.querySelector('.window span');
+
+// add keystroke event listener
 document.addEventListener('keydown', keyDown);
 
-//function to check if an operator already exists in window
+//function to check if an operator already exists in string 
 function includesOperator(str) {
     return str.includes('+') || str.includes('-') || str.includes('*') || str.includes('/');
 }
@@ -77,19 +59,23 @@ function keyDown(key) {
         resultInWindow = false;
     }
 
-    // if key pressed is 0-9 or a decimal point concat key to string
+    // if key pressed is 0-9 concat key to string
     // else we move into the switch to handle other key presses
     if ( (+key.key >= 0 && +key.key <= 9)) {
         windowText.innerText += key.key;
     } else {
+        // switch that handles the non digit keys
         switch(key.key) {
             case '.':
-                // if there isn't already a point in the current operand concat one into window
+                // if there isn't already a point in the current operand or there
+                // is an operand, concat a point into window
+                // DOESN'T WORK RIGHT, multiple points can be added to 2nd operand
                 if(!windowText.innerText.includes('.') || includesOperator(windowText.innerText)) {
                         windowText.innerText += '.';
                 }
                 break;
             case 'Backspace':
+                // if backspace is pressed, remove last digit from window
                 let digits = windowText.innerText.split('');
                 digits.pop();
                 windowText.innerText = digits.join('');
