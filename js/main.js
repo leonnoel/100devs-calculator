@@ -36,8 +36,10 @@ function Calculator() {
         if (this.reset) {
             this.a = null;
             this.b = null;
+            this.isA = true;
             this.total = 0;
             this.reset = false;
+            this.operator = null;
         }
 
         let digit = convertToDigit(val.target.id);
