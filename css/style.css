@@ -1,0 +1,96 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height:max-content;
+  width:100%;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.calculatorbody {
+  width: max-content;
+  padding-right: 3%;
+  padding-left: 3%;
+  margin-top: 5%;
+  background-color: black;
+  border-radius: 3%;
+}
+
+.display{
+  background-color: black;
+  color: white;
+  font-size: 3em;
+  font-style: normal;
+  text-align: right;
+  margin-right: 3%;
+  margin-left: 3%;
+}
+
+.display>h1 {
+  overflow:auto;
+  word-wrap:break-word;
+  border-radius: 2%;
+  background-color: white;
+  color: black;
+  margin-bottom:3%;
+  justify-content: flex-end;
+  width: 300px;
+  height: 100px;
+}
+
+.buttonrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width:100%;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  /* color: white;
+  background-color: black; */
+}
+
+li {
+  font-size: 3em;
+  margin-left: 3%;
+}
+
+button{
+  width:55px;
+  background-color: white;
+  border-radius:100%;
+  border:none;
+  padding-left: 5%;
+
+}
+
+.buttonrow > .clearrow{
+justify-content: flex-end;
+}
+
+.buttonrow>.clearrow >.AC>button{
+  width: 75px;
+  background-color: orange;
+}

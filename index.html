@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Hubballi&family=IBM+Plex+Sans+Arabic:wght@200&family=Quicksand:wght@300&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+		<title>Simple Calculator</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<main>
+			<section class="calculatorbody">
+				<div class="display">
+					<h1 class = "result">0</h1>
+				</div>
+				<div class="buttonrow">
+					<ul class="clearrow">
+						<li class="AC"><button>AC</button></li>
+					</ul>
+				</div>
+				<div class = "buttonrow">
+					<ul>
+						<li><button>7</button></li>
+						<li><button>8</button></li>
+						<li><button>9</button></li>
+						<li><button data-action="divide">/</button></li>
+					</ul>
+				</div>
+				<div class = "buttonrow">
+					<ul>
+						<li><button>4</button></li>
+						<li><button>5</button></li>
+						<li><button>6</button></li>
+						<li><button data-action="multiply">x</button></li>
+					</ul>
+				</div>
+				<div class = "buttonrow">
+					<ul>
+						<li><button>1</button></li>
+						<li><button>2</button></li>
+						<li><button>3</button></li>
+						<li><button data-action="add">+</button></li>
+					</ul>
+				</div>
+				<div class = "buttonrow">
+					<ul>
+						<li><button>0</button></li>
+						<li><button data-action="decimal">.</button></li>
+						<li><button data-action="calculate">=</button></li>
+						<li><button data-action="subtract">-</button></li>
+					</ul>
+				</div>
+			</section>
+
+
+		</main>
+
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
