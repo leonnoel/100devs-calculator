@@ -1,0 +1,100 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+
+
+/* =========== STYLE =========== */
+
+*, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* =========== TYPOGRAPHY =========== */
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+p, a, img, span, input, textarea, button {
+    font-size: 1.6rem;
+}
+
+h1 {
+    font-size: 5rem;
+    margin-top: 100px;
+}
+
+
+main {
+    text-align: center;
+}
+
+table {
+    background: black;
+    margin-top: 50px;
+    display: inline-block;
+    border-spacing: 0;
+    padding: 50px;
+    border-radius: 55px;
+}
+
+table td {
+    background: white;
+    border-radius: 100%;
+    border: 1px solid black;
+    font-size: 5rem;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    margin: 5px;
+}
+table td:hover {
+    background: black;
+    color: white;
+    border: 5px solid white;
+    line-height: 90px; /* line-height has to reduce 10px (5px for border-top and border-bottom) to prevent the number from shifting down */
+}
+.number,
+.operator,
+#equal,
+#decimal {
+    user-select: none;
+    cursor: pointer;
+}
+
+#result {
+    width: 500px;
+    border-radius: 0;
+    text-align: end;
+    margin-bottom: 40px;
+    padding-right: 10px;
+}
+
+footer {
+    text-align: start;
+    margin-top: 100px;
+    margin-left: 20%;
+}
+
+footer p:last-of-type {
+    margin-top: 20px;
+}
