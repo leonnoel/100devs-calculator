@@ -121,6 +121,21 @@ function keyDown(key) {
     }
   }
 
+  let buttons = document.querySelectorAll('.buttons section');
+
+  Array.from(buttons).forEach(e => e.addEventListener('click', clicked));
+
+  // fucntion to handle click events
+  function clicked(e) {
+    let buttonPressed = e.target.classList;
+
+    // if key pressed is 0-9 concat key to string
+    // else we move into the switch to handle other key presses
+    if(buttonPressed.contains('number')) {
+        windowText.innerText += buttonPressed[0];
+    }
+  }
+
 
 
   
