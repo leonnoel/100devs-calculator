@@ -19,9 +19,9 @@
 .display{
   display: flex;
   justify-content: center;
-  width: 70%;
-  padding-top: 90px;
-  font-size: 3rem;
+  width: 60%;
+  padding-top: 85px;
+  font-size: 2.5rem;
 }
 
 .buttonpad{
