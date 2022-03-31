@@ -1,7 +1,7 @@
 // Use strict
 "use strict";
 
-// create calculator object
+// Create calculator object
 let calculator = {
     // Set display property - holds the current display in the calculator
     display: "",
