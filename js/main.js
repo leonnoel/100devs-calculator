@@ -32,7 +32,8 @@ keys.addEventListener('click', (event)=> {
     }
 
     if(target.classList.contains('clear')){
-        console.log('clear', target.value)
+        clear()
+        changeDisplay()
         return
     }
 
@@ -62,7 +63,31 @@ function operator(operatorNext){
     const value = parseFloat(display)
     if(firstNumber === null && !isNaN(value)){
         calc.firstNumber = value
+    } else if(operator){
+        const result = calculate(firstNumber,display,operator)
+        calc.display = String(result) 
+        calc.firstNumber = result
     }
     calc.waitingOnSecondNumber = true
     calc.operator = operatorNext
+}
+
+function calculate(num1,num2,operator){
+    if(operator === '+'){
+        return parseInt(num1)+parseInt(num2)
+    } else if(operator === '-'){
+        return parseInt(num1)-parseInt(num2)
+    } else if(operator === '*'){
+        return parseInt(num1)*parseInt(num2)
+    } else if(operator === '/'){
+        return parseInt(num1)/parseInt(num2)
+    }
+}
+
+
+function clear(){
+    calc.display = '0'
+    calc.firstNumber = null
+    calc.waitingOnSecondNumber =false
+    calc.operator = null
 }
