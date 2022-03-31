@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let Calc = {
     screen: {
         textField: '',
@@ -29,44 +28,26 @@ let Calc = {
     },
 
     setOperand(event) {
-=======
-// ----------------------------------
-// Create a calculator
-// ----------------------------------
 
-function Calculator() {
-    // ... your code ...
-    this.first = undefined
-    this.second = undefined
+        let operand = event.target.innerText
+        console.log('Calc.screen.textField[-1]', Calc.screen.textField)
 
-    this.read = function() {
-        this.first = Number(prompt('give me the first num you wanted added'))
-        this.second = Number(prompt('give the second num you want to add'))
-    },
+        // don't allow an opperand to be the first entry
+        if ( Calc.screen.textField.length === 0 ) {
+            if (operand === 'x' || operand === '/') {
+                return console.log(false)
+            }
+        } else if( Calc.screen.textField.slice(-1) === '*' || Calc.screen.textField.slice(-1) === '/' ) {
+            return console.log(false)
+        }
 
-    this.sum = function() { return this.first + this.second },
-    this.mul = function() { return this.first * this.second }
-
->>>>>>> 47c6d4c0b4a3f0da8ad656faf74825e2bb869dc7
-
-  };
-
-let calculator = new Calculator();
-//   calculator.read();
-//   alert( calculator.sum() );
-//   alert( calculator.mul() );
-
-<<<<<<< HEAD
         // mathJS cannot porcess 'x' so change to '*'
         operand = (operand === 'x') ? '*' : operand
-=======
->>>>>>> 47c6d4c0b4a3f0da8ad656faf74825e2bb869dc7
 
-// ----------------------------------
-// Create a calculator
-// ----------------------------------
+        // add the operand to the screen
+        Calc.screen.textField = Calc.screen.textField + operand
+        document.querySelector('#screen').innerHTML = Calc.screen.textField
 
-<<<<<<< HEAD
         Calc.screen.operand = operand
     },
     doCalc() {
@@ -86,17 +67,25 @@ let calculator = new Calculator();
     reset() {
         Calc.screen.textField = ''
         document.querySelector('#screen').innerHTML = ''
-=======
-function Accumulator(startingValue) {
-    this.value = startingValue
-    this.read = function() {
-        this.value += Number(prompt('add new number'))
->>>>>>> 47c6d4c0b4a3f0da8ad656faf74825e2bb869dc7
     }
 }
-let accumulator = new Accumulator(1); // initial value 1
-
-accumulator.read(); // adds the user-entered value
-accumulator.read(); // adds the user-entered value
-
-alert(accumulator.value); // shows the sum of these values
+// -------------- NUMBERS --------------------
+document.querySelector('#zero').addEventListener('click', Calc.addNum)
+document.querySelector('#one').addEventListener('click', Calc.addNum)
+document.querySelector('#two').addEventListener('click', Calc.addNum)
+document.querySelector('#three').addEventListener('click', Calc.addNum)
+document.querySelector('#four').addEventListener('click', Calc.addNum)
+document.querySelector('#five').addEventListener('click', Calc.addNum)
+document.querySelector('#six').addEventListener('click', Calc.addNum)
+document.querySelector('#seven').addEventListener('click', Calc.addNum)
+document.querySelector('#eight').addEventListener('click', Calc.addNum)
+document.querySelector('#nine').addEventListener('click', Calc.addNum)
+document.querySelector('#decimal').addEventListener('click', Calc.addNum)
+// -------------- OPERANDS --------------------
+document.querySelector('#minus').addEventListener('click', Calc.setOperand)
+document.querySelector('#plus').addEventListener('click', Calc.setOperand)
+document.querySelector('#times').addEventListener('click', Calc.setOperand)
+document.querySelector('#divide').addEventListener('click', Calc.setOperand)
+document.querySelector('#equals').addEventListener('click', Calc.doCalc)
+// --------------   RESET  --------------------
+document.querySelector('#reset').addEventListener('click', Calc.reset)
