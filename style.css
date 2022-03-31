@@ -1,0 +1,16 @@
+.box {
+  max-width: 420px;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: right;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border: 1px solid black;
+}
+
+.column {
+  clear: both;
+}
