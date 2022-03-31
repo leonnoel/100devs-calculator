@@ -13,9 +13,12 @@ function Calculator(){
     this.container = document.getElementById('calc')
     this.display = new Display()
     this.displayNode = this.display.displayNode
-    this.calcString = ''
-    this.isCalculating = false
     this.erasedLast = false
+    this.firstCalculation = true
+    this.changingX = true
+    this.x = ''
+    this.operator = null
+    this.y = ''
 
     this.operations = {
         '+': (a, b) => a + b,
@@ -31,74 +34,72 @@ function Calculator(){
         '0','.','=','-'  
     ]
 
-    this.cleanDisplay = function(){
-        this.displayNode.innerText = ''
+    this.getDisplayData = function(){
+        return this.displayNode.innerText
     }
 
     this.updateDisplay = function(val){
-        if(val){
-            this.calcString += val
-            this.displayNode.innerText += val
-        }else{
-            this.displayNode.innerText = this.calcString
-        }   
+        if(!this.erasedLast){
+            this.clearDisplay()
+            this.erasedLast = true
+        }
+        this.displayNode.innerText += val
     }
 
-    this.printValue = function(val){
-        return () => {
-            if(this.isCalculating && !this.erasedLast){
-                this.cleanDisplay()
-                this.erasedLast = true
-            }
-            this.updateDisplay(val)    
-        }
+    this.clearDisplay = function(){
+        this.displayNode.innerText = ''
     }
 
-    this.chainCalculate = function(operatorSymbol){
-        return () => {
-            this.cleanDisplay()
-            if(this.isCalculating){
-                this.erasedLast = false
-
-                const [
-                    leftOperand, 
-                    operator, 
-                    rightOperand
-                ] = this.calcString.split(' ')
-
-                const operation = this.operations[operator]
-                const result = operation(Number(leftOperand), Number(rightOperand))
-                this.calcString = result
-                this.updateDisplay()
-            }else{
-                this.isCalculating = true
-            }
-            this.calcString += ` ${operatorSymbol} `
-        }
+    this.assign = function(){
+        this.changingX
+        ? this.x = Number(this.getDisplayData())
+        : this.y = Number(this.getDisplayData())
     }
 
     this.equals = function(){
-        return () => {
-            this.isCalculating = false
-            this.erasedLast = false
-            const [leftOperand, operator, rightOperand] = this.calcString.split(' ')
-            console.log(this.calcString)
-            const operation = this.operations[operator]
-            const result = operation(Number(leftOperand), Number(rightOperand))
-            this.calcString = result
-            this.updateDisplay()
+        if(this.y){
+            this.clearDisplay()
+            this.calculate()   
         }
+    }
+
+    this.calculate = function(){
+        const operation = this.operations[this.operator]
+        const result = operation(this.x, this.y)
+        this.x = result
+        this.y = ''
+        this.updateDisplay(result)
+    }
+
+    this.makeOperation = function(symbol){
+        this.clearDisplay()
+        this.changingX = false
+        if(this.firstCalculation){
+            this.firstCalculation = false
+        }else{
+            if(this.y){
+              this.calculate()
+            }
+            this.erasedLast = false
+        } 
+        this.operator = symbol  
     }
 
     this.getButtonFunction = function(symbol){
         if(symbol in this.operations){
-            return this.chainCalculate(symbol)
+            return () => this.makeOperation(symbol)
         }else if(symbol === '='){
-            return this.equals()
+            return () => {
+                this.equals()
+            }
         }else{
-            return this.printValue(symbol)
+            return () => {
+                this.updateDisplay(symbol)
+                this.assign()
+            }
         }
     }
+    /* ==========  NO NEED TO CHANGE NOW ============================*/
     
     this.renderDisplay = function(){
         let displayNode = this.display.displayNode
