@@ -1,8 +1,13 @@
-// function numsCollector(e) {
-//   console.log(e.target.innerText);
-// }
-// listen for clicks
+/*
+Main features:
+  -[x] make all operations
+  -[x] make the floating operations
+  -[x] make operation on the result 
+  -[x] handle the negative number
+*/
 
+// psudo code
+// listen for clicks
 // add event listener for each btn
 // the function for each btn is check for the btn inner text
 // if the inner is nums
@@ -16,7 +21,7 @@
 // the fire the calculatrion method
 // it result the (first num)(operator)(second num) and return the resutl
 // fire the update the screen function to show the result
-// round the number to lets say 5 digits with the .toFixed(5)
+// round the number to lets say 5 digits with the .toFixed(5) and toExponential for scientific numbers
 
 function Calculator() {
   this.num1 = "";
@@ -74,12 +79,6 @@ function Calculator() {
     } else {
       //   use toExponential to shtrim the number to fixed on the screen and show the scientific form of the num :)
       this.result = String(Number(num).toExponential(6));
-      //   if (num.indexOf(".") !== -1) {
-      //     this.result = Number(num).toFixed(num.length - 10);
-      //   } else {
-      //     console.log(String(Number(num).toExponential(6)));
-      //     this.result = String(Number(num).toExponential(6));
-      //   }
     }
     this.clear();
   };
