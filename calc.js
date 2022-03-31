@@ -14,6 +14,7 @@ class Calculator {
     #buttonDivide
     #buttonDecimal
     #buttonEqual
+    // ----------------------------
     // Public properties.
     errorMessage
     result
@@ -38,6 +39,7 @@ class Calculator {
         this.#setupButtonEvents()
     }
     // ----------------------------
+    // Private methods.
     #setupButtonEvents() {
         this.#allButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -62,12 +64,16 @@ class Calculator {
                 this.evaluate()
         })
     }
-    // ----------------------------
     #displayLengthCheck() {
         this.#display.innerHTML.length > 9 ?
             this.#display.classList.add('too-long') :
             this.clearErrorStyles()
     }
+
+    // ----------------------------
+    // Public methods.
+
+    // Helpers.
     clearErrorStyles() {
         this.#display.classList.remove('error', 'too-long')
         this.#buttonEqual.classList.remove('error')
@@ -94,7 +100,7 @@ class Calculator {
             this.#enableEvaluation = false
         }
     }
-    // ----------------------------
+    // Buttons.
     pressButton(number) {
         // Check for zeroed out display, so we don't have leading zeros when adding numbers.
         this.#display.innerHTML = this.#display.innerHTML === '0' ? number : this.#display.innerHTML + number
