@@ -48,8 +48,58 @@ html {
 /******************************************
 /* LAYOUT
 /*******************************************/
+body {
+     padding-top: 3rem;
+}
+.calcBody {
+     width: 400px;
+     margin: auto;
+     background: black;
+     border-radius: 10px;
+     padding: 3rem;
 
+     font-size: 3rem;
+}
 
+.display {
+     background: white;
+     margin: 1rem;
+     padding: 1rem;
+     text-align: right;
+}
+
+.buttons {
+     display: flex;
+     flex-flow: row wrap;
+}
+
+.btn {
+     /* background: white; */
+     /* border-radius: 50%; */
+     flex-basis: 25%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: .5rem;
+}
+
+.btn span {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     background: white;
+     width: 50px;
+     height: 50px;
+     cursor: pointer;
+
+     transition: .5s;
+}
+
+.btn span:hover {
+     box-shadow: 0 0 10px white;
+     transition: .2s;
+}
 
 
 /******************************************
