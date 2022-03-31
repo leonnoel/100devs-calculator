@@ -1,0 +1,123 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 50px auto;
+  background-color: white;
+  font-size: 25px;
+  line-height: 75px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+section.main {
+  min-width: 500px;
+
+  width: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: black;
+  border-radius: 40px;
+  padding: 20px;
+}
+section#result {
+  font-weight: 600;
+  background-color: white;
+  color: black;
+  margin: 50px 25px;
+  padding: 0px 20px;
+}
+section#result h1 {
+  margin: 0;
+  font-size: 5rem;
+  /* overflow: hidden; */
+}
+
+ul {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: black;
+  color: balck;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}
+li {
+  font-weight: 600;
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75px;
+  width: 75px;
+  margin: 3%;
+  aspect-ratio: 1/1;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  /* stop highllight the number with speed clicks */
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none; /* Safari */
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media (min-width: 1200px) {
+  section#result h1 {
+    font-size: 7rem;
+  }
+  li {
+    font-size: 7rem;
+    height: 100px;
+    width: 100px;
+    margin: 3%;
+  }
+}
+
+@media (min-width: 1585px) {
+  section.main {
+    height: 90vh;
+    width: 40%;
+  }
+  section#result h1 {
+    font-size: 7rem;
+  }
+  li {
+    font-size: 6rem;
+    height: 100px;
+    width: 100px;
+    margin: 3%;
+  }
+}
