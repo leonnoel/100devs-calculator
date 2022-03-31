@@ -10,12 +10,13 @@ let calculator = {
         let b = inputSplit[2]
         if ( /[0-9]/.test(a) && /[0-9]/.test(b) && /[\+\-\x\/]/.test(operator) ) {
             if (inputSplit.length === 3) {
-                return {
+                let ans = {
                     "+": +a + +b,
                     "-": +a - +b,
                     "x": +a * +b,
                     "/": +a / +b
-                }[operator]
+                }[operator] 
+                return ans
             } else {
                 inputSplit.splice(0, 3, {
                     "+": +a + +b,
@@ -23,7 +24,8 @@ let calculator = {
                     "x": +a * +b,
                     "/": +a / +b
                 }[operator])
-                return this.calculate(inputSplit.join(""))
+                let ans = this.calculate(inputSplit.join(""))
+                return  ans
             }
         } else {
             return "Syntax Error"
@@ -46,8 +48,6 @@ function displayInput(e) {
 function displayOutput() {
     let answer = document.querySelector("#answer")
     let ans = Math.round((calculator.calculate(calculator.display) + Number.EPSILON) * 10000000000) / 10000000000
-    calculator.display = ans
-    answer.innerHTML = ans
+    calculator.display = Number.isNaN(ans) ? "Syntax Error" : ans
+    answer.innerHTML = calculator.display
 }
-
-
