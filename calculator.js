@@ -119,6 +119,17 @@ class Interface {
       this.#tempNum.length === 0 &&
       this.displayArr.length === 0
     ) {
+      this.#tempNum.push(num.trim());
+      return;
+    }
+
+    // operator is - and is after an operator
+    if (
+      this.#operationArr.includes(
+        this.displayArr[this.displayArr.length - 1]
+      ) &&
+      num.trim() === '-'
+    ) {
       console.log(num);
       this.#tempNum.push(num.trim());
       return;
