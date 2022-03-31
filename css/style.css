@@ -24,14 +24,14 @@
 .outer {
      background-image: url("calculator.jpg");
      background-repeat: no-repeat;
-     border: 2px solid red;
+     border: 2px solid white;
      height: 615px;
      width: 492px;
      margin: 0 auto;
 }
 
 .window {
-     border: 2px solid red;
+     /* border: 2px solid red; */
      height: 85px;
      width: 335px;
      margin-top: 132px;
@@ -45,7 +45,7 @@
 }
 
 .buttons {
-     border: 2px solid yellow;
+     /* border: 2px solid yellow; */
      height: 289px;
      margin-top: 20px;
      margin-left: 100px;
@@ -53,7 +53,7 @@
 }
 
 .buttons section {
-     border: 2px solid white;
+     /* border: 2px solid white; */
      width: 25%;
      height: 25%;
      float: left;

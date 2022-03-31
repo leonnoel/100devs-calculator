@@ -45,6 +45,7 @@ class Calculator {
 let calc = new Calculator();
 let resultInWindow = false;
 let windowText = document.querySelector('.window span');
+let windowSection = document.querySelector('.window');
 
 // add keystroke event listener
 document.addEventListener('keydown', keyDown);
@@ -59,9 +60,26 @@ function keyDown(key) {
         resultInWindow = false;
     }
 
+    // shrink and vertical align text if it gets too long
+    if(windowText.innerText.length >= 9 && windowText.innerText.length <= 20) {
+        windowText.style.fontSize = '30px';
+        windowSection.style.paddingTop = '50px';
+
+    }
+    // make font bigger and realign text if it's not too long
+    if(windowText.innerText.length < 9) {
+        windowText.style.fontSize = '60px';
+        windowSection.style.paddingTop = '20px';
+    }
+    // display error message if it's way too long
+    if(windowText.innerText.length > 20) {
+        windowText.innerText = 'Too Long';
+        resultInWindow = true;
+    }
+
     // if key pressed is 0-9 concat key to string
     // else we move into the switch to handle other key presses
-    if ( (+key.key >= 0 && +key.key <= 9)) {
+    if ( (+key.key >= 0 && +key.key <= 9) && windowText.innerText !== "Too Long") {
         windowText.innerText += key.key;
     } else {
         // switch that handles the non digit keys
@@ -130,16 +148,33 @@ function keyDown(key) {
     let classes = e.target.classList;
     let buttonPressed = classes[0];
 
-    // if there's already a result in the window and key 0-9 is pressed
+    // if there's already a result in the window and button 0-9 is pressed
     // clear the window
     if( resultInWindow && classes.contains('number'))  {
         windowText.innerText = '';
         resultInWindow = false;
     }
 
+    // shrink and vertical align text if it gets too long
+    if(windowText.innerText.length >= 9 && windowText.innerText.length <= 20) {
+        windowText.style.fontSize = '30px';
+        windowSection.style.paddingTop = '50px';
+
+    }
+    // make font bigger and realign text if it's not too long
+    if(windowText.innerText.length < 9) {
+        windowText.style.fontSize = '60px';
+        windowSection.style.paddingTop = '20px';
+    }
+    // display error message if it's way too long
+    if(windowText.innerText.length > 20) {
+        windowText.innerText = 'Too Long';
+        resultInWindow = true;
+    }
+
     // if key pressed is 0-9 concat key to string
-    // else we move into the switch to handle other key presses
-    if(classes.contains('number')) {
+    // else we move into the switch to handle other buttons
+    if(classes.contains('number') && windowText.innerText !== "Too Long") {
         windowText.innerText += buttonPressed;
     }else {
         switch (buttonPressed) {
@@ -168,7 +203,7 @@ function keyDown(key) {
                     resultInWindow = false;
                 }
                 break;
-                
+
             case 'x':
                 // if window isn't blank and doesn't already contain *, x, or X then add * sign
                 if(windowText.innerText !== '' && !calc.includesOperator(windowText.innerText)) {
@@ -185,14 +220,13 @@ function keyDown(key) {
                 }
                 break;
 
-            // equals or enter key is pressed (do calculation and show in window)
+            // equals button is pressed (do calculation and show in window)
             case '=':
                 windowText.innerText = calc.calculate(windowText.innerText);
                 resultInWindow = true;
                 break;
         }
     }
-
 }
 
 
