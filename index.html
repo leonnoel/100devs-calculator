@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>#100Devs Calculator</title>
+	</head>
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/index.css" />
+	<link href="https://fonts.cdnfonts.com/css/coolvetica" rel="stylesheet">
+
+	<body>
+		<form>
+			<output class="output-container">
+				<div class="rtl-wrapper">
+					<div>
+						<p id="previous"></p>
+					</div>
+				</div>
+				<div class="rtl-wrapper">
+					<div>
+						<p id="current">0</p>
+					</div>
+				</div>
+			</output>
+			<div class="buttons-container">
+				<button type="button">(</button>
+				<button type="button">)</button>
+				<button type="button" aria-label="Modulo Operator">%</button>
+				<button type="button" aria-label="Clear Entry">C</button>
+				<button type="button">7</button>
+				<button type="button">8</button>
+				<button type="button">9</button>
+				<button type="button" aria-label="Divide Entry">÷</button>
+				<button type="button">4</button>
+				<button type="button">5</button>
+				<button type="button">6</button>
+				<button type="button" aria-label="Multiply Entry">×</button>
+				<button type="button">1</button>
+				<button type="button">2</button>
+				<button type="button">3</button>
+				<button type="button" aria-label="Add Entry">+</button>
+				<button type="button">0</button>
+				<button type="button">.</button>
+				<button type="submit" aria-label="Evaulate Expression">=</button>
+				<button type="button" aria-label="Subtract Operator">-</button>
+			</div>
+		</form>
+		<script src="evaluate.js"></script>
+		<script src="index.js"></script>
+	</body>
+
+</html>
