@@ -73,7 +73,7 @@ body {
      flex-flow: row wrap;
 }
 
-.btn {
+.btnBox {
      /* background: white; */
      /* border-radius: 50%; */
      flex-basis: 25%;
@@ -83,7 +83,7 @@ body {
      padding: .5rem;
 }
 
-.btn span {
+.btnBox span {
      display: flex;
      justify-content: center;
      align-items: center;
