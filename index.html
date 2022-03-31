@@ -2,89 +2,58 @@
 <html lang="en">
 	<head>
     	<meta charset="utf-8">
-    	<meta name="description" content="Your description goes here">
-    	<meta name="keywords" content="one, two, three">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="Not so great calculator">
+    	<meta name="keywords" content="calculator, bad, numbers">
 
-		<title>Blank Template</title>
+		<title>Pretty OK Calculator</title>
 
-		<!-- Font-Awesome Icons -->
-		<script src="https://kit.fontawesome.com/ab085a1591.js" crossorigin="anonymous"></script>
-		
+		<!-- fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<main class="calcBody">
-			<!-- OUTPUT DISPLAY -->
-			<section class="display">
-				<span class="dispalyText">0</span>
+		<main>
+			<h1>A Pretty Okay Calculator v2.0</h1>
+			<section class="calculator">
+				<section class="window">
+					<span class="equation"></span>
+					<span id="result">0</span>
+				</section>
+				<ol class="functions">
+					<li id="reset">Reset</li>
+					<!-- <li id="backspace">&#8592;</li> -->
+				</ol>
+				<section class="buttons">
+
+					<ol class="digits">
+						<li id="zero">0</li>
+						<li id="decimal">.</li>
+						<li id="equals">=</li>
+						<li id="one">1</li>
+						<li id="two">2</li>
+						<li id="three">3</li>
+						<li id="four">4</li>
+						<li id="five">5</li>
+						<li id="six">6</li>
+						<li id="seven">7</li>
+						<li id="eight">8</li>
+						<li id="nine">9</li>		
+					</ol>
+					<ul class="operators">
+						<li id="divide">&#247;</li>
+						<li id="multiply">x</li>
+						<li id="add">+</li>
+						<li id="subtract">-</li>
+					</ul>
+				</section>
 			</section>
-
-			<!-- BUTTONS -->
-			<section class="buttons">
-
-				<!-- Top Row -->
-				<div class="btnBox">
-					<span class="btn" id="seven">7</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="eight">8</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="nine">9</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="divide">/</span>
-				</div>
-
-				<!-- Middle-Top Row -->
-				<div class="btnBox">
-					<span class="btn" id="four">4</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="five">5</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="six">6</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="multiply">x</span>
-				</div>
-
-				<!-- Bottom-Top Row -->
-				<div class="btnBox">
-					<span class="btn" id="one">1</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="two">2</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="three">3</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="add">+</span>
-				</div>
-
-				<!-- Bottom Row -->
-				<div class="btnBox">
-					<span class="btn" id="zero">0</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="dot">.</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="equals">=</span>
-				</div>
-				<div class="btnBox">
-					<span class="btn" id="subtract">-</span>
-				</div>
-		
-			</section>
-
-
 		</main>
+
 
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>

@@ -31,75 +31,160 @@ html {
      font-family: sans-serif;
 }
 
+/* body {
 
+} */
 
 /******************************************
 /* COLORS
 /*******************************************/
+/* Entire Site Background */
+html {
+     background: rgb(44, 44, 44);
+     color: white;
+     font-size: 62.5%;
+     font-family: 'Share Tech Mono', monospace;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+main {
+     max-width: 55rem;
+     margin: auto;
+     font-size: 8rem;
+     text-align: center;
+     margin-top: 5rem;
+}
+h1 {
+     font-size: 5rem;
+}
+/* calculator device border */
+.calculator {
+     margin: auto;
+     border: 2rem solid black;
+     padding: .5rem;
+     position: relative;
+     background:rgb(27, 27, 27);
+     border-radius: 10px;
+}
+
+
+/* results window */
+.window {
+     height: 12rem;
+     background: rgb(112, 128, 144);
+     min-width: 100%;
+     margin-bottom:1rem;
+     border: 1rem solid black;
+     display: flex;
+     align-items: center;
+     justify-content: flex-end;
+     padding: 2rem;
+     position: relative;
+     font-family: 'Share Tech Mono', monospace;
+}
+/* equation/previous input display */
+.equation {
+     color:white;
+     background: rgba(0, 0, 0, 0.3);
+     font-size: 2rem;
+     position: absolute;
+     left: 1%;
+     top: 5%;
+     z-index: 1;
+     padding: 5px;
+}
+
+
+/* style operator buttons areas*/
+.functions {
+     display: flex;
+     font-size: 5rem;
+}
+.functions li {
+     width: 50%;
+     margin-bottom: .5rem;
+}
+
+/* flex digits and operator boxes of buttons next to each other */
+.buttons {
+     display: flex;
+     flex-flow: row nowrap;
+     justify-content: center;
+}
+
+/* pre-style all li's/buttons */
+li {
+     background: rgb(132, 152, 170);
+     padding: 5px;
+     border-top: 5px solid rgb(166, 190, 214);
+     border-left: 5px solid rgb(166, 190, 214);
+     border-right: 5px solid slategray;
+     border-bottom: 5px solid slategray;
+     cursor: pointer;
+     transition: 1s;
+}
+/* COOL LI BUTTON EFFECTS */
+li:hover {
+     text-shadow: 0 0 50px white;
+     background:rgb(44, 44, 44);
+     /* color: slateblue; */
+     transition: .4s;
+}
+li:active {
+     background: rgb(27, 27, 27);
+     border-top: 5px solid slategray;
+     border-left: 5px solid slategray;
+     border-right: 5px solid rgb(166, 190, 214);
+     border-bottom: 5px solid rgb(166, 190, 214);
+     transition: .1s;
+     color: yellow;
+}
+/* style digits block */
+.digits {
+     width: 80%;
+     display: flex;
+     flex-flow: row wrap-reverse;
+     align-items: flex-end;
+     justify-content: flex-start;
+
+}
+.digits li {
+     width: 33.3333%;
+}
+
+#equals,
+.operators li {
+     /* background: rgb(112, 128, 144); */
+     color: rgb(238, 255, 0)
+}
+
+/* style operators block */
+.operators {
+     width: 20%;
+}
+ul {
+     list-style: none;
+}
+
+
+/* DYNAMIC STLYES - SELECTION */
+.selected {
+     text-shadow: 2rem 2rem white;
+     background:rgb(44, 44, 44);
+}
+
+
 
 
 
 /******************************************
 /* TYPOGRAPHY
 /*******************************************/
+/* h1 {
 
-
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-body {
-     padding-top: 3rem;
-}
-.calcBody {
-     width: 400px;
-     margin: auto;
-     background: black;
-     border-radius: 10px;
-     padding: 3rem;
-
-     font-size: 3rem;
-}
-
-.display {
-     background: white;
-     margin: 1rem;
-     padding: 1rem;
-     text-align: right;
-}
-
-.buttons {
-     display: flex;
-     flex-flow: row wrap;
-}
-
-.btnBox {
-     /* background: white; */
-     /* border-radius: 50%; */
-     flex-basis: 25%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: .5rem;
-}
-
-.btnBox span {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     border-radius: 50%;
-     background: white;
-     width: 50px;
-     height: 50px;
-     cursor: pointer;
-
-     transition: .5s;
-}
-
-.btn span:hover {
-     box-shadow: 0 0 10px white;
-     transition: .2s;
-}
+} */
 
 
 /******************************************
