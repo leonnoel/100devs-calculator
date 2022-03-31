@@ -1,0 +1,59 @@
+html {
+
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+main {
+    background: black;
+    border-radius: 25px;
+    width: 375px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#displayWindow{
+    background: white;
+    margin: 60px auto 30px auto;
+    height: 80px;
+}
+
+#displayText {
+    display: flex;
+    justify-content: end;
+    font-size: 3em;
+    padding-top:15px
+}
+
+#buttonsArea {
+    margin-top: 60px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+div {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.button {
+    /* border: 30px solid white; */
+    font-size: 3.2em;
+    /* background: white; */
+    margin: 7px;
+}
