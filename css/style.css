@@ -1,0 +1,97 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+.device {
+  display: flex;
+  align-items: center;
+  background: black;
+  flex-direction: column;
+  width: 50%;
+  border-radius: 15%;
+  height: 325px;
+}
+
+#placeResultHere {
+  background: white;
+  width: 75%;
+  height: 55px;
+  font-size: 45px;
+  display: block;
+  text-align: end;
+  /* display: flex;
+  justify-content: flex-end;
+  align-items: flex-end; */
+  margin-bottom: 0;
+  padding-right: 11px;
+}
+
+.numPad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+  height: 80%;
+}
+
+.numPad ul {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  width: 75%;
+  height: 90%;
+}
+
+.numPad li {
+  display: flex;
+  margin: 1px;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  /* border: 5px solid black; */
+  border-radius: 100%;
+  text-align: center;
+  width: 23%;
+  /* height: o; */
+  background: white;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
