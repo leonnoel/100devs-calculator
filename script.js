@@ -27,14 +27,13 @@ function Calculator(){
         '-': (a, b) => a - b,
         '*': (a, b) => a * b,
         '/': (a, b) => a / b,
-        '%': (a, b) => a % b
     }
 
     this.buttonSymbols = [
         '7','8','9','/',
         '4','5','6','*',
         '1','2','3','+',
-        '0','.','=','-', '%'
+        '0','.','=','-'
     ]
 
     this.getDisplayData = function(){
