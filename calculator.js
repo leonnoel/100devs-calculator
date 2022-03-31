@@ -58,7 +58,7 @@ Things the interface needs to do:
 - numbers scale down as numbers start pushing the boundary of display
 - deactivate equal when operator is at the end (done)
 - handle decimals (done)
-- error handling decimals
+- error handling decimals (done)
 - allow for negative numbers
 */
 
@@ -111,13 +111,26 @@ class Interface {
     )
       this.equalEl.disabled = true;
   }
+
   numberHandler(num) {
+    // operator is - and is either 1st element or after an operator
+    if (
+      num.trim() === '-' &&
+      this.#tempNum.length === 0 &&
+      this.displayArr.length === 0
+    ) {
+      console.log(num);
+      this.#tempNum.push(num.trim());
+      return;
+    }
+
     // if in an operator or = combine previous entered numbers into a full number
     if (this.#operationArr.indexOf(num.trim()) !== -1 || num.trim() === '=') {
       // push full number into display array
       if (this.#tempNum.length > 0)
         this.displayArr.push(Number(this.#tempNum.join('')));
       this.#tempNum = [];
+
       // push the operator
       num.trim() !== '=' ? this.displayArr.push(num.trim()) : '';
       return;
@@ -157,8 +170,3 @@ calculatorBtnContainer.addEventListener(
   'click',
   calcInterface.ButtonEventHandler.bind(calcInterface)
 );
-
-// prettier-ignore
-// let test = [56, '+', 36, 'x', 5, '/', 2, '-', 8, '+', 51, 'x', 7, '/', 0.2]
-
-// console.log(calc.calculate(test));
