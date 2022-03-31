@@ -1,31 +1,21 @@
 function Display(){
     this.displayNode = document.createElement('div')
     this.displayNode.id = 'display'
-
-    this.getNode = function(){
-        return this.displayNode
-    }
 }
 
-function Button(display, symbol){
+function Button(symbol){
     this.buttonNode = document.createElement('button')
     this.buttonNode.innerText = symbol
-    this.handler = function(){
-        display.innerText += symbol
-    }
-    this.buttonNode.classList = 'btn'
-
-    this.getNode = function(){
-        return this.buttonNode
-    }
+    this.buttonNode.className = 'btn'
 }
 
 function Calculator(){
     this.container = document.getElementById('calc')
     this.display = new Display()
-    this.displayNode = this.display.getNode()
+    this.displayNode = this.display.displayNode
     this.calcString = ''
     this.isCalculating = false
+    this.erasedLast = false
 
     this.operations = {
         '+': (a, b) => a + b,
@@ -56,17 +46,26 @@ function Calculator(){
 
     this.printValue = function(val){
         return () => {
-            if(this.isCalculating) this.cleanDisplay()
-            this.updateDisplay(val)
-            console.log(this.calcString)
+            if(this.isCalculating && !this.erasedLast){
+                this.cleanDisplay()
+                this.erasedLast = true
+            }
+            this.updateDisplay(val)    
         }
     }
 
-    this.calculate = function(operatorSymbol){
+    this.chainCalculate = function(operatorSymbol){
         return () => {
             this.cleanDisplay()
             if(this.isCalculating){
-                const [leftOperand, operator, rightOperand] = this.calcString.split(' ')
+                this.erasedLast = false
+
+                const [
+                    leftOperand, 
+                    operator, 
+                    rightOperand
+                ] = this.calcString.split(' ')
+
                 const operation = this.operations[operator]
                 const result = operation(Number(leftOperand), Number(rightOperand))
                 this.calcString = result
@@ -78,22 +77,44 @@ function Calculator(){
         }
     }
 
+    this.equals = function(){
+        return () => {
+            this.isCalculating = false
+            this.erasedLast = false
+            const [leftOperand, operator, rightOperand] = this.calcString.split(' ')
+            console.log(this.calcString)
+            const operation = this.operations[operator]
+            const result = operation(Number(leftOperand), Number(rightOperand))
+            this.calcString = result
+            this.updateDisplay()
+        }
+    }
+
+    this.getButtonFunction = function(symbol){
+        if(symbol in this.operations){
+            return this.chainCalculate(symbol)
+        }else if(symbol === '='){
+            return this.equals()
+        }else{
+            return this.printValue(symbol)
+        }
+    }
+    
     this.renderDisplay = function(){
-        let displayNode = this.display.getNode()
+        let displayNode = this.display.displayNode
         this.container.appendChild(displayNode)
     }
 
     this.renderButtons = function(){
-        let buttonContainer = document.createElement('div')
-        buttonContainer.id = 'button__container'
+        let buttonContainer = document.getElementById('btn__container')
         this.buttonSymbols.forEach(symbol => {
-            let buttonNode = new Button(this.display.getNode(), symbol).getNode()
-            buttonNode.addEventListener('click', 
-                symbol in this.operations? this.calculate(symbol) : this.printValue(symbol)
+            let buttonNode = new Button(symbol).buttonNode
+            buttonNode.addEventListener(
+                'click', 
+                this.getButtonFunction.call(this, symbol)
             )
             buttonContainer.appendChild(buttonNode)
         })
-        this.container.appendChild(buttonContainer)
     }
 
     this.render = function(){
