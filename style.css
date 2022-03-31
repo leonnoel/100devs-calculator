@@ -1,0 +1,136 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* ====== PAGE STYLING ===== */
+body {
+    background-color: #8a628f;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    /* margin-top: 55px; */
+    display: block;
+}
+
+h2 {
+    color: black;
+    font-size: 2rem;
+    /* text-align: right; */
+    position: absolute;
+    bottom: 30%;
+    right: 1rem;
+}
+
+a {
+    text-decoration: none;
+    border-bottom: 1px dotted white;
+    color: white;
+    transition: 400ms ease;
+}
+
+a:hover {
+    border-bottom: 0;
+    color: #FFD2FF;
+}
+
+/* ====== CALCULATOR FORMATTING ===== */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+#calculator-base {
+    height: 530px;
+    width: 400px;
+    background-color: black;
+    border-radius: 20px;
+    /* box-shadow: 0px 0px 43px 17px rgb(0, 0, 0); */
+}
+#answer-box {
+    height: 100px;
+    width: 80%;
+    /* margin: 2rem; */
+    margin: 3rem auto 2rem;
+    background-color: white;
+    position: relative;
+}
+
+#button-base {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(4, 60px);
+    grid-template-rows: repeat(4, 60px);
+    /* justify-items: center; */
+    gap: 1rem;
+    /* border: 1px solid red; */
+}
+
+.button {
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 300ms ease;
+}
+
+.button:hover {
+    background-color: #b4b4b4;
+}
+
+/* .button {
+    height: 20px;
+    width: 20px;
+} */
