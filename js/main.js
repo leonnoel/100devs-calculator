@@ -22,7 +22,7 @@ class Calculator {
 let calc = new Calculator();
 let resultInWindow = false;
 let windowText = document.querySelector('.window span');
-document.addEventListener('keydown', keyPress);
+document.addEventListener('keydown', keyDown);
 
 //function to check if an operator already exists in window
 function includesOperator(str) {
@@ -30,19 +30,20 @@ function includesOperator(str) {
 }
 
 // function to handle key press events
-function keyPress(key) {
+function keyDown(key) {
     if( resultInWindow && +key.key >= 0 && +key.key <= 9)  {
         windowText.innerText = '';
         resultInWindow = false;
     }
 
     // if key pressed is 0-9 or a decimal point concat key to string
+    // else we move into the switch to handle other key presses
     if ( (+key.key >= 0 && +key.key <= 9)) {
         windowText.innerText += key.key;
     } else {
         switch(key.key) {
             case '.':
-                // if there isn't already a point concat one into window
+                // if there isn't already a point in the current operand concat one into window
                 if(!windowText.innerText.includes('.') || includesOperator(windowText.innerText)) {
                         windowText.innerText += '.';
                 }
@@ -80,6 +81,9 @@ function keyPress(key) {
                     resultInWindow = false;
                 }
                 break;
+
+            // equals or enter key is pressed (do calculation and show in window)
+            case '=':    
             case 'Enter':
                 let text = windowText.innerText;
                 let operands = [];
@@ -91,8 +95,6 @@ function keyPress(key) {
                         let sum = calc.add(+operands[0], +operands[1]);
                         windowText.innerText = sum;
 
-                        //set result in window bool to true
-                        //(so window can be cleared above when user types)
                         resultInWindow = true;
                     }  
                 }
@@ -104,8 +106,6 @@ function keyPress(key) {
                         let difference = calc.subtract(+operands[0], +operands[1]);
                         windowText.innerText = difference;
 
-                        //set result in window bool to true
-                        //(so window can be cleared above when user types)
                         resultInWindow = true;
                     }  
                 }
@@ -119,8 +119,6 @@ function keyPress(key) {
                         let product = calc.multiply(+operands[0], +operands[1]);
                         windowText.innerText = product;
 
-                        //set result in window bool to true
-                        //(so window can be cleared above when user types)
                         resultInWindow = true;
                     }  
                 }
@@ -133,8 +131,6 @@ function keyPress(key) {
                         let quotient = calc.divide(+operands[0], +operands[1]);
                         windowText.innerText = quotient;
 
-                        //set result in window bool to true
-                        //(so window can be cleared above when user types)
                         resultInWindow = true;
                     }  
                 }
