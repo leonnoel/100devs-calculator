@@ -2,23 +2,62 @@ class Calculator {
     constructor() {
     }
 
-    add(a,b) {
+    calculate(text) {
+        
+        let operands = [];
+
+        // if addition, add and return result
+        if(text.includes('+')) {
+            operands = text.split('+');
+            if(operands[1] !== '') {
+                let sum = this.add(+operands[0], +operands[1]);
+                return sum;
+            }  
+        }
+        // if subtraction, subtract and return result
+        if(text.includes('-')) {
+            operands = text.split('-');
+            if(operands[1] !== '') {
+                let difference = this.subtract(+operands[0], +operands[1]);
+                return difference;
+            }  
+        }
+        // if multiplication, multiply and return result
+        if(text.includes('*')) {
+            operands = text.split('*');
+            if(operands[1] !== '') {
+                let product = this.multiply(+operands[0], +operands[1]);
+                return product;
+            }  
+        }
+        // if division, divide and return result
+        if(text.includes('/')) {
+            operands = text.split('/');
+            if(operands[1] !== '') {
+                let quotient = this.divide(+operands[0], +operands[1]);
+                return quotient;
+            }  
+        }
+    }
+
+    #add(a,b) {
         return a + b;
     }
 
-    subtract(a,b) {
+    #subtract(a,b) {
         return a - b;
     }
 
-    multiply(a,b) {
+    #multiply(a,b) {
         return a * b;
     }
 
-    divide (a,b) {
+    #divide (a,b) {
         return a / b;
     }
 }
 
+// define global variables
 let calc = new Calculator();
 let resultInWindow = false;
 let windowText = document.querySelector('.window span');
@@ -31,6 +70,8 @@ function includesOperator(str) {
 
 // function to handle key press events
 function keyDown(key) {
+    // if there's already a result in the window and key 0-9 is pressed
+    // clear the window
     if( resultInWindow && +key.key >= 0 && +key.key <= 9)  {
         windowText.innerText = '';
         resultInWindow = false;
@@ -61,21 +102,23 @@ function keyDown(key) {
                 }
                 break;
             case '-':
-                // if window isn't blank and doesn't already contain + sign then add + sign
+                // if window isn't blank and doesn't already contain - sign then add - sign
                 if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
                     windowText.innerText += '-';
                     resultInWindow = false;
                 }
                 break;
+            case 'X':
+            case 'x':
             case '*':
-                // if window isn't blank and doesn't already contain + sign then add + sign
+                // if window isn't blank and doesn't already contain *, x, or X then add * sign
                 if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
                     windowText.innerText += '*';
                     resultInWindow = false;
                 }
                 break;
             case '/':
-                // if window isn't blank and doesn't already contain + sign then add + sign
+                // if window isn't blank and doesn't already contain / sign then add / sign
                 if(windowText.innerText !== '' && !includesOperator(windowText.innerText)) {
                     windowText.innerText += '/';
                     resultInWindow = false;
@@ -85,97 +128,11 @@ function keyDown(key) {
             // equals or enter key is pressed (do calculation and show in window)
             case '=':    
             case 'Enter':
-                let text = windowText.innerText;
-                let operands = [];
-
-                // if addition add and show result
-                if(text.includes('+')) {
-                    operands = text.split('+');
-                    if(operands[1] !== '') {
-                        let sum = calc.add(+operands[0], +operands[1]);
-                        windowText.innerText = sum;
-
-                        resultInWindow = true;
-                    }  
-                }
-
-                // if subtraction subtract and show result
-                if(text.includes('-')) {
-                    operands = text.split('-');
-                    if(operands[1] !== '') {
-                        let difference = calc.subtract(+operands[0], +operands[1]);
-                        windowText.innerText = difference;
-
-                        resultInWindow = true;
-                    }  
-                }
-
-
-
-                // if multiplication multiply and show result
-                if(text.includes('*')) {
-                    operands = text.split('*');
-                    if(operands[1] !== '') {
-                        let product = calc.multiply(+operands[0], +operands[1]);
-                        windowText.innerText = product;
-
-                        resultInWindow = true;
-                    }  
-                }
-
-
-                // if division divide and show result
-                if(text.includes('/')) {
-                    operands = text.split('/');
-                    if(operands[1] !== '') {
-                        let quotient = calc.divide(+operands[0], +operands[1]);
-                        windowText.innerText = quotient;
-
-                        resultInWindow = true;
-                    }  
-                }
-
-
-
+                windowText.innerText = calc.calculate(windowText.innerText);
+                resultInWindow = true;
                 break;
         }
     }
-    // switch(key.key) {
-    //     case '0':
-    //         windowText.innerText += '0';
-    //         break;
-    //     case '1':
-    //         windowText.innerText += '1';
-    //         break;  
-    //     case '2':
-    //         windowText.innerText += '2';
-    //         break;
-    //     case '3':
-    //         windowText.innerText += '3';
-    //         break;  
-    //     case '4':
-    //         windowText.innerText += '4';
-    //         break;
-    //     case '5':
-    //         windowText.innerText += '5';
-    //         break;  
-    //     case '6':
-    //         windowText.innerText += '6';
-    //         break;
-    //     case '7':
-    //         windowText.innerText += '7';
-    //         break;
-    //     case '8':
-    //         windowText.innerText += '8';
-    //         break;  
-    //     case '9':
-    //         windowText.innerText += '9';
-    //         break;
-    //     case 'Backspace':
-    //         windowText.innerText += 'p';
-    //         break;
-                    
-    // }
   }
 
 
