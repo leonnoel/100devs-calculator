@@ -6,7 +6,7 @@ let Calc = {
         operand: undefined,
         calculated: 0,
     }, 
-    addNum: (event) => {
+    addNum(event) {
         let value = event.target.innerText
         
         // to prevent double decimals
@@ -17,7 +17,7 @@ let Calc = {
         else { Calc.updateScreen(value) }
     },
 
-    updateScreen: (value) => {
+    updateScreen(value) {
         console.log(Calc.screen.textField)
         
         // anymore than 10 numbers, and the screen deforms
@@ -27,7 +27,7 @@ let Calc = {
         document.querySelector('#screen').innerHTML = Calc.screen.textField
     },
 
-    setOperand: (event) => {
+    setOperand(event) {
 
         let operand = event.target.innerText
         console.log('Calc.screen.textField[-1]', Calc.screen.textField)
@@ -42,7 +42,7 @@ let Calc = {
         }
 
         // mathJS cannot porcess 'x' so change to '*'
-        operand = operand === 'x' ? '*' : operand
+        operand = (operand === 'x') ? '*' : operand
 
         // add the operand to the screen
         Calc.screen.textField = Calc.screen.textField + operand
@@ -50,7 +50,7 @@ let Calc = {
 
         Calc.screen.operand = operand
     },
-    doCalc: () => {
+    doCalc() {
         // plug string into MathJS
         let calc = math.eval(Calc.screen.textField);
         // anymore than 10 numbers, and the screen deforms
@@ -64,7 +64,7 @@ let Calc = {
         document.querySelector('#screen').innerHTML = calc
         Calc.screen.textField = ''
     },
-    reset: () => {
+    reset() {
         Calc.screen.textField = ''
         document.querySelector('#screen').innerHTML = ''
     }
