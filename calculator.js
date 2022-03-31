@@ -3,8 +3,8 @@
 /*
 Things a calculator needs to do:
 
-- do math
-- pemdas
+- do math (done)
+- pemdas  (done)
 
 
 
@@ -25,35 +25,26 @@ class Calculator {
   calculate(arr) {
     let wArr = arr.map((num) => (num === 'x' ? '*' : num));
 
-    let index = 0;
-    while (wArr.includes('*') || wArr.includes('/')) {
-      if (wArr[index] === '*' || wArr[index] === '/') {
-        let computation = this.operations[wArr[index]](
-          wArr[index - 1],
-          wArr[index + 1]
-        );
-
-        wArr.splice(index - 1, 3, computation);
-        index--;
-      }
-      index++;
-    }
-
-    index = 0;
-    while (wArr.includes('+') || wArr.includes('-')) {
-      if (wArr[index] === '+' || wArr[index] === '-') {
-        let computation = this.operations[wArr[index]](
-          wArr[index - 1],
-          wArr[index + 1]
-        );
-
-        wArr.splice(index - 1, 3, computation);
-        index--;
-      }
-      index++;
-    }
-
+    // modify's array to compute all
+    this.#filterOutPemdasOperations('*', '/', wArr);
+    this.#filterOutPemdasOperations('+', '-', wArr);
     return wArr[0];
+  }
+
+  #filterOutPemdasOperations(op1, op2, arr) {
+    let index = 0;
+    while (arr.includes(op1) || arr.includes(op2)) {
+      if (arr[index] === op1 || arr[index] === op2) {
+        let computation = this.operations[arr[index]](
+          arr[index - 1],
+          arr[index + 1]
+        );
+
+        arr.splice(index - 1, 3, computation);
+        index--;
+      }
+      index++;
+    }
   }
 }
 
@@ -68,14 +59,16 @@ Things the interface needs to do:
 - deactivate equal when operator is at the end (done)
 - handle decimals (done)
 - error handling decimals
+- allow for negative numbers
 */
 
 class Interface {
   #operationArr;
   #tempNum;
-  constructor(displayEl, equalEl, calculator) {
+  constructor(displayEl, equalEl, calculator, decimalEl) {
     this.displayEl = displayEl;
     this.equalEl = equalEl;
+    this.decimalEl = decimalEl;
     this.calculator = calculator;
     this.displayArr = [];
     this.currentInput = [];
@@ -105,6 +98,8 @@ class Interface {
     this.displayEl.textContent += this.currentInput[0];
     this.deactivateEqual();
     this.numberHandler(this.currentInput.shift());
+
+    this.deactivateDecimal();
   }
 
   deactivateEqual() {
@@ -125,7 +120,12 @@ class Interface {
     num === '.' ? this.#tempNum.push(num) : this.#tempNum.push(Number(num));
   }
 
-  deactivateDecimal() {}
+  deactivateDecimal() {
+    const arrLength = this.#tempNum.length;
+    if (arrLength === 0) return;
+    this.decimalEl.disabled = false;
+    if (this.#tempNum.includes('.')) this.decimalEl.disabled = true;
+  }
 
   runCalc() {}
 }
@@ -133,9 +133,10 @@ class Interface {
 // setup
 const displayEl = document.querySelector('#display');
 const equalEl = document.querySelector('#equal');
+const decimalEl = document.querySelector('#decimal');
 
 const calc = new Calculator();
-const calcInterface = new Interface(displayEl, equalEl, calc);
+const calcInterface = new Interface(displayEl, equalEl, calc, decimalEl);
 
 const calculatorBtnContainer = document.querySelector('#btns');
 
