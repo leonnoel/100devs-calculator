@@ -32,7 +32,7 @@ main {
   border: thin solid black;
   margin:150px auto;
   width: 15%;
-  height: 200px;
+  height: 250px;
   background-color: black;
   border-radius: 5%;
 }
@@ -42,13 +42,13 @@ main {
   color: black;
   width: 80%;
   margin: 10px auto;
-  height: 15%;
+  height: 20%;
   justify-content: center;
   align-items: flex-end;
   }
 #answer{
   justify-content: center;
-  align-self: stretch;
+  align-self: flex-end;
   margin: 0;
 }
 
