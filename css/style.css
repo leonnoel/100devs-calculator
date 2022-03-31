@@ -21,22 +21,93 @@
 /* BASE STYLES
 /*******************************************/
 
+html {
+  font-size: 60%;
+}
+
 body {
-
+  max-width: 1024px;
+  margin: auto;
 }
 
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-
+h1 {
+  font-size: 5rem;
+  text-align: center;
+  margin: 25px 0px;
+}
+/* >Calculator start */
+.calculator {
+  margin: auto;
+  width: 300px;
+  background-color: black;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-footer {
-
+.calculator > .display {
+  margin: 15px;
 }
+
+.calculator > .buttonPanel {
+  margin: 0px 15px 15px 15px;
+}
+/* <Calculator end */
+
+/* >Button Panel start*/
+.buttonPanel {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 1em;
+  column-gap: 1em;
+}
+/* <Button Panel end*/
+
+/* >buttons start */
+.button {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 26px;
+  background-color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid black;
+}
+
+.button.number:hover {
+  cursor:pointer;
+  border: 2px solid cyan;
+}
+
+.button.operator:hover {
+  cursor:pointer;
+  border: 2px solid greenyellow;
+}
+
+.button span {
+  font-size: 3rem;
+  font-weight: 700;
+}
+/* <buttons end */
+
+/* >Display start */
+.display {
+  padding-top: 1.5rem;
+  padding-right: 2rem;
+  height: 5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: white;
+  text-align: end;
+}
+/* <Display end */
+
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+

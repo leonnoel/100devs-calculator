@@ -2,18 +2,82 @@
 <html lang="en">
 	<head>
   	<meta charset="utf-8">
-  	<meta name="description" content="Your description goes here">
-  	<meta name="keywords" content="one, two, three">
+  	<meta name="description" content="A simple calculator">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<title>Blank Template</title>
+		<title>100devs Calculator</title>
 
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-
-		<script type="text/javascript" src="js/main.js"></script>
+		<section>
+			<header>
+				<h1>100devs Calculator</h1>
+			</header>
+			<div class="calculator">
+				<div class="display">
+					<span>1234</span>
+				</div>
+				<div class="buttonPanel">
+					<div class="empty"></div>
+					<div class="empty"></div>
+					<div class="empty"></div>
+					<div class="button operator" data-operator="reset">
+						<span>C</span>
+					</div>
+					<div class="button number" data-value="7">
+						<span>7</span>
+					</div>
+					<div class="button number" data-value="8">
+						<span>8</span>
+					</div>
+					<div class="button number" data-value="9">
+						<span>9</span>
+					</div>
+					<div class="button operator" data-operator="divide">
+						<span>/</span>
+					</div>
+					<div class="button number" data-value="4">
+						<span>4</span>
+					</div>
+					<div class="button number" data-value="5">
+						<span>5</span>
+					</div>
+					<div class="button number" data-value="6">
+						<span>6</span>
+					</div>
+					<div class="button operator" data-operator="multiply">
+						<span>X</span>
+					</div>
+					<div class="button number" data-value="1">
+						<span>1</span>
+					</div>
+					<div class="button number" data-value="2">
+						<span>2</span>
+					</div>
+					<div class="button number" data-value="3">
+						<span>3</span>
+					</div>
+					<div class="button operator" data-operator="add">
+						<span>+</span>
+					</div>
+					<div class="button number" data-value="6">
+						<span>0</span>
+					</div>
+					<div class="button operator" data-operator="decimalPoint">
+						<span>.</span>
+					</div>
+					<div class="button operator" data-operator="equal">
+						<span>=</span>
+					</div>
+					<div class="button operator" data-operator="substraction">
+						<span>-</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script src="js/main.js"></script>
 	</body>
 </html>
