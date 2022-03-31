@@ -4,9 +4,14 @@ class Calculator {
 	constructor(previousOperand, currentOperand) {
 		this.previousOperand = previousOperand;
 		this.currentOperand = currentOperand;
+		this.operation = undefined;
+		this.clear();
 	}
 
-	clear() {}
+	clear() {
+		this.currentOperand = '';
+		this.previousOperand = '';
+	}
 
 	delete() {}
 
