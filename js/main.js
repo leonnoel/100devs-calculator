@@ -22,8 +22,6 @@ function Calculator() {
     const updateDisplay = function() {
         const display = !result ? `${num1} ${operator} ${num2}` : result    
         document.querySelector('#display').innerText = display
-        //result = NaN
-
         console.log(`${num1}  ${operator}  ${num2}  =  ${result}`)
     }
 
@@ -32,7 +30,11 @@ function Calculator() {
             operator = str
         } else if (num2 === '') {
             operator = str
+        } else if (num1 && num2) { 
+            equals()
+            operator = str
         } else {
+            console.log("Hello????? is anyone there??????")
             equals()
         }
         updateDisplay()
@@ -47,31 +49,46 @@ function Calculator() {
         result = NaN
     }
 
+    const clearAll = function() {
+        num1 = ''
+        num2 = ''
+        operator = ''
+        result = 0
+        updateDisplay()
+        document.querySelector('#display').innerText = 0
+    }
+ 
     this.buttonPressed = function(str) {
         if (str === 'C') {
-            num1 = ''
-            num2 = ''
-            operator = ''
-            result = 0
-            updateDisplay()
+            clearAll()
         }
-        if ( parseInt(str) === 0 || Number(str) && operator === '') {
+
+        if (str === '.' || parseInt(str) === 0 || Number(str) && operator === '') { //Checking if num1 is empty
             if (parseInt(str) === 0 && num1 === '0') {
                 num1 = '0'
             } else if (num1 === '0' && Number(str)) {
                 num1 = ''
                 num1 += str
+            } else if (str === '.') {
+                num1 = num1.includes('.') ? num1 : num1.concat('.')
             } else {
                 num1 += str
             }
             updateDisplay()
-        } else if (str === '+' || str === '-' || str === 'X' || str === '/') {
+        } else if (str === '+' || str === '-' || str === 'X' || str === '/') { //Checking if operator is empty
             operatorPressed(str === 'X' ? '*': str)
-        } else if (Number(str)) {
+        } else if (Number(str) || str === '.') {
+            if (str === '.') {
+                num1 = num1.includes('.') ? num1 : num1.concat('.')
+            }
             num2 += str
             updateDisplay()
         } else if (str === '=') {
             equals()
+        } else if (num1 && result) {
+            console.log('DOES THIS EVER EVEN RUUUUNNNN????????')
+            clearAll()
+            num1 += str
         }
     }
 }
