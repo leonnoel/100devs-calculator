@@ -501,15 +501,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 1.5rem;
   border-width: 4px;
   border-style: solid;
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
-  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
   padding-top: 2rem;
   padding-bottom: 2rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.calculator-blue {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 
 .display {
@@ -520,10 +522,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 0.25rem;
   border-width: 2px;
   border-style: solid;
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
-  --tw-bg-opacity: 1;
-  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 1rem;
@@ -535,6 +533,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(30 64 175 / var(--tw-text-opacity));
 }
 
+.display-blue {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
 .btn {
   margin: 0.25rem;
   height: 3rem;
@@ -542,12 +547,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-radius: 9999px;
   border-width: 2px;
   border-style: solid;
-  --tw-border-opacity: 1;
-  border-color: rgb(59 130 246 / var(--tw-border-opacity));
   font-weight: 700;
 }
 
 .btn-blue {
+  --tw-border-opacity: 1;
+  border-color: rgb(59 130 246 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
   background-color: rgb(96 165 250 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
