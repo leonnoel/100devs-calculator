@@ -22,7 +22,9 @@
 /*******************************************/
 
 body {
-
+     width:100%;
+     display: flex;
+     justify-content: center;
 }
 
 
@@ -36,12 +38,20 @@ header {
 /******************************************
 /* LAYOUT
 /*******************************************/
-h2 {
-     text-align: center;
-}
+
+
 
 div {
-     width: 400px;
+     background-color: black;
+     border-radius: 10px;
+     width: 300px;
+}
+
+h2 {
+     height: 40px;
+     width: 80%;
+     background-color: white;
+     text-align: center;
 }
 
 ul {
@@ -50,7 +60,7 @@ ul {
 
 button {
      
-     width: 24%
+     width: 20%
 }
 /******************************************
 /* LAYOUT

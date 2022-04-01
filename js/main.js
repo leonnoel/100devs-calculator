@@ -5,6 +5,14 @@ function elementClicked(click){
 }
 
 
+
+//ISSUES TO FIX:
+// add '.' functionality
+// 
+
+
+
+
 function Calculator() {
     let num1 = ''
     let num2 = ''
@@ -13,7 +21,7 @@ function Calculator() {
     
     const updateDisplay = function() {
         const display = !result ? `${num1} ${operator} ${num2}` : result    
-        document.querySelector('#display').innerHTML = display
+        document.querySelector('#display').innerText = display
         //result = NaN
 
         console.log(`${num1}  ${operator}  ${num2}  =  ${result}`)
@@ -21,6 +29,8 @@ function Calculator() {
 
     const operatorPressed = function(str) {
         if (operator === '') {
+            operator = str
+        } else if (num2 === '') {
             operator = str
         } else {
             equals()
@@ -38,9 +48,22 @@ function Calculator() {
     }
 
     this.buttonPressed = function(str) {
-     
-        if (Number(str) && operator === '') {
-            num1 += str
+        if (str === 'C') {
+            num1 = ''
+            num2 = ''
+            operator = ''
+            result = 0
+            updateDisplay()
+        }
+        if ( parseInt(str) === 0 || Number(str) && operator === '') {
+            if (parseInt(str) === 0 && num1 === '0') {
+                num1 = '0'
+            } else if (num1 === '0' && Number(str)) {
+                num1 = ''
+                num1 += str
+            } else {
+                num1 += str
+            }
             updateDisplay()
         } else if (str === '+' || str === '-' || str === 'X' || str === '/') {
             operatorPressed(str === 'X' ? '*': str)
