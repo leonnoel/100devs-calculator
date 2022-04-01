@@ -21,8 +21,10 @@
 /* BASE STYLES
 /*******************************************/
 
-body {
-
+section {
+  background: black;
+  height: 400px;
+  width: 300px;
 }
 
 
