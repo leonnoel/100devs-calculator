@@ -1,0 +1,41 @@
+.container {
+ max-width: 400px;
+ margin: 10vh auto 0 auto;
+}
+
+#display {
+ text-align: right;
+ height: 70px;
+ line-height: 70px;
+ padding: 16px 8px;
+ font-size: 25px;
+}
+
+.buttons {
+ display: grid;
+ background-color: black;
+ /* border-bottom: 1px solid #999;
+ border-left: 1px solid #999; */
+ grid-template-columns: 1fr 1fr 1fr 1fr ;
+}
+
+.buttons > div {
+ border-top: 1px solid #999;
+ border-right: 1px solid #999;
+}
+
+.button {
+ background-color: white;
+ border: 0.5px solid #999;
+ border-radius: 50%;
+ line-height: 100px;
+ text-align: center;
+ font-size: 25px;
+ cursor: pointer;
+}
+
+.button:hover {
+ background-color: #323330;
+ color: white;
+ transition: 0.5s ease-in-out;
+}
