@@ -59,6 +59,9 @@ button {
      font-size: 3.6rem;
      font-family: Arial, Helvetica, sans-serif;
 }
+button:hover {
+     background-color: red;
+}
 
 
 /******************************************
