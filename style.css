@@ -28,7 +28,7 @@ main {
 .keys {
     height: 80%;
 }
-.s {
+.keySet {
     height: 25%;
     display: flex;
     justify-content: space-between;
@@ -51,7 +51,7 @@ main {
 .keys {
     padding: 2rem 2rem 0 2rem
 }
-.s {
+.keySet {
     padding: 0.3rem 0;
     margin-bottom: 0.3rem;
 }
@@ -64,9 +64,53 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    border: none;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
-h3 {
-    display: inline-block;
-   font-size: 2.5rem;
-   font-weight: 700;
+.buttons:hover {
+    cursor: pointer;
+}
+.buttons:active {
+    cursor: pointer;
+    background-color: rgb(48, 47, 47);
+    color:rgb(255, 255, 255);
+    transform: translateY(0.3rem);
+    box-shadow: 0.2rem 0.2rem 0.3rem 0.3rem rgb(71, 71, 71);
+}
+/***************************************
+mobile for screen size less than 350px
+***************************************/
+@media all and (max-width: 350px) {
+    main {
+        width: 20rem;
+        height: 27rem;
+        padding: 2rem 1rem;
+    }
+    .keys {
+        padding: 1rem 1rem 0 1rem
+    }
+    h3 {
+        display: inline-block;
+       font-size: 1.5rem;
+       font-weight: 700;
+    }
+} 
+/***************************************
+mobile for screen size less than 350px
+***************************************/
+@media all and (max-width: 230px) {
+    main {
+        width: 16rem;
+        height: 19rem;
+        padding: 1.5rem 0.7rem;
+    }
+    .keys {
+        padding: 0.7rem 0.7rem 0 0.7rem
+    }
+    h3 {
+        display: inline-block;
+       font-size: 1rem;
+       font-weight: 700;
+    }
 }
