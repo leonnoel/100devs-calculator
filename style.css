@@ -31,6 +31,10 @@ body {
 .button.operation {
     background: #992355;
 }
+.button.empty {
+    opacity: 0;
+    cursor: default;
+}
 .button.equal.error {
     background: #bdbab1;
     color: #aeaba2;

@@ -14,6 +14,8 @@ class Calculator {
     #buttonDivide
     #buttonDecimal
     #buttonEqual
+    #buttonModulo
+    #operationButtons
     // ----------------------------
     // Public properties.
     errorMessage
@@ -33,6 +35,16 @@ class Calculator {
         this.#buttonDivide = document.querySelector('.divide')
         this.#buttonDecimal = document.querySelector('.decimal')
         this.#buttonEqual = document.querySelector('.equal')
+        this.#buttonModulo = document.querySelector('.modulo')
+
+        this.#operationButtons = [
+            this.#buttonAdd,
+            this.#buttonSubtract,
+            this.#buttonMultiply,
+            this.#buttonDivide,
+            this.#buttonDecimal,
+            this.#buttonModulo
+        ]
 
         this.errorMessage = 'wat'
         this.result = 0
@@ -52,13 +64,11 @@ class Calculator {
         this.#numberButtons.forEach(number => {
             number.addEventListener('click', () => this.pressButton(number.innerHTML))
         })
+        for (const operation of this.#operationButtons) {
+            operation.addEventListener('click', () => this.pressButton(operation.innerHTML))
+        }
         this.#buttonClear.addEventListener('click', () => this.clearDisplay())
         this.#buttonUndo.addEventListener('click', () => this.undo())
-        this.#buttonAdd.addEventListener('click', () => this.add())
-        this.#buttonSubtract.addEventListener('click', () => this.subtract())
-        this.#buttonMultiply.addEventListener('click', () => this.multiply())
-        this.#buttonDivide.addEventListener('click', () => this.divide())
-        this.#buttonDecimal.addEventListener('click', () => this.pressButton('.'))
         this.#buttonEqual.addEventListener('click', () => {
             if (this.#enableEvaluation)
                 this.evaluate()
