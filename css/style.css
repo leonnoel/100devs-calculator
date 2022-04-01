@@ -1,0 +1,74 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+     font-size: 62.5%;
+}
+
+.calcBody {
+     border-radius: 30px;
+     width: 37rem;
+     height: 50rem;
+     background-color: black;
+     margin: 50px auto;
+     padding-top: 5rem;
+     padding-left: 3.5rem;
+     padding-right: 3rem;
+}
+.output{
+     background-color: white;
+     height: 8rem;
+     width: 30rem;
+     margin-top: 2rem;
+     font-size: 3rem;
+     font-family: Arial, Helvetica, sans-serif;
+     
+}
+.inputs {
+     display: flex;
+     flex-wrap: wrap;
+     padding: 2rem 2rem;
+}
+button {
+     border-radius: 200px;
+     background-color: white;
+     border-style: none;
+     height: 5.3rem;
+     width: 5.3rem;
+     margin: 1rem .5rem;
+     font-weight: bold;
+     font-size: 3.6rem;
+     font-family: Arial, Helvetica, sans-serif;
+}
+button:hover {
+     background-color: red;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
