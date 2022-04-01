@@ -1,0 +1,50 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    display: block;
+}
+
+.testBorder {
+    border: solid lime 2px;
+}
+
+#calcBody {
+    width: 50vw;
+    height: 70vh;
+    margin: 0 auto;
+    min-width: 300px;
+    min-height: 400px;
+    background-color: black;
+    border-radius: 30px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+#calcDispl {
+    background-color: white;
+    font-size: 250%;
+    float: left;
+    height: 6vh;
+    min-height: 50px;
+    width: 40vw;
+    margin: 5vh auto 2vh auto;
+    text-align: right;
+}
+
+#calcNumberPad {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    clear: both;
+    margin: 0 auto;
+}
+
+.calcButton {
+    width: 8vw;
+    background-color: white;
+    border-radius: 100%;
+    margin: 5vh 1vw;
+    text-align: center;
+    padding: 3vw 0;
+    font-size: 150%;
+}
