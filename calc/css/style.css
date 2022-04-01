@@ -1,0 +1,128 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+  font-size: 62.5%;
+}
+html, body {
+  margin: 0;
+  height: 100%;
+}
+body {
+  /* position: fixed; */
+  /* width: 100%; */
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px dotted green;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/* calc container */
+.container, .container * {
+  display: flex;
+}
+.container > * {
+  flex-direction: column;
+}
+.container {
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 70%;
+  border: 1px solid blue;
+}
+
+/* calc body */
+#calcBody {
+  width:  50%;
+  height: 100%;
+  max-height: 700px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightgrey;
+  padding: 5px 5px;
+  border: 5px solid black;
+}
+
+/*output screen*/
+#screen {
+   background: black;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 20%;
+  color: green;
+  /* padding: 1px 10px 10px 5px; */
+}
+
+/* buttons section */
+.btnContainer {
+  background: grey;
+  width: 100%;
+  height: 100%;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.btns#numPad {
+  flex-flow: row wrap;
+  height: 100%;
+  max-width: 100%;
+  align-items: center;
+}
+
+.btns > .btn {
+  width: 25%;
+  /* border-radius: 45%; */
+  max-height: 100%;
+  margin: 0;
+  /* align-self: center; */
+  border: 1px solid black;
+}
+.btn > * {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+/* output screen styles */
+#screen {
+  font-size: 5rem;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* button styles */
+.btn {
+  background-color: white;
+  font-size: 4rem;
+  /* color: black; */
+  /* padding: 10px; */
+}
