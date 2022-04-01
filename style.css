@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: #2c2c2c;
+  max-width: 300px;
+
+  margin: 10vh auto 0 auto;
+}
+.display {
+  grid-column: 1 / -1;
+  background-color: white;
+  display: flex;
+  height: 75px;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px 15px;
+  word-wrap: break-word;
+  word-break: break-all;
+  border: 2px solid black;
+}
+.display .previous-operand {
+  color: #999;
+  font-size: 1rem;
+}
+
+.display .current-operand {
+  color: black;
+  font-size: 1.5rem;
+}
+
+#clear {
+  display: block;
+  background: #022cff;
+  color: white;
+}
+
+#clear:hover {
+  color: #022cff;
+  background-color: white;
+}
+.buttons > button {
+  border: none;
+}
+.buttons {
+  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+
+  margin: 0 auto;
+}
+.buttons > button {
+  /* background: white; */
+  /* border-radius: 50%; */
+  /* height: 50px;
+    width: 50px; */
+  width: 100%;
+  background-color: #2c2c2c;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid rgb(53, 53, 53);
+}
+
+.buttons > button:hover {
+  background-color: black;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+#equals {
+  background-color: rgb(153, 32, 32);
+  grid-column: span 2;
+}
+#clear {
+  grid-column: span 2;
+}
