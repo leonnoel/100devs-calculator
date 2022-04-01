@@ -6,21 +6,33 @@ document.querySelectorAll('.operators').forEach(item => {     // operator button
     item.addEventListener("click", clickedOperator)
 });
 
-//document.querySelector('.dot').addEventListener("click", getButtonValues)   //dot, decimal numbers
+document.querySelector('.dot').addEventListener("click", doDecimalNumbers)   //dot, decimal numbers
 
 document.getElementById('finalCalculation').addEventListener("click", calculating)   //  equal button/calculation
 
+document.querySelector('.clear').addEventListener("click", allClear) // clear everything
 
 let str = ""
 let leftNumber = ""
 let rightNumber = ""
 let operator = ""
+
 function clickedNumber() {
     if(operator === "") {
         leftNumber += this.value
     } else {
         rightNumber += this.value
     }   
+    str = leftNumber + operator + rightNumber
+    document.querySelector(".result").innerText = str
+}
+
+function doDecimalNumbers () {
+    if (leftNumber !== "" && operator === "" && !leftNumber.includes(".")) {
+        leftNumber += "."
+    } else if (operator !== "" && rightNumber !=="" && !rightNumber.includes(".")) {
+        rightNumber += "."
+    }
     str = leftNumber + operator + rightNumber
     document.querySelector(".result").innerText = str
 }
@@ -34,6 +46,30 @@ function clickedOperator () {
 }
 
 function calculating () {
-    
+    let numberResult = ""
+    if(leftNumber === "" || rightNumber=== "" || operator=== "") {
+        return 
+    } else if (operator === '+') {
+        numberResult = Number(leftNumber) + Number(rightNumber)
+    } else if(operator === '-') {
+        numberResult = Number(leftNumber) - Number(rightNumber)
+    } else if(operator === 'x') {
+        numberResult = Number(leftNumber) * Number(rightNumber)
+    } else if(operator === '/') {
+        numberResult = Number(leftNumber) / Number(rightNumber)
+    }
+    document.querySelector(".result").innerText = Number(numberResult)
+    clearResult()
 }
 
+function clearResult() {
+    str = ""
+    leftNumber = ""
+    rightNumber = ""
+    operator = ""
+}
+
+function allClear () {
+    clearResult ()
+    document.querySelector(".result").innerText = ""
+}

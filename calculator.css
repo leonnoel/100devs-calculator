@@ -61,33 +61,32 @@ body {
 
 main {
     background: black;
-    height: 90%;
-    width: 50%;
-    margin: 30% auto;
-    padding: 5%;
+    height: 800px;
+    width: 500px;
+    margin: 50px auto;
+    padding: 3%;
     border-radius: 10%;
 }
 
 .result {
     background: white;
-    width: 80%;
-    height: 30%;
-    margin: 5% 0;
-    padding: 5% 2%;
+    width: 400px;
+    height: 100px;
     text-align: end;
 }
 
 .interactive {
-    width: 95%;
-    height: 75%;
+    width: 450px;
+    height: 300px;
+    margin-top: 40px;
 }
 
 button {
-    height: 100%;
-    width: 20%;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
-    margin-bottom: 2%;
-    padding: 5% 5%;
-    font-size: 120%;
+    margin: 2% 0 2% 1%;
+    padding: 2% 2%;
+    font-size: 50px;
     font-weight: bolder;
 }
