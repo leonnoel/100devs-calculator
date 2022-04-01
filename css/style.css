@@ -64,6 +64,8 @@ button {
 .output {
   grid-column: 1 / -1;
   background-color: rgba(0, 0, 0, .75);
+  color: rgba(255, 255, 255, 1);
+  font-size: 2.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -71,16 +73,6 @@ button {
   padding: 10px;
   word-wrap: break-word;
   word-break: break-all;
-}
-
-.output .previous-operand {
-  color: rgba(255, 255, 255, .25);
-  font-size: 1.5rem;
-}
-
-.output .current-operand {
-  color: rgba(255, 255, 255, 1);
-  font-size: 2.5rem;
 }
 
 .operator {
