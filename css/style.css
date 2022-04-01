@@ -1,0 +1,48 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#calculator{
+  background: black;
+  height: 600px;
+  width: 400px;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+#display {
+  text-align: center;
+  background: white;
+  height: 50px;
+  margin: 20px;
+}
+
+#keys {
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
+#keys > div{
+  text-align: center;
+  margin: 10px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
