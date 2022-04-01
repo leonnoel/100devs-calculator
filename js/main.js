@@ -1,43 +1,61 @@
 
-class Calculator {
-    constructor(num1, operator, num2) {
-        num1, operator, num2
+const listOfButtons = document.querySelectorAll('button').forEach(item => item.addEventListener('click', elementClicked))
+function elementClicked(click){
+    calc.buttonPressed(click.target.innerText)
+}
+
+
+function Calculator() {
+    let num1 = ''
+    let num2 = ''
+    let operator = ''    
+    let result = NaN
+    
+    const updateDisplay = function() {
+        const display = !result ? `${num1} ${operator} ${num2}` : result    
+        document.querySelector('#display').innerHTML = display
+        //result = NaN
+
+        console.log(`${num1}  ${operator}  ${num2}  =  ${result}`)
     }
 
-    divide() {
-        return num1/num2
+    const operatorPressed = function(str) {
+        if (operator === '') {
+            operator = str
+        } else {
+            equals()
+        }
+        updateDisplay()
     }
-    multiply() {
-        return num1/num2
-    }
-    add() {
-        return num1+num2
-    }
-    subtract() {
-        return num1-num2
-    }
-    equals() {
 
+    const equals = function() {
+        result = eval(num1+operator+num2)
+        num1 = result
+        num2 = ''
+        operator = ''
+        updateDisplay()
+        result = NaN
+    }
+
+    this.buttonPressed = function(str) {
+     
+        if (Number(str) && operator === '') {
+            num1 += str
+            updateDisplay()
+        } else if (str === '+' || str === '-' || str === 'X' || str === '/') {
+            operatorPressed(str === 'X' ? '*': str)
+        } else if (Number(str)) {
+            num2 += str
+            updateDisplay()
+        } else if (str === '=') {
+            equals()
+        }
     }
 }
 
-//add event listeners to all the buttons
-let buttonBeingPressed = 0
-const listOfButtons = document.querySelectorAll('button')
-for (let element of listOfButtons) {
-    element.addEventListener('click', () => {
-        buttonBeingPressed = element
-        buttonPressed
-    })
-}
+let calc = new Calculator()
 
-function buttonPressed(){
-    console.log(buttonBeingPressed)
-}
-//user presses number... calc.num1 = string number pressed
 
-//user presses another number... calc.num1.concat()
-//user presses operator... calc.operator = string?
-//user presses operator again... calc.operator = 
-//user presses number... calc.num2 
+
+
 
