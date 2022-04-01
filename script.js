@@ -6,13 +6,20 @@ function Calculator() {
 
   this.processEvent = function(context) {
     console.log("You did something!");
-    const screen = document.querySelector('.screen');
+    const screen = document.querySelector('#stack');
 
-    screen.innerText = context;
+    if(isNaN(Number(context))) {
+      this.calculate(context);
+    }
+
+    operationStack.push(context);
+
+    screen.innerText = operationStack.join(' ');
   }
 
-  this.calculate = function() {
-
+  this.calculate = function(oper) {
+    console.log("Calculate");
+  //  operationStack.clear();
   }
 }
 
