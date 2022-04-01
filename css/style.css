@@ -25,9 +25,19 @@ section {
   background: black;
   height: 400px;
   width: 300px;
+  border-radius: 10px;
 }
-
-
+button {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+div {
+  display: inline-block;
+  background: white;
+  height: 50px;
+  width: 275px;
+}
 /******************************************
 /* LAYOUT
 /*******************************************/
