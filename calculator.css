@@ -73,6 +73,8 @@ main {
     width: 400px;
     height: 100px;
     text-align: end;
+    font-size: 50px;
+    padding-top: 25px;
 }
 
 .interactive {

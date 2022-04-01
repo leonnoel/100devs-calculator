@@ -22,7 +22,9 @@ function clickedNumber() {
         leftNumber += this.value
     } else {
         rightNumber += this.value
-    }   
+    }  
+    leftNumber = leftNumber.substring(0,5)
+    rightNumber = rightNumber.substring(0,5)  
     str = leftNumber + operator + rightNumber
     document.querySelector(".result").innerText = str
 }
