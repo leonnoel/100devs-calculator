@@ -115,18 +115,6 @@ class Calculator {
         // Check for zeroed out display, so we don't have leading zeros when adding numbers.
         this.#display.innerHTML = this.#display.innerHTML === '0' ? number : this.#display.innerHTML + number
     }
-    add() {
-        this.#display.innerHTML += '+'
-    }
-    subtract() {
-        this.#display.innerHTML += '-'
-    }
-    multiply() {
-        this.#display.innerHTML += '*'
-    }
-    divide() {
-        this.#display.innerHTML += '/'
-    }
     clearDisplay() {
         this.#display.innerHTML = '0'
         applyAnimationClass(this.#display, 'cancel')
@@ -141,8 +129,8 @@ class Calculator {
         applyAnimationClass(this.#display, 'cancel')
     }
     evaluate() {
-        this.clearErrorText()
         try {
+            this.clearErrorText()
             applyAnimationClass(this.#display, 'flash')
             // Eval is a bad idea, but it's fine for this project!
             this.result = eval(this.#display.innerHTML).toFixed(2)
