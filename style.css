@@ -7,7 +7,7 @@ body {
   background-color: rgb(0,0,0);
   border-radius: 10%;
   width: 650px;
-  height: 800px;
+  height: 700px;
   margin: 0 auto;
 }
 
@@ -21,7 +21,7 @@ main div {
   height: 100px;
   margin: 0 10%;
   position: relative;
-  top: 3.5em;
+  top: 5.0em;
 }
 
 .flex-buttons {
@@ -31,7 +31,7 @@ main div {
   justify-content: center;
   align-items: center;
   position: relative;
-  top: 3.0em;
+  top: 5.0em;
 }
 
 .flex-buttons div {
@@ -50,4 +50,15 @@ main div {
   font-size: 3.0em;
   text-align: center;
   margin: 0.25em auto;
+}
+
+#answer {
+  font-size: 3.0em;
+  margin: 0;
+}
+
+@media screen and (max-width: 660px) {
+  .calculator-base {
+    background-color: rgb(100,0,255);
+  }
 }
