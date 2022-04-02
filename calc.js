@@ -61,6 +61,7 @@ class Calculator {
         this.result = 0
         this.textGapTolerance = 10
         this.displayGapPadding = 60
+        this.textLengthMax = 48
         this.#setupButtonEvents()
     }
     // ----------------------------
@@ -91,9 +92,8 @@ class Calculator {
     #displayTextLengthAdjust() {
         this.getDisplayTextGap()
 
-        while (!this.gapWithinTolerance()) {
+        while (!this.gapWithinTolerance() && this.#displayText.innerHTML.length < this.textLengthMax) {
             const fontSize = parseInt(getComputedStyle(this.#displayText).fontSize)
-
             if (this.#displayTextGap > this.textGapTolerance) {
                 this.#displayText.style.fontSize = `${fontSize + 1}px`
 
