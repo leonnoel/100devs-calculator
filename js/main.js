@@ -1,15 +1,3 @@
-//class for NumberButton, Mult, Divide, Add, Subtract, Equals
-//function for calculating: math.evaluate(string)
-//when a number or operator button is pressed, add the innertext to the string
-//if the button is the decimal or an operator, check if equation.endsWith('') any operator or decimal maybe use string.match(regex)
-//when the equals button is pressed, evaluate the expression
-//whenever the equation (the string) is changed, update the innertext of calcScreen
-//call constructors to create const for each button
-//function to clear equation
-//after an equation is evaluated, the next button press should call the clear function before generating the new equation
-//i came across the math.js evaluate function while planning this out and didn't realize it was from an external library.
-//so since i came this far already (i coded the actual calculator part last) there's no going back now. i'm still going to use math.js
-
 let calcScreen = document.querySelector("#calcScreen");
 let equation = "";
 function clear() {
@@ -18,10 +6,6 @@ function clear() {
 }
 let reset = false;
 
-
-//I wanted to hide the above stuff in a Calculator class, but when I do that and extend numberbutton from the calculator class,
-//it gives me an error about super constructors so i think i'm doing something wrong
-//so for now equation will be accessible by the user
 class CalculatorButton {
     constructor(element) {
         this.element = element;
@@ -31,7 +15,7 @@ class CalculatorButton {
 }
 class NumberButton extends CalculatorButton {
     constructor(element) {
-        super(element) //oh, i understand what it meant by super constructors now
+        super(element) 
         this.element.addEventListener('click', run)
         function run() {
             if (reset == true) { 
@@ -71,7 +55,7 @@ class EqualsButton extends CalculatorButton {
         this.element.addEventListener('click', evaluate)
         function evaluate() {
             if (equation.length) {
-                equation = math.evaluate(equation); //is it cheating to use a library for this? 
+                equation = eval(equation); 
                 calcScreen.innerText = equation.toString().substring(0, 13);
                 reset = true;
             } else return;
