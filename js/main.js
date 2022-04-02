@@ -1,5 +1,5 @@
 function Calculator() {
-    let a = 0;
+    let firstNum = 0;
     let currentNumber = '';
     let currentOperation = '';
 
@@ -22,30 +22,30 @@ function Calculator() {
     this.addOperand = function () {
         //console.log(`${this.innerHTML}`);
         currentOperation = this.innerHTML;
-        a = currentNumber;
+        firstNum = currentNumber;
         currentNumber = '';
         console.log(`${this.innerHTML}`);
     }
     this.compute = function () {
-        a = Number(a);
+        firstNum = Number(firstNum);
         currentNumber = Number(currentNumber);
         let result = 0;
         if (currentOperation === "+") {
-            result = a + currentNumber;
+            result = firstNum + currentNumber;
         } else if (currentOperation === "-") {
-            result = a - currentNumber;
+            result = firstNum - currentNumber;
         } else if (currentOperation === "*") {
-            result = a * currentNumber;
+            result = firstNum * currentNumber;
         } else if (currentOperation === "/") {
-            result = a / currentNumber;
+            result = firstNum / currentNumber;
         } else {
             answer.innerHTML = "Invalid";
         }
         answer.innerHTML = result;
-        a = 0;
+        firstNum = 0;
         currentNumber = '';
         currentOperation = '';
-        a = result;
+        currentNumber = result;
         
     }
 
