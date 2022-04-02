@@ -28,6 +28,22 @@ body {
     transition: all 0.2s ease-in-out;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.4);
 }
+.button.sevenmd {
+    overflow: hidden;
+}
+.button.sevenmd > img {
+    width: 100%;
+    height: 100%;
+    filter: saturate(0) brightness(5);
+    transition: all 0.2s ease-in-out;
+}
+    .button.sevenmd:hover > img {
+        filter: saturate(1) brightness(1);
+    }
+    .button.sevenmd:hover {
+        box-shadow: 0 0 3rem rgba(145, 92, 182, 1);
+    }
+
 .button.operation {
     background: #992355;
 }
