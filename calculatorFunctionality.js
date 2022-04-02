@@ -1,60 +1,66 @@
-const calculator = {
-    displayValue: "",
-    // Grab all the buttons  with .button
-        allButtons: document.querySelectorAll(".button"),
+class Calculator {
+    constructor() {
+        this.displayValue = "";
+        this.allButtons = document.querySelectorAll(".button")
+    }
+    //sets up button interaction
+    setupButtonEvents() {
+        this.allButtons.forEach(button => {
+            button.addEventListener("click", () => this.addNumToDisplay(button.innerText))
+        })
+    }
 
+    addNumToDisplay(num) {
+        this.displayValue += num
+        document.querySelector("#display").innerText = this.displayValue
+    }
 
-        setupButtonEvents: function() {
-            this.allButtons.forEach(button => {
-                button.addEventListener("click", () => this.addNumToDisplay(button.innerText))
-            })
-        },
-
-        addNumToDisplay: function(num) {
-            calculator.displayValue += num
-            document.querySelector("#display").innerText = this.displayValue
-        },
-
-        setUpResult: function(){
-            document.querySelector("#result").addEventListener("click", calculator.calculate)
-        },
-    
-    //Calculates values.
-    calculate: function(){
-        let nums = calculator.displayValue
+    setUpResult(){
+        document.querySelector("#result").addEventListener("click", this.calculate)
+    }
+    //calls correct method and syncs internal value and display
+    calculate = (displayValue) => {
+        let nums = this.displayValue
         if(nums.includes("+")){
-            this.displayValue = calculator.add(nums)
-            display.innerText = this.displayValue
-
-            calculator.displayValue = this.displayValue
+            displayValue = this.add(nums)
+            display.innerText = displayValue
+            this.displayValue = displayValue
         } else if (nums.includes("-")){
-            display.innerText = calculator.sub(nums)
+            displayValue = this.sub(nums)
+            display.innerText = displayValue
+            this.displayValue = displayValue
         } else if (nums.includes("x")){
-            display.innerText = calculator.multi(nums)
+            displayValue = this.multi(nums)
+            display.innerText = displayValue
+            this.displayValue = displayValue
         } else if (nums.includes("/")){
-            display.innerText =  calculator.divide(nums)
+            displayValue = this.divide(nums)
+            display.innerText = displayValue
+            this.displayValue = displayValue
         } 
-    },
-
-    //Convert string to operator and n1, n2
-    add: function(nums){
+    }
+    //calculates result
+    add(nums){
         let arrOfNums = nums.split("+")
         return Number(arrOfNums[0]) + Number(arrOfNums[1])
-    },
-    sub: function(nums){
+    }
+    sub(nums){
         let arrOfNums = nums.split("-")
         return Number(arrOfNums[0]) - Number(arrOfNums[1])
-    },
-    multi: function(nums){
+    }
+    multi(nums){
         let arrOfNums = nums.split("x")
         return Number(arrOfNums[0]) * Number(arrOfNums[1])
-    },
-    divide: function(nums){
+    }
+    divide(nums){
         let arrOfNums = nums.split("/")
-        return Number(arrOfNums[0]) / Number(arrOfNums[1])
-    },
+        return (Number(arrOfNums[0]) / Number(arrOfNums[1]))
+        
+    }
 
 }
-    
-calculator.setupButtonEvents()
-calculator.setUpResult()
+
+let myCalc = new Calculator()
+myCalc.setupButtonEvents()
+myCalc.setUpResult()
+console.log(myCalc)
