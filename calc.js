@@ -2,12 +2,10 @@
 class Calculator {
     // ----------------------------
     // Private properties.
-    #buttonClear
-    #display
-    #displayText
-    #enableEvaluation
     #allButtons
     #numberButtons
+    #operationButtons
+
     #buttonUndo
     #buttonAdd
     #buttonSubtract
@@ -16,7 +14,12 @@ class Calculator {
     #buttonDecimal
     #buttonEqual
     #buttonModulo
-    #operationButtons
+    #buttonClear
+
+    #display
+    #displayText
+
+    #enableEvaluation
     #defaultDisplayFontSize
     #displayTextGap
     // ----------------------------
@@ -26,12 +29,9 @@ class Calculator {
 
     // ----------------------------
     constructor() {
-        this.#enableEvaluation = true
-        this.#display = document.querySelector('.display')
-        this.#displayText = this.#display.querySelector('.display-text')
-        this.#defaultDisplayFontSize = getComputedStyle(this.#displayText).fontSize
         this.#allButtons = document.querySelectorAll('.button')
         this.#numberButtons = document.querySelectorAll('.number')
+
         this.#buttonClear = document.querySelector('.clear')
         this.#buttonUndo = document.querySelector('.undo')
         this.#buttonAdd = document.querySelector('.add')
@@ -41,7 +41,6 @@ class Calculator {
         this.#buttonDecimal = document.querySelector('.decimal')
         this.#buttonEqual = document.querySelector('.equal')
         this.#buttonModulo = document.querySelector('.modulo')
-        this.#displayTextGap = 0
 
         this.#operationButtons = [
             this.#buttonAdd,
@@ -51,6 +50,12 @@ class Calculator {
             this.#buttonDecimal,
             this.#buttonModulo
         ]
+
+        this.#enableEvaluation = true
+        this.#display = document.querySelector('.display')
+        this.#displayText = this.#display.querySelector('.display-text')
+        this.#defaultDisplayFontSize = getComputedStyle(this.#displayText).fontSize
+        this.#displayTextGap = 0
 
         this.errorMessage = 'wat'
         this.result = 0
