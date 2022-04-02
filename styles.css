@@ -1,0 +1,59 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #9b68e2, #00FF6C);
+    font-family: sans-serif;
+}
+
+.calculator-container {
+    width: 44rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    background-color: black;
+    padding: 4rem;
+    border-radius: 2rem;
+    margin-top: 3rem;
+}
+
+.input{
+    width: 40rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.output {
+    width: 40rem;
+    height: 8rem;
+    background-color: white;
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    font-weight: bold;
+    padding: .5rem 1rem;
+    text-align: right;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bolder;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 100%;
+    background-color: #FFF;
+    color: #000;
+}
