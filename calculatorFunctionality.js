@@ -10,14 +10,17 @@ class Calculator {
         })
     }
 
+    setUpResult(){
+        document.querySelector("#result").addEventListener("click", this.calculate)
+    }
+
+    // shows internal values in the display
     addNumToDisplay(num) {
         this.displayValue += num
         document.querySelector("#display").innerText = this.displayValue
     }
 
-    setUpResult(){
-        document.querySelector("#result").addEventListener("click", this.calculate)
-    }
+
     //calls correct method and syncs internal value and display
     calculate = (displayValue) => {
         let nums = this.displayValue
@@ -25,6 +28,7 @@ class Calculator {
             displayValue = this.add(nums)
             display.innerText = displayValue
             this.displayValue = displayValue
+            console.log(displayValue)
         } else if (nums.includes("-")){
             displayValue = this.sub(nums)
             display.innerText = displayValue
