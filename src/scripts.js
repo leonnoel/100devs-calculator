@@ -5,11 +5,11 @@ function Calculator() {
   this.operator = null;
 
   this.appendNumber = function(number){
-    this.temp == 0 ? this.temp = number : this.temp = this.temp.toString()+number.toString()
+    this.temp == 0 && !this.temp.toString().includes('.') ? this.temp = number : this.temp = this.temp.toString()+number.toString()
   }
 
   this.appendDecimal = function(){
-    if(!this.temp.includes('.')){
+    if(!this.temp.toString().includes('.')){
       this.temp = this.temp.toString()+'.'
     }
   }
