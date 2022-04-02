@@ -81,6 +81,9 @@ body {
     justify-content: space-between;
 }
 .display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
     width: 90%;
     height: 3.5rem;
     font-size: 3.5rem;
@@ -96,12 +99,17 @@ body {
 }
 .display.flash {
     background: #4acd98;
-    color: #2c2c2c;
+    color: white;
     transition: all 0s ease-in-out;
 }
 .display.cancel {
     background: #ff607c;
-    color: #2c2c2c;
+    color: white;
+    transition: all 0s ease-in-out;
+}
+.display.undo {
+    background: #8da15f;
+    color: #bb7131;
     transition: all 0s ease-in-out;
 }
 .display.error {
