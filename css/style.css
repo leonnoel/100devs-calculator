@@ -1,0 +1,97 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  /* border: thin solid black; */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+  font-size: 62.5%;
+}
+body {
+
+}
+
+main {
+  border: thin solid black;
+  margin:150px auto;
+  width: 15%;
+  height: 250px;
+  background-color: black;
+  border-radius: 5%;
+}
+#answerContainer{
+  display: flex;
+  background-color: white;
+  color: black;
+  width: 80%;
+  margin: 10px auto;
+  height: 20%;
+  justify-content: center;
+  align-items: flex-end;
+  }
+#answer{
+  justify-content: center;
+  align-self: flex-end;
+  margin: 0;
+}
+
+#calculator {
+  height: 60%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  padding: 2px;
+  /* align-items: stretch; */
+}
+span{
+  margin: 1%;
+  border-radius: 100%;
+  width: 22%;
+  
+  padding: 1%;
+  flex-wrap: wrap;
+  font-size: large;
+  display: inline-block;
+  background-color: white;
+  text-align: center;
+}
+span:hover{
+  color:black;
+  background-color: gray;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
