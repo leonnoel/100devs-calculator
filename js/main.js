@@ -71,8 +71,7 @@ class EqualsButton extends CalculatorButton {
         this.element.addEventListener('click', evaluate)
         function evaluate() {
             if (equation.length) {
-                equation = math.evaluate(equation);
-                //is it cheating to use a library for this? 
+                equation = math.evaluate(equation); //is it cheating to use a library for this? 
                 calcScreen.innerText = equation.toString().substring(0, 13);
                 reset = true;
             } else return;
