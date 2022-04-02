@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+
+#frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    background-color: #000;
+    border-radius: 5px;
+    width: 25vw;
+}
+
+#window {
+    background-color: #fff;
+    height: 70px;
+    width: 100%;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#numpad-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px 0 5px 0;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    border: solid 1px blue;
+    font-size: 3rem;
+    width: 60px;
+    height: 50px;
+}
+
+.seven {
+    order: 1;
+}
+
+.eight {
+    order: 2;
+}
+
+.nine {
+    order: 3;
+}
+
+.division {
+    order: 4;
+}
+
+.four {
+    order: 5;
+}
+
+.five {
+    order: 6;
+}
+
+.six {
+    order: 7;
+}
+
+.multiply {
+    order: 8;
+}
+
+.one {
+    order: 9;
+}
+
+.two {
+    order: 10;
+}
+
+.tree {
+    order: 11;
+}
+
+.sum {
+    order: 12;
+}
+.zero {
+    order: 13;
+}
+.dot {
+    order: 14;
+}
+.equal {
+    order: 15;
+}
+.substraction {
+    order: 16;
+}
+.clear {
+    order: 17;
+    width: 100%;
+}
