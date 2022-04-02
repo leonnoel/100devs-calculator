@@ -60,7 +60,7 @@ class EqualsButton extends CalculatorButton {
         this.element.addEventListener('click', evaluate)
         function evaluate() {
             if (equation.length) {
-                equation = eval(equation); 
+                equation = math.evaluate(equation); 
                 calcScreen.innerText = equation.toString().substring(0, 13);
                 reset = true;
             } else return;
