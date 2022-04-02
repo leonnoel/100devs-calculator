@@ -31,9 +31,7 @@ body {
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
 
-}
 
 /******************************************
 /* LAYOUT
@@ -66,6 +64,7 @@ ul {
 
 button {
      font-family:sans-serif;
+     background-color: white;
      font-weight: 600;
      font-size: 2rem;
      margin: 2px 2px;
@@ -91,9 +90,7 @@ button {
 /* LAYOUT
 /*******************************************/
 
-footer {
 
-}
 
 /******************************************
 /* ADDITIONAL STYLES
