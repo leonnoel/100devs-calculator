@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-size: 10px;
+    font-family: "Gotham Rounded", sans-serif;
 }
 
 html, body {
@@ -26,7 +27,12 @@ body {
     padding: 30px;
     background-color: #000;
     border-radius: 5px;
-    width: 25vw;
+    width: 315px;
+    height: 390px;
+    box-shadow: 2px 2px 4px 1px #ccc;
+    word-wrap: break-word;
+    word-break: break-all;
+    
 }
 
 #window {
@@ -36,6 +42,8 @@ body {
     justify-content: space-evenly;
     border-radius: 5px;
     padding: 5px;
+    font-size: 2rem;
+    overflow: auto;
 }
 
 #numpad-container {
@@ -53,10 +61,17 @@ body {
     align-items: center;
     background-color: #fff;
     border-radius: 5px;
-    border: solid 1px blue;
+    border: solid 1px black;
     font-size: 3rem;
     width: 60px;
     height: 50px;
+    cursor: pointer;
+    outline: none;
+}
+
+.key:hover {
+    border: solid 2px mediumseagreen;
+    background-color: #ccc;
 }
 
 .seven {
