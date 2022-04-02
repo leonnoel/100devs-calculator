@@ -43,24 +43,37 @@ header {
 
 div {
      background-color: black;
-     border-radius: 10px;
+     border-radius: 20px;
      width: 300px;
+     min-width: 235px;
+     max-width: 235px;
 }
 
 h2 {
+     font-family: sans-serif;
+     font-size: 2rem;
      height: 40px;
+     line-height: 40px;
      width: 80%;
      background-color: white;
-     text-align: center;
+     text-align: right;
+     margin: 20px auto;
 }
 
 ul {
-     padding: 10px 50px;
+     padding: 10px 20px;
 }
 
 button {
-     
-     width: 20%
+     font-family:sans-serif;
+     font-weight: 600;
+     font-size: 2rem;
+     margin: 2px 2px;
+     padding: 0px 0px;
+     border-radius: 100px; 
+     border-width: 0px;    
+     width: 21%;
+     height: 40px;
 }
 /******************************************
 /* LAYOUT

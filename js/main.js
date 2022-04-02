@@ -75,8 +75,8 @@ function Calculator() {
                 num1 += str
             }
             updateDisplay()
-        } else if (str === '+' || str === '-' || str === 'X' || str === '/') { //Checking if operator is empty
-            operatorPressed(str === 'X' ? '*': str)
+        } else if (str === '+' || str === '-' || str === 'x' || str === '/') { //Checking if operator is empty
+            operatorPressed(str === 'x' ? '*': str)
         } else if (Number(str) || str === '.') {
             if (str === '.') {
                 num1 = num1.includes('.') ? num1 : num1.concat('.')
