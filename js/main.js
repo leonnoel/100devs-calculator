@@ -1,6 +1,8 @@
 let calcScreen = document.querySelector("#calcScreen");
 let equation = "";
+let ans = 0;
 function clear() {
+    ans = equation.toString();
     equation = "";
     calcScreen.innerText = equation;
 }
@@ -38,9 +40,12 @@ class OperatorButton extends CalculatorButton {
                 clear();
                 reset = false;
             }
-            if (equation.length == 0) {
+            if (equation.length == 0 && ans && ans.length < 10) {
+                equation += ans + this.innerText;
+                calcScreen.innerText = equation;
+            } else if (equation.length == 0) {
                 return;
-            } else if (equation.length < 9 && !CalculatorButton.regex.test(equation)) {
+            } else if (equation.length < 10 && !CalculatorButton.regex.test(equation)) {
                 equation += this.innerText;
                 calcScreen.innerText = equation;
             } else {
