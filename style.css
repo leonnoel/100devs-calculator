@@ -1,14 +1,23 @@
+body * {
+ font-family: 'Source Sans Pro', sans-serif;
+
+}
+
 .container {
+ background-color: black;
  max-width: 400px;
  margin: 10vh auto 0 auto;
+ border: 45px solid black;
+ border-radius: 5%;
 }
 
 #display {
+ background-color: white;
  text-align: right;
  height: 70px;
  line-height: 70px;
  padding: 16px 8px;
- font-size: 25px;
+ font-size: 2rem;
 }
 
 .buttons {
@@ -27,15 +36,20 @@
 .button {
  background-color: white;
  border: 0.5px solid #999;
- border-radius: 50%;
+ border-radius: 100%;
  line-height: 100px;
  text-align: center;
- font-size: 25px;
+ font-size: 3rem;
  cursor: pointer;
+ margin-top: 15px;
+ margin-left: 5px;
+ margin-right: 5px;
+ /* width: 150px;
+ height: 150px; */
 }
 
 .button:hover {
- background-color: #323330;
+ background-color: #60615f;
  color: white;
  transition: 0.5s ease-in-out;
 }
