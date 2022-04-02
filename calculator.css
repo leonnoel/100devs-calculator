@@ -69,6 +69,7 @@ main {
 }
 
 .result {
+    overflow: hidden;
     background: white;
     width: 400px;
     height: 100px;
