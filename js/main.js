@@ -8,7 +8,7 @@ function buttonClicked (event) {
     // make button click variable
     let buttonValue = event.target.innerText
     
-    // make a readOut variables
+    // make readOut variables
     let readOut = document.querySelector('.readOut')
     let readOutValue = readOut.innerText
 
@@ -16,11 +16,8 @@ function buttonClicked (event) {
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     }
-    // limiting number of characters in input
-    if (readOut.innerText.length > 13) {
-        alert(`Sorry you've reached the maximum number of characters that can be input. Please refresh and try again.`)
-        // check if read out needs to be cleared
-    }else if (calculator.clearReadOut === true) {
+    // check if read out needs to be cleared
+    if (calculator.clearReadOut === true) {
         readOut.innerText = ''
         calculator.clearReadOut = false
         readOut.innerText += buttonValue
@@ -29,7 +26,10 @@ function buttonClicked (event) {
     }else if (buttonValue === '=') {
         calculator.checkOperationType(readOutValue)
         calculator.previousButton = buttonValue
-    } else {
+    }else if (readOut.innerText.length > 13) {
+        // limiting number of characters in input
+        alert(`Sorry you've reached the maximum number of characters that can be input. Please refresh and try again.`)
+    }else {
         // add button clicked to readOut
         readOut.innerText += buttonValue
         calculator.previousButton = buttonValue
@@ -108,16 +108,38 @@ const calculator = {
     }
     
 }
-// TODO need to limit amount of characters in input
 // TODO need to get multiple operations working in one string and order of ops correct
+    // Probably easier if I calculate as the values are input into calc.
+function evalString (readOutString) {
+    // create array of operators
+    let operatorArray = readOutString.split('').filter(item => item === 'x' || item === '/' || item === '+' || item === '-').map(element => element === 'x' ? '*' : element)
+    console.log('operator array' + operatorArray)
+    // create array of values
+    let valuesArray =readOutString.split('').filter(item => Number(item))
+    console.log('initial val array' + valuesArray)
+    for (let i = 0; i < operatorArray.length; i++) {
+        if (operatorArray[i] === '*') {
+            let newValueArray = valuesArray.splice(i,2)
+            console.log('new val array' + newValueArray)
+            valuesArray.splice(i,0, newValueArray[0] * newValueArray[1])
+            console.log('val array' + valuesArray)
+        }
+    }
+    console.log('final array' + valuesArray)
+}
+
+
 
 // user presses number
-    // readout updates
-// user presses operator
-    // need validation so operators don't repeat
+    // check if readout is too long if not
         // readout updates
+// user presses operator
+    // check if readout is too long if not
+        // need validation so operators don't repeat
+            // readout updates
 // user presses number
-    // readout updates
+    // check if readout is too long if not
+        // readout updates
 // user presses equals
     // math happens
         // readout updates
