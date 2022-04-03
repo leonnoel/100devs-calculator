@@ -29,6 +29,9 @@ function Calculator() {
         else if(this.innerText === '='){
             //
         }
+        else if(this.innerText === 'RESET'){
+            currentSum = 0
+        }
         else{
             currentSum += this.innerText
         }
@@ -42,15 +45,31 @@ function Calculator() {
         let num1 = '1'
         let operation = '+'
         let num2 = '1'
-        if(equationArray.length === 3){
-            num1 = +equationArray[0]
-            operation = equationArray[1]
-            num2 = +equationArray[2]
-            currentSum = methods[operation](num1, num2)
-            // currentSum = (this.methods[operation](num1, num2)) 
+
+
+
+
+         // Old code for parsing user input and outputing numbers
+        // if(equationArray.length === 3){
+        //     num1 = +equationArray[0]
+        //     console.log(+equationArray[0])
+        //     operation = equationArray[1]
+        //     num2 = +equationArray[2]
+        //     currentSum = methods[operation](num1, num2)
+        //     // currentSum = (this.methods[operation](num1, num2)) 
+        // }
+        if(equationArray.length % 2 === 1 && equationArray.length > 1 && !equationArray.includes('')){
+            // for(let i = 1; i < equationArray.length; i += 2){   would be a for loop for checking existence of '' in the array
+            //     if()
+            // }
+            for(let i = 0; i < equationArray.length; i+= 2){
+                num1 = +equationArray.shift()
+                operation = equationArray.shift()
+                num2 = +equationArray.shift()
+                currentSum = methods[operation](num1, num2)
+                equationArray.unshift(currentSum + '')
+                    
         }
-        else if(equationArray.length === 1){
-            //
         }
         else {
             // currentSum = (this.methods[operation](num1, num2)) 
