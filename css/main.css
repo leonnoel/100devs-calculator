@@ -1,5 +1,11 @@
-* {
+body {
     color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+button {
+    font-size: 30px;;
 }
 
 #body {
@@ -14,11 +20,15 @@
 
 #screen {
     width: 90%;
-    height: 15%;
+    height: 10%;
     margin: auto;
     background: white;
     color: black;
-    margin-bottom: 10%
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 5%;
 }
 
 .button {
@@ -30,8 +40,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: bold;
-    font-size: 30px;
+
+}
+
+.button:hover {
+    cursor: pointer;
 }
 
 #btnPad {
