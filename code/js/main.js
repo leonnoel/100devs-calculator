@@ -23,15 +23,14 @@
 //}
 
 function MakeCalculator() {
-    const that = this;
 
-    this.display = function(click) {
+    this.display = (click) => {
         document.querySelector('.display').textContent += click.target.textContent
     }
-    this.output = function(output) {
+    this.output = (output) => {
         document.querySelector('.display').textContent = output
     }
-    this.array = function() {
+    this.array = () => {
         return document.querySelector('.display').textContent.split(' ')
     }
     this.reset = function() {
@@ -43,24 +42,23 @@ function MakeCalculator() {
         "x": function(a, b) {return a * b},
         "/": function(a, b) {return a / b},
     }
-    this.test = function(click) {
-        let arr = that.array()
+    this.test = (click) => {
+        let arr = this.array()
         if (arr.length === 3) {
-            that.calculate()
-            that.display(click)
+            this.calculate()
+            this.display(click)
         }
         else {
-            that.display(click)
+            this.display(click)
         }
     }
-    this.calculate = function() {
-        let arr = that.array()
-        let a = 0, b = 0, op = '+', output = 0
+    this.calculate = () => {
+        let arr = this.array()
+        let a = 0, b = 0, op = '+'
         op = arr[1]
         a = +arr[0]
-        b = +arr[2]
-        output = that.methods[op](a, b);       
-        that.output(that.methods[op](a, b))
+        b = +arr[2]       
+        this.output(this.methods[op](a, b))
     }
 }
 
