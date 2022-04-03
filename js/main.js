@@ -6,11 +6,11 @@ for (let item of allButtons) {
 
 function buttonClicked (event) {
     // make button click variable
-    let buttonValue = event.target.innerHTML
+    let buttonValue = event.target.innerText
     
     // make a readOut variables
     let readOut = document.querySelector('.readOut')
-    let readOutValue = readOut.innerHTML
+    let readOutValue = readOut.innerText
 
     // Making sure operators don't repeat
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
@@ -21,9 +21,9 @@ function buttonClicked (event) {
         alert(`Sorry you've reached the maximum number of characters that can be input. Please refresh and try again.`)
         // check if read out needs to be cleared
     }else if (calculator.clearReadOut === true) {
-        readOut.innerHTML = ''
+        readOut.innerText = ''
         calculator.clearReadOut = false
-        readOut.innerHTML += buttonValue
+        readOut.innerText += buttonValue
         calculator.previousButton = buttonValue
     // check if button is equals
     }else if (buttonValue === '=') {
@@ -31,9 +31,8 @@ function buttonClicked (event) {
         calculator.previousButton = buttonValue
     } else {
         // add button clicked to readOut
-        readOut.innerHTML += buttonValue
+        readOut.innerText += buttonValue
         calculator.previousButton = buttonValue
-        console.log(readOut.innerText.length)
     }
     
 }
@@ -88,7 +87,7 @@ const calculator = {
         }
     },
     updateReadOut(output) {
-        document.querySelector('.readOut').innerHTML = output
+        document.querySelector('.readOut').innerText = output
         this.clearReadOut = true
     },
     // String needs to be 14 characters or less
@@ -99,20 +98,13 @@ const calculator = {
             // need to figure out home many characters in front of dot and behind dot
             console.log("float")
             let splitArray = String(num).split('.')
-<<<<<<< HEAD
             // use toFixed to round to correct decimal places
             return num.toFixed(14 - splitArray[0].length)
         }else {
             console.log(num)
             // convert to power of 10 notation
             return Number.parseFloat(num).toExponential(8)
-=======
-            // Figure out how much to round the decimals places, 
-            let decicalPlaces = 14 - splitArray[0] - 1
-            // TODO
->>>>>>> refs/remotes/origin/answer
         }
-        // checkout
     }
     
 }
