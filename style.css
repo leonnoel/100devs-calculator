@@ -1,0 +1,38 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing : border-box;
+    box-sizing: border-box;
+}
+.calculatorContainer {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 18%;
+    height: 80%;
+    background-color: black;
+    margin: 0 auto;
+    padding: 1.4% 0;
+}
+.containerForButtons {
+    text-align: center;
+    margin-top: 6%;
+    width: 100%;
+    padding: 0 8%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.containerForButtons > button{
+    text-align: center; 
+    width: 20%;
+    height: 20%;
+    border: 2px solid white;
+    border-radius: 100%;
+    margin: 4% 2%;
+    padding: 0 1.2%;
+}
+.output {
+    height: 23px;
+    width: 85%;
+    background-color: white;
+    margin: 0 auto; 
+}
