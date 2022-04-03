@@ -1,114 +1,116 @@
-let result = 0;
-let selectedNumber = 0;
-let decimal = null;
-let lastOperation = null;
 const calculationZone = document.querySelector(".displayCalc");
 const resultZone = document.querySelector(".displayResult");
-initialize();
 
-function calculate() {
-  if (decimal !== null) {
-    console.log(`selectedNumber : ${selectedNumber} and decimal : ${decimal}`);
-    selectedNumber = Number(decimal) / 10 ** decimal.length + selectedNumber;
-    console.log(`selectedNumber : ${selectedNumber}`);
+class Calculator {
+  constructor() {
+    this._result = 0;
+    this._selectedNumber = 0;
+    this._decimal = null;
+    this._lastOperation = null;
+    this.initialize();
   }
-
-  switch (lastOperation) {
-    case "+":
-      result += selectedNumber;
-      break;
-    case "-":
-      result -= selectedNumber;
-      break;
-    case "x":
-      result *= selectedNumber;
-      break;
-    case "/":
-      result =
-        Math.round((result / selectedNumber + Number.EPSILON) * 100) / 100;
-      break;
-    case "%":
-      result =
-        Math.round(((result % selectedNumber) + Number.EPSILON) * 100) / 100;
-      break;
-    default:
-      result = selectedNumber;
-      break;
+  
+  initialize() {
+    this._result = 0;
+    this._selectedNumber = 0;
+    this._decimal = null;
+    this._lastOperation = null;
+    calculationZone.innerText = "";
+    resultZone.innerText = "";
+    console.log(`selectedNumber : ${this._selectedNumber} and decimal : ${this._decimal} and result : ${this._result}`);
   }
-  console.log(`result : ${result}`);
-
-  decimal = null;
-  selectedNumber = 0;
-  console.log(`selectedNumber : ${selectedNumber} and decimal : ${decimal}`);
+  
+  calculate() {
+    if (this._decimal !== null) {
+      console.log(`selectedNumber : ${this._selectedNumber} and decimal : ${this._decimal}`);
+      this._selectedNumber = Number(this._decimal) / 10 ** this._decimal.length + this._selectedNumber;
+      console.log(`selectedNumber : ${this._selectedNumber}`);
+    }
+    
+    switch (this._lastOperation) {
+      case "+":
+        this._result += this._selectedNumber;
+        break;
+      case "-":
+        this._result -= this._selectedNumber;
+        break;
+      case "x":
+        this._result *= this._selectedNumber;
+        break;
+      case "/":
+        this._result = Math.round((this._result / this._selectedNumber + Number.EPSILON) * 100) / 100;
+        break;
+      case "%":
+        this._result = Math.round(((this._result % this._selectedNumber) + Number.EPSILON) * 100) / 100;
+        break;
+      default:
+        this._result = this._selectedNumber;
+        break;
+    }
+    console.log(`result : ${this._result}`);
+    
+    this._decimal = null;
+    this._selectedNumber = 0;
+    console.log(`selectedNumber : ${this._selectedNumber} and decimal : ${this._decimal}`);
+  }
+  
+  checkAndProcess(element) {
+    console.log(element.innerText);
+    
+    if (element.classList.contains("digit")) {
+      if (this._lastOperation !== null && this._selectedNumber === 0 && this._decimal === null) {
+        calculationZone.innerText = `${calculationZone.innerText} ${element.innerText}`;
+      } else {
+        calculationZone.innerText = `${calculationZone.innerText}${element.innerText}`;
+      }
+      
+      if (this._decimal === null && element.classList.contains("period")) {
+        this._decimal = "";
+        console.log(`decimal : ${this._decimal}`);
+      }
+      
+      if (this._decimal !== null && !element.classList.contains("period")) {
+        this._decimal += element.innerText;
+        console.log(`decimal : ${this._decimal}`);
+      } else if (!element.classList.contains("period")) {
+        this._selectedNumber = this._selectedNumber * 10 + Number(element.innerText);
+        console.log(`selectedNumber : ${this._selectedNumber}`);
+      }
+    } else if (element.classList.contains("operation")) {
+      calculationZone.innerText =
+        this._result !== 0 && (this._selectedNumber !== 0 || this._decimal !== null)
+          ? `(${calculationZone.innerText}) ${element.innerText}`
+          : `${calculationZone.innerText} ${element.innerText}`;
+      
+      this.calculate();
+      
+      this._lastOperation = element.innerText;
+    }
+  }
+  
+  displayResult() {
+    if (this._selectedNumber !== 0 || this._decimal !== null) {
+      this.calculate();
+    }
+    
+    resultZone.innerText = this._result;
+  }
 }
+
+const calculator = new Calculator();
 
 const digits = document.querySelectorAll(".digit");
 digits.forEach((element) => {
-  element.addEventListener("click", checkAndProcess);
+  element.addEventListener("click", (e) => calculator.checkAndProcess(e.target));
 });
 
 const operations = document.querySelectorAll(".operation");
 operations.forEach((element) => {
-  element.addEventListener("click", checkAndProcess);
+  element.addEventListener("click", (e) => calculator.checkAndProcess(e.target));
 });
 
-function checkAndProcess(element) {
-  const elem = element.target;
-  console.log(elem.innerText);
-
-  if (elem.classList.contains("digit")) {
-    if (lastOperation !== null && selectedNumber === 0 && decimal === null) {
-      calculationZone.innerText = `${calculationZone.innerText} ${elem.innerText}`;
-    } else {
-      calculationZone.innerText = `${calculationZone.innerText}${elem.innerText}`;
-    }
-
-    if (decimal === null && elem.classList.contains("period")) {
-      decimal = "";
-      console.log(`decimal : ${decimal}`);
-    }
-
-    if (decimal !== null && !elem.classList.contains("period")) {
-      decimal += elem.innerText;
-      console.log(`decimal : ${decimal}`);
-    } else if (!elem.classList.contains("period")) {
-      selectedNumber = selectedNumber * 10 + Number(elem.innerText);
-      console.log(`selectedNumber : ${selectedNumber}`);
-    }
-  } else if (elem.classList.contains("operation")) {
-    calculationZone.innerText =
-      result !== 0 && (selectedNumber !== 0 || decimal !== null)
-        ? `(${calculationZone.innerText}) ${elem.innerText}`
-        : `${calculationZone.innerText} ${elem.innerText}`;
-
-    calculate();
-
-    lastOperation = elem.innerText;
-  }
-}
-
 const resultRequest = document.querySelector(".equals");
-resultRequest.addEventListener("click", displayResult);
-
-function displayResult() {
-  if (selectedNumber !== 0 || decimal !== null) {
-    calculate();
-  }
-
-  resultZone.innerText = result;
-}
+resultRequest.addEventListener("click", () => calculator.displayResult());
 
 const acRequest = document.querySelector(".AC");
-acRequest.addEventListener("click", initialize);
-
-function initialize() {
-  result = 0;
-  selectedNumber = 0;
-  decimal = null;
-  lastOperation = null;
-  calculationZone.innerText = "";
-  resultZone.innerText = "";
-  console.log(
-    `selectedNumber : ${selectedNumber} and decimal : ${decimal} and result : ${result}`
-  );
-}
+acRequest.addEventListener("click", () => calculator.initialize());
