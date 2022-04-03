@@ -16,8 +16,11 @@ function buttonClicked (event) {
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     }
-    // check if read out needs to be cleared
-    if (calculator.clearReadOut === true) {
+    // limiting number of characters in input
+    if (readOut.innerText.length > 13) {
+        alert(`Sorry you've reached the maximum number of characters that can be input. Please refresh and try again.`)
+        // check if read out needs to be cleared
+    }else if (calculator.clearReadOut === true) {
         readOut.innerHTML = ''
         calculator.clearReadOut = false
         readOut.innerHTML += buttonValue
@@ -30,6 +33,7 @@ function buttonClicked (event) {
         // add button clicked to readOut
         readOut.innerHTML += buttonValue
         calculator.previousButton = buttonValue
+        console.log(readOut.innerText.length)
     }
     
 }
@@ -46,7 +50,7 @@ const calculator = {
         for (i = 0; i < stringArray.length; i++) {
             total += Number(stringArray[i])
         }
-        this.updateReadOut(total)
+        this.updateReadOut(this.totalLengthCheck(total))
     },
     subtractValues: function(readOutString) {
         let stringArray = readOutString.split('-')
@@ -54,7 +58,7 @@ const calculator = {
         for (i = 1; i < stringArray.length; i++) {
             total -= Number(stringArray[i])
         }
-        this.updateReadOut(total)
+        this.updateReadOut(this.totalLengthCheck(total))
     },
     multiplyValues: function(readOutString) {
         let stringArray = readOutString.split('x')
@@ -62,7 +66,7 @@ const calculator = {
         for (i = 1; i < stringArray.length; i++) {
             total *= Number(stringArray[i])
         }
-        this.updateReadOut(total)
+        this.updateReadOut(this.totalLengthCheck(total))
     },
     divideValues: function(readOutString) {
         let stringArray = readOutString.split('/')
@@ -70,7 +74,7 @@ const calculator = {
         for (i = 1; i < stringArray.length; i++) {
             total /= Number(stringArray[i])
         }
-        this.updateReadOut(total)
+        this.updateReadOut(this.totalLengthCheck(total))
     },
     checkOperationType: function(readOutString) {
         if (readOutString.includes('+')) {
@@ -92,13 +96,19 @@ const calculator = {
             return num
         } else if (String(num).includes('.')) {
             // need to figure out home many characters in front of dot and behind dot
+            console.log("float")
             let splitArray = String(num).split('.')
-            // TODO need to figure out how much to round the decimals places
+            // use toFixed to round to correct decimal places
+            return num.toFixed(14 - splitArray[0].length)
+        }else {
+            console.log(num)
+            // convert to power of 10 notation
+            return Number.parseFloat(num).toExponential(8)
         }
     }
     
 }
-// TODO need to limit amount of characters to be output
+// TODO need to limit amount of characters in input
 // TODO need to get multiple operations working in one string and order of ops correct
 
 // user presses number
