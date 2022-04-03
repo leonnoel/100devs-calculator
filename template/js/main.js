@@ -15,7 +15,7 @@ function Calculator() {
     }
     if (this.innerText === "=") {
         let calc = eval(value)
-        document.querySelector('.result').innerHTML = calc.toFixed(6)
+        document.querySelector('.result').innerHTML = calc.toFixed(3)
         value = ""
     }
 }
