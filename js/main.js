@@ -67,6 +67,28 @@ function CalculatorInterface() {
         console.log(operator)
     }
 
+    //Changes sign in DOM and interface variables
+    this.changeSign = () => {
+        
+        if (!currentOperand) {
+            previousOperand = calc.changeSign(parseFloat(previousOperand))
+            output.innerHTML = previousOperand
+        } else {
+            currentOperand = calc.changeSign(parseFloat(currentOperand))
+            output.innerHTML = currentOperand
+        } 
+    }
+
+    this.percent = () => {
+        if (!currentOperand) {
+            previousOperand = calc.percent(parseFloat(previousOperand))
+            output.innerHTML = previousOperand
+        } else {
+            currentOperand = calc.percent(parseFloat(currentOperand))
+            output.innerHTML = currentOperand
+        } 
+    }
+
     //Perform calculations by calling calculator methods
     this.performCalculation = () => {
         console.log(previousOperand, operator, currentOperand)
@@ -131,7 +153,7 @@ function OperatorButton(btn) {
 
     btn.addEventListener('click', e => {
 
-        //If currentOperand is undefined (i.e. when 2 operators are clicked in a row), set the operator and do not perform calculation
+        //If currentOperand is undefined (i.e. when 2 operators are clicked in a row), set the operator to the new value and do not perform calculation
         if (!interface.currentOperand) {
             interface.setOperator(e.target.value)
             return
@@ -184,15 +206,17 @@ function AllClearButton(btn) {
 const allClearButton = new AllClearButton(document.querySelector('#all-clear'))
 
 //Sign Button Constructor
-// function SignButton(btn) {
-//     btn.addEventListener('click', () => {
-//         calc.changeSign()
-//         document.querySelector('.output').innerHTML = result
-//         currentOperand = result
-//     })
-// }
+function SignButton(btn) {
+    btn.addEventListener('click', interface.changeSign)
+}
 
 //Instantiate new Sign Button
 const signButton = new SignButton(document.querySelector('#sign'))
 
-//Percent Button
+//Percent Button - need to change placeholder function
+function PercentButton(btn) {
+    btn.addEventListener('click', interface.percent)
+}
+
+//Instantiate new Percent Button
+const percentButton = new PercentButton(document.querySelector('#percent'))
