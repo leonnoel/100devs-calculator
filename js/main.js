@@ -118,13 +118,19 @@ function NumberButton(btn) {
 const numberBtns = document.querySelectorAll('.number')
 numberBtns.forEach(btn => new NumberButton(btn))
 
-
 //Operator button constructor
 function OperatorButton(btn) {
 
     btn.addEventListener('click', e => {
 
-        if (interface.isOperatorSet === true) {
+        //If currentOperand is undefined (i.e. when 2 operators are clicked in a row), set the operator and do not perform calculation
+        if (!interface.currentOperand) {
+            interface.setOperator(e.target.value)
+            return
+        }
+
+        //Allows chaining multiple operations
+        if (interface.isOperatorSet) {
             interface.performCalculation()
         }
 
@@ -139,3 +145,6 @@ function OperatorButton(btn) {
 //Instantiate new operator buttons
 const operatorBtns = document.querySelectorAll('.operator')
 operatorBtns.forEach(btn => new OperatorButton(btn))
+
+
+
