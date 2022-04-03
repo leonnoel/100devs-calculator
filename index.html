@@ -5,14 +5,46 @@
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
 
-		<title>Title in the tab</title>
+		<title>Calculator</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<img src="img/zeo.jpg" alt="Power Rangers Zeo">
+		<table class = "calculator" >
+			<tr>
+			<td colspan = "3"> <input class = "display-box" type = "text" id = "result" disabled value = ""/> </td>
+			<!-- clearScreen() function clear all the values -->
+			<td> <input class = "button" type = "button" value = "C" /> </td>
+			</tr>
+			<tr>
+			<!-- display() function display the value of clicked button -->
+			<td> <input class = "button" type = "button" value = "7"/> </td>
+			<td> <input class = "button" type = "button" value = "8"/> </td>
+			<td> <input class = "button" type = "button" value = "9"/> </td>
+			<td> <input class = "button" type = "button" value = "/"/> </td>
+			</tr>
+			<tr>
+			<td> <input class = "button" type = "button" value = "4"/> </td>
+			<td> <input class = "button" type = "button" value = "5"/> </td>
+			<td> <input class = "button" type = "button" value = "6"/> </td>
+			<td> <input class = "button" type = "button" value = "*"/> </td>
+			</tr>
+			<tr>
+			<td> <input class = "button" type = "button" value = "1"/> </td>
+			<td> <input class = "button" type = "button" value = "2"/> </td>
+			<td> <input class = "button" type = "button" value = "3"/> </td>
+			<td> <input class = "button" type = "button" value = "+"/> </td>
+			</tr>
+			<tr>
+			<td> <input class = "button" type = "button" value = "0"/> </td>
+			<td> <input class = "button" type = "button" value = "."/> </td>
+			<!-- calculate() function evaluate the mathematical expression -->
+			<td> <input class = "button" type = "button" value = "="/> </td>
+			<td> <input class = "button" type = "button" value = "-"/> </td>
+			</tr>
+			</table>
 
 		<h2></h2>
 
