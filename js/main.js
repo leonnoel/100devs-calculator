@@ -1,112 +1,172 @@
-let textToDisplay = 0
+let textToDisplay = '0'
 toDisplay()
 
 //push to DOM
 function toDisplay(){
-document.querySelector('#display').innerText = `${textToDisplay}`
+    document.querySelector('#display').innerText = `${textToDisplay}`
 }
 
 
 //KEY Press 0-9 . /*-+ =
 document.addEventListener('keydown', addDigit)
 
+
 function addDigit(e) {
-    console.log(e)
-    if (e.key >= 0 && e.key <= 9) {
-        if (textToDisplay === 0) {
+    // console.log(e)
+    if ((e.key >= 0 && e.key <= 9) || (e.key === '/' || e.key === '*' || e.key === '-' || e.key === '+') || (e.key === '.') ){
+        if (textToDisplay === '0') {
             textToDisplay = e.key
             toDisplay(textToDisplay)
-            toString(textToDisplay)
         }else {
-            console.log(`number ${e.key}`)
             textToDisplay += e.key
             toDisplay(textToDisplay)
-            toString(textToDisplay)
         }
-    }else if (e.keycode === 13 ) {
-        console.log(`equals ${e.key}`)
+    }else if (e.key === 'Enter' ) {
         equals()
-    }else if (e.keycode > 105 && e.keycode < 112 && e.keycode !== 108){
-        console.log(`operator ${e.key}`)
-        let operation = e.key
-        operate(e.key)
     }
+}
+//Click on Screen
+function zero(){
+    if (textToDisplay === '0') {
+        
+    }else {
+        textToDisplay += '0'
+        toDisplay(textToDisplay)
+    }
+}
+function one(){
+    if (textToDisplay === '0') {
+        textToDisplay = '1'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '1'
+        toDisplay(textToDisplay)
+    }
+}
+function two(){
+    if (textToDisplay === '0') {
+        textToDisplay = '2'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '2'
+        toDisplay(textToDisplay)
+    }
+}
+function three(){
+    if (textToDisplay === '0') {
+        textToDisplay = '3'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '3'
+        toDisplay(textToDisplay)
+    }
+}
+function four(){
+    if (textToDisplay === '0') {
+        textToDisplay = '4'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '4'
+        toDisplay(textToDisplay)
+    }
+}
+function five(){
+    if (textToDisplay === '0') {
+        textToDisplay = '5'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '5'
+        toDisplay(textToDisplay)
+    }
+}
+function six(){
+    if (textToDisplay === '0') {
+        textToDisplay = '6'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '6'
+        toDisplay(textToDisplay)
+    }
+}
+function seven(){
+    if (textToDisplay === '0') {
+        textToDisplay = '7'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '7'
+        toDisplay(textToDisplay)
+    }
+}
+function eight(){
+    if (textToDisplay === '0') {
+        textToDisplay = '8'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '8'
+        toDisplay(textToDisplay)
+    }
+}
+function nine(){
+    if (textToDisplay === '0') {
+        textToDisplay = '9'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '9'
+        toDisplay(textToDisplay)
+    }
+}
+function dot(){
+    if (textToDisplay === '0') {
+        textToDisplay = '0.'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '.'
+        toDisplay(textToDisplay)
+    }
+}
+function divide(){
+    if (textToDisplay === '0') {
+        textToDisplay = '/'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '/'
+        toDisplay(textToDisplay)
+    }
+}
+function multiply(){
+    if (textToDisplay === '0') {
+        textToDisplay = '*'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '*'
+        toDisplay(textToDisplay)
+    }
+}
+function add(){
+    if (textToDisplay === '0') {
+        textToDisplay = '+'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '+'
+        toDisplay(textToDisplay)
+    }
+}
+function subtract(){
+    if (textToDisplay === '0') {
+        textToDisplay = '-'
+        toDisplay(textToDisplay)
+    }else {
+        textToDisplay += '-'
+        toDisplay(textToDisplay)
+    }
+}
 
-}
-let group = ''
-//String numbers together for equations
-function toString(num) {
-   group = group + num
-   console.log(group)
-}
-let operator = ''
-//Separate numbers from operators
-function operate(symbol){
-    operator = operator + symbol
-    console.log(symbol)
-}
 
-//Show the answer clear the equation
+
+//Show the answer 
 function equals() {
-    textToDisplay === document.querySelector('#display').innerText
+    let answer = eval(textToDisplay)
+    textToDisplay = answer
+    toDisplay()
 }
 
-
-
-
-
-//keycodes
-// 0 = 96
-// 1=  97
-// 2=  98
-//     99
-//     100
-//     101
-//     102
-//     103
-//     104
-// 9=105
-// enter   13
-// /       111
-// *       106
-// -       109
-// +       107
-// .       110
-
-
-// function Number(name, value) {
-//     this.name = name
-//     this.value = value
-//     this.press = function(){
-//         return(value)
-//     }
-// }
-
-// let zero = new Number('0', 0)
-// let one = new Number('1', 1)
-// let two = new Number('2', 2)
-// let three = new Number('3', 3)
-// let four = new Number('4', 4)
-// let five = new Number('5', 5)
-// let six = new Number('6', 6)
-// let seven = new Number('7', 7)
-// let eight = new Number('8', 8)
-// let nine = new Number('9', 9)
-// let dot = new Number('.', '.')
-
-
-// let enter = document.getElementById("input3")
-// enter.addEventListener("keydown", function(event) {
-//   if (event.keyCode === 13) {
-//    event.preventDefault()
-//    document.querySelector("#submit").click()
-//   }
-// });
-
-// function Operator(name, operation) {
-//     this.name = name
-//     this.operation = operation
-//     this.press = function(){
-//         return(operation)
-//     }
-// }
