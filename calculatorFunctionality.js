@@ -58,7 +58,7 @@ class Calculator {
     }
     divide(nums){
         let arrOfNums = nums.split("/")
-        return (Number(arrOfNums[0]) / Number(arrOfNums[1]))
+        return ((Number(arrOfNums[0]) / Number(arrOfNums[1])).toFixed(4).replace(/.0+$/, ""))
         
     }
 
