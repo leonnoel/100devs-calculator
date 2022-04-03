@@ -146,5 +146,24 @@ function OperatorButton(btn) {
 const operatorBtns = document.querySelectorAll('.operator')
 operatorBtns.forEach(btn => new OperatorButton(btn))
 
+//Equals Button Constructor
+function EqualsButton(btn) {
 
+    btn.addEventListener('click', e => { 
+
+        if (!interface.currentOperand) {
+            interface.setOperator(e.target.value)
+            return
+        }
+
+        interface.performCalculation()
+        interface.isOperatorSet = false
+        interface.setPreviousOperand()
+        interface.resetCurrentOperand()
+    })
+
+}
+
+//Instantiate new equals button
+const equalsButton = new EqualsButton(document.querySelector('.equals'))
 
