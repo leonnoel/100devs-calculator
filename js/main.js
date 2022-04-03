@@ -53,11 +53,18 @@ function Calculator() {
     this.reset = () => {
         process = '';
         value = '';
-        total = 0;
     }
 
     document.querySelector('#result').addEventListener('click', this.reset);
+
+    // clear out calculator
+    this.zeroOut = () => {
+        total = 0;
+        readOut.innerText = 0;
+        this.reset();
+    }
     
+    document.querySelector('button').addEventListener('click', this.zeroOut);
     
 }
 

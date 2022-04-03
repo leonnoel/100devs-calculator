@@ -7,7 +7,7 @@
     width: 25%;
     height: 57vh;
     background-color: black;
-    margin: 5em auto;
+    margin: 3em auto;
     border-radius: 30px;
     position: relative;
 }
@@ -32,7 +32,7 @@
     height: 60%;
     position: absolute;
     top: 12rem;
-    left: 10%;
+    left: 12%;
 }
 
 .buttons span {
@@ -49,8 +49,26 @@
     font-weight: 700;
 }
 
+
 .buttons span:hover{
     cursor: pointer;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    height: 30px;
+    width: 10%;
+    background: black;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: darkgrey;
 }
 
 /* @media (max-width: 900px) {
