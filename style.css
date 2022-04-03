@@ -59,6 +59,6 @@ main div {
 
 @media screen and (max-width: 660px) {
   .calculator-base {
-    background-color: rgb(100,0,255);
+    /*background-color: rgb(100,0,255);*/
   }
 }
