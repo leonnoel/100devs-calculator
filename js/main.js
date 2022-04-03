@@ -1,12 +1,6 @@
 /*  Pseudo Code
-- Event listeners on number buttons 
-    - on click, add number to output innerHTML
-    - 
-    
-- Event listeners on operator buttons
-    - on click, 
 
--Click numbers -> they're concatenated into display
+-Click numbers -> they're concatenated into display   - DONE
 -Click an operator:
      - concatenated number is saved as previous operand
      - operator is saved as operator
@@ -30,7 +24,7 @@
 
 //Calculator Object Constructor function, to handle calculations
 function Calculator() {
-    
+
     this.add = (n1, n2) => n1 + n2
     this.subtract = (n1, n2) => n1 - n2
     this.multiply = (n1, n2) => n1 + n2
@@ -49,18 +43,36 @@ function CalculatorInterface() {
 
     const inputObject = {
         previousOperand: '', 
+        operator: '',
         currentOperand: '', 
-        result: ''
+        // result: ''
     }
 
-    //clicked number is added to current operand and shown in output div
+    //Add clicked number to current operand and show in output div
     this.concatenateOperand = (n) => {
         inputObject.currentOperand += n
         document.querySelector('.output').innerHTML = inputObject.currentOperand
     }
 
-    this.setPreviousOperand = (n) => {
-        inputObject.previousOperand = n
+    this.setPreviousOperand = () => {
+        inputObject.previousOperand = inputObject.currentOperand
+        console.log(inputObject.previousOperand)
+    }
+
+    this.resetCurrentOperand = () => {
+        inputObject.currentOperand = ''
+        console.log(inputObject.currentOperand)
+    }
+
+    this.setOperator = (operator) => {
+        inputObject.operator = operator
+        console.log(inputObject.operator)
+    }
+
+    //calc.add() is a placeholder while I try to sort of the references
+    this.performCalculation = () => {
+        let result = calc.add(parseInt(inputObject.previousOperand), parseInt(inputObject.currentOperand), inputObject.operator)
+        document.querySelector('.output').innerHTML = result
     }
     
 }
@@ -71,7 +83,6 @@ const interface = new CalculatorInterface()
 
 //Number Button constructor; on click, concatenate currentOperand
 function NumberButton(btn) {
-
     btn.addEventListener('click', e => interface.concatenateOperand(e.target.innerHTML))
 }
 
@@ -80,3 +91,22 @@ const numberBtns = document.querySelectorAll('.number')
 numberBtns.forEach(btn => new NumberButton(btn))
 
 
+//Operator button constructor
+function OperatorButton(btn) {
+
+    btn.addEventListener('click', e => {
+        if (btn.classList.contains('clicked')) {
+            interface.performCalculation()
+        }
+        operatorBtns.forEach(btn => btn.classList.toggle('clicked'))
+
+        interface.setPreviousOperand()
+        interface.resetCurrentOperand()
+        interface.setOperator(e.target.innerHTML)
+    })
+
+}
+
+//Instantiate new operator buttons
+const operatorBtns = document.querySelectorAll('.operator')
+operatorBtns.forEach(btn => new OperatorButton(btn))
