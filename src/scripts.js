@@ -21,7 +21,7 @@ function Calculator() {
   this.calculate = function(){
     switch(this.operator){
       case '+':
-        return Number(this.num1) + Number(this.num2)
+        return this.num1 + this.num2
       case '-':
         return this.num1 - this.num2
       case '*':
@@ -29,6 +29,10 @@ function Calculator() {
       case '/':
         return this.num1 / this.num2
     }
+  }
+
+  this.sane = function(n){
+    return parseFloat(n.toFixed(11));
   }
 
   this.updateDisplay = function(){
@@ -48,7 +52,7 @@ const operatorButtons = document.querySelectorAll('.operatorButton')
 operatorButtons.forEach(b => b.addEventListener('click', e => {
   if (calculator.num1){
     calculator.num2 = calculator.temp
-    calculator.temp = calculator.calculate()
+    calculator.temp = calculator.sane(calculator.calculate())
     calculator.updateDisplay()
     calculator.chooseOperation(e.target.innerText)
     calculator.num1 = calculator.temp
@@ -68,7 +72,7 @@ const decimalButton = document.querySelector('#decimal').addEventListener('click
 const equalButton = document.querySelector('#equal').addEventListener('click', e => {
   if (calculator.operator){
     calculator.num2 = calculator.temp
-    calculator.temp = calculator.calculate()
+    calculator.temp = calculator.sane(calculator.calculate())
     calculator.updateDisplay()
     calculator.num1 = 0
     calculator.num2 = 0
