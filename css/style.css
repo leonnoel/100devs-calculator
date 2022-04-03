@@ -1,0 +1,136 @@
+:root {
+  --color-primary: black;
+  --color-secondary: white;
+  --color-accent: rgb(67, 104, 136);
+  --color-headings: lightcoral;
+  --color-hover: rgb(240, 78, 78);
+  --color-body: #0d0d0d;
+}
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+.clear {
+  clear: both;
+}
+
+.html {
+  font-size: 62.5%;
+}
+.body {
+  font-family: "Poppins", sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+main {
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 400px;
+  display: flex;
+  margin: 0;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 100%;
+  margin: 1rem;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  border-radius: 15%;
+}
+
+.displaySection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  height: 30%;
+  margin: 2rem 3rem 1rem 3rem;
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: var(--color-headings);
+  font-size: 2rem;
+}
+
+.calcButtons {
+  display: flex;
+  width: 90%;
+  height: 70%;
+  margin: 0;
+}
+
+.calcButtonsUl {
+  list-style: none;
+  display: grid;
+  grid-template: repeat(5, 20fr) / repeat(4, 25fr);
+  margin: 0 0 1rem 0;
+  padding: 0 0.8rem;
+}
+
+button {
+  display: flex;
+  border-radius: 50%;
+  margin: 0 0.2rem 0.5rem 0.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.zero {
+  grid-column: 1 / 3;
+}
+
+.zero button {
+  width: 4.4rem;
+  padding: 0px 1.8rem;
+}
+
+.equals {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.digit {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.operation {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.additional {
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
+}
+
+.digit:hover {
+  color: var(--color-hover);
+  background-color: var(--color-accent);
+}
+
+.operation:hover,
+.equals:hover {
+  color: var(--color-hover);
+  background-color: var(--color-accent);
+}
+
+.additional:hover {
+  color: aliceblue;
+  background-color: var(--color-accent);
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
