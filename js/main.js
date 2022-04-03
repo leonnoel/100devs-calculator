@@ -41,37 +41,34 @@ function Calculator() {
 //Calculator Interface Constructor function, to handle DOM manipulation
 function CalculatorInterface() {
 
-    const inputObject = {
-        previousOperand: '', 
-        operator: '',
-        currentOperand: '', 
-        // result: ''
-    }
+    let previousOperand =  ''
+    let operator = ''
+    let currentOperand = ''
 
     //Add clicked number to current operand and show in output div
     this.concatenateOperand = (n) => {
-        inputObject.currentOperand += n
-        document.querySelector('.output').innerHTML = inputObject.currentOperand
+        currentOperand += n
+        document.querySelector('.output').innerHTML = currentOperand
     }
 
     this.setPreviousOperand = () => {
-        inputObject.previousOperand = inputObject.currentOperand
-        console.log(inputObject.previousOperand)
+        previousOperand = currentOperand
+        console.log(previousOperand)
     }
 
     this.resetCurrentOperand = () => {
-        inputObject.currentOperand = ''
-        console.log(inputObject.currentOperand)
+        currentOperand = ''
+        console.log(currentOperand)
     }
 
     this.setOperator = (operator) => {
-        inputObject.operator = operator
-        console.log(inputObject.operator)
+        operator = operator
+        console.log(operator)
     }
 
     //calc.add() is a placeholder while I try to sort of the references
     this.performCalculation = () => {
-        let result = calc.add(parseInt(inputObject.previousOperand), parseInt(inputObject.currentOperand), inputObject.operator)
+        let result = calc.add(parseInt(previousOperand), parseInt(currentOperand), operator)
         document.querySelector('.output').innerHTML = result
     }
     
