@@ -1,0 +1,103 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.btn {
+  background: #eee;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #ccc;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  display: flex;
+  height: 100vh;
+  font-family: 'BIZ UDPMincho', serif;
+  justify-content: center;
+  align-items: center;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculator {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  width: 400px;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 8px 8px 8px #333;
+}
+
+.text {
+  color: gold;
+  font-size: 1.5rem;
+  font-style: italic;
+  width: 360px;
+  margin-top: 50px;
+  text-align: right;
+  text-shadow: 1px 1px 1px limegreen;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  background: salmon;
+  height: 80px;
+  width: 360px;
+  font-size: 2.5rem;
+  overflow: hidden;
+  border-radius: 3px;
+  margin: 10px auto 30px auto;
+  padding: 0.25rem 0.25rem;
+  text-align: right;
+  justify-content: center;
+}
+
+.problem {
+  line-height: 2.5rem;
+}
+
+.result {
+  line-height: 2.5rem;
+}
+
+.keyContainer {
+  display: grid;
+  background: black;
+  grid-template-columns: repeat(4, 1fr);
+  height: 320px;
+  width: 320px;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
