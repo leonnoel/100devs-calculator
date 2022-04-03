@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.calc {
+    width: 25%;
+    height: 57vh;
+    background-color: black;
+    margin: 3em auto;
+    border-radius: 30px;
+    position: relative;
+}
+
+#screen {
+    display: block;
+    width: 80%;
+    height: 10vh;
+    line-height: 10vh;
+    font-size: 5rem;
+    background-color: white;
+    position: absolute;
+    top: 5rem;
+    left: 10%;
+    text-align: right;
+}
+
+.buttons {
+    display: flex;
+    flex-flow: row wrap;
+    width: 80%;
+    height: 60%;
+    position: absolute;
+    top: 12rem;
+    left: 12%;
+}
+
+.buttons span {
+    width: 20%;
+    height: 20%;
+    display: inline-block;
+    font-size: 3rem;
+    border-radius: 50%;
+    margin: 2%;
+    padding: 2%;
+    background-color: white;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+
+.buttons span:hover{
+    cursor: pointer;
+}
+
+button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5%;
+    height: 30px;
+    width: 10%;
+    background: black;
+    border-radius: 30px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: darkgrey;
+}
+
+/* @media (max-width: 900px) {
+ 
+
+    .buttons span {
+        padding: 0;
+        font-size: 2rem;
+    }
+
+}
+
+@media (max-height: 800px) {
+    .buttons span {
+        padding: 0;
+        font-size: 2rem;
+    }
+    .buttons {
+        height: 40%;
+    }
+
+    #screen {
+        font-size: 3.33rem;
+    }
+}
+
+
+@media (max-width: 500px) {
+    .buttons span {
+        padding: 0;
+        font-size: 1rem;
+    }  
+    
+    #screen {
+        font-size: 1.66rem;    
+    }
+} */
