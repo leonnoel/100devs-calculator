@@ -45,6 +45,8 @@ function CalculatorInterface() {
     let previousOperand =  ''
     let operator = ''
     let currentOperand = ''
+    
+    this.isOperatorSet = false
 
     //Add clicked number to current operand and show in output div
     this.concatenateOperand = (n) => {
@@ -67,19 +69,40 @@ function CalculatorInterface() {
         console.log(operator)
     }
 
-    //calc.add() is a placeholder while I try to sort of the references
     this.performCalculation = () => {
         console.log(previousOperand, operator, currentOperand)
         let result = 0
         switch (operator) {
-            case '+': result = calc.add(parseInt(previousOperand), parseInt(currentOperand)); break;
-            case '-': result = calc.subtract(parseInt(previousOperand), parseInt(currentOperand)); break;
-            case '*': result = calc.multiply(parseInt(previousOperand), parseInt(currentOperand)); break;
-            case '/': result = calc.divide(parseInt(previousOperand), parseInt(currentOperand)); break;
+            case '+': result = calc.add(parseFloat(previousOperand), parseFloat(currentOperand)); break;
+            case '-': result = calc.subtract(parseFloat(previousOperand), parseFloat(currentOperand)); break;
+            case '*': result = calc.multiply(parseFloat(previousOperand), parseFloat(currentOperand)); break;
+            case '/': result = calc.divide(parseFloat(previousOperand), parseFloat(currentOperand)); break;
         } 
         document.querySelector('.output').innerHTML = result
+        currentOperand = result
     }
     
+    //Makes currentOperand a read-only property, accessible outside the function
+    this.getCurrentOperand = function() {
+        return currentOperand
+    }
+
+    Object.defineProperty(this, 'currentOperand', {
+        get: function() {
+            return currentOperand
+        }
+    })
+
+    //Makes previousOperand a read-only property, accessible outside the function
+    this.getPreviousOperand = function() {
+        return previousOperand
+    }
+
+    Object.defineProperty(this, 'previousOperand', {
+        get: function() {
+            return previousOperand
+        }
+    })
 }
 
 //Instantiate new calculator and calculator interface objects
@@ -100,11 +123,12 @@ numberBtns.forEach(btn => new NumberButton(btn))
 function OperatorButton(btn) {
 
     btn.addEventListener('click', e => {
-        if (btn.classList.contains('clicked')) {
+
+        if (interface.isOperatorSet === true) {
             interface.performCalculation()
         }
-        operatorBtns.forEach(btn => btn.classList.toggle('clicked'))
 
+        interface.isOperatorSet = true
         interface.setPreviousOperand()
         interface.resetCurrentOperand()
         interface.setOperator(e.target.value)
