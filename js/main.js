@@ -27,8 +27,9 @@ function Calculator() {
 
     this.add = (n1, n2) => n1 + n2
     this.subtract = (n1, n2) => n1 - n2
-    this.multiply = (n1, n2) => n1 + n2
+    this.multiply = (n1, n2) => n1 * n2
     this.divide = (n1, n2) => n1 / n2
+
     this.changeSign = n1 => Math.sign(n1) === 1 ? -n1 : Math.abs(n1)
     this.percent = n1 => n1 / 100
     this.clear = () => {
@@ -61,14 +62,21 @@ function CalculatorInterface() {
         console.log(currentOperand)
     }
 
-    this.setOperator = (operator) => {
-        operator = operator
+    this.setOperator = (op) => {
+        operator = op
         console.log(operator)
     }
 
     //calc.add() is a placeholder while I try to sort of the references
     this.performCalculation = () => {
-        let result = calc.add(parseInt(previousOperand), parseInt(currentOperand), operator)
+        console.log(previousOperand, operator, currentOperand)
+        let result = 0
+        switch (operator) {
+            case '+': result = calc.add(parseInt(previousOperand), parseInt(currentOperand)); break;
+            case '-': result = calc.subtract(parseInt(previousOperand), parseInt(currentOperand)); break;
+            case '*': result = calc.multiply(parseInt(previousOperand), parseInt(currentOperand)); break;
+            case '/': result = calc.divide(parseInt(previousOperand), parseInt(currentOperand)); break;
+        } 
         document.querySelector('.output').innerHTML = result
     }
     
@@ -99,7 +107,7 @@ function OperatorButton(btn) {
 
         interface.setPreviousOperand()
         interface.resetCurrentOperand()
-        interface.setOperator(e.target.innerHTML)
+        interface.setOperator(e.target.value)
     })
 
 }
