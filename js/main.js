@@ -20,7 +20,7 @@ function calculate() {
     case "-":
       result -= selectedNumber;
       break;
-    case "*":
+    case "x":
       result *= selectedNumber;
       break;
     case "/":

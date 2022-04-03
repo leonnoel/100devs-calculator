@@ -1,3 +1,12 @@
+:root {
+  --color-primary: black;
+  --color-secondary: white;
+  --color-accent: rgb(67, 104, 136);
+  --color-headings: lightcoral;
+  --color-hover: rgb(240, 78, 78);
+  --color-body: #0d0d0d;
+}
+
 /* Box Model Hack */
 * {
   box-sizing: border-box;
@@ -34,9 +43,9 @@ main {
   width: 70%;
   height: 100%;
   margin: 1rem;
-  border: 1px solid purple;
-  background-color: darkred;
-  box-shadow: 1rem 1rem 0.5rem rgb(92, 0, 0);
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  border-radius: 15%;
 }
 
 .displaySection {
@@ -44,12 +53,12 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
+  width: 85%;
   height: 30%;
-  margin: 1rem;
-  border: 2px solid brown;
-  background-color: darkred;
-  color: lightcoral;
+  margin: 2rem 3rem 1rem 3rem;
+  border: 2px solid var(--color-secondary);
+  background-color: var(--color-secondary);
+  color: var(--color-headings);
   font-size: 2rem;
 }
 
@@ -87,39 +96,39 @@ button {
 }
 
 .equals {
-  background-color: rgb(240, 78, 78);
-  color: rgb(67, 104, 136);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .digit {
-  background-color: rgb(160, 15, 15);
-  color: aliceblue;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .operation {
-  background-color: rgb(240, 78, 78);
-  color: rgb(67, 104, 136);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .additional {
-  background-color: rgb(250, 144, 144);
-  color: rgb(3, 47, 85);
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .digit:hover {
-  color: rgb(160, 15, 15);
-  background-color: aliceblue;
+  color: var(--color-hover);
+  background-color: var(--color-accent);
 }
 
 .operation:hover,
 .equals:hover {
-  color: rgb(240, 78, 78);
-  background-color: rgb(67, 104, 136);
+  color: var(--color-hover);
+  background-color: var(--color-accent);
 }
 
 .additional:hover {
-  color: rgb(250, 144, 144);
-  background-color: rgb(3, 47, 85);
+  color: aliceblue;
+  background-color: var(--color-accent);
 }
 
 /******************************************
