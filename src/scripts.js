@@ -31,9 +31,9 @@ function Calculator() {
     }
   }
 
-  this.sane = function(n){
-    return parseFloat(n.toFixed(11));
-  }
+  // this.sane = function(n){
+  //   return parseFloat(n.toFixed(11));
+  // }
 
   this.updateDisplay = function(){
     document.querySelector('#display').innerText = this.temp
@@ -52,7 +52,7 @@ const operatorButtons = document.querySelectorAll('.operatorButton')
 operatorButtons.forEach(b => b.addEventListener('click', e => {
   if (calculator.num1){
     calculator.num2 = calculator.temp
-    calculator.temp = calculator.sane(calculator.calculate())
+    calculator.temp = calculator.calculate()
     calculator.updateDisplay()
     calculator.chooseOperation(e.target.innerText)
     calculator.num1 = calculator.temp
@@ -72,7 +72,7 @@ const decimalButton = document.querySelector('#decimal').addEventListener('click
 const equalButton = document.querySelector('#equal').addEventListener('click', e => {
   if (calculator.operator){
     calculator.num2 = calculator.temp
-    calculator.temp = calculator.sane(calculator.calculate())
+    calculator.temp = calculator.calculate()
     calculator.updateDisplay()
     calculator.num1 = 0
     calculator.num2 = 0
