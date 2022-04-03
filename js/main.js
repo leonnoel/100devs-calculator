@@ -45,7 +45,6 @@ function CalculatorInterface() {
     let previousOperand =  ''
     let operator = ''
     let currentOperand = ''
-    
     this.isOperatorSet = false
 
     //Add clicked number to current operand and show in output div
@@ -54,21 +53,25 @@ function CalculatorInterface() {
         document.querySelector('.output').innerHTML = currentOperand
     }
 
+    //Set previousOperand to equal currentOperand
     this.setPreviousOperand = () => {
         previousOperand = currentOperand
         console.log(previousOperand)
     }
 
+    //Reset currentOperand
     this.resetCurrentOperand = () => {
         currentOperand = ''
         console.log(currentOperand)
     }
 
+    //Set operator variable to the value of the clicked operator button
     this.setOperator = (op) => {
         operator = op
         console.log(operator)
     }
 
+    //Perform calculations by calling calculator methods
     this.performCalculation = () => {
         console.log(previousOperand, operator, currentOperand)
         let result = 0
@@ -82,6 +85,7 @@ function CalculatorInterface() {
         currentOperand = result
     }
 
+    //Reset all interface variables and output div text
     this.resetAll = () => {
         currentOperand = ''
         previousOperand = ''
@@ -183,3 +187,6 @@ function AllClearButton(btn) {
 //Instantiate All-Clear Button 
 const allClearButton = new AllClearButton(document.querySelector('#all-clear'))
 
+//Sign Button Constructor
+
+//Percent Button
