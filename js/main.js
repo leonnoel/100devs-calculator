@@ -32,11 +32,6 @@ function Calculator() {
 
     this.changeSign = n1 => Math.sign(n1) === 1 ? -n1 : Math.abs(n1)
     this.percent = n1 => n1 / 100
-    this.clear = () => {
-        n1 = 0 
-        n2 = 0
-    }
-
 }
 
 //Calculator Interface Constructor function, to handle DOM manipulation
@@ -46,11 +41,12 @@ function CalculatorInterface() {
     let operator = ''
     let currentOperand = ''
     this.isOperatorSet = false
+    const output = document.querySelector('.output')
 
     //Add clicked number to current operand and show in output div
     this.concatenateOperand = (n) => {
         currentOperand += n
-        document.querySelector('.output').innerHTML = currentOperand
+        output.innerHTML = currentOperand
     }
 
     //Set previousOperand to equal currentOperand
@@ -81,7 +77,7 @@ function CalculatorInterface() {
             case '*': result = calc.multiply(parseFloat(previousOperand), parseFloat(currentOperand)); break;
             case '/': result = calc.divide(parseFloat(previousOperand), parseFloat(currentOperand)); break;
         } 
-        document.querySelector('.output').innerHTML = result
+        output.innerHTML = result
         currentOperand = result
     }
 
@@ -91,7 +87,7 @@ function CalculatorInterface() {
         previousOperand = ''
         operator = ''
         this.isOperatorSet = false
-        document.querySelector('.output').innerHTML = ''
+        output.innerHTML = ''
     }
     
     //Makes currentOperand a read-only property, accessible outside the function
@@ -114,7 +110,7 @@ function CalculatorInterface() {
         get: function() {
             return previousOperand
         }
-    })
+    })    
 }
 
 //Instantiate new calculator and calculator interface objects
@@ -188,5 +184,15 @@ function AllClearButton(btn) {
 const allClearButton = new AllClearButton(document.querySelector('#all-clear'))
 
 //Sign Button Constructor
+// function SignButton(btn) {
+//     btn.addEventListener('click', () => {
+//         calc.changeSign()
+//         document.querySelector('.output').innerHTML = result
+//         currentOperand = result
+//     })
+// }
+
+//Instantiate new Sign Button
+const signButton = new SignButton(document.querySelector('#sign'))
 
 //Percent Button
