@@ -75,6 +75,14 @@ h1 {
 .calculator-keys h2:active {
   background: red;
 }
+
+#reset-button {
+  border-radius: 0;
+  overflow-wrap: break-word;
+  height: 100%;
+  margin-left: 20px;
+  align-self: center;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

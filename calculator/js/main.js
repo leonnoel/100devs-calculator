@@ -20,7 +20,7 @@ function Calculator() {
     }
 
     this.addValue = function(){
-        if(currentSum === 'ERROR'){
+        if(currentSum === 'ERROR' || currentSum === '0'){
             currentSum = ''
         }
         if (this.innerText ==='+' || this.innerText === 'x'|| this.innerText ===  '-'|| this.innerText === '/'){
@@ -30,7 +30,7 @@ function Calculator() {
             //
         }
         else if(this.innerText === 'RESET'){
-            currentSum = 0
+            currentSum = '0'
         }
         else{
             currentSum += this.innerText
@@ -96,3 +96,5 @@ document.getElementById('=').addEventListener('keypress', function (e) {
         calc.calculate
     }
 });
+
+document.getElementById('reset-button').addEventListener('click', calc.addValue)
