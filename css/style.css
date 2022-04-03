@@ -1,0 +1,105 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+  font-size: 62.5%
+}
+
+body {
+  background:#66768A
+}
+
+/* 95px 50px 50px :: 625px height 510px width :: */
+h1 {
+  text-align: center;
+  font-size: 6.2rem;
+}
+
+#container {
+  background:black;
+  border-radius: 25px;
+  height: 62.5rem;
+  width: 51rem;
+  margin: 0 auto;
+}
+
+#upper {
+  padding: 80px 50px 25px 50px; 
+}
+
+#display {
+  height: 10rem;
+  width: 41rem;
+  margin: 0;
+  padding-right: 1rem;
+  border: 3px solid black;
+  background: white;
+  text-align: right;
+  font-size: 4.5rem;
+  padding-top: 4.5rem;
+}
+
+#lower {
+ 
+}
+
+/* Added flex to the UL to get LI to row out */
+
+#row {
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* added flex to LI to get text to center */
+
+.btn-style {
+  height: 8rem;
+  width: 8rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+  background: white;
+  border-radius:50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
