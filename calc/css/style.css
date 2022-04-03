@@ -113,6 +113,10 @@ body {
 /* ADDITIONAL STYLES
 /*******************************************/
 /* output screen styles */
+
+h1 {
+  font-size: 3.5rem;
+}
 #screen {
   font-size: 5rem;
   max-height: 100%;
@@ -123,6 +127,4 @@ body {
 .btn {
   background-color: white;
   font-size: 4rem;
-  /* color: black; */
-  /* padding: 10px; */
 }
