@@ -91,6 +91,7 @@ const calculator = {
         document.querySelector('.readOut').innerHTML = output
         this.clearReadOut = true
     },
+    // String needs to be 14 characters or less
     totalLengthCheck(num) {
         if (String(num).length < 15) {
             return num
@@ -98,13 +99,20 @@ const calculator = {
             // need to figure out home many characters in front of dot and behind dot
             console.log("float")
             let splitArray = String(num).split('.')
+<<<<<<< HEAD
             // use toFixed to round to correct decimal places
             return num.toFixed(14 - splitArray[0].length)
         }else {
             console.log(num)
             // convert to power of 10 notation
             return Number.parseFloat(num).toExponential(8)
+=======
+            // Figure out how much to round the decimals places, 
+            let decicalPlaces = 14 - splitArray[0] - 1
+            // TODO
+>>>>>>> refs/remotes/origin/answer
         }
+        // checkout
     }
     
 }
