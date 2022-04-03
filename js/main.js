@@ -81,6 +81,14 @@ function CalculatorInterface() {
         document.querySelector('.output').innerHTML = result
         currentOperand = result
     }
+
+    this.resetAll = () => {
+        currentOperand = ''
+        previousOperand = ''
+        operator = ''
+        this.isOperatorSet = false
+        document.querySelector('.output').innerHTML = ''
+    }
     
     //Makes currentOperand a read-only property, accessible outside the function
     this.getCurrentOperand = function() {
@@ -165,5 +173,13 @@ function EqualsButton(btn) {
 }
 
 //Instantiate new equals button
-const equalsButton = new EqualsButton(document.querySelector('.equals'))
+const equalsButton = new EqualsButton(document.querySelector('#equals'))
+
+//All-Clear Button Constructor
+function AllClearButton(btn) {
+    btn.addEventListener('click', interface.resetAll)
+}
+
+//Instantiate All-Clear Button 
+const allClearButton = new AllClearButton(document.querySelector('#all-clear'))
 
