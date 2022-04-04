@@ -1,0 +1,50 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  font-size: 2em;
+  font-weight: 800;
+}
+
+section {
+  margin: 50px auto;
+  width: 50%;
+  background: black;
+  height: 350px;
+  border-radius: 6%;
+}
+
+h2 {
+  height: 50px;
+  background: white;
+  width: 80%;
+  margin: 10px auto;
+
+}
+
+.grid {
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  width: 80%;
+  gap: 10px;
+}
+
+.grid li {
+  width: 20%;
+  background: white;
+  border-radius: 100%;
+  height: 1.5em;
+  padding: 5px;
+}
