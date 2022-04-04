@@ -7,18 +7,16 @@ for (let item of allButtons) {
 function buttonClicked (event) {
     // make button click variable
     let buttonValue = event.target.innerText
-    
     // make readOut variables
     let readOut = document.querySelector('.readOut')
     let readOutValue = readOut.innerText
-
+    // Clear button
+    if (buttonValue === 'clr') {
+        calculator.clear()
     // Making sure operators don't repeat
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     }
-    // Clear button
-    if (buttonValue === 'clr') {
-        calculator.clear()
     // check if button clicked is an operator
     }else if (buttonValue === '=' || buttonValue === '+' || buttonValue === '-' || buttonValue === 'x' || buttonValue === '/') {
         if (!(calculator.currentOp)) {
