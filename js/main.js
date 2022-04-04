@@ -1,5 +1,5 @@
 // add event listeners to all buttons
-let allButtons = document.querySelectorAll('.buttons span')
+let allButtons = document.querySelectorAll('span')
 for (let item of allButtons) {
     item.addEventListener('click', buttonClicked)
 }
@@ -16,16 +16,22 @@ function buttonClicked (event) {
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     }
-    // check if read out needs to be cleared
-    if (calculator.clearReadOut === true) {
-        readOut.innerText = ''
-        calculator.clearReadOut = false
-        readOut.innerText += buttonValue
-        calculator.previousButton = buttonValue
-    // check if button is equals
-    }else if (buttonValue === '=') {
-        calculator.checkOperationType(readOutValue)
-        calculator.previousButton = buttonValue
+    // Clear button
+    if (buttonValue === 'clr') {
+        calculator.clear()
+    // check if button clicked is an operator
+    }else if (buttonValue === '=' || buttonValue === '+' || buttonValue === '-' || buttonValue === 'x' || buttonValue === '/') {
+        if (!(calculator.currentOp)) {
+            calculator.valueBeforeOp = Number(readOutValue)
+            calculator.currentOp = buttonValue
+            readOut.innerText += buttonValue
+            calculator.previousButton = buttonValue
+        } else {
+            calculator.valueAfterOp = Number(readOutValue.slice(readOutValue.indexOf(calculator.currentOp) + 1))
+            calculator.newOp = buttonValue
+            calculator.checkOperationType(calculator.currentOp)
+        }
+        
     }else if (readOut.innerText.length > 13) {
         // limiting number of characters in input
         alert(`Sorry you've reached the maximum number of characters that can be input. Please refresh and try again.`)
@@ -39,56 +45,54 @@ function buttonClicked (event) {
 // make calculator object
 const calculator = {
     // object has properties of current value, clear read out, and previous button clicked
-    currentValue: 0,
-    clearReadOut: false,
+    valueBeforeOp: 0,
+    currentOp: '',
+    valueAfterOp: 0,
+    newOp: '',
     previousButton: null,
     // object has methods of add, subtract, multiply, divide, equals, check operation type, update readout, total length check
-    addValues: function(readOutString) {
-        let stringArray = readOutString.split('+')
-        let total = 0
-        for (i = 0; i < stringArray.length; i++) {
-            total += Number(stringArray[i])
-        }
+    addValues: function(num1, num2) {
+        total = num1 + num2
+        this.valueBeforeOp = total
         this.updateReadOut(this.totalLengthCheck(total))
     },
-    subtractValues: function(readOutString) {
-        let stringArray = readOutString.split('-')
-        let total = stringArray[0]
-        for (i = 1; i < stringArray.length; i++) {
-            total -= Number(stringArray[i])
-        }
+    subtractValues: function(num1, num2) {
+        total = num1 - num2
+        this.valueBeforeOp = total
         this.updateReadOut(this.totalLengthCheck(total))
     },
-    multiplyValues: function(readOutString) {
-        let stringArray = readOutString.split('x')
-        let total = stringArray[0]
-        for (i = 1; i < stringArray.length; i++) {
-            total *= Number(stringArray[i])
-        }
+    multiplyValues: function(num1, num2) {
+        total = num1 * num2
+        this.valueBeforeOp = total
         this.updateReadOut(this.totalLengthCheck(total))
     },
-    divideValues: function(readOutString) {
-        let stringArray = readOutString.split('/')
-        let total = stringArray[0]
-        for (i = 1; i < stringArray.length; i++) {
-            total /= Number(stringArray[i])
-        }
+    divideValues: function(num1, num2) {
+        total = num1 / num2
+        this.valueBeforeOp = total
         this.updateReadOut(this.totalLengthCheck(total))
     },
-    checkOperationType: function(readOutString) {
-        if (readOutString.includes('+')) {
-            this.addValues(readOutString)
-        }else if (readOutString.includes('-')) {
-            this.subtractValues(readOutString)
-        }else if (readOutString.includes('x')) {
-            this.multiplyValues(readOutString)
-        }else if (readOutString.includes('/')) {
-            this.divideValues(readOutString)
-        }
+    checkOperationType: function(operator) {
+        switch (operator) {
+            case '+':
+                this.addValues(this.valueBeforeOp, this.valueAfterOp)
+                break;
+            case '-':
+                this.subtractValues(this.valueBeforeOp, this.valueAfterOp) 
+                break;
+            case 'x':
+                this.multiplyValues(this.valueBeforeOp, this.valueAfterOp)
+                break;
+            case '/':
+                this.divideValues(this.valueBeforeOp, this.valueAfterOp)
+        } 
     },
     updateReadOut(output) {
-        document.querySelector('.readOut').innerText = output
-        this.clearReadOut = true
+        if (this.newOp !== '=') {
+            document.querySelector('.readOut').innerText = output + this.newOp
+        }else {
+            document.querySelector('.readOut').innerText = output
+            this.currentOp = ''
+        }
     },
     // String needs to be 14 characters or less
     totalLengthCheck(num) {
@@ -96,50 +100,39 @@ const calculator = {
             return num
         } else if (String(num).includes('.')) {
             // need to figure out home many characters in front of dot and behind dot
-            console.log("float")
             let splitArray = String(num).split('.')
             // use toFixed to round to correct decimal places
             return num.toFixed(14 - splitArray[0].length)
         }else {
             console.log(num)
             // convert to power of 10 notation
+            console.log('big num')
             return Number.parseFloat(num).toExponential(8)
         }
+    },
+    clear () {
+    this.valueBeforeOp = 0
+    this.valueAfterOp = 0
+    this.currentOp = ''
+    this.newOp = ''
+    document.querySelector('.readOut').innerText = ''
     }
     
 }
 // TODO need to get multiple operations working in one string and order of ops correct
     // Probably easier if I calculate as the values are input into calc.
-function evalString (readOutString) {
-    // create array of operators
-    let operatorArray = readOutString.split('').filter(item => item === 'x' || item === '/' || item === '+' || item === '-').map(element => element === 'x' ? '*' : element)
-    console.log('operator array' + operatorArray)
-    // create array of values
-    let valuesArray =readOutString.split('').filter(item => Number(item))
-    console.log('initial val array' + valuesArray)
-    for (let i = 0; i < operatorArray.length; i++) {
-        if (operatorArray[i] === '*') {
-            let newValueArray = valuesArray.splice(i,2)
-            console.log('new val array' + newValueArray)
-            valuesArray.splice(i,0, newValueArray[0] * newValueArray[1])
-            console.log('val array' + valuesArray)
-        }
-    }
-    console.log('final array' + valuesArray)
-}
 
-
-
-// user presses number
-    // check if readout is too long if not
-        // readout updates
-// user presses operator
-    // check if readout is too long if not
-        // need validation so operators don't repeat
-            // readout updates
-// user presses number
-    // check if readout is too long if not
-        // readout updates
-// user presses equals
-    // math happens
-        // readout updates
+    // user presses number
+        // run length checks
+    // user presses operator
+        // run length checks
+        // store value before operator
+        // store operator
+    // user presses number
+        // run length checks
+    // user presses operator
+        // store value after operator
+        // check previous operator
+            // run operation function with values
+            // store output as value before operator
+            // store new operator
