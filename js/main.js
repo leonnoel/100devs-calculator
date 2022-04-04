@@ -45,6 +45,10 @@ function CalculatorInterface() {
 
     //Concatenate clicked number to current operand and show in output div
     this.concatenateOperand = (n) => {
+
+        //Prevent concatenation of multiple periods
+        if (n === '.' && this.currentOperand.includes('.')) return
+        
         currentOperand += n
         output.innerHTML = currentOperand
     }
