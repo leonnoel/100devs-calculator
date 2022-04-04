@@ -8,8 +8,8 @@ class Calculator {
 
     clear() {
         //clears out the calculator
-        this.previousValue = ''
         this.displayValue = ''
+        this.previousValue = ''
         this.operation = undefined
     }
 
@@ -30,10 +30,6 @@ class Calculator {
         this.displayValue = ''
     }
 
-    equals(){
-
-    }
-
     compute(){
         //create variable that is the result of compute function
         let computation
@@ -50,7 +46,8 @@ class Calculator {
             break
             case '*': computation  = previous * current
             break
-            case '/': computation  = previous / current
+            case '÷': computation  = previous / current
+            break
             // if none of the operations match we have invalid operation and end the function
             default: return
         }
@@ -67,12 +64,12 @@ class Calculator {
 }
 
 
-const numberButton = document.querySelectorAll('[data-number')
-const operationsButton = document.querySelectorAll('[data-operator')
-const equalButton = document.querySelector('[data-equal')
-const clearButton = document.querySelector('[data-clear')
-const previousValueTextElement = document.querySelector('[data-previousvalue')
-const displayValueTextElement = document.querySelector('[data-displayvalue')
+const numberButton = document.querySelectorAll('[data-number]')
+const operationsButton = document.querySelectorAll('[data-operator]')
+const equalButton = document.querySelector('[data-equal]')
+const clearButton = document.querySelector('[data-clear]')
+const previousValueTextElement = document.querySelector('[data-previousvalue]')
+const displayValueTextElement = document.querySelector('[data-displayvalue]')
 
 
 const calculator = new Calculator (previousValueTextElement, displayValueTextElement)
@@ -98,5 +95,11 @@ operationsButton.forEach(button => {
 
 equalButton.addEventListener('click', button =>{
     calculator.compute()
+    calculator.updateDisplay()
+})
+
+// Implement the clear function
+clearButton.addEventListener('click', button => {
+    calculator.clear()
     calculator.updateDisplay()
 })

@@ -59,11 +59,11 @@ body{
 }
 
 .output .previousValue {
-  color: red;
-  font-size: 2.5rem;
+  color: rgba(255, 255, 255, .75);
+  font-size: 1.5rem;
 }
 
-.output .dislayValue {
+.output .displayValue {
   color: white;
   font-size: 2.5rem;
 }
