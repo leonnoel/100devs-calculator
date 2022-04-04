@@ -102,6 +102,15 @@ body {
     font-size: 40px;
     font-weight: 800;
 }
+button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 35px;
+}
+
 #clear {
     background-color: red;
     color: white;
