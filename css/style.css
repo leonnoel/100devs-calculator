@@ -25,7 +25,7 @@ main {
 .calcBody {
   width: 500px;
   height: 600px;
-  background-color: #000;
+  background-color: #1C1D1E;
   border-radius: 35px;
   display: flex;
   flex-direction: column;
@@ -35,13 +35,16 @@ main {
 }
 .readOut {
   width: 85%;
-  height: 15%;
-  background: #fff;
+  height: 20%;
+  background: #637d62;
   font-size: 5rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 5px;
+  border: 20px solid #687E75;
+  border-radius: 10px;
+  box-shadow: inset 0px 3px 5px #000000;
 }
 .buttons,
 .clear {
@@ -56,21 +59,26 @@ main {
 }
 .buttons span,
 .clearBtn {
-  /* width: 50px;
-  height: 50px; */
   background: #D4D0C5;
-  border-radius: 5%;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 5rem;
   font-weight: 700;
+  box-shadow: 3px 3px #a8a59c;
 }
 
 .clearBtn {
   background: #FAC44D;
+  box-shadow: 3px 3px #b28b39;
 }
 
+.buttons span:active,
+.clearBtn:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
 
 /******************************************
 /* ADDITIONAL STYLES

@@ -117,8 +117,8 @@ const calculator = {
     }
     
 }
-// TODO need to get multiple operations working in one string and order of ops correct
-    // Probably easier if I calculate as the values are input into calc.
+// TODO fix equals with not previous operator
+// TODO fix sequential operators that are different
 
     // user presses number
         // run length checks
