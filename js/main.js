@@ -18,7 +18,7 @@ function buttonClicked (event) {
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     // check if button clicked is an operator
-    }else if (buttonValue === '=' || buttonValue === '+' || buttonValue === '-' || buttonValue === 'x' || buttonValue === '/') {
+    }else if (['=','+','-','x','/'].includes(buttonValue)) {
         if (!(calculator.currentOp) && buttonValue !== '=') {
             calculator.valueBeforeOp = Number(readOutValue)
             calculator.currentOp = buttonValue
@@ -115,9 +115,7 @@ const calculator = {
     this.newOp = ''
     document.querySelector('.readOut').innerText = ''
     }
-    
 }
-// TODO fix sequential operators that are different
 
     // user presses number
         // run length checks
