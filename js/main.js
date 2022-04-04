@@ -1,60 +1,96 @@
-let screen = document.getElementById('screen')
+class Calculator {
+  constructor(previousText, currentText) {
+    this.previousText = previousText
+    this.currentText = currentText
+    this.clear()
+  }
+  clear() {
+    this.previous = ''
+    this.current = ''
+    this.operation = undefined
+  }
 
-let zero = document.getElementById('0')
-let one = document.getElementById('1')
-let two = document.getElementById('2')
-let three = document.getElementById('3')
-let four = document.getElementById('4')
-let five = document.getElementById('5')
-let six = document.getElementById('6')
-let seven = document.getElementById('7')
-let eight = document.getElementById('8')
-let nine = document.getElementById('9')
-let dot = document.getElementById('dot')
-let divide = document.getElementById('divide')
-let multiply = document.getElementById('multiply')
-let add = document.getElementById('add')
-let subtract = document.getElementById('subtract')
-let equals = document.getElementById('equals')
+  delete() {
 
-const calc = {
-  displayValue: 0,
-  firstOperand: null,
-  waitingForSecondOperand: false,
-  operator: null,
-};
+  }
 
-const operators = ['+', '-', '/', '*']
+  appendNum(number) {
+    if (number === '.' && this.current.includes('.')) return
+    this.current = this.current.toString() + number.toString() 
+  }
 
-function calculate(num1, operation, num2) {
-  switch (operation) {
-    case '+' :
-      return num1 + num2;
-      break;
-    case '-' :
-      return num1 - num2;
-      break;
-    case '/' :
-      return num2 === 0 ? null : num1 / num2;
-      break;
-    case '*' :
-      return num1 * num2;
-      break
-    default :
-      return null
- }
+  chooseOperator(operation) {
+    if (this.current === '') return
+    if (this.previous !== '') {
+      this.calc()
+    }
+    this.operation = operation
+    this.previous = this.current
+    this.current = ''
+  }
+
+  calc() {
+    let calculated 
+    const prev = parseFloat(this.previous)
+    const crnt = parseFloat(this.current)
+    if (isNaN(prev)|| isNaN(crnt)) return
+    switch (this.operation) {
+      case '+':
+        calculated = prev + crnt
+        break
+      case '-':
+        calculated = prev - crnt
+        break
+      case 'x':
+        calculated = prev * crnt
+        break
+      case '/':
+        calculated = prev / crnt
+        break
+      default: return
+    }
+    this.current = calculated
+    this.operation = undefined
+    this.previous = ''
+  }
+
+  updateDisplay() {
+    this.currentText.innerText = this.current
+    this.previousText.innerText = this.previous
+  }
 }
 
+const numbers = document.querySelectorAll('[data-number]')
+const operations = document.querySelectorAll('[data-operation]')
+const equals = document.querySelector('[data-equals]')
+const clearBtn = document.querySelector('[data-all-clear]')
+const previousText = document.querySelector('[data-previous-operand]')
+const currentText = document.querySelector('[data-current-operand]')
 
+const calculator = new Calculator(previousText, currentText)
 
-function clear() {
-  total = 0
-}
-function eval() {
-  calc.displayValue = calc.firstOperand
-}
+numbers.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.appendNum(button.innerText)
+    calculator.updateDisplay()
+    console.log(button.innerText)
+  })
+})
 
+operations.forEach(button => {
+  button.addEventListener('click', () => {
+    calculator.chooseOperator(button.innerText)
+    calculator.updateDisplay()
+    console.log(button.innerText)
+  })
+})
 
+equals.addEventListener('click', _ => {
+  calculator.calc()
+  calculator.updateDisplay()
+})
 
-
-screen.innerText = calc.displayValue;
+clearBtn.addEventListener('click', _ => {
+  calculator.clear()
+  calculator.updateDisplay()
+})

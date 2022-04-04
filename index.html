@@ -4,17 +4,19 @@
     	<meta charset="utf-8">
     	<meta name="description" content="This is where your description goes">
     	<meta name="keywords" content="one, two, three">
-
-		<title>Slot Machine</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Calc</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/reset.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
-		<section>
-			<h1>.</h1>
-			<h2 id="screen"></h2>
+		<section class="container">
+			<section class="display">
+				<section data-previous-operand class="prev-op"></section>
+				<section data-current-operand class="current-op"></section>
+			</section>
 			<section class="grid">
 				<button data-number>7</button>
 				<button data-number>8</button>
@@ -30,8 +32,10 @@
 				<button data-operation>+</button>
 				<button data-number>0</button>
 				<button data-number>.</button>
-				<button>=</button>
+				<button data-equals>=</button>
 				<button data-operation>-</button>
+				<button data-all-clear class="clr">AC</button>
+				<button data-delete class="clr">Del</button>
 			</section>		
 		</section>
 
