@@ -1,0 +1,102 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+.calculator {
+    width: 400px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgb(70, 0, 77);
+    border: 1px solid rgb(0, 0, 0);
+    padding: 5px;
+    
+}
+
+#screen{
+    width: 95%;
+    height: auto;
+    margin: 15px auto 10px auto;
+}
+
+.previous-display, .current-display {
+    display: block;
+    font-size: 2rem;
+    color: black;
+    height: 60px;
+    line-height: 40px;
+    margin: 0 auto;
+    text-align: right;
+    padding: 1px 0;
+    background-color: aliceblue;
+    
+}
+
+.previous-display{
+    font-size: 1.25rem;
+    color: rgb(70, 0, 77);
+}
+
+.previous-display{
+    border-bottom:  1px dashed   rgb(87, 26, 26);
+  
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-around ;
+}
+.cal-btn-color{
+    color: aliceblue;
+    font-size: 2rem;
+    display: inline-block;
+    background-color: rgb(0, 0, 0);
+    width: 80px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
