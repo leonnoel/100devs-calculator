@@ -21,22 +21,38 @@
 /* BASE STYLES
 /*******************************************/
 
-section {
+.container {
   background: black;
-  height: 400px;
-  width: 300px;
-  border-radius: 10px;
+  height: 500px;
+  width: 450px;
+  border-radius: 20px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 10%;
+  padding: 50px; 
 }
+.input {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  padding: 20px; 
+}
+
 button {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 70px;
+  width: 70px;
+  margin: auto;  
 }
-div {
-  display: inline-block;
+.result {
   background: white;
-  height: 50px;
-  width: 275px;
+  height: 80px;
+  width: 355px;
+  margin-bottom: 15px;
+  border-radius: 3px;
 }
 /******************************************
 /* LAYOUT
