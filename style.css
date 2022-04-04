@@ -7,7 +7,7 @@ body {
   background-color: rgb(0,0,0);
   border-radius: 10%;
   width: 650px;
-  height: 700px;
+  height: 720px;
   margin: 0 auto;
 }
 
@@ -39,6 +39,16 @@ main div {
   width: 5.0em;
   height: 5.0em;
   margin: 2%;
+}
+
+#equals {
+  width: 22em;
+  border-radius: 10%;
+  height: 4.0em;
+}
+
+#clear {
+  background-color: rgb(255,215,0);
 }
 
 .flex-buttons div:hover {

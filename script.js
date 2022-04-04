@@ -13,35 +13,53 @@ function Calculator() {
   this.processEvent = function(context) {
     const deterIfOperator = this.processContext(context);
     //Operator was sent: +, -, x, /, =
-    if(deterIfOperator && context !== "." && !newPass) {
-      //Set numeric value before operator
-      if(preOpr == 0) {
-        preOpr = Number(strAns);
+    if(deterIfOperator && context !== "." && context !== 'C' && !newPass) {
+        //Set numeric value before operator
+        if(preOpr == 0) {
+          preOpr = Number(strAns);
+          lastOpr = context;
+          //Set numeric value after operator
+        } else if(postOpr == 0) {
+          postOpr = Number(strAns);
+          postSet = true;
+        }
+
+        //Calculate equation
+        total = this.calculate(lastOpr);
+
+        if(context === '=') {
+            strUpperDisp = `${preOpr} ${lastOpr} ${postOpr} ${context}`;
+            preOpr = total;
+            postOpr = 0;
+        } else {
+            preOpr = total;
+            postOpr = 0;
+            strUpperDisp = total.toString() + context;
+        }
+
         lastOpr = context;
-        //Set numeric value after operator
-      } else if(postOpr == 0) {
-        postOpr = Number(strAns);
-        postSet = true;
-      }
-
-      //Calculate equation
-      total = this.calculate(lastOpr);
-
-      preOpr = total;
-      postOpr = 0;
-      strUpperDisp = total.toString() + context;
-      lastOpr = context;
-      strAns = total;
-      newPass = true;
-
+        strAns = total;
+        newPass = true;
+      //
+    } else if (deterIfOperator && context !== "." && context !== 'C' && newPass){
+        strUpperDisp = total.toString() + context;
+        lastOpr = context;
+      // RESET ALL values to default
+    } else if (context === 'C') {
+        total = 0;
+        preOpr = 0;
+        postOpr = 0;
+        strUpperDisp = "";
+        strAns = "0";
+        lastOpr = "";
+        newPass = true;
+        postSet = false;
     } else if (!deterIfOperator && newPass){
-      strAns = context;
-      newPass = false;
+        strAns = context;
+        newPass = false;
+      //
     } else if (!deterIfOperator && !newPass){
-      strAns += context;
-    } else if (deterIfOperator && context !== "." && newPass){
-      strUpperDisp = total.toString() + context;
-      lastOpr = context;
+        strAns += context;
     }
 
     this.display();
@@ -85,6 +103,8 @@ function Calculator() {
 
     if(strUpperDisp.length>1) {
       screen.innerText = strUpperDisp;
+    } else {
+      screen.innerText = "-";
     }
 
   }
