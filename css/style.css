@@ -103,7 +103,7 @@ button:hover {
   background-color: #4e9ed4;
 }
 
-.calc-buttons {
+.calculator-keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 10px;
