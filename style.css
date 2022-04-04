@@ -3,6 +3,11 @@
     -moz-box-sizing : border-box;
     box-sizing: border-box;
 }
+.previous-operand, .current-operand {
+width: 40%;
+height: 8px;
+font-size: 8px;
+}
 .calculatorContainer {
     border: 2px solid black;
     border-radius: 10px;
@@ -35,4 +40,11 @@
     width: 85%;
     background-color: white;
     margin: 0 auto; 
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.output .previous-operand {
 }
