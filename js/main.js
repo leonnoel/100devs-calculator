@@ -55,9 +55,33 @@ class Calculator {
     this.previous = ''
   }
 
+  getDisplayNum(num) {
+    const strNum = num.toString()
+    const intDigits = parseFloat(strNum.split('.')[0])
+    const decDigits = strNum.split('.')[1]
+    const floatNum = parseFloat(num)
+    let intDisplay
+    if (isNaN(intDigits)) {
+      intDisplay = ''
+    } else {
+      intDisplay = intDigits.toLocaleString('en', {
+        maximumFractionDigits: 0
+      })
+    }
+    if (decDigits != null) {
+      return `${intDisplay}.${decDigits}`
+    } else {
+      return intDisplay
+    }
+  }
+
   updateDisplay() {
-    this.currentText.innerText = this.current
-    this.previousText.innerText = this.previous
+    this.currentText.innerText = this.getDisplayNum(this.current)
+    if (this.operation != null) {
+      this.previousText.innerText = `${this.getDisplayNum(this.previous)} ${this.operation}`
+    } else {
+      this.previousText.innerText = ''
+    }
   }
 }
 
