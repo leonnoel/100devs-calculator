@@ -13,10 +13,10 @@ function buttonClicked (event) {
     // Clear button
     if (buttonValue === 'clr') {
         calculator.clear()
+    }
     // Making sure operators don't repeat
     if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
-    }
     // check if button clicked is an operator
     }else if (buttonValue === '=' || buttonValue === '+' || buttonValue === '-' || buttonValue === 'x' || buttonValue === '/') {
         if (!(calculator.currentOp) && buttonValue !== '=') {
@@ -117,7 +117,6 @@ const calculator = {
     }
     
 }
-// TODO fix equals with no previous operator
 // TODO fix sequential operators that are different
 
     // user presses number
