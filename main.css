@@ -1,0 +1,126 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 62.5%;
+	font-family: Arial, Helvetica, sans-serif;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html:focus-within {
+	scroll-behavior: smooth;
+  }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* THIS IS THE START OF THE CALC CODE!!!!!!!!!!!!!!!!!!!!!!!*/
+
+main {
+    background-color: black;
+    
+}
+
+.calculator {
+	border: 1px solid #ccc;
+	background-color: black;
+	border-radius: 5%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 25px;
+  }
+
+  .calculator-screen {
+	text-align: right;
+	font-size: 5rem;
+	width: 100%;
+	height: 80px;
+	background-color: white;
+	color: black;
+	padding-right: 10px;
+	margin-bottom: 20px;
+}
+
+
+
+
+.calculator-keys {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 15px;
+	padding-bottom: 5px;
+	/* display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 5px; */
+}
+
+button {
+	height: 60px;
+	background-color: white;
+	border: none;
+	border-radius: 30px;
+	font-size: 4rem;
+	font-weight: bold;
+	color: black;
+	margin: 7px;
+	padding: 5px;
+	flex: 1 0 18%;
+}
+
+.clearButton {
+	background-color: red;
+	color: white;
+}
+
+button:hover {
+	background-color: lightskyblue;
+}
+
+button:active {
+	background: rgb(118, 197, 118);
+}
