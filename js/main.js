@@ -11,6 +11,7 @@ class Calculator {
   }
 
   delete() {
+    this.current = this.current.toString().slice(0, -1)
 
   }
 
@@ -66,6 +67,7 @@ const equals = document.querySelector('[data-equals]')
 const clearBtn = document.querySelector('[data-all-clear]')
 const previousText = document.querySelector('[data-previous-operand]')
 const currentText = document.querySelector('[data-current-operand]')
+const del = document.querySelector('[data-delete]')
 
 const calculator = new Calculator(previousText, currentText)
 
@@ -92,5 +94,10 @@ equals.addEventListener('click', _ => {
 
 clearBtn.addEventListener('click', _ => {
   calculator.clear()
+  calculator.updateDisplay()
+})
+
+del.addEventListener('click', _ => {
+  calculator.delete()
   calculator.updateDisplay()
 })
