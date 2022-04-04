@@ -59,8 +59,8 @@ body{
 }
 
 .output .previousValue {
-  color: rgba(255, 255, 255, .75);
-  font-size: 1.5rem;
+  color: red;
+  font-size: 2.5rem;
 }
 
 .output .dislayValue {
