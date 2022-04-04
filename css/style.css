@@ -78,14 +78,20 @@ h1 {
   border: 1px solid black;
 }
 
-.button.number:hover {
+.button {
   cursor:pointer;
+}
+
+.button.number:hover {
   border: 2px solid cyan;
 }
 
 .button.operator:hover {
-  cursor:pointer;
   border: 2px solid greenyellow;
+}
+
+.button.function:hover {
+  border: 2px solid royalblue;
 }
 
 .button span {
