@@ -24,28 +24,31 @@
 .container {
   background: black;
   height: 500px;
-  width: 450px;
-  border-radius: 20px;
+  width: 420px;
+  border-radius: 30px;
   display: flex;
   justify-content:space-around;
   align-items: center;
   flex-flow: row wrap;
   margin: 10%;
-  padding: 50px; 
+  padding: 40px; 
 }
 .input {
   display:flex;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
-  padding: 20px; 
+  gap: 7px 7px;
+  padding: 10px; 
 }
 
 button {
   border-radius: 50%;
   height: 70px;
   width: 70px;
-  margin: auto;  
+  margin: auto;
+  font-weight: bold;
+  font-size: 28px;  
 }
 .result {
   background: white;
