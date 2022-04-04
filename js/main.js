@@ -13,9 +13,8 @@ function buttonClicked (event) {
     // Clear button
     if (buttonValue === 'clr') {
         calculator.clear()
-    }
-    // Making sure operators don't repeat
-    if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
+        // Making sure operators don't repeat
+    }else if (isNaN(buttonValue) && isNaN(calculator.previousButton)) {
         return
     // check if button clicked is an operator
     }else if (['=','+','-','x','/'].includes(buttonValue)) {
@@ -38,7 +37,6 @@ function buttonClicked (event) {
         readOut.innerText += buttonValue
         calculator.previousButton = buttonValue
     }
-    
 }
 // make calculator object
 const calculator = {
