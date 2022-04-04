@@ -19,7 +19,7 @@ function buttonClicked (event) {
     }
     // check if button clicked is an operator
     }else if (buttonValue === '=' || buttonValue === '+' || buttonValue === '-' || buttonValue === 'x' || buttonValue === '/') {
-        if (!(calculator.currentOp)) {
+        if (!(calculator.currentOp) && buttonValue !== '=') {
             calculator.valueBeforeOp = Number(readOutValue)
             calculator.currentOp = buttonValue
             readOut.innerText += buttonValue
@@ -117,7 +117,7 @@ const calculator = {
     }
     
 }
-// TODO fix equals with not previous operator
+// TODO fix equals with no previous operator
 // TODO fix sequential operators that are different
 
     // user presses number
