@@ -1,0 +1,134 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculator {
+	width: 25rem;
+	height: 33rem;
+	padding: 0 3rem 2rem 3rem;
+	border: 1px solid black;
+	background: black;
+	border-radius: 8%;
+	font-weight:700;
+	color: black;
+}
+input {
+	display: inline-flex;
+	font-size: 4rem;
+	margin: 3rem 0;
+	background: white;
+	height: 5rem;
+	width: 100%;
+	border: none;
+	text-align: right;
+	color: black;
+}
+
+button{
+	display: inline-flex;
+	justify-content: space-evenly;
+	align-items: center;
+	border: 1px solid white;
+	background: white;
+	font-size: 2rem;
+	width: 3.5rem;
+	height: 3.5rem;
+	border-radius: 50%;
+	text-align: center;
+	margin: 0.25rem 0.5rem;
+}
+button:hover{
+	background-color: gray;
+	border: 1px solid gray;
+}
+
+.clear {
+	font-size: 1rem;
+	border: 1px solid red;
+	background: red;
+	font-weight: 700;
+
+}
+.clear button:hover{
+	background-color: gray;
+	border: 1px solid gray;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
