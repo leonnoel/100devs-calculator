@@ -67,6 +67,12 @@ button {
   font-size: 3rem;
 }
 
+.multiply {
+  text-align: center;
+  padding-top: 15px;
+  font-size: 4.5rem;
+}
+
 button:hover {
   background-color: rgb(122, 114, 114);
 }
