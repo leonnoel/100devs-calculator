@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color:#021050;
+    width:50%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-rows: minmax(120px,auto) repeat(4,100px);
+    grid-template-columns: repeat(4, 100px);
+}
+
+section {
+    grid-column: 1/-1;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section div {
+    text-align: right;
+    background-color: white;
+    min-height:100%;
+    min-width: 100%;
+    padding: 10px;
+}
+ .firstValue{
+     font-size: 1.4rem;
+ }
