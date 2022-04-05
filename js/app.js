@@ -15,5 +15,6 @@ keys.addEventListener('click', event => {
         return;
     } else {
         console.log(value);
+        document.querySelector('#screen').innerText = value
     }
 })
