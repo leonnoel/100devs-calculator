@@ -1,0 +1,87 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculatorBody {
+  background-color: black;
+  border-radius: 35px;
+  width: 400px;
+  padding: 50px 30px;
+  margin: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.ouput {
+  background-color: white;
+  height: 80px;
+  margin: 0 20px;
+  position: relative;
+}
+
+.mainOperand {
+  font-size: 50px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.secondaryOperand {
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+}
+
+.operator {
+  font-size: 20px;
+}
+
+.buttonGrid {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  margin: 20px 30px 0 30px;
+}
+
+.flex-row {
+  display: flex;
+  flex-basis: 100%;
+}
+
+.buttonContainer {
+  flex-basis: 25%;
+}
+
+.button {
+  background-color: white;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 60px;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: rgb(226, 226, 226);
+}
+
+.button:active {
+  background-color: white;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
