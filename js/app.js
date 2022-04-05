@@ -11,6 +11,7 @@ keys.addEventListener('click', event => {
     }
 })
 
+
 // calculator object
 
 const calculator = {
@@ -25,13 +26,13 @@ const calculator = {
                 break;
             case '.':
                 if (this.displayText == 0) {
-                    // pass '0.' into add text method
+                    addText('0.')
                 } else {
-                    //add value to text string
+                    addText(value)
                 }
                 break;
             default:
-                //add value to text string
+                this.addText(value)
                 break;
         }
     },
@@ -43,10 +44,17 @@ const calculator = {
             this.displayText = this.prevTotal;
             this.prevTotal = null;
         }
-        if (/*invalid inputs*/) {
-
+        if (isNaN(+(value)) && isNaN(+(this.displayText))) {
+            if(isNaN(this.displayText.slice(-1))) {
+                return;
+            }
         }
         this.displayText += value
         //output text to screen
+        this.outputText(this.displayText)
+    },
+
+    outputText(text) {
+        document.querySelector('#screen').innerText = this.displayText;
     }
 }
