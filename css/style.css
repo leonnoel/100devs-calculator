@@ -9,6 +9,7 @@
 
 html {
   font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /******************************************
 /* LAYOUT
@@ -64,6 +65,10 @@ button {
   background-color: red;
   color: white;
   font-size: 3rem;
+}
+
+button:hover {
+  background-color: rgb(122, 114, 114);
 }
 /******************************************
 /* ADDITIONAL STYLES
