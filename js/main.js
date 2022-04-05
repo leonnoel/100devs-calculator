@@ -1,7 +1,9 @@
-function Calculator() {
-    this.display = [];
+function Calculator() {    
     this.result = 0;
+    this.selectedNums = [];
     this.operations = [];
+
+    this.display = [];
 
     this.divide = function() {
 
@@ -27,41 +29,46 @@ function Calculator() {
 /* let display = [];
 let result = 0;
 let numList = []; // List of numbers for calculation
-let selectedNums = []; // For a number which has more than 1 digit
+//let selectedNums = []; // For a number which has more than 1 digit
 let operations = [];
-let newCalc = true;
+let newCalc = true; */
 
+const calc = new Calculator();
 
 const numbersDOM = document.querySelectorAll('.number');
+
 numbersDOM.forEach(element => {
     element.addEventListener('click', displayNumbers)
 });
+
 function displayNumbers(element) {
-    if(!newCalc) {
-        document.querySelector('.displayCalc').innerText = '';
+    /* if(!newCalc) {
+        document.querySelector('#calcDisplay').innerText = '';
         document.querySelector('.displayResult').innerText = '';
-    }
+    } */
     const elem = element.target;
     console.log(elem);
-    if(selectedNums.length === 0){
-        selectedNums.push(Number(elem.innerText));
-        console.log(`SelectedNums: ${selectedNums}`);
+    if(calc.selectedNums.length === 0){
+        calc.selectedNums.push(Number(elem.innerText));
+        console.log(`SelectedNums: ${calc.selectedNums}`);
     } else {
         let temp=0;
-        for(i=0; i<selectedNums.length; i++) {
-            temp = selectedNums[i] * 10 + Number(elem.innerText);
+        for(i=0; i<calc.selectedNums.length; i++) {
+            temp = calc.selectedNums[i] * 10 + Number(elem.innerText);
         }
         console.log(`Temp: ${temp}`);
-        selectedNums = [];
-        selectedNums.push(temp);
-        console.log(selectedNums);         
+        calc.selectedNums = [];
+        calc.selectedNums.push(temp);
+        console.log(calc.selectedNums);         
     }
     console.log(elem.innerText);
-    display.push(elem.innerText);
-    document.querySelector('.displayCalc').innerText = display.join(''); 
+    calc.display.push(elem.innerText);
+    console.log(calc.display);
+    console.log(document.getElementById('calcDisplay'));
+    document.getElementById('calcDisplay').innerHTML = calc.display.join(''); 
     
 }
- 
+/* 
 const operationDOM = document.querySelectorAll('.operation');
 operationDOM.forEach(element => {
     element.addEventListener('click', displayOperation)
