@@ -1,0 +1,79 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+*,
+html{
+  font-size: 62.5%;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.frame{
+  display: flex;
+  flex-flow: column;
+  justify-content: top;
+  align-items: center;
+  width: 80rem;
+  height: 80rem;
+  margin: 8rem auto;
+  background: black;
+  border-radius: 5%;
+}
+
+
+.results{
+  width: 80%;
+  font-size: 6rem;
+  border: none;
+  color: black;
+  height: 15rem;
+  margin: 5rem 0 5rem 0;
+  background: white;
+}
+
+.numbers{
+  text-decoration: none;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  flex-basis: 50%;
+}
+
+.numbers ul{
+  padding: 0;
+  
+}
+
+.numbers ul li{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  border-radius: 50%;
+  background: white;
+  font-size: 6rem;
+  margin: 1rem;
+}
+
+.clear_all{
+  border-radius: 5%;
+  background: white;
+  width: 40%;
+  font-size: 7rem;
+  text-align: center;
+}
+
+
+
