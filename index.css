@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    background: black;
+    width: 450px;
+    height: 550px;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.screen {
+    width: 350px;
+    height: 100px;
+    background: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.btn-rows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.btn {
+    font-size: 2em;
+    font-weight: 800;
+    margin: 5px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
