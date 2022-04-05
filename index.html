@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <section class="calculator">
+        <section class="screen">
+            <p data-previous-operand class="previous-operand" id="calculation"></p>
+            <p data-current-operand class="current-operand" id="input"></p>
+        </section>
+        <section class="buttons">
+            <section class="row">
+                <span data-numbers class="btn" id="val-7">7</span>
+                <span data-numbers class="btn" id="val-8">8</span>
+                <span data-numbers class="btn" id="val-9">9</span>
+                <span data-operation class="btn" id="oper-divide">/</span>
+            </section>
+            <section class="row">
+                <span data-numbers class="btn" id="val-4">4</span>
+                <span data-numbers class="btn" id="val-5">5</span>
+                <span data-numbers class="btn" id="val-6">6</span>
+                <span data-operation class="btn" id="oper-multiply">x</span>
+            </section>
+            <section class="row">
+                <span data-numbers class="btn" id="val-1">1</span>
+                <span data-numbers class="btn" id="val-2">2</span>
+                <span data-numbers class="btn" id="val-3">3</span>
+                <span data-operation class="btn" id="oper-add">+</span>
+            </section>
+            <section class="row">
+                <span data-numbers class="btn" id="val-0">0</span>
+                <span data-numbers class="btn" id="decimal">.</span>
+                <span data-equals class="btn" id="oper-equal">=</span>
+                <span data-operation class="btn" id="oper-minus">-</span>
+            </section>
+            <section class="row">
+                <span data-all-clear class="btn" id="clear-input">AC</span>
+                <span data-delete class="btn" id="del">delete</span>
+            </section>
+        </section>
+    </section>
+</body>
+</html>

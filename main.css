@@ -1,0 +1,89 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+  body {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      background: linear-gradient(to right, #f2ff7e, #ff6bba);
+
+  }
+    body > section {
+      height: 60vh;
+      width: 40vh;
+      background-color: rgba(246, 60, 75, 0.8);
+      border-radius: 1rem;
+
+    }
+
+    .screen {
+        height: 18vh;
+        width: 90%;
+        background-color: rgb(251, 170, 184, .8);
+        border-radius: 1rem;
+        margin: 5% auto 8% auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 10px;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+   
+    p {
+        height: 20%;
+    }
+
+    .previous-operand {
+        font-size: 1.0rem;
+    }
+
+    .current-operand {
+        font-size: 1.5rem;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+        margin: .8rem 1rem;
+    }
+
+    .row:last-child span{
+        width: 43%;
+        text-align: center;
+    }
+
+    .btn {
+        cursor: pointer;
+        padding: 4% 7%;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        background-color: rgb(192, 26, 95, .75);
+        color: white;
+    }
+  
+    .btn:hover {
+        background-color: rgb(192, 26, 95, .9);
+    }
+
+
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
