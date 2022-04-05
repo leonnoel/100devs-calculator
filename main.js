@@ -5,8 +5,8 @@ keys.addEventListener('click', runCalc)
 const display=document.querySelector('.myDisplay')
 
 function runCalc(e){
-    if (e.target.matches('button')){     //.target basically just reads only
-        const key=e.target
+    if (e.target.matches('button')){     //.target basically just means read only
+        const key=e.target    //read the input (button)
         const action=key.dataset.action    //references data-action from html
         const keyContent=key.textContent
         const displayNum=display.textContent
