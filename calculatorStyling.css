@@ -1,0 +1,56 @@
+html {
+	font-size: 62.5%;
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: inherit;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+#body{
+    background: black;
+    border-radius: 5%;
+    height: 500px;
+    width: 400px;
+}
+
+#elements{
+    padding-top: 70px;
+}
+
+#display{
+    width: 300px;
+    height: 80px;
+    background: white;
+    margin: 0 50px;
+    font-size: 50px;
+    font-weight: 700;
+    text-align: right;
+    vertical-align: center;
+    line-height: 1.5em;
+}
+
+#buttons{
+    height: 300px;
+    margin: 25px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-grow: 25%;
+
+}
+
+button{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-size: 50px;
+    font-weight: 700;
+}
