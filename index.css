@@ -5,8 +5,8 @@ body {
 
 main {
     background: black;
-    width: 450px;
-    height: 550px;
+    width: 400px;
+    height: 500px;
     border-radius: 10%;
     display: flex;
     flex-direction: column;
@@ -25,6 +25,12 @@ form {
     background: white;
     margin-top: 15px;
     margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 2em;
+    font-weight: 800;
+    padding-right: 10px;
 }
 
 
@@ -52,4 +58,9 @@ form {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+}
+
+.btn * {
+    text-decoration: none;
+    color: black;
 }
