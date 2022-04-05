@@ -1,77 +1,112 @@
 //things that a calculator has to do
 //accept user inputs of number, operator, number
-//should accept decimal numbers
+//if display = 0 then clicked number should overwrite display
+//numbers can be longer than one digit
+//should accept decimal numbers - should not accept multiple decimals in one string
+//should not accept more than one operator per equation
 //store inputs
 //recognize inputs and perform calculations
 //return a result
+const calculator = {
+    display: '0',
+    prevNum: null,
+    checkForOperation: false,
+    operator: null,
+}
 
-const keys = document.querySelector('.keys');
-    keys.addEventListener('click',event => {
-        const {target} = event;
-        const {value} = target;
-        if(!target.matches('button')){
-            return;
-        }else{
-            Calculator.parseInput(value);
-        }
-    })
+function numToDisplay(num) {
+    const {display, checkForOperation} = calculator;
+   if(checkForOperation === true) {
+       calculator.display = num;
+       calculator.checkForOperation = false;
+   }else{
+       //if current value of display is 0, overwrite otherwise add to string of nums in input
+        calculator.display = display === '0' ? num : display + num;
+   }
+}
 
-const Calculator = {
-    displayText: '0',
-    previousTotal: null,
-
-    parseInput(value){
-        console.log(value)
-        switch(value){
-            case '=':
-                this.calcAnswer(this.displayText)
-                break;
-            case 'AC':
-                this.clearAll()
-                break;
-            case '.':
-                if (this.displayText == 0){
-                    this.addText('0.')
-                } else {
-                   this.addText(value)
-                }
-                break;
-            default:
-                this.addText(value)
-                break;
-        }
-    },
-
-    addText(value){
-        if (this.displayText === '0') {
-            this.displayText = ''
-        } else if (this.previousTotal !== null){
-            this.displayText = this.previousTotal;
-            this.previousTotal = null;
-        }
-        //implicit type conversion - checking to see if values are NaN - refactor to see if . or digit or operator?
-        if (isNaN(+(value)) && isNaN(+(this.displayText))){
-           if(isNaN(this.displayText.slice(-1))){
-               return;
-           }
-        }
-        this.displayText += value
-        this.outputText(this.displayText)
-    },
-
-    outputText(text){
-        document.querySelector('.calculator-screen').value = text
-
-    },
-
-    calcAnswer(equation){
-        let result = Function("return " + equation)()
-        this.outputText(result)
-    },
-
-    clearAll(){
-        this.displayText = '0',
-        this.previousTotal = null,
-        this.outputText(this.displayText)
+function decimalToDisplay(decimal){
+    if(calculator.checkForOperation === true){
+        calculator.display = '0.'
+        calculator.checkForOperation = false;
+        return;
+    }
+    if(!calculator.display.includes(decimal)){
+        calculator.display += decimal;
     }
 }
+
+function operatorToDisplay(op2){
+    const {prevNum, display, operator} = calculator
+    const valueOnClick = parseFloat(display);
+    if(operator && calculator.checkForOperation) {
+        calculator.operator = op2;
+        return;
+    }
+    if(prevNum === null && !isNaN(valueOnClick)){
+        calculator.prevNum = valueOnClick;
+    }else if (operator){
+        const result = maffs(prevNum, valueOnClick, operator);
+        calculator.display = `${parseFloat(result.toFixed(8))}`;
+        calculator.prevNum = result;
+    }
+    calculator.checkForOperation = true;
+    calculator.operator = op2;
+}
+function maffs(prevNum, currentNum, operator){
+    if(operator === '+'){
+        return prevNum + currentNum;
+    }else if(operator === '-'){
+        return prevNum - currentNum;
+    }else if(operator === "*"){
+        return prevNum * currentNum;
+    }else if (operator === '/'){
+        return prevNum / currentNum;
+    }
+    return currentNum;
+}
+
+function reset(){
+    calculator.display = '0';
+    calculator.prevNum = null;
+    calculator.checkForOperation = false;
+    calculator.operator = null;
+}
+
+function updateDisplay(){
+    const display = document.querySelector('.screen')
+    display.value = calculator.display;
+}
+
+updateDisplay();
+
+//destructuring assignment - target variable represents element clicked and if the element != button, return early - if 
+const keys = document.querySelector('.keys');
+keys.addEventListener('click', event => {
+    const { target } = event;
+    const { value } = target;
+    if (!target.matches('button')) {
+        return;
+}
+
+    switch(value){
+        case '+':
+        case '-':
+        case '*':
+        case '/':
+        case '=':
+            operatorToDisplay(value);
+            break;
+        case '.':
+            decimalToDisplay(value);
+            break;
+        case 'AC':
+            reset();
+            break;
+        default:
+            if(Number.isInteger(parseFloat(value))){
+                numToDisplay(value);
+            }
+    }
+    updateDisplay();
+});
