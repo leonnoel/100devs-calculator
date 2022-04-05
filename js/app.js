@@ -22,13 +22,13 @@ const calculator = {
     parseInput(value) {
         switch (value) {
             case '=':
-                //calculate the answer
+                this.calcAnswer(this.displayText)
                 break;
             case '.':
                 if (this.displayText == 0) {
-                    addText('0.')
+                    this.addText('0.')
                 } else {
-                    addText(value)
+                    this.addText(value)
                 }
                 break;
             default:
@@ -55,6 +55,11 @@ const calculator = {
     },
 
     outputText(text) {
-        document.querySelector('#screen').innerText = this.displayText;
+        document.querySelector('#screen').innerText = text
+    },
+
+    calcAnswer(equation) {
+        let result = Function("return " + equation)()
+        this.outputText(result)
     }
 }
