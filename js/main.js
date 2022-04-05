@@ -1,7 +1,7 @@
 class Calculator {
   constructor(previousText, currentText) {
-    this.previousText = previousText
-    this.currentText = currentText
+    this.previousText = previousText // place to see previous
+    this.currentText = currentText // place to see current
     this.clear()
   }
   clear() {
@@ -12,18 +12,18 @@ class Calculator {
 
   delete() {
     this.current = this.current.toString().slice(0, -1)
-
   }
 
   appendNum(number) {
-    if (number === '.' && this.current.includes('.')) return
+    if (number === '.' && this.current.includes('.')) return // only one . allowed
     this.current = this.current.toString() + number.toString() 
   }
 
   chooseOperator(operation) {
-    if (this.current === '') return
+    this.armed = false
+    if (this.current === '') return // num comes first
     if (this.previous !== '') {
-      this.calc()
+      this.calc() // full send
     }
     this.operation = operation
     this.previous = this.current
@@ -77,7 +77,7 @@ class Calculator {
   updateDisplay() {
     this.currentText.innerText = this.getDisplayNum(this.current)
     if (this.operation != null) {
-      this.previousText.innerText = `${this.getDisplayNum(this.previous)} ${this.operation}`
+      this.previousText.innerText = `${this.getDisplayNum(this.previous)}${this.operation}`
     } else {
       this.previousText.innerText = ''
     }
@@ -88,9 +88,9 @@ const numbers = document.querySelectorAll('[data-number]')
 const operations = document.querySelectorAll('[data-operation]')
 const equals = document.querySelector('[data-equals]')
 const clearBtn = document.querySelector('[data-all-clear]')
+const del = document.querySelector('[data-delete]')
 const previousText = document.querySelector('[data-previous-operand]')
 const currentText = document.querySelector('[data-current-operand]')
-const del = document.querySelector('[data-delete]')
 
 const calculator = new Calculator(previousText, currentText)
 

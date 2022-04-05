@@ -17,6 +17,7 @@ body {
   margin: 0;
   background: linear-gradient(to right, dodgerblue, teal);
   color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -64,8 +65,7 @@ body {
   width: 20%;
   background: white;
   border-radius: 12%;
-  height: 1.5em;
-  padding: 5px;
+  height: 1.6em;
   font-size: .8em;
 }
 
@@ -74,5 +74,3 @@ body {
   background: rgb(255, 159, 91);
   width: 40%;
 }
-
-
