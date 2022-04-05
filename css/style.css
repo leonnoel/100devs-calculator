@@ -33,7 +33,7 @@
   margin: 10%;
   padding: 40px; 
 }
-.input {
+.calc-buttons {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -56,6 +56,9 @@ button {
   width: 355px;
   margin-bottom: 15px;
   border-radius: 3px;
+  font-weight: bolder;
+  font-size: 64px;
+  text-align: right;
 }
 /******************************************
 /* LAYOUT
