@@ -1,0 +1,94 @@
+/*
+Grid styles from https://www.youtube.com/watch?v=j59qQ7YWLxw
+*/
+
+/* Box Model Hack */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #59c4df, #2251c7);
+}
+
+
+/******************************************
+/* TYPOGRAPHY
+/*******************************************/
+
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 50vh;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+  margin: 2rem;
+}
+
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, .75);
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255, .90);
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: rgba(0, 0, 0, .75);
+  color: rgba(255, 255, 255, 1);
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.operator {
+  background-color: rgba(90, 225, 235, 0.75);
+  color: white;
+}
+
+.operator:hover {
+  background-color: rgba(255, 255, 255, .90);
+  color: rgba(0, 0, 0, .75);
+}
+
+/* footer {
+
+} */
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
