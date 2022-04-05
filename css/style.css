@@ -37,6 +37,84 @@
 
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #DBF227;
+  height: 600px;
+  width: 450px;
+  margin: 30px auto 0 auto;
+  background-color: #042940;
+  border-radius: 10px;
+}
+
+.display {
+  width: 80%;
+  height: 50px;
+  border: 2px solid #DBF227;
+  margin: 25px auto;
+  background-color: #fff;
+  color: #005C53;
+  text-align: right;
+  font-size: 40px;
+  padding-right: 5px;
+  border-radius: 10px;
+}
+
+
+.btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.btns button {
+  width: 22%;
+  height: 22%;
+  background-color: #9FC131;
+  color: #042940;
+  font-size: 40px;
+  border-radius: 25px;
+  margin: 5px;
+}
+
+.btns .opp {
+  background-color: #068ee3;
+}
+
+.btns .all-clear {
+  background-color: #980573;
+}
+
+.btns button:hover {
+  background-color: #ddf491;
+}
+
+.btns .opp:hover {
+  background-color: #84ccf9;
+}
+
+.btns .all-clear:hover {
+  background-color: #fa97e1;
+}
+
+.btns .equals {
+  margin: 5px auto 5px auto;
+  width: 100%;
+  background-color: #9FC131;
+  color: #042940;
+  font-size: 40px;
+  border-radius: 15px;
+}
+
+.btns .equals:hover {
+  background-color: #ddf491;
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
