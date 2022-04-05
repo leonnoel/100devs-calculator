@@ -1,43 +1,84 @@
-/* Box Model Hack */
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Box model */
   }
-  
-  /* Clear fix hack */
-  .clearfix:after {
-       content: ".";
-       display: block;
-       clear: both;
-       visibility: hidden;
-       line-height: 0;
-       height: 0;
-  }
-  
-  .clear {
-      clear: both;
-  }
-  
-  /******************************************
-  /* BASE STYLES
-  /*******************************************/
-  
-  body {
-  
-  }
-  
-  
-  /******************************************
-  /* LAYOUT
-  /*******************************************/
-  header {
-  
-  }
-  
-  footer {
-  
-  }
-  
-  /******************************************
-  /* ADDITIONAL STYLES
-  /*******************************************/
-  
+
+html {
+    font-size: 62.5%; /* Accessibility */
+}
+
+body {
+    align-items: center;
+    background: white;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: sans-serif;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+button {
+    align-items: center;
+    background: white;
+    border: .5rem solid white;
+    border-radius: 3rem;
+    color: black;
+    display: flex;
+    font-size: 3.75rem;
+    font-weight: 700;
+    height: 6rem;
+    justify-content: center;
+    width: 6rem;
+}
+
+.buttons {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+}
+
+.container {
+    background: black;
+    border-radius: 2.5rem;
+    max-height: 52rem;
+    padding: 7.5rem 4rem 2.5rem 4rem;
+    max-width: 41rem;
+}
+
+.display {
+    align-items: center;
+    background: white;
+    color: black;
+    display: flex;
+    font-size: 3.75rem;
+    font-weight: 700;
+    height: 8rem;
+    justify-content: flex-end;
+    padding: 1rem;
+    width: 33rem;
+}
+
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+
+/* buttons for mouse */
+@media(hover: hover){
+    button:hover{
+        border: .5rem solid skyblue;
+    }
+}
+
+/* buttons for touch screen */
+@media(any-pointer: coarse){
+    button:active{
+        border: .5rem solid skyblue;
+    }
+}
