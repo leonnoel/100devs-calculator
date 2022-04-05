@@ -8,6 +8,11 @@ class Calculator {
     this.previous = ''
     this.current = ''
     this.operation = undefined
+    this.armed = false
+  }
+
+  arm() {
+    this.armed = true
   }
 
   delete() {
@@ -16,11 +21,14 @@ class Calculator {
 
   appendNum(number) {
     if (number === '.' && this.current.includes('.')) return // only one . allowed
+    if (this.armed) {
+      this.current = ''
+      this.armed = false
+    }
     this.current = this.current.toString() + number.toString() 
   }
 
   chooseOperator(operation) {
-    this.armed = false
     if (this.current === '') return // num comes first
     if (this.previous !== '') {
       this.calc() // full send
@@ -28,6 +36,7 @@ class Calculator {
     this.operation = operation
     this.previous = this.current
     this.current = ''
+    this.armed = false
   }
 
   calc() {
@@ -111,6 +120,7 @@ operations.forEach(button => {
 })
 
 equals.addEventListener('click', _ => {
+  calculator.arm()
   calculator.calc()
   calculator.updateDisplay()
 })
