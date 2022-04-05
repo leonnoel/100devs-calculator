@@ -1,126 +1,152 @@
-const allButtons = Array.from(document.getElementsByClassName('button'));
+let Calculator = class {
+  constructor() {
+    this.total = 0;
+    this.preOpr = 0;
+    this.postOpr = 0;
+    this.strAns = "0";
+    this.strUpperDisp = "";
+    this.lastOpr = "";
+    this.newPass = true;
+    this.postSet = false;
+  }
 
-function Calculator() {
-  total = 0;
-  preOpr = 0;
-  postOpr = 0;
-  strAns = "0";
-  strUpperDisp = "";
-  lastOpr = "";
-  newPass = true;
-  postSet = false;
+  clearScreen() {
+    this.total = 0;
+    this.preOpr = 0;
+    this.postOpr = 0;
+    this.strAns = "0";
+    this.strUpperDisp = "";
+    this.lastOpr = "";
+    this.newPass = true;
+    this.postSet = false;
+  }
 
-  this.processEvent = function(context) {
-    const deterIfOperator = this.processContext(context);
-    //Operator was sent: +, -, x, /, =
-    if(deterIfOperator && context !== "." && context !== 'C' && !newPass) {
-        //Set numeric value before operator
-        if(preOpr == 0) {
-          preOpr = Number(strAns);
-          lastOpr = context;
-          //Set numeric value after operator
-        } else if(postOpr == 0) {
-          postOpr = Number(strAns);
-          postSet = true;
-        }
+  setEquals(total, context) {
+    this.total = total;
 
-        //Calculate equation
-        total = this.calculate(lastOpr);
+    this.strUpperDisp = `${this.preOpr} ${this.lastOpr} ${this.postOpr} ${context}`;
+    this.preOpr = this.total;
+    this.postOpr = 0;
 
-        if(context === '=') {
-            strUpperDisp = `${preOpr} ${lastOpr} ${postOpr} ${context}`;
-            preOpr = total;
-            postOpr = 0;
-        } else {
-            preOpr = total;
-            postOpr = 0;
-            strUpperDisp = total.toString() + context;
-        }
+    this.lastOpr = context;
+    this.strAns = this.total.toString();
+    this.newPass = true;
+    this.postSet = false;
+  }
 
-        lastOpr = context;
-        strAns = total;
-        newPass = true;
-      //
-    } else if (deterIfOperator && context !== "." && context !== 'C' && newPass){
-        strUpperDisp = total.toString() + context;
-        lastOpr = context;
-      // RESET ALL values to default
-    } else if (context === 'C') {
-        total = 0;
-        preOpr = 0;
-        postOpr = 0;
-        strUpperDisp = "";
-        strAns = "0";
-        lastOpr = "";
-        newPass = true;
-        postSet = false;
-    } else if (!deterIfOperator && newPass){
-        strAns = context;
-        newPass = false;
-      //
-    } else if (!deterIfOperator && !newPass){
-        strAns += context;
+  preSetCalculation(context) {
+    //Not yet ready to change total, prevent doubling by spam clicking operators.
+    if(this.newPass) {
+      this.strUpperDisp = this.total.toString() + context;
+      this.lastOpr = context;
+      //Set numeric value before operator
+    } else if(this.preOpr == 0) {
+      this.preOpr = Number(this.strAns);
+      this.lastOpr = context;
+      //Set numeric value after operator
+    } else if(this.postOpr == 0) {
+      this.postOpr = Number(this.strAns);
+      this.postSet = true;
     }
-
-    this.display();
   }
 
-  this.processContext = function(context) {
-     return isNaN(Number(context));
-  }
-
-  this.calculate = function(oper) {
-    if(postSet) {
-      switch(oper) {
+  calculate() {
+    if(this.postSet) {
+      switch(this.lastOpr) {
         case '+': {
-          return preOpr + postOpr;
+          return this.preOpr + this.postOpr;
           break;
         }
         case '-': {
-          return preOpr - postOpr;
+          return this.preOpr - this.postOpr;
           break;
         }
         case 'x': {
-          return preOpr * postOpr;
+          return this.preOpr * this.postOpr;
           break;
         }
         case '/': {
-          return preOpr / postOpr;
-          break;
-        }
-        case '=': {
+          return this.preOpr / this.postOpr;
           break;
         }
       }
     }
-    return preOpr;
+
+    return this.preOpr;
   }
-  this.display = function() {
+
+  processNumber(number) {
+
+    console.log(this);
+    if(this.strAns.includes(".") && number === ".") {
+      //No duplicate decimal points
+      return;
+    }
+
+    let symbol = (this.newPass && number == "." ? ("0"+number) : number);
+
+    if(this.newPass) {
+      this.strAns = symbol;
+      this.newPass = false;
+    } else {
+      this.strAns += symbol;
+    }
+  }
+
+  setTotals(total, context) {
+    this.total = total;
+    this.preOpr = total;
+    this.postOpr = 0;
+    this.strUpperDisp = this.total.toString() + context;
+
+    this.lastOpr = context;
+    this.strAns = this.total.toString();
+    this.newPass = true;
+    this.postSet = false;
+  }
+
+  setDisplay() {
     const screen = document.querySelector('#stack');
     const answer = document.querySelector('#answer');
 
-    answer.innerText = strAns;
+    answer.innerText = this.strAns;
 
-    if(strUpperDisp.length>1) {
-      screen.innerText = strUpperDisp;
+    if(this.strUpperDisp.length>1) {
+      screen.innerText = this.strUpperDisp;
     } else {
       screen.innerText = "-";
     }
-
   }
 }
 
 const calculator = new Calculator();
 
-allButtons.forEach(option => {option.addEventListener('click', function() {
-    calculator.processEvent(this.textContent.trim());
+// const allButtons = Array.from(document.getElementsByClassName('button'));
+  const operButtons = Array.from(document.getElementsByClassName('operation'));
+  const numberButtons = Array.from(document.getElementsByClassName('number'));
+  const clearButton = document.getElementById('clear').addEventListener('click', function() {
+  calculator.clearScreen();
+  calculator.setDisplay();
+});
+
+const equalsButton = document.getElementById('equals').addEventListener('click', function() {
+  calculator.preSetCalculation(this.textContent.trim());
+  const retVal = calculator.calculate();
+  console.log(retVal);
+  calculator.setEquals(retVal,this.textContent.trim());
+  calculator.setDisplay();
+});
+
+operButtons.forEach(option => {option.addEventListener('click', function() {
+    calculator.preSetCalculation(this.textContent.trim());
+    const retVal = calculator.calculate();
+    calculator.setTotals(retVal,this.textContent.trim());
+    calculator.setDisplay();
   })
 })
 
-//Type in an operator:
-//Add to operator stack
-//Add all to display stack
-
-  //If another operator is entered, replace last operator
-
-  //If a number is entered, empty ansNumberStack and put new number in
+numberButtons.forEach(option => {option.addEventListener('click', function() {
+    calculator.processNumber(this.textContent.trim());
+    calculator.setDisplay();
+  })
+})
