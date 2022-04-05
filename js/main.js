@@ -1,16 +1,13 @@
 class Calculator {
   constructor() {
-    this.displayValue = "0";
+    this.displayText = "0";
     this.firstOperand = null;
     this.waitingForSecondOperand = false;
     this.operator = null;
+    this.prevTotal = null;
   }
 
   parseInput(value) {
-    if (this.displayValue === "0") {
-      this.displayValue = "";
-    }
-
     switch (value) {
       case "=":
         //calculate answer
@@ -19,22 +16,42 @@ class Calculator {
         //clear screen and stored values
         break;
       case ".":
-        if (this.displayValue == 0) {
-          //pass '0.' into add text method
+        if (this.displayText == 0) {
+          this.addText("0.");
         } else {
-          //add value to text string
+          this.addText(value);
         }
+      default:
+        this.addText(value);
+        this.outputText(this.displayText);
+        break;
     }
   }
 
-  updateDisplay() {
-    const display = document.querySelector(".calculator-screen");
-
-    display.value = this.displayValue;
+  addText(value) {
+    if (this.displayText === "0") {
+      this.displayText = "";
+      // load total into display value
+    } else if (this.prevTotal !== null) {
+      this.displayText = this.prevTotal;
+      this.prevTotal = null;
+    }
+    if (isNaN(+value) && isNaN(+this.displayText)) {
+      if (isNaN(this.displayText.slice(-1))) {
+        return;
+      }
+    }
+    this.displayText += value;
   }
 
-  setDisplayValue(value) {
-    this.displayValue = value;
+  outputText(text) {
+    const display = document.querySelector(".calculator-screen");
+
+    display.value = text;
+  }
+
+  setdisplayText(value) {
+    this.displayText = value;
   }
 }
 
@@ -52,5 +69,6 @@ keys.addEventListener("click", (event) => {
     return;
   } else {
     testCalc.parseInput(value);
+    console.log(`${value}`);
   }
 });
