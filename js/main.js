@@ -15,7 +15,8 @@ class Calculator {
 
     /**
      * Set mainOperand, secondaryOperand & operator display output
-     * to the current values stored in Calculator memory.
+     * to the current values stored in Calculator memory. Update
+     * mainOperand * font size is updated based on length of output.
      */
     #updateScreen() {
         const mainOperand = document.querySelector(".mainOperand");
@@ -35,6 +36,7 @@ class Calculator {
 
     /**
      * Add pressed digit button to mainOperand and update the screen.
+     * There is a limit of 10 digits for mainOperand.
      * @param {string} digit innerText of Calculator UI button
      */
     #pressDigit(digit) {
