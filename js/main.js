@@ -1,21 +1,3 @@
-//****FIRST ATTEMPT */
-
-// function NumberButton(element){
-//     this.value = element.innerText,
-//     this.addToScreen = function(){
-//         document.querySelector('h2').innerText += this.value;
-//     };
-//     // this.showOnScreen = element.addEventListener('click',this.addToScreen())
-// }
-
-
-// //***BUILDING THE FIRST BUTTON OBJECT 7 */
-// // let elementOne = document.querySelector("li a");
-
-
-// // let buttonSeven = new NumberButton(elementOne);
-// // console.log(buttonSeven);
-//************************************************************ */
 
 //Constructor FUNCTION
 function Calculate(first,second){
