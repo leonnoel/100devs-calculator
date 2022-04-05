@@ -57,8 +57,11 @@ const calculator = {
         // check if the characters are valid
         if (isNaN(+(value)) && isNaN(+(this.displayText.slice(-1)))) {
             return
-        } else if (value === '.' && this.displayText.lastIndexOf('+') < this.displayText.lastIndexOf('.')) {
-            return
+        } else {
+            let lastOpp = [this.displayText.lastIndexOf('+'), this.displayText.lastIndexOf('-'), this.displayText.lastIndexOf('*'), this.displayText.lastIndexOf('/')]
+            if (value === '.' && (Math.max(...lastOpp) < this.displayText.lastIndexOf('.'))) {
+                return
+            }
         }
         this.displayText += value
         this.outputText(this.displayText)
