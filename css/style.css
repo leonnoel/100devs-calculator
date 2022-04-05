@@ -1,0 +1,94 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+main {
+  
+}
+
+.calculator{
+  width: 400px;
+  height: 500px;
+  padding: 75px 35px;
+  margin: 40px;
+  background-color: black;
+  color: white;
+  border-radius: 7.5%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.display {
+  width: 330px;
+  height: 40px;
+  background-color: white;
+  color: black;
+  font-weight: 300;
+  text-align: right;
+  padding: 10px;
+}
+
+.prevEntry {
+  font-style: italic;
+}
+
+.btnList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5%;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  margin: 1.5%;
+  background-color: white;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 60px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-style: bold;
+  font-size: xx-large;
+  
+
+}
