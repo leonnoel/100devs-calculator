@@ -1,0 +1,52 @@
+html {
+    font-size: 100%
+}
+
+#display{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20rem;
+    height: 4rem;
+    border: solid 1px black;
+    background-color: white;
+    margin: 4rem;
+}
+
+#displayContent{
+    color: black;
+    font-size: 2.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+.buttonRow,#buttons,#calculator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#buttons, #calculator {
+    flex-direction: column;
+}
+
+#calculator {
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 4rem;
+    height: 40rem;
+    width: 30rem;
+}
+
+.button {
+    background-color: white;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    color: black;
+    height: 4rem;
+    width: 4rem;
+    margin: .5rem;
+}
