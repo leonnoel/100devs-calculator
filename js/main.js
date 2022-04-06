@@ -14,8 +14,6 @@ but maybe point is that operator lingers after equal is done.
 * for "fillVisible" functions: need a way to extract the "value" (id based?) of given element to make code generic and use switch.
 
 To-dos
-* write generic versions of fillvisible.
-* bundle for digits & decimal the startfresh-fillvisible-checkfill callbacks in 1 function in event listener
 * write generic version of fillops.
 *bundle for operators the passalong-checkifrun-fillops callbacks in 1 function in event listener.
 
@@ -38,19 +36,6 @@ function Calculator(){
     let num1;
     let num2;
     let operator;
-    
-
-
-    /**
-     * some kind of forEach .digit, 
-     * if 'click'ed (=== true)
-     * get html ID
-     * pass html ID as value to match to switch operation
-     * based on match, display appropriate number in visible number (if conditionals in current fillvisibles)
-     * 
-    
-
-    this.fillVisible = function(){}
 
     */
 
@@ -223,35 +208,14 @@ document.querySelectorAll('.button').forEach(element => element.addEventListener
 
 
 // Display: update visible number (visibleNum) based on which digit was pressed. 
-// but Chronologically this has to happen after calc.startFresh is called...so it's housed in a function currently
+// Preserve chronology 1) startfresh 2) fillvisible 3) checkfill
 // decimal is excluded due to exceptional condition for fillvisible.
-// generic fillVisible below
-
-/**current bugs
- * decCount becoming NaN for some reason even though this should not impact decimal calls (not a .digit)
- calc.startFresh and calc.checkFill are not being called correctly - and since it sets decCount, that is leading to the above and cascade down
-is it Chronology? since it's called with function expression - but I can't separate it from the forEach and genericize it.
-Moving all calculator constructor code up didn't help.
- */ 
-
-/*
 
 document.querySelectorAll('.digit').forEach(element => element.addEventListener('click', function(){
             
-    // calc.startFresh(); dumped below to see if whole thing otherwise runs
-    if (equalCount > 0){
-        visibleNum = 0; 
-        // this did not reset when it was "num1 = 0" because num1 is taken from visibleNum value, except for when wrapUp is called. 
-        operator = undefined; 
-        num2 = undefined;
-        decCount = 0;
-        equalCount = 0;
-    }
+    calc.startFresh(); 
 
-    console.log(`operator is now ${operator}, num1 is set as ${num1}`)
-
-
-    // this is fillVisible() generic below - works.
+    // below: fillVisible generic for all numerical inputs
     let value = element.getAttribute('id');
     whenFillNum2();
             
@@ -331,19 +295,11 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
     }
     seeNumber();
         
-    // calc.checkFill() dumped below to see if whole thing would run
-    if (operator == undefined && num2 == undefined){
-        num1 = visibleNum;
-        console.log(`num1 became ${num1}`)
-    }else if (num1 !== undefined && operator !== undefined){
-        num2 = visibleNum;
-        console.log(`num2 became ${num2}`)
-    }
-        
+    calc.checkFill(); 
+
 })
 )
 
-*/
 
 
 /*CURRENTLY GLOBAL FUNCTIONS */
@@ -399,213 +355,16 @@ function checkBkg(){
 
 /********************************************* */
 
-// test below, condensed preserving chronology of call
-
-/*
-function condensedTemp(){
+function startFreshFillCheckDecimal(){
     calc.startFresh();
-    fillVisible0();
+    fillVisibleDecimal();
     calc.checkFill();
 }
-
-zeroB.addEventListener('click', condensedTemp)
-*/
-
-zeroB.addEventListener('click', calc.startFresh)
-zeroB.addEventListener('click', fillVisible0)
-zeroB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible0(){
-
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "0";
-
-    } else {
-        visibleNum = "0"
-    } 
-    seeNumber();
-
-}
-
-/*******************/
-
-oneB.addEventListener('click', calc.startFresh)
-oneB.addEventListener('click', fillVisible1)
-oneB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible1(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "1";
-    } else {
-        visibleNum = "1"
-    }       
-    seeNumber();
-  
-}
-
-/*******************/
-
-twoB.addEventListener('click', calc.startFresh)
-twoB.addEventListener('click', fillVisible2)
-twoB.addEventListener('click', calc.checkFill)
-
-function fillVisible2(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "2";
-    } else {
-        visibleNum = "2"
-    }       
-    seeNumber();
-}
-
-/*******************/
-
-threeB.addEventListener('click', calc.startFresh)
-threeB.addEventListener('click', fillVisible3)
-threeB.addEventListener('click', calc.checkFill)
-
-function fillVisible3(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "3";
-    } else {
-        visibleNum = "3"
-    }       
-    seeNumber();
-}
-
-/*******************/
-
-fourB.addEventListener('click', calc.startFresh)
-fourB.addEventListener('click', fillVisible4)
-fourB.addEventListener('click', calc.checkFill)
-
-function fillVisible4(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "4";
-    } else {
-        visibleNum = "4"
-    }       
-    seeNumber();
-}
-
-/*******************/
-
-fiveB.addEventListener('click', calc.startFresh)
-fiveB.addEventListener('click', fillVisible5)
-fiveB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible5(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "5";
-    } else {
-        visibleNum = "5"
-    }       
-    seeNumber();
-}
-
-/*******************/
-
-sixB.addEventListener('click', calc.startFresh)
-sixB.addEventListener('click', fillVisible6)
-sixB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible6(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "6";
-    } else {
-        visibleNum = "6"
-    }
-    seeNumber();     
-}
-
-/*******************/
-
-sevenB.addEventListener('click', calc.startFresh)
-sevenB.addEventListener('click', fillVisible7)
-sevenB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible7(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "7";
-    } else {
-        visibleNum = "7"
-    }       
-    seeNumber();
-    
-}
-
-/*******************/
-
-
-eightB.addEventListener('click', calc.startFresh)
-eightB.addEventListener('click', fillVisible8)
-eightB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible8(){
-    whenFillNum2();
-    
-    if (!(visibleNum == "0")){
-        visibleNum += "8";
-    } else {
-        visibleNum = "8"
-    }       
-    seeNumber();
-    
-}
-
-/*******************/
-
-
-nineB.addEventListener('click', calc.startFresh)
-nineB.addEventListener('click', fillVisible9)
-nineB.addEventListener('click', calc.checkFill)
-
-
-function fillVisible9(){
-    whenFillNum2();
-
-    if (!(visibleNum == "0")){
-        visibleNum += "9";
-    } else {
-        visibleNum = "9"
-    }       
-    seeNumber();
-}
-
-/*******************/
-
-
-decimalB.addEventListener('click', calc.startFresh)
-decimalB.addEventListener('click', fillVisibleDecimal)
-decimalB.addEventListener('click', calc.checkFill)
 
 function fillVisibleDecimal(){
     whenFillNum2();
 
     // the following distinguishes decimal behavior from digit behavior
-
 
     if (!(decCount > 0)){
         console.log(`decimal count was ${decCount}`) /**was already undefined at this point, why? */
