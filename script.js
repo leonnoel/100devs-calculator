@@ -24,12 +24,7 @@ let Calculator = class {
   setEquals(total, context) {
     this.total = total;
 
-    if(this.lastOpr === context) {
-      this.strUpperDisp = `${this.total} ${this.lastOpr}`;
-    } else {
-      this.strUpperDisp = `${this.preOpr} ${this.lastOpr} ${this.postOpr} ${context}`;
-    }
-
+    this.strUpperDisp = `${this.preOpr} ${this.lastOpr} ${this.postOpr} ${context}`;
     this.preOpr = this.total;
     this.postOpr = 0;
 
@@ -41,7 +36,6 @@ let Calculator = class {
 
   preSetCalculation(context) {
     //Not yet ready to change total, prevent doubling by spam clicking operators.
-
     if(this.newPass) {
       this.strUpperDisp = this.total.toString() + context;
       this.lastOpr = context;
@@ -51,8 +45,8 @@ let Calculator = class {
       this.lastOpr = context;
       //Set numeric value after operator
     } else if(this.postOpr == 0) {
-        this.postOpr = Number(this.strAns);
-        this.postSet = true;
+      this.postOpr = Number(this.strAns);
+      this.postSet = true;
     }
   }
 
@@ -75,10 +69,6 @@ let Calculator = class {
           return this.preOpr / this.postOpr;
           break;
         }
-        case '=': {
-          return this.postOpr;
-          break;
-        }
       }
     }
 
@@ -86,6 +76,8 @@ let Calculator = class {
   }
 
   processNumber(number) {
+
+    console.log(this);
     if(this.strAns.includes(".") && number === ".") {
       //No duplicate decimal points
       return;
@@ -102,7 +94,6 @@ let Calculator = class {
   }
 
   setTotals(total, context) {
-    console.log(total);
     this.total = total;
     this.preOpr = total;
     this.postOpr = 0;
