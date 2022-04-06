@@ -1,0 +1,74 @@
+body {
+  overflow-x: hidden;
+  font-family: 'Overpass', sans-serif;
+}
+
+.calculator-base {
+  background-color: rgb(0,0,0);
+  border-radius: 10%;
+  width: 650px;
+  height: 720px;
+  margin: 0 auto;
+}
+
+main div {
+  background-color: rgb(255,255,255);
+  color: rgb(0,0,0);
+}
+
+.screen {
+  text-align: right;
+  height: 100px;
+  margin: 0 10%;
+  position: relative;
+  top: 5.0em;
+}
+
+.flex-buttons {
+  margin: 6% 12%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 5.0em;
+}
+
+.flex-buttons div {
+  border-radius: 50%;
+  width: 5.0em;
+  height: 5.0em;
+  margin: 2%;
+}
+
+#equals {
+  width: 22em;
+  border-radius: 10%;
+  height: 4.0em;
+}
+
+#clear {
+  background-color: rgb(255,215,0);
+}
+
+.flex-buttons div:hover {
+  background-color: rgba(230,230,250,0.6);
+  cursor: pointer;
+}
+
+.flex-buttons div h5 {
+  font-size: 3.0em;
+  text-align: center;
+  margin: 0.25em auto;
+}
+
+#answer {
+  font-size: 3.0em;
+  margin: 0;
+}
+
+@media screen and (max-width: 660px) {
+  .calculator-base {
+    /*background-color: rgb(100,0,255);*/
+  }
+}
