@@ -13,9 +13,6 @@ but maybe point is that operator lingers after equal is done.
 * .checkFill against all the numbers and decimal is to maintain num1 vs num2 value assignment
 
 To-dos
-* write generic version of fillops.
-*bundle for operators the passalong-checkifrun-fillops callbacks in 1 function in event listener.
-
  * migrate variables into constructor as properties (mind calc. vs this)
  * migrate functions into constructor as methods: startFresh, passAlong, then the fillVisible/switches 
 
@@ -138,35 +135,23 @@ function Calculator(){
         operator = undefined;
     }
     
-
 }
 
 //Constructor function call placed at top to create new Calculator object; otherwise some chronological/existence issues
 let calc = new Calculator()
 
 // variables for legibility
-let zeroB = document.querySelector('#zero')
-let oneB = document.querySelector('#one')
-let twoB = document.querySelector('#two')
-let threeB = document.querySelector('#three')
-let fourB = document.querySelector('#four')
-let fiveB = document.querySelector('#five')
-let sixB = document.querySelector('#six')
-let sevenB = document.querySelector('#seven')
-let eightB = document.querySelector('#eight')
-let nineB = document.querySelector('#nine')
 let decimalB = document.querySelector('#decimal')
-
-
-// conditional for operator recog
-let add = document.querySelector('#add')
-let subtract = document.querySelector('#minus')
-let mult = document.querySelector('#mult')
-let divide = document.querySelector('#divide')
-
 let equals = document.querySelector('#equals')
 
-// actual calculations. Maybe put inside Calc via this.num... etc.
+// ...and display 
+let placeForAns = document.querySelector('#showAns')
+let visibleNum = "0";
+
+// Display: Ensure long numbers are visible
+let visibleNum2;
+
+// variables for actual calculations. Maybe put inside Calc via this.num... etc.
 let num1;
 let num2;
 let operator;
@@ -175,15 +160,7 @@ let decCount = 0;
 let equalCount = 0;
 
 
-// display 
-let placeForAns = document.querySelector('#showAns')
-let visibleNum = "0";
-
-
-/* Display: Ensure long numbers are visible. see: seeNumber() However, once a long number first appears, subsequent operations are stuck in that display format
-until record is cleared entirely.
-*/
-let visibleNum2;
+/**EVENT LISTENERS - KEEP AHEAD OF GLOBAL FUNCTIONS */
 
 // Display: show button was pressed. Note: function expression; chronology matters. 
 document.querySelectorAll('.button').forEach(element => element.addEventListener('click', function(){
@@ -198,9 +175,8 @@ document.querySelectorAll('.button').forEach(element => element.addEventListener
 // Display: update visible number (visibleNum) based on which digit was pressed. 
 // Preserve chronology 1) startfresh 2) fillvisible 3) checkfill
 // decimal is excluded due to exceptional condition for fillvisible.
-
 document.querySelectorAll('.digit').forEach(element => element.addEventListener('click', function(){
-            
+
     calc.startFresh(); 
 
     // below: fillVisible generic for all numerical inputs
