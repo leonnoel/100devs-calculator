@@ -450,11 +450,11 @@ function fillVisible1(){
 }
 
 /*******************/
-/*
+
 twoB.addEventListener('click', calc.startFresh)
 twoB.addEventListener('click', fillVisible2)
 twoB.addEventListener('click', calc.checkFill)
-*/
+
 function fillVisible2(){
     whenFillNum2();
     
@@ -607,11 +607,11 @@ function fillVisibleDecimal(){
     // the following distinguishes decimal behavior from digit behavior
 
 
-    if (!(calc.decCount > 0)){
-        console.log(`decimal count was ${calc.decCount}`) /**was already undefined at this point, why? */
+    if (!(decCount > 0)){
+        console.log(`decimal count was ${decCount}`) /**was already undefined at this point, why? */
         visibleNum += ".";
-        calc.decCount += 1;    
-        console.log(`decimal count is now ${calc.decCount}`)
+        decCount += 1;    
+        console.log(`decimal count is now ${decCount}`)
         
     } else {
         console.log('there\'s already a decimal present')
