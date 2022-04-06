@@ -20,6 +20,10 @@ function Calculator(previousNumber,currentNumber){
             this.previousNumber.textContent = `${this.previousOperand} ${this.operator}`
         }
     }
+    // this.changeColor= function(button){
+
+    //     button.style.backgroundColor = 'green'
+    // }
     this.checkOperator = function (operator){
         this.operator = operator;
         if(this.currentOperand && this.previousOperand){
@@ -47,14 +51,23 @@ function Calculator(previousNumber,currentNumber){
             break;
             default: return;
         }
-        this.currentOperand = this.sum;
+        if(String(this.sum).length > 16){
+            this.sum = this.sum.toFixed(4)
+        } 
+        this.currentOperand = this.sum
         this.operator = undefined;
         this.previousOperand = ''
 
     }
 }
 
+
 const buttons = document.querySelectorAll('.button')
+
+// buttons.forEach(button => button.addEventListener('mouseover', ()=>{
+//     calculator.changeColor(button);
+
+// }));
 
 buttons.forEach(button => button.addEventListener('click', ()=>{
     calculator.appendNumber(button.textContent);
