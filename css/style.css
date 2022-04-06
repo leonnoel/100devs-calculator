@@ -1,0 +1,70 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  font-size: 50px;
+  font-weight: bold;
+  user-select: none;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#calcBody {
+  background-color: black;
+  border-radius: 30px;
+  margin: 50px;
+  width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 35px;
+}
+#calcScreen  {
+  background-color: white;
+  height: 80px;
+  width: 325px;
+}
+.calcButton {
+  border-radius: 50%;
+  width: 60px;
+}
+#calcButtonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
