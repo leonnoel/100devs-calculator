@@ -1,7 +1,16 @@
-/**Organizing logic:
+/* 
+Organizing logic:
  * If numerical operations are taking place, mostly written inside Constructor body - minor exception interplay with visibleNum and visibleNum2.
  * If for display and concerned with HTML/CSS events, kept outside of Constructor.
-* Logic gets too convoluted for .checkIfRun 
+ * 
+Current flow:
+ * Number intake and print to screen plus store correct number as num1, num2
+ * match correct operation to operator clicked
+ * evaluate and print to screen
+ * Operation runs only if num1, num2, and operator are all defined
+ * After an op has run, num2 becomes undefined, op becomes undefined (equals) unless a new operator was called; then only num2 undefined).
+
+More documentation at end
 */
 
 //Constructor
@@ -67,24 +76,12 @@ function Calculator(){
     }
 
     this.whenFillNum2 = function(){
-        // this may be redundant or if above conditions order flipped, could be condensed?
+        // this might be possible to condense with the above, but some other logic needs unraveling first
         if (this.num1 !== undefined && this.operator !== undefined && this.num2 == undefined){
             visibleNum = "0";
             console.log(`visibleNum is now ${visibleNum}ed`)
         }
     }
-
-/**each digit goes through
- * startfresh
- * whenfillnum2
- * fillvisible
- * seenumber
- * calc.checkfill
- * 
- * first see if calling checkFill before fillvisible changes behavior
- * if not, merge whenfill and checkfill
- */
-
 
     this.checkIfRun = function(){
         // if certain property has operator value, 2 numbers given, method is matched and called
@@ -93,7 +90,6 @@ function Calculator(){
         if (this.num1 !== undefined && this.num2 !== undefined && this.operator !== undefined){
             // hinges on resetting num2 to undefined as gatekeeper
             this.matchOpRun(this.operator) /*this is the call that actually passes operator the variable as an argument */
-            // why is checkOp not a function if I try to make it a method?
         }
     }
 
@@ -194,11 +190,10 @@ document.querySelectorAll('.button').forEach(element => element.addEventListener
 document.querySelectorAll('.digit').forEach(element => element.addEventListener('click', function(){
 
     calc.startFresh(); 
+    calc.whenFillNum2();
 
     // below: fillVisible generic for all numerical inputs
-    calc.whenFillNum2();
     let value = element.getAttribute('id');
-    
     if (!(visibleNum == "0")){
         switch (value){
             case "zero":
@@ -233,8 +228,7 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
                 break;
             default:
                 console.log('Nothing matched');
-                break;
-                
+                break;   
         }
     }else {
         switch (value){
@@ -357,42 +351,32 @@ function checkBkg(){
     console.log(`You pressed equalsB. Operator is ${calc.operator}, num1 is ${calc.num1}, num2 is ${calc.num2}. equalCount is ${calc.equalCount}`)
 }
 
+/********************************************* 
 
-/********************************************* */
-
-
-
-// WORKING NOTES
-// number intake and print to screen plus store correct number as num1, num2
-/* 
-Know when first number ends (at first operator). 
-Know when second number begins (after operator).
-Know when second number ends (equals).
-Intake as string (allow for multiple digits/places). only 1 decimal per number. (know when there is a decimal)
-
-Provide some "clearing" option to start fresh. Currently:
-after an op has run, num2 becomes undefined. op becomes undefined.
-things run only if num1 and num2 are undefined
-after an op runs, the operator must become undefined until clicked again
-*/
-
-/**for DISPLAY 
-SHOW BUTTON WAS PRESSED
+DISPLAY
+Show button was pressed
  * fetch all "button"s (queryselector)
  * for each, get id value. 
  * add event listener using the id value obtained specific to each button.
  * using same id (and queryselector), give visual cue of press and return to prior state after short time interval.
 
-NUMERICAL OVERFLOW (long numbers)
-1. For visibility only 
-2. Still accrues in the number buckets in the Calculator, and operation would proceed (calculation unaffected)
-3. Add as a second variable to protect calculation/operations, since visibleNum variable is involved in assignment to number buckets
-there are 12 usable figure spaces
-h1 element is 2rem*13 + 2rem padding on either side, or 28rem wide.
 
-chosen method:
-.toExponential
+Intake as string (thus allowing for multiple digits/places)
+only 1 decimal per number. (know when there is a decimal and when a new number (restart decimal count)
 
-also considered: 
-.toPrecision, .toFixed, which are currently conversion to string methods
+Handling long numbers: visibility
+ * Handling long numbers should not affect Calculation 
+ * Since visibleNum variable is involved in assignment to number buckets, approach this by adding a second variable to protect calculation/operations.
+ * There are 12 usable figure spaces.
+ * h1 element is 2rem*13 + 2rem padding on either side, or 28rem wide.
+
+
+CALCULATION
+Know when first number ends (at first operator). assign to num1 bucket. 
+Know when second number begins (after operator). assign to num2 bucket.
+Know when second number ends (equals or next operator)
+
+Additional:
+Provide some "clearing" option to start fresh. 
+
 */
