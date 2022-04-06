@@ -78,3 +78,4 @@ document.querySelectorAll('.operator').forEach(op => op.addEventListener('click'
 // [x] when an operator is pressed, check if there is a non null number, true? add currentValue to values, false? reset currentValue and display
 // [x] when the decimal button is pressed, and the display is empty, the display shows 0.
 // [x] when the equal button is pressed, perform the calculation based on two values and the operator, then show the result on display 
+//
