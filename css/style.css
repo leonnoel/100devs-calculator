@@ -1,0 +1,98 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+
+body {
+  height: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculator {
+  width: 45rem;
+  height: 55rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(0, 0, 0);
+  border-radius: 30px;
+}
+.screen {
+  width: 35rem;
+  height: 8rem;
+  line-height: 8rem;
+  font-size: 5rem;
+  text-align: right;
+  background: rgb(255, 255, 255);
+  padding-right: 1rem;
+}
+.container {
+  width: 30rem;
+  display: flex; 
+  flex-wrap: wrap;
+  padding-top: 1rem;
+}
+a, button { 
+  height: 6rem;
+  flex: 1 0 20%;
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  margin: 5px;
+  border: none;
+  border-radius: 50%;
+}
+a:hover, button:hover {
+  background: rgba(255, 255, 255, .5);
+}
+.clear {
+  color: rgb(255, 255, 255);
+  background: rgb(142, 0, 0);
+}
+.equals {
+  border-radius: 3rem;
+}
+
+/******************************************
+/* HEADER
+/*******************************************/
+
+
+/******************************************
+/* MAIN
+/*******************************************/
+
+
+/******************************************
+/* FOOTER
+/*******************************************/
