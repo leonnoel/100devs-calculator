@@ -1,34 +1,22 @@
-/**Half the calculator's guts are outside of the constructor.
- * 
- * BUGS that result when trying to port any variables into the constructor: mainly due to variable vs. property references, "this" issues
-    
-    after click equals, when decimal pressed, instead of starting fresh and setting num1 to 0. Something is zeroing out the equals count within the equal event listener itself.
-but maybe point is that operator lingers after equal is done.
-
-    another scenario: porting equalCounts into constructor as a property results in an error with += that returns "NaN"
-    even though separate console.log shows the right numerical equalCounts. appears that this["key"] and calc["key"] references seem to get jumbled, but unclear if it is root issue.
-
-    Other:
+/**Organizing logic:
+ * If numerical operations are taking place, mostly written inside Constructor body - minor exception interplay with visibleNum and visibleNum2.
+ * If for display and concerned with HTML/CSS events, kept outside of Constructor.
 * Logic gets too convoluted for .checkIfRun 
-* .checkFill against all the numbers and decimal is to maintain num1 vs num2 value assignment
-
-To-dos
- * migrate variables into constructor as properties (mind calc. vs this)
 */
 
-// build as Constructor
+//Constructor
 function Calculator(){
-
-    // this variables: if referenced outside of constructor, called with "calc."
+    // this variables: if referenced outside of constructor, called with "calc." (obj name)
    
     this.num1;
     this.num2;
     this.operator;
     this.decCount = 0;
+    this.equalCount = 0;
 
     this.incrementEqCount = function(){
-        equalCount += 1;
-        console.log(`equalCount is ${equalCount}`)
+        this.equalCount += 1;
+        console.log(`equalCount is ${this.equalCount}`)
             // refs are getting messed up with calc.equalCount and this.equalCount. backing up
 
     }
@@ -42,10 +30,10 @@ function Calculator(){
     operator needs to be filled.
     So the operator equivalent of startFresh (but not) is - no reassignment of visibleNum, but rest is true.
     */ 
-        if (equalCount >0){
+        if (this.equalCount >0){
             this.operator = undefined;  /*redundant after this was added to wrapup()?*/
             this.num2 = undefined;
-            equalCount = 0;
+            this.equalCount = 0;
         }
         this.decCount = 0; /**so that num2 can have decimals */
     }
@@ -58,12 +46,12 @@ function Calculator(){
     If equal sign is pressed more than once in a row however, it should have no effect on any other variables.
     */
     
-        if (equalCount > 0){
+        if (this.equalCount > 0){
             visibleNum = 0; /*this did not reset when it was "num1 = 0" because num1 is taken from visibleNum value, except for when wrapUp is called. */
             this.operator = undefined; 
             this.num2 = undefined;
             this.decCount = 0;
-            equalCount = 0;
+            this.equalCount = 0;
         }
         console.log(`operator is now ${this.operator}, num1 is set as ${this.num1}`)
     }
@@ -75,6 +63,14 @@ function Calculator(){
         }else if (this.num1 !== undefined && this.operator !== undefined){
             this.num2 = visibleNum;
             console.log(`num2 became ${this.num2}`)
+        }
+    }
+
+    this.whenFillNum2 = function(){
+        // this may be redundant or if above conditions order flipped, could be condensed?
+        if (this.num1 !== undefined && this.operator !== undefined && this.num2 == undefined){
+            visibleNum = "0";
+            console.log(`visibleNum is now ${visibleNum}ed`)
         }
     }
 
@@ -144,10 +140,6 @@ let visibleNum = "0";
 // Display: Ensure long numbers are visible
 let visibleNum2;
 
-// variables for actual calculations. Maybe put inside Calc via this.num... etc.
-// let decCount = 0;
-let equalCount = 0;
-
 
 /**EVENT LISTENERS - KEEP AHEAD OF GLOBAL FUNCTIONS */
 
@@ -170,7 +162,7 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
 
     // below: fillVisible generic for all numerical inputs
     let value = element.getAttribute('id');
-    whenFillNum2();
+    calc.whenFillNum2();
             
     if (!(visibleNum == "0")){
         switch (value){
@@ -251,7 +243,6 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
 })
 )
 
-
 // Operations: passAlong value if needed, check if run, and (generic) fill Ops conditionally
 
 document.querySelectorAll('.operation').forEach(element => element.addEventListener('click', function(){
@@ -288,14 +279,6 @@ equals.addEventListener('click', incrementCheckRunEquals)
 
 /*CURRENTLY GLOBAL FUNCTIONS - KEEP UNDER EVENT LISTENERS ABOVE */
 
-function whenFillNum2(){
-    // conditional that checks if value should be assigned to num2, then assigns
-    if (calc.num1 !== undefined && calc.operator !== undefined && calc.num2 == undefined){
-        visibleNum = "0";
-        console.log(`visibleNum is now ${visibleNum}ed`)
-    }
-}
-
 function seeNumber(){
     // display: makes numbers legible
     if (visibleNum.toString().length <=12){
@@ -308,22 +291,21 @@ function seeNumber(){
 }
 
 function startFreshFillCheckDecimal(){
+    // solely to reduce number of event listeners on decimalB
     calc.startFresh();
     fillVisibleDecimal();
     calc.checkFill();
 }
 
 function fillVisibleDecimal(){
-    whenFillNum2();
+    calc.whenFillNum2();
 
     // the following distinguishes decimal behavior from digit behavior
-
     if (!(calc.decCount > 0)){
         console.log(`decimal count was ${calc.decCount}`) /**was already undefined at this point, why? */
         visibleNum += ".";
         calc.decCount += 1;    
         console.log(`decimal count is now ${calc.decCount}`)
-        
     } else {
         console.log('there\'s already a decimal present')
     }
@@ -331,6 +313,7 @@ function fillVisibleDecimal(){
 }
 
 function incrementCheckRunEquals(){
+    // solely to reduce number of event listeners on equalsB
     calc.incrementEqCount();
     calc.checkIfRun();
     checkBkg(); /**for debugging, can remove */
@@ -363,7 +346,7 @@ function matchOpRun(value){
 
 // solely for debugging
 function checkBkg(){
-    console.log(`You pressed equalsB. Operator is ${calc.operator}, num1 is ${calc.num1}, num2 is ${calc.num2}. equalCount is ${equalCount}`)
+    console.log(`You pressed equalsB. Operator is ${calc.operator}, num1 is ${calc.num1}, num2 is ${calc.num2}. equalCount is ${calc.equalCount}`)
 }
 
 
