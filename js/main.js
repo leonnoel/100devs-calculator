@@ -9,9 +9,8 @@ but maybe point is that operator lingers after equal is done.
     even though separate console.log shows the right numerical equalCounts. appears that this["key"] and calc["key"] references seem to get jumbled, but unclear if it is root issue.
 
     Other:
-* Logic gets too convoluted - .checkIfRun in particular have too many chained conditionals. Code is hard to read.
+* Logic gets too convoluted for .checkIfRun 
 * .checkFill against all the numbers and decimal is to maintain num1 vs num2 value assignment
-* for "fillVisible" functions: need a way to extract the "value" (id based?) of given element to make code generic and use switch.
 
 To-dos
 * write generic version of fillops.
@@ -19,15 +18,12 @@ To-dos
 
  * migrate variables into constructor as properties (mind calc. vs this)
  * migrate functions into constructor as methods: startFresh, passAlong, then the fillVisible/switches 
- * for all ".digit"s, get id value, and condense as was done for showPress
- * change the visible display for edge cases */ 
-
 
 // build as Constructor
 // properties need to be made writable; are not writable by default? 
 // the above didn't seem to happen before to my new objects...I could increment etc.
 // temp workaround: make local variables but not properties...
-
+*/
 
 function Calculator(){
 
@@ -36,7 +32,6 @@ function Calculator(){
     let num1;
     let num2;
     let operator;
-
     */
 
     this.incrementEqCount = function(){
@@ -141,9 +136,6 @@ function Calculator(){
         visibleNum = num1;
         num2 = undefined;
         operator = undefined;
-        // does decCount need removal as well, or does fillVisible handle completely esp for num2?
-        // what if I want to zero out num1 but decCount remains >0?
-        // need to include in that zeroing out process
     }
     
 
@@ -193,10 +185,7 @@ until record is cleared entirely.
 */
 let visibleNum2;
 
-// Display: 
-
-
-// show button was pressed. Note: function expression; chronology matters. 
+// Display: show button was pressed. Note: function expression; chronology matters. 
 document.querySelectorAll('.button').forEach(element => element.addEventListener('click', function(){
         // note this was not possible to abstract as a callback yet given the forEach linkage needed
         element.classList.toggle('invert');
@@ -205,7 +194,6 @@ document.querySelectorAll('.button').forEach(element => element.addEventListener
         }, 200);
     })
 )
-
 
 // Display: update visible number (visibleNum) based on which digit was pressed. 
 // Preserve chronology 1) startfresh 2) fillvisible 3) checkfill
@@ -294,15 +282,46 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
         }
     }
     seeNumber();
-        
     calc.checkFill(); 
-
 })
 )
 
 
+// Operations: passAlong value if needed, check if run, and (generic) fill Ops conditionally
 
-/*CURRENTLY GLOBAL FUNCTIONS */
+document.querySelectorAll('.operation').forEach(element => element.addEventListener('click', function(){
+    calc.passAlong();
+    calc.checkIfRun();
+
+    // below: fill Ops generic for all operators
+    let value = element.getAttribute('id');
+    switch (value){
+        case "add":
+            operator ="+";
+            break;
+        case "minus":
+            operator ="-";
+            break;
+        case "mult":
+            operator ="*";
+            break;
+        case "divide":
+            operator ="/";
+            break;
+    }
+            
+    if (num1 === undefined){
+        num1 = 0;
+    }
+    console.log(`operator is now ${operator} and num1 is set as ${num1}`)
+    
+}))
+
+decimalB.addEventListener('click', startFreshFillCheckDecimal)
+equals.addEventListener('click', incrementCheckRunEquals)
+
+
+/*CURRENTLY GLOBAL FUNCTIONS - KEEP UNDER EVENT LISTENERS ABOVE */
 
 function whenFillNum2(){
     // conditional that checks if value should be assigned to num2, then assigns
@@ -322,6 +341,36 @@ function seeNumber(){
     // since seeNumber is never called without immediate follow of innerText update, and same goal, adding this into the function
     placeForAns.innerText = visibleNum2; 
 }
+
+function startFreshFillCheckDecimal(){
+    calc.startFresh();
+    fillVisibleDecimal();
+    calc.checkFill();
+}
+
+function fillVisibleDecimal(){
+    whenFillNum2();
+
+    // the following distinguishes decimal behavior from digit behavior
+
+    if (!(decCount > 0)){
+        console.log(`decimal count was ${decCount}`) /**was already undefined at this point, why? */
+        visibleNum += ".";
+        decCount += 1;    
+        console.log(`decimal count is now ${decCount}`)
+        
+    } else {
+        console.log('there\'s already a decimal present')
+    }
+    seeNumber();
+}
+
+function incrementCheckRunEquals(){
+    calc.incrementEqCount();
+    calc.checkIfRun();
+    checkBkg(); /**for debugging, can remove */
+}
+
 
 function matchOpRun(value){
     // matches operator to the right method to execute
@@ -354,102 +403,6 @@ function checkBkg(){
 
 
 /********************************************* */
-
-function startFreshFillCheckDecimal(){
-    calc.startFresh();
-    fillVisibleDecimal();
-    calc.checkFill();
-}
-
-function fillVisibleDecimal(){
-    whenFillNum2();
-
-    // the following distinguishes decimal behavior from digit behavior
-
-    if (!(decCount > 0)){
-        console.log(`decimal count was ${decCount}`) /**was already undefined at this point, why? */
-        visibleNum += ".";
-        decCount += 1;    
-        console.log(`decimal count is now ${decCount}`)
-        
-    } else {
-        console.log('there\'s already a decimal present')
-    }
-    seeNumber();
-}
-
-// order of the event listeners matters.
-/* first indicate button is pressed to the user
-then check if any prior operations await execution
-if yes, execute and display result onscreen
-then replace previous operator, creating condition to update a now undefined num2 
-following convention, operator doesn't print to screen though it's also an unhelpful convention.
-*/
-
-add.addEventListener('click', calc.passAlong)
-add.addEventListener('click', calc.checkIfRun)
-add.addEventListener('click', fillOpsAdd)
-
-
-function fillOpsAdd(){
-    operator = "+"
-    if (num1 === undefined){
-        num1 = 0;
-        // this handles conditions when operator is clicked without first adding a number. Mainly for "negative integer" starting.
-    }
-    console.log(`operator is now ${operator} and num1 is set as ${num1}`)
-
-}
-
-/*******************/
-subtract.addEventListener('click', calc.passAlong)
-subtract.addEventListener('click', calc.checkIfRun)
-subtract.addEventListener('click', fillOpsSub)
-
-
-function fillOpsSub(){
-    operator = "-"
-    if (num1 === undefined){
-        num1 = 0;
-    }
-    console.log(`operator is now ${operator} and num1 is set as ${num1}`)
-}
-
-/*******************/
-
-mult.addEventListener('click', calc.passAlong)
-mult.addEventListener('click', calc.checkIfRun)
-mult.addEventListener('click', fillOpsMult)
-
-function fillOpsMult(){
-    operator = "*"
-    if (num1 === undefined){
-        num1 = 0;
-    }
-    console.log(`operator is now ${operator} and num1 is set as ${num1}`)
-}
-
-/*******************/
-
-divide.addEventListener('click', calc.passAlong)
-divide.addEventListener('click', calc.checkIfRun)
-divide.addEventListener('click', fillOpsDiv)
-
-function fillOpsDiv(){
-    operator = "/"
-    if (num1 === undefined){
-        num1 = 0;
-    }
-    console.log(`operator is now ${operator} and num1 is set as ${num1}`)
-}
-/*******************/
-
-// execute operation - not chained
-
-equals.addEventListener('click', calc.incrementEqCount)
-equals.addEventListener('click', calc.checkIfRun) /*this is actually chained to running - matchOpRun - if condition is met */
-equals.addEventListener('click', checkBkg)
-
 
 
 
