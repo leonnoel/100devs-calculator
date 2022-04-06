@@ -14,14 +14,9 @@ but maybe point is that operator lingers after equal is done.
 
 To-dos
  * migrate variables into constructor as properties (mind calc. vs this)
- * migrate functions into constructor as methods: startFresh, passAlong, then the fillVisible/switches 
-
-// build as Constructor
-// properties need to be made writable; are not writable by default? 
-// the above didn't seem to happen before to my new objects...I could increment etc.
-// temp workaround: make local variables but not properties...
 */
 
+// build as Constructor
 function Calculator(){
 
     // this variables: if referenced outside of constructor, called with "calc."
@@ -29,6 +24,7 @@ function Calculator(){
     this.num1;
     this.num2;
     this.operator;
+    this.decCount = 0;
 
     this.incrementEqCount = function(){
         equalCount += 1;
@@ -51,7 +47,7 @@ function Calculator(){
             this.num2 = undefined;
             equalCount = 0;
         }
-        decCount = 0; /**so that num2 can have decimals */
+        this.decCount = 0; /**so that num2 can have decimals */
     }
 
     this.startFresh = function(){
@@ -66,7 +62,7 @@ function Calculator(){
             visibleNum = 0; /*this did not reset when it was "num1 = 0" because num1 is taken from visibleNum value, except for when wrapUp is called. */
             this.operator = undefined; 
             this.num2 = undefined;
-            decCount = 0;
+            this.decCount = 0;
             equalCount = 0;
         }
         console.log(`operator is now ${this.operator}, num1 is set as ${this.num1}`)
@@ -149,7 +145,7 @@ let visibleNum = "0";
 let visibleNum2;
 
 // variables for actual calculations. Maybe put inside Calc via this.num... etc.
-let decCount = 0;
+// let decCount = 0;
 let equalCount = 0;
 
 
@@ -322,11 +318,11 @@ function fillVisibleDecimal(){
 
     // the following distinguishes decimal behavior from digit behavior
 
-    if (!(decCount > 0)){
-        console.log(`decimal count was ${decCount}`) /**was already undefined at this point, why? */
+    if (!(calc.decCount > 0)){
+        console.log(`decimal count was ${calc.decCount}`) /**was already undefined at this point, why? */
         visibleNum += ".";
-        decCount += 1;    
-        console.log(`decimal count is now ${decCount}`)
+        calc.decCount += 1;    
+        console.log(`decimal count is now ${calc.decCount}`)
         
     } else {
         console.log('there\'s already a decimal present')
