@@ -5,29 +5,34 @@
   	<meta name="100Devs Calculator" content="A calculator built with 100Devs skills">
   	<meta name="keywords" content="calculator">
 		<meta name="viewport" content="width=device-width, initial-scale=1">		
-		<title>100Devs Calculator</title>
+		<title>CalculateIt!!</title>
 		<link rel="stylesheet" href="reset.css">
 	</head>
 	<body>
 		<div class="calculator">
-			<h1 class="numDisplay"></h1>
+			<div class="output">
+				<div data-previous-operand class="previous-operand"></div>
+				<div data-current-operand class="current-operand"></div>
+			</div>
 			<div class="buttons">
-				<div class="item 7">7</div>
-				<div class="item 8">8</div>
-				<div class="item 9">9</div>
-				<div class="item divide">&div;</div>
-				<div class="item 4">4</div>
-				<div class="item 5">5</div>
-				<div class="item 6">6</div>
-				<div class="item mult">x</div>
-				<div class="item 1">1</div>
-				<div class="item 2">2</div>
-				<div class="item 3">3</div>
-				<div class="item add">&plus;</div>
-				<div class="item 0">0</div>
-				<div class="item point">&period;</div>
-				<div class="item" id="equals">&equals;</div>
-				<div class="item sub">&hyphen;</div>
+				<button data-all-clear id="clear">AC</button>
+				<button data-delete>&leftarrow;</button>
+				<button data-operation>÷</button>
+				<button data-number>7</button>
+				<button data-number>8</button>
+				<button data-number>9</button>
+				<button data-operation>×</button>
+				<button data-number>4</button>
+				<button data-number>5</button>
+				<button data-number>6</button>
+				<button data-operation>+</button>
+				<button data-number>1</button>
+				<button data-number>2</button>
+				<button data-number>3</button>
+				<button data-operation>-</button>
+				<button data-number>0</button>
+				<button data-number>.</button>
+				<button data-equals id="equals" >&equals;</button>
 			</div>
 		</div>
 		
