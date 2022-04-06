@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
+</head>
+<body>
+    <main>
+        <h1>#100Devs Push Project001: Calculator</h1>
+        <table>
+            <tr>
+                <td colspan="4" id="result"></td>
+            </tr>
+            <tr>
+                <td id="seven" class="number">7</td><td id="eight" class="number">8</td><td id="nine" class="number">9</td><td id="divide" class="operator">/</td>
+            </tr>
+            <tr>
+                <td id="four" class="number">4</td><td id="five" class="number">5</td><td id="six" class="number">6</td><td id="multiply" class="operator">x</td>
+            </tr>
+            <tr>
+                <td id="one" class="number">1</td><td id="two" class="number">2</td><td id="three" class="number">3</td><td id="add" class="operator">+</td>
+            </tr>
+            <tr>
+                <td id="zero" class="number">0</td><td id="decimal">.</td><td id="equal">=</td><td id="minus" class="operator">-</td>
+            </tr>
+        </table>
+        <footer>
+            <p>Functionality:</p>
+            <p>&#8226;Remembers inputs, eg. 3 + 3 + 3 + 3, is allowed and evaluated as 12</p>
+            <p>This is done by adding the number and operators into an array and evaluating these arrays into a sum when the equals sign is clicked</p>
+            <p>&#8226;Allows user to repeatedly click the equal sign, repeating the last operation for every click</p>
+            <p>This is done by storing the last number entered and the last operator entered in variables and executing this operation if the equals sign is clicked without an operator</p>
+            <p>Want to take a peek under the hood? Click <a href="https://github.com/alexrr1997/100devs-calculator">here</a>.</p>
+        </footer>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
