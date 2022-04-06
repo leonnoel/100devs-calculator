@@ -7,6 +7,7 @@ const domModule = (() => {
   function btnClickHandler(e) {
     if (e.target.tagName === "BUTTON") {
       calcModule.processValue(e.target.value);
+      updateDisplay(calcModule.getDispStr());
     }
   }
 
@@ -24,6 +25,10 @@ const calcModule = (() => {
   let mem = "";
   let sym = "";
 
+  function getDispStr() {
+    return mem + sym + buf;
+  }
+
   function processValue(val) {
     if (/[0-9]{1}/.test(val)) {
       processNum(val);
@@ -38,7 +43,6 @@ const calcModule = (() => {
     } else {
       buf = buf !== "0" ? (buf += num) : num;
     }
-    domModule.updateDisplay(mem + sym + buf);
   }
 
   function processSym(symParam) {
@@ -81,8 +85,6 @@ const calcModule = (() => {
         }
         break;
     }
-
-    domModule.updateDisplay(mem + sym + buf);
   }
 
   function calcResult(mem, sym, buf) {
@@ -99,6 +101,7 @@ const calcModule = (() => {
   }
 
   return {
+    getDispStr,
     processValue,
   };
 })();
