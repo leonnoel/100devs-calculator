@@ -74,15 +74,50 @@ function Calculator(){
         }
     }
 
+/**each digit goes through
+ * startfresh
+ * whenfillnum2
+ * fillvisible
+ * seenumber
+ * calc.checkfill
+ * 
+ * first see if calling checkFill before fillvisible changes behavior
+ * if not, merge whenfill and checkfill
+ */
+
+
     this.checkIfRun = function(){
         // if certain property has operator value, 2 numbers given, method is matched and called
         // should also run for chained ops (without pressing equals explicitly)
 
         if (this.num1 !== undefined && this.num2 !== undefined && this.operator !== undefined){
             // hinges on resetting num2 to undefined as gatekeeper
-            matchOpRun(this.operator) /*this is the call that actually passes operator the variable as an argument */
+            this.matchOpRun(this.operator) /*this is the call that actually passes operator the variable as an argument */
             // why is checkOp not a function if I try to make it a method?
         }
+    }
+
+    this.matchOpRun = function(value){
+    // matches operator to the right method to execute
+    // "operator" the actual variable is passed inside calc.checkIfRun()
+        switch (value){
+            case "+":
+                this.add();
+                break;
+            case "-":
+                this.subtract();
+                break;
+            case "*":
+                this.multiply();
+                break;
+            case "/":
+                this.divide();
+                break;
+            default:
+                console.log('matchOpRun failed to match')
+                break;
+        }
+        seeNumber();
     }
     
     this.add = function(){
@@ -161,9 +196,9 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
     calc.startFresh(); 
 
     // below: fillVisible generic for all numerical inputs
-    let value = element.getAttribute('id');
     calc.whenFillNum2();
-            
+    let value = element.getAttribute('id');
+    
     if (!(visibleNum == "0")){
         switch (value){
             case "zero":
@@ -244,7 +279,6 @@ document.querySelectorAll('.digit').forEach(element => element.addEventListener(
 )
 
 // Operations: passAlong value if needed, check if run, and (generic) fill Ops conditionally
-
 document.querySelectorAll('.operation').forEach(element => element.addEventListener('click', function(){
     calc.passAlong();
     calc.checkIfRun();
@@ -278,7 +312,6 @@ equals.addEventListener('click', incrementCheckRunEquals)
 
 
 /*CURRENTLY GLOBAL FUNCTIONS - KEEP UNDER EVENT LISTENERS ABOVE */
-
 function seeNumber(){
     // display: makes numbers legible
     if (visibleNum.toString().length <=12){
@@ -317,31 +350,6 @@ function incrementCheckRunEquals(){
     calc.incrementEqCount();
     calc.checkIfRun();
     checkBkg(); /**for debugging, can remove */
-}
-
-
-function matchOpRun(value){
-    // matches operator to the right method to execute
-    // "operator" the actual variable is passed inside calc.checkIfRun()
-    switch (value){
-        case "+":
-            calc.add();
-            break;
-        case "-":
-            calc.subtract();
-            break;
-        case "*":
-            calc.multiply();
-            break;
-        case "/":
-            calc.divide();
-            break;
-        default:
-            console.log('matchOpRun failed to match')
-            break;
-    }
-    seeNumber();
-
 }
 
 // solely for debugging
