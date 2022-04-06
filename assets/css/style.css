@@ -1,0 +1,92 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  body{
+    font-size:62.5%;
+  }
+  
+  .wrapper {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:white; 
+  
+  }
+  main {
+    width: 400px;
+    background: black;
+    padding: 2rem;
+    border-radius:1rem;
+  }
+  
+  .result{
+    width:330px;
+    height:90px;
+    border-radius: 0.5rem;
+    background:white;
+    border:1px solid lightslategray;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+  }
+  
+  li {
+    background:white;
+    border-radius:50%;
+    font-weight: bold;
+    width:60px;
+    height:60px;
+    padding:0.6rem 1.3rem;
+    font-size: 2rem;
+  
+  }
+
+  li:hover{
+    cursor:pointer;
+    box-shadow: 0 0 0 5px rgba(255,255,255,0.5);
+  }
+  .answer {
+   
+    
+  
+  }
+  
+  .buttons{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    min-height: 100%;
+  }
+  
+  
+  #clear {
+    width:120px;
+    height:40px;
+    font-size:1rem;
+    padding:0.7rem 1.9rem;
+  }
+  
+  ul {
+    display:flex;
+    flex-wrap:wrap;
+    gap:1rem;
+    padding:0;
+    list-style:none;
+    justify-content: space-around;
+  }
+  
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
+  
