@@ -9,11 +9,9 @@ html {
 }
 
 #calcBody {
-    width: 50vw;
-    height: 70vh;
+    width: 450px;
+    height: 600px;
     margin: 0 auto;
-    min-width: 300px;
-    min-height: 400px;
     background-color: black;
     border-radius: 30px;
     display: flex;
@@ -22,12 +20,11 @@ html {
 
 #calcDispl {
     background-color: white;
-    font-size: 250%;
+    font-size: 350%;
     float: left;
-    height: 6vh;
-    min-height: 50px;
-    width: 40vw;
-    margin: 5vh auto 2vh auto;
+    height: 50px;
+    width: 375px;
+    margin: 25px auto 0 auto;
     text-align: right;
 }
 
@@ -37,14 +34,17 @@ html {
     flex-wrap: wrap;
     clear: both;
     margin: 0 auto;
+    height: 500px;
+    width: 390px;
 }
 
 .calcButton {
-    width: 8vw;
+    width: 75px;
+    height: 15px;
     background-color: white;
     border-radius: 100%;
-    margin: 5vh 1vw;
+    margin: 45px 10px;
     text-align: center;
-    padding: 3vw 0;
-    font-size: 150%;
+    padding: 30px 0;
+    font-size: 200%;
 }

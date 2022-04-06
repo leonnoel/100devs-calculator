@@ -2,6 +2,7 @@ document.querySelectorAll('.calcButton').forEach(element => {
     element.addEventListener('click',buttonClicked)
 });
 
+//Main Calculator Object
 function Calculator() {
     let display = 'Math!';
     let displayDOM = document.querySelector('#calcDispl')
