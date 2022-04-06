@@ -21,29 +21,38 @@ body {
 
 #frame {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 30px;
     background-color: #000;
-    border-radius: 5px;
+    border-radius: 10px;
     width: 315px;
-    height: 390px;
+    min-height: 390px;
     box-shadow: 2px 2px 4px 1px #ccc;
     word-wrap: break-word;
     word-break: break-all;
-    
 }
 
 #window {
-    background-color: #fff;
-    height: 70px;
+    background-color: rgba(243, 246, 247, 0.945);
+    flex-direction: row-reverse;
+    min-height: 70px;
     width: 100%;
     justify-content: space-evenly;
     border-radius: 5px;
     padding: 5px;
+    font-size: 4rem;
+}
+
+.previous-operand {
     font-size: 2rem;
-    overflow: auto;
+    line-height:3rem;
+}
+
+.current-operand {
+    font-size: 2rem;
 }
 
 #numpad-container {
@@ -70,10 +79,11 @@ body {
 }
 
 .key:hover {
-    border: solid 2px mediumseagreen;
+    border: solid 3px rgba(241, 178, 6, 0.959);
     background-color: #ccc;
 }
 
+/*messing with the order property of FLEX*/
 .seven {
     order: 1;
 }

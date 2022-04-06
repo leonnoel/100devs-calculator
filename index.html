@@ -11,7 +11,10 @@
 <body>
 
     <div id="frame">
-        <div id="window"></div>
+        <div id="window" class="output">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
         <div id="numpad-container">
             <button class="key zero" data-number>0</button>
             <button class="key one" data-number>1</button>
@@ -29,8 +32,8 @@
             <button class="key substraction" data-operation>-</button>
             <button class="key equal" data-equals>=</button>
             <button class="key dot" data-number>.</button>
-            <button id="all-clear" class="key all-clear" data-all-clear>CA</button>
-            <button id="del" class="key del" data-del>DEL</button>
+            <button id="all-clear" class="key all-clear" data-all-clear>AC</button>
+            <button id="delete" class="key del" data-delete>DEL</button>
         </div>
     </div>
     <script src="main.js"></script>
