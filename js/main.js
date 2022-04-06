@@ -28,8 +28,9 @@ function Calculator(){
     /*
     let num1;
     let num2;
-    let operator;
     */
+
+    this.operator;
 
     this.incrementEqCount = function(){
         equalCount += 1;
@@ -48,7 +49,7 @@ function Calculator(){
     So the operator equivalent of startFresh (but not) is - no reassignment of visibleNum, but rest is true.
     */ 
         if (equalCount >0){
-            operator = undefined;  /*redundant after this was added to wrapup()?*/
+            this.operator = undefined;  /*redundant after this was added to wrapup()?*/
             num2 = undefined;
             equalCount = 0;
         }
@@ -65,21 +66,21 @@ function Calculator(){
     
         if (equalCount > 0){
             visibleNum = 0; /*this did not reset when it was "num1 = 0" because num1 is taken from visibleNum value, except for when wrapUp is called. */
-            operator = undefined; 
+            this.operator = undefined; 
             num2 = undefined;
             decCount = 0;
             equalCount = 0;
         }
     
-        console.log(`operator is now ${operator}, num1 is set as ${num1}`)
+        console.log(`operator is now ${this.operator}, num1 is set as ${num1}`)
     }
 
 
     this.checkFill = function(){
-        if (operator == undefined && num2 == undefined){
+        if (this.operator == undefined && num2 == undefined){
             num1 = visibleNum;
             console.log(`num1 became ${num1}`)
-        }else if (num1 !== undefined && operator !== undefined){
+        }else if (num1 !== undefined && this.operator !== undefined){
             num2 = visibleNum;
             console.log(`num2 became ${num2}`)
         }
@@ -89,9 +90,9 @@ function Calculator(){
         // if certain property has operator value, 2 numbers given, method is matched and called
         // should also run for chained ops (without pressing equals explicitly)
 
-        if (num1 !== undefined && num2 !== undefined && operator !== undefined){
+        if (num1 !== undefined && num2 !== undefined && this.operator !== undefined){
             // hinges on resetting num2 to undefined as gatekeeper
-            matchOpRun(operator) /*this is the call that actually passes operator the variable as an argument */
+            matchOpRun(this.operator) /*this is the call that actually passes operator the variable as an argument */
             // why is checkOp not a function if I try to make it a method?
         }
     }
@@ -132,7 +133,7 @@ function Calculator(){
     this.wrapUp = function(){
         visibleNum = num1;
         num2 = undefined;
-        operator = undefined;
+        this.operator = undefined;
     }
     
 }
@@ -154,7 +155,7 @@ let visibleNum2;
 // variables for actual calculations. Maybe put inside Calc via this.num... etc.
 let num1;
 let num2;
-let operator;
+// let operator;
 
 let decCount = 0;
 let equalCount = 0;
@@ -273,23 +274,23 @@ document.querySelectorAll('.operation').forEach(element => element.addEventListe
     let value = element.getAttribute('id');
     switch (value){
         case "add":
-            operator ="+";
+            calc.operator ="+";
             break;
         case "minus":
-            operator ="-";
+            calc.operator ="-";
             break;
         case "mult":
-            operator ="*";
+            calc.operator ="*";
             break;
         case "divide":
-            operator ="/";
+            calc.operator ="/";
             break;
     }
             
     if (num1 === undefined){
         num1 = 0;
     }
-    console.log(`operator is now ${operator} and num1 is set as ${num1}`)
+    console.log(`operator is now ${calc.operator} and num1 is set as ${num1}`)
     
 }))
 
@@ -301,7 +302,7 @@ equals.addEventListener('click', incrementCheckRunEquals)
 
 function whenFillNum2(){
     // conditional that checks if value should be assigned to num2, then assigns
-    if (num1 !== undefined && operator !== undefined && num2 == undefined){
+    if (num1 !== undefined && calc.operator !== undefined && num2 == undefined){
         visibleNum = "0";
         console.log(`visibleNum is now ${visibleNum}ed`)
     }
@@ -374,7 +375,7 @@ function matchOpRun(value){
 
 // solely for debugging
 function checkBkg(){
-    console.log(`You pressed equalsB. Operator is ${operator}, num1 is ${num1}, num2 is ${num2}. equalCount is ${equalCount}`)
+    console.log(`You pressed equalsB. Operator is ${calc.operator}, num1 is ${num1}, num2 is ${num2}. equalCount is ${equalCount}`)
 }
 
 
