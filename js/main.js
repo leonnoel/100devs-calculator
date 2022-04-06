@@ -149,8 +149,6 @@ let visibleNum = "0";
 let visibleNum2;
 
 // variables for actual calculations. Maybe put inside Calc via this.num... etc.
-// let num1;
-
 let decCount = 0;
 let equalCount = 0;
 
