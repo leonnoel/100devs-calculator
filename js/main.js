@@ -53,7 +53,7 @@ class Calculator {
     //equation must be of odd length and alternate num, op
     let valid = this.#equation.length % 2 !== 0 && this.#equation.reduce((flag, c, i) => i % 2 === 0? flag && !isNaN(Number(c)): flag && /[+x/-]/.test(c), true) 
     if (!valid) { 
-      this.#reset()
+      this.#reset = true
       this.#equation = ['Invalid expression']
       return
     }
