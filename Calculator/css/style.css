@@ -1,0 +1,124 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    margin: 200px auto;
+    width: 500px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    
+}
+.calculator {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column; 
+}
+
+.calculator-face{
+    margin: 0 auto;
+    margin-top: 15%;
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+.calculator-screen{
+    height: 20%;
+}
+
+.buttons{
+    margin-top: 5%;
+}
+.rows {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    margin: 0 5px;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#equal {
+    width: 90%;
+    border-radius: 30px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.calculator {
+    background-color: black;
+    border-radius: 40px;
+}
+
+.calculator-screen{
+    background-color: white;
+    color: black;
+    text-align: right;
+    font-size: 35px;
+    border: none;
+    border-radius: 2px;
+}
+
+.button {
+    background-color: white;
+    border-radius: 50%;
+    font-size: 40px;
+    font-weight: 800;
+}
+button {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    text-align: center;
+    font-size: 35px;
+}
+
+#clear {
+    background-color: red;
+    color: white;
+}
+#clear:hover{
+    background-color: rgb(250, 83, 83);
+}
+.button:hover{
+    background-color: rgb(196, 189, 189);
+}
+
