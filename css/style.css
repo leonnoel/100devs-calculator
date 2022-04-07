@@ -1,0 +1,98 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  font-family: sans-serif;
+}
+
+header{
+  height: 50px
+}
+
+.calcBody{
+  display: flex;
+  flex-flow: row wrap;
+  background-color: black;
+  width: 400px;
+  height: 500px;
+  margin: 50px;
+  border-radius: 50px;
+  list-style: none;
+  
+}
+
+.calcTopRow{
+  height: 50px;
+  width:100%;
+}
+
+.calcDisplayRow{
+  display: flex;
+  height: 75px;
+  justify-content: center;
+  flex: 1 100%;
+}
+
+.calcDisplaySide{
+  flex: 1;
+}
+
+.calcDisplayCenter{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 8;
+  background-color: white;
+}
+
+.calcDisplayCenter > span{
+  font-size: 2rem;
+  padding: 2px;
+}
+
+.calcButtonRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; 
+  flex: 1 100%;
+}
+
+ul{
+  flex: 1;
+  padding-left: 58px;
+}
+
+ul a{
+  padding: 0 3px;
+}
+
+li{
+  display: inline-block;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 0px;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
