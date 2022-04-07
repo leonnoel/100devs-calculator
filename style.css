@@ -17,7 +17,8 @@ html {
   width: 400px;
   padding: 40px;
   padding-top: 75px;
-  background-color: black;
+  /* background-color: black */
+  background: linear-gradient(to bottom right, gray, black, );
   border-radius: 25px;
 }
 
