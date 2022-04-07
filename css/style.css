@@ -1,0 +1,87 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+@font-face {
+  font-family: "Digital-7";
+  src: url(../assets/displayfont/digital-7.ttf);
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+.container {
+  background: black;
+  height: 575px;
+  width: 420px;
+  border-radius: 30px;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: 10%;
+  padding: 40px; 
+}
+.calc-buttons {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  gap: 7px 7px;
+  padding: 10px; 
+}
+
+button {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+  margin: auto;
+  font-weight: bold;
+  font-size: 34px;  
+}
+.clearResult {
+  width: 250px;
+  height: 60px;
+  border-radius: 25%;
+  margin-top: 15px;
+}
+
+.result {
+  background: white;
+  height: 80px;
+  width: 355px;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  font-weight: 400;
+  font-size: 78px;
+  text-align: right;
+  font-family: 'digital-7',sans-serif;
+}
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
