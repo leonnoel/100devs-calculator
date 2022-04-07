@@ -1,3 +1,10 @@
+This was coded along with MayanWolfe's April 4, 2022 Twitch stream. 
+I followed along with the stream, then spent time going over the
+code, fixing multiple errors I had made, and getting the code to 
+work correctly. I did change the look of the calculator a bit from
+the image provided with the project description.
+
+
 # 🔢 #100Devs Push Project001: Calculator
 
 ### Goal: Build a Simple Calculator using JS OOP best practices
