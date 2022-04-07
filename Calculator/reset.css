@@ -1,0 +1,68 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: rgb(1, 148, 148);
+	height: 100%;
+	margin: 0;
+	/* overflow: hidden; */
+}
+
+
+
+.calculator {
+	width: 80vw;
+	max-width: 500px;
+	height: 75vh;
+	min-height: 550px;
+	max-height: 600px;
+	margin: 10vh auto;
+	background-color: rgb(44, 59, 74);
+	border: 3px solid rgb(243, 228, 201);
+	border-radius: 2rem;
+}
+
+.output {
+	width: 80%;
+	height: 12%;
+	color: rgb(41, 23, 82);
+	border: 2px solid gray;
+	margin: 10% auto 3vh auto;
+	padding: .5vh .5vh;
+	background-color: rgb(240, 234, 234);
+	box-shadow: inset .5vh .5vh rgb(183, 183, 183);
+	text-align: right;
+	font: 2.5vh/3vh "Trebuchet MS", sans-serif;
+}
+
+.buttons {
+	width: 80%;
+	height: 65%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;	
+	grid-gap: 1vh;
+}
+
+.buttons button {
+	background-color: white;
+	box-shadow: .5vh .5vh .5vh rgb(77, 142, 160);
+	border: 2px solid gray;
+	border-radius: 50%;
+	color: rgb(47, 56, 58);
+	text-align: center;
+	font: 3rem/4rem "Trebuchet MS", sans-serif;
+	cursor: pointer;
+}
+
+.buttons button:hover {
+	background-color: rgb(20, 95, 95);
+	color: white;
+}
+
+#clear, #equals {
+	grid-column: span 2;
+	border-radius: 1vh;
+}
