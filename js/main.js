@@ -1,26 +1,39 @@
 class Calculator {
   constructor() {
+    // value that will update to the display via outputText function
     this.displayText = "0";
+    // first number to be operated on
     this.firstOperand = null;
+    // a bool that will act as a switch once firstOperand is filled via the handleOperator function
     this.waitingForSecondOperand = false;
+    // the operator (* + - /)
     this.operator = null;
+
     this.prevTotal = null;
   }
 
   parseInput(value) {
     switch (value) {
       case "=":
-        //calculate answer
+        //evaluate value and return
+
+        this.outputText(this.displayText);
+        break;
+
+      case "*":
+      case "/":
+      case "+":
+      case "-":
+        this.handleOperator(value);
+        this.outputText(this.displayText);
         break;
       case "AC":
-        //clear screen and stored values
+        this.displayText = "0";
         break;
       case ".":
-        if (this.displayText == 0) {
-          this.addText("0.");
-        } else {
-          this.addText(value);
-        }
+        this.inputDecimal(value);
+        this.outputText(this.displayText);
+        break;
       default:
         this.addText(value);
         this.outputText(this.displayText);
@@ -50,14 +63,34 @@ class Calculator {
     display.value = text;
   }
 
-  setdisplayText(value) {
-    this.displayText = value;
+  inputDecimal(dot) {
+    if (this.displayText === "0") {
+      this.addText("0.");
+    } else if (!this.displayText.includes(dot)) {
+      this.addText(dot);
+    }
+  }
+
+  evaluateCurrent() {
+    let total = eval(this.displayText);
+    this.displayText = "";
+    this.addText(total);
+  }
+
+  handleOperator(nextOperator) {
+    const inputValue = parseFloat(this.displayText);
+
+    //verify first operand is null and that input value is not a NaN value
+    if (this.firstOperand === null && !isNaN(inputValue)) {
+      this.firstOperand = inputValue;
+    }
+
+    this.waitingForSecondOperand = true;
+    this.operator = nextOperator;
   }
 }
 
 const testCalc = new Calculator();
-
-console.log("present");
 
 const keys = document.querySelector(".calculator-keys");
 
