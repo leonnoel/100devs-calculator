@@ -1,0 +1,98 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.calculator, 
+.container {
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 4.8rem;
+  margin: 0;
+  text-align: right;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  padding: 0;
+}
+
+.buttons {
+  display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.numbers {
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.button.plus-or-minus {
+  font-size: 1.3rem;
+  padding: 2.55rem 1.01rem;
+}
+
+.operators {
+  flex-direction: column;
+}
+
+.numbers > *,
+.operators > * {
+  padding: 1rem;
+  flex-grow: 1;
+  text-align: center;
+  border-left: 2.5px solid black;
+  border-top: 2.5px solid black;
+}
+
+.operators > * {
+  border-right: 2.5px solid black;
+}
+ 
+.equals,
+.clear {
+  font-size: 7.5rem;
+  text-align: center;
+  border: 2.5px solid black;
+  cursor: pointer;
+}
+
+.clear {
+  font-size: 5rem;
+  border-top: 0;
+  padding: 1.5625rem;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
