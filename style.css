@@ -1,0 +1,70 @@
+/* border box fix */
+* {
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+html {
+  font-size: 62.5%;
+}
+
+.gridContainer{
+  display: grid;
+  
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+/* Calculator Body */
+
+.calculatorBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  width: 35%;
+/*   height: 600px; */
+  margin: 0 auto;
+  border-radius: 50px;
+  padding: 60px 30px;
+}
+
+
+
+/* Display */
+
+.display{
+  
+  height: 11rem;
+  border: 1px solid white;
+  width: 90%;
+  background: white;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Button Grid */
+
+.calculatorButtonGrid {
+  font-size: 6.5rem;
+  grid-template-columns: repeat(4, 90px);
+  row-gap: 10px;
+  margin-left: 20px;
+}
+
+/* Number Buttons */
+
+.calculatorButtonGrid span{
+  display: inline-block;
+  color: black;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  width: 75px;
+  height: 75px;
+  font-weight: 700;
+}
