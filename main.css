@@ -1,50 +1,55 @@
 html {
-    font-size: 10px;
+    font-size: 9vmin;
     box-sizing: border-box;
     display: block;
 }
 
-.testBorder {
+/* .testBorder {
     border: solid lime 2px;
-}
+} */
 
 #calcBody {
-    width: 450px;
-    height: 600px;
+    max-height: 90vh;
+    max-width: 8em;
     margin: 0 auto;
     background-color: black;
-    border-radius: 30px;
+    border-radius: 5vw;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
 }
 
 #calcDispl {
     background-color: white;
-    font-size: 350%;
-    float: left;
-    height: 50px;
-    width: 375px;
-    margin: 25px auto 0 auto;
+    font-size: 1em;
+    width: 90%;
+    min-height: 1.2em;
+    margin: .5em auto auto;
     text-align: right;
 }
 
 #calcNumberPad {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    clear: both;
-    margin: 0 auto;
-    height: 500px;
-    width: 390px;
+    flex-flow: row wrap;
+    margin: .5em auto .5em;
+    width: 90%;
+}
+
+.calcRow {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .calcButton {
-    width: 75px;
-    height: 15px;
+    width: 1.2em;
+    height: 1.2em;
     background-color: white;
     border-radius: 100%;
-    margin: 45px 10px;
     text-align: center;
-    padding: 30px 0;
-    font-size: 200%;
+    line-height: 1.2em;
+    margin: .2em .2em;
+    font-size: 1em;
 }

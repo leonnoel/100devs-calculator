@@ -1,34 +1,32 @@
-document.querySelectorAll('.calcButton').forEach(element => {
-    element.addEventListener('click',buttonClicked)
-});
-
 //Main Calculator Object
 function Calculator() {
-    let display = 'Math!';
+    let display = '';
     let displayDOM = document.querySelector('#calcDispl')
     let memory = []
     let methods = {
-        '+': (a,b) => a + b,
-        '-': (a,b) => a - b,
-        '/': (a,b) => a / b,
-        'x': (a,b) => a * b,
+        'add': (a,b) => a + b,
+        'minus': (a,b) => a - b,
+        'divide': (a,b) => a / b,
+        'multiply': (a,b) => a * b,
     }
-    let operations = ['+','-','x','/']
+    let methodOperations = ['+','-','x','/']
 
     this.buttonPressed = function(button) {
-        if (display == 'Math!') {
-            display = ''
-        }
         if (button == '=') {
-            memory.push(display)
+            // memory.push(display)
             this.calculate()
         }
-        else if (operations.includes(button)) {
+        else if (methodOperations.includes(button)) {
             memory.push(display)
             memory.push(button)
+            display = button
+        }
+        else {
+            if (memory[-1]) {
+            display = ''
+            }
             display += button
         }
-        else {display += button}
         // console.log(memory)
         this.refreshScreen()
     }
@@ -52,6 +50,10 @@ function Calculator() {
 
 const calc = new Calculator()
 calc.refreshScreen()
+
+document.querySelectorAll('.calcButton').forEach(element => {
+    element.addEventListener('click',buttonClicked)
+});
 
 function buttonClicked(e) {
     calc.buttonPressed(e.target.innerHTML)
