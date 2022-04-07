@@ -12,7 +12,6 @@
 /*******************************************/
 #calculator {
   width: 300px;
-  width: 350px;
   background-color: black;
   border-radius: 1em;
   padding: 2em 2em 2em 2em;
@@ -46,6 +45,16 @@
   font-weight: bold;
 }
 
+#numPad > button.active {
+  background-color: goldenrod;
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+@media (hover: hover) {
+  #numPad > button:hover {
+    background-color: khaki;
+  }
+}
