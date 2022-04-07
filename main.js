@@ -10,7 +10,7 @@ function Calulator(previousNumber, currentNumber) {
 
   this.setNumber = (number) => {
     //what to do with the dot
-    if (this.currentNum.includes(".") || number === ".") return;
+    if (this.currentNum.includes(".") && number === ".") return;// if current number stored already has . and then you try add it again though number parameter it just returns
     // console.log('no more dots')
     this.currentNum += number.toString(); // adds the number to the currentNum variable
   };
@@ -72,7 +72,7 @@ function Calulator(previousNumber, currentNumber) {
 }
 
 const numberKeys = document.querySelectorAll(".button");
-const OperatorKeys = document.querySelectorAll(".operator");
+const operatorKeys = document.querySelectorAll(".operator");
 const equalsKey = document.querySelector(".equals");
 const currentNumber = document.querySelector(".currentNum");
 const previousNumber = document.querySelector(".previousNum");
@@ -87,7 +87,7 @@ numberKeys.forEach((number) =>
   })
 );
 
-OperatorKeys.forEach((operator) =>
+operatorKeys.forEach((operator) =>
   operator.addEventListener("click", () => {
     console.log(operator.innerText);
     calculator.setOperatorLogic(operator.innerText);
