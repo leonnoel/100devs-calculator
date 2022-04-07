@@ -1,0 +1,93 @@
+/******************************************
+/* CSS
+/*******************************************/
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Box Model Hack */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+*:focus{
+  outline: none !important;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+:root{
+  --color-b: rgb(10, 10, 10);
+  --color-w: rgb(228, 228, 228);
+}
+html{
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+}
+
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  padding-top: 75px;
+  background-color: var(--color-b);
+  border-radius: 25px;
+}
+
+.screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: var(--color-w);
+  color: var(--color-b);
+  text-align: right;
+  padding-right: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px;
+  padding-bottom: 5px;
+}
+
+button {
+  height: 60px;
+  background-color: var(--color-w);
+  border: none;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: var(--color-b);
+  margin: 7px;
+  padding: 5px;
+  cursor: pointer;
+  flex: 1 0 18%;
+  transition: 0.3s all;
+}
+
+button:hover {
+  background-color: rgb(141, 139, 139);
+}
+button:nth-child(16) {
+  background-color: rgb(16, 34, 20);
+  color: white;
+  border: 2px solid --color-w;
+  font-size: 3rem;
+}
+button:nth-child(16):hover {
+  background-color: rgb(141, 139, 139);
+  color: var(--color-b);
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
