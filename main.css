@@ -1,0 +1,71 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  }
+
+/* Grid */
+/* Justify content to set center of screen */
+/* Arrange vertically using min-height 100vh (fill 100% of the height all the time) */
+/* Grid-template-columns to set the buttons aligned at the center of screen 
+same with grid-template-rows */
+/* For the output screen to grow as large as it needs to be, use the minmax 120px and max value to auto */
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    }
+
+    .calculator-grid > button {
+      cursor: pointer;
+      font-size: 2rem;
+      border: 1px, solid #FFFFFF;
+      outline: none;
+      background-color: rbga(255, 255, 255, 0.75);
+    }
+
+      .calculator-grid > button:hover {
+        background-color: #a9a9a9;
+      }
+
+
+/* Set output to span across the entire width of the calculator using grid-column */
+/* Set background-color to black with a transparency of 75% */
+/* Using flex-end to align the output at the end of the screen */
+/* We use word-wrap attribute to choose where the words break at */
+
+      .span-two {
+        grid-column: span 2;
+        color: #adf802;
+        background-color: rgba(180, 5, 180, 0.8);
+      }
+
+      .output{
+        grid-column: 1 / -1;
+        background-color: rgba(0, 0, 0, 0.75);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 10px;
+        word-wrap: break-word;
+        word-break: break-all;
+      }
+
+      .output .previous-operand{
+        color: rgba(255,255, 255, 0.75);
+        font-size: 1.5rem;
+      }
+
+      .output .current-operand{
+        color: white;
+        font-size: 2.5rem;
+      }
