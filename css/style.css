@@ -16,14 +16,17 @@
 .clear {
 	clear: both;
 }
-
+@font-face {
+  font-family: "Digital-7";
+  src: url(../assets/displayfont/digital-7.ttf);
+}
 /******************************************
 /* BASE STYLES
 /*******************************************/
 
 .container {
   background: black;
-  height: 500px;
+  height: 575px;
   width: 420px;
   border-radius: 30px;
   display: flex;
@@ -48,17 +51,25 @@ button {
   width: 70px;
   margin: auto;
   font-weight: bold;
-  font-size: 28px;  
+  font-size: 34px;  
 }
+.clearResult {
+  width: 250px;
+  height: 60px;
+  border-radius: 25%;
+  margin-top: 15px;
+}
+
 .result {
   background: white;
   height: 80px;
   width: 355px;
   margin-bottom: 15px;
   border-radius: 3px;
-  font-weight: bolder;
-  font-size: 64px;
+  font-weight: 400;
+  font-size: 78px;
   text-align: right;
+  font-family: 'digital-7',sans-serif;
 }
 /******************************************
 /* LAYOUT

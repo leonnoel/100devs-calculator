@@ -13,7 +13,6 @@ const keys = document.querySelector('.calc-buttons');
             return; //click only buttons
         }else{
             calculator.parseInput(value)
-            console.log(target)
         }
     })
 
