@@ -1,0 +1,60 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+#calculator {
+  width: 300px;
+  background-color: black;
+  border-radius: 1em;
+  padding: 2em 2em 2em 2em;
+  margin: auto;
+}
+
+#inputField {
+  padding: .5em 1em .5em 1em;
+  margin-bottom: 1em;
+  width: 100%;
+}
+
+#numPad {
+  padding: .5em .5em .5em .5em;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
+  justify-items: center;
+  max-height: 400px;
+  max-width: 400px;
+}
+
+#numPad > button {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  background-color: ivory;
+  color: black;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#numPad > button.active {
+  background-color: goldenrod;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media (hover: hover) {
+  #numPad > button:hover {
+    background-color: khaki;
+  }
+}
