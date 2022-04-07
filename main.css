@@ -1,0 +1,64 @@
+.calc-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+background: black;
+height:600px;
+width:30%;
+
+border-radius:10px;
+}
+
+.screen{
+    display: flex;
+    justify-content: center;
+    background: white;
+    height: 10%;
+    width:80%
+}
+
+.screen input{
+  
+    width:50% ;
+}
+
+.buttons{
+    flex-flow: row wrap;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:80%;
+    width:80%;
+    gap:2%;
+    /* background-color: white; */
+  
+}
+
+.display{
+    flex: 0 1 21%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    width: 50px;
+   
+    background:white;
+    border-radius:50%;
+   
+    color:black;
+
+}
+
+.previousNum{
+    color:red;
+}
+.currentNum{
+    color:blue;
+}
