@@ -6,7 +6,7 @@
     margin: 10rem auto;
 }
 
-.display {
+#display {
     width: 80%;
     height: 90px;
     display: block;
