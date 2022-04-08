@@ -14,6 +14,10 @@ function Calculator() {
     let methodOperations = ['+','-','x','/']
 
     this.buttonPressed = (button) => {
+        if (methodOperations.includes(display)) {
+            display = ""
+            this.refreshScreen()
+        }
         if (button == 'reset' || display == 'Error') {
             this.clearAll()
             this.refreshScreen()
