@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+*:focus{
+    outline: none !important;
+}
+:root{
+    --color-b: rgb(218,218,218);
+    --border: 2px solid rgb(173, 173, 173);
+}
+body{
+    height: 100vh;
+    display: flex;
+    font-family: sans-serif;
+    align-items: center;
+    background: var(--color-b);
+}
+main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 35rem;
+    margin:0 auto;
+    box-shadow: 0px 0px 20px 5px rgb(182, 182, 182);
+}
+section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: wrap;
+    background: #fff;
+}
+section div{
+    width: 120px;
+    height: 140px;
+    font-size: 2rem;
+    flex: 2 auto;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+    cursor: pointer;
+    pointer-events: all;
+    border-left: var(--border);
+    border-bottom: var(--border);
+}
+section:last-child div:hover{
+    background: rgb(212, 212, 212);
+}
+section:last-child{
+    border-top: var(--border);
+    border-right: var(--border);
+}
+section:first-child div{
+    display: block;
+    border: none;
+    padding: 0.5rem;
+    word-break: break-all;
+    pointer-events: none;
+    cursor: none;
+    position: relative;
+}
+section:last-child div:last-child{
+    background-color: #5655FF;
+}
+section:last-child div:last-child:hover{
+    background-color: #31318a;
+}
+span{
+}
+.showAnswer{
+ position: absolute;
+ bottom: 5px;
+ right: 20px;
+}
+@media screen and (max-width: 1008px) {
+
+   main{
+       width: 95%;
+   }
+   section div{
+       width: 5.5rem;
+       height: 5.5rem;
+   }
+
+}
