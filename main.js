@@ -22,10 +22,8 @@ function Ti86 () {
             screen.innerText = clickElement;
             hiddenTotal = screen.innerText;
         } else {
-            console.log(clickElement);
             screen.innerText += clickElement;
             hiddenTotal += clickElement;
-            console.log(hiddenTotal);
         }
     }
     this.operator = function(e) {
@@ -44,8 +42,6 @@ function Ti86 () {
     }
     this.evaluate = function() {
         screen.innerText = eval(hiddenTotal);
-        console.log(hiddenTotal);
-        console.log(eval(screen.innerText));
         processed = true;
         hiddenTotal = eval(hiddenTotal)
     }
