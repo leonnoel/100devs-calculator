@@ -1,48 +1,78 @@
 //Main Calculator Object
 function Calculator() {
-    let display = '';
+    let numOne = ''
+    let operator = ''
+    let numTwo = ''
+    let display = ''
     let displayDOM = document.querySelector('#calcDispl')
-    let memory = []
     let methods = {
-        'add': (a,b) => a + b,
-        'minus': (a,b) => a - b,
-        'divide': (a,b) => a / b,
-        'multiply': (a,b) => a * b,
+        '+': (a,b) => Number(a) + Number(b),
+        '-': (a,b) => a - b,
+        '/': (a,b) => a / b,
+        'x': (a,b) => a * b,
     }
     let methodOperations = ['+','-','x','/']
 
-    this.buttonPressed = function(button) {
-        if (button == '=') {
-            // memory.push(display)
-            this.calculate()
+    this.buttonPressed = (button) => {
+        if (button == 'reset' || display == 'Error') {
+            this.clearAll()
+            this.refreshScreen()
+        }
+        else if (button == '=') {
+            if (operator == '') {
+                display = "Error"
+                this.refreshScreen()
+            }
+            else {
+                display = this.calculate()
+                this.refreshScreen()
+                this.clearAll()  
+            }
         }
         else if (methodOperations.includes(button)) {
-            memory.push(display)
-            memory.push(button)
-            display = button
+            if (operator !== '') {
+                display = "Error"
+            }
+            else {
+                operator = button
+                display = button   
+            }
+            this.refreshScreen()
+        }
+        else if (operator !== "") {
+            numTwo += button
+            display += button
+            this.refreshScreen()
         }
         else {
-            if (memory[-1]) {
-            display = ''
-            }
+            numOne += button
             display += button
+            this.refreshScreen()
         }
-        // console.log(memory)
-        this.refreshScreen()
+        
     }
 
-    this.calculate = function() {
-        console.log(memory)
-        let maths = parseInt(memory[0]);
-        for(let i=0;i<memory.length;i++) {
-            if(memory[i] == '+') {
-                maths += parseInt(memory[i+1])
-            }
-        }
-        display = maths
+    this.calculate = () => {
+        console.log(methods[operator](numOne,numTwo))
+        console.log(numOne + operator + numTwo)
+        // let maths = parseInt(memory[0]);
+        // for(let i=0;i<memory.length;i++) {
+        //     if(memory[i] == '+') {
+        //         maths += parseInt(memory[i+1])
+        //     }
+        // }
+        // numOne = maths
+        return methods[operator](numOne,numTwo)
     }
 
-    this.refreshScreen = function() {displayDOM.innerHTML = display}
+    this.refreshScreen = () => {displayDOM.innerHTML = display}
+
+    this.clearAll = () => {
+        numOne = ''
+        operator = ''
+        numTwo = ''
+        display = ''
+    }
 
 
     
@@ -58,3 +88,4 @@ document.querySelectorAll('.calcButton').forEach(element => {
 function buttonClicked(e) {
     calc.buttonPressed(e.target.innerHTML)
 }   
+calc.refreshScreen()
