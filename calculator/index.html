@@ -8,49 +8,40 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="calculator-grid">
-    <div class="output">
-      <div class="previous-operand"></div>
-      <div class="current-operand"></div>
-    </div>
-    <!-- <button data-number>7</button> 
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <button data-operation>&divide;</button> 
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <button data-operation>&times;</button>
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <button data-operation>&plus;</button>
-    <button data-number>0</button>
-    <button data-number>.</button>
-    <button data-operation>&minus;</button>
-    <button data-all-clear class="span-two">AC</button>
-    <button data-delete>DEL</button>
-    <button data-equals class="span-two">&equals;</button> -->
-    <button data-all-clear class="span-two">AC</button>
-    <button data-delete>DEL</button>
-    <button data-operation>÷</button>
-    <button data-number>1</button>
-    <button data-number>2</button>
-    <button data-number>3</button>
-    <button data-operation>*</button>
-    <button data-number>4</button>
-    <button data-number>5</button>
-    <button data-number>6</button>
-    <button data-operation>+</button>
-    <button data-number>7</button>
-    <button data-number>8</button>
-    <button data-number>9</button>
-    <button data-operation>-</button>
-    <button data-number>.</button>
-    <button data-number>0</button>
-    <button data-equals class="span-two">=</button>
+  <div class="calculator">
 
-  </div>    
+    <input type="text" class="calculator-screen" value="" disabled />
+    
+    <div class="calculator-keys">
+      
+      <button type="button" class="operator" value="+">+</button>
+      <button type="button" class="operator" value="-">-</button>
+      <button type="button" class="operator" value="*">&times;</button>
+      <button type="button" class="operator" value="/">&divide;</button>
+  
+      <button type="button" value="7">7</button>
+      <button type="button" value="8">8</button>
+      <button type="button" value="9">9</button>
+  
+  
+      <button type="button" value="4">4</button>
+      <button type="button" value="5">5</button>
+      <button type="button" value="6">6</button>
+  
+  
+      <button type="button" value="1">1</button>
+      <button type="button" value="2">2</button>
+      <button type="button" value="3">3</button>
+  
+  
+      <button type="button" value="0">0</button>
+      <button type="button" class="decimal" value=".">.</button>
+      <button type="button" class="all-clear" value="all-clear">AC</button>
+  
+      <button type="button" class="equal-sign operator" value="=">=</button>
+  
+    </div>
+  </div>   
   <script src="script.js"></script>
 </body>
 </html>
