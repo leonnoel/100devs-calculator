@@ -1,0 +1,85 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(#e66465, #9198e5);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculator {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  padding: 4rem;
+  padding-top: 7.5rem;
+  border-radius: 5rem;
+  background-color: #404362;
+}
+
+.calculatorScreen {
+  width: 100%;
+  font-size: 5rem;
+  height: 8rem;
+  border: none;
+  background-color: #9198e5;
+  color: white;
+  text-align: right;
+  padding-right: 1rem;
+  border-radius: .5rem;
+}
+
+.calculatorButtons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  padding-bottom: .5rem;
+}
+
+button {
+  height: 6rem;
+  background-color: #9198e5;
+  border: none;
+  border-radius: 5rem;
+  font-size: 4rem;
+  font-weight: 700;
+  color: white;
+  margin: .7rem;
+  padding: .5rem;
+  flex: 1 0 18%;
+}
+
+.allClear {
+  font-size: 3rem;
+  background-color: #e66465;
+  color: white;
+}
+
+button:hover {
+  background: #e66465;
+  cursor: pointer;
+}
+
+.allClear:hover {
+  background-color: #9198e5;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
