@@ -1,121 +1,82 @@
-/* *, *::before, *::after {
+html {
+  font-size: 62.5%;
   box-sizing: border-box;
-  font-family: Gotham Rounded, sans-serif;
-  font-weight: normal;
-} */
-
-/* body {
-  margin: 0;
-  padding: 0;
-  background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
 }
-
-.calculator-grid {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-} */
-
-/* .calculator-grid > button {
-cursor: pointer;
-font-size: 2rem;
-border: 1px, solid #ffffff;
-outline: none;
-background-color: rgba(255, 255, 255, 0.75);
-}
-
-.calculator-grid > button:hover {
-  background-color: #a9a9a9;
-}
-
-.span-two {
-  grid-column: span 2;
-  color: #adf802;
-  background-color: rgba(139, 0, 139, 0.8)
-}
-
-.output {
-  grid-column: 1 / -1;
-  background-color: rgba(0, 0, 0, 0.75);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  flex-direction: column;
-  padding: 10px;
-  word-wrap: break-word;
-  word-break: break-all;
-}
-
-.output .previous-operand {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 1.5rem;
-}
-
-.output .current-operand {
-  color: white;
-  font-size: 2.5rem;
-} */
 
 *, *::before, *::after {
-  box-sizing: border-box;
-  font-family: Gotham Rounded, sans-serif;
-  font-weight: normal;
-}
-
-body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
-  }
+  box-sizing: inherit;
+}
 
-  .calculator-grid {
-    display: grid;
-    justify-content: center;
-    align-content: center;
-    min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
-    }
+.calculator {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+}
 
-    .calculator-grid > button {
-      cursor: pointer;
-      font-size: 2rem;
-      border: 1px, solid #FFFFFF;
-      outline: none;
-      background-color: rbga(255, 255, 255, 0.75);
-    }
+.calculator-screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: #252525;
+  color: #fff;
+  text-align: right;
+  padding-right: 20px;
+  padding-left: 10px;
+}
 
-      .calculator-grid > button:hover {
-        background-color: #a9a9a9;
-      }
+button {
+  height: 60px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #c4c4c4;
+  background-color: transparent;
+  font-size: 2rem;
+  color: #333;
+  background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
+  text-shadow: 0 1px rgba(255,255,255,.4);
+}
 
-      .span-two {
-        grid-column: span 2;
-        color: #adf802;
-        background-color: rgba(139, 0, 139, 0.8);
-      }
+button:hover {
+  background-color: #eaeaea;
+}
 
-      .output{
-        grid-column: 1 / -1;
-        background-color: rgba(0, 0, 0, 0.75);
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-around;
-        flex-direction: column;
-        padding: 10px;
-        word-wrap: break-word;
-        word-break: break-all;
-      }
+.operator {
+  color: #337cac;
+}
 
-      .output .previous-operand{
-        color: rgba(255,255, 255, 0.75);
-        font-size: 1.5rem;
-      }
+.all-clear {
+  background-color: #f0595f;
+  border-color: #b0353a;
+  color: #fff;
+}
 
-      .output .current-operand{
-        color: white;
-        font-size: 2.5rem;
-      }
+.all-clear:hover {
+  background-color: #f17377;
+}
+
+.equal-sign {
+  background-color: #2e86c0;
+  border-color: #337cac;
+  color: #fff;
+  height: 100%;
+  grid-area: 2 / 4 / 6 / 5;
+}
+
+.equal-sign:hover {
+  background-color: #4e9ed4;
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding: 20px;
+}
