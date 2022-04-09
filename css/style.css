@@ -11,15 +11,14 @@ html {
 }
 
 main {
-    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: white;
-    font-family: sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 4.5rem;
-    font-weight: 800;
+    font-weight: bold;
 }
 
 main form {
@@ -36,6 +35,7 @@ main form {
 input {
     border: 0;
     outline: 0;
+    padding-right: 2rem;
 }
 
 input:focus {
@@ -44,8 +44,8 @@ input:focus {
 
 .calc-body {
     width: 41rem;
-    height: 51rem;
-    padding: 7rem 3rem;
+    height: fit-content;
+    padding: 7rem 3rem 5rem 3rem;
     border: 2px solid black;
     border-radius: 30px;
     background-color: var(--main-color);
@@ -53,11 +53,12 @@ input:focus {
 
 .calc-numPad {
     display: flex;
+    gap: 1rem;
     justify-content: space-between;
     align-content: space-between;
     flex-flow: row wrap;
     height: 80%;
-    margin: 0 2.5rem;
+    margin: 0 2.5rem 2rem 2.5rem;
 }
 
 .calc-button {
@@ -73,3 +74,13 @@ input:focus {
     cursor: pointer;
 }
 
+.reset {
+    display: block;
+    width: 29.8rem;
+    height: 4rem;
+    font-size: 3rem;
+    background-color: black;
+    color: white;
+    margin: 0 auto;
+    border-color: white;
+}
