@@ -10,8 +10,9 @@ html {
 }
 
 .calculator {
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 7px solid black;
+  background-color: lightgray;
+  border-radius: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -24,8 +25,9 @@ html {
   font-size: 5rem;
   height: 80px;
   border: none;
-  background-color: #252525;
-  color: #fff;
+  border-bottom: 5px solid black;
+  background-color: white;
+  color: black;
   text-align: right;
   padding-right: 20px;
   padding-left: 10px;
@@ -34,10 +36,11 @@ html {
 button {
   height: 60px;
   background-color: #fff;
-  border-radius: 3px;
-  border: 1px solid #c4c4c4;
+  border-radius: 30px;
+  border: 4px solid gray;
   background-color: transparent;
   font-size: 2rem;
+  font-weight: bold;
   color: #333;
   background-image: linear-gradient(to bottom,transparent,transparent 50%,rgba(0,0,0,.04));
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.05), inset 0 1px 0 0 rgba(255,255,255,.45), inset 0 -1px 0 0 rgba(255,255,255,.15), 0 1px 0 0 rgba(255,255,255,.15);
@@ -49,13 +52,13 @@ button:hover {
 }
 
 .operator {
-  color: #337cac;
+  color: red;
 }
 
 .all-clear {
   background-color: #f0595f;
   border-color: #b0353a;
-  color: #fff;
+  color: black;
 }
 
 .all-clear:hover {
@@ -65,7 +68,7 @@ button:hover {
 .equal-sign {
   background-color: #2e86c0;
   border-color: #337cac;
-  color: #fff;
+  color: black;
   height: 100%;
   grid-area: 2 / 4 / 6 / 5;
 }
