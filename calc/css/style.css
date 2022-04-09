@@ -70,14 +70,18 @@ body {
 }
 
 /*output screen*/
-#screen {
+.screen {
    background: black;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-end;
   width: 100%;
   height: 20%;
   color: green;
   /* padding: 1px 10px 10px 5px; */
+}
+.screen #preview {
+  color: grey;
 }
 
 /* buttons section */
@@ -118,11 +122,15 @@ h1 {
   font-size: 3.5rem;
   color: grey;
 }
-#screen {
+.screen {
   font-size: 5rem;
   max-height: 100%;
   max-width: 100%;
 }
+.screen #preview {
+  font-size: 3rem;
+}
+
 
 /* button styles */
 .btn {
