@@ -39,6 +39,7 @@ body {
   color: black;
   text-align: right;
   padding-right: 1rem;
+  border-radius: .5rem;
 }
 
 .calculatorButtons {
