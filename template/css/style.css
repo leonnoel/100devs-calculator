@@ -12,6 +12,8 @@ html {
 }
 
 body {
+  height: 100vh;
+  background: linear-gradient(#e66465, #9198e5);
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -27,7 +29,7 @@ body {
   padding: 4rem;
   padding-top: 7.5rem;
   border-radius: 5rem;
-  background-color: black;
+  background-color: #404362;
 }
 
 .calculatorScreen {
@@ -35,8 +37,8 @@ body {
   font-size: 5rem;
   height: 8rem;
   border: none;
-  background-color: white;
-  color: black;
+  background-color: #9198e5;
+  color: white;
   text-align: right;
   padding-right: 1rem;
   border-radius: .5rem;
@@ -52,12 +54,12 @@ body {
 
 button {
   height: 6rem;
-  background-color: white;
+  background-color: #9198e5;
   border: none;
   border-radius: 5rem;
   font-size: 4rem;
   font-weight: 700;
-  color: black;
+  color: white;
   margin: .7rem;
   padding: .5rem;
   flex: 1 0 18%;
@@ -65,12 +67,17 @@ button {
 
 .allClear {
   font-size: 3rem;
-  background-color: red;
+  background-color: #e66465;
   color: white;
 }
 
 button:hover {
-  background: rgb(185, 185, 185);
+  background: #e66465;
+  cursor: pointer;
+}
+
+.allClear:hover {
+  background-color: #9198e5;
 }
 
 /******************************************

@@ -2,10 +2,9 @@
 
 //User input: mouse clicks and numeric key entry and symbols and enter key
 //  mouse clicks (smurfs on all buttons) - done
-//  numeric keys
-//  decimal
-//  operator keys
-//  backspace & delete
+//  numeric keys -done
+//  decimal -done
+//  operator keys -done
 //display all input as it is being entered - done
 
 // store inputs - done
@@ -16,6 +15,7 @@
 //      operators next to each other - done
 //      two decimals - done!
 
+//  backspace & delete - done!
 //repeat the last operation when equals is pressed
 //limit input to number of chars that will fit
 
@@ -25,6 +25,18 @@ const keys = document.querySelector(".calculatorButtons");
         const {value} = target
         if (target.matches("button")) {
             calculator.parseInput(value)
+        }
+    })
+
+    document.addEventListener('keydown', event => {
+        const allowedValues = ["1","2","3","4","5","6","7","8","9","0","/","*","-","+",".","="]
+        value = `${event.key}`
+        if (value === "Enter"){
+            calculator.parseInput("=")
+        } else if (value === "Backspace" || value === "Delete"){
+            calculator.parseInput("AC")
+        } else if (allowedValues.indexOf(value) != -1) {
+            calculator.parseInput(value);
         }
     })
 
@@ -62,7 +74,6 @@ const calculator = {
             this.displayText = this.prevTotal
             this.prevTotal = null
         }
-        //checking to see if the value passed in is NaN, making sure it's not next to another NaN
         if (isNaN(+value) && isNaN(+this.displayText)){
             if (isNaN(this.displayText.slice(-1))){
                 return;
@@ -74,6 +85,7 @@ const calculator = {
 
     outputText(text) {
         document.querySelector(".calculatorScreen").value = text
+        this.prevTotal = text
     },
 
     calcAnswer(equation) {
