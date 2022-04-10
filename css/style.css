@@ -22,7 +22,7 @@ main {
 }
 
 main form {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 }
 
 #calc-screen {
@@ -46,7 +46,7 @@ input:focus {
 .calc-body {
     width: 41rem;
     height: fit-content;
-    padding: 7rem 3rem 5rem 3rem;
+    padding: 7rem 3rem 4rem 3rem;
     border: 2px solid black;
     border-radius: 30px;
     background: linear-gradient(to bottom right, black, rgb(59, 59, 59));
