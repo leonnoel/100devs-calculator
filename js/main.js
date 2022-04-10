@@ -86,8 +86,15 @@ function Calculator(buttons) {
                 this.displayResult = +expressionArray[0] / +expressionArray[2];
             break;
         }
+
+        if (this.displayResult > 999999999999999) {
+            this.displayResult = this.displayResult.toExponential(5);
+            input.value = this.displayResult;
+        } else {
+            input.value = +parseFloat(this.displayResult).toFixed(5);
+        }
+
         
-        input.value = this.displayResult;
     }
 
     this.reset = function() {
