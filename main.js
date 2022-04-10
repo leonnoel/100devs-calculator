@@ -14,12 +14,14 @@ updateArray(click) {
 },
 
 evaluateProblem() {
-  document.querySelector(".display-main").innerText = eval(probArr.join(""));
+  let solution = eval(probArr.join(""));
+  document.querySelector(".display-main").innerText = solution;
   document.querySelector(".display-secondary").innerText = probArr.join("");
+  probArr = [solution];
   console.log("Problem is evaluated")
 },
 
 };
 
-const probArr = [];
+let probArr = [];
 calculator.initialize();
