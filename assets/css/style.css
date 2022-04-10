@@ -1,0 +1,78 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.main {
+  display: flex;
+  justify-content: center;
+  width: 1024px;
+  margin: 10px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+.calculator {
+  background-color: black;
+  display: flex;
+  width: 410px;
+  height: 515px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 60px 30px 30px 30px;
+  border-radius: 30px;
+}
+
+.screen,
+.touches {
+  width: calc(100%);
+  border-radius: 15px;
+}
+
+.screen {
+  height: 80px;
+  background-color: #fff;
+}
+
+.touches {
+  height: 400px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.btn {
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+#calcDisplay,
+.text {
+  color: #000;
+  font-weight: 900;
+  font-size: 30px;
+}
+
+#calcDisplay {
+  text-align: right;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  padding-right: 10px;
+}
