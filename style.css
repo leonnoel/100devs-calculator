@@ -214,13 +214,13 @@ main {
   border-radius: 20px;
 }
 
-.input-field,
+.display-field,
 .calc-button {
   background-color: white;
   color: black;
 }
 
-.input-field {
+.display-field {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -229,11 +229,11 @@ main {
   align-items: flex-end;
 }
 
-.input-secondary {
+.display-secondary {
   height: 2rem;
 }
 
-.input-main {
+.display-main {
   height: 3rem;
   font-size: 2rem;
 }
