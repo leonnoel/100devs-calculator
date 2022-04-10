@@ -6,7 +6,18 @@
 
 ![Calculator](calculator.jpg)
 
-### How to submit your code for review:
+###
+
+1. starting the project by using Figma and determine the size of the component at:
+   - main component size : width: 410px - height: 515px
+   - Create first view with css flexbox.
+   - first commit done with only html/Css. No functionality added.
+
+#### Initial project
+
+---
+
+####### How to submit your code for review:
 
 - Fork and clone this repo
 - Create a new branch called answer
@@ -19,6 +30,7 @@
   - Anything specific on which you want feedback!
 
 Example:
+
 ```
 I completed the challenge: 5
 I feel good about my code: 4
