@@ -252,7 +252,8 @@ main {
 }
 
 
-.calc-button {
+.calc-button,
+.equals {
   border-radius: 50%;
   font-size: 3rem;
   font-weight: bold;
