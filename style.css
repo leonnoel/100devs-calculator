@@ -255,11 +255,11 @@ main {
 .calc-button,
 .equals {
   border-radius: 50%;
-  font-size: 3rem;
+  font-size: min(calc(4vw + 1rem), 3rem);
   font-weight: bold;
   text-align: center;
-  padding: 0.5rem;
-  line-height: 3rem;
+  padding: 12%;
+  line-height: min(calc(4vw + 1rem), 3rem);
   cursor: pointer;
   transition: 0.2s
 }
