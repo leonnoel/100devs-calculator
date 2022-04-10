@@ -1,0 +1,128 @@
+/* Box Model Hack */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* Clear fix hack */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden !important;
+}
+
+:root {
+    --primary: #ECA221;
+    --dark: #000;
+    --medium: #1b1b1b;
+    --light: #2e2e2e;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/* Mobile */
+
+@media only screen and (min-width: 0em) {
+    .calculator{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        padding: 40px;
+        padding-top: 75px;
+        background-color: black;
+        border-radius: 25px;
+    }
+
+    .calculator__screen{
+        width: 100%;
+        font-size: 3.5rem;
+        height: 80px;
+        border: none;
+        background-color: white;
+        color: black;
+        text-align: right;
+        padding-right: 10px;
+    }
+
+    .calculator__buttons{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 15px;
+        padding-bottom: 5px;
+    }
+
+    button{
+        height: 60px;
+        background-color: white;
+        border: none;
+        border-radius: 30px;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: black;
+        margin:7px;
+        padding: 5px;
+        flex: 1 0 18%;
+    }
+
+    .button__all-clear{
+        background-color: red;
+        color: white;
+        font-size: 1.75rem;
+    }
+
+    button:hover{
+        background-color: #eaeaea67;
+    }
+}
+
+
+/* Tablet */
+
+@media only screen and (min-width: 48em) {
+}
+
+
+/* Small Desktop */
+
+@media only screen and (min-width: 64em) {}
+
+
+/* Large Desktop */
+
+@media only screen and (min-width: 1300px) {}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
