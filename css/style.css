@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
     font-family: 'Fira Sans', sans-serif;
+    background: #ebe9e9;
 }
 header{
     padding-top: 50px;
@@ -16,12 +17,12 @@ h3{
 }
 
 main{
-    max-width: 500px;;
+    max-width: 25rem;
     margin:auto;
-    padding-top: 200px;
+    padding-top: 14rem;
     display:flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 0.3rem;
     align-items: center;
 }
 
@@ -37,14 +38,14 @@ section{
     align-items: flex-end;
 }
 
-.display{
+.mainDisplay{
     width: 100%;
     font-size: 80px;
     min-height: 1em;
     vertical-align: middle;
     text-align: right;
 }
-.prevDisplay{
+.subDisplay{
     width: 100%;
     font-size: 40px;
     min-height: 1em;
@@ -53,7 +54,7 @@ section{
 }
 
 button.allClearBtn, button.delBtn{
-    width: 203px;
+    width: 12.7rem;
     border-radius: 12px;
     padding: 0px;
 }
@@ -62,7 +63,7 @@ button{
     background-color: #AAAA;
     width: 100px;
     height: 100px;
-    /* border: none; */
+    border: none;
     border-radius: 12px;
     font-size: 26px;
     font-weight: 500;
@@ -72,21 +73,53 @@ button{
 }
 
 
+
+.numberBtn{
+    background-color: #FFFFFF;
+    color: #4F5866;
+}
+.numberBtn:hover{
+    background-color: #d4d4d4;
+}
+.numberBtn:active{
+    background-color: #FF3B3F;
+}
+
+.operationBtn,.delBtn, .allClearBtn, .pointBtn{
+    background: #86888D;
+}
+.operationBtn:hover, .delBtn:hover, .allClearBtn:hover, .pointBtn:hover{
+    background-color: #646568;
+}
+.operationBtn:active, .delBtn:active, .allClearBtn:active, .pointBtn:active{
+    background-color: #FF3B3F;
+}
+.equalsBtn {
+    background: #FF3B3F;
+}
+.equalsBtn:hover {
+    background: #ff5c5e;
+}
+.equalsBtn:active {
+    background: #ffffff;
+}
+
+/* PLAYING AROUND WITH SELECTORS */
 /* FIRST ROW (AC AND DELETE BUTTON) */
-section + section button{
+/* section + section button{
     background-color: #EAAC8B;
     border: none
-}
-section + section button:hover{
+} */
+/* section + section button:hover{
     background-color: #F2CEBA;
 }
 section + section button:active{
     background-color: white;
     color: #EAAC8B;
-}
+} */
 /* SECOND ROW 789/ */
-section + section + section button{
-    background-color: #E56B6F;
+/* section + section + section button{ */
+    /* background-color: #E56B6F;
 }
 section + section + section button:hover {
     background-color:#F0A8AB;
@@ -94,10 +127,10 @@ section + section + section button:hover {
 section + section + section button:active {
     background-color: white;
     color: #E56B6F;
-}
+} */
 
 /* THIRD ROW 456* */
-section + section + section + section button {
+/* section + section + section + section button {
     background-color: #B56576;
 }
 section + section + section + section button:hover {
@@ -106,22 +139,22 @@ section + section + section + section button:hover {
 section + section + section + section button:active {
     background-color:white;
     color: #B56576;
-}
+} */
 
 /* FORTH ROW 123- */
-section + section + section + section + section button{
+/* section + section + section + section + section button{
     background-color: #6D597A;
     /* border: 3px solid #6D597A; */
-}
-section + section + section + section + section button:hover{
+/* } */
+/* section + section + section + section + section button:hover{
     background-color:#927DA1;
 }
 section + section + section + section + section button:active{
     background-color:white;
-}
+} */ 
 
 /* FINAL ROW .0=+ */
-section + section + section + section + section + section button{
+/* section + section + section + section + section + section button{
     background-color: #355070;
 }
 
@@ -130,4 +163,9 @@ section + section + section + section + section + section button:hover{
 }
 section + section + section + section + section + section button:active{
     background-color:white;
+} */
+
+
+@media screen and (max-width: 480px) {
+    
 }
