@@ -20,7 +20,7 @@ class Calculator {
     this.currentOperand = this.currentOperand.toString() + number.toString()
   }
 
-  //Input operators
+  //Input operators, automatically calculate if 2 operands are inserted
   chooseOperation(operation) {
     if (this.currentOperand === ''){
       return;
@@ -62,24 +62,13 @@ class Calculator {
     this.previousOperand = ''
   }
 
-  
+  //display the number on screen
   displayNumber(number) {
     let stringNumber = number.toString()
-    let integerDigits = parseFloat(stringNumber.split('.')[0])
-    let decimalDigits = stringNumber.split('.')[1]
-    let integerDisplay
-    if (isNaN(integerDigits)) {
-      integerDisplay = ''
-    } else {
-      integerDisplay = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 })
-    }
-    if (decimalDigits != null) {
-      return `${integerDisplay}.${decimalDigits}`
-    } else {
-      return integerDisplay
-    }
+    return `${stringNumber}`
   }
 
+  //display the numbers from the calculation
   updateDisplay() {
     this.currentElement.innerText = this.displayNumber(this.currentOperand)
     if (this.operation != null) {
