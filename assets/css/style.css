@@ -1,0 +1,111 @@
+/*
+Index
+ -- Box Model Hack
+ -- Clear fix hack
+ - Base styles
+ - Layout
+ -- text
+ - Additional styles
+ -- lists
+ -- nav list
+ -- header layout
+ -- middle section
+ -- volunteer section
+ -- footer
+ -- misc
+ -- links and buttons
+ -- images
+ -- columns
+ */
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+clear: both;
+}
+
+
+.cf:before,
+.cf:after {
+content: "";
+display: table;
+}
+.cf:after {
+clear: both;
+}
+.cf {
+clear: both;
+*zoom: 1;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+  font-size: 4.5rem;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+h1 {
+  width: fit-content;
+  height: 4.5rem;
+  width: 100%;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  background-color: white;
+  color: black;
+  margin-bottom: 30px;
+}
+
+#mainCalculator {
+  border-radius: 10px;
+  background-color: black;
+  width: 450px;
+  padding: 40px;
+  margin: 200px auto;
+}
+
+.buttons {
+  border-radius: 50%;
+  margin: 10px;
+  height: 55px;
+  width: 55px;
+  float: left;
+  background-color: white;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+}
+
+.buttons:hover{
+  background-color: gray;
+}
+
+.buttonContainer{
+  padding: 0 30px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
