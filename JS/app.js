@@ -7,8 +7,6 @@ const UInumber = document.querySelectorAll('[data-number]'),
 
 const calculator = new Calculator(UIcurrentInput, UIpreviousInput);
 
-
-
 UIcurrentInput.textContent = '0';
 
 UInumber.forEach((button) => {
@@ -21,7 +19,6 @@ UInumber.forEach((button) => {
     e.preventDefault();
   });
 });
-
 
 UIoperation.forEach((operation) => {
   operation.onclick = () => {
