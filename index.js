@@ -20,8 +20,16 @@ class Calculator {
     this.currentOperand = this.currentOperand.toString() + number.toString()
   }
 
-  //Input operators, automatically calculate if 2 operands are inserted
+  //Input operators, automatically calculate if 2 operands are inserted with exceptions for negative numbers
   chooseOperation(operation) {
+    if (this.previousOperand === '' && this.currentOperand === '' && operation === '-'){
+      this.currentOperand = operation
+    } else if (this.previousOperand !== '' && this.currentOperand === '' && operation === "-"){
+      this.currentOperand = "-"
+    } else {
+    if(this.currentOperand === '-'){
+      return
+    }
     if (this.currentOperand === ''){
       return;
     }
@@ -32,13 +40,14 @@ class Calculator {
     this.previousOperand = this.currentOperand
     this.currentOperand = ''
   }
+  }
 
   //Calculating (convert string to floating point numbers through)
   compute() {
     let computation;
     let prev = parseFloat(this.previousOperand)
     let current = parseFloat(this.currentOperand)
-    if (prev !== Number(prev) || current !== Number(current)){
+    if (prev !== Number(prev) || current !== Number(current) || prev === "-"){
       return;
     }
     switch (this.operation) {
