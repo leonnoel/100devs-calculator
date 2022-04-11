@@ -1,0 +1,76 @@
+@import url("./variables.css");
+
+* {
+  box-sizing: border-box;
+}
+
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 
+  Styles
+*/
+
+.container {
+  padding: .5em;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.calculator-container {
+  display: flex;
+  flex-direction: column;
+  padding: .5em;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+#screen {
+  height: 60px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  padding: .5em;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  align-content: center;
+  gap: .25em;
+  padding: .25em;
+  background-color: var(--tertiary-color);
+}
+
+.btn {
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  padding: 1em;
+  cursor: pointer;
+  background-color: white;
+}
+
+.span-3 {
+  grid-column-end: span 3;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color);
+}
+
+.my-2 {
+  margin: 2em 0;
+}
