@@ -1,0 +1,280 @@
+/* ---- A spicy combination of...
+
+  http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+
+and
+
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+
+-----------------------------------------------------  */
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+button,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+img,
+picture,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+textarea {
+  resize: none;
+}
+
+
+/*--------*/
+
+
+main {
+  width: min(500px, 80vw);
+  margin-top: 5rem;
+  margin-inline: auto;
+  background-color: black;
+  padding: max(30px, 5%);
+  border-radius: 20px;
+}
+
+.display-field,
+.calc-button {
+  background-color: white;
+  color: black;
+}
+
+.display-field {
+  width: 100%;
+  padding-right: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.display-secondary {
+  height: 2rem;
+}
+
+.display-main {
+  height: 3rem;
+  font-size: 2rem;
+}
+
+.button-grid {
+  height: 100%;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  margin-inline: auto;
+  border: none;
+  display: grid;
+  justify-content: center;
+  grid-gap: 0.5rem;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20%;
+}
+
+
+.calc-button,
+.equals {
+  border-radius: 50%;
+  font-size: min(calc(4vw + 1rem), 3rem);
+  font-weight: bold;
+  text-align: center;
+  padding-block: 20%;
+  line-height: min(calc(4vw + 1rem), 3rem);
+  cursor: pointer;
+  transition: 0.2s
+}
+
+.calc-button:active {
+  transform: scale(0.9);
+  transition: 0.2s;
+}
+
+
+/* @media screen and (max-width: 920px) {
+
+  main {
+    width: 80vw;
+  }
+
+} */
