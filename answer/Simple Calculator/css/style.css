@@ -1,0 +1,81 @@
+/* displayed properties will be slightly different in code-pen as other CSS files are not included.
+ */
+
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.calculator{
+     background-color: black;
+     border-radius: 8px;
+     padding: 10px;
+     width: 100px;
+}
+span{
+     display: block;
+     background-color: white;
+     height: 20px;
+     width: 80px;
+     margin: 2px;
+     margin-top: 20px;
+     margin-bottom: 5px;
+     text-align: right;
+}
+.button{
+     margin: 2px;
+     background-color: white;
+     border-radius: 50%;
+     width: 20px;
+     height: 20px;
+     cursor: pointer;
+}
+div{
+     text-align: center;
+}
+.bottom {
+     display: flex;
+     flex-direction: column;
+}
+.row{
+     display: flex;
+}
+   
