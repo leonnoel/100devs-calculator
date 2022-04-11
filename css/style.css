@@ -1,0 +1,108 @@
+/* Box Model Hack */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif !important;
+    font-weight: normal;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+  
+  /******************************************
+  /* BASE STYLES
+  /*******************************************/
+  html {
+      font-size: 62.5%;
+  }
+
+
+  body {
+      padding: 0;
+      margin: 0;
+      background: linear-gradient(to right, #e2c478, #ea7c60);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 100vh;
+      min-height: 100vh;
+  }
+  
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+
+  .calculatorBox {
+      display: flex;
+      flex-wrap: wrap;
+      width: 400px;
+  }
+
+  .buttons, .placeToSee {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 0 1 100%;
+  }
+  
+  .placeToSee {
+      background: rgba(27, 27, 27, 0.85);
+      min-height: 12rem;
+      max-height: auto;
+      justify-content: flex-end;
+      align-items: flex-end;
+      justify-content: space-around;
+      flex-direction: column;
+      word-wrap: break-word;
+      word-break: break-all;
+      padding: 10px;
+  }
+
+  button {
+      display: flex;
+      flex: 0 1 25%;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      border: 1px solid #e2c478;
+      border-top: none;
+      border-left: none;
+      font-size: 2.3rem;
+      background: rgba(239, 239, 239, 0.9);
+  }
+
+  .span-two {
+    flex: 2 0 30%;
+  }
+
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
+  .big {
+      font-size: 3.6rem;
+  }
+
+  button:hover {
+    background: rgb(245, 244, 244);
+  }
+
+  .previousOperand {
+    font-size: 2.3rem;
+    color: rgba(239, 239, 239, 0.75);
+  }
+
+  .currentOperand {
+    font-size: 5rem;
+    color: rgb(245, 244, 244);
+  }
