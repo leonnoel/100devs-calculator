@@ -33,7 +33,7 @@ class Calculator {
     this.currentOperand = ''
   }
 
-  //Calculating 
+  //Calculating (convert string to floating point numbers through parseFloat)
   compute() {
     let computation;
     let prev = parseFloat(this.previousOperand)
