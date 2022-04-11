@@ -1,0 +1,144 @@
+/* hssoftwareengineering@gmail.com */
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+
+  /* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+
+html{
+  font: 1rem;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/**
+/ ADDITIONAL STYLES
+/***/
+
+.container{
+ width:350px;
+ font-size: 2.4rem;
+ font-weight:900;
+ background:rgb(255, 255, 255);
+ border-radius:20px;
+ padding:15px;
+ border: black 4px solid;
+ margin: 60px auto 10px;
+ height: 530px;
+}
+
+#screen{
+ width:280px;
+ height:120px;
+ margin:30px auto 20px auto;
+ background:white;
+ overflow:hidden;
+ border-bottom: rgba(60, 60, 60, 0.429) 1px solid;
+ font-size: 30px;
+ text-align: right;
+ word-wrap: break-word;
+ word-break: break-all;
+}
+
+.tempResult{
+  color:rgba(0, 0, 0, 0.317)
+}
+
+#buttons{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 4;
+  justify-content: center;
+ height:270px;
+ 
+}
+
+.btn{
+ width:55px;
+ height:55px;
+ background:rgba(212, 212, 212, 0.288);
+ border-radius:50%;
+ text-align:center;
+ line-height:2.4rem;
+ margin:5px;
+ border: solid 1px rgba(255, 255, 255, 0);
+ cursor: pointer;
+ outline: none;
+}
+
+.point{
+  top: 1000px;
+}
+
+.clear, .allClear{
+  justify-content: space-around;
+  color: red;
+} 
+
+.allClear{
+  font-size: 1.8rem;
+}
+
+.op, .prcnt{
+  color: rgb(0, 169, 0);
+  
+}
+
+h1{
+  text-align: center;
+}
+
+body{
+  background-color: rgb(105, 148, 119);
+}
+
+.equal{
+  background-color: rgb(0, 169, 0);
+  color: white;
+}
+
+.btn:hover{
+  background: rgb(211, 211, 211);
+}
+
+.btn.equal:hover{
+  background: darkgreen;
+}
+
+header{
+  display: flex;
+  justify-content: end;
+}
+
+header button{
+  outline: none;
+  border-radius: 30%;
+  background-color: rgb(255, 255, 255);
+}
+
+.hide{
+  display: none;
+}
+span {
+  text-align: center;
+  display: table;
+  margin: 0 auto;
+  color: rgb(255, 255, 255);
+}
+
+.signChng{
+  font-size: 2rem;
+}
