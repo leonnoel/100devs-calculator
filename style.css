@@ -206,11 +206,11 @@ textarea {
 
 
 main {
-  width: 40vw;
+  width: min(500px, 80vw);
   margin-top: 5rem;
   margin-inline: auto;
   background-color: black;
-  padding: 3%;
+  padding: max(30px, 5%);
   border-radius: 20px;
 }
 
@@ -259,7 +259,7 @@ main {
   font-size: min(calc(4vw + 1rem), 3rem);
   font-weight: bold;
   text-align: center;
-  padding: 12%;
+  padding-block: 20%;
   line-height: min(calc(4vw + 1rem), 3rem);
   cursor: pointer;
   transition: 0.2s
@@ -269,3 +269,12 @@ main {
   transform: scale(0.9);
   transition: 0.2s;
 }
+
+
+/* @media screen and (max-width: 920px) {
+
+  main {
+    width: 80vw;
+  }
+
+} */
