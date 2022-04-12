@@ -1,0 +1,91 @@
+/* CSS RESETS */
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 56.25%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 1.6rem/1.2 Arial, sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+/* BUTTONS */
+
+.btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  background: white;
+  font-size: 4rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 0.25rem;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calc {
+  background: black;
+  padding: 4rem 3rem;
+  border-radius: 25px;
+  width: 95%;
+  max-width: 350px;
+}
+
+.row {
+  padding: 1rem;
+  text-align: center;
+}
+
+.calc__display {
+  position: relative;
+  background: white;
+  height: 7.5rem;
+  margin: 0 auto 0.5rem auto;
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.operator-box {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 15px;
+  width: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div[class^='index'] {
+  font: 4rem/1 'Orbitron', sans-serif;
+  padding: 1rem 0;
+  color: #333;
+}
