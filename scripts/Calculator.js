@@ -41,12 +41,14 @@ function Calculator() {
       default:
         break;
     }
-    this.screen.innerText = result;
+    this.a = result
+    this.screenVal = result
+    this.updateScreen()
   };
 
   this.type = function type(value) {
     this.screenVal += value;
-    this.updateScreenVal()
+    this.updateScreen()
   };
 
   this.setOperation = function setOperation(value) {
@@ -57,10 +59,10 @@ function Calculator() {
 
   this.clear = function clear() {
     this.screenVal = "";
-    this.updateScreenVal()
+    this.updateScreen()
   };
 
-  this.updateScreenVal = function updateScreenVal() {
+  this.updateScreen = function updateScreen() {
     this.screen.innerText = this.screenVal;
   }
 
