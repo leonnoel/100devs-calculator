@@ -42,34 +42,16 @@ const basicCalculator = new BasicCalculator(screen);
 basicCalculator.keys.forEach((key) => {
   let element = document.createElement("button");
   element.innerText = `${key}`;
-  element.value = `${key}`;
+
+  if (key === "=") {
+    element.classList.add("bg-secondary");
+  }
+
   element.classList.add("btn");
 
-  switch (key) {
-    case "+":
-    case "-":
-    case "*":
-    case "/":
-      element.addEventListener("click", () => {
-        basicCalculator.setOperation(key);
-      });
-      break;
-    case "C":
-      element.addEventListener("click", () => {
-        basicCalculator.clear();
-      });
-      break;
-    case "=":
-      element.classList.add("bg-secondary");
-      element.addEventListener("click", () => {
-        basicCalculator.calculate();
-      });
-      break;
-    default:
-      element.addEventListener("click", () => {
-        basicCalculator.type(key);
-      });
-  }
+  element.addEventListener("click", () => {
+    basicCalculator.getListener(key);
+  });
 
   keyboard.appendChild(element);
 });

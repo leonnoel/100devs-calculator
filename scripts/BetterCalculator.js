@@ -4,6 +4,7 @@ function BetterCalculator(element) {
   Object.setPrototypeOf(this, calculator);
 
   this.screen = element;
+  console.log(this.listeners);
 
   this.type = function type(value) {
     if (
@@ -17,16 +18,18 @@ function BetterCalculator(element) {
   };
 
   this.deleteLastChar = function deleteLastChar() {
-    this.screenVal = this.screen.innerText.slice(
-      0,
-      this.screenVal.length - 1
-    );
+    this.screenVal = this.screen.innerText.slice(0, this.screenVal.length - 1);
     this.screen.innerText = this.screenVal;
   };
 
   this.divide = function divide() {
-    let result = Number.parseFloat(this.a / this.b)
-    return result % 1 !== 0 ? result.toFixed(2) : result
+    let result = Number.parseFloat(this.a / this.b);
+    return result % 1 !== 0 ? result.toFixed(2) : result;
+  };
+
+  this.listeners = {
+    ...this.listeners,
+    "<": this.deleteLastChar,
   };
 
   let _keys = [
@@ -65,40 +68,15 @@ betterCalculator.keys.forEach((key) => {
   let element = document.createElement("button");
   element.innerText = `${key}`;
 
-  element.value = `${key}`;
+  if (key === "=") {
+    element.classList.add("bg-secondary", "span-3");
+  }
 
   element.classList.add("btn");
 
-  switch (key) {
-    case "+":
-    case "-":
-    case "*":
-    case "/":
-      element.addEventListener("click", () => {
-        betterCalculator.setOperation(key);
-      });
-      break;
-    case "C":
-      element.addEventListener("click", () => {
-        betterCalculator.clear();
-      });
-      break;
-    case "=":
-      element.classList.add("span-3", "bg-secondary");
-      element.addEventListener("click", () => {
-        betterCalculator.calculate();
-      });
-      break;
-    case "<":
-      element.addEventListener("click", () => {
-        betterCalculator.deleteLastChar();
-      });
-      break;
-    default:
-      element.addEventListener("click", () => {
-        betterCalculator.type(key);
-      });
-  }
+  element.addEventListener("click", () => {
+    betterCalculator.getListener(key);
+  });
 
   keyboard.appendChild(element);
 });
