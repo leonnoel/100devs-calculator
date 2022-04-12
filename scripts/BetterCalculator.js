@@ -68,11 +68,11 @@ betterCalculator.keys.forEach((key) => {
   let element = document.createElement("button");
   element.innerText = `${key}`;
 
+  element.classList.add("btn");
+
   if (key === "=") {
     element.classList.add("bg-secondary", "span-3");
   }
-
-  element.classList.add("btn");
 
   element.addEventListener("click", () => {
     betterCalculator.getListener(key);

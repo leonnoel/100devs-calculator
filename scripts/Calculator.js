@@ -41,7 +41,6 @@ function Calculator() {
       default:
         break;
     }
-    this.a = result
     this.screenVal = result
     this.updateScreen()
   };
