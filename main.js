@@ -162,8 +162,12 @@ class Calculator {
         this.#innerData.evaluated = false;
 
       } else {
-        if (str === '0' && (btn !== '.' || !operators.includes(btn))) {
+
+        if ( str === '0' && ( btn !== '.' || !operators.includes( btn ) ) ) {
           str = '';
+
+        } else if ( str.endsWith('0') && operators.includes( str[str.length - 2] ) ) {
+          str = str.slice(0, str.length - 1);
         }
         str += btn;
       }
