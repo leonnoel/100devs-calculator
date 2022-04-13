@@ -16,17 +16,17 @@ class Calculator {
     switch (value) {
       case "=":
         //evaluate value and return
-
+        this.calcAnswer(this.displayText);
         this.outputText(this.displayText);
         break;
 
-      case "*":
-      case "/":
-      case "+":
-      case "-":
-        this.handleOperator(value);
-        this.outputText(this.displayText);
-        break;
+      //   case "*":
+      //   case "/":
+      //   case "+":
+      //   case "-":
+      //     this.handleOperator(value);
+      //     this.outputText(this.displayText);
+      //     break;
       case "AC":
         this.displayText = "0";
         break;
@@ -71,10 +71,10 @@ class Calculator {
     }
   }
 
-  evaluateCurrent() {
-    let total = eval(this.displayText);
-    this.displayText = "";
-    this.addText(total);
+  calcAnswer(equation) {
+    let sanitizeEquation = equation.replace(/[^-()\d/*+.]/g, "");
+    this.displayText = eval(sanitizeEquation);
+    this.prevTotal = this.displayText;
   }
 
   handleOperator(nextOperator) {
