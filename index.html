@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc in JS</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+
+    <body>
+        <div class="calc-body">
+            <div id="displayNum" class="display">
+                <div previous-operand></div>
+                <div current-operand></div>
+            </div>
+            <div class="num-grid">
+                <button data-clear class="key span-two">ac</button>
+                <button data-delete class="key span-two">c</button>
+                <button data-number class="key">7</button>
+                <button data-number class="key">8</button>
+                <button data-number class="key">9</button>
+                <button data-operation class="key">/</button>
+                <button data-number class="key">4</button>
+                <button data-number class="key">5</button>
+                <button data-number class="key">6</button>
+                <button data-operation class="key">*</button>
+                <button data-number class="key">1</button>
+                <button data-number class="key">2</button>
+                <button data-number class="key">3</button>
+                <button data-operation class="key">-</button>
+                <button data-number class="key">0</button>
+                <button data-number class="key">.</button>
+                <button data-operation class="key">+</button>
+                <button data-equals class="key span-two">=</button>
+              
+               
+    
+    
+            </div>
+        </div>
+        <script>
+            //create constructor for calculator keep data 
+class Calculator{
+    constructor(previousOperandTextElement, currentOperandTextElement){
+        this.previousOperandTextElement = previousOperandTextElement
+        this.currentOperandTextElement = currentOperandTextElement
+        this.clear()
+    }
+    clear(){
+        this.currentOperand = ''
+        this.previousOperand = ''
+        this.operation = undefined
+
+    }
+    delete(){
+        this.currentOperand = this.currentOperand.toString().slice(0,-1)
+    }
+    appendNumber(number){
+        if (number === '.' && this.currentOperand.includes('.')) return
+        this.currentOperand = this.currentOperand.toString()+ number.toString()
+
+    }
+    chooseOperation(operation){
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== ''){
+            this.compute()
+        }
+
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ''
+    }
+    compute(){
+        let computation
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
+        if (isNaN(prev) || isNaN(current) ) return
+        switch (this.operation){
+            case '+':
+                computation = prev + current
+                break
+            case '-':
+                computation = prev - current
+                break
+            case '*':
+                computation = prev * current
+                break
+            case '/':
+                computation = prev / current
+                break
+            default:
+                return
+        }
+        this.currentOperand = computation
+        this.operation = undefined
+        this.previousOperand = ''       
+
+    }
+    getDisplayNumber(number){
+        const stringNumber = number.toString()
+        const integerDigits = parseFloat(stringNumber.split('.') [0])
+        const decimalDigits = stringNumber.split('.')[1]
+        let integerDisplay
+        if(isNaN(integerDigits)){
+            integerDisplay = ''
+        }else {
+            integerDisplay = integerDigits.toLocaleString('en',{
+                maximumFractionDigits:0})
+            }if(decimalDigits != null){
+                return `${integerDisplay}.${decimalDigits}`
+            }else{
+                return integerDisplay
+            }
+
+    }
+    updateDisplay(){
+        this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
+
+        if(this.operation != null){
+            this.previousOperandTextElement.innerText =
+            `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+        } 
+        else{
+        this.previousOperandTextElement.innerText = ''
+        }
+    }
+    
+}
+
+//set constants
+const dataClear = document.querySelector('[data-clear')
+const deleteButton = document.querySelector('[data-delete')
+const previousOperandTextElement = document.querySelector('[previous-operand]')
+const currentOperandTextElement = document.querySelector('[current-operand]')
+const dataOperation = document.querySelectorAll('[data-operation]')
+const dataEquals = document.querySelector('[data-equals]')
+const dataSigns = document.querySelector('[data-signs]')
+const dataButtons = document.querySelectorAll('[data-number]')
+//create const for calculator 
+const calculator = new Calculator(previousOperandTextElement,currentOperandTextElement)
+
+//type numbers
+dataButtons.forEach(button => {
+    button.addEventListener('click', () =>{
+        calculator.appendNumber(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+//choose operator
+dataOperation.forEach(button => {
+    button.addEventListener('click', () =>{
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+dataEquals.addEventListener('click', button => {
+        calculator.compute()
+        calculator.updateDisplay()
+    })
+
+dataClear.addEventListener('click', button =>{
+        calculator.clear()
+        calculator.updateDisplay()
+    })
+deleteButton.addEventListener('click', button =>{
+        calculator.delete()
+        calculator.updateDisplay()
+    })
+
+        </script>
+    </body>
+
+</html>
