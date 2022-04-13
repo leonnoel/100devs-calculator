@@ -1,6 +1,7 @@
 html {
 	font-size: 62.5%;
 	box-sizing: border-box;
+	font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 *,
@@ -21,7 +22,6 @@ html {
 	padding-top: 75px;
 	background-color: black;
 	border-radius: 25px;
-	border: 2px solid red;
 }
 
 .calculator-screen {
@@ -33,7 +33,6 @@ html {
 	color: black;
 	text-align: right;
 	padding-right: 10px;
-	border: 2px solid green;
 }
 
 .calculator-buttons{
@@ -50,6 +49,7 @@ button{
 	border: none;
 	border-radius: 30px;
 	font-size: 4rem;
+	font-weight: bold;
 	color: black;
 	margin: 7.5px;
 	padding: 5px;
@@ -60,4 +60,13 @@ button{
 	background-color: red;
 	color: white;
 	font-size: 3rem;
+}
+
+button:hover {
+	background-color: gray;
+}
+
+.all-clear:hover{
+	background-color: red;
+	color: black;
 }
