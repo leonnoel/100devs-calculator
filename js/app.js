@@ -1,10 +1,8 @@
-const buttons = document.querySelectorAll('.btn');
-const display = document.getElementById('display')
-
 class Calculator {
-    constructor(displayValues, button) {
-        this.displayValues = displayValues;
-        this.button = button
+    constructor() {
+        this.displayValues = document.getElementById('display')
+        this.button = document.querySelectorAll('.btn');
+
         let parentThis = this
 
         this.button.forEach(el =>
@@ -14,7 +12,14 @@ class Calculator {
         )
 
     }
+
 }
 
+let calculator = new Calculator
 
-const calculator = new Calculator(display, buttons)
+
+Calculator.prototype.calcResult = function() {
+    return this.displayValues.innerText = eval(this.displayValues.innerText)
+}
+
+document.querySelector("#evaluate").addEventListener('click', function() { calculator.calcResult() })
