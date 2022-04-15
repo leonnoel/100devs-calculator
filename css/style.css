@@ -17,6 +17,8 @@
     border: 1px solid black;
     background-color: white;
     text-align: right;
+    font-size: 3rem;
+    overflow: hidden;
 }
 
 .btn-container {
