@@ -1,0 +1,89 @@
+:root {
+    --main-color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, black, rgb(77, 76, 76), black);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4.5rem;
+    font-weight: bold;
+}
+
+main form {
+    margin-bottom: 4rem;
+}
+
+#calc-screen {
+    width: 100%;
+    height: 7rem;
+    font-size: 3.3rem;
+    text-align: right;
+}
+
+input {
+    background-color: #7E8C74;
+    border: 0;
+    outline: 0;
+    padding-right: 2rem;
+}
+
+input:focus {
+    outline: none!important;
+}
+
+.calc-body {
+    width: 41rem;
+    height: fit-content;
+    padding: 7rem 3rem 4rem 3rem;
+    border: 2px solid black;
+    border-radius: 30px;
+    background: linear-gradient(to bottom right, black, rgb(59, 59, 59));
+}
+
+.calc-numPad {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-flow: row wrap;
+    height: 80%;
+    margin: 0 2.5rem 2rem 2.5rem;
+}
+
+.calc-button {
+    display: inline-block;
+    text-align: center;
+    width: 6.5rem;
+    height: 6.5rem;
+    border: 2px solid black;
+    background: radial-gradient(circle, rgb(99, 99, 99), rgb(46, 46, 46), black);
+    color: white;
+    border-radius: 50%;
+}
+
+.calc-button:hover {
+    cursor: pointer;
+}
+
+.reset {
+    display: block;
+    width: 29.8rem;
+    height: 4rem;
+    font-size: 3rem;
+    background: radial-gradient(rgb(99, 99, 99), rgb(46, 46, 46), rgb(27, 27, 27));
+    border: 2px solid black;
+    color: white;
+    margin: 0 auto;
+}
