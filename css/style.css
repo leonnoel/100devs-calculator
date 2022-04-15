@@ -6,6 +6,18 @@
     margin: 10rem auto;
 }
 
+#reset {
+    position: absolute;
+    margin: 20px 0 0 43px;
+    background-color: white;
+    border: none;
+    font-family: 'Rubik Wet Paint', cursive;
+}
+
+#reset:hover {
+    background-color: dimgray;
+}
+
 #display {
     width: 80%;
     height: 90px;
