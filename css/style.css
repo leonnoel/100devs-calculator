@@ -1,0 +1,76 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  font-size: 2em;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, dodgerblue, teal);
+  color: black;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin: 50px auto;
+  width: 250px;
+  background: black;
+  height: 350px;
+  border-radius: 6%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content:space-around;
+  
+}
+
+.display {
+  height: 80px;
+  background: rgba(255, 255, 255, 0.878);
+  width: 80%;
+  margin:auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.display .prev-op {
+  color: rgba(0, 0, 0, 0.605);
+  font-size: 1.5rem;
+}
+
+.grid {
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+  width: 80%;
+  gap: 5px;
+}
+
+.grid button {
+  width: 20%;
+  background: white;
+  border-radius: 12%;
+  height: 1.6em;
+  font-size: .8em;
+}
+
+.grid .clr {
+  font-size: 1.2rem;
+  background: rgb(255, 159, 91);
+  width: 40%;
+}
