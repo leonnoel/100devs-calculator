@@ -1,0 +1,120 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Clear fix hack */
+  .clearfix:after {
+       content: ".";
+       display: block;
+       clear: both;
+       visibility: hidden;
+       line-height: 0;
+       height: 0;
+  }
+  
+  .clear {
+      clear: both;
+  }
+
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+
+  body {
+    font-size: 62.5%;
+  }
+
+  .case {
+    width: 475px;
+    height: 675px;
+    padding: 2rem;
+    padding-bottom: 4.5rem;
+    /* 
+    margin: auto; 
+      vs position + top + left + transform
+    */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2em;
+    background-color: #000;
+  }
+
+  .display {
+    width: 100%;
+    height: 19%;
+    margin: 1rem 0;
+    background-color: #fff;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+
+  .display p {
+    font-size: 1.2rem;
+    margin: 0 0.5rem 0 0;
+    color: #555;
+    font-family: 'Archivo', sans-serif;
+    text-align: right;
+  }
+
+  .display input {
+    width: 100%;
+    font-size: 4rem;
+    font-family: 'Archivo', sans-serif;
+    margin: 0.15rem 0;
+    color: #000;
+    text-align: right;
+  }
+
+  .button-pad {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .button-pad button {
+    width: 5rem;
+    height: 5rem;
+    margin: 5px;
+    font-size: 3rem;
+    font-family: 'Archivo', sans-serif;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #fff;
+    color: #000;
+    font-family: 'Archivo', sans-serif;
+  }
+
+  .button-pad button:hover,
+  .op:focus {
+    background-color: rgba(255,255,255,0.8);
+    transition: 0.05s;
+  }
+
+  #ac {
+    width: 94%;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    border-radius: 14px;
+  }
+
+  #ac:hover {
+    background-color: rgba(187, 46, 46, 1);
+    color: #fff;
+  }
+
+  #calc:hover {
+    background-color: rgb(13, 90, 48);
+    color: #fff;
+  }
