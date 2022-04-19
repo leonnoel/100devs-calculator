@@ -56,7 +56,7 @@ const calculator = {
           this.displayText = this.prevTotal
           this.prevTotal = null
      }
-       if (isNaN(+(value)) && isNaN(+(this.displayText.slice(-1)))) {
+       if (isNaN(+(value)) && isNaN(+(this.displayText.slice(-1)))) { //proud of editing this line and still making it work
          
           return;
          
