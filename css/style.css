@@ -1,15 +1,15 @@
 html{
   font-size: 62.6%;
   box-sizing: border-box;
-}
-
-*, *::before, *::after {
+  }
+  
+  *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
-
-.calculator{
+  }
+  
+  .calculator{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,9 +21,9 @@ html{
   border-radius: 25px;
   /* border: 2px solid red; */
   
-}
-
-.calculator-screen {
+  }
+  
+  .calculator-screen {
   width: 100%;
   font-size: 5rem;
   height: 80px;
@@ -33,18 +33,18 @@ html{
   text-align: right;
   padding-right: 10px;
   /* border: 2px solid green; */
-}
-
-.calculator-buttons{
+  }
+  
+  .calculator-buttons{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   /* border: 2px solid yellow; */
   padding: 15px;
   padding-bottom: 5px;
-}
-
-button{
+  }
+  
+  button{
   height: 60px;
   background-color: white;
   border: none;
@@ -53,16 +53,16 @@ button{
   font-weight: bold;
   color: black;
   margin: 7px;
-  padding: 5px; 
+  padding: 5px;
   flex: 1 0 18%;
-}
-
-.all-clear{
+  }
+  
+  .all-clear{
   background-color: red;
   color: white;
   font-size: 3rem;
-}
-
-button:hover{
+  }
+  
+  button:hover{
   background-color: #eaeaea67;
-}
+  }
