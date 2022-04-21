@@ -11,9 +11,13 @@ html {
     box-sizing: inherit;
 }
 
-/* Position places element in the center */
+/* Position places element in the center 
+    Transform moves element more to the center
+*/
 .calculator {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+
 }
