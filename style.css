@@ -45,4 +45,8 @@ button {
     padding: 0.5rem;
     margin: 0.7rem;
     font-size: 4rem;
+    font-weight: 700;
+    border-radius: 3rem;
+    background-color: white;
+    color: black;
 }
