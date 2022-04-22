@@ -53,4 +53,5 @@ button {
     background-color: white;
     color: black;
     flex-basis: 20%;
+    flex-grow: 1;
 }
