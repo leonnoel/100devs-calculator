@@ -23,6 +23,7 @@ html {
     background-color: black;
     /* border: 2px solid red; */
     padding: 7.5rem 4rem 4rem 4rem;
+    border-radius: 2.5rem;
 }
 
 .calculator-screen {
