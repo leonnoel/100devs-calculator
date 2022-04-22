@@ -55,3 +55,7 @@ button {
     flex-basis: 18%;
     flex-grow: 1;
 }
+
+.all-clear {
+    font-size: 3rem;
+}
