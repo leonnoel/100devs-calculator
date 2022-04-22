@@ -29,4 +29,7 @@ html {
     background-color: white;
     color: black;
     text-align: right;
+    /* width: 100%; */
+    /* height: 80px; */
+    padding-right: 10px;
 }
