@@ -37,6 +37,7 @@ html {
 /* Container that holds buttons. Buttons nested inside parent */
 .calculator-buttons {
     display: flex;
+    flex-wrap: wrap;
 }
 
 /* Change default styles to button  */
