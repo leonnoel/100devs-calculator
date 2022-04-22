@@ -52,6 +52,6 @@ button {
     border-radius: 3rem;
     background-color: white;
     color: black;
-    flex-basis: 20%;
+    flex-basis: 18%;
     flex-grow: 1;
 }
