@@ -23,3 +23,7 @@ html {
     background-color: black;
     /* border: 2px solid red; */
 }
+
+.calculator-screen {
+    font-size: 5rem;
+}
