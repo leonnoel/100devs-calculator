@@ -42,4 +42,5 @@ html {
 /* Change default styles to button  */
 button {
     padding: 0.5rem;
+    margin: 0.7rem;
 }
