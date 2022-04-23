@@ -40,9 +40,11 @@ const calculator = {
                 this.clearAll()
                 break;
             case '.': //
-                if (this.displayText == 0) {
+                if (this.displayText == '0') {
                     //pass the string 0. into addText method
                     this.addText('0.')
+                //} else if(this.displayText.includes('.') ){
+                //   return;
                 } else {
                     //add value to text string
                     this.addText(value);
