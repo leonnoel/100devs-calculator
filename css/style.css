@@ -64,6 +64,7 @@ main main {
   text-align: right;
   /* padding-top: rem; */
   padding-right: 2.5rem;
+  border: 1px solid #000;
 }
 
 .bottom {
@@ -89,19 +90,21 @@ main main {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #000;
 }
-.ac{
+.ac {
   background: red;
   color: white;
   font-size: 4.5rem;
+  border: 1px solid #000;
 }
 
-footer{
+#equal {
   background: white;
   height: 6rem;
   width: 42rem;
   border-radius: 50px;
-    color: black;
+  color: black;
   font-size: 6rem;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
@@ -109,9 +112,11 @@ footer{
   align-items: center;
   justify-content: center;
   margin: 4rem 0;
+  border: 1px solid #000;
 }
 
-.circle:hover, footer:hover {
+.circle:hover,
+#equal:hover {
   background: grey;
 }
 
