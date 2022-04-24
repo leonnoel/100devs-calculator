@@ -43,8 +43,8 @@ const calculator = {
                 if (this.displayText == '0') {
                     //pass the string 0. into addText method
                     this.addText('0.')
-                //} else if(this.displayText.includes('.') ){
-                //   return;
+                } else if(this.displayText == '0.'){
+                  return;
                 } else {
                     //add value to text string
                     this.addText(value);
@@ -64,9 +64,9 @@ const calculator = {
             this.displayText = this.prevTotal;
             this.prevTotal = null;
         }
-        if (isNaN(Number(value)) && isNaN(Number(this.displayText))){//this needs to be changed as its not working
+        if (isNaN(Number(value)) && isNaN(Number(this.displayText))){//this needs to be changed as its not working with .
             //if user entered invalid sequence of operations 
-            if(isNaN(this.displayText.slice(-1))){
+            if(isNaN(this.displayText.slice(-1)) ){
                 return;
             }
         }
