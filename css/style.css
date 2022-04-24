@@ -36,6 +36,64 @@ header {
 footer {
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+main main {
+  background: black;
+  width: 60rem;
+  height: 70rem;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.answer {
+  background: white;
+  height: 12rem;
+  width: 50rem;
+  display: block;
+  color: rgb(45, 44, 44);
+  font-size: 8rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  text-align: right;
+  padding-top: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.bottom {
+  /* background: red; */
+  height: 40rem;
+  width: 50rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-evenly;
+}
+
+.circle {
+  background: white;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 0 0 1rem 2rem;
+  color: black;
+  font-size: 7rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
