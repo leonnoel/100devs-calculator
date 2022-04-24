@@ -30,11 +30,6 @@ body {
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
-}
-
-footer {
-}
 
 main {
   display: flex;
@@ -47,7 +42,7 @@ main {
 main main {
   background: black;
   width: 60rem;
-  height: 70rem;
+  height: 75rem;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
@@ -56,8 +51,9 @@ main main {
 }
 
 .answer {
+  margin-top: 8rem;
   background: white;
-  height: 12rem;
+  height: 9rem;
   width: 50rem;
   display: block;
   color: rgb(45, 44, 44);
@@ -66,7 +62,7 @@ main main {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-align: right;
-  padding-top: 2.5rem;
+  /* padding-top: rem; */
   padding-right: 2.5rem;
 }
 
@@ -77,21 +73,46 @@ main main {
   display: flex;
   flex-flow: row wrap;
   align-content: space-evenly;
+  margin-left: 3.5rem;
 }
 
 .circle {
   background: white;
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
-  margin: 0 0 1rem 2rem;
+  margin: 2.5rem 0 0rem 3.2rem;
   color: black;
-  font-size: 7rem;
+  font-size: 6rem;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.ac{
+  background: red;
+  color: white;
+  font-size: 4.5rem;
+}
+
+footer{
+  background: white;
+  height: 6rem;
+  width: 42rem;
+  border-radius: 50px;
+    color: black;
+  font-size: 6rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.circle:hover, footer:hover {
+  background: grey;
 }
 
 /******************************************
