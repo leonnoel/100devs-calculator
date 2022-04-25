@@ -35,62 +35,50 @@ const calculator = {
     // ? Have any special buttons been clicked(.,=,AC)
     switch (value) {
       case "=":
-        // calculate answer
+        this.calcAnswer(this.displayText);
         break;
       case "AC":
-        // clear screen and stored values
+        this.clearAll();
         break;
       case ".":
         if (this.displayText == 0) {
-          // pass '0.' into add text method
+          this.addText("0.");
         } else {
-          // add value to text string
+          this.addText(value);
         }
         break;
       default:
-        // add value to text str
+        this.addText(value);
         break;
     }
   },
   addText(value) {
     if (this.displayText === "0") {
-      this.displayText == "";
-    }else if (this.prevTotal !== null){
-        this.displayText = this.prevTotal
-        this.prevTotal = null
+      this.displayText = "";
+    } else if (this.prevTotal !== null) {
+      this.displayText = this.prevTotal;
+      this.prevTotal = null;
     }
     // user has entered invalid sequence don't proceed'
-    if(''){
-
+    // ! change to better statement. Last character not a special character
+    if (isNaN(+value) && isNaN(+this.displayText)) {
+      if (isNaN(this.displayText.slice(-1))) {
+        return;
+      }
     }
-    this.displayText += value
-    // output display text to screen
+    this.displayText += value;
+    this.outputText(this.displayText);
+  },
+  outputText(text) {
+    document.querySelector(".answer").value = text;
+  },
+  calcAnswer(equation) {
+    let result = Function("return " + equation)();
+    this.outputText(result);
+  },
+  clearAll() {
+    this.displayText = "0";
+    this.prevTotal = null;
+    this.outputText(this.displayText);
   },
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function clearMakeZero() {
-}
-function multiply(num1, num2) {}
-function divide(num1, num2) {}
-function minus(num1, num2) {}
-function addition(num1, num2) {}
