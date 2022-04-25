@@ -68,9 +68,13 @@ footer {}
 }
 
 .answer {
-     width: 100%;
+     width: 80%;
      height: 120px;
      border-radius: 20px;
      background-color: white;
      color: black;
+}
+
+.C {
+     width: 15%;
 }
