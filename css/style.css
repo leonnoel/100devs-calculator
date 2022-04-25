@@ -8,37 +8,26 @@ html {
     font-size: 62.5%;
   }
 
-/* Clear fix hack */
-.clearfix:after {
-    content: ".";
-    display: block;
-    clear: both;
-    visibility: hidden;
-    line-height: 0;
-    height: 0;
+
+/* Calculator Styles */
+
+#calculator {
+    height: 65vh;
+    width: 30vw;
+    background-color: black;
+    margin: auto;
+    border-radius: 1.5rem;
 }
 
-.clear {
-   clear: both;
+#display {
+    height: 10em;
+    width: 20em;
+    background-color: white;
+    margin: auto;
 }
 
-/******************************************
-/* BASE STYLES
-/*******************************************/
-
-
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-header {
-
+.contents {
+    display: flex;
+    align-items: center;
+    height: 65vh;
 }
-
-footer {
-
-}
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
