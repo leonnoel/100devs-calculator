@@ -25,6 +25,64 @@ html {
   font-size: 62.5%;
 }
 body {
+  background: rgba(248, 80, 50, 1);
+  background: -moz-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 19%,
+    rgba(241, 111, 92, 1) 35%,
+    rgba(209, 85, 69, 1) 69%,
+    rgba(240, 47, 23, 1) 93%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -webkit-gradient(
+    radial,
+    center center,
+    0px,
+    center center,
+    100%,
+    color-stop(19%, rgba(248, 80, 50, 1)),
+    color-stop(35%, rgba(241, 111, 92, 1)),
+    color-stop(69%, rgba(209, 85, 69, 1)),
+    color-stop(93%, rgba(240, 47, 23, 1)),
+    color-stop(100%, rgba(231, 56, 39, 1))
+  );
+  background: -webkit-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 19%,
+    rgba(241, 111, 92, 1) 35%,
+    rgba(209, 85, 69, 1) 69%,
+    rgba(240, 47, 23, 1) 93%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -o-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 19%,
+    rgba(241, 111, 92, 1) 35%,
+    rgba(209, 85, 69, 1) 69%,
+    rgba(240, 47, 23, 1) 93%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: -ms-radial-gradient(
+    center,
+    ellipse cover,
+    rgba(248, 80, 50, 1) 19%,
+    rgba(241, 111, 92, 1) 35%,
+    rgba(209, 85, 69, 1) 69%,
+    rgba(240, 47, 23, 1) 93%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  background: radial-gradient(
+    ellipse at center,
+    rgba(248, 80, 50, 1) 19%,
+    rgba(241, 111, 92, 1) 35%,
+    rgba(209, 85, 69, 1) 69%,
+    rgba(240, 47, 23, 1) 93%,
+    rgba(231, 56, 39, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#e73827', GradientType=1 );
 }
 
 /******************************************
@@ -34,20 +92,21 @@ body {
 main {
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  height: 100%;
   width: 100vw;
 }
 
 main main {
   background: black;
-  width: 60rem;
-  height: 75rem;
+  width: 50rem;
+  height: 65rem;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  box-shadow: 13px 14px 7px 2px rgba(0, 0, 0, 0.75);
 }
 
 .answer {
@@ -62,13 +121,11 @@ main main {
   font-weight: bold;
   font-family: "Roboto", sans-serif;
   text-align: right;
-  /* padding-top: rem; */
   padding-right: 2.5rem;
   border: 1px solid #000;
 }
 
 .bottom {
-  /* background: red; */
   height: 40rem;
   width: 50rem;
   display: flex;
@@ -123,3 +180,9 @@ main main {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+h1 {
+  text-align: center;
+  padding: 5% 0 3% 0;
+  font-size: 3.5rem;
+}
