@@ -1,7 +1,7 @@
 <h1 align="center">Simple Calculator | <a href="https://TonyHerbert22ATX.github.io/Simple-Calculator/">Visit here!</a></h1>
 <div align="center">
   <a href='https://TonyHerbert22ATX.github.io/Simple-Calculator/'>
-	  <img src="https://github.com/Ethodeus/readme-assets/blob/master/GitHub%20Profile/Project-images/Calculator/ezgif.com-gif-maker.gif" width="100%" />
+	  <img src="/Side Project/GitHub-Assets/calc.mp4" width="100%" />
   </a>
 </div>
 
