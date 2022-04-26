@@ -41,7 +41,7 @@ const calculator = {
         this.clearAll();
         break;
       case ".":
-        if (this.displayText == 0) {
+        if (this.displayText == '0') {
           this.addText("0.");
         } else {
           this.addText(value);
@@ -75,6 +75,7 @@ const calculator = {
   calcAnswer(equation) {
     let result = Function("return " + equation)();
     this.outputText(result);
+    this.displayText = result
   },
   clearAll() {
     this.displayText = "0";
