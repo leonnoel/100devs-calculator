@@ -12,22 +12,50 @@ html {
 /* Calculator Styles */
 
 #calculator {
-    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70vh;
     width: 30vw;
     background-color: black;
     margin: auto;
     border-radius: 1.5rem;
 }
 
-#display {
-    height: 10em;
-    width: 20em;
-    background-color: white;
-    margin: auto;
+.contents {
+    /* Includes display and buttons */
+    align-items: center;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.contents {
+#display {
+    height: 4em;
+    width: 25vw;
+    background-color: white;
+    color: black;
     display: flex;
-    align-items: center;
-    height: 65vh;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 3rem;
+}
+
+#display > span {
+    margin-right: .25em;
+}
+
+#buttons {
+    width: 18vw;
+
+}
+
+button {
+    height: 3.2em;
+    width: 3.2em;
+    background-color: white;
+    color:black;
+    border-radius: 50%;
+    font-size: 2rem;
 }
