@@ -1,26 +1,32 @@
-# 🔢 #100Devs Push Project001: Calculator
+<h1 align="center">Simple Calculator | <a href="https://TonyHerbert22ATX.github.io/Simple-Calculator/">Visit here!</a></h1>
+<div align="center">
+  <a href='https://TonyHerbert22ATX.github.io/Simple-Calculator/'>
+	  <img src="https://github.com/Ethodeus/readme-assets/blob/master/GitHub%20Profile/Project-images/Calculator/ezgif.com-gif-maker.gif" width="100%" />
+  </a>
+</div>
 
-### Goal: Build a Simple Calculator using JS OOP best practices
+<h3 align="center">Simple calculator website as my first attempt to work with OOP.</h3>
+<br>
 
-### What it should look like:
+## How It's Made:
 
-![Calculator](calculator.jpg)
+This was my first attempt at a simple calculator, I still was not able to implement OOP completely but I was able to make it functional. 
 
-### How to submit your code for review:
+<h2 align="center">Techs used:</h2>
+<br>
+<div align="center">
+	<i class="fa-brands fa-html5"></i>
+	&nbsp&nbsp&nbsp
+	<i class="fa-brands fa-css3-alt"></i>
+	&nbsp&nbsp&nbsp
+	<i class="fa-brands fa-js"></i>
+</div>
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+##
+<br>
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+## Optimizations
+
+I'm planning to add a conditional to the code that prevents the user from entering a second ```.``` to the input if a number in the operation is already a decimal. 
+
+
