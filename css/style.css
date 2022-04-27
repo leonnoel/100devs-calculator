@@ -1,5 +1,5 @@
 /* Box Model Hack */
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -11,51 +11,62 @@ html {
 
 /* Calculator Styles */
 
-#calculator {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 70vh;
-    width: 30vw;
-    background-color: black;
-    margin: auto;
-    border-radius: 1.5rem;
-}
+/*
+TODO: fix calculator being stuck to screen in larger screen sizes.
+*/
 
-.contents {
-    /* Includes display and buttons */
+body {
+    padding: 0;
+    background: linear-gradient(to right, #18181B, #A1A1AA);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+
 }
 
-#display {
+#calculator {
+    margin-top: 20%;
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    /* important to have align-content and not align-items so we can align everything on the screen */
+    align-content: center;
+    width: 500px;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: minmax(90px, auto) repeat(4, 90px);
+    border-radius: 4em;
+}
+
+#calculator > button {
+    cursor: pointer;
     height: 4em;
-    width: 25vw;
+    width: 4em;
+    font-size: 2rem;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+}
+
+#calculator > button:hover {
+    background-color: rgba(250, 249, 249, 0.85);
+}
+
+.output {
+    grid-column: 1/-1;
     background-color: white;
-    color: black;
     display: flex;
     align-items: flex-end;
-    justify-content: flex-end;
-    font-size: 3rem;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    /* allows wrapping and breaking of all words*/
+    word-wrap: break-word;
+    word-break: break all;
 }
 
-#display > span {
-    margin-right: .25em;
-}
-
-#buttons {
-    width: 18vw;
-
-}
-
-button {
-    height: 3.2em;
-    width: 3.2em;
-    background-color: white;
-    color:black;
-    border-radius: 50%;
+.output .previous-operand {
     font-size: 2rem;
+}
+
+.output .current-operand {
+    font-size: 4rem;
 }
