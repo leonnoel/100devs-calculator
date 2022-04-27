@@ -1,0 +1,84 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* STYLES
+/*******************************************/
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 75px 40px 40px 40px;
+  background-color: black;
+  border-radius: 25px;
+}
+
+.calculator-screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: white;
+  color: black;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.calculator-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px;
+  padding-bottom: 5px;
+}
+
+button {
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin: 7px;
+  padding: 5px;
+  flex: 1 0 18%;
+}
+
+.all-clear {
+  background-color: red;
+  color: white;
+  font-size: 3rem;
+}
+
+button:hover {
+  background-color: #eaeaea67;
+}
+
+.all-clear:hover {
+  background-color: #FF7F7F;
+}
