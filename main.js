@@ -13,8 +13,8 @@ const keys = document.querySelector('.calculator-buttons');
         // Checks event object. If target property was clicked from button element
         if (event.target.matches('button')) {
 
-            // Then logs value from event object's target property
-            console.log(event.target.value);
+            // Routes value from event object's target property to method
+            calculator.parseInput(event.target.value)
         } else {
             return;
         }
@@ -22,5 +22,13 @@ const keys = document.querySelector('.calculator-buttons');
 
 const calculator = {
     // Text that shows up when calculator is first opened
-    displayText: '0'
+    displayText: '0',
+
+    // Value passed in from event listener
+    parseInput(value) {
+        // Checks displayText value and set displayText to blank
+        if (this.displayText === '0') {
+            this.displayText = ''
+        }
+    }
 }
