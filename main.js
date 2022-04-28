@@ -19,3 +19,7 @@ const keys = document.querySelector('.calculator-buttons');
             return;
         }
 })
+
+const calculator = {
+    
+}
