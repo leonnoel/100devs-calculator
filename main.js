@@ -40,7 +40,7 @@ const calculator = {
             case 'AC':
                 break;
 
-            // Decimal
+            // 
             case '.':
                 break;
         }
