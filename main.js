@@ -30,5 +30,19 @@ const calculator = {
         if (this.displayText === '0') {
             this.displayText = ''
         }
+        // Have any of the operators, equals, decimals, or AC been clicked?
+        switch(value) {
+            // Calculate the answer
+            case '=':
+                break;
+
+            // Clear the screen and store values
+            case 'AC':
+                break;
+
+            // Decimal
+            case '.':
+                break;
+        }
     }
 }
