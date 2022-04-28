@@ -1,0 +1,80 @@
+/* Box Model Hack */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Responsive font */
+html {
+    font-size: 62.5%;
+  }
+
+
+/* Calculator Styles */
+
+/*
+TODO: fix calculator being stuck to screen in larger screen sizes.
+*/
+
+body {
+    padding: 0;
+    background: linear-gradient(to right, #18181B, #A1A1AA);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.calc {
+    background-color: black;
+    height: 80vh;
+    width: 500px;
+    display: flex;
+}
+
+.calculatorGrid {
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    /* important to have align-content and not align-items so we can align everything on the screen */
+    align-content: center;
+    width: 500px;
+    grid-template-columns: repeat(4, 90px);
+    grid-template-rows: minmax(90px, auto) repeat(4, 90px);
+    border-radius: 4em;
+}
+
+.calculatorGrid > button {
+    cursor: pointer;
+    height: 70px;
+    width: 70px;
+    font-size: 5rem;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+}
+
+.calculatorGrid > button:hover {
+    background-color: rgba(250, 249, 249, 0.85);
+}
+
+.output {
+    grid-column: 1/-1;
+    background-color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 2em;
+    /* allows wrapping and breaking of all words*/
+    word-wrap: break-word;
+    word-break: break all;
+}
+
+.output .previous-operand {
+    font-size: 2rem;
+}
+
+.output .current-operand {
+    font-size: 4rem;
+}
