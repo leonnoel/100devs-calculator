@@ -24,8 +24,14 @@ body {
 
 }
 
-#calculator {
-    margin-top: 20%;
+.calc {
+    background-color: black;
+    height: 80vh;
+    width: 500px;
+    display: flex;
+}
+
+.calculatorGrid {
     background-color: black;
     display: grid;
     justify-content: center;
@@ -37,16 +43,17 @@ body {
     border-radius: 4em;
 }
 
-#calculator > button {
+.calculatorGrid > button {
     cursor: pointer;
-    height: 4em;
-    width: 4em;
-    font-size: 2rem;
+    height: 70px;
+    width: 70px;
+    font-size: 5rem;
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
-#calculator > button:hover {
+.calculatorGrid > button:hover {
     background-color: rgba(250, 249, 249, 0.85);
 }
 
@@ -58,6 +65,7 @@ body {
     justify-content: space-around;
     flex-direction: column;
     padding: 10px;
+    margin-bottom: 2em;
     /* allows wrapping and breaking of all words*/
     word-wrap: break-word;
     word-break: break all;

@@ -77,6 +77,7 @@ const currentOperandTextElement = document.querySelector('[data-current-operand]
 //actually creates the calculator
 const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
 
+//loops through the number buttons listening for a click event. When clicked, the innerText of the button is appended and the display updated.
 numberButtons.forEach(button => {
     button.addEventListener('click', () =>  {
         calculator.appendNumber(button.innerText);
@@ -84,6 +85,7 @@ numberButtons.forEach(button => {
     })
 })
 
+//loops through each operation button and listens for a click event. Once clicked, the chooseOperation function runs and is passed the inner text of the operator button. The display is then updated.
 operationButtons.forEach(button => {
     button.addEventListener('click', () =>  {
         calculator.chooseOperation(button.innerText);
@@ -91,6 +93,7 @@ operationButtons.forEach(button => {
     })
 })
 
+//listens for a click on the = button, then computes and updates the display.
 equalsButton.addEventListener('click', button => {
     calculator.compute();
     calculator.updateDisplay();
