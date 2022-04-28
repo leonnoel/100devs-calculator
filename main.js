@@ -4,3 +4,6 @@
 // Store input. Previous total becomes Start of next operation
 // Prevent invalid input
 // Return a result
+
+// Listen for clicks anywhere inside the container
+const keys = document.querySelector('.calculator-buttons');
