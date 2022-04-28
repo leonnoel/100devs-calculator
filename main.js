@@ -21,5 +21,6 @@ const keys = document.querySelector('.calculator-buttons');
 })
 
 const calculator = {
-    
+    // Text that shows up when calculator is first opened
+    displayText: '0'
 }
