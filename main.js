@@ -1,23 +1,31 @@
-// Functionality of a calculator:
-// Accept user input. Numbers, operators, decimal numbers
-// Display input as it's being entered
-// Store input. Previous total becomes Start of next operation
-// Prevent invalid input
-// Return a result
+/* Functionality of a calculator:
+Accept user input:
+* Numbers
+* Operators,
+* Decimal numbers
+Display input as it's being entered
+Store input:
+* Previous total becomes Start of next operation
+Prevent invalid input
+Return the result
+*/
 
 // Listen for clicks anywhere inside the container
-const keys = document.querySelector('.calculator-buttons');
-    // Function called on click
-    keys.addEventListener('click', event => {
-
-        // Checks event object. If target property was clicked from button element
-        if (event.target.matches('button')) {
-
-            // Routes value from event object's target property to method
-            calculator.parseInput(event.target.value)
-        } else {
-            return;
-        }
+const numberPad = document.querySelector('.calculator-buttons');
+// Button is clicked and event function is called
+numberPad.addEventListener('click', event => {
+    // Checks event object
+    if (event.target.matches('button')) {
+    /*  console log(event) returns an object 
+        Object has 'target' property.
+        Target property contains 'button' value
+        The conditional only runs if the click contains 'button' value 
+            If true, open the object's target property and pass the button's value to calculator
+    */
+   calculator.parseInput(event.target.value);
+} else {
+    return;
+}
 })
 
 const calculator = {
