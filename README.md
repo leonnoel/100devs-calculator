@@ -4,7 +4,7 @@
 A simple calculator app that displays input, calculates the equation, and displays the result.
 
 ## Demo
-![calculator_demo](demo.gif)
+![calculator_demo](/100devs-calculator/demo.gif)
 
 ## Features
 * Calculator postitioned in the center. Responds well with mobile and web
