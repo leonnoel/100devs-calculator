@@ -37,8 +37,7 @@ const calculator = {
 
     /* Method 1
     parseInput function takes in event.target.value from event listener 
-        Receive good input by sanitizing 
-            Routes input through default or cases (switch decision tree)
+        Method will do one thing, route input through decision tree (switch statements)
     */
     // Start of parseInput (Method 1)
     parseInput(value) 
@@ -77,15 +76,33 @@ const calculator = {
 
     /* Method 2
     addText function takes in event.target.value from event listener
+        Method will do one thing, add value to the string
     */
     // Start of addText  (Method 2)
     addText(value) 
     {
-            // Checks displayText value and set displayText to blank
-            if (this.displayText === '0') 
-            {
-                this.displayText = ''
-            }
+        // addText will have two conditionals:
+        // If no conditions are met, concatenate value to displayText
+        // 1st condition - If value is 0, Zero disappears
+        if (this.displayText === '0') 
+        {   // Calculator-screen is blank and is ready to add input
+            this.displayText = ''
+        } 
+        // else If value is not 0, check if previousTotal is equal to null
+        else if (this.previousTotal !== null) {
+            // If previousTotal is not null, display previousTotal 
+            // (example: 3+3=6) -> previousTotal is six -> six is not null
+            this.displayText = this.previousTotal;
+            this.previousTotal = null;
+        }
+
+        // 2nd condition - If value is invalid, return
+        if (){
+
+        }
+
+        // No condition met - Concatenate value to displayText
+        this.displayText += value
     },
     // End of addText  (Method 2)
 }
