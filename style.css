@@ -1,0 +1,77 @@
+/* Font set to 12px. Allows REMs to be used easily */
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    background-color: #999;
+}
+
+/* Zero out margins, padding */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Position places element in the center 
+    Transform moves element more to the center
+*/
+.calculator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40rem;
+    background-color: black;
+    /* border: 2px solid red; */
+    padding: 7.5rem 4rem 4rem 4rem;
+    border-radius: 2.5rem;
+}
+
+.calculator-screen {
+    font-size: 5rem;
+    background-color: white;
+    color: black;
+    text-align: right;
+    width: 100%;
+    height: 8rem;
+    padding-right: 1rem;
+    border: none;
+}
+
+/* Container that holds buttons. Buttons nested inside parent */
+.calculator-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+}
+
+/* Change default styles to button  */
+button {
+    padding: 0.5rem;
+    margin: 0.7rem;
+    font-size: 4rem;
+    font-weight: 700;
+    border-radius: 3rem;
+    background-color: white;
+    color: black;
+    flex-basis: 18%;
+    flex-grow: 1;
+    border: none;
+}
+
+.all-clear {
+    font-size: 3rem;
+    background-color: red;
+    color: white;
+}
+
+button:hover {
+    background-color: #999;
+}
+
+
+.social-container {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+}
