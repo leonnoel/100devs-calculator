@@ -1,13 +1,13 @@
 /* Functionality of a calculator:
-Accept user input:
-* Numbers
-* Operators,
-* Decimal numbers
-Display input as it's being entered
-Store input:
-* Previous total becomes Start of next operation
-Prevent invalid input
-Return the result
+Accept user input:                                  yes
+* Numbers                                           yes
+* Operators,                                        yes
+* Decimal numbers                                   yes
+Display input as it's being entered                 yes
+Store input: 
+* Previous total becomes Start of next operation    yes
+Prevent invalid input                               no accepts two decimals 
+Return the result                                   yes
 */
 
 // Listen for clicks anywhere inside the container
@@ -81,7 +81,7 @@ const calculator = {
     addText function takes in event.target.value from event listener
         method checks value and displayText then concatenates value to displayText
     */
-    // Start of addText  (Method 2)
+    // Start of addText     (Method 2)
     addText(value) 
     {
         // addText will have two conditionals:
@@ -120,7 +120,7 @@ const calculator = {
         this.displayText += value
         this.outputText(this.displayText)
     },
-    // End of addText    (Method 2)
+    // End of addText       (Method 2)
 
     /* Method 3
     outPutText function takes in value from event.target.value
@@ -147,16 +147,16 @@ const calculator = {
     },
     // End of calculateAnswer   (Method 4)
     
-        /*
+    /*
     Method 5
-    clearAll function
+    clearAll function sets both calculator properties back to their starting state
     */
-    // Start of clearAll (Method 5)
+    // Start of clearAll        (Method 5)
     clearAll() {
         // Properties set to default 
         this.displayText = '0',
         this.previousTotal = null,
         this.outputText(this.displayText)
     }
-    // End of clearAll   (Method 5)
+    // End of clearAll          (Method 5)
 }
