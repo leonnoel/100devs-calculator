@@ -76,7 +76,7 @@ const calculator = {
 
     /* Method 2
     addText function takes in event.target.value from event listener
-        Method will do one thing, add value to the string
+        method checks value and displayText then concatenates value to displayText
     */
     // Start of addText  (Method 2)
     addText(value) 
@@ -96,11 +96,21 @@ const calculator = {
             this.previousTotal = null;
         }
 
-        // 2nd condition - If value is invalid, return
-        if (){
-
+        /* 2nd condition - If isNaN is true //-> do not allow the input 
+        1) If value is not a number         //-> do not allow the input
+        2) If displayText is not a number   //-> do not allow the input
+        Use Number constructor (or +) on value to convert data type from string to number
+        Operators data type cannot convert to number
+        isNaN returns boolean for 2nd conditional 
+        */
+        // if value & displayText are not a number
+        if (isNaN(Number(value)) && isNaN(Number(this.displayText)) {
+            // If last index is not a number//->  do not allow the input
+            if (isNaN(this.displayText.slice(-1))) {
+                // do not allow input
+                return;
+            }
         }
-
         // No condition met - Concatenate value to displayText
         this.displayText += value
     },
