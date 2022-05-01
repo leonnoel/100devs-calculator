@@ -4,7 +4,7 @@
 A simple calculator app that displays input, calculates the equation, and displays the result.
 
 ## Demo
-![calculator_demo](/100devs-calculator/demo.gif)
+![calculator_demo](demo.gif)
 
 ## Features
 * Calculator postitioned in the center. Responds well with mobile and web
@@ -12,7 +12,7 @@ A simple calculator app that displays input, calculates the equation, and displa
 
 
 ## Technologies
-![HTML](https://img.shields.io/badge/-HTML-important?logo=html)![CSS](https://img.shields.io/badge/-CSS-salmon?logo=css)![JavaScript](https://img.shields.io/badge/-JAVASCRIPT-333?logo=javascript)![Git](https://img.shields.io/badge/-GIT-orange?logo=git)!
+![HTML](https://img.shields.io/badge/-HTML-important?logo=html5)![CSS](https://img.shields.io/badge/-CSS-salmon?logo=css6)![JavaScript](https://img.shields.io/badge/-JAVASCRIPT-333?logo=javascript)![Git](https://img.shields.io/badge/-GIT-orange?logo=git)
 
 ## Questions 
 ### On scale (1-5) Did you complete the challenge? Why?
