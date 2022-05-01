@@ -39,7 +39,7 @@ const calculator = {
     parseInput function takes in event.target.value from event listener 
         Method will do one thing, route input through decision tree (switch statements)
     */
-    // Start of parseInput (Method 1)
+    // Start of parseInput  (Method 1)
     parseInput(value) 
     {
         // Have any of the operators, equals, decimals, or AC been clicked?
@@ -60,19 +60,20 @@ const calculator = {
             case '.':
                 // 1) If display begins with 0 and decimal is clicked, add string 
                 if (this.displayText == 0) {
-                    this.displayText = '0.'
+                    this.addText('0.');
                 // 2) else add value to string  
                 } else {
-                    this.displayText += value;
+                    this.addText(value);
                 }
                 break;
                 // Default case adds value to string
             default:
-                this.displayText += value;
+                this.addText(value);
+                break;
         }
 
     },
-    // End of parseInput  (Method 1)
+    // End of parseInput    (Method 1)
 
     /* Method 2
     addText function takes in event.target.value from event listener
@@ -104,15 +105,30 @@ const calculator = {
         isNaN returns boolean for 2nd conditional 
         */
         // if value & displayText are not a number
-        if (isNaN(Number(value)) && isNaN(Number(this.displayText)) {
+        if (isNaN(Number(value)) && isNaN(Number((this.displayText)))) {
             // If last index is not a number//->  do not allow the input
             if (isNaN(this.displayText.slice(-1))) {
                 // do not allow input
                 return;
             }
         }
-        // No condition met - Concatenate value to displayText
+        /* No condition - Two things will happen:
+        1 - Concatenate value to displayText
+        2 - Display displayText to .calculator-screen */
         this.displayText += value
+        this.outputText(this.displayText)
     },
-    // End of addText  (Method 2)
+    // End of addText    (Method 2)
+
+    /* Method 3
+    outPutText function takes in from
+    */
+    // Start of outPutText  (Method 3)
+    outputText(value) {
+        // input element used for .calculator-screen -> can't use innerText/HTML
+        // Change value in on .calculator-screen -> displays value in html
+        document.querySelector('.calculator-screen').value = value;
+    }
+    // End of outPutText    (Method 3)
+    
 }
