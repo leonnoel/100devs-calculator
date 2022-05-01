@@ -37,18 +37,12 @@ const calculator = {
 
     /* Method 1
     parseInput function takes in event.target.value from event listener 
-        Receive good input by sanitizing (if/else)
+        Receive good input by sanitizing 
             Routes input through default or cases (switch decision tree)
     */
-    // Start of parseInput
+    // Start of parseInput (Method 1)
     parseInput(value) 
     {
-        // Checks displayText value and set displayText to blank
-        if (this.displayText === '0') 
-        {
-            this.displayText = ''
-        }
-
         // Have any of the operators, equals, decimals, or AC been clicked?
         switch(value) 
         {
@@ -65,9 +59,33 @@ const calculator = {
                 2) The first character in the string is not 0 -> Zero disappears and updates to 1 (example: 1.5)
                 */
             case '.':
+                // 1) If display begins with 0 and decimal is clicked, add string 
+                if (this.displayText == 0) {
+                    this.displayText = '0.'
+                // 2) else add value to string  
+                } else {
+                    this.displayText += value;
+                }
                 break;
+                // Default case adds value to string
+            default:
+                this.displayText += value;
         }
 
-    }
-    // End of parseInput
+    },
+    // End of parseInput  (Method 1)
+
+    /* Method 2
+    addText function takes in event.target.value from event listener
+    */
+    // Start of addText  (Method 2)
+    addText(value) 
+    {
+            // Checks displayText value and set displayText to blank
+            if (this.displayText === '0') 
+            {
+                this.displayText = ''
+            }
+    },
+    // End of addText  (Method 2)
 }
