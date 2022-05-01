@@ -52,6 +52,7 @@ const calculator = {
 
             case 'AC':
                 // If all-clear is clicked, Clear the screen and store values
+                this.clearAll()
                 break;
 
                 /* If decimal is clicked, two situations: 
@@ -143,7 +144,19 @@ const calculator = {
         let result = Function("return " + equation)()
         // result displays on .calculator-screen
         this.outputText(result)
-    }
+    },
     // End of calculateAnswer   (Method 4)
     
+        /*
+    Method 5
+    clearAll function
+    */
+    // Start of clearAll (Method 5)
+    clearAll() {
+        // Properties set to default 
+        this.displayText = '0',
+        this.previousTotal = null,
+        this.outputText(this.displayText)
+    }
+    // End of clearAll   (Method 5)
 }
