@@ -46,7 +46,8 @@ const calculator = {
         switch(value) 
         {
             case '=':
-                // If equals sign is clicked, calculate the answer
+                // If equals sign is clicked, call calculateAnswer function
+                this.calculateAnswer(this.displayText)
                 break;
 
             case 'AC':
@@ -121,14 +122,28 @@ const calculator = {
     // End of addText    (Method 2)
 
     /* Method 3
-    outPutText function takes in from
+    outPutText function takes in value from event.target.value
+        then displays value on .calculator-screen in html
     */
     // Start of outPutText  (Method 3)
     outputText(value) {
         // input element used for .calculator-screen -> can't use innerText/HTML
         // Change value in on .calculator-screen -> displays value in html
         document.querySelector('.calculator-screen').value = value;
-    }
+    },
     // End of outPutText    (Method 3)
+
+    /*
+    Method 4
+    calculateAnswer function
+    */
+    // Start of calculateAnswer (Method 4)
+    calculateAnswer(equation) {
+        // result Function is similar to and safer than than eval function
+        let result = Function("return " + equation)()
+        // result displays on .calculator-screen
+        this.outputText(result)
+    }
+    // End of calculateAnswer   (Method 4)
     
 }
