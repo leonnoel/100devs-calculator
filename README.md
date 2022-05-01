@@ -1,10 +1,10 @@
-# [# 🔢 #100Devs Push Project001: Calculator](https://github.com/boobeh123/100devs-calculator/tree/answer)
+[# 🔢 #100Devs Push Project001: Calculator](https://github.com/boobeh123/100devs-calculator/tree/answer)
 
 ## Description
 A simple calculator app that displays input, calculates the equation, and displays the result.
 
 ## Demo
-Coming soon..
+![calculator_demo](demo.gif)
 
 ## Features
 * Calculator postitioned in the center. Responds well with mobile and web
