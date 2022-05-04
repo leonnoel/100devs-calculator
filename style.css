@@ -29,11 +29,11 @@ main {
     height: 80%;
 }
 .keySet {
-    height: 25%;
+    height: 20%;
     display: flex;
     justify-content: space-between;
 }
-.buttons {
+button {
     flex-basis: 25%;
 }
 /***************************************
@@ -55,23 +55,30 @@ main {
     padding: 0.3rem 0;
     margin-bottom: 0.3rem;
 }
-.buttons:not(:last-of-type) {
+button:not(:last-of-type) {
     margin-right: 1rem
 }
-.buttons {
+button {
     border-radius: 50%;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
 }
-.buttons:hover {
+button:hover {
     cursor: pointer;
 }
-.buttons:active {
+.clear {
+    background-color: red;
+}
+.equal {
+    width: 100%;
+    border-radius: 1rem;
+}
+button:active {
     cursor: pointer;
     background-color: rgb(48, 47, 47);
     color:rgb(255, 255, 255);
