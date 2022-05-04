@@ -35,7 +35,7 @@ html {
 	padding-right: 10px;
 }
 
-.calculator-buttons{
+.calculator-buttons {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -43,7 +43,7 @@ html {
 	padding-bottom: 5px;
 }
 
-button{
+button {
 	height: 60px;
 	background-color: white;
 	border: none;
@@ -56,7 +56,7 @@ button{
 	flex: 1 0 18%;
 }
 
-.all-clear{
+.all-clear {
 	background-color: red;
 	color: white;
 	font-size: 3rem;
@@ -66,7 +66,7 @@ button:hover {
 	background-color: gray;
 }
 
-.all-clear:hover{
+.all-clear:hover {
 	background-color: red;
 	color: black;
 }
