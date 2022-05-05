@@ -1,6 +1,6 @@
 <h1 align="center">🔢 #100Devs Push Project001: <a href="https://kolourr.github.io/100devs-calculator/">OOP Calculator Solution</a></h1>
 <div align="center">
-  <a href='https://raw.githubusercontent.com/kolourr/100devs-calculator/answer/images/js-calculator-example.png'>
+  <a href='https://kolourr.github.io/100devs-calculator/'>
 	  <img src="https://raw.githubusercontent.com/kolourr/100devs-calculator/answer/images/js-calculator-example.png" width="100%" />
   </a>
 </div>
