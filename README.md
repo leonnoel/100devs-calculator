@@ -2,7 +2,7 @@
 
 ### Goal: Build a Simple Calculator using JS OOP best practices
 
-### What it should look like:
+### What it should look like: TEST
 
 ![Calculator](calculator.jpg)
 
