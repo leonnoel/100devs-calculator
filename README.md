@@ -20,7 +20,7 @@
 
 Example:
 ```
-I completed the challenge: 5
-I feel good about my code: 4
+I completed the challenge: 0
+I feel good about my code: 0
 I'm not sure if my constructors are setup cleanly...
 ```
