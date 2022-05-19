@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+    /* outline: 1px solid red; */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%; /* equals 10px by default. Use % for accessibility */
+}
+
+h1 {
+    font-size: 5em;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.calculator {
+    max-width: 40em; /* 450 px */
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 3em;
+    background-color: black;
+}
+
+.calc-container {
+    padding: 8em 4em 3em;
+}
+
+.screen {
+    height: 8em;
+    width: 100%;
+    background-color: aliceblue;
+    margin-bottom: 3em;
+}
+
+.buttons {
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.button {
+    width: 6em;
+    height: 6em;
+    border-radius: 50%;
+    margin: 0.5em;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-label {
+    font-size: 5em;
+}
