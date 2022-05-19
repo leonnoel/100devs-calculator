@@ -31,6 +31,9 @@ h1 {
     width: 100%;
     background-color: aliceblue;
     margin-bottom: 3em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: end;
 }
 
 .buttons {
@@ -53,4 +56,10 @@ h1 {
 
 .btn-label {
     font-size: 5em;
+}
+
+.output {
+    margin: 0.1em;
+    font-size: 5em;
+    overflow:scroll;
 }
