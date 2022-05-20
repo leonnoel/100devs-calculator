@@ -34,13 +34,25 @@
   /******************************************
   /* LAYOUT
   /*******************************************/
-  p{
+  p#entry{
     position: absolute;
-    left: 40%;
-    top: 75px; 
-    font-size: 75px;
+    left: 39%;
+    top: 150px; 
+    font-size: 65px;
+  }
+
+  p#calculation{
+    position: absolute;
+    left: 39%;
+    top: 145px; 
+    font-size: 20px;
   }
   
+  h3{
+    left: 15%;
+    margin-bottom: 50%;
+    font-size: 40px;
+  }
   /******************************************
   /* ADDITIONAL STYLES
   /*******************************************/
