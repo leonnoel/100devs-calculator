@@ -1,0 +1,74 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+   }
+   
+   /* Clear fix hack */
+   .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+   }
+   
+   .clear {
+        clear: both;
+   }
+
+body {
+  align-items: center;
+  background: grey;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.calculator {
+  border-radius: 12px;
+  background: black;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5rem;
+  max-width: 18rem;
+  overflow: hidden;
+  border: 10px solid black;
+}
+
+.calculator__display {
+  background-color: #fff;
+  color: black;
+  font-size: 2rem;
+  padding: 0.7rem 0rem;
+  text-align: right;
+  border: 8px solid black;
+}
+
+.calculator__buttons {
+  background-color: black;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator__buttons button {
+  
+  aspect-ratio: 1;
+}
+
+.calculator__buttons > * {
+  border: 0;
+  background-color: white;
+  padding: 0.5em 1.25em;
+  position: relative;
+  text-align: center;
+  border-radius: 50%;
+}
+
+
+.operator {
+  background-color: orange;
+}
+
+
