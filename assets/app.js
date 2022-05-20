@@ -9,7 +9,6 @@ class Calculator {
         // check if the clicked character is a number
         if ('0123456789'.includes(char)) {
             this.operation ? this.y += char : this.x += char;
-            console.log(`x: ${this.x}; y: ${this.y}; operation: ${this.operation}`);
         } else {
             switch (char) {
                 case '.':
