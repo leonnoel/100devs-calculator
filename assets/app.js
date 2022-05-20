@@ -26,10 +26,10 @@ class Calculator {
                 case '=':
                     if (!this.x || !this.y || !this.operation) return '';
                     const operObj = {
-                        'x': this.x * this.y,
-                        '+': this.x + this.y,
-                        '-': this.x - this.y,
-                        '/': this.x / this.y,
+                        'x': Number(this.x) * Number(this.y),
+                        '+': Number(this.x) + Number(this.y),
+                        '-': Number(this.x) - Number(this.y),
+                        '/': Number(this.x) / Number(this.y),
                     }
                     return this.result = "= " + operObj[this.operation];
             }
