@@ -15,8 +15,7 @@ h1 {
 }
 
 .calculator {
-    max-width: 40em; /* 450 px */
-    text-align: center;
+    max-width: 42em; /* 450 px */
     margin: 0 auto;
     border-radius: 3em;
     background-color: black;
@@ -27,13 +26,13 @@ h1 {
 }
 
 .screen {
-    height: 8em;
-    width: 100%;
+    font-size: 2rem;
+    height: 5rem;
+    max-width: 100%;
     background-color: aliceblue;
-    margin-bottom: 3em;
-    display: flex;
-    align-items: flex-end;
-    justify-content: end;
+    margin-bottom: 2rem;
+    word-wrap: break-word;
+    overflow: scroll;
 }
 
 .buttons {
@@ -44,22 +43,19 @@ h1 {
 }
 
 .button {
-    width: 6em;
-    height: 6em;
+    font-size: 5em;
+    font-weight: 700;
+    width: 1.2em;
+    height: 1.2em;
     border-radius: 50%;
-    margin: 0.5em;
+    margin: 2%;
     background-color: aliceblue;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.btn-label {
-    font-size: 5em;
-}
-
-.output {
-    margin: 0.1em;
-    font-size: 5em;
-    overflow:scroll;
+.button:hover {
+    background-color: lightgray;
+    cursor: pointer;
 }
