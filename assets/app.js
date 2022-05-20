@@ -7,14 +7,14 @@ class Calculator {
     }
     parseChar(char) {
         // check if the clicked character is a number
-        if ('0123456789'.includes(char)) {
+        if ('0123456789'.includes(char) && !this.result) {
             this.operation ? this.y += char : this.x += char;
         } else {
             switch (char) {
                 case '.':
                     // check if dot is already present and the operation
-                    if (!this.operation && !this.x.includes(char)) this.x += char;
-                    if (this.operation && !this.y.includes(char)) this.y += char;
+                    if (!this.operation && !this.x.includes(char) && !this.result) this.x += char;
+                    if (this.operation && !this.y.includes(char) && !this.result) this.y += char;
                     break;
                 // set the operation
                 case 'x':
