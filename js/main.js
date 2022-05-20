@@ -1,94 +1,85 @@
-let text = document.querySelector('p')
-let operation = ''
-let addedOperator = false
-let newEq = false
+function NumberButton(value, classPara){
 
-let NumberButton = function(value){
+    const entryText = document.querySelector('p#entry')
+
+    this.button = document.querySelector(`h3`)
+    this.reset = function(){
+        document.querySelector('p#entry').innerText = ''
+        document.querySelector('p#calculation').innerText = '' 
+    }
+    this.button.addEventListener('click', this.reset)
+
     this.value = value
+    this.classPara = classPara
+    this.numButton = document.querySelector(`${this.classPara}`)
     this.addNum = function(){
-        if(newEq){
-            text.innerText = ''
-            newEq = false
-        }
-        text.innerText += value
+        entryText.innerText += value     
     }
+    this.numButton.addEventListener('click', this.addNum)
 }
 
-let OperatorButton = function(op){
+function OperatorButton(op, classPara){
+
+    const entryText = document.querySelector('p#entry')
+    const calcText = document.querySelector('p#calculation')
+
     this.operator = op
+    this.classPara = classPara
+    this.opButton = document.querySelector(`${this.classPara}`)
     this.addOp = function(){
-        if(!addedOperator){
-            addedOperator = true
-            text.innerText += op
-        }
-        
+        entryText.innerText += op
+        calcText.innerText = entryText.innerText
+        entryText.innerText = ''
     }
-
+    this.opButton.addEventListener('click', this.addOp)
 }
 
-let nine = new NumberButton('9')
-let eight = new NumberButton('8')
-let seven = new NumberButton('7')
-let six = new NumberButton('6')
-let five = new NumberButton('5')
-let four = new NumberButton('4')
-let three = new NumberButton('3')
-let two = new NumberButton('2')
-let one = new NumberButton('1')
-let zero = new NumberButton('0')
-let decimal = new NumberButton('.')
+function EqualsButton(classPara) {
 
-let multiply = new OperatorButton('*')
-let divide = new OperatorButton('/')
-let plus = new OperatorButton('+')
-let minus = new OperatorButton('-')
+    const entryText = document.querySelector('p#entry')
+    const calcText = document.querySelector('p#calculation')
 
-let equals = {
-
-    methods: {
+    this.classPara = classPara
+    this.eqButton = document.querySelector(`${this.classPara}`)
+    const methods = {
         '+': (a,b)=>a+b,
         '-': (a,b)=>a-b, 
         '/': (a,b)=>a/b,
         '*': (a,b)=>a*b 
-    },
-    calculate: function(){
-        let s = text.textContent
-        let aIndex = s.indexOf('+' || '-' || '/' || '*')
-        let bIndex = aIndex + 1
-        let a = parseInt(s.substring(0,aIndex))
-        let op = s[aIndex]
-        let b = parseInt(s.substring(bIndex, s.length))
-
-        if(isNaN(a) || isNaN(b) || !equals.methods[op]){
-            alert('Pick a number, click an operator, then press enter')
-        }
-        text.innerText = equals.methods[op](a,b)
-        addedOperator = false
-        newEq = true
-        alert('restart the page to reset')
     }
+    console.log(methods['*'](2,2))
+    this.calculate = function(){
+        const str = calcText.innerText 
+        const a = Number(str.substring(0,str.length - 1))
+        const op = str[str.length - 1]
+        const b = Number(entryText.innerText)
+        console.log(methods[op], op)
+        entryText.innerText = (methods[op](a,b)).toString()
+        calcText.innerText = ''
+    }
+    this.eqButton.addEventListener('click', this.calculate)
 }
 
-console.log(equals.methods['+'](22,5))
 
-document.querySelector('.nine').addEventListener('click', nine.addNum)
-document.querySelector('.eight').addEventListener('click', eight.addNum)
-document.querySelector('.seven').addEventListener('click', seven.addNum)
-document.querySelector('.six').addEventListener('click', six.addNum)
-document.querySelector('.five').addEventListener('click', five.addNum)
-document.querySelector('.four').addEventListener('click', four.addNum)
-document.querySelector('.three').addEventListener('click', three.addNum)
-document.querySelector('.two').addEventListener('click', two.addNum)
-document.querySelector('.one').addEventListener('click', one.addNum)
-document.querySelector('.zero').addEventListener('click', zero.addNum)
-document.querySelector('.decimal').addEventListener('click', decimal.addNum)
+const equals = new EqualsButton('.equals')
 
-document.querySelector('.multiply').addEventListener('click', multiply.addOp)
-document.querySelector('.divide').addEventListener('click', divide.addOp)
-document.querySelector('.plus').addEventListener('click', plus.addOp)
-document.querySelector('.minus').addEventListener('click', minus.addOp)
+const nine = new NumberButton('9','.nine')
+const  eight = new NumberButton('8', '.eight')
+const  seven = new NumberButton('7', '.seven')
+const  six = new NumberButton('6', '.six')
+const  five = new NumberButton('5', '.five')
+const  four = new NumberButton('4', '.four')
+const  three = new NumberButton('3', '.three')
+const  two = new NumberButton('2', '.two')
+const  one = new NumberButton('1', '.one')
+const  zero = new NumberButton('0', '.zero')
+const  decimal = new NumberButton('.', '.decimal')
 
-document.querySelector('.equals').addEventListener('click', equals.calculate)
+const  multiply = new OperatorButton('*', '.multiply')
+const  divide = new OperatorButton('/', '.divide')
+const  plus = new OperatorButton('+', '.plus')
+const  minus = new OperatorButton('-', '.minus')
+
 
 
 
