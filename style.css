@@ -1,0 +1,71 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 400px;
+  margin: 100px auto; 
+  overflow: hidden;
+  
+}
+
+*, *::before, *::after {
+  margin: 0; 
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.calculator {
+  background: #000;
+  padding: 40px;
+  padding-top: 75px;
+  border-radius: 20px;
+
+
+}
+
+.calculator-screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  text-align: right;
+  padding-right: 10px;
+  height: 80px;
+  background: #fff;
+}
+
+/* parent for buttons */
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+
+button {
+  height: 60px;
+  background: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 7px;
+  padding: 5px;
+  flex: 1 0 18%;
+  /* each element takes up to 18% */
+}
+
+button:hover {
+  background: #454546;
+}
+
+.clear {
+  font-size: 13px;
+  background: red;
+  color: #fff;
+}
+.clear:hover {
+  color: #000;
+}
