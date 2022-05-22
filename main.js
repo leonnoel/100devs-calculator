@@ -16,9 +16,7 @@ const calculator = {
   prevTotal: null,
 
   parseInput(value) {
-    if(this.displayText === '0') {
-      this.displayText = ''
-    }
+    
     switch(value) {
       case '=':
         this.calcAnswer(this.displayText)
@@ -56,7 +54,7 @@ const calculator = {
     this.outputText(this.displayText)
   },
   calcAnswer(equation) {
-    let result = Function("return " + equation)()
+    let result = Function("return " + equation)()  //eval alternative
     !(this.displayText == 0) && this.outputText (result)
     this.prevTotal = result
   },
