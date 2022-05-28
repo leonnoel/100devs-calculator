@@ -10,12 +10,83 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+
 img{
   display: block;
   margin: 0 auto;
 }
 
+.calculator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  padding-top: 75px;
+  background-color: black;
+  /* border: 2px solid red; */
+  border-radius: 25px;
+}
+
+.calculator-screen {
+  font-family: 'Fira Code', monospace;
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: white;
+  color: black;
+  text-align: right;
+  padding-right: 10px;
+  /* border: 2px solid green; */
+}
+
+.calculator-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 20px;
+  /* border: 2px solid yellow; */
+}
+
+button {
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin: 7px;
+  padding: 7px;
+  flex: 1 0 18%;
+}
+
+.all-clear {
+  background-color: red;
+  color: white;
+  font-size: 3rem;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+button:hover {
+  background-color: darkgrey;
+}
+
+.all-clear:hover {
+  background-color: darkred;
+}
