@@ -27,6 +27,7 @@ body {
 
      text-align: center;
      color: black;
+     font-size: 15px;
 }
 
 
@@ -46,7 +47,25 @@ body {
      background-color: white;
      margin-bottom: 40px;
      height: 100px;
+     display: flex;
+     flex-flow: wrap column;
+
+
 }
+.previous, .current{
+     width: 100%;
+     text-align: right;
+     padding: 5px;
+}
+.previous{
+     height: 30%;
+     font-size: 1.33rem;
+}
+.current{
+     height: 70%;
+     font-size: 2.75rem;
+}
+
 
 .button{
      display: flex;
@@ -58,7 +77,7 @@ body {
 }
 .button > div{
 
-     font-size: 50px;
+     font-size: 3.2rem;
      font-weight: bold;
      width: 20%;
      background-color: white;
