@@ -14,19 +14,21 @@ class Calculator {
         this.operator = undefined
     }
     deleteLastDigit() {
+        this.currentCalcVal = String(this.currentCalcVal).split('').filter((e,i,arr)=> i !== arr.length-1).join('')
     }
     appendDigits(number) {
         if (number === '.' && this.currentCalcVal.includes('.')) return
         this.currentCalcVal += '' + number
     }
     selectOperator(operator) {
-        if(operator !== undefined) this.evaluate()
+        if (operator !== undefined) this.evaluate()
         this.operator = operator
         this.previousCalcVal = this.currentCalcVal
         this.currentCalcVal = ''
     }
     evaluate() {
         let result
+        if(isNaN(this.previousCalcVal) || isNaN(this.currentCalcVal)) return
         switch (this.operator) {
             case '+': result = +this.previousCalcVal + +this.currentCalcVal
                 break;
@@ -44,7 +46,12 @@ class Calculator {
     }
     updateCalculatorDisplay() {
         this.currentDisplayVal.innerText = this.currentCalcVal
-        this.previousDisplayVal.innerText = this.previousCalcVal
+        if(this.operator !== undefined) {
+            this.previousDisplayVal.innerText = `${this.previousCalcVal} ${this.operator}`
+        } else {
+            this.previousDisplayVal.innerText = this.previousCalcVal
+        }
+        
     }
 }
 const calc = new Calculator(previousDisplayVal, currentDisplayVal)
@@ -66,6 +73,15 @@ buttons.forEach(btn => {
             calc.evaluate()
             calc.updateCalculatorDisplay()
 
+        } else if (btn.classList.contains('clear')) {
+
+            calc.clear()
+            calc.updateCalculatorDisplay()
+
+        } else if (btn.classList.contains('del')) {
+
+            calc.deleteLastDigit()
+            calc.updateCalculatorDisplay()
         }
     })
 })
