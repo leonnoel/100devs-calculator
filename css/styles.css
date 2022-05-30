@@ -26,14 +26,18 @@ body {
 }
 
 .displayOutput {
+    border: 2px solid rgb(226, 88, 88);
+    /* border-bottom: none; */
     grid-column: 1/-1;
-    background: rgba(53, 5, 17, 0.25);
+    background: rgba(0, 0, 0, 0.25);
 
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: flex-end;
     padding: 1rem;
+    word-wrap:break-word;
+    word-break:break-all;
 }
 
 .prevDisplay {
@@ -58,7 +62,7 @@ button {
 }
 
 .clear {
-    background: rgb(53, 5, 17);
+    background: rgb(226, 88, 88);
     color: white;
 }
 
@@ -70,5 +74,5 @@ button:active:not(.clear) {
 
 .clear:hover,
 .clear:active {
-    background: rgb(226, 88, 88);
+    background: rgb(214, 33, 33);
 }
