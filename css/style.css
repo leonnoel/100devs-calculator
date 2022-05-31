@@ -1,0 +1,52 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+#calculator{
+  background: #000;
+  border-radius: 25px;
+  margin: auto;
+  padding: 20px;
+  height: 50%;
+  width: 50%;
+}
+
+#screen{
+  background: #fff;
+  margin: 40px auto 20px auto;
+  padding: 10px;
+  height: 80px;
+  width: 90%;
+}
+
+.row{
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  height: 20%;
+  width: 90%;
+}
+
+button{
+  background: #fff;
+  border-radius: 50%;
+  color: #000;
+  height: 70px;
+  width: 70px;
+}
+
+*{
+  font: bold 50px sans-serif;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
