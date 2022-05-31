@@ -10,6 +10,10 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+body{
+  font: bold 10px sans-serif;
+}
+
 #calculator{
   background: #000;
   border-radius: 25px;
@@ -39,12 +43,9 @@ button{
   background: #fff;
   border-radius: 50%;
   color: #000;
-  height: 70px;
-  width: 70px;
-}
-
-*{
-  font: bold 50px sans-serif;
+  font: bold 5em sans-serif;
+  height: 40%;
+  width: 20%;
 }
 
 /******************************************
