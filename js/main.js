@@ -1,10 +1,14 @@
-document.querySelector('button').addEventListener('click',calculate)
+let entered = []
 
-function calculate(){
-    const buttonPress = document.querySelector('button').value
-    console.log(buttonPress)
-    document.querySelector('#screen').innerText = buttonPress
-}
+document.querySelector('.buttons').addEventListener("click", (b) => {
+    let buttonPress = b.target
+    console.log(buttonPress.innerText)
+    if(buttonPress.tagName === "BUTTON" && buttonPress.id !== "equal" && entered.length < 12){
+        entered.push(buttonPress.innerText)
+        console.log(entered)
+        document.querySelector("#screen").innerText += buttonPress.innerText
+    }
+})
 
 // class Calculator{
 //     constructor() {

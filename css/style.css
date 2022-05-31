@@ -20,11 +20,13 @@ body{
   margin: auto;
   padding: 20px;
   height: 50%;
-  width: 50%;
+  width: 500px;
 }
 
 #screen{
   background: #fff;
+  font-size: 5em;
+  text-align: right;
   margin: 40px auto 20px auto;
   padding: 10px;
   height: 80px;
@@ -44,8 +46,8 @@ button{
   border-radius: 50%;
   color: #000;
   font: bold 5em sans-serif;
-  height: 40%;
-  width: 20%;
+  height: 1.5em;
+  width: 1.5em;
 }
 
 /******************************************
