@@ -16,11 +16,11 @@ class Calculator{
     constructor() {
         this.buttons = document.querySelector(".buttons")
         this.screen = document.querySelector("#screen")
+        //initialise array to hold characters to show on screen
+        this.entered = []
     }
 
     enterValues(){
-        //initialise array to hold characters to show on screen
-        let entered = []
         //add event listener for button clicks, variable b for specific button clicked
         this.buttons.addEventListener("click", (b) => {
             let buttonPress = b.target
@@ -29,7 +29,14 @@ class Calculator{
                 //add characters to entered array; show characters on calculator screen
                 entered.push(buttonPress.innerText)
                 this.screen.innerText += buttonPress.innerText
+            }else if(buttonPress.id === "equal"){
+                //calculate on press equal
+                this.calculate()
             }
         })
+    }
+
+    calculate(){
+        //calculate values
     }
 }
