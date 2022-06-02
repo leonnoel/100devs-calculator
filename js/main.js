@@ -38,5 +38,25 @@ class Calculator{
 
     calculate(){
         //calculate values
+        
+        //create array of each operator's index
+        let indices = this.entered.map((x,i) => (/[^0-9.]/.test(x)) ? i : "").filter(x => typeof x === "number")
+
+        //check outputs
+        console.log(indices)
+        entered.slice(0,indices[1])
+
+        //initialise array to hold each operation
+        let operations = []
+        //push each operation to array
+        for(let i=0;i<indices.length;i++){
+            if(operations.length === 0){
+                operations.push(this.entered.slice(i,indices[i+1]))
+            }else{
+                operations.push(this.entered.slice(indices[i],indices[i+1]))
+            }
+        }
+
+        console.log(operations)
     }
 }
