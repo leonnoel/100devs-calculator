@@ -38,7 +38,9 @@ class Calculator{
 
     calculate(){
         //calculate values
-        
+        let result = eval(this.entered.join(""))
+        this.screen.innerText = result
+        /*
         //create array of each operator's index
         let indices = this.entered.map((x,i) => (/[^0-9.]/.test(x)) ? i : "").filter(x => typeof x === "number")
 
@@ -58,5 +60,6 @@ class Calculator{
         }
 
         console.log(operations)
+        */
     }
 }
