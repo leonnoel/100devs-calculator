@@ -36,6 +36,12 @@ class Calculator {
     this.heldValue += value;
     this.display.changeValue(this.heldValue);
   }
+  clear() {
+    this.heldValue = "0";
+    this.operation = "";
+    this.storedValue = "0";
+    this.display.changeValue(this.heldValue);
+  }
 }
 
 class Display {
@@ -60,7 +66,7 @@ class Buttons {
           this.calc.setOperation(value);
         } else if (value.match(/=/g)) {
           this.calc.operate();
-        }
+        } else this.calc.clear();
       });
     });
   }

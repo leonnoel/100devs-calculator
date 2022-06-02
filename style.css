@@ -54,3 +54,11 @@ button {
 button:hover {
   background-color: lightgray;
 }
+
+.clear {
+  background-color: red;
+  color: white;
+  width: auto;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
