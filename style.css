@@ -1,0 +1,64 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  background-color: black;
+  padding: 2em 1.25em;
+  border-radius: 25px;
+}
+
+input:disabled {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 0 0.25em;
+  border-radius: 5px;
+  text-align: right;
+  width: 100%;
+  font-size: 3rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 1em;
+  gap: 0.75em;
+}
+
+button {
+  border: none;
+  background-color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+.clear {
+  background-color: red;
+  color: white;
+  width: auto;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
