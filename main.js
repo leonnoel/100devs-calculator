@@ -20,19 +20,25 @@ class Calculator {
       case "/":
         this.heldValue = `${+this.storedValue / +this.heldValue}`;
         break;
+      default:
+        this.clear();
+        break;
     }
     this.operation = "";
     this.storedValue = "0";
     this.display.changeValue(this.heldValue);
   }
   setOperation(value) {
-    this.operation = value;
-    this.storedValue = this.heldValue;
-    this.heldValue = "0";
-    this.display.changeValue(this.heldValue);
+    if (this.heldValue !== "Infinity") {
+      this.operation = value;
+      this.storedValue = this.heldValue;
+      this.heldValue = "0";
+      this.display.changeValue(this.heldValue);
+    }
   }
   setValue(value) {
-    if (this.heldValue === "0") this.heldValue = "";
+    if (this.heldValue === "0" || this.heldValue === "Infinity")
+      this.heldValue = "";
     this.heldValue += value;
     this.display.changeValue(this.heldValue);
   }
