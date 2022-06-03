@@ -38,7 +38,8 @@ class Calculator{
 
     calculate(){
         //calculate values
-        let result = eval(this.entered.join(""))
+        let parsed = entered.map(x => (x === "x") ? "*" : x)
+        let result = eval(this.parsed.join(""))
         this.screen.innerText = result
         /*
         //create array of each operator's index
