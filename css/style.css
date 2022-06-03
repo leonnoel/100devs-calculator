@@ -1,0 +1,43 @@
+body {
+    background: indigo;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    height: 550px;
+    border: 25px solid black;
+    border-radius: 25px;
+    background: black;
+    font-family: sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    margin: auto;
+}
+
+#display {
+    align-self: center;
+    background: white;
+    width: 90%;
+    border: 10px solid black;
+    justify-content: right;
+
+}
+
+main section {
+    display: flex;
+    justify-content: center;
+    height: 25%;
+    padding: 10px 10px;
+}
+
+.row div {
+    background: white;
+    width: 25%;
+    border-radius: 50px 50px;
+    border: 10px solid black;
+    padding: 20px;
+    text-align: center;
+}
