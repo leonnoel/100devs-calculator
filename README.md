@@ -1,3 +1,6 @@
+This is Alex Burton's submission of the 100 devs calculator assignment
+
+--
 # 🔢 #100Devs Push Project001: Calculator
 
 ### Goal: Build a Simple Calculator using JS OOP best practices
