@@ -85,10 +85,10 @@ const calculator = {
     calcAnswer(equation) {
         let result = Function("return " + equation)()
         if (this.displayText !== 0) {
-            if (result === Infinity) {
-                this.outputText("oh no :0")
-            }else {
+            if (isFinite(result)) {
                 this.outputText(result)    
+            }else {
+                this.outputText("oh no :0")
             }
             
         }
