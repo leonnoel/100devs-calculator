@@ -1,0 +1,47 @@
+img {
+    border: 1px solid black;
+    margin-left: 500px;
+    display: block;
+    position: absolute;
+}
+
+main, div {
+    border: 1px solid black;
+    position: absolute;
+    
+}
+
+main {
+    position: absolute;
+    margin-left: 500px;
+    width: 400px;
+    
+}
+
+ol {
+    display: flex;
+    width: 300px;
+    justify-content: space-around;
+    margin-left: 55px;
+}
+
+.rowOne{
+    margin-top: 245px;
+}
+
+
+li {
+    border: 3px solid purple;
+    border-radius: 300px;
+    width: 50px;
+    height: 50px;
+    
+    
+}
+
+div{
+    width: 250px;
+    height: 50px;
+    margin-left: 625px;
+    margin-top: 150px;
+}
