@@ -30,6 +30,9 @@
     height: 90px;
     background: white;
     margin: 25px auto;
+    font: 700 35px "Arial";
+    text-align: right;
+    padding: 10px;
 }
 .button{
     width: 60px;
@@ -39,6 +42,11 @@
     font: 700 48px "Arial";
     margin-top: 9px;
     text-align: center;
+}
+.button:hover{
+    background: grey;
+    border: black;
+    cursor:pointer;
 }
 
 .control-box{
