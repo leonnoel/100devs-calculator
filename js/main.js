@@ -1,5 +1,4 @@
-//Setup the calculator
-const calc = (function (){
+const calc = (function (){//Setup the calculator
     let calculation = {
         _firstNumber : "0",
         _secondNumber : "",
@@ -54,7 +53,6 @@ const calc = (function (){
                 _updateScreen(calculation._firstNumber);
                 calculation._state = "Num or Operator"; //reset state
             }
-            
         },
 
         setOp: function(operator){ //to select the operator to run
