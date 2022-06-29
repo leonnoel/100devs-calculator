@@ -1,0 +1,96 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     display: flex;
+     justify-content: center;
+     margin-top: 10%;
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculator{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background: black;
+     height: 500px;
+     width: 450px;
+     border-radius: 3%;
+}
+
+div{
+     display: flex;
+     flex-direction: column;
+     height: 461px;
+     width: 400px;
+}
+
+h1{
+     width: 95%;
+     height: 75px;
+     padding: 18.75px;
+     margin: 5% 2.5%;
+     font-family: "DotGothic16";
+}
+
+button{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-radius: 50%;
+     height: 70.25px;
+     width: 70.25px;
+     margin: 4px 0 0 7px;
+     color: black;
+     text-align: center;
+     font-size: 3rem;
+     font-weight: 700;
+     font-family: "Roboto";
+     border: none;
+}
+
+.button{
+     display: flex;
+     flex-wrap: wrap;
+     height: 317px;
+     width: 317px;
+     margin: 0 41.5px;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.clear{
+     background: white;
+}
+
+#equals{
+     font-size: 2rem;
+}
