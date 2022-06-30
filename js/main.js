@@ -57,12 +57,13 @@ const calc = (function (){//Setup the calculator
 
         setOp: function(operator){ //to select the operator to run
             console.log(operator);
-            if(calculation._state !== "Num or Equal"){//can't put two operators
-                calculation._operation = operator;
-                calculation._state = "Num or Equal";
-                calculation._secondNumber = "";
-                _updateScreen(calculation._operation);   
-            } 
+            if(calculation._state == "Num or Equal"){//can't put two operators, assume that the equal is called again
+                calc.equal();
+            }
+            calculation._operation = operator;
+            calculation._state = "Num or Equal";
+            calculation._secondNumber = "";
+            _updateScreen(calculation._operation);                  
         },
 
         equal: function(){ //to calculate the computation
@@ -90,6 +91,28 @@ const calc = (function (){//Setup the calculator
         }
     }
 })()
+
+document.addEventListener('keydown',function(e){
+    if (!e) e = window.event;
+    var keyCode = e.key;
+    console.log(keyCode[keyCode.length-1], keyCode, e.key)
+    if (keyCode == 'Enter' || keyCode == "="){
+      // Enter pressed
+	  calc.equal()
+    } else if (keyCode == '/' || keyCode == "Slash"){
+        // Divide pressed
+        calc.setOp("/")
+      } else if (keyCode == '*' || keyCode == "x"){
+        // Multiply pressed
+        calc.setOp("x")
+      } else if (keyCode == '-' || keyCode == "Minus"){
+        // Subtract pressed
+        calc.setOp("-")
+      } else if (keyCode == '+'){
+        // Add pressed
+        calc.setOp("+")
+      } else if (["0","1","2","3","4","5","6","7","8","9","."].indexOf(e.key)>-1)calc.putNum(e.key)
+})
 
 //Set each button's function:
 document.querySelectorAll(".number").forEach(numBtn=>{
