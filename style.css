@@ -1,0 +1,32 @@
+.calculatorBody{
+    background-color: black;
+    padding: 30px;
+    max-width: 600px;
+    border-radius: 5%;
+}
+
+.answerDisplay{
+    padding: 10px;
+    height: 80px;
+    width: 75%;
+    margin: 0 auto;
+    background-color:  white;
+}
+
+#display{
+    font-size: 50px;
+}
+
+.buttons{
+    padding: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+
+.col  > *{
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 100%;
+}
