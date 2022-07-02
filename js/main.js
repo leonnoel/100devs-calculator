@@ -86,6 +86,7 @@ const calc = (function (){//Setup the calculator
                 _updateScreen(calculation._result);
                 calculation._firstNumber = calculation._result;
                 calculation._state = "Result";
+                document.querySelector(".calc-frame").style.background = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`
                 //document.querySelector(".control-box").style['flex-flow'] = 'column wrap'
             }  else _updateScreen("Error..Start Again") //something's missing
         }
