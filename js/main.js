@@ -87,6 +87,10 @@ const calc = (function (){//Setup the calculator
                 calculation._firstNumber = calculation._result;
                 calculation._state = "Result";
                 document.querySelector(".calc-frame").style.background = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`
+
+                let btns = document.querySelectorAll(".button")
+                btns.forEach(btn=> btn.style.background = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)},${Math.floor(Math.random()*256)})`)
+                
                 //document.querySelector(".control-box").style['flex-flow'] = 'column wrap'
             }  else _updateScreen("Error..Start Again") //something's missing
         }
