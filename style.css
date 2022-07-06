@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+
+        body{
+            padding: 0;
+            margin: 0;
+            font-family: Orbitron, sans-serif;
+            background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(121,9,37,1) 35%, rgba(0,212,255,1) 100%);
+        }
+
+       .calculator-grid{
+            display: grid;
+            justify-content: center; 
+            align-content: center;
+            min-height: 100vh;
+            grid-template-columns: repeat(4, 80px);
+            grid-template-rows: minmax(120px, auto) repeat(5, 80px);
+       }
+
+       .calculator-grid  > button {
+           cursor: pointer;
+           font-size: 1.5rem;
+           outline: none;
+           background-color: rgba(255, 255, 255, .50);
+           border: 1px solid; 
+       }
+
+       .calculator-grid > button:hover {
+          background-color: rgba(255, 255, 255, .75);
+       }
+       
+       .span-two {
+           grid-column: span 2;
+       }
+
+       .output {
+           grid-column: 1 / -1;
+           background-color: rgba(0, 0, 0, .75);
+           display: flex;
+           align-items: flex-end;
+           justify-content: space-around;
+           flex-direction: column;
+           padding: 10px;
+           word-wrap: break-word;
+           word-break: break-all;
+           color: lawngreen;
+       }
+
+       .output .previous-operand{
+           font-size: 1.5 rem;
+       }
+
+       .output .current-operand{
+           font-size: 2 rem;
+       }
