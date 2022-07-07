@@ -40,7 +40,7 @@ body {
   font-weight: 700;
   color: #173d60;
   text-align: right;
-  padding: 1.5rem;
+  padding: 0 1.5rem;
 }
 
 .buttons {
@@ -66,7 +66,12 @@ button {
   color: #ebf5ff;
 }
 
-.operator {
+.operator,
+.calculate {
   background-color: #a2d0fa;
   color: #153b5c;
+}
+
+.decimal:disabled {
+  background-color: rgb(202, 51, 51);
 }
