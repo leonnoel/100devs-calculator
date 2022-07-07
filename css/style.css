@@ -1,0 +1,184 @@
+/* Credit to https://codepen.io/zellwk/pen/pLgmGL
+// for CSS file
+
+// Some personal resets*/
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+/* Responsive Images */
+
+embed,
+iframe,
+img,
+object,
+video {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+p,
+pre,
+blockquote,
+figure,
+hr {
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+/* Removes all decimals and discs from lists */
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* 
+ * Completely resets form items
+ * ----------------------------
+ * Super hard reset that removes all borders
+ * and radiuses of all form items (including
+ * checkboxes and radios)
+ */
+
+input,
+textarea,
+button {
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  outline: none;
+  appearance: none;
+  text-align: left;
+}
+
+input:hover,
+input:active,
+input:focus,
+textarea:hover,
+textarea:active,
+textarea:focus,
+button:hover,
+button:active,
+button:focus {
+  outline: none;
+}
+
+:root {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-size: 175%;
+  font-weight: 300;
+  line-height: 1.3;
+}
+h1,h6 {
+  text-align: center;
+}
+body {
+  align-items: center;
+  background-image: linear-gradient(45deg, rgb(83, 50, 114), #acb6e5);
+  height: 100vh;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  max-width: 20em;
+}
+
+.container > p {
+  text-align: center;
+}
+
+.calculator {
+  border-radius: 12px;
+  box-shadow: 0 0 40px 40px rgba(0, 0, 0, 0.15);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  max-width: 15em;
+  overflow: hidden;
+  border: 2px solid grey;
+}
+
+.calculator_display {
+  background-color: #222222;
+  color: #fff;
+  font-size: 1.714285714em;
+  padding: 0.5em 0.75em;
+  text-align: right;
+}
+
+.calculator_keys {
+  background-color: #999;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.calculator_keys > * {
+  background-color: rgb(83, 50, 114);
+  border-radius: 15%;
+  padding: 0.5em ;
+  position: relative;
+  text-align: center;
+}
+
+.calculator_keys > *:active::before,
+.calculator_keys > .is-depressed::before {
+  background-color: rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5) inset;
+  content: "";
+  left: 0;
+  opacity: 0.3;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.key--operator {
+  background-color: rgb(112, 102, 134);
+}
+
+.key--equal {
+  /* background-image: radial-gradient(  rgb(83, 50, 114),rgb(112, 102, 134)); */
+  background:rgb(184, 179, 194);
+  grid-column: -2;
+  /* color: #999; */
+  border-radius: 10%;
+  grid-row: 2 / span 4;
+}
