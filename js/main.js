@@ -31,6 +31,10 @@ class Calculator {
     return this._operator;
   }
 
+  set operator(value) {
+    this._operator = value;
+  }
+
   updateDisplay() {
     display.value = `${this.a}${this.operator}${this.b}`;
   }
@@ -51,7 +55,12 @@ class Calculator {
   }
 
   updateOperator(value) {
-    console.log(value);
+    if (!this.operator) {
+      this.operator = value;
+      this.toggleDecimal();
+    }
+
+    this.updateDisplay();
   }
 
   toggleDecimal() {
