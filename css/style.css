@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: #4d8ac8;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.calculator {
+  margin-top: 15rem;
+  background-color: #ebf5ff;
+  width: 50rem;
+  padding: 5rem 2rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.display {
+  background-color: #cce5ff;
+  width: 100%;
+  height: 10rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #173d60;
+  text-align: right;
+  padding: 0 1.5rem;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+button {
+  border: none;
+  flex: 1;
+  padding: 3rem;
+  font-family: inherit;
+  font-size: 4rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.number {
+  background-color: #4d8ac8;
+  color: #ebf5ff;
+}
+
+.operator,
+.calculate {
+  background-color: #a2d0fa;
+  color: #153b5c;
+}
+
+.decimal:disabled {
+  background-color: rgb(202, 51, 51);
+}
