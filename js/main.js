@@ -40,16 +40,13 @@ class Calculator {
   }
 
   updateNumber(value) {
-    console.log('the new value is', value);
     if (!this.operator) {
       this.a = this.a + value;
-      console.log('A:', this.a);
     } else {
       this.b = this.b + value;
-      console.log('B:', this.a);
     }
     if (value === '.') {
-      this.toggleDecimal();
+      this.disableDecimal();
     }
     this.updateDisplay();
   }
@@ -57,19 +54,34 @@ class Calculator {
   updateOperator(value) {
     if (!this.operator) {
       this.operator = value;
-      this.toggleDecimal();
-    }
+      if (decimal.hasAttribute('disabled')) {
+        this.enableDecimal();
+      }
 
-    this.updateDisplay();
+      this.updateDisplay();
+    }
   }
 
-  toggleDecimal() {
-    console.log('inside toggledecimal method');
-    decimal.toggleAttribute('disabled');
+  disableDecimal() {
+    decimal.setAttribute('disabled', '');
+  }
+
+  enableDecimal() {
+    decimal.removeAttribute('disabled');
   }
 
   calculate() {
-    // x operator y
+    if (this.operator !== '' && this.b !== '') {
+      this.a = '' + this.operators[this.operator](+this.a, +this.b);
+      this.operator = '';
+      this.b = '';
+      if (this.a.includes('.')) {
+        this.disableDecimal();
+      } else {
+        this.enableDecimal();
+      }
+      this.updateDisplay();
+    }
   }
 }
 
@@ -84,6 +96,8 @@ btns.forEach((btn) =>
       calculator.updateNumber(e.target.value);
     } else if (e.target.className === 'operator') {
       calculator.updateOperator(e.target.value);
+    } else if (e.target.className === 'calculate') {
+      calculator.calculate();
     }
   })
 );
