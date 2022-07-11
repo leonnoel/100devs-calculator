@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+#body {
+  background: black;
+  border-radius: 5%;
+}
+
+.grid-container {
+  width: 20%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 2px;
+  padding: 10px;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+#answer {
+  display: flex;
+  justify-content: right;
+  font-size: 32px;
+  background: white;
+  color: black;
+  margin: 15px;
+  font-weight: 700;
+  padding: 2px;
+}
