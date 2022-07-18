@@ -1,6 +1,7 @@
 html{
     font-size: 62.5%;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif
 }
 
 *, *::before, *::after {
@@ -17,9 +18,8 @@ html{
     width: 400px;
     padding: 40px;
     padding-top: 75px;
-    background-color: black;
+    background-color: rgb(74, 31, 99);
     border-radius: 25px;
-    border: 2px solid red;
 }
 
 .calculator-screen {
@@ -28,11 +28,9 @@ html{
     height: 80px;
     border: none;
     background-color: white;
-    color: black;
+    color: rgb(118, 87, 185);
     text-align: right;
     padding: 0 10px;
-    border: 2px solid green;
-
 }
 
 .calculator-buttons {
@@ -41,7 +39,7 @@ html{
     flex-wrap: wrap;
     padding: 15px;
     padding-bottom: 5px;
-    border: 2px solid yellow
+    border:2px solid rgb(118, 87, 185)
 }
 
 button {
@@ -54,5 +52,14 @@ button {
     color: black;
     margin: 7px;
     padding: 5px;
-    flex: 1 0 18%;
+    flex: 1 0 18%; /* the flex basis affects the elements here so each will take up to 18% depending on your grow and shrink values*/
+}
+.all-clear {
+    background-color: rgb(246, 175, 93);
+    color: white;
+    font-size: 3rem;
+}
+
+button:hover {
+    background-color: rgb(118, 87, 185);
 }
