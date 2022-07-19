@@ -3,15 +3,86 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+  background-color: #282828;
+  color: #33ff33;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html {
+  font-size: 62.5%;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+header {
+  height: 20%;
+  text-align: center;
+  margin: auto 0;
+  font-size: 2rem;
+  padding: 5% 0 0 0;
+}
 
+#wrapper {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+}
+
+#image-container {
+  background-color: transparent;
+}
+
+footer {
+  height: 10%;
+  position: fixed;
+  bottom: 0;
+}
+
+#display {
+  font-size: 3rem;
+}
+
+display-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  top: -200px;
+  left: -200px;
+}
+
+#keypad-wrapper {
+  background-color: transparent;
+  position: relative;
+  top: -47vh;
+  left: 12.5vh;
+  display: flex;
+  flex-flow: column wrap;
+  width: 300px;
+  z-index: 0;
+  height: 300px;
+}
+
+.button {
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  border: 1px solid #282828;
+}
+
+.button:active {
+  transform: scale(95%);
+}
 
 /******************************************
 /* ADDITIONAL STYLES
