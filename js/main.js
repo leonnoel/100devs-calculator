@@ -1,6 +1,6 @@
 function Calculator(n) {
   let self = this;
-
+  this.calcName.innerHTML = n;
   (this.name = n),
     (this.total = 0),
     (this.equals = function () {}),
@@ -25,3 +25,8 @@ function Calculator(n) {
 }
 
 let calcy = Calculator("Calcy 486-DX");
+
+calcy.one.addEventListener("click", self.pushOne),
+  (this.pushOne = function () {
+    console.log("One Pushed");
+  });

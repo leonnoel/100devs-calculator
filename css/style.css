@@ -52,13 +52,13 @@ footer {
   font-size: 3rem;
 }
 
-display-wrapper {
+#display-wrapper {
   display: flex;
   justify-content: center;
   position: absolute;
   align-items: center;
-  top: -200px;
-  left: -200px;
+  left: 58%;
+  top: 31.5%;
 }
 
 #keypad-wrapper {
@@ -67,7 +67,7 @@ display-wrapper {
   top: -47vh;
   left: 12.5vh;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: row wrap;
   width: 300px;
   z-index: 0;
   height: 300px;
@@ -76,8 +76,9 @@ display-wrapper {
 .button {
   width: 75px;
   height: 75px;
+  padding: 20px;
   text-align: center;
-  border: 1px solid #282828;
+  font-size: 2rem;
 }
 
 .button:active {
