@@ -6,7 +6,7 @@
 * {
   box-sizing: border-box;
   font-family: "Orbitron", sans-serif;
-  background-color: #282828;
+
   color: #33ff33;
 }
 
@@ -20,6 +20,14 @@ html {
   font-size: 62.5%;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto;
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
@@ -28,7 +36,8 @@ header {
   height: 20%;
   text-align: center;
   margin: auto 0;
-  font-size: 2rem;
+  font-size: 4rem;
+  background-color: #282828;
   padding: 5% 0 0 0;
 }
 
@@ -36,20 +45,35 @@ header {
   height: 60%;
   display: flex;
   justify-content: center;
+  background-color: #282828;
+  z-index: -100;
 }
 
-#image-container {
-  background-color: transparent;
+#image-container::after {
+  content: "";
+  background: url(image.jpg);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 footer {
   height: 10%;
   position: fixed;
   bottom: 0;
+  background-color: #282828;
+}
+
+img {
 }
 
 #display {
   font-size: 3rem;
+  text-align: right;
 }
 
 #display-wrapper {
@@ -57,32 +81,40 @@ footer {
   justify-content: center;
   position: absolute;
   align-items: center;
-  left: 58%;
-  top: 31.5%;
+  width: 17.5%;
+  height: 9%;
+  text-align: right;
+  left: 41.25%;
+  top: 30%;
+  background-color: #282828;
+}
+
+section {
 }
 
 #keypad-wrapper {
   background-color: transparent;
   position: relative;
-  top: -47vh;
-  left: 12.5vh;
+  top: -40.7vh;
+  left: 11vh;
   display: flex;
   flex-flow: row wrap;
-  width: 300px;
-  z-index: 0;
-  height: 300px;
+  width: 288px;
+  z-index: 1;
+  height: 284px;
 }
 
 .button {
-  width: 75px;
-  height: 75px;
+  width: 72px;
+  background-image: url(/img/button-bg.png);
+  height: 71px;
   padding: 20px;
   text-align: center;
   font-size: 2rem;
 }
 
 .button:active {
-  transform: scale(95%);
+  transform: scale(90%);
 }
 
 /******************************************

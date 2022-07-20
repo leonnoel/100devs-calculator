@@ -1,3 +1,13 @@
+let buttons = document.querySelectorAll(".button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", playClick);
+});
+
+function playClick() {
+  new Audio("629020__kolombooo__button-click.ogg").play();
+}
+
 function Calculator(n) {
   let self = this;
   this.calcName.innerHTML = n;
