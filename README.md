@@ -24,3 +24,10 @@ I completed the challenge: 5
 I feel good about my code: 4
 I'm not sure if my constructors are setup cleanly...
 ```
+
+My answers: 
+
+I completed the challenge: 5
+I feel good about my code: 5
+I'm not sure if my code was too complicated.
+My CalculatorDisplay class has a lot of functions. Maybe it could have been named differently to be more clear.
