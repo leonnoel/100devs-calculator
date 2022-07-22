@@ -51,7 +51,6 @@ header {
 
 #image-container::after {
   content: "";
-  background: url(image.jpg);
   opacity: 0.5;
   top: 0;
   left: 0;
