@@ -119,3 +119,84 @@ section {
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+@media screen and (max-width: 1920px) {
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 27%;
+  }
+
+  #keypad-wrapper {
+    top: -33.7vh;
+    left: 10vh;
+    width: 288px;
+    height: 284px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 30%;
+  }
+
+  #keypad-wrapper {
+    top: -40.7vh;
+    left: 10vh;
+    width: 288px;
+    height: 284px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 33%;
+  }
+
+  #keypad-wrapper {
+    top: -45.7vh;
+    left: 13vh;
+    width: 288px;
+    height: 284px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  header {
+    height: 10%;
+    font-size: 2.5rem;
+    font-size: 2;
+  }
+
+  img {
+    max-width: 40rem;
+  }
+
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 33%;
+  }
+
+  #keypad-wrapper {
+    top: -45.7vh;
+    left: 13vh;
+    width: 216px;
+    height: 213px;
+  }
+
+  .button {
+    max-width: 54px;
+    max-height: 53.25px;
+    background-image: url(/img/button-bg.png);
+    background-size: 53.25px;
+  }
+}
