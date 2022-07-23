@@ -125,12 +125,12 @@ section {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 27%;
+    top: 31%;
   }
 
   #keypad-wrapper {
-    top: -33.7vh;
-    left: 10vh;
+    top: -39vh;
+    left: 11vh;
     width: 288px;
     height: 284px;
   }
@@ -152,7 +152,7 @@ section {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (orientation: landscape) and (max-width: 1280px) {
   #display-wrapper {
     width: 16.5%;
     height: 6.3%;
@@ -168,11 +168,10 @@ section {
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1024px) {
   header {
     height: 10%;
     font-size: 2.5rem;
-    font-size: 2;
   }
 
   img {
@@ -183,11 +182,48 @@ section {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 33%;
+    top: 34%;
   }
 
   #keypad-wrapper {
-    top: -45.7vh;
+    top: -47.7vh;
+    left: 15vh;
+    width: 216px;
+    height: 213px;
+  }
+
+  .button {
+    max-width: 54px;
+    max-height: 53.25px;
+    background-image: url(/img/button-bg.png);
+    background-size: 53.25px;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-width: 912px) {
+  header {
+    height: 20%;
+    font-size: 2.5rem;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  section.bottom {
+    height: 40%;
+    width: 100%;
+  }
+
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 31%;
+  }
+
+  #keypad-wrapper {
+    top: -42.7vh;
     left: 13vh;
     width: 216px;
     height: 213px;
@@ -198,5 +234,10 @@ section {
     max-height: 53.25px;
     background-image: url(/img/button-bg.png);
     background-size: 53.25px;
+  }
+  .bottom {
+    height: 40%;
+    width: 100%;
+    background-color: #282828;
   }
 }
