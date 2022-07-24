@@ -61,7 +61,7 @@ header {
 }
 
 footer {
-  height: 2.5%;
+  height: 3%;
   width: 100%;
   font-size: 2rem;
   position: fixed;
@@ -89,7 +89,7 @@ img {
   height: 9%;
   text-align: right;
   left: 41.25%;
-  top: 30%;
+  top: 42%;
   background-color: #282828;
 }
 
@@ -99,8 +99,8 @@ section {
 #keypad-wrapper {
   background-color: transparent;
   position: relative;
-  top: -40.7vh;
-  left: 11vh;
+  top: -33.5vh;
+  left: 10vh;
   display: flex;
   flex-flow: row wrap;
   width: 288px;
@@ -130,7 +130,7 @@ section {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 31%;
+    top: 42.5%;
   }
 
   img {
@@ -140,24 +140,33 @@ section {
   }
 
   #keypad-wrapper {
-    top: -39vh;
-    left: 11vh;
+    top: -34vh;
+    left: 10vh;
     width: 288px;
     height: 284px;
   }
 }
 
 @media screen and (max-width: 1600px) {
+  header {
+    height: 12.5%;
+  }
   #display-wrapper {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 30%;
+    top: 35%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%; /* you can use % */
+    height: auto;
   }
 
   #keypad-wrapper {
-    top: -40.7vh;
-    left: 10vh;
+    top: -40.5vh;
+    left: 11vh;
     width: 288px;
     height: 284px;
   }
@@ -168,7 +177,7 @@ section {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 33%;
+    top: 37%;
   }
 
   #keypad-wrapper {
@@ -181,7 +190,7 @@ section {
 
 @media screen and (max-width: 1024px) {
   header {
-    height: 10%;
+    height: 8%;
     font-size: 2.5rem;
   }
 
@@ -193,11 +202,11 @@ section {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 34%;
+    top: 32.5%;
   }
 
   #keypad-wrapper {
-    top: -47.7vh;
+    top: -46.7vh;
     left: 15vh;
     width: 216px;
     height: 213px;
@@ -209,34 +218,33 @@ section {
     background-image: url(/img/button-bg.png);
     background-size: 53.25px;
   }
+  footer {
+    height: 5%;
+    text-align: center;
+  }
 }
 
-@media screen and (orientation: portrait) and (max-width: 912px) {
+@media screen and (max-width: 913px) {
   header {
-    height: 20%;
-    font-size: 2.5rem;
+    height: 8%;
+    font-size: 5rem;
   }
 
   img {
     object-fit: cover;
-    width: 100%; /* you can use % */
-    height: auto;
-  }
-  section.bottom {
-    height: 40%;
-    width: 100%;
+    max-width: auto;
   }
 
   #display-wrapper {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
-    top: 31%;
+    top: 32.5%;
   }
 
   #keypad-wrapper {
-    top: -42.7vh;
-    left: 13vh;
+    top: -46.7vh;
+    left: 15vh;
     width: 216px;
     height: 213px;
   }
@@ -247,9 +255,8 @@ section {
     background-image: url(/img/button-bg.png);
     background-size: 53.25px;
   }
-  .bottom {
-    height: 40%;
-    width: 100%;
-    background-color: #282828;
+  footer {
+    height: 5%;
+    text-align: center;
   }
 }

@@ -40,6 +40,7 @@ function Calculator(n) {
     (this.period = document.querySelector("#period")),
     (this.equals = document.querySelector("#equals")),
     (this.display = document.querySelector("#display")),
+    (this.Subdisplay = document.querySelector("#Subdisplay")),
     (this.calcName = document.querySelector("#calcName")),
     // Button Press and Display Functions
     (this.updateDisplay = function () {
