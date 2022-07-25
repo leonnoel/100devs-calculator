@@ -49,17 +49,6 @@ header {
   z-index: -100;
 }
 
-#image-container::after {
-  content: "";
-  opacity: 0.5;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;
-}
-
 footer {
   height: 3%;
   width: 100%;
@@ -71,13 +60,23 @@ footer {
 
 img {
   object-fit: cover;
-  width: 100%; /* you can use % */
+  width: 100%;
   height: auto;
 }
 
 #display {
   font-size: 3rem;
   text-align: right;
+}
+
+#subDisplay {
+  font-size: 2rem;
+  position: absolute;
+  text-align: right;
+  left: 40%;
+  top: 35%;
+  color: #33ff33b3;
+  z-index: 10;
 }
 
 #display-wrapper {
@@ -87,9 +86,8 @@ img {
   align-items: center;
   width: 17.5%;
   height: 9%;
-  text-align: right;
-  left: 41.25%;
-  top: 42%;
+  left: 31.25%;
+  top: 20%;
   background-color: #282828;
 }
 
@@ -130,6 +128,12 @@ section {
     width: 16.5%;
     height: 6.3%;
     left: 41.75%;
+    top: 43.5%;
+  }
+
+  #subDisplay {
+    font-size: 2rem;
+    left: 43%;
     top: 42.5%;
   }
 
@@ -158,6 +162,12 @@ section {
     top: 35%;
   }
 
+  #subDisplay {
+    font-size: 2rem;
+    left: 41%;
+    top: 33.5%;
+  }
+
   img {
     object-fit: cover;
     width: 100%; /* you can use % */
@@ -178,6 +188,12 @@ section {
     height: 6.3%;
     left: 41.75%;
     top: 37%;
+  }
+
+  #subDisplay {
+    font-size: 2rem;
+    left: 38.5%;
+    top: 35.5%;
   }
 
   #keypad-wrapper {
@@ -205,6 +221,12 @@ section {
     top: 32.5%;
   }
 
+  #subDisplay {
+    font-size: 1.5rem;
+    left: 38%;
+    top: 30%;
+  }
+
   #keypad-wrapper {
     top: -46.7vh;
     left: 15vh;
@@ -224,15 +246,14 @@ section {
   }
 }
 
-@media screen and (max-width: 913px) {
+@media screen and (max-width: 912px) {
   header {
     height: 8%;
-    font-size: 5rem;
+    font-size: 2.5rem;
   }
 
   img {
-    object-fit: cover;
-    max-width: auto;
+    max-width: 40rem;
   }
 
   #display-wrapper {
@@ -240,6 +261,12 @@ section {
     height: 6.3%;
     left: 41.75%;
     top: 32.5%;
+  }
+
+  #subDisplay {
+    font-size: 1.5rem;
+    left: 38%;
+    top: 30%;
   }
 
   #keypad-wrapper {

@@ -233,7 +233,7 @@ function Calculator(n) {
 
         // calculate and send it to the display
         console.log(self.output);
-        self.total = eval(self.output);
+        self.total = Function("return " + self.output)();
         self.display.innerHTML = self.total;
 
         // reset and wait to see if the user wants to continue.
