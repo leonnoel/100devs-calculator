@@ -146,6 +146,7 @@ function Calculator(n) {
           self.total = "";
           self.memory.push("/");
           self.display.innerHTML = "/";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         } else {
           // If the calc isn't complete, push the last number and then the operator to the
           self.memory.push(self.operator);
@@ -153,6 +154,7 @@ function Calculator(n) {
           self.numLastPush = false;
           self.memory.push("/");
           self.display.innerHTML = "/";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         }
       } else {
         // Do nothing so no double operators
@@ -169,6 +171,7 @@ function Calculator(n) {
           self.total = "";
           self.memory.push("*");
           self.display.innerHTML = "*";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         } else {
           // If the calc isn't complete, push the last number and then the operator to the
           self.memory.push(self.operator);
@@ -176,6 +179,7 @@ function Calculator(n) {
           self.numLastPush = false;
           self.memory.push("*");
           self.display.innerHTML = "*";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         }
       } else {
         // Do nothing so no double operators
@@ -192,6 +196,7 @@ function Calculator(n) {
           self.total = "";
           self.memory.push("+");
           self.display.innerHTML = "+";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         } else {
           // If the calc isn't complete, push the last number and then the operator to the
           self.memory.push(self.operator);
@@ -199,6 +204,7 @@ function Calculator(n) {
           self.numLastPush = false;
           self.memory.push("+");
           self.display.innerHTML = "+";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         }
       } else {
         // Do nothing so no double operators
@@ -215,6 +221,7 @@ function Calculator(n) {
           self.total = "";
           self.memory.push("-");
           self.display.innerHTML = "-";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         } else {
           // If the calc isn't complete, push the last number and then the operator to the
           self.memory.push(self.operator);
@@ -222,6 +229,7 @@ function Calculator(n) {
           self.numLastPush = false;
           self.memory.push("-");
           self.display.innerHTML = "-";
+          self.subDisplay.innerHTML = self.memory.join(" ");
         }
       } else {
         // Do nothing so no double operators
