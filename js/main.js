@@ -40,11 +40,16 @@ function Calculator(n) {
     (this.period = document.querySelector("#period")),
     (this.equals = document.querySelector("#equals")),
     (this.display = document.querySelector("#display")),
-    (this.Subdisplay = document.querySelector("#Subdisplay")),
+    (this.subDisplay = document.querySelector("#subDisplay")),
     (this.calcName = document.querySelector("#calcName")),
     // Button Press and Display Functions
     (this.updateDisplay = function () {
       self.display.innerHTML = self.operator;
+      if (numLastPush === true) {
+        self.subDisplay.innerHTML = self.operator;
+      } else {
+        self.subDisplay.innerHTML = self.memory.join(" ") + self.operator;
+      }
     }),
     (this.pressOne = function () {
       if (calcComplete) {
@@ -235,7 +240,7 @@ function Calculator(n) {
         console.log(self.output);
         self.total = Function("return " + self.output)();
         self.display.innerHTML = self.total;
-
+        self.subDisplay.innerHTML = self.total;
         // reset and wait to see if the user wants to continue.
         self.resetCalc();
         self.calcComplete = true;
