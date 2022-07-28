@@ -1,0 +1,289 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  font-family: "Orbitron", sans-serif;
+
+  color: #33ff33;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  height: 150vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 0 auto;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+header {
+  height: 20%;
+  text-align: center;
+  margin: auto 0;
+  font-size: 4rem;
+  background-color: #282828;
+  padding: 5% 0 0 0;
+}
+
+#wrapper {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  background-color: #282828;
+  z-index: -100;
+}
+
+footer {
+  height: 3%;
+  width: 100%;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 0;
+  background-color: #282828;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+#display {
+  font-size: 3rem;
+  text-align: right;
+}
+
+#subDisplay {
+  font-size: 2rem;
+  position: absolute;
+  text-align: right;
+  left: 40%;
+  top: 35%;
+  color: #33ff33b3;
+  z-index: 10;
+}
+
+#display-wrapper {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  width: 17.5%;
+  height: 9%;
+  left: 31.25%;
+  top: 20%;
+  background-color: #282828;
+}
+
+section {
+}
+
+#keypad-wrapper {
+  background-color: transparent;
+  position: relative;
+  top: -33.5vh;
+  left: 10vh;
+  display: flex;
+  flex-flow: row wrap;
+  width: 288px;
+  z-index: 1;
+  height: 284px;
+}
+
+.button {
+  width: 72px;
+  background-image: url(/img/button-bg.png);
+  height: 71px;
+  padding: 20px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.button:active {
+  transform: scale(90%);
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media screen and (max-width: 1920px) {
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 43.5%;
+  }
+
+  #subDisplay {
+    font-size: 2rem;
+    left: 43%;
+    top: 42.5%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%; /* you can use % */
+    height: auto;
+  }
+
+  #keypad-wrapper {
+    top: -34vh;
+    left: 10vh;
+    width: 288px;
+    height: 284px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  header {
+    height: 12.5%;
+  }
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 35%;
+  }
+
+  #subDisplay {
+    font-size: 2rem;
+    left: 41%;
+    top: 33.5%;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%; /* you can use % */
+    height: auto;
+  }
+
+  #keypad-wrapper {
+    top: -40.5vh;
+    left: 11vh;
+    width: 288px;
+    height: 284px;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 1280px) {
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 37%;
+  }
+
+  #subDisplay {
+    font-size: 2rem;
+    left: 38.5%;
+    top: 35.5%;
+  }
+
+  #keypad-wrapper {
+    top: -45.7vh;
+    left: 13vh;
+    width: 288px;
+    height: 284px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  header {
+    height: 8%;
+    font-size: 2.5rem;
+  }
+
+  img {
+    max-width: 40rem;
+  }
+
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 32.5%;
+  }
+
+  #subDisplay {
+    font-size: 1.5rem;
+    left: 38%;
+    top: 30%;
+  }
+
+  #keypad-wrapper {
+    top: -46.7vh;
+    left: 15vh;
+    width: 216px;
+    height: 213px;
+  }
+
+  .button {
+    max-width: 54px;
+    max-height: 53.25px;
+    background-image: url(/img/button-bg.png);
+    background-size: 53.25px;
+  }
+  footer {
+    height: 5%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  header {
+    height: 8%;
+    font-size: 2.5rem;
+  }
+
+  img {
+    max-width: 40rem;
+  }
+
+  #display-wrapper {
+    width: 16.5%;
+    height: 6.3%;
+    left: 41.75%;
+    top: 32.5%;
+  }
+
+  #subDisplay {
+    font-size: 1.5rem;
+    left: 38%;
+    top: 30%;
+  }
+
+  #keypad-wrapper {
+    top: -46.7vh;
+    left: 15vh;
+    width: 216px;
+    height: 213px;
+  }
+
+  .button {
+    max-width: 54px;
+    max-height: 53.25px;
+    background-image: url(/img/button-bg.png);
+    background-size: 53.25px;
+  }
+  footer {
+    height: 5%;
+    text-align: center;
+  }
+}
