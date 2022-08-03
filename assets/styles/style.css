@@ -1,0 +1,83 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    color: #000000;
+}
+
+.calc-body {
+    margin: 8rem auto;
+    width: 32rem;
+    background-color: #000000;
+    border-radius: 2.4rem;
+    padding: 3.2rem 2.4rem;
+}
+
+.calc-display {
+    padding: .8rem .8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    align-items: flex-end;
+    margin: 2.4rem 0;
+    height: 8rem;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.calc-display .previous-result {
+    font-size: 1.5rem;
+}
+
+.calc-display .current-operation {
+    font-size: 2.5rem;
+}
+
+.calc-buttons-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    row-gap: .8rem;
+    padding: 0 2.4rem;
+
+}
+
+.calc-button {
+    background-color: #ffffff;
+    display: block;
+    font-size: 3.2rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .1s ease-in-out;
+}
+
+.calc-button:hover {
+    background-color: rgb(82, 79, 79);
+    color: #ffffff;
+}
+
+#all-clear,
+#delete {
+    border-radius: 1.6rem;
+}
+
+#all-clear {
+    grid-column: 1 / 3;
+    width: 88%;
+}
+
+#delete {
+    grid-column: 3 / 5;
+    width: 88%;
+}
