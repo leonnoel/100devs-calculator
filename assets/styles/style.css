@@ -16,17 +16,25 @@ body {
 }
 
 .calc-display {
+    padding: .8rem .8rem;
     display: flex;
-    margin: 3.2rem 0;
-}
-
-.calc-display input {
-    width: 100%;
-    line-height: 5;
-}
-
-.calc-display input:disabled {
+    flex-direction: column;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    align-items: flex-end;
+    margin: 2.4rem 0;
+    height: 8rem;
     background-color: #ffffff;
+    overflow: hidden;
+}
+
+.calc-display .previous-result {
+    font-size: 1.5rem;
+}
+
+.calc-display .current-operation {
+    font-size: 2.5rem;
 }
 
 .calc-buttons-wrap {
@@ -57,4 +65,19 @@ body {
 .calc-button:hover {
     background-color: rgb(82, 79, 79);
     color: #ffffff;
+}
+
+#all-clear,
+#delete {
+    border-radius: 1.6rem;
+}
+
+#all-clear {
+    grid-column: 1 / 3;
+    width: 88%;
+}
+
+#delete {
+    grid-column: 3 / 5;
+    width: 88%;
 }
