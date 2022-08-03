@@ -17,25 +17,28 @@
 
     <div class="calc-body">
         <div class="calc-display">
-            <input type="text" value="" disabled>
+            <div data-previous-result class="previous-result"></div>
+            <div data-current-operation class="current-operation"></div>
         </div>
         <div class="calc-buttons-wrap">
-            <div class="calc-button">7</div>
-            <div class="calc-button">8</div>
-            <div class="calc-button">9</div>
-            <div class="calc-button">&divide;</div>
-            <div class="calc-button">4</div>
-            <div class="calc-button">5</div>
-            <div class="calc-button">6</div>
-            <div class="calc-button">&#215;</div>
-            <div class="calc-button">1</div>
-            <div class="calc-button">2</div>
-            <div class="calc-button">3</div>
-            <div class="calc-button">+</div>
-            <div class="calc-button">0</div>
-            <div class="calc-button">&sdot;</div>
-            <div class="calc-button">=</div>
-            <div class="calc-button">&minus;</div>
+            <div data-clear class="calc-button" id="all-clear">AC</div>
+            <div data-delete class="calc-button" id="delete">DEL</div>
+            <div data-number class="calc-button" id="seven">7</div>
+            <div data-number class="calc-button" id="eight">8</div>
+            <div data-number class="calc-button" id="nine">9</div>
+            <div data-operation class="calc-button" id="divide">&divide;</div>
+            <div data-number class="calc-button" id="four">4</div>
+            <div data-number class="calc-button" id="five">5</div>
+            <div data-number class="calc-button" id="six">6</div>
+            <div data-operation class="calc-button" id="multiply">&#215;</div>
+            <div data-number class="calc-button" id="one">1</div>
+            <div data-number class="calc-button" id="two">2</div>
+            <div data-number class="calc-button" id="three">3</div>
+            <div data-operation class="calc-button" id="add">+</div>
+            <div data-number class="calc-button" id="zero">0</div>
+            <div data-number class="calc-button" id="decimal">&sdot;</div>
+            <div data-number class="calc-button" id="equals">=</div>
+            <div data-operation class="calc-button" id="minus">&minus;</div>
         </div>
     </div>
 </body>
