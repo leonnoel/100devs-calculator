@@ -1,0 +1,63 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+.container {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  margin: auto;
+  border: 10px solid black;
+  width: 400px;
+  height: 500px;
+  background-color: black;
+}
+
+.inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border: 5px solid black;
+  background-color: lightgray;
+  height: 75px;
+  font-size: 75px;
+}
+
+.btns {
+  display: flex;
+  flex: 1;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: teal;
+}
+
+.zero {
+  flex: 2;  
+}
+
+.top {
+  background-color: rgb(65,148,249);
+}
+
+.op,
+.equals {
+  background-color: darkorange;
+}
