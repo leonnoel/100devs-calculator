@@ -1,47 +1,104 @@
-img {
-    border: 1px solid black;
-    margin-left: 500px;
-    display: block;
-    position: absolute;
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
-main, div {
-    border: 1px solid black;
+*, *::before, *::after {
+    
+    box-sizing: inherit;
+}
+
+body{
+    background:rgb(252, 253, 255);
+}
+.calculatorBody {
+    border: 2px solid black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;   
     position: absolute;
+    width: 25%;
+    height: 80%;
+    border-radius: 5%;
+    background: rgb(44, 44, 44);
+    box-shadow:0px 0px 43px 17px rgb(192, 185, 185);
+}
+
+/* ======= Answer Bar=============*/
+
+.answerBar {
+    position: relative;
+    width: 80%;
+    height: 15%;
+    border: 2px solid black;
+    margin: auto;
+    padding:0;
+    top: 10%;
+    border-radius:1%;
+    background-color: white;
+    color: black;
     
 }
+
+.answerBar > span {
+    text-align: right;
+    height: 100%;
+    line-height:75.76px;
+    font-size: 3rem;
+    width: 100%;
+    display:inline-block;
+    margin: 0;
+}
+
+/* ========== Buttons ============== */
 
 main {
-    position: absolute;
-    margin-left: 500px;
-    width: 400px;
+    /* border: 1px solid black; */
+    height:60%;
+    width: 80%;
+    margin: 20% auto 0 auto;
     
 }
 
-ol {
-    display: flex;
-    width: 300px;
-    justify-content: space-around;
-    margin-left: 55px;
-}
 
-.rowOne{
-    margin-top: 245px;
+ol {
+    display:flex;
+    list-style-type: none;
+    justify-content: space-between;
+    padding: 0;
+    background:transparent;
 }
 
 
 li {
-    border: 3px solid purple;
-    border-radius: 300px;
-    width: 50px;
-    height: 50px;
-    
-    
+    background-color: white;
+    flex-basis: 23%;
+    line-height: 70px;
+    text-align: center;
+    font-size: 3rem;   
+    border: 1px solid black;
+    border-radius: 25%;
+    justify-content: space-between;   
+}
+li:hover, .clear:hover{
+    background-color:#323330;
+    color: white;
+    transition: 0.5s ease-in-out;
+}
+.clear {
+    color: red;
 }
 
-div{
-    width: 250px;
-    height: 50px;
-    margin-left: 625px;
-    margin-top: 150px;
+div {
+    text-align: center;
+    line-height: 60px;
+    font-size: 3rem;
+    height: 17%;
+    border-radius: 15px;
+    background: rgb(43, 136, 250);
+    color:white;
+
 }
