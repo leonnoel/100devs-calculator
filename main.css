@@ -1,0 +1,142 @@
+button, #display {
+    background-color: #fff;
+    border: #03677b 3px solid;
+    box-shadow: #012931 2px 2px 2px 2px;
+    color: #012931;
+    font-family: 'Poiret One', cursive;
+    font-size: 2rem;
+    margin: 0.25vh 0.25vw;
+    padding: 2%;
+}
+
+button {
+    border-radius: 50%;
+    height: 6vh;
+    width: 3.5vw;
+}
+
+button:hover {
+    box-shadow: none;
+}
+
+.calculator {
+    margin: 2vh auto;
+    width: 20%
+}
+
+.calculator-body {
+    background-color: #06badd;
+    border-radius: 10%;
+    padding: 1vh 1vw;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-gap: 3px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin: 0 1vw 1.5vh 1vw;
+}
+
+#clear-display {
+    background-color: #F607CF;
+    color: #fff;
+    grid-column: 3;
+    grid-row: 4;
+}
+
+#display {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    text-align: right;
+    margin: 3vh;
+    padding: 1vh 0.5vw;
+}
+
+#equal {
+    border-radius: 20px;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row: 5;
+    margin-left: 2vw;
+    width: 100%;
+}
+
+/**********************
+BUTTON POSITIONING
+**********************/
+
+#seven {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#eight {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#nine {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#divide {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+#four {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#five {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#six {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#multiply {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#one {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#two {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#three {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#add {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+#zero {
+    grid-column: 1;
+    grid-row: 4;
+}
+
+#decimal-point {
+    grid-column: 2;
+    grid-row: 4;
+}
+
+#subtract {
+    grid-column: 4;
+    grid-row: 4;
+}
