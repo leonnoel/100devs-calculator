@@ -1,0 +1,91 @@
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: normal;
+}
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 4em;
+  margin: 10px;
+}
+.calculator-grid{
+  margin-top: 30px;
+  justify-content: center;
+  background-color: black;
+  border-radius: 25px;
+  width: 400px;
+  padding: 40px;
+  padding-top: 75px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+
+button {
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+  margin: 7px;
+  padding: 5px;
+  flex: 1 0 18%;
+}
+
+
+
+.calculator-grid button:hover {
+  background-color: rgba(255, 255, 255, .90)
+}
+
+/* design of screen; break-word and break-all allow numbers to wrap if too long */
+.output {
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: black;
+  font-size: 2.5rem;
+}
+
+
+

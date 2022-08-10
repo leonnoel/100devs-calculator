@@ -1,81 +1,90 @@
-/* Box Model Hack */
-* {
+html {
+  font-size: 62.5%;
+  font-weight: normal;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Clear fix hack */
-.clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
-}
-
-.clear {
-	clear: both;
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
 }
 
 /******************************************
 /* BASE STYLES
 /*******************************************/
-
 body {
   background-image: linear-gradient(to bottom right, skyblue, rgb(56, 239, 56));
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-
-
-/******************************************
-/* LAYOUT
-/*******************************************/
-h1{
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  display: flex;
   font-size: 4em;
+  margin: 10px;
+
 }
 
-.calculator {
-  padding: 2%;
-  border-radius: 1em;
-  height: 380px;
-  width: 400px;
-  margin: auto;
-  background-color: #191b28;
+.calculator-grid {
+/*position: absolute; *//* means item is ignoring things around it and stays in same place when page is resized */
+/*  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+*/
+
+  width: 400px;  
+  /* can use flex-box justify content to center as well or auto margins*/
+  margin-top: 15px;
+  padding: 40px;
+  padding-top: 75px;
+  background-color: black;
+  border-radius: 25px;
 }
-.screenArea {
-  font-family: sans-serif;
-  background-color: #dcdbe1;
-  border: solid black 0.5px;
+
+.output{
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: white;
   color: black;
-  border-radius: 5px;
-  width: 90%;
-  margin-left: 5%;
-  height: 100%;
+  text-align: right;
+  padding-right: 10px;
 }
 
-tr{
-  width: 80%;
+.calculator-buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px;
+  padding-bottom: 5px;
 }
 
+.calculator-grid > button {
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin: 7px;
+  padding: 5px;
+  flex: 1 0 18%;
+}
 
-input[type=button] {
-  font-family: sans-serif;
-  background-color: #64278f;
+.all-clear {
+  background-color: red;
   color: white;
-  width: 75%;
-  border-radius: 50%;
-  height: 80%;
-  outline: none;
-  margin: 5% 5%;
-} 
+  font-size: 3rem;
+}
 
+button:hover{
+  background-color: gray;
 
-
-
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+}
