@@ -83,9 +83,9 @@ const equalsButton = document.querySelector('.equals')
         this.operator = null
         this.showValue()
     }
-    equalsFunction() {
+    equalsFunction() { /* Not currently useful but there was a reason I originally had this separate from calculating */
         this.calculate()
-        alert(`Value: ${this.value}\nNumber: ${this.num}\nOperator: ${this.operator}`)
+        alert(`Value: ${this.value}\nNumber: ${this.num}\nOperator: ${this.operator}`) 
     }     
  }
 
@@ -114,30 +114,25 @@ equalsButton.addEventListener('click', () => {
 
 // Keyboard support
 
-/*
 document.addEventListener('keydown', (event) => {
     const keyName = event.key;
     if (!isNaN(keyName) || keyName == '.') {
-        displayNumber(keyName);
-    }
-    if (keyName == 'Backspace') {
-        operateInPlace('backspace');       
+        calc.addNumber(keyName);
     }
     if (keyName == 'Enter') {
-        equalsFunction();
+        calc.equalsFunction();
     }
     if (keyName == '+' || keyName == '-') {
-        dealWithOperator(keyName);
+        calc.addOperator(keyName);
     }
     if (keyName == '/') {
-        dealWithOperator('divide');
+        calc.addOperator('divide');
     }
     if (keyName == '*') {
-        dealWithOperator('x');
+        calc.addOperator('x');
     }
-    if (keyName == ',') {            
-        displayNumber('.');
+    if (keyName == ',') {            // Support for locales that use commas for decimals
+        calc.addNumber('.');
     }
 });
 
-*/
