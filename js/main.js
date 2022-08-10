@@ -54,12 +54,12 @@ const equalsButton = document.querySelector('.equals')
     }
 
     addOperator(op) {
-        if (!this.op || !this.num) {
-            this.getValueFromDisplay()
+        this.getValueFromDisplay()
+        if (!this.num) {
             this.operator = op
         }
         else {
-            this.getValueFromDisplay()
+            alert("The operator else is actually being run")
             this.calculate()
             this.operator = op
         }
