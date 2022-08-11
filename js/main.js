@@ -12,6 +12,7 @@ const equalsButton = document.querySelector('.equals')
             this.value = number
             this.num = null
             this.operator = null
+            this.lastButton = null
         }
     add() {
         this.value += this.num
@@ -23,9 +24,6 @@ const equalsButton = document.querySelector('.equals')
         this.value *= this.num
     }
     divide() {
-        if (this.num == 0) {
-            display.innerText = "ERROR!"
-        }
         this.value /= this.num
     }
 
@@ -42,7 +40,7 @@ const equalsButton = document.querySelector('.equals')
             }
             display.innerText += number
         }
-        alert(`Value: ${this.value}\nNumber: ${this.num}\nOperator: ${this.operator}`)
+        this.lastButton = 'num'
     }
     getValueFromDisplay() {
         if (!this.value) {
@@ -53,17 +51,20 @@ const equalsButton = document.querySelector('.equals')
         }
     }
 
-    addOperator(op) {
+    addOperator(op) {                           
+        if (this.lastButton == 'op') {          // If I press 5 then + then *, I am just changing my mind about the operator and don't want any calculation to happen
+            this.operator = op
+            return
+        }
         this.getValueFromDisplay()
         if (!this.num) {
             this.operator = op
         }
         else {
-            alert("The operator else is actually being run")
             this.calculate()
             this.operator = op
         }
-        alert(`Value: ${this.value}\nNumber: ${this.num}\nOperator: ${this.operator}`)
+        this.lastButton = 'op'
     }
     calculate() {
         this.getValueFromDisplay()
@@ -74,6 +75,10 @@ const equalsButton = document.querySelector('.equals')
             this.subtract()
         }
         if (this.operator == 'divide') {
+            if (this.num == 0) {
+                display.innerText = "ERROR!"
+                return
+            }
             this.divide()
         }
         if (this.operator == 'x') {
@@ -83,9 +88,9 @@ const equalsButton = document.querySelector('.equals')
         this.operator = null
         this.showValue()
     }
-    equalsFunction() { /* Not currently useful but there was a reason I originally had this separate from calculating */
+    equalsFunction() { 
         this.calculate()
-        alert(`Value: ${this.value}\nNumber: ${this.num}\nOperator: ${this.operator}`) 
+        this.lastButton = 'eq'  // This is the reason for this function
     }     
  }
 
