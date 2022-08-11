@@ -1,0 +1,90 @@
+html {
+  font-size: 62.5%;
+  font-weight: normal;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+body {
+  background-image: linear-gradient(to bottom right, skyblue, rgb(56, 239, 56));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  display: flex;
+  font-size: 4em;
+  margin: 10px;
+
+}
+
+.calculator-grid {
+/*position: absolute; *//* means item is ignoring things around it and stays in same place when page is resized */
+/*  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+*/
+
+  width: 400px;  
+  /* can use flex-box justify content to center as well or auto margins*/
+  margin-top: 15px;
+  padding: 40px;
+  padding-top: 75px;
+  background-color: black;
+  border-radius: 25px;
+}
+
+.output{
+  width: 100%;
+  font-size: 5rem;
+  height: 80px;
+  border: none;
+  background-color: white;
+  color: black;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.calculator-buttons{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px;
+  padding-bottom: 5px;
+}
+
+.calculator-grid > button {
+  height: 60px;
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin: 7px;
+  padding: 5px;
+  flex: 1 0 18%;
+}
+
+.all-clear {
+  background-color: red;
+  color: white;
+  font-size: 3rem;
+}
+
+button:hover{
+  background-color: gray;
+
+}
