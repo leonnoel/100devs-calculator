@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+  }
+
+#calculatorBody{
+    background-color: black;
+    border-radius: 25px;
+    width: 50%;
+    margin: 10% auto; 
+    height: 500px;
+    max-width: 350px
+}
+
+#display{
+    padding: 60px 35px 20px 35px;
+}
+
+#display section{
+    background-color: white;
+    width: 100%;
+    height: 75px;
+}
+
+span{
+    background-color: white;
+    border-radius: 60%;
+    width: 60px;
+    height: 60px; 
+    text-align: center;
+    font-weight: 700;
+    font-size: 40px;
+    margin: 5px;
+}
+
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
