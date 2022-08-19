@@ -2,13 +2,14 @@
     box-sizing: border-box;
   }
 
+
 #calculatorBody{
     background-color: black;
     border-radius: 25px;
     width: 50%;
     margin: 10% auto; 
-    height: 500px;
-    max-width: 350px
+    max-height: 500px;
+    max-width: 380px
 }
 
 #display{
@@ -21,15 +22,9 @@
     height: 75px;
 }
 
-span{
-    background-color: white;
-    border-radius: 60%;
-    width: 60px;
-    height: 60px; 
-    text-align: center;
-    font-weight: 700;
-    font-size: 40px;
-    margin: 5px;
+#nums{
+    padding: 40px; 
+    padding-top: 5px;
 }
 
 div{
@@ -37,4 +32,19 @@ div{
     justify-content: center;
     align-items: center;
 }
+
+span{
+    background-color: white;
+    border-radius: 60%;
+    width: 60px;
+    height: 60px; 
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    margin: 5px; 
+    padding: 5px 5px; 
+}
+
+
 
