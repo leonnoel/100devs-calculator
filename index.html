@@ -5,10 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calc in JS</title>
-    <link rel="stylesheet" href="index.css">
+    
 </head>
 <body>
-    
+    <style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+
+
+
+}
+.display{
+    background-color: black;
+    color: greenyellow;
+    word-break: break-all;
+    border-radius: 1rem;
+    padding: 1em;
+
+}
+.previous-operand{
+    opacity: 0.5;
+}
+.calc-body{
+    background-color:rgb(176, 172, 236);
+    padding: 1rem;
+}
+.num-grid{
+    margin: 1rem;
+    height: 40vh;
+    width: 40vh;
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.span-two{
+    grid-column: span 2;
+}
+.key{
+    background-color: #fff;
+    border:#cccc 2px inset;
+    border-radius: 1rem;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 30px;
+}
+.key:hover{
+    background-color: rgb(208, 255, 0);
+}
+    </style>
 
     <body>
         <div class="calc-body">
