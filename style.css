@@ -1,5 +1,7 @@
 *{
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
   }
 
 
@@ -9,7 +11,7 @@
     width: 50%;
     margin: 10% auto; 
     max-height: 500px;
-    max-width: 380px
+    max-width: 380px;
 }
 
 #display{
@@ -33,17 +35,21 @@ div{
     align-items: center;
 }
 
-span{
+button{
     background-color: white;
+    cursor: pointer;
     border-radius: 60%;
     width: 60px;
     height: 60px; 
     text-align: center;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
     font-size: 40px;
     margin: 2%; 
     padding: 1.5%; 
+}
+
+button:hover{
+    background-color: rgba(220, 234, 245, .90);
+    transition: 0.25s ease-in-out;
 }
 
 
