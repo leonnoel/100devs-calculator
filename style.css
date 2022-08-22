@@ -3,7 +3,7 @@
 }
 h2 {
     font-family: 'Helvetica';
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
 }
 section {
@@ -22,7 +22,7 @@ img {
 }
 
 .display {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     position: absolute;
     z-index: 10;
     top: 134px;
@@ -37,12 +37,19 @@ img {
 }
 
 .input {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     position: absolute;
     z-index: 10;
     height: 66px;
     width: 66px;
     border-radius: 50%;
+}
+.input:hover {
+    cursor: pointer;
+}
+.input:active {
+    background: rgba(91, 91, 91, 0.025);
+    box-shadow: 2px 2px 5px 2px rgba(0,0,0,.35) inset,  -2px -2px 5px 2px rgba(0,0,0,.35) inset;
 }
 
 /****** INPUT POSITIONS ******/
