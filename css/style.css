@@ -22,7 +22,13 @@
 /*******************************************/
 
 body {
-
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
 }
 
 
@@ -33,8 +39,49 @@ header {
 
 }
 
+.container{
+  background-color: black;
+  border-radius: 5%;
+  height: 70%;
+  width:  40%
+}
+
+.answer{
+  background-color: white;
+  height: 15%;
+  width: 80%;
+  margin: 10% 10% 0 10%;
+}
+
+.buttons{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  height: 65%;
+  width: 80%;
+  margin: 5% 10% 0 10%;
+}
+
+button{
+  flex-basis: 23%;
+  height: 23%;
+  background-color: white;
+  border-radius: 50%;
+  font-size: 50px;
+  font-weight: 700;
+}
 footer {
 
+}
+
+@media all and (max-height: 600px){
+  button{
+  font-size: 30px;
+  background-color: blue;
+  }
+  .container{
+    height: 400px
+  }
 }
 
 /******************************************
