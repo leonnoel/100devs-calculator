@@ -1,0 +1,78 @@
+:root {
+    font-size: 62.5%;
+}
+h2 {
+    font-family: 'Helvetica';
+    font-size: 3rem;
+    font-weight: bold;
+}
+section {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.container {
+    position: relative;
+}
+
+img {
+    position: relative;
+    z-index: 1;
+}
+
+.display {
+    border: 1px solid blue;
+    position: absolute;
+    z-index: 10;
+    top: 134px;
+    left: 79px;
+    height: 75px;
+    width: 328px;
+    padding: 0 3px 3px 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.input {
+    border: 1px solid yellow;
+    position: absolute;
+    z-index: 10;
+    height: 66px;
+    width: 66px;
+    border-radius: 50%;
+}
+
+/****** INPUT POSITIONS ******/
+.row-1 {
+    top: 240px;
+}
+.row-2 {
+    top: 312.5px;
+}
+.row-3 {
+    top: 384px;
+}
+.row-4 {
+    top: 455.5px;
+}
+#seven, #four, #one, #zero {
+    left: 102px;
+}
+#eight, #five, #two, #point {
+    left: 176px;
+}
+#nine, #six, #three, #equal {
+    left: 249px;
+}
+#divide, #multiply, #add, #minus {
+    left: 323px;
+}
+
+/****** ROW TWO ******/
+
+/****** ROW THREE ******/
+
+/****** ROW FOUR ******/
