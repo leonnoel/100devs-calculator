@@ -21,7 +21,7 @@ img {
     z-index: 1;
 }
 
-.display {
+#display {
     /* border: 1px solid blue; */
     position: absolute;
     z-index: 10;
@@ -39,7 +39,7 @@ img {
 .input {
     /* border: 1px solid yellow; */
     position: absolute;
-    z-index: 10;
+    z-index: 20;
     height: 66px;
     width: 66px;
     border-radius: 50%;
