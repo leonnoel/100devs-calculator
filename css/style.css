@@ -1,0 +1,73 @@
+*, *::before, *::after {
+  font-family: Gotham Rounded, sans-serif;
+  font-weight: normal;
+}
+
+.calculatorbody {
+  background-color: black;
+  width: 500px;
+  height:600px;
+  padding: 30px 0 0;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+.rows {
+  padding: 0 20px;
+}
+
+.output {
+    background-color: white;
+    height: 100px;
+    width: 350px;
+    margin: auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  font-size: 2.5rem;
+}
+
+.buttons {
+  border-radius: 50px;
+  background-color: white;
+  padding: 5px;
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  display: inline-block;
+  text-align: center;
+  font-size: 50px;
+  /* font-weight: bold; */
+}
+
+button {
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: white;
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  font-size: 40px;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 30px 50px;
+}
