@@ -1,7 +1,6 @@
 class Calculator {
     constructor() {
         this.displayText = '0';
-        this.previousTotal = null;
     }
     parseInput(value) {
         switch(value) {
@@ -11,24 +10,34 @@ class Calculator {
             case 'AC':
                 this.clearScreen();
                 break;
+            case '.':
+                this.inputDecimal(value);
+                break;
             default:
                 this.addText(value);
                 break;
         }
     }
     addText(value) {
-        console.log(value);
-        if (this.displayText === '0') {
-            this.displayText = '';
-        } else if (this.previousTotal) {
-            this.displayText = this.previousTotal;
-            this.previousTotal = null;
+        this.displayText = this.displayText === '0' ? 
+            value : this.displayText + value;
+//        if (this.displayText === '0') {
+//            this.displayText = '';
+//        } else if (this.previousTotal) {
+//            this.displayText = this.previousTotal;
+//            this.previousTotal = null;
+//        }
+//        if ( isNaN(+(value)) && isNaN(+(this.displayText)) ) {
+//            return;
+//        }
+//        this.displayText += (this.displayText === '' && value === '.' 
+//            ? `0${value}` : value);
+        this.outputText(this.displayText);
+    }
+    inputDecimal(decimal) {
+        if (!this.displayText.includes(decimal)) {
+            this.displayText += decimal;
         }
-        if ( isNaN(+(value)) && isNaN(+(this.displayText)) ) {
-            return;
-        }
-        this.displayText += (this.displayText === '' && value === '.' 
-            ? `0${value}` : value);
         this.outputText(this.displayText);
     }
     outputText(text) {
@@ -36,12 +45,11 @@ class Calculator {
     }
     calculate(equation) {
         let result = Function('return ' + equation)();
-        this.previousTotal = result;
-        this.outputText(result);
+        this.displayText = result;
+        this.outputText(this.displayText);
     }
     clearScreen() {
         this.displayText = '0';
-        this.previousTotal = null;
         this.outputText(this.displayText);
     }
 }
