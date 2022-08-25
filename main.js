@@ -24,9 +24,10 @@ class Calculator {
         this.outputText(this.displayText);
     }
     inputDecimal(decimal) {
-        // regex to check if the last operand has digits after
+        // regex to check if the last operator has digits after
         let isLastCharOperand = this.displayText.match(/[^-\+\/\*]*$/g)[0];
-        // if it is an empty string then last char must be an operator
+        // if the variable is an empty string then last char 
+        // must be an operator
         if (isLastCharOperand.length === 0) {
             this.displayText += '0.';
         // checks if digits after the last operator has a decimal
