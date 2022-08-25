@@ -2,143 +2,94 @@
 // display
 const display = document.querySelector('h2');
 
-// number keys
-const one = document.querySelector('#one');
-const two = document.querySelector('#two');
-const three = document.querySelector('#three');
-const four = document.querySelector('#four');
-const five = document.querySelector('#five');
-const six = document.querySelector('#six');
-const seven = document.querySelector('#seven');
-const eight = document.querySelector('#eight');
-const nine = document.querySelector('#nine');
-const decimal = document.querySelector('#point');
+// input keys
+const keyStrokes = document.querySelector('.calc');
 
-// function keys
-const plus = document.querySelector('#add');
-const minus = document.querySelector('#minus');
-const multiply = document.querySelector('#multiply');
-const divide = document.querySelector('#divide');
-
-const total = document.querySelector('#equal');
+keyStrokes.addEventListener('click', event => {
+    calc.read(event.target.innerHTML);
+})
 
 /************** FUNCTIONALITY ****************** */
 
-// const calculator = {
+const calc = {
+    // initial values in null state
+    currentValue: null,
+    localStorage: null,
+    operator: null,
 
-//     displayText: 0,
-//     currentValue: null,
-//     localStorage: 0,
-//     operator: null,
+    // set up arithmetic opeartions
+    sum: function() {
+        this.currentValue += this.localStorage;
+    }, 
+    difference: function() {
+        this.currentValue -= this.localStorage;
+    },
+    product: function() {
+        this.currentValue *= this.localStorage;
+    },
+    quotient: function() {
+        this.currentValue /= this.localStorage;
+    },
+    calculate: function(exe) {
+        switch (exe){
+            case '*' :
+                this.product();
+                break;
+            case '+' :
+                this.sum();
+                break;
+            case '/' :
+                this.quotient();
+                break;
+            case '-' :
+                this.difference();
+                break;
+        }
+    },
 
-//     add: function(){
-//         this.currentValue += this.localStorage;
-//     }, 
+    total: function() {
+        this.displayText = this.currentValue;
+        display.innerHTML = this.displayText;
+    },
 
-//     subtract: function() {
-//         this.currentValue -= this.localStorage;
-//     }, 
+    clear: function() {
+        this.currentValue = null;
+        this.localStorage = null;
+        this.operator = null;
+        display.innerHTML = null;
+    },
 
-//     multiply: function() {
-//         this.currentValue *= this.localStorage;
-//     },
+    read: function(input) {
+        if (input === '=') {
+            display.innerHTML = null;
+            this.currentValue = Number(this.currentValue);
+            this.localStorage = Number(this.localStorage);
+            this.calculate(this.operator);
+            this.total();
+        } else if (input === '*' ||  input === '+' || input === '/' || input === '-'){
+            this.operator = input;
+            //display.innerHTML = null;
+        } else if (this.operator === null && this.currentValue === null) {
+            this.currentValue = input.toString();
+            display.innerHTML = this.currentValue;
+        } else if (this.operator === null && this.currentValue !== null){
+            this.currentValue += input.toString();
+            display.innerHTML = this.currentValue;
+        } else if (this.operator != null && this.localStorage === null) {
+            this.localStorage = input.toString();
+            display.innerHTML = this.localStorage;
+        } else if (this.operator != null && this.localStorage !== null && input !== '=') {
+            this.localStorage += input.toString();
+            display.innerHTML = this.localStorage;
+        } 
+        console.log(this.currentValue);
+    },
+}
 
-//     divide: function() {
-//         this.currentValue /= this.localStorage;
-       
-//     },
+// clear out calculator
+const clear = document.querySelector('#clear');
 
-//     equals: function() {
-//         this.displayText = this.currentValue;
-//         display.innerHTML = this.displayText;
-//     }
-// };
-
-// /**************** SET VALUES **************** */
-
-// one.addEventListener('click', setCV => {
-//     if (calculator.currentValue === null && calculator.operator === null) {
-//         calculator.currentValue = 1;
-//         display.innerHTML = calculator.currentValue;
-//         console.log(`current value is: ${calculator.currentValue}`)
-//     } else if (calculator.currentValue !== null && calculator.operator === null ) {
-//         if (calculator.currentValue < 10) {
-//             calculator.currentValue *= 10;
-//             calculator.currentValue += 1;
-//             console.log(`current value is: ${calculator.currentValue}`)
-//             display.innerHTML = calculator.currentValue;
-//         } else if (calculator.currentValue < 100) {
-//             calculator.currentValue *= 10;
-//             calculator.currentValue += 1;
-//             console.log(`current value is: ${calculator.currentValue}`)
-//             display.innerHTML = calculator.currentValue;
-//         } else if (calculator.currentValue < 1000) {
-//             calculator.currentValue *= 10;
-//             calculator.currentValue += 1;
-//             console.log(`current value is: ${calculator.currentValue}`)
-//             display.innerHTML = calculator.currentValue;
-//         }
-//     } else { 
-//         if (calculator.localStorage === 0) {
-//             calculator.localStorage = 1;
-//             display.innerHTML = calculator.localStorage;
-//             console.log(`local storage is ${calculator.localStorage}`);
-//         } else if (calculator.localStorage < 10) {
-//             calculator.localStorage *= 10;
-//             calculator.localStorage += 1;
-//             display.innerHTML = calculator.localStorage;
-//             console.log(`local storage is ${calculator.localStorage}`);
-//         } else if (calculator.localStorage < 100) {
-//             calculator.localStorage *= 10;
-//             calculator.localStorage += 1;
-//             display.innerHTML = calculator.localStorage;
-//             console.log(`local storage is ${calculator.localStorage}`);
-//         } else if (calculator.localStorage < 1000) {
-//             calculator.localStorage *= 10;
-//             calculator.localStorage += 1;
-//             display.innerHTML = calculator.localStorage;
-//             console.log(`local storage is ${calculator.localStorage}`);
-//         }
-        
-//     }
-   
-// });
-
-// /******************* DEFINE ARITHMETIC OPERATIONS ******************* */
-// plus.addEventListener('click', setOperation => {
-//     calculator.operator = '+';
-//     console.log(`operator is; ${calculator.operator}`);
-// });
-// minus.addEventListener('click', setOperation => {
-//     calculator.operator = '-';
-//     console.log(`operator is; ${calculator.operator}`);
-// });
-// multiply.addEventListener('click', setOperation => {
-//     calculator.operator = '*';
-//     console.log(`operator is; ${calculator.operator}`);
-// });
-// divide.addEventListener('click', setOperation => {
-//     calculator.operator = '/';
-//     console.log(`operator is; ${calculator.operator}`);
-// });
-
-
-// /********************* RUN ARITHMETIC OPERATIONS ******************* */
-// total.addEventListener('click', caclulate => {
-//     if (calculator.operator === '+') {
-//         calculator.add();
-//         display.innerHTML = calculator.currentValue;
-//     } else if (calculator.operator === '-') {
-//         calculator.subtract();
-//         display.innerHTML = calculator.currentValue;
-//     } else if (calculator.operator === '*') {
-//         calculator.multiply();
-//         display.innerHTML = calculator.currentValue;
-//     } else if (calculator.operator === '/') {
-//         calculator.divide();
-//         display.innerHTML = calculator.currentValue;
-//     }
-
-//     calculator.operator = null;
-//     calculator.localStorage = null;
-// });
+clear.addEventListener('click', () => {
+    calc.clear();
+    console.log('cleared out values');
+})
