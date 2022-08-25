@@ -53,7 +53,6 @@ class Calculator {
     }
 }
 
-// get user input and ensure it's valid
 const keys = document.querySelector('.calc-buttons');
 const calc = new Calculator();
 keys.addEventListener('click', event => {
