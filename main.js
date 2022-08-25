@@ -1,7 +1,6 @@
 class Calculator {
     constructor() {
         this.displayText = '0';
-        this.operator = null;
     }
     parseInput(value) {
         switch(value) {
