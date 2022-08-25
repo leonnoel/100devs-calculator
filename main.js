@@ -1,6 +1,7 @@
 class Calculator {
     constructor() {
         this.displayText = '0';
+        this.operator = null;
     }
     parseInput(value) {
         switch(value) {
@@ -21,21 +22,18 @@ class Calculator {
     addText(value) {
         this.displayText = this.displayText === '0' ? 
             value : this.displayText + value;
-//        if (this.displayText === '0') {
-//            this.displayText = '';
-//        } else if (this.previousTotal) {
-//            this.displayText = this.previousTotal;
-//            this.previousTotal = null;
-//        }
-//        if ( isNaN(+(value)) && isNaN(+(this.displayText)) ) {
-//            return;
-//        }
-//        this.displayText += (this.displayText === '' && value === '.' 
-//            ? `0${value}` : value);
         this.outputText(this.displayText);
     }
     inputDecimal(decimal) {
-        if (!this.displayText.includes(decimal)) {
+        // regex to check if the last operand has digits after
+        let isLastCharOperand = this.displayText.match(/[^-\+\/\*]*$/g)[0];
+        // if it is an empty string then last char must be an operator
+        if (isLastCharOperand.length === 0) {
+            this.displayText += '0.';
+        // checks if digits after the last operator has a decimal
+        // or if the calculator display starts with a 0
+        } else if (!isLastCharOperand.includes(decimal) || 
+            this.displayText === '0') {
             this.displayText += decimal;
         }
         this.outputText(this.displayText);
@@ -45,7 +43,8 @@ class Calculator {
     }
     calculate(equation) {
         let result = Function('return ' + equation)();
-        this.displayText = result;
+        this.displayText = String(result).includes('.') ? 
+            parseFloat(result.toFixed(7)) : result;
         this.outputText(this.displayText);
     }
     clearScreen() {
