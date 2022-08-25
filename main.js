@@ -68,7 +68,6 @@ const calc = {
             this.total();
         } else if (input === '*' ||  input === '+' || input === '/' || input === '-'){
             this.operator = input;
-            //display.innerHTML = null;
         } else if (this.operator === null && this.currentValue === null) {
             this.currentValue = input.toString();
             display.innerHTML = this.currentValue;
