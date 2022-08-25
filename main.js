@@ -11,30 +11,24 @@ class Calculator {
             case 'AC':
                 this.clearScreen();
                 break;
-            case '.':
-                if (this.displayText === 0) {
-                    this.addText('0.');
-                } else {
-                    this.addText(value);
-                }
-                break;
             default:
                 this.addText(value);
                 break;
         }
     }
     addText(value) {
+        console.log(value);
         if (this.displayText === '0') {
             this.displayText = '';
         } else if (this.previousTotal) {
             this.displayText = this.previousTotal;
             this.previousTotal = null;
         }
-        if (isNaN(+(value)) && isNaN(+(this.displayText))) {
-            if (isNaN(this.displayText.slice(-1)))
-                return;
+        if ( isNaN(+(value)) && isNaN(+(this.displayText)) ) {
+            return;
         }
-        this.displayText += value;
+        this.displayText += (this.displayText === '' && value === '.' 
+            ? `0${value}` : value);
         this.outputText(this.displayText);
     }
     outputText(text) {
@@ -42,6 +36,7 @@ class Calculator {
     }
     calculate(equation) {
         let result = Function('return ' + equation)();
+        this.previousTotal = result;
         this.outputText(result);
     }
     clearScreen() {
