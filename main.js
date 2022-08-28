@@ -50,8 +50,17 @@ const calc = {
     total: function() {
         this.displayText = this.currentValue;
         display.innerHTML = this.displayText;
+        this.reset();
     },
-
+    
+    // reset only current value, local storage, & operator // prepares for new operation w/out clearing first
+    reset: function() {
+        this.currentValue = null;
+        this.localStorage = null;
+        this.operator = null;
+    },
+    
+    // reset all values
     clear: function() {
         this.currentValue = null;
         this.localStorage = null;
