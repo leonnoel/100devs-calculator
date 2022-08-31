@@ -49,3 +49,7 @@ button {
     border-style: none;
     border-radius: 50%;
 }
+
+button:hover {
+    background-color: grey;
+}
