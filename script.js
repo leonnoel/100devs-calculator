@@ -8,10 +8,11 @@ var operatorPressed = false;
 // TO DO:
 // FIX DECIMAL -> OPERATOR -> NUM = NaN
 // add key presses
+// using keyboard inputs after clearing is bugged
+// cannot use a different operator eg. 1+1-1=3, should equal 2
 
 buttons.forEach((button) => {
     button.addEventListener("click", function () {
-        // should i use data attributes or their classes and innerText?
         // number button is pressed
         if (!button.classList.contains("operator") && !button.classList.contains("function")) {
             if (button.getAttribute("data-num") === ".") {
@@ -34,13 +35,11 @@ buttons.forEach((button) => {
             if (firstOperand === "" && !isNaN(parseFloat(displayNum.innerText))) {
                 firstOperand = displayNum.innerText;
             } else if (operator) {
-                // uncomment to get rid of = spam
-                // const result = operate(parseFloat(firstOperand), parseFloat(displayNum.innerText), operator);
-
                 // for repeated = button presses
                 const result = secondOperand === "" ? operate(parseFloat(firstOperand), parseFloat(displayNum.innerText), operator) : operate(parseFloat(firstOperand), parseFloat(secondOperand), operator);
                 var prevOperator = operator;
                 secondOperand = secondOperand !== "" ? secondOperand : displayNum.innerText;
+                console.log(displayNum.innerText);
                 displayNum.innerText = String(result);       
             }
 
@@ -63,6 +62,7 @@ buttons.forEach((button) => {
         } else if (button.classList.contains("function") && button.innerText == "AC") {
             // const display = document.querySelector(".display");
             // display.textContent = "0";
+            console.log("kek");
             clearDisplay();
             firstOperand = "";
             operator = null;
@@ -72,6 +72,22 @@ buttons.forEach((button) => {
     });
 });
 
+document.addEventListener("keydown", function(event) {
+    const keyPress = event.key;
+    // console.log(keyPress);
+    // console.log(`first: ${firstOperand}`);
+    // console.log(`second: ${secondOperand}`);
+
+    if (!isNaN(keyPress)) {
+        document.querySelector(`[data-num="${keyPress}"]`).click();
+    }
+    else if (document.querySelector(`[data-ops="${keyPress}"]`)){
+        document.querySelector(`[data-ops="${keyPress}"]`).click();
+    }
+    else if (keyPress == "Enter") {
+        document.querySelector(`[data-ops="="]`).click();
+    }
+});
 /*
 function updateDisplay(num) {
     const display = document.querySelector(".display");
@@ -100,6 +116,3 @@ function clearDisplay() {
     display.textContent = "0";
 }
 
-
-const numButtons = document.querySelectorAll('button[data-num]');
-console.log(numButtons);
