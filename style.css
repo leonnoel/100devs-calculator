@@ -1,0 +1,78 @@
+﻿*{
+
+margin:0;
+}
+.calcmain {
+    border:2px black solid;
+    border-radius: 5%;
+    width:500px;
+    height:600px;
+    margin: 2rem 6rem 6rem 2rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+
+    background-color: rgb(4, 4, 161);
+}
+
+.calcdisplay{
+    border:2px black solid;
+    height:100px;
+    background-color: white;
+    margin:2rem ;
+    font-size: 40px;
+    text-align: end;
+}
+
+.calcbuttons{
+    
+    width:55%;
+    height:60%;
+    display:flex;
+    margin:1rem 6rem 6rem 6rem;
+    align-items: center;
+    
+}
+.calcbtnmain{
+    
+    
+}
+li{
+    border: 1px black solid;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin:.5rem;
+    list-style: none;
+    text-align:center;
+    font-size:x-large;
+    font-weight:900;
+    background-color: white;
+    margin-top: 2%;
+
+
+}
+
+ol{
+
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    flex-grow:inherit;
+}
+
+.arithmetic{
+    margin:0;
+    padding:0;
+
+}
+.opbtns{
+    margin:0;
+    padding:0;
+}
+
+.numbers{
+    margin:0;
+    padding:0;
+}
