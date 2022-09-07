@@ -4,7 +4,7 @@ const operatePress = document.querySelectorAll(".operatorbtn");
 let display = document.querySelector('.calcdisplay')
 display.textContent = '0'
 
-
+//factory function
 function Calculator() {
   let total = 0;
   let num = 0;
