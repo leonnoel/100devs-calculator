@@ -64,3 +64,11 @@ img {
 .calculator__btn {
   background: #fff;
 }
+
+.calculator__btn--clear {
+  grid-column: 1/3;
+}
+
+.calculator__btn--delete {
+  grid-column: 3/5;
+}
