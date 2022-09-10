@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+.window {
+    height: 30px;
+    width: 80%;
+    background-color: white;
+    margin: 10%;
+    position: absolute;
+}
+
+main{
+    width: 50%;
+    height: 500px;
+    background-color: black;
+    position:relative;
+}
+
+ol{
+    position: absolute;
+    background-color: black;
+    height: 60%;
+    width: 80%;
+    margin: 30% 10%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+li{
+  width: 25%;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  list-style: none;
+}
+
+
+
