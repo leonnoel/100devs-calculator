@@ -10,9 +10,9 @@ let calculator = {
         document.querySelector('.window').innerText= String(calculator.userInput.join(''));
     },
     add(click){
-        // calculator.total += Number(calculator.userInput.join(''));
-        document.querySelector('.window').innerText= 'hi there';
-        // calculator.userInput = [];
+        calculator.total += Number(calculator.userInput.join(''));
+        document.querySelector('.window').innerText= calculator.total;
+        calculator.userInput = [];
     },
 }
 
