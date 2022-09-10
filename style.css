@@ -81,7 +81,7 @@ main{
 .calculator__buttons {
     display: grid;
     grid-template-areas: 
-    "delete delete clear clear"
+    "delete clear clear clear"
     "seven eight nine divide"
     "four five six multiply"
     "one two three add"
