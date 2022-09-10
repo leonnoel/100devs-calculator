@@ -1,0 +1,68 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+/******************************************
+/* MEDIA QUERIES
+/*******************************************/
+@media screen and (max-width: 600px) {
+  
+}
+@media (min-width: 601px) and (max-width: 900px){
+  
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+section.calc-grid {
+  margin: 10vh auto 0 auto;
+  max-width: 400px;
+  border-radius: 15px;
+  background-color: black;
+}
+#display {
+ text-align: right;
+ height: 70px;
+ line-height: 70px;
+ padding: 16px 8px;
+ font-size:  30px;
+ color: white;
+}
+section.buttons {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+button {
+  margin: 3px;
+  border: 3px solid black;
+  line-height: 100px;
+  border-radius: 50%;
+  font-size: 50px;
+  cursor: pointer;
+  background-color: white;
+}
