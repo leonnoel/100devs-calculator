@@ -86,7 +86,9 @@ let calculator = {
     },
     divide(click){
         if (calculator.total == 0){
-            calculator.total = 1;
+            calculator.total = Number(calculator.userInput.join(''));
+            document.querySelector('.window').innerText = calculator.total;
+            calculator.userInput = []
         }
         if (calculator.userInput == 0){
             calculator.total += Number(calculator.userInput.join(''));
