@@ -24,10 +24,11 @@ html {
     font-size: 3.2rem;
     font-weight: 400;
 }
-.button {
+button {
     font-size: 4.2rem;
     font-weight: 700;
 
+    border: 0; /* buttons are gross */
     border-radius: 50%;
 
     cursor: pointer;
@@ -61,7 +62,7 @@ body {
     justify-content: center;
     gap: 1rem;
 }
-.button {
+button {
     /* Yo dawg, we heard you liked flex box so we put flex boxes in your flex boxes */
     display: flex;
     justify-content: center;
