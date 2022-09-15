@@ -13,6 +13,23 @@ html {
     font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
+.calculator {
+    background: black;
+    border-radius: 2.5rem;
+}
+.button, .screen {
+    background: white;
+}
+.screen {
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+.button {
+    font-size: 4.2rem;
+    font-weight: 700;
+}
+
+
 /******************************************
 /* LAYOUT
 /*******************************************/
