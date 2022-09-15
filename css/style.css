@@ -7,7 +7,10 @@
 /*******************************************/
 html {
     font-size: 62.5%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arimo', sans-serif;
+}
+.screen {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 /******************************************
