@@ -27,14 +27,49 @@ html {
 .button {
     font-size: 4.2rem;
     font-weight: 700;
+
+    border-radius: 50%;
+
+    cursor: pointer;
 }
 
 
 /******************************************
 /* LAYOUT
 /*******************************************/
+body {
+    display: flex;
+    justify-content: center;
+}
 
-
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8rem;
+    
+    width: 36rem;
+    padding: 5rem 4rem;
+}
+.screen {
+    height: 8rem;
+    width: 100%;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+.button {
+    /* Yo dawg, we heard you liked flex box so we put flex boxes in your flex boxes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 5rem;
+    height: 5rem;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
