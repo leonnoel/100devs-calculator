@@ -3,7 +3,7 @@
 }
 
 .window {
-    height: 30px;
+    height: 40px;
     width: 80%;
     background-color: white;
     margin: 10%;
@@ -22,7 +22,7 @@ ol{
     background-color: black;
     height: 60%;
     width: 80%;
-    margin: 30% 10%;
+    margin: 25% 5%;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -35,6 +35,9 @@ li{
   border-radius: 50%;
   text-align: center;
   list-style: none;
+  font-weight: 900;
+  font-size: 40px;
+  color: blue;
 }
 
 

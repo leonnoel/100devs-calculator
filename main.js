@@ -60,7 +60,7 @@ let calculator = {
         document.querySelector('.window').innerText= String(calculator.userInput.join(''));
     },
     point(click){
-        calculator.userInput.push(50) ;
+        calculator.userInput.push('.');
         document.querySelector('.window').innerText = String(calculator.userInput.join(''))
     },
     times(click){
@@ -122,5 +122,5 @@ document.querySelector('#times').addEventListener('click',calculator.times);
 document.querySelector('#subtract').addEventListener('click',calculator.subtract);
 document.querySelector('#point').addEventListener('click',calculator.point);
 document.querySelector('#divide').addEventListener('click',calculator.divide);
-;
+
 
