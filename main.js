@@ -10,13 +10,16 @@ const equalBtn = calculator.querySelector(".calculator__btn--equals");
 let firstNum = "";
 let secondNum = "";
 let operator;
+let switchToSecond = false;
 
 const Calculator = (firstNum, secondNum) => {
   const getNum = (e) => {
-    if (operator === undefined) {
+    if (switchToSecond === false) {
       firstNum += e.target.innerText;
+      calcAnswer.innerText = firstNum.toString();
     } else {
       secondNum += e.target.innerText;
+      calcAnswer.innerText = `${firstNum.toString()} ${operator} ${secondNum}`;
     }
     console.log(firstNum, operator, secondNum);
   };
@@ -24,21 +27,22 @@ const Calculator = (firstNum, secondNum) => {
   const calculate = () => {
     switch (operator) {
       case "+":
-        console.log(firstNum, secondNum);
         firstNum = Number(firstNum) + Number(secondNum);
         break;
       case "-":
-        firstNum = firstNum - secondNum;
+        firstNum = Number(firstNum) - Number(secondNum);
         break;
       case "X":
-        firstNum = firstNum * secondNum;
+        firstNum = Number(firstNum) * Number(secondNum);
         break;
       case "/":
-        firstNum = firstNum / secondNum;
+        firstNum = Number(firstNum) / Number(secondNum);
         break;
     }
+    calcAnswer.innerText = firstNum;
     operator = undefined;
     secondNum = "";
+    switchToSecond = true;
     console.log(firstNum, secondNum, operator);
     return firstNum;
   };
@@ -47,22 +51,46 @@ const Calculator = (firstNum, secondNum) => {
     switch (e.target.innerText) {
       case "+":
         operator = "+";
+        switchToSecond = true;
         break;
       case "-":
         operator = "-";
+        switchToSecond = true;
         break;
       case "X":
         operator = "X";
+        switchToSecond = true;
         break;
       case "/":
         operator = "/";
+        switchToSecond = true;
         break;
     }
   };
 
-  const clearCalc = () => {};
+  const clearCalc = () => {
+    firstNum = "";
+    operator = undefined;
+    secondNum = "";
+    switchToSecond = false;
+    calcAnswer.innerText = "0";
+  };
 
-  const deleteNum = () => {};
+  const deleteNum = () => {
+    if (switchToSecond === false) {
+      let numLength = firstNum.length;
+      firstNum = firstNum.slice(0, numLength - 1);
+      calcAnswer.innerText = firstNum.toString();
+      console.log(firstNum);
+      return firstNum;
+    } else {
+      let numLength = secondNum.length;
+      secondNum = secondNum.slice(0, numLength - 1);
+      calcAnswer.innerText = `${firstNum.toString()} ${operator} ${secondNum}`;
+      console.log(secondNum);
+      return secondNum;
+    }
+  };
 
   return { getNum, clearCalc, deleteNum, getOperator, calculate };
 };
@@ -78,3 +106,7 @@ opBtns.forEach((opBtn) => {
 });
 
 equalBtn.addEventListener("click", calc.calculate);
+
+clearBtn.addEventListener("click", calc.clearCalc);
+
+deleteBtn.addEventListener("click", calc.deleteNum);
