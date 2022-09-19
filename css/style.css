@@ -10,7 +10,9 @@ html {
     font-family: 'Arimo', sans-serif;
 }
 .screen {
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    /*font-family: 'ZCOOL QingKe HuangYou', cursive;*/
+    font-family: 'Segment7Standard';
+    padding: 0.5rem;
 }
 
 .calculator {
