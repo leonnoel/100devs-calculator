@@ -109,16 +109,12 @@ decimalButton.addEventListener('click', (e) => {
 
 // operator event
 operatorButtons.forEach(button => button.addEventListener('click', e => {
-    let op = e.target.id;
-    console.log(op);
-    console.log(typeof op);
-    calc.setOperator(op);
+    calc.setOperator(e.target.id);
     updateScreen(calc, screen);
 }))
 
 // equals
 equalsButton.addEventListener('click', () => {
-    console.log(calc.currentOperator);
     calc.equals();
     updateScreen(calc, screen);
 })
