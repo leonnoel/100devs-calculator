@@ -117,7 +117,6 @@ operatorButtons.forEach(button => button.addEventListener('click', e => {
 }))
 
 // equals
-
 equalsButton.addEventListener('click', () => {
     console.log(calc.currentOperator);
     calc.equals();
