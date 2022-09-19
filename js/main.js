@@ -1,14 +1,16 @@
 function Calculator() {
     this.memory = '';
-    this.primary = '';
+    this.screen = '';
 
     this.currentOperator = '';
+
+    this.showMemory = false;
 
     // Equations
     // Parameters: Operater 
     // Returns: answer
     this.equate = operation => {
-        if (!['add', 'divide', 'subtract', 'multiply'].includes(operation)) console.log('Not a valid operator');
+        if (!['add', 'divide', 'subtract', 'multiply'].includes(operation)) console.error('Not a valid operator');
 
         switch (operation) {
             case 'add': return `${+this.memory + +this.screen}`;
@@ -19,7 +21,12 @@ function Calculator() {
     }
 
     //Enter number
-    this.enterNumber = n => this.screen += `${n}`;
+    this.enterNumber = n => {
+        if (this.showMemory) {
+            this.showMemory = false;
+        }
+        this.screen += `${n}`;
+    }
 
     // Equals
     this.equals = () => {
@@ -31,6 +38,9 @@ function Calculator() {
             this.memory = this.equate(this.currentOperator);
             // clear screen
             this.screen = '';
+            this.showMemory = true;
+            // clear operator
+            this.currentOperator = '';
         }
     }
 
@@ -38,15 +48,18 @@ function Calculator() {
     this.setOperator = (operator) => {
         // if both screen and memory are empty, do nothing
         if (!this.screen && !this.memory) {
+            console.error('No screen or memory content');
             return;
         } else if (this.screen && this.memory) {
             this.memory = this.equate(this.currentOperator);
             this.screen = '';
+            this.showMemory = true;
         } else if (this.screen) {
             this.memory = this.screen;
             this.screen = '';
+            this.showMemory = true;
         }
-        this.operator = operator;
+        this.currentOperator = operator;
     }
 
     // add decimal
@@ -60,8 +73,54 @@ function Calculator() {
 }
 
 
-test = new Calculator();
-test.memory = 2;
-test.screen = 3;
-test.currentOperator = 'add';
-test.enterNumber(5);
+
+const calc = new Calculator();
+/*
+    BUTTONS AND LOGIC
+*/
+// button objects and screen
+const screen = document.querySelector('.screen');
+const numButtons = document.querySelectorAll('.number');
+const operatorButtons = document.querySelectorAll('.operator');
+const decimalButton = document.querySelector('#decimal');
+const equalsButton = document.querySelector('#equal');
+
+
+// update view screen function
+function updateScreen (calcObj, screenVar) {
+    if (calcObj.showMemory) {
+        screenVar.innerText = calcObj.memory;
+    } else {
+        screenVar.innerText = calcObj.screen;
+    }
+}
+
+// numbers event
+numButtons.forEach(button => button.addEventListener('click', (e) => {
+    calc.enterNumber(e.target.id);
+    updateScreen(calc, screen);
+}))
+
+// decimal event
+decimalButton.addEventListener('click', (e) => {
+    calc.enterDecimal();
+    updateScreen(calc, screen);
+})
+
+// operator event
+operatorButtons.forEach(button => button.addEventListener('click', e => {
+    let op = e.target.id;
+    console.log(op);
+    console.log(typeof op);
+    calc.setOperator(op);
+    updateScreen(calc, screen);
+}))
+
+// equals
+
+equalsButton.addEventListener('click', () => {
+    console.log(calc.currentOperator);
+    calc.equals();
+    updateScreen(calc, screen);
+})
+
