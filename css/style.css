@@ -1,0 +1,77 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+html {
+    font-size: 62.5%;
+    font-family: 'Arimo', sans-serif;
+}
+.screen {
+    /*font-family: 'ZCOOL QingKe HuangYou', cursive;*/
+    font-family: 'Segment7Standard';
+    padding: 0.5rem;
+}
+
+.calculator {
+    background: black;
+    border-radius: 2.5rem;
+}
+.button, .screen {
+    background: white;
+}
+.screen {
+    font-size: 3.2rem;
+    font-weight: 400;
+}
+button {
+    font-size: 4.2rem;
+    font-weight: 700;
+
+    border: 0; /* buttons are gross */
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 100vh;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8rem;
+    
+    width: 36rem;
+    padding: 5rem 4rem;
+}
+.screen {
+    height: 8rem;
+    width: 100%;
+}
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+button {
+    /* Yo dawg, we heard you liked flex box so we put flex boxes in your flex boxes */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 5rem;
+    height: 5rem;
+}
