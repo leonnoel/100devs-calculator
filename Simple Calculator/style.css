@@ -1,0 +1,63 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+/* getting rid of any default margins, padding */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.calculator {
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  margin: auto;
+  background-color: black;
+  padding: 75px 40px 40px 40px;
+  border-radius: 30px;
+}
+
+.calculator-screen {
+  width: 100%;
+  font-size: 5rem;
+  height: 75px;
+  background-color: white;
+  color: black;
+  text-align: right;
+  padding-right: 10px;
+}
+
+.calculator-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 15px 15px 5px 15px;
+}
+
+button {
+  height: 60px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 35px;
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin: 7px;
+  padding: 5px;
+  flex: 1 0 17%;
+}
+
+.allClear {
+  background-color: #b11b5c;
+  color: white;
+  font-size: 3rem;
+}
+
+button:hover {
+  background-color: #a3a3a3;
+}
