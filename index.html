@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>100Devs Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="calculator">
+    <!-- Disabled makes user unable to type in form -->
+    <input type="text" class="calculator-screen" value="0" disabled>
+    <section class="calculator-buttons">
+    <div id="calcButtons">
+      <!-- Top row buttons -->
+      <button type="button" class="btn numBtn" value="7">7</button>
+      <button type="button" class="btn numBtn" value="8">8</button>
+      <button type="button" class="btn numBtn" value="9">9</button>
+      <button type="button" class="btn oppBtn" value="/">&divide;</button>
+      <!-- Second row buttons -->
+      <button type="button" class="btn numBtn" value="4">4</button>
+      <button type="button" class="btn numBtn" value="5">5</button>
+      <button type="button" class="btn numBtn" value="6">6</button>
+      <button type="button" class="btn oppBtn" value="*">&times;</button>
+      <!-- Third row buttons -->
+      <button type="button" class="btn numBtn" value="1">1</button>
+      <button type="button" class="btn numBtn" value="2">2</button>
+      <button type="button" class="btn numBtn" value="3">3</button>
+      <button type="button" class="btn oppBtn" value="+">&plus;</button>
+      <!-- Fourth row buttons -->
+      <button type="button" class="btn numBtn" value="0">0</button>
+      <button type="button" class="btn decBtn" value=".">.</button>
+      <button type="button" class="btn oppBtn" value="-">&minus;</button>
+      <button class="btn all-clear" type="button" value="AC">AC</button>
+      <!-- Equal Sign button -->
+      <button class="btn last-button oppBtn" type="button" value="=">&equals;</button>
+    </div>
+    </section>
+  </section>
+
+  <script type="text/javascript" src="main.js"></script> 
+</body>
+</html>
