@@ -1,0 +1,103 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+     background-color: midnightblue;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+.container {
+     height: 70vh;
+     width: 60vw;
+     max-width: 700px;
+     min-width: 400px;
+     border: 1px solid white;
+     margin: 3rem auto;
+     background: white;
+     display: flex;
+}
+
+.calc {
+     background: black;
+     flex-grow: 1;
+     margin: 3vw;
+     display: flex;
+     border-radius: 20px;
+     display: flex;
+     justify-content: center;
+     flex-wrap: wrap;
+     overflow: hidden;
+}
+.display {
+     background: white;
+     width: 90%;
+     height: 10vh;
+     margin-top: 10%;
+     padding: 1rem;
+     display: flex;
+     justify-content: left;
+     align-items: center;
+}
+.result {
+     font-size: 1.5em;
+     font-family: 'Orbitron';
+     height: 30px;
+     text-align: right;
+}
+
+.numpad {
+     width: 60%;
+     height: 40vh;
+     display: flex;
+     flex-flow: row wrap;
+     align-items: center;
+     justify-content: space-around;
+     gap: 2%
+}
+.key {
+     border: 1px solid white;
+     flex-basis: 20%;
+     border-radius: 50%;
+     background: white;
+     color: black;
+     font-size: 2.5rem;
+     text-align: center;
+}
+.key:hover {
+     cursor: pointer;
+}
