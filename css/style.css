@@ -42,9 +42,10 @@ footer {
 /*******************************************/
 
 .container {
-     height: 80vh;
+     height: 70vh;
      width: 60vw;
      max-width: 700px;
+     min-width: 400px;
      border: 1px solid white;
      margin: 3rem auto;
      background: white;
@@ -60,27 +61,43 @@ footer {
      display: flex;
      justify-content: center;
      flex-wrap: wrap;
+     overflow: hidden;
 }
 .display {
      background: white;
-     width: 70%;
-     height: 12vh;
+     width: 90%;
+     height: 10vh;
      margin-top: 10%;
+     padding: 1rem;
+     display: flex;
+     justify-content: left;
+     align-items: center;
 }
+.result {
+     font-size: 1.5em;
+     font-family: 'Orbitron';
+     height: 30px;
+     text-align: right;
+}
+
 .numpad {
      width: 60%;
      height: 40vh;
      display: flex;
      flex-flow: row wrap;
      align-items: center;
-     justify-content: center;
+     justify-content: space-around;
+     gap: 2%
 }
 .key {
      border: 1px solid white;
-     flex-basis: 25%;
+     flex-basis: 20%;
      border-radius: 50%;
      background: white;
      color: black;
      font-size: 2.5rem;
      text-align: center;
+}
+.key:hover {
+     cursor: pointer;
 }
