@@ -1,6 +1,8 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 *, *::before, *::after {
@@ -63,4 +65,8 @@ button {
     background-color: red;
     font-size: 3rem;
     color: white;
+}
+
+button:hover {
+    background-color:darksalmon;
 }
