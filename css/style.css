@@ -1,0 +1,114 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+     height: 100%;
+     width: 100%;
+     margin: auto;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+     clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+     font-size: 62.5%;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.calculator {
+     width: 30%;
+     height: fit-content;
+     padding: 40px;
+     border-radius: 50px;
+     background-color: black;
+}
+
+.calculator-screen {
+     width: 100%;
+     font-size: 5rem;
+     height: 60px;
+     border: none;
+     background-color: black;
+     color: lightblue;
+     text-align: right;
+     padding-right: 15px;
+     user-select: none;
+}
+
+#cursor {
+     font-size: 6rem;
+     color: lightskyblue;
+}
+
+hr {
+     margin: 30px 0 20px 0;
+}
+
+.buttons {
+     display: flex;
+     padding-top: 10px;
+}
+
+.buttons>button:last-child {
+     margin-left: 30px;
+}
+
+button {
+     background-color: rgb(24, 24, 24);
+     color: lightblue;
+     border: none;
+     border-radius: 50%;
+     font-size: 4rem;
+     font-family: bold;
+     padding: 30px;
+     width: 25%;
+}
+
+#lastrow>button:first-child {
+     margin-right: 50%;
+     color: red;
+}
+
+#lastrow>button:last-child {
+     color: black;
+     background: peachpuff;
+}
+
+button:hover {
+     background-color: rgb(64, 64, 64);
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+@media screen and (max-width: 600px) {
+     button {
+          padding: 0;
+     }
+}
+
+@media screen and (max-width: 1200px) {
+     .calculator {
+          width: 80%;
+     }
+}
