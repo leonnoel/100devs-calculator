@@ -7,12 +7,63 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0;
+  padding: 0%;
+  font-family: 'Noto Sans Mono', monospace, 'sans-serif';
+}
+
 /******************************************
 /* LAYOUT
 /*******************************************/
 
+.calculator-container {
 
+  width: 100vw;
+  height: 100vh;
+  background-color: pink;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-/******************************************
-/* ADDITIONAL STYLES
-/*******************************************/
+.content-div {
+  width: 30vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+button {
+  width: 25%;
+  outline: none;
+  font-size: 2rem;
+  cursor: pointer;
+  border: 1px solid white;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.double-width {
+  width: 50%;
+}
+
+.display {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  font-size: 2rem;
+  background-color: white;
+}
+
