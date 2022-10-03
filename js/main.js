@@ -1,61 +1,147 @@
 class Calculator {
 
-    // setup the constructor to build the calculator object
-
-    constructor(previousNumberText, currentNumberText){
-        this.previousNumberText = previousNumberText
-        this.currentNumberText = currentNumberText 
+    constructor(previousEntryTextElement, currentEntryTextElement){
+        this.previousEntryTextElement = previousEntryTextElement
+        this.currentEntryTextElement = currentEntryTextElement   
         this.initialize()
     }
 
-    // initialize the calculator and reset it
     initialize() {
-        this.previousNumberText.innerText = ''
-        this.currentNumberText.innerText = '0'
-        this.operator = ''
+        this.previousEntryTextElement.innerText = ''
+        this.currentEntryTextElement.innerText = '0'
+        this.currentOperator = ''
+        this.currentNumber = '0'
+        this.previousNumber = ''
+        this.computeFlag = false
     }
 
-    // append current number with users input digit
-    appendCurrentNumber(number){
-        // prevents multiple decimal points from being entered
-        if (number === '.' && this.currentNumberText.innerText.includes('.')) {
-            return
+    appendNumber(number) {
+        number = number.toString()
+
+        if (this.computeFlag){
+            this.computeFlag = false
+            return this.currentNumber = number
         }
 
-        // removes the leading zero from the initialization step after a digit is entered - keeps the leading zero if there is no leading digit prior to a decimal being entered
-        if (this.currentNumberText.innerText === '0' && number !== '.') {
-            this.currentNumberText.innerText = ''
+        // no multiple decimals
+        if (number === '.' && this.currentNumber.includes('.')) return
+
+        // formatting for leading zero
+        if (this.currentNumber === '0' && number !== '.') {
+            this.currentNumber = ''
         }
 
-        // appends string
-        this.currentString = this.currentNumberText.innerText + number
+        // appends the current number
+        this.currentNumber += number
+
+        this.computeFlag = false
+
     }
 
-    // update the calculators display fields
     updateDisplay() {
-        this.currentNumberText.innerText = this.currentString
+        if (!isFinite(this.currentNumber)){
+            this.currentNumber = ''
+            this.previousNumber = ''
+            this.previousEntryTextElement.innerText = this.previousNumber
+            return this.currentEntryTextElement.innerText = 'ERR! CANNOT DIVIDE BY 0'
+        }
+
+        this.currentEntryTextElement.innerText = this.currentNumber
+
+        if (this.previousNumber !== ''){
+            this.previousEntryTextElement.innerText = `${this.previousNumber} ${this.currentOperator}`
+        }
+        else {
+            this.previousEntryTextElement.innerText = this.previousNumber
+        }
     }
+
+    chooseOperation(operator){
+
+        if (this.currentNumber === '') return
+        if (this.previousNumber !== ''){
+            this.compute()
+        }
+        this.currentOperator = operator
+        this.previousNumber = this.currentNumber
+        this.currentNumber = '0'
+    }
+
+    compute(){
+        let result
+        let prevNum = parseFloat(this.previousNumber)
+        let currentNum = parseFloat(this.currentNumber)
+        if (isNaN(prevNum) || isNaN(currentNum)) return
+
+        switch(this.currentOperator){
+            case '+':
+                result = (prevNum + currentNum).toString()
+                break
+
+            case '-':
+                 result = (prevNum - currentNum).toString()
+                 break
+
+            case 'X':
+                result = (prevNum * currentNum).toString()
+                break
+
+            case '/':
+                result = (prevNum / currentNum).toString()
+                break
+        }
+
+        this.previousNumber = ''
+        this.currentNumber = result
+        this.computeFlag = true
+
+    }
+
+    delete() {
+
+        if (!this.computeFlag){
+        this.currentNumber = this.currentNumber.slice(0,-1)
+        if (this.currentNumber === '') return this.currentNumber = '0'
+    }
+}
 
 }
 
+const previousEntryTextElement = document.querySelector('.previous-entry')
+const currentEntryTextElement = document.querySelector('.current-entry')
+const digitKeys = document.querySelectorAll('.digit')
+const operations = document.querySelectorAll('.operation')
+const equals = document.querySelector('.equals')
+const AC = document.querySelector('.clear')
+const deleteKey = document.querySelector('.delete')
 
-// select the display field elements where the previous result and current result will go
-let previousNumberText = document.querySelector('.previous-entry')
-let currentNumberText = document.querySelector('.current-entry')
+const myCalc = new Calculator(previousEntryTextElement,currentEntryTextElement)
 
-// create the calculator object using the class constructor defined above
-const myCalc = new Calculator(previousNumberText,currentNumberText)
-
-// select the number buttons on the calculator
-let numberButtons = document.querySelectorAll('.digit')
-
-
-// add an event listener to each of the number buttons which will cause the display to be updated with the users input
-numberButtons.forEach(button => {
+digitKeys.forEach(button => {
     button.addEventListener('click', () => {
-        myCalc.appendCurrentNumber(button.innerText)
+        myCalc.appendNumber(button.innerText)
         myCalc.updateDisplay()
     })
 })
 
+operations.forEach(button => {
+    button.addEventListener('click', () => {
+        myCalc.chooseOperation(button.innerText)
+        myCalc.updateDisplay()
+    })
+})
 
+equals.addEventListener('click', () => {
+    myCalc.compute()
+    myCalc.updateDisplay()
+})
+
+AC.addEventListener('click', () => {
+    myCalc.initialize()
+    myCalc.updateDisplay()
+})
+
+deleteKey.addEventListener('click', () => {
+    myCalc.delete()
+    myCalc.updateDisplay()
+})

@@ -67,3 +67,6 @@ button:hover {
   background-color: white;
 }
 
+.previous-entry, .current-entry {
+  word-break: break-all;
+}
