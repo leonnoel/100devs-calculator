@@ -69,4 +69,6 @@ button:hover {
 
 .previous-entry, .current-entry {
   word-break: break-all;
+  flex-basis: 1;
+  height: 4rem;
 }
