@@ -1,0 +1,62 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #5242ff;
+}
+
+.mainSection {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 300px;
+	margin-top: 100px;
+	background-color: #746ae6;
+	border: 1px solid black;
+	border-radius: 13px;
+	padding: 10px;
+}
+
+.button {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	margin: 10px;
+	border: 1px solid wheat;
+	cursor: pointer;
+	font-size: 20px;
+}
+.buttonAC {
+	height: 50px;
+	width: 50px;
+	border-radius: 50%;
+	margin: 10px;
+	border: 1px solid wheat;
+	cursor: pointer;
+	font-size: 20px;
+	background-color: red;
+	color: white;
+}
+
+.inputSection {
+	text-align: center;
+}
+.calInput {
+	background-color: #d5caff;
+	color: black;
+	font-size: 30px;
+	width: 250px;
+	height: 50px;
+	border-radius: 4px;
+	margin: 20px;
+}
+
+.submit {
+	height: 40px;
+	width: 95%;
+	border-radius: 10px;
+	margin: 10px;
+	font-size: 20px;
+	border: 1px solid wheat;
+	cursor: pointer;
+}
