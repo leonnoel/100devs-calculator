@@ -17,14 +17,14 @@ const allClear = document.querySelector(".all-clear");
 
 /* = = = = = = = = = = = Event Listeners = = = = = = = = = = = */
 
-// Numbers Button
+// Number Buttons
 numberButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         parseNumber(e.target.value);
     });
 });
 
-// Operator Button
+// Operator Buttons
 operators.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         parseOperator(e.target.value);
@@ -52,7 +52,6 @@ function parseNumber(number) {
     if (previousNum == "" && currentNum == "" && displayNumber.value === "-") {
         currentNum = operator;
         displayNumber.value = currentNum;
-        console.log("yes")
     }
     if (previousNum !== "" && currentNum !== "" && operator === "") {
         previousNum = "";
@@ -95,7 +94,6 @@ function parseDecimal(dot) {
         currentNum += dot.target.value;
     }
     displayNumber.value = currentNum;
-    console.log(currentNum)
 }
 
 // Calculate
