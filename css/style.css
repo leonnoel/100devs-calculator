@@ -1,0 +1,164 @@
+/* Box Model Hack */
+* {
+     box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+.headers {
+
+     font-family:'Pokemon GB';
+     text-align: center;
+}
+
+h1{
+     font-size: 18px;
+}
+
+h2{
+     font-size: 16px;
+}
+
+.calculatorBody {
+     width: 300px;
+     height: 500px;
+     background-color: black;
+     margin: 0% auto;
+     display: flex;
+     flex-direction: column;
+     border: black 10px solid;
+     border-radius: 6%;
+}
+
+.functionalSpace{
+     background-color: black;
+     height: 25%;
+     width: 100%;
+     padding: 5%;
+     display: flex;
+     justify-content: end;
+     align-items: flex-end;
+     font-family: Helvetica, Arial, sans-serif;
+     font-size: 50px;
+     color: white;
+     border-radius: 7%;
+}
+
+.functionKey{
+     background-color: black;
+     height: 25%;
+     width: 100%;
+     padding: 5%;
+     display: flex;
+     justify-content: end;
+     align-items: flex-end;
+     font-family: Helvetica, Arial, sans-serif;
+     font-size: 30px;
+     color: white;
+     border-radius: 7%;
+}
+
+
+.functionalSpace:hover{
+     background-color: rgb(133, 82, 82);
+}
+
+.buttons{
+     width: 100%;
+     height: 75%;
+     display: flex;
+     flex-wrap: wrap;
+     align-self: end;
+     justify-content: space-between;
+     align-content: space-between;
+}
+
+.button{
+     width: 24%;
+     height: 19%;
+     text-align: center;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     font-family: Helvetica, Arial, sans-serif;
+     font-size: 23px;
+
+}
+
+.largeButton{
+     width: 50%;
+     text-align: center;
+     border-radius: 20% / 50%;
+     padding: auto auto;
+     display: flex;
+     justify-content: start;
+     align-items: center;
+     padding-left: 35px;
+     font-family: Helvetica, Arial, sans-serif;
+     font-size: 23px;
+}
+
+.lightGrey{
+     background-color: lightgray;
+     cursor: pointer;
+}
+
+.lightGrey:hover{
+     background-color: rgb(238, 238, 238);
+     cursor: pointer;
+}
+
+.grey{
+     background-color: grey;
+     color: white;
+}
+
+.grey:hover{
+     background-color: rgb(158, 158, 158);
+     cursor: pointer;
+}
+
+.orange{
+     background-color: orange;
+     color: white
+}
+
+.orange:hover{
+     background-color: rgb(250, 180, 50);
+     cursor: pointer;
+}
+
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
