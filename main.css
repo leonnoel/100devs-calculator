@@ -1,0 +1,97 @@
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+     font-weight: normal;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+   clear: both;
+}
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+.calculator {
+    display: grid;
+    justify-content: center;
+    border: solid black 3px;
+    align-items: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-row: minmax(120px, auto) repeat(5, 100px);
+}
+
+/*.container {
+    height: 700px;
+    width:  400px;
+    background-color: black;
+    border-radius: 50px;
+    margin: 0 auto;
+}*/
+section > button{
+    cursor: pointer;
+    font-size: 2rem;
+    border-radius: 20px;
+    border: 1px solid #FFFFFF;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+.container > button:hover{
+    background-color: #a9a9a9;
+}
+
+.span-two {
+    grid-column: span 2;
+    color: #adf802;
+    background-color: rgba(139, 0, 139, 0.8);
+}
+.display {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0 ,0.75 );
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10x;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+  .display .previous-operand{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+.display .current-operand{
+    color: white;
+    font-size: 2.5rem;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+@media screen and (max-width: 800px) {
+    section {
