@@ -1,10 +1,10 @@
-function Calculator(color) {
-  this.color = color;
-  this.result = "";
-  this.n1 = 0;
-  this.n2 = 0;
-  this.currentOperator = "";
-  this.operation = () => {
+class Calculator {
+  color = "black";
+  result = "";
+  n1 = 0;
+  n2 = 0;
+  currentOperator = "";
+  operation = () => {
     if (this.currentOperator === "multiply") {
       this.result = this.n1 * this.n2;
     } else if (this.currentOperator === "minus") {
@@ -17,7 +17,7 @@ function Calculator(color) {
   };
 }
 
-const calculator = new Calculator("black");
+const calculator = new Calculator();
 
 document.querySelector(".calculator").style.background = calculator.color;
 
