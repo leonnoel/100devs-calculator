@@ -3,15 +3,15 @@ class Calculator {
   result = "";
   n1 = 0;
   n2 = 0;
-  currentOperator = "";
+  op = "";
   operation = () => {
-    if (this.currentOperator === "multiply") {
+    if (this.op === "*") {
       this.result = this.n1 * this.n2;
-    } else if (this.currentOperator === "minus") {
+    } else if (this.op === "-") {
       this.result = this.n1 - this.n2;
-    } else if (this.currentOperator === "add") {
+    } else if (this.op === "+") {
       this.result = this.n1 + this.n2;
-    } else if (this.currentOperator === "divide") {
+    } else if (this.op === "/") {
       this.result = this.n1 / this.n2;
     }
   };
@@ -39,7 +39,7 @@ const operators = document.querySelectorAll(".operators");
 operators.forEach((node) =>
   node.addEventListener("click", (e) => {
     calculator.n1 = +screen.textContent;
-    calculator.currentOperator = e.target.id;
+    calculator.op = e.target.id;
     screen.textContent = "";
   })
 );
