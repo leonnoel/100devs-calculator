@@ -1,0 +1,28 @@
+{
+  "name": "100devs-calculator",
+  "version": "1.0.0",
+  "description": "### Goal: Build a Simple Calculator using JS OOP best practices",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Operaismo/100devs-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Operaismo/100devs-calculator/issues"
+  },
+  "homepage": "https://github.com/Operaismo/100devs-calculator#readme",
+  "devDependencies": {
+    "husky": "^8.0.0"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0"
+  }
+}
