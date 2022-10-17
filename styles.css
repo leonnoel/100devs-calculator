@@ -7,8 +7,8 @@
 
 .calculator {
   margin: 100px auto 0 auto;
-  width: 400px;
-  height: 500px;
+  width: 500px;
+  height: 600px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -26,7 +26,7 @@
 .screen,
 .button {
   background: white;
-  font-size: 2rem;
+  font-size: 1.75rem;
 }
 
 .screen {
@@ -44,8 +44,8 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 75px;
+  height: 75px;
   margin: 2%;
   padding: 20px;
   text-align: center;
