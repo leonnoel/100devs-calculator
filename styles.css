@@ -5,21 +5,25 @@
   font-family: "Roboto", sans-serif;
 }
 
+.button, .buttons, .screen, .calculator {
+  display: flex;
+}
+
+.button, .buttons, .calculator {
+  justify-content: center;
+  align-items: center;
+}
+
 .calculator {
   margin: 100px auto 0 auto;
   width: 500px;
   height: 600px;
   border-radius: 20px;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .buttons {
-  display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   width: 80%;
 }
 
@@ -34,15 +38,11 @@
   height: 15%;
   margin: 5%;
   padding: 10px;
-  display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
 
 .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 50%;
   width: 75px;
   height: 75px;
