@@ -1,5 +1,5 @@
 class Calculator {
-  color = "black";
+  color = "";
   result = "";
   n1 = 0;
   n2 = 0;
@@ -18,6 +18,7 @@ class Calculator {
 }
 
 const calculator = new Calculator();
+calculator.color = "black";
 
 document.querySelector(".calculator").style.background = calculator.color;
 
