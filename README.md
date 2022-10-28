@@ -6,6 +6,10 @@
 
 ![Calculator](calculator.jpg)
 
+mine looks like this:
+
+![Calculator](Mycalculator.png)
+
 ### How to submit your code for review:
 
 - Fork and clone this repo
