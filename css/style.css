@@ -25,24 +25,28 @@ body {
   background-color: #fffcc2;
 }
 .body {
-  margin: 0 auto;
+  margin: 10vh auto;
   width: 25vw;
-  height: 35vw;
+  height: 70vh;
   background-color: rgb(19, 17, 17);
-  border-radius: 10%;
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 5%;
 }
 
 .display {
-  height: 5%;
+  height: 20%;
   margin: 0 10%;
-  padding-top: 15%;
+  background-color: #fffcc2;
+  display: flex;
+  justify-content: flex-end;
 }
 .display h1 {
-  background-color: #fffcc2;
-
+  margin-right: 10%;
+color: black;
 }
 .keyboard {
-  margin-top: 45%;
+  margin-top: 15%;
   padding: 0 10%;
   width: 100%;
   display: flex;
@@ -56,19 +60,28 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  margin: 5% 0;
+  margin: 2% 0;
   
 }
 .button {
   background-color: #fffcc2;
+  width: 10vh;
+  height: 6vh;
   border-radius: 50%;
   width: 15%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 2.5rem;
+  font-weight: 700;
 }
 
 /******************************************
 /* RESPONSIVENESS 
 /*******************************************/
-
+.clicked {
+  background-color: #eae9cd;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
