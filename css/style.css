@@ -25,18 +25,33 @@ body {
   background-color: #fffcc2;
 }
 .body {
+  min-height: 110px;
+  min-width: 50px;
   margin: 10vh auto;
-  width: 25vw;
+  width: 55vh;
   height: 70vh;
   background-color: rgb(19, 17, 17);
   border-radius: 50px;
   font-family: 'Source Sans Pro', sans-serif;
   padding-top: 5%;
 }
-
+ #reset {
+  border: 1px solid black;
+  min-width: 20%;
+  width: 20%;
+  min-height: 5vh;
+  margin: 2% auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ #reset:active {
+  background-color: #eae9cd;
+ }
 .display {
-  height: 20%;
-  margin: 0 10%;
+  height: 12vh;
+  margin: 4vh 5vh;
   background-color: #fffcc2;
   display: flex;
   justify-content: flex-end;
@@ -75,13 +90,14 @@ color: black;
   font-size: 2.5rem;
   font-weight: 700;
 }
+.button:active {
+  background-color: #eae9cd;
+}
 
 /******************************************
 /* RESPONSIVENESS 
 /*******************************************/
-.clicked {
-  background-color: #eae9cd;
-}
+
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/

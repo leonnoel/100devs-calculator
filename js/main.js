@@ -1,46 +1,154 @@
-
 // OOP 
-let calc = {
-    numActual: 0,
+class CrearCalculadora {
+    constructor() {
+        this.numActual = "0"
+        this.operacion
+        this.primerNum
+    }
     //pantalla igual a resultado
-    mostrarActual: function() {
-        document.querySelector('#pantalla').innerText = this.numActual
-    },
+    mostrarActual() {
+        pantalla.innerText = this.numActual
+    }
     // Actualizar numActual
-    botonActual: function(numero, boton) {
-        boton.classList.add("clicked")
-        this.numActual = numero.toString()
+    botonActual(num) {
+        if (this.numActual.length < 15) {
+            if (num == ".") {
+                if (!this.numActual.includes(".")) {
+                    this.numActual = this.numActual + num
+                }
+            } else if (this.numActual == 0) {
+                this.numActual = num.toString()
+            } else {
+                this.numActual = this.numActual + num
+            }
+        }
         this.mostrarActual()
-    },
-    sumar: function() {
-        
-    },
-    restar: function() {
-        
-    },
-    multiplicar: function() {
-        
-    },
-    dividir: function() {
-        
-    },
+    }
+    //Volver a cero
+    reset() {
+        this.numActual = "0"
+        this.mostrarActual()
+    }
+    simboloOp(simbolo) {
+        this.operacion = simbolo
+        this.primerNum = this.numActual
+        this.numActual = "0"
+    }
+    igual () {
+        switch(this.operacion){
+            case "+":
+                this.numActual = Number(this.primerNum) + Number(this.numActual)
+                break;
+            case "-":
+                this.numActual = Number(this.primerNum) - Number(this.numActual)
+                break;
+            case "*":
+                this.numActual = Number(this.primerNum) * Number(this.numActual)
+                break;
+            case "/":
+                this.numActual = Number(this.primerNum) / Number(this.numActual)
+                break;
+            } 
+            this.mostrarActual()
+        }
+}
+// ShortCuts
+function shortcuts() {
+let uno = document.querySelector('#uno')
+let dos = document.querySelector('#dos')
+let tres = document.querySelector('#tres')
+let cuatro = document.querySelector('#cuatro')
+let cinco = document.querySelector('#cinco')
+let seis = document.querySelector('#seis')
+let siete = document.querySelector('#siete')
+let ocho = document.querySelector('#ocho')
+let nueve = document.querySelector('#nueve')
+let cero = document.querySelector('#cero')
+let coma = document.querySelector('#coma')
+let reset = document.querySelector("#reset")
+let pantalla = document.querySelector('#pantalla')
+let igual = document.querySelector('#igual')
+let sumar = document.querySelector('#sumar')
+let menos = document.querySelector('#menos')
+let multiplicar = document.querySelector('#multiplicar')
+let dividir = document.querySelector('#dividir')
 }
 
 //   EVENT LISTENERS  
-
-//document.querySelector('#igual').addEventListener('click', calc.mostrarResultado())
-document.querySelector('#uno').addEventListener('click', calc.botonActual(1, document.querySelector('#uno')))
-document.querySelector('#dos').addEventListener('click', calc.botonActual(2, document.querySelector('#dos')))
-document.querySelector('#tres').addEventListener('click', calc.botonActual(3, document.querySelector('#tres')))
-document.querySelector('#cuatro').addEventListener('click', calc.botonActual(4, document.querySelector('#cuatro')))
-document.querySelector('#cinco').addEventListener('click', calc.botonActual(5, document.querySelector('#cinco')))
-document.querySelector('#seis').addEventListener('click', calc.botonActual(6, document.querySelector('#seis')))
-document.querySelector('#siete').addEventListener('click', calc.botonActual(7, document.querySelector('#siete')))
-document.querySelector('#ocho').addEventListener('click', calc.botonActual(8, document.querySelector('#ocho')))
-document.querySelector('#nueve').addEventListener('click', calc.botonActual(9, document.querySelector('#nueve')))
-document.querySelector('#cero').addEventListener('click', calc.botonActual(0, document.querySelector('#cero')))
-document.querySelector('#coma').addEventListener('click', calc.botonActual(",", document.querySelector('#coma')))
-document.querySelector('#sumar').addEventListener('click', calc.sumar())
-document.querySelector('#menos').addEventListener('click', calc.restar())
-document.querySelector('#multiplicar').addEventListener('click', calc.multiplicar())
-document.querySelector('#dividir').addEventListener('click', calc.dividir())
+function eventListners() {
+    
+    reset.addEventListener("click", (e)=>{
+        e.stopPropagation()
+      calc.reset()
+})
+    
+uno.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(1)
+})
+dos.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(2)
+})
+tres.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(3)
+})
+cuatro.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(4)
+})
+cinco.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(5)
+})
+seis.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(6)
+})
+siete.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(7)
+})
+ocho.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(8)
+})
+nueve.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(9)
+})
+cero.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(0)
+})
+coma.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.botonActual(".")
+})
+igual.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.igual()
+})
+sumar.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.simboloOp("+")
+})
+menos.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.simboloOp("-")
+})
+multiplicar.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.simboloOp("*")
+})
+dividir.addEventListener("click", (e)=>{
+    e.stopPropagation();
+    calc.simboloOp("/")
+})
+}
+// Start
+shortcuts()
+eventListners()
+let calc = new CrearCalculadora()
+calc.mostrarActual()
