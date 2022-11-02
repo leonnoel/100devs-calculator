@@ -1,0 +1,105 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  background-color: #fffcc2;
+}
+.body {
+  min-height: 110px;
+  min-width: 50px;
+  max-width: 450px;
+  margin: 20px auto;
+  width: 350px;
+  height: 500px;
+  background-color: rgb(19, 17, 17);
+  border-radius: 50px;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding-top: 5%;
+}
+ #reset {
+  border: 1px solid black;
+  min-width: 20%;
+  width: 20%;
+  min-height: 5vh;
+  margin: 2% auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ #reset:active {
+  background-color: #eae9cd;
+ }
+.display {
+  height: 80px;
+  margin: 40px;
+  background-color: #fffcc2;
+  display: flex;
+  justify-content: flex-end;
+}
+.display h1 {
+  margin-right: 10%;
+color: black;
+}
+.keyboard {
+  max-height: 50%;
+  margin-top: 15%;
+  padding: 0 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  background-color: rgb(19, 17, 17);
+}
+.row {
+  background-color: rgb(19, 17, 17);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin: 2% 0;
+  
+}
+.button {
+  background-color: #fffcc2;
+  width: 10vh;
+  height: 6vh;
+  border-radius: 50%;
+  width: 15%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.button:active {
+  background-color: #eae9cd;
+}
+
+/******************************************
+/* RESPONSIVENESS 
+/*******************************************/
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
