@@ -50,6 +50,7 @@ class CrearCalculadora {
                 break;
             } 
             this.mostrarActual()
+            this.primerNum = '0'
         }
 }
 // ShortCuts
