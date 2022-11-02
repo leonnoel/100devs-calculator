@@ -27,9 +27,10 @@ body {
 .body {
   min-height: 110px;
   min-width: 50px;
-  margin: 10vh auto;
-  width: 55vh;
-  height: 70vh;
+  max-width: 450px;
+  margin: 20px auto;
+  width: 350px;
+  height: 500px;
   background-color: rgb(19, 17, 17);
   border-radius: 50px;
   font-family: 'Source Sans Pro', sans-serif;
@@ -50,8 +51,8 @@ body {
   background-color: #eae9cd;
  }
 .display {
-  height: 12vh;
-  margin: 4vh 5vh;
+  height: 80px;
+  margin: 40px;
   background-color: #fffcc2;
   display: flex;
   justify-content: flex-end;
@@ -61,6 +62,7 @@ body {
 color: black;
 }
 .keyboard {
+  max-height: 50%;
   margin-top: 15%;
   padding: 0 10%;
   width: 100%;

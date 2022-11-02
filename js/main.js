@@ -30,9 +30,13 @@ class CrearCalculadora {
         this.mostrarActual()
     }
     simboloOp(simbolo) {
+        if (this.operacion) {
+        this.operacion = simbolo
+        } else {
         this.operacion = simbolo
         this.primerNum = this.numActual
         this.numActual = "0"
+        }
     }
     igual () {
         switch(this.operacion){
@@ -50,7 +54,8 @@ class CrearCalculadora {
                 break;
             } 
             this.mostrarActual()
-            this.primerNum = '0'
+            this.primerNum = this.numActual
+            this.operacion = ''
         }
 }
 // ShortCuts
