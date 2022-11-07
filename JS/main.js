@@ -5,7 +5,7 @@ console.log(buttons)
 
 buttons.map( button => {
   button.addEventListener('click', (e)=> {
-      switch(e.target.id){
+      switch(e.target.innerText){
         case 'C':
           display.innerText = '';
           break;
@@ -19,5 +19,6 @@ buttons.map( button => {
         default:
             display.innerText += e.target.innerText;
       }
-  });
+      
 });
+})
