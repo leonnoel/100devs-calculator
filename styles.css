@@ -103,7 +103,7 @@ div {
 
 }
 
-div:hover{
+.equals:hover{
     background-color:rgb(255, 0, 0);
     color: white;
     transition: 0.5s ease-in-out;
