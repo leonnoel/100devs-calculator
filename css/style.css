@@ -1,0 +1,46 @@
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  box-sizing: border-box;
+}
+
+
+#calcBody {
+  width: 400px;
+  height: 500px;
+  border-radius: 40px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#screen {
+  background-color: white;
+  width: 85%;
+  height: 15%;
+  margin-top: 20%;
+}
+
+ul {
+  display: flex;
+  width: 60%;
+  height: 50%;
+  align-self: center;
+  justify-self: center;
+  flex-wrap: wrap;
+}
+
+li {
+  flex: 1 0 21%;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
