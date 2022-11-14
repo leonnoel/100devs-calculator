@@ -23,18 +23,25 @@ body {
   width: 85%;
   height: 15%;
   margin-top: 20%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+  font-size: 50px;
 }
 
 ul {
   display: flex;
   width: 60%;
   height: 50%;
+  margin-bottom: 5%;
   align-self: center;
   justify-self: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 li {
+  margin: 1%;
   flex: 1 0 21%;
   font-size: 30px;
   font-weight: bold;
