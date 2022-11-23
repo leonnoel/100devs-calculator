@@ -1,0 +1,113 @@
+/* Box Model Hack */
+* {
+box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    background-color: #7C837D;
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Courier New', Courier, monospace */
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.calculator {
+    width: 350px;
+    height: 550px;
+    background-color: #3F3839;
+    border: 2px solid #CD323A;
+    border-radius: 25px;
+    margin: 8rem auto;
+    padding: 1rem;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #88985F;
+    width: 100%;
+    height: 5.5rem;
+    box-shadow: 0 .1rem 1rem 0rem #353031 inset;
+
+    border-radius: 15px;
+    margin: 1rem auto;
+
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #3c3c3c;
+}
+
+.controlBox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+
+    padding: 5px 8px 0 8px;
+    height: 75%;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-evenly;
+    
+    width: 100%;
+    height: 4.5rem;
+}
+
+.button-number, .button-operation, .button-equals {
+    height: 3.8rem;
+    width: 3.8rem;
+    background-color: #B6B8B7;
+    transition-duration: 0.4s;
+
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px 0 rgba(0,0,0,0.2);
+    border: 1px solid black;
+
+    color: #F9FCFB;
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center; 
+}
+
+.button-number:active, .button-operation:active, .button-equals:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(5px);
+  }
+
+.button-operation, .button-equals {
+    background-color: #33599D;
+}
+
+.button-number:hover, .button-operation:hover, .button-equals:hover {
+    color: #CD323A;
+    background-color: black;
+}
+
+.bigOne {
+    flex-grow: 1;
+}
