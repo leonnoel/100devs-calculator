@@ -1,0 +1,58 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to left, gray, snow);
+}
+
+.calculator-grid {
+    padding-top: 50px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    height: 50px;
+    border: 1px solid black;
+    outline: none;
+}
+
+.calculator-grid > button:hover {
+    background-color: lightgray;
+}
+
+.del {
+    grid-column: 1/-1;
+}
+
+.output {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: flex-end;
+    background-color: black;
+    color: white;
+    height: 100px;
+    flex-direction: column;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break:break-all;
+    padding: 10px;
+}
+
+.output .previous {
+    color: darkgray;
+    font-size: medium;
+}
+
+.output .current {
+    color: white;
+    font-size: x-large;
+}
