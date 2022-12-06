@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    height: 40vh;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    background: lightcoral;
+    grid-gap: 0ch;
+    width: 85spx;
+    height: 130px;
+}
+.numbers{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.display,
+.displayTwo{
+    text-align: end;
+
+}
+.clear,
+.clearBtn{
+    width: 85px;
+    margin: 0px;
+}
+.clear{
+    margin: 0px;
+}
+body{
+    background-color: black;
+}
