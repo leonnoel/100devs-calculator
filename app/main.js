@@ -24,12 +24,10 @@ class Calculator {
     for (let el of this.allSpans) {
       el.addEventListener("click", (evt) => this.#addToCalculation(evt));
     }
-    // this.seven.addEventListener("click", (evt) => this.addToCalculation(evt));
-    // this.eight.addEventListener("click", (evt) => this.addToCalculation(evt));
-    // this.nine.addEventListener("click", (evt) => this.addToCalculation(evt));
   };
   #addToCalculation = (evt) => {
     const evtValue = evt.target.textContent;
+    console.log(evtValue.charCodeAt());
     if (evtValue === "=") {
       this.#evaluate();
     } else {
@@ -43,11 +41,13 @@ class Calculator {
   };
   #evaluate = () => {
     const evalStr = this.#getCalcStr();
+    const evalStrLen = evalStr.length;
     const operArr = [];
     const valArr = [];
     const sumOperArr = [];
     const sumValArr = [];
     const digitSet = new Set([
+      ".",
       "0",
       "1",
       "2",
@@ -59,22 +59,49 @@ class Calculator {
       "8",
       "9",
     ]);
-    const operSet = new Set(["+", "-", "/", "*"]);
-    const sumOperSet = new Set(["+", "-"]);
+    const operSet = new Set(["+", "/", "*"]);
+    const sumOperSet = new Set(["+"]);
 
-    for (const el of evalStr) {
+    for (let i = 0; i < evalStrLen; i++) {
+      const el = evalStr[i];
+      console.log("el", el);
       if (digitSet.has(el)) {
-        valArr.push(el);
+        let startIndex = i;
+        let endIndex = -1;
+        while (digitSet.has(evalStr[i])) {
+          ++i;
+        }
+        endIndex = i;
+        console.log("positive", startIndex, endIndex, i);
+        valArr.push(evalStr.slice(startIndex, endIndex));
+        --i;
+      } else if (el === "-") {
+        ++i;
+        let startIndex = i;
+        let endIndex = -1;
+        while (digitSet.has(evalStr[i])) {
+          ++i;
+        }
+        --startIndex;
+        endIndex = i;
+        valArr.push(evalStr.slice(startIndex, endIndex));
+        console.log("negative", startIndex, endIndex, i);
+        --i;
+        operArr.push("+");
+        valArr.push("0");
       } else if (operSet.has(el)) {
         operArr.push(el);
+        console.log(operArr);
       }
     }
+    console.log("valarr", valArr);
 
     for (let i = operArr.length - 1; i >= 0; i--) {
       const oper = operArr[i];
       if (sumOperSet.has(oper)) {
         sumValArr.push(valArr.pop());
         sumOperArr.push(operArr.pop());
+        console.log(sumOperArr);
       } else {
         const secondVal = +valArr.pop();
         const firstVal = +valArr.pop();
@@ -89,25 +116,28 @@ class Calculator {
       }
     }
 
-    sumValArr.push(valArr.pop());
+    while (valArr.length > 0) {
+      sumValArr.push(valArr.pop());
+    }
+
+    console.log(sumOperArr);
 
     for (let i = sumOperArr.length - 1; i >= 0; i--) {
       const firstVal = +sumValArr.pop();
       const secondVal = +sumValArr.pop();
-      if (sumOperArr[i] === "+") {
-        sumValArr.push(`${firstVal + secondVal}`);
-      } else {
-        sumValArr.push(`${firstVal - secondVal}`);
-      }
+      console.log(firstVal, secondVal);
+      sumValArr.push(`${firstVal + secondVal}`);
 
       sumOperArr.pop();
     }
     this.#setDisplayStr(sumValArr.pop());
     this.#display();
     this.#resetCalcStr();
+    this.#setCalcStr(this.#getDisplayStr());
   };
   #setCalcStr = (input) => {
     this.calcStr += input;
+    console.log(this.calcStr);
   };
   #setDisplayStr = (input) => {
     this.displayStr = input;
