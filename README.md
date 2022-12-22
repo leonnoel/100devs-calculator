@@ -6,7 +6,7 @@
 
 ![Calculator](calculator.jpg)
 
-### My features:
+### Features:
 
 - Follows OOP JS practices
 - Sleek and minimalist web responsive design
