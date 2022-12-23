@@ -12,6 +12,7 @@ body {
     font-size: 3.2rem;
     font-family: sans-serif;
     font-weight: bold;
+    color: black;
 }
 
 @media only screen and (min-width: 460px) {
