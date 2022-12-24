@@ -1,0 +1,118 @@
+/* ---------------- */
+/*     DOCUMENT     */
+/* ---------------- */
+
+html {
+    font-size: 62.5%;
+    line-height: 1.4;
+    background-color: #1b1b1b;
+}
+
+body {
+    font-size: 3.2rem;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+}
+
+@media only screen and (min-width: 460px) {
+    body {
+        font-size: 5rem;
+    }
+}
+
+/* ---------------- */
+/*    CALCULATOR    */
+/* ---------------- */
+
+.calculator {
+    max-width: 24rem;
+    padding: 3.5rem;
+    padding-top: 5rem;
+    margin: 2.5rem auto;
+    background-color: #222;
+    border-radius: 3rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 4rem;
+}
+
+@media only screen and (min-width: 460px) {
+    .calculator {
+        max-width: 35rem;
+        margin: 5rem auto;
+        padding: 5rem;
+        padding-top: 7rem;
+    }
+}
+
+.screen {
+    width: 100%;
+    height: 5.5rem;
+    background-color: #BEF0A7;
+    border: 1px solid black;
+    color: black;
+    text-align: end;
+    padding-right: 1rem;
+    line-height: 5.5rem;
+}
+
+@media only screen and (min-width: 460px) {
+    .screen {
+        height: 8.5rem;
+        line-height: 8.5rem;
+        padding-right: 2rem;
+    }
+}
+
+.panel {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    gap: 0.9rem;
+}
+
+@media only screen and (min-width: 460px) {
+    .panel {
+        gap: 1.5rem;
+    }
+}
+
+.button {
+    width: 4.5rem;
+    height: 4.5rem;
+    text-align: center;
+    border-radius: 4.5rem;
+    border: 1px solid black;
+    background-color: #5e5c64;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+}
+
+@media only screen and (min-width: 460px) {
+    .button {
+        width: 7rem;
+        height: 7rem;
+        border-radius: 7rem;
+    }
+}
+
+.button::selection {
+    background-color: none;
+}
+
+.clear {
+    background-color: #94444F;
+}
+
+.equal {
+    background-color: #F15A2B;
+}
+
+.operand {
+    background-color: #027B6D;
+}
