@@ -19,8 +19,9 @@
   - Anything specific on which you want feedback!
 
 Example:
+
 ```
 I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
+I feel good about my code: 3
+I'm not sure if my code is the most effectively and I could probably add some more features...
 ```
