@@ -2,6 +2,8 @@
 
 https://the-calculette.netlify.app/
 
+![calculette](https://user-images.githubusercontent.com/116316499/214815169-7d5cc2dd-7329-46cd-8cee-7896e8422bcc.png)
+
 # 🔢 #100Devs Push Project001: Calculator
 
 ### Goal: Build a Simple Calculator using JS OOP best practices
