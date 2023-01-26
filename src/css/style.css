@@ -1,5 +1,15 @@
 /* Box Model Hack */
-* {
+:root {
+     font-size: 62.5%;
+     --primary-color: #121212;
+     --secondary-color: #1e1e1e;
+     --border-color: #252525;
+     --round-border-radius: 8px;
+     --button-border-radius: 50%;
+}
+*,
+*::before,
+*::after {
      box-sizing: border-box;
 }
 
@@ -22,21 +32,73 @@
 /*******************************************/
 
 body {
-
+     background:var(--primary-color);
 }
 
+li {
+     list-style-type: none;
+}
+
+button {
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     font-size: 4rem;
+     color:white;
+}
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-header {
 
+.calculator-body {
+     width: 50rem;
+     height: 90rem;
+     margin: 5rem auto;
 }
 
-footer {
+.viewing-area {
+     display: block;
+     width: calc(50rem * 0.85);
+     height: 40rem;
+     margin: 3rem calc(45rem * 0.075);
+}
 
+.buttonArea {
+     width: calc(50rem * 0.85);
+     justify-content: center;
+     align-items: center;
+     height: 40rem;
+     margin: 0 auto;
+}
+
+.row {
+     display: flex;
+     width: 100%;
+     flex-flow: row wrap;
+     justify-content: center;
+     align-items: center;
+}
+
+ul {
+     display: flex;
+     padding: 0;
+     column-gap: 1rem;
+}
+
+button {
+     width: 8rem;
+     height: 8rem;
+     border: 1px solid var(--border-color);
+     border-radius: var(--button-border-radius);
+     background: var(--secondary-color);
+     cursor: pointer;
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+.calculator-body,
+.viewing-area {
+     border-radius: var(--round-border-radius);
+     border: 1px solid var(--border-color);
+}
