@@ -6,6 +6,7 @@
      --border-color: #252525;
      --round-border-radius: 8px;
      --button-border-radius: 50%;
+     --main-font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 *,
 *::before,
@@ -30,6 +31,15 @@
 /******************************************
 /* BASE STYLES
 /*******************************************/
+::-webkit-scrollbar {
+     width: 0.5em !important;
+     background-color: transparent !important;
+   }
+   
+::-webkit-scrollbar-thumb {
+     background-color: darkgray !important;
+     border-radius: 10px !important;
+}
 
 body {
      background:var(--primary-color);
@@ -40,9 +50,24 @@ li {
 }
 
 button {
-     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     font-family: var(--main-font);
      font-size: 4rem;
      color:white;
+}
+
+button:hover {
+     background: #73d2de;
+     color: black;
+}
+
+span {
+     display: inline-block;
+     width: 100%;
+     font-family: "Tiempos Headline", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+     font-size: 4rem;
+     color: white;
+     text-align: right;
+     word-break: break-all;
 }
 
 /******************************************
@@ -50,24 +75,28 @@ button {
 /*******************************************/
 
 .calculator-body {
-     width: 50rem;
-     height: 90rem;
-     margin: 5rem auto;
+     max-width: 50rem;
+     padding: 3rem 0;
+     margin: 6rem auto;
 }
 
 .viewing-area {
-     display: block;
-     width: calc(50rem * 0.85);
+     justify-content: center;
+     max-width: calc(50rem * 0.85);
      height: 40rem;
-     margin: 3rem calc(45rem * 0.075);
+     padding: 1rem;
+     margin: 0 calc(45rem * 0.075);
+     overflow-x: hidden;
+     overflow-y: scroll;
+     hyphens: auto;
 }
 
 .buttonArea {
-     width: calc(50rem * 0.85);
+     max-width: calc(50rem * 0.85);
      justify-content: center;
      align-items: center;
      height: 40rem;
-     margin: 0 auto;
+     margin: 2rem auto 0 auto;
 }
 
 .row {
@@ -101,4 +130,11 @@ button {
 .viewing-area {
      border-radius: var(--round-border-radius);
      border: 1px solid var(--border-color);
+}
+
+h1 {
+     font-family: var(--main-font);
+     color: white;
+     font-size: 7rem;
+     text-align: center;
 }

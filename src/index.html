@@ -2,51 +2,52 @@
 <html lang="en">
 	<head>
     	<meta charset="utf-8">
-    	<meta name="description" content="Your description goes here">
-    	<meta name="keywords" content="one, two, three">
+    	<meta name="description" content="Simple and Basic Calculator.">
+    	<meta name="keywords" content="calculator, simple, basic">
 
-		<title>Blank Template</title>
+		<title>The Calculette</title>
 
 		<!-- external CSS link -->
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
+		<h1>Introducing... the <i>Calculette.</i></h1>
 		<div class="calculator-body">
-			<div class="viewing-area">
-				<span id="numberOutput">1337</span>
+			<div class="viewing-area"> 
+				<span id="numberOutput"></span>
 			</div>
 			<div class="buttonArea">
 				<div class="row">
 					<ul>
-						<li><button type="button" id="seven">7</button></li>
-						<li><button type="button" id="eight">8</button></li>
-						<li><button type="button" id="nine">9</button></li>
-						<li><button type="button" id="divide">/</button></li>
+						<li><button type="button" class="number">7</button></li>
+						<li><button type="button" class="number">8</button></li>
+						<li><button type="button" class="number">9</button></li>
+						<li><button type="button" class="operator">/</button></li>
 					</ul>
 				</div>
 				<div class="row">
 					<ul>
-						<li><button type="button" id="four">4</button></li>
-						<li><button type="button" id="five">5</button></li>
-						<li><button type="button" id="six">6</button></li>
-						<li><button type="button" id="multiply">X</button></li>
+						<li><button type="button" class="number">4</button></li>
+						<li><button type="button" class="number">5</button></li>
+						<li><button type="button" class="number">6</button></li>
+						<li><button type="button" class="operator">x</button></li>
 					</ul>
 				</div>
 				<div class="row">
 					<ul>
-						<li><button type="button" id="one">1</button></li>
-						<li><button type="button" id="two">2</button></li>
-						<li><button type="button" id="three">3</button></li>
-						<li><button type="button" id="add">+</button></li>
+						<li><button type="button" class="number">1</button></li>
+						<li><button type="button" class="number">2</button></li>
+						<li><button type="button" class="number">3</button></li>
+						<li><button type="button" class="operator">+</button></li>
 					</ul>
 				</div>
 				<div class="row">
 					<ul>
-						<li><button type="button" id="zero">0</button></li>
-						<li><button type="button" id="dot">.</button></li>
+						<li><button type="button" class="number">0</button></li>
+						<li><button type="button" id="decimal">.</button></li>
 						<li><button type="button" id="equals">=</button></li>
-						<li><button type="button" id="minus">-</button></li>
+						<li><button type="button" class="operator">-</button></li>
 					</ul>
 				</div>
 			</div>
