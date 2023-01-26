@@ -1,3 +1,7 @@
+## Final Project available at: 
+
+https://the-calculette.netlify.app/
+
 # 🔢 #100Devs Push Project001: Calculator
 
 ### Goal: Build a Simple Calculator using JS OOP best practices
