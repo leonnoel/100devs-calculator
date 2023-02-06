@@ -1,0 +1,62 @@
+*::after,
+*::before,
+* {
+  box-sizing: inherit;
+}
+/*-----html-----*/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+/*-----body-----*/
+body {
+  margin: 0;
+}
+
+/*-----main-----*/
+main {
+  background-color: black;
+  width: 480px;
+  height: 560px;
+  margin: 1% auto;
+  border-radius: 2rem;
+  padding-top: 4%;
+}
+
+main h1 {
+  background-color: white;
+  width: 440px;
+  height: 70px;
+  margin: 0 auto;
+  text-align: right;
+  font-size: 4rem;
+  padding-right: 5%;
+  line-height: 1.5;
+}
+
+main section {
+  border: solid 3px red;
+  width: 400px;
+  height: 75%;
+  margin: 5% auto;
+  display: grid;
+  grid-template-columns: repeat(4, 20%);
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/******JS Classes******/
+.round {
+  border: solid 2px blue;
+  border-radius: 100%;
+  height: 80%;
+  background-color: white;
+  color: black;
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+  line-height: 2;
+}
+.round:hover {
+  cursor: pointer;
+}
