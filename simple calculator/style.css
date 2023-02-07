@@ -1,0 +1,66 @@
+* {
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    background-image: url('https://i.ibb.co/8mL2KqF/wooden-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.calculator {
+    background-color: rgb(22, 22, 22);
+    max-width: 400px;
+    height: 650px;
+    margin: 50px auto;
+    border-radius: 20px;
+    padding-top: 75px;
+    border: 3px solid grey;
+    box-shadow: 10px 5px 10px 5px rgb(39, 37, 37);
+}
+
+.display {
+    background-color: rgb(2, 118, 2);
+    border: 3px solid rgb(1, 74, 1);
+    height: 6rem;
+    margin: 0 10%;
+    border-radius: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+
+.buttons {
+    display: grid;
+    margin: 10%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    padding: 25px 10px;
+    margin: 5px;
+    background-color: rgb(220, 217, 217);
+    border-radius: 50%;
+    font-size: 25px;
+    box-shadow: 2px 3px grey ;
+}  
+
+.clear {
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    margin: 10%;
+    margin-left: 50%;
+    width: 125px;
+    padding: 10px 15px;
+    font-size: 25px;
+    border-radius: 5px;
+    box-shadow: 2px 3px rgb(187, 4, 4);
+}
+
+.button:hover {
+    background-color: rgb(144, 200, 144);
+}
