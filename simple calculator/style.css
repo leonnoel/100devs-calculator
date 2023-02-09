@@ -1,0 +1,51 @@
+body {
+    background-image: url('/assets/wooden%20background.jpg');
+    height: 80vh;
+    background-size: cover;
+}
+
+.calculator {
+    background-color: rgb(34, 34, 34);
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px #1b1b1b;
+    margin: 15% auto;
+}
+
+#displayWindow {
+    width: 300px;
+    height: 60px;
+    background-color: rgb(3, 112, 3);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    text-align: right;
+}
+
+.clearButton {
+    margin: 5% 0;
+    margin-left: 57%; 
+    width: 125px;
+    padding: 10px 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: rgb(255, 2, 25);
+    border: 2px solid rgb(118, 5, 5);
+    box-shadow: 2px 2px rgb(174, 20, 20);
+}
+
+.button {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 2px 2px silver;
+}
+
+.button:hover {
+    background-color: rgba(192, 216, 192, 0.9);
+}
+
+
+
+
+
