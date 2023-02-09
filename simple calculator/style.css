@@ -1,3 +1,9 @@
+body {
+    background-image: url('/assets/wooden%20background.jpg');
+    height: 80vh;
+    background-size: cover;
+}
+
 .calculator {
     background-color: rgb(34, 34, 34);
     padding: 40px 20px;
