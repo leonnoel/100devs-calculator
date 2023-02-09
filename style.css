@@ -60,3 +60,7 @@ main section {
 .round:hover {
   cursor: pointer;
 }
+
+.reset {
+  width: 200%;
+}
