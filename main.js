@@ -33,22 +33,19 @@ for (let i = 0; i < buttonText.length; i++) {
 //BUTTON FUNCTIONALITY OF DISPLAYING ON SCREEN
 const screen = document.querySelector('#display');
 const buttons = document.querySelectorAll('span');
-let expression;
 
 for (let button of buttons) {
   button.addEventListener('click', (e) => {
     if (e.target.textContent == '=') {
-      expression = screen.textContent;
+      let expression = screen.textContent;
       if (expression.includes('+')) {
-        console.log(expression);
-        console.log(evalAddition(expression));
-        screen.textContent = operators['+'](...evalAddition(expression));
+        screen.textContent = operators['+'](...addition.eval(expression));
       } else if (expression.includes('x')) {
-        evalMultiplication(expression);
+        screen.textContent = operators.x(...multiplication.eval(expression));
       } else if (expression.includes('-')) {
-        evalSubtraction(expression);
+        screen.textContent = operators['-'](...subtraction.eval(expression));
       } else {
-        evalDivision(expression);
+        screen.textContent = operators['/'](...division.eval(expression));
       }
     } else if (e.target.textContent == 'AC') {
       screen.textContent = '';
@@ -58,69 +55,39 @@ for (let button of buttons) {
   });
 }
 
-//EVALUATION OBJECTS
-function evalAddition(str) {
-  return str
-    .trim()
-    .split('+')
-    .map((value) => {
-      if (Number(value)) {
-        return Number(value);
-      } else {
-        return Number(value.replaceAll(' ', ''));
-      }
-    });
-}
-function evalMultiplication(str) {
-  return str
-    .trim()
-    .split('x')
-    .map((value) => {
-      if (Number(value)) {
-        return Number(value);
-      } else {
-        return value;
-      }
-    });
-}
-function evalSubtraction(str) {
-  return str
-    .trim()
-    .split('-')
-    .map((value) => {
-      if (Number(value)) {
-        return Number(value);
-      } else {
-        return value;
-      }
-    });
-}
-function evalDivision(str) {
-  return str
-    .trim()
-    .split('/')
-    .map((value) => {
-      if (Number(value)) {
-        return Number(value);
-      } else {
-        return value;
-      }
-    });
+//CONTSTRUCTOR TO CREATE STRING INTO ARRAY OF NUMBERS
+function EvalConstructor(str) {
+  this.eval = function (expression) {
+    return expression
+      .trim()
+      .split(str)
+      .map((value) => {
+        if (Number(value)) {
+          return Number(value);
+        } else {
+          return Number(value.replaceAll(' ', ''));
+        }
+      });
+  };
 }
 
+const addition = new EvalConstructor('+');
+const multiplication = new EvalConstructor('x');
+const subtraction = new EvalConstructor('-');
+const division = new EvalConstructor('/');
+
+//IF ELSE CASES OF WHAT TYPE OF OPERATION TO USE DEPENDING ON SCREEN TEXT
 const operators = {
   x: function (num1, num2) {
-    return Number(num1) * Number(num2);
+    return (num1 * num2).toFixed(2);
   },
   '-': function (num1, num2) {
     return num1 - num2;
   },
   '/': function (num1, num2) {
-    return num1 / num2;
+    return (num1 / num2).toFixed(2);
   },
   '+': function (num1, num2) {
-    return Number(num1) + Number(num2);
+    return num1 + num2;
   },
 };
-
-//

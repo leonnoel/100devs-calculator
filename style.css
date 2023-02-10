@@ -35,21 +35,24 @@ main h1 {
 }
 
 main section {
-  border: solid 3px red;
+  /* border: solid 3px red; */
   width: 400px;
   height: 75%;
   margin: 5% auto;
   display: grid;
   grid-template-columns: repeat(4, 20%);
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  align-content: center;
 }
 
 /******JS Classes******/
 .round {
-  border: solid 2px blue;
+  /* border: solid 2px blue; */
   border-radius: 100%;
   height: 80%;
+  margin: 0;
+  display: inline-block;
   background-color: white;
   color: black;
   font-size: 4rem;
