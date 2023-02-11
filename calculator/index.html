@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/reset.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
+</head>
+<body>
+    <div id="calculator">
+        <div id="screen">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <section id="numbers">
+            <div class="longrow">
+                <ul>
+                    <li data-all-clear>AC</li>
+                    <li data-delete>DEL</li>
+                    
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li data-number>7</li>
+                    <li data-number>8</li>
+                    <li data-number>9</li>
+                    <li data-operation>/</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li data-number>4</li>
+                    <li data-number>5</li>
+                    <li data-number>6</li>
+                    <li data-operation>x</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li data-number>1</li>
+                    <li data-number>2</li>
+                    <li data-number>3</li>
+                    <li data-operation>+</li>
+                </ul>
+            </div>
+            <div class="row">
+                <ul>
+                    <li data-number>0</li>
+                    <li data-number>.</li>
+                    <li data-equals>=</li>
+                    <li data-operation>-</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+
+    
+    <script src="js/index.js"></script>
+</body>
+</html>
