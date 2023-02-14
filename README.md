@@ -1,3 +1,12 @@
+# Here's mine
+![](https://github.com/kensiecodes/100devs-calculator/blob/answer/ezgif-3-91cadcb241.gif?raw=true)
+
+I used a tutorial to walk through the Javascript portion as I felt really out of depth with the object syntax and how it connects to the DOM. I learned a lot simply copying this but I would like to give a shot at rebuilding from scratch in a few weeks. 
+
+I did push myself to make a cute, interactive design in lieu of excelling at the JS. It feels great to bring a vision to life with HTML and CSS-- while simple they are powerful and effective.
+
+
+
 # 🔢 #100Devs Push Project001: Calculator
 
 ### Goal: Build a Simple Calculator using JS OOP best practices

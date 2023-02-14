@@ -1,0 +1,87 @@
+body {
+    font-size:50px;
+    color:white;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+#calculator {
+    width:400px;
+    height:500px;
+    margin:auto;
+    margin-top:4%;
+    background-color: pink;
+    border-radius:25px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: space-around;
+    box-shadow: 0 9px rgb(167, 113, 113);
+}
+
+
+#screen {
+    height:80px;
+    background-color:white;
+    width:80%;
+    margin:auto;
+    border-radius: 30px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+
+
+section {
+    margin-bottom:50px;
+}
+
+div .row ul, .longrow ul{
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    width:90%;
+    margin:auto;
+}
+
+
+
+ul li {
+    background-color:rgb(192, 129, 129);
+    width: 70px;
+    margin-bottom:10px;
+    text-align:center;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px rgb(114, 91, 91);
+  }
+  
+ul li:hover {
+    background-color: rgb(167, 113, 113);
+}
+
+ul li:active {
+    background-color: rgb(167, 113, 113);
+    box-shadow: 0 5px rgb(114, 91, 91);
+    transform: translateY(4px);
+}
+
+.longrow ul li{
+    width:40%;
+}
+
+#screen {
+    background-color: rgb(254, 241, 243)
+}
+
+
+
+#screen div {
+    font-size:22px;
+    color:rgb(192, 129, 129);
+    word-wrap: break-word;
+    padding:10px 15px 0 15px;   
+    text-align:right;
+}
+
