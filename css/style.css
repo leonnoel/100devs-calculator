@@ -1,0 +1,137 @@
+/******************************************
+/* HOT GARBAGE - PLEASE DON'T MIMIC THIS CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+/* h1, h2{
+  text-align: center;
+}
+img{
+  display: block;
+  height: 300px;
+  margin: 0 auto;
+}
+ul{
+  width: 100px;
+  height: 200px;
+  border: 3px solid black;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+li{
+  text-align: center;
+  width: 94px;
+  height: 49px;
+  border: 1px solid black;
+} */
+
+/* #theWeeknd, #sleepingGif, #classDay{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+} */
+body{
+  width: 520px;
+  height: 650px;
+  border: 1px solid black;  
+  color: black;
+  /* font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-stretch: expanded;
+  font-size: 30px; */
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  background: white;
+  border-radius: 25px;
+}
+
+.display{
+  border: 1px solid black;
+  width: 100%;
+  height: 120px;
+  margin: 100px 80px 0;
+}
+
+
+
+/* div.buttonsContainer{
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-around;
+  background: black;
+  flex-wrap: wrap;
+  flex-basis: 1 0 20%;
+}
+
+.otherRow{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 13.6px 0;
+}
+
+.display{
+  text-align: right;
+  margin-bottom: 0;
+  font-size: 75px; 
+  background: black;
+  padding-top: 100px;
+  padding-right: 20px;
+}
+
+.grayButton{
+  background: #666565;
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-stretch: expanded;
+}
+
+.lightGrayButton{
+  background: #a5a5a5;
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-stretch: expanded;
+}
+
+.orangeButton{
+  background: #da9235;
+  width: 65px;
+  height: 65px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-stretch: expanded;
+} */
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
