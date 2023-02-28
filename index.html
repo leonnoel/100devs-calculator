@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This is a calculator built with JavaScript's Object-Oriented Programming concepts.">
+    <meta name="keywords" content="JavaScript, Object-Oriented Programming, OOP, Calculator">
+    <meta name="author" content="Gemini Powell">
+    <title>JavaScript OOP Calculator</title>
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="display__input"></div>
+            <div class="display__output hidden"></div>
+        </div>
+        <div class="buttons">
+            <div class="buttons__row">
+                <button class="button button--number">7</button>
+                <button class="button button--number">8</button>
+                <button class="button button--number">9</button>
+                <button class="button button__divide" data-action="divide">/</button>
+            </div>
+            <div class="buttons__row">
+                <button class="button button--number">4</button>
+                <button class="button button--number">5</button>
+                <button class="button button--number">6</button>
+                <button class="button button__multiply" data-action="multiply">X</button>
+            </div>
+            <div class="buttons__row">
+                <button class="button button--number">1</button>
+                <button class="button button--number">2</button>
+                <button class="button button--number">3</button>
+                <button class="button button__add" data-action="add">+</button>
+            </div>
+            <div class="buttons__row">
+                <button class="button button--number">0</button>
+                <button class="button button__decimal" data-action="decimal">.</button>
+                <button class="button button__equal" data-action="calculate">=</button>
+                <button class="button button__subtract" data-action="subtract">-</button>
+            </div>
+            <div class="buttons__row clear">
+                <button class="button button__clear" data-action="clear">Clear</button>
+            </div>
+        </div>
+    </div>
+    <!-- Custom Script -->
+    <script src="assets/js/main.js"></script>
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
