@@ -18,7 +18,7 @@
   - (1 to 5 no 3) I feel good about my code
   - Anything specific on which you want feedback!
 
-Example:
+Example pull request description:
 ```
 I completed the challenge: 5
 I feel good about my code: 4
