@@ -3,6 +3,7 @@ display: flex;
 justify-content: center; /* center horizontally */
 align-items: center; /* center vertically */
 height: 100vh; /* set height to 100% viewport height */
+padding: 50px;
 }
 .calcContainer{
 display: grid;
@@ -13,6 +14,8 @@ padding: 10px;
 background-color: black;
 height: 50%;
 width: 25%;
+border-radius: 10px;
+border: solid black 10px;
 }
 .answerBox{
 grid-column: 1 / -1;
