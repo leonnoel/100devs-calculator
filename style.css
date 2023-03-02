@@ -1,0 +1,35 @@
+body {
+display: flex;
+justify-content: center; /* center horizontally */
+align-items: center; /* center vertically */
+height: 100vh; /* set height to 100% viewport height */
+}
+.calcContainer{
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(5, 1fr);
+gap: 5px;
+padding: 10px;
+background-color: black;
+height: 50%;
+width: 25%;
+}
+.answerBox{
+grid-column: 1 / -1;
+grid-row: 1;
+padding: 10px;
+font-size: 36px;
+text-align: right;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.buttons{
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24px;
+background-color: #fff;
+border: 1px solid #ccc;
+border-radius: 5px; 
+}
