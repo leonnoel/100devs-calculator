@@ -19,6 +19,7 @@ buttons.forEach((ele) => {
     let { target } = e;
     // console.log("clicked" + target.value);
     // clac.parseInput(target.value);
+    console.log(target.type);
     if (!target.matches("button")) {
       return;
     } else {
@@ -39,14 +40,14 @@ function Calculator(displayElement) {
       case "=":
         this.calculate(this.display);
         break;
-      case "AC":
-        this.calculate(this.display);
+      case "ac":
+        this.clearAll();
         break;
       case ".":
         if (this.display == 0) {
           this.addText("0.");
         } else {
-          if (this.display.includes(".")) {
+          if (this.display.slice(this.display.length - 1) == ".") {
             return;
           } else {
             this.addText(value);
@@ -83,7 +84,8 @@ function Calculator(displayElement) {
     displayElement.value = text;
   };
   this.clearAll = function () {
-    this.display = "";
-    preValue = "";
+    console.log("triggered");
+    this.display = displayElement.value = "0";
+    preValue = null;
   };
 }
