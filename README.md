@@ -1,6 +1,11 @@
 # 🔢 #100Devs Push Project001: Calculator
+![shield](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![shield](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+<br>
+<br>
+[![Netlify Status](https://api.netlify.com/api/v1/badges/46bdc42d-6315-4f55-9f9b-26dcfa3481c4/deploy-status)](https://app.netlify.com/sites/velvety-moonbeam-49baa7/deploys)
+### [Live Preview](https://velvety-moonbeam-49baa7.netlify.app/) :link:
 
-### Goal: Build a Simple Calculator using JS OOP best practices
+### Goal:dart:: Build a Simple Calculator using JS OOP best practices
 
 ### What it should look like:
 
@@ -24,3 +29,10 @@ I completed the challenge: 5
 I feel good about my code: 4
 I'm not sure if my constructors are setup cleanly...
 ```
+# Rode.com Clone
+
+
+
+## Project Goal :dart:
+
+This is an attempt at cloning [Rode.com](https://rode.com/en). This clone is made using `TailwindCss` and is fully responsive. Dropdowns and side-nav are omitted will be added later on.
