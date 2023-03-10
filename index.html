@@ -47,7 +47,6 @@
         top: 50%;
         translate: -50% -50%;
         border-radius: 50%;
-        /* background: linear-gradient(to right, aquamarine, mediumpurple); */
         opacity: 0.8;
       }
     </style>
@@ -64,15 +63,23 @@
     >
       <section class="align-self-stretch w-full"></section>
       <section
-        class="grid grid-rows-4 grid-cols-4 gap-4 items-center justify-items-center h-full p-5 rounded-lg card"
+        class="grid grid-rows-4 grid-cols-4 gap-4 items-center justify-items-center h-full p-5 rounded-lg card btn-container"
       >
         <input
-          class="min-h-[3rem] w-full text-gray-100 text-2xl col-span-4 bg-transparent backdrop-blur-lg text-right pr-2 rounded-md"
+          class="min-h-[4rem] w-full text-gray-100 text-3xl col-span-4 bg-transparent backdrop-blur-lg text-right pr-2 py-1 rounded-md"
           type="text"
           name="input"
           id="display"
+          value="0"
           disabled
         />
+        <button
+          class="btn font-semibold text-2xl text-center p-4 w-1/2 order-2 rounded-full text-red-300 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg col-start-3 col-span-2"
+          value="AC"
+        >
+          AC
+        </button>
+
         <button
           class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
           value="7"
@@ -117,7 +124,7 @@
         </button>
         <button
           class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
-          value="x"
+          value="*"
         >
           x
         </button>
