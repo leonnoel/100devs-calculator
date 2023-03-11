@@ -8,7 +8,7 @@ window.onpointermove = (event) => {
       left: `${clientX}px`,
       top: `${clientY}px`,
     },
-    { duration: 9000, fill: "forwards" }
+    { duration: 10000, fill: "forwards" }
   );
 };
 const buttons = document.querySelectorAll(".btn-container  button");
