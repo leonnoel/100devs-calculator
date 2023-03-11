@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            keyframes: {
+              wiggle: {
+                from: { transform: "0deg" },
+                "50%": { scale: "1 1.5" },
+                to: { rotate: "360deg" },
+              },
+            },
+            animation: {
+              wiggle: "wiggle 20s infinite",
+            },
+            colors: {
+              primary: "#232de2",
+              secondary: "#6676ef",
+            },
+          },
+        },
+      };
+    </script>
+    <script src="./script.js" defer></script>
+    <style>
+      .card {
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(53, 54, 75, 0.37);
+        backdrop-filter: blur(12.5px);
+        -webkit-backdrop-filter: blur(12.5px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+      }
+      #blob {
+        background-color: white;
+        height: 30vmax;
+        aspect-ratio: 1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+        border-radius: 50%;
+        opacity: 0.8;
+      }
+    </style>
+    <title>Calculator</title>
+  </head>
+  <body class="overflow-hidden z-20 bg-[#242c3c]">
+    <div
+      id="blob"
+      class="animate-wiggle -z-10 bg-gradient-to-r from-[#6676ef] to-[#b4acd6] skew-x-10"
+    ></div>
+    <div class="w-full h-full absolute -z-0 backdrop-blur-[9vmax]"></div>
+    <div
+      class="container mx-auto w-[24rem] py-5 min-h-screen flex justify-center items-center flex-col"
+    >
+      <section class="align-self-stretch w-full"></section>
+      <section
+        class="grid grid-rows-4 grid-cols-4 gap-4 items-center justify-items-center h-full p-5 rounded-lg card btn-container"
+      >
+        <input
+          class="min-h-[4rem] w-full text-gray-100 text-3xl col-span-4 bg-transparent backdrop-blur-lg text-right pr-2 py-1 rounded-md"
+          type="text"
+          name="input"
+          id="display"
+          value="0"
+          disabled
+        />
+        <button
+          class="btn font-semibold text-2xl text-center p-4 w-1/2 order-2 rounded-full text-red-300 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg col-start-3 col-span-2"
+          value="ac"
+        >
+          AC
+        </button>
+
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="7"
+        >
+          7
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="8"
+        >
+          8
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="9"
+        >
+          9
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="/"
+        >
+          /
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="4"
+        >
+          4
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="5"
+        >
+          5
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="6"
+        >
+          6
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="*"
+        >
+          x
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="1"
+        >
+          1
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="2"
+        >
+          2
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="3"
+        >
+          3
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="+"
+        >
+          +
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="0"
+        >
+          0
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="."
+        >
+          .
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] backdrop-blur-lg rounded-full text-gray-100 hover:bg-gray-200 hover:bg-opacity-5 shadow-xl"
+          value="="
+        >
+          =
+        </button>
+        <button
+          class="btn font-semibold text-2xl text-center p-4 min-h-[70px] min-w-[70px] rounded-full text-gray-100 hover:bg-gray-100 hover:bg-opacity-5 shadow-lg backdrop-blur-lg"
+          value="-"
+        >
+          -
+        </button>
+      </section>
+    </div>
+  </body>
+</html>
