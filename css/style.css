@@ -21,7 +21,7 @@ img{
     width: 500px;
 }
 .calculator {
-    width: 400px;
+    width: 300px;
     height: 500px;
     padding: 20px;
     background-color: #000;
@@ -45,6 +45,11 @@ img{
     width: 50px;
     height: 50px;
     margin: 5px;
+}
+.numbers {
+    display: flex;
+    flex-flow: row wrap;
+    width: 75%;
 }
 .operators > * {
     background-color: #f69807;
