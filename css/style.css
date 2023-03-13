@@ -39,7 +39,7 @@ img{
     color: #fff;
     border: 0px;
 }
-.buttonColumns {
+.button-container {
     display: flex;
     flex-flow: row;
 }
