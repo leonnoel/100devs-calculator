@@ -46,6 +46,10 @@ img{
     height: 50px;
     margin: 5px;
 }
+.special > * {
+    background-color: #a0a0a0;
+    color: #000;
+}
 .numbers {
     display: flex;
     flex-flow: row wrap;
