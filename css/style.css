@@ -56,6 +56,7 @@ img{
     width: 50px;
     height: 50px;
     margin: 5px;
+    font-size: 18px;
 }
 .special > * {
     background-color: #a0a0a0;
@@ -67,6 +68,11 @@ img{
 }
 .operators > * {
     background-color: #f69807;
+}
+#zero {
+    width: 114px;
+    text-align: left;
+    padding-left: 23px;
 }
 /******************************************
 /* ADDITIONAL STYLES
