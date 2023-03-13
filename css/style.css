@@ -1,0 +1,54 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+}
+body {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}
+.calculator {
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    background-color: #000;
+}
+.screen {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    font-size: 36pt;
+    padding-right: 10px;
+    background-color: #000;
+    color: #fff;
+    border: 0px;
+}
+.buttons > * {
+    border: 0px;
+    border-radius: 40px;
+    background-color: #313131;
+    color: white;
+    
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+}
+.operators > * {
+    background-color: #f69807;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
