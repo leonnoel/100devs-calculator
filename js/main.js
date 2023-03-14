@@ -1,47 +1,75 @@
 const keys = document.querySelector('.button-container')
 keys.addEventListener('click', event => {
+    // get value of event target
     const {target} = event
     const {value} = target
+    // stop if something other than a button is clicked
     if (!target.matches('button')) {
         return
     } else {
-        // pass to parse method
-        console.log(value)
+        calculator.parse(value)
     }
 })
 
+const calculator = {
+    expression: '0',
 
+    parse(value) {
+        switch (value) {
+            case 'clear':
+                this.clear()
+                break;
+            case 'percent':
+                // make percent
+                break;
+            case 'sign':
+                // make positive or negative
+                break;
+            case '.':
+                if (this.expression == 0) {
+                    this.validate('0.')
+                } else {
+                    this.validate('.')
+                }
+                break;
+            case '=' :
+                console.log(this.expression)
+                this.calculate(this.expression)
+                break;
+            default: 
+                this.validate(value)
+                break;
+        }
+    },   
 
+    validate(value) {
+        if (this.expression === '0') {
+            this.expression = ''
+        }
+        // if (value != parseInt(value) && this.expression[-1] != parseInt(this.expression[-1])) {
+        //     return
+        // }
+        this.expression += value
+        // output displayText to screen
+        this.display(this.expression)
+    },
 
+    // display a value on the calculator screen
+    display(value) {
+        document.querySelector('.screen').value = value
+    },
 
+    // reset expression and calculator screen to 0
+    clear() {
+        this.expression = '0'
+        this.display('0')
+    },
 
-// // document.getElementById('1').addEventListener('click', function() { 
-// //     operation(1)
-// // })
-
-// // document.getElementById('2').addEventListener('click', () => { operation(2)})
-
-// localStorage.setItem('userInput', 0)
-
-// // event listener for buttons
-// document.addEventListener("click", function(event){
-//     // display button value in calculator screen
-//     let screen = document.querySelector('input').value
-//     if (screen === 0) {
-//         screen = event.target.value
-//     } else {
-//         screen += event.target.value
-//     }
-//     // document.querySelector('input').value += event.target.value
-//     // add button input to local storage
-//     let userInput = localStorage.getItem('userInput')
-//     localStorage.setItem('userInput', userInput += event.target.value)
-// });
-
-// document.getElementById('clear').addEventListener('click', clear)
-
-// function clear() {
-//     document.querySelector('input').value = 0
-//     localStorage.setItem('userInput', 0)
-// }
-
+    // calculate and display result, store in expression for next inputs
+    calculate(expression) {
+        let result = new Function('return ' + expression)()
+        // alternative: let result = eval(expression) 
+        this.display(result) 
+        this.expression = result
+    }
+}
