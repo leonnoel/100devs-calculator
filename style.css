@@ -8,16 +8,23 @@ main{
 }
 h1{
     background: white;
-    width: 80%;
-    margin: 15% auto 10%;
+    width: 100%;
+    height: 100%;
 }
+
 section{
- 
     background-color: black;
     padding-left: 10%;
     padding-right: 10%;
     
 }
+#h1Sec{
+    width: ;
+    height: 40px;
+    background: white;
+    margin: 15% 10%;
+}
+
 button{
 
     height: 50px;
