@@ -1,0 +1,39 @@
+main{
+    background-color: black;
+    height: 400px;
+    width: 300px;
+    margin: auto;
+    border: 1px solid black;
+    border-radius: 10%;
+}
+h1{
+    background: white;
+    width: 100%;
+    height: 100%;
+}
+
+section{
+    background-color: black;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}
+#h1Sec{
+    width: ;
+    height: 40px;
+    background: white;
+    margin: 15% 10%;
+}
+
+button{
+
+    height: 50px;
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+    font-size: xx-large;
+}
