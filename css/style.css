@@ -1,0 +1,89 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+*{
+    box-sizing: border-box;
+}
+html {
+    font: 16px 'Roboto', sans-serif;
+}
+body {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+img{
+    display: block;
+    margin: 0 auto;
+    width: 500px;
+}
+.calculator {
+    width: 300px;
+    height: 425px;
+    padding: 20px;
+    background-color: #000;
+    border-radius: 25px;
+}
+.screen {
+    width: 100%;
+    height: 50px;
+    text-align: right;
+    font-size: 2.5rem;
+    padding: 0 20px;
+    margin: 20px 0 10px;;
+    background-color: #000;
+    color: #fff;
+    border: 0px;
+}
+.button-container {
+    display: flex;
+    flex-flow: row;
+}
+.col-1 {
+    width: 75%;
+}
+.col-2 {
+    width: 25%;
+}
+.buttons > * {
+    border: 0px;
+    border-radius: 40px;
+    background-color: #313131;
+    color: white; 
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    font-size: 1.25rem;
+}
+.buttons > *:hover {
+    background-color: #505050;
+}
+.special > * {
+    background-color: #a0a0a0;
+    color: #000;
+}
+.special > *:hover {
+    background-color: #c3c3c3;
+}
+.special .numbers {
+    display: flex;
+    flex-flow: row wrap;
+}
+.operators > * {
+    background-color: #f69807;
+}
+.operators > *:hover {
+    background-color: #feb850;
+}
+#zero {
+    width: 114px;
+    text-align: left;
+    padding-left: 23px;
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

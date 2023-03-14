@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel='stylesheet' href='css/style.css'>
+</head>
+<body>
+    <header>
+        <h1>Calculator</h1>
+    </header>
+    <section class='calculator'>
+        <input class='screen' type='text' value='0' disabled>
+        <section class='button-container'>
+            <section class='col-1'>
+                <section class='special buttons'>
+                    <button value='clear'>C</button>
+                    <button value='sign'>&pm;</button>
+                    <button value='percent'>&#65285;</button>
+                </section>
+                <section class='numbers buttons'>
+                    <button id='7' value='7'>7</button>
+                    <button id='8' value='8'>8</button>
+                    <button id='9' value='9'>9</button>
+                    <button id='4' value='4'>4</button>
+                    <button id='5' value='5'>5</button>
+                    <button id='6' value='6'>6</button>
+                    <button id='1' value='1'>1</button>
+                    <button id='2' value='2'>2</button>
+                    <button id='3' value='3'>3</button>
+                    <button id='zero' value='0'>0</button>
+                    <button id='period' value='.'>&period;</button>
+                </section>
+            </section>
+            <section class='col-2'>
+                <section class='operators buttons'>
+                    <button id='divide' value ='/'>&div;</button>
+                    <button id='multiply' value='*'>&times;</button>
+                    <button id='subtract' value='-'>&minus;</button>                    
+                    <button id='add' value='+'>&plus;</button>
+                    <button id='equals' value='='>&equals;</button>
+                </section>
+            </section>
+        </section>
+    </section>
+    <script src='js/main.js'></script>
+</body>
+</html>
