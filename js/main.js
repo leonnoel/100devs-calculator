@@ -20,10 +20,12 @@ const calculator = {
                 this.clear()
                 break;
             case 'percent':
-                // make percent
+                this.calculate(`${this.expression} * .01`)
                 break;
             case 'sign':
-                // make positive or negative
+                // change positive values to negative, and vice-versa
+                this.expression = '-' + this.expression
+                this.display(this.expression)
                 break;
             case '.':
                 if (this.expression == 0) {
@@ -43,33 +45,46 @@ const calculator = {
     },   
 
     validate(value) {
-        if (this.expression === '0') {
-            this.expression = ''
+        // if input is a number, remove the default zero
+        if (value == parseInt(value)) {
+            if (this.expression === '0') {
+                this.expression = ''
+            } else if (this.expression === '-0') {
+                this.expression = '-'
+            }
+        } // if input is not a number, stop if it's a repeat
+          else if (this.expression.slice(-1) == value) {
+            return
+        } // prevent multiple decimal points
+          // ISSUE: expressions with multiple decimal numbers
+          else if (this.expression.includes('.') && value == '.') {
+            return 
         }
-        // if (value != parseInt(value) && this.expression[-1] != parseInt(this.expression[-1])) {
-        //     return
-        // }
-        this.expression += value
-        // output displayText to screen
-        this.display(this.expression)
+
+        // limit length of expression displayed
+        if (this.expression.length > 9) {
+            return
+        } else {
+            // output expression to screen
+            this.expression += value
+            this.display(this.expression)
+        }
     },
 
-    // display a value on the calculator screen
     display(value) {
         document.querySelector('.screen').value = value
     },
 
-    // reset expression and calculator screen to 0
     clear() {
         this.expression = '0'
         this.display('0')
     },
 
-    // calculate and display result, store in expression for next inputs
     calculate(expression) {
-        let result = new Function('return ' + expression)()
-        // alternative: let result = eval(expression) 
-        this.display(result) 
-        this.expression = result
+        // calculate result
+        let result = new Function('return ' + expression)() /* alt: let result = eval(expression) */
+        // store result in expression for next input
+        this.expression = String(result).slice(0,10)
+        this.display(this.expression) 
     }
 }
