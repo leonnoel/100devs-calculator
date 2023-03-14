@@ -13,6 +13,7 @@ keys.addEventListener('click', event => {
 
 const calculator = {
     expression: '0',
+    currentValue: '0',
 
     parse(value) {
         switch (value) {
@@ -23,7 +24,9 @@ const calculator = {
                 this.calculate(`${this.expression} * .01`)
                 break;
             case 'sign':
-                // change positive values to negative, and vice-versa
+                // change positive values to negative
+                /* ISSUE: does not work with multiple negative values */
+                /* ISSUE: does not turn negative values to positive */
                 this.expression = '-' + this.expression
                 this.display(this.expression)
                 break;
@@ -51,21 +54,32 @@ const calculator = {
                 this.expression = ''
             } else if (this.expression === '-0') {
                 this.expression = '-'
+
+            } // replace default currentValue of 0
+              else if (this.currentValue == '0') {
+                this.currentValue = value
+            } // if part of a multi-digit number, add to currentValue
+              else {
+                this.currentValue += value
             }
-        } // if input is not a number, stop if it's a repeat
-          else if (this.expression.slice(-1) == value) {
+        
+        // if input is not a number, stop if it's a repeat
+        } else if (this.expression.slice(-1) == value) {
             return
-        } // prevent multiple decimal points
-          // ISSUE: expressions with multiple decimal numbers
-          else if (this.expression.includes('.') && value == '.') {
+
+        // prevent multiple decimal points
+        } else if (this.currentValue.includes('.') && value == '.') {
+            this.currentValue += value
             return 
+        } else {
+            this.currentValue = 0
         }
 
         // limit length of expression displayed
-        if (this.expression.length > 9) {
-            return
+        if (this.expression.length > 10) {
+            return  /* ISSUE: error message needed */
+        // output expression to screen
         } else {
-            // output expression to screen
             this.expression += value
             this.display(this.expression)
         }
@@ -83,6 +97,7 @@ const calculator = {
     calculate(expression) {
         // calculate result
         let result = new Function('return ' + expression)() /* alt: let result = eval(expression) */
+
         // store result in expression for next input
         this.expression = String(result).slice(0,10)
         this.display(this.expression) 
