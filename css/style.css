@@ -1,0 +1,41 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+html{
+  font-size: 62.5%;
+}
+body{
+  font-size: 1.6rem;
+}
+.calcBody{
+  background: black;
+  height: 512px;
+  width: 409px;
+  margin: 0 auto;
+  border-radius: 45px;
+  padding-top: 15%;
+}
+.calcDisplay{
+  background: white;
+  width: 80%;
+  height: 15%;
+  margin: 0 auto;
+}
+.calcButtonContainer{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+  padding: 6.5% 14%;
+}
+.calcButton{
+  background: white;
+  flex-basis: 21%;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  font-size: 4rem;
+  font-weight: bold;
+}
