@@ -73,6 +73,11 @@ h2 {
     
   }
 
+#display{
+  max-height: 100px;
+  overflow-y: scroll;
+}
+
 
 /******************************************
 /* ADDITIONAL STYLES
