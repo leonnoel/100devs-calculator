@@ -23,6 +23,7 @@ h1{
     background-color: white;
     border-radius: 3px;
     text-align: right;
+    color: black;
     
 
 }
@@ -43,7 +44,7 @@ section{
 }
 
 
-button{
+p{
     position: relative;
     width: 15%;
     height: 100%;
@@ -52,10 +53,16 @@ button{
     flex-grow: 0;
     margin: 0 1%;
     font-size: 60px;
-    font-weight: 700;    
+    font-weight: 700;   
+    text-align: center;
+    background-color: white; 
 }
 
-button:active {
+p:hover{
+    cursor: pointer;
+}
+
+p:active {
     position: absolute border;
     border: 1px solid white;
     transform: translateY(2%);
