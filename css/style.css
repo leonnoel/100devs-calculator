@@ -1,0 +1,79 @@
+/* ********************
+html / body styles
+******************** */
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+}
+body {
+    font-size: 2rem;
+    line-height: 1.5;
+    background: #dadada;
+}
+.calculator {
+    width: 350px;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    flex-flow: row wrap;
+    gap: 1%;
+    background: #212121;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+button {
+    border: 0;
+    background: none;
+    color: #ebebeb;
+    padding: 5px;
+    flex-basis: 24%;
+    height: 85px;
+    border-radius: 0px;
+    font: 2rem "Consolas", sans-serif;
+}
+button:hover {
+    background: #1d1c1c;
+    color: #A9A9A9;
+}
+button:first-of-type, button:nth-of-type(2) {
+    flex-basis: 49.5%;
+    color: #7D4B13;
+}
+button.op {
+    color: #7D4B13;
+}
+.screen {
+    flex-basis: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    height: 150px;
+    line-height: 50px;
+    border-radius: 4px;
+    padding: 15px;
+    color: #434850;
+    font: 2rem "Consolas", sans-serif;
+    text-align: right;
+}
+#input, #answer {
+    flex-basis: 100%;
+}
+#input {
+    color: rgb(112, 120, 132);
+    text-align: left;
+    padding: 10px;
+    font-size: 2.2rem;
+}
+#answer {
+    color: rgb(43, 174, 43);
+    text-align: right;
+    font-size: 3rem;
+}
+/* ********************
+media queries 
+******************** */
