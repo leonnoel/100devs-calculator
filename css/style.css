@@ -1,0 +1,74 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+html{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.cal {
+  width: 400px;
+  border: black solid 2px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background: black;
+  padding: 2rem;
+}
+
+.output {
+  background: grey;
+  /* display: flex;
+  flex-direction: column; */
+  text-align: right;
+  border-radius: 10px;
+  height: 70px;
+  
+}
+
+p{
+  font-size: 1rem;
+  margin: 0;
+  padding: 2px ;
+}
+
+.buttons{
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: .5rem;
+  margin: 30px; 
+}
+
+
+button{
+  height: 40px;
+  flex: 1 0 20%;
+  border-radius: 60rem;
+  margin: 7px;
+  border: none;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.result{
+  font-size: 20px;
+}
+
+.cur{
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
