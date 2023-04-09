@@ -1,0 +1,78 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* STYLES
+/*******************************************/
+
+
+body {
+  margin: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  height: 50vh;
+  width: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(29, 31, 29);
+  border-radius: 10%;
+}
+
+.calculator > #screen {
+  flex-basis: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.calculator > #screen > #equation {
+  width: 80%;
+  height: 70%;
+}
+
+.calculator > #buttons {
+  flex-basis: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#buttons > .row {
+  flex-basis: 24%;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#buttons > .row > * {
+  border-radius: 50%;
+  width: 22%;
+  height: 65%;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
