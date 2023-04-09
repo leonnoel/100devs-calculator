@@ -23,20 +23,21 @@
 
 
 body {
-  margin: 30vh;
+  margin: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .calculator {
-  height: 50vh;
-  width: 40vh;
+  height: 70vh;
+  width: 60vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   background-color: rgb(29, 31, 29);
   border-radius: 10%;
+  gap: 20px;
 }
 
 .calculator > #screen {
@@ -53,7 +54,7 @@ body {
 }
 
 .calculator > #buttons {
-  flex-basis: 80%;
+  flex-basis: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -71,8 +72,8 @@ body {
 
 #buttons > .row > * {
   border-radius: 50%;
-  width: 22%;
-  height: 65%;
-  font-size: 1.5rem;
+  width: 23%;
+  height: 90%;
+  font-size: 2rem;
   font-weight: bolder;
 }
