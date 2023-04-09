@@ -48,9 +48,12 @@ body {
   align-items: center;
 }
 
-.calculator > #screen > #equation {
+.calculator > #screen > #display {
   width: 80%;
   height: 70%;
+  text-align: right;
+  font-size: 4rem;
+  font-weight: bolder;
 }
 
 .calculator > #buttons {
@@ -76,4 +79,8 @@ body {
   height: 90%;
   font-size: 2rem;
   font-weight: bolder;
+}
+
+.number, .button {
+  cursor: pointer;
 }
