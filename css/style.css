@@ -1,0 +1,87 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: rgb(139,46,221);
+background: linear-gradient(90deg, rgba(139,46,221,1) 0%, rgba(178,9,228,1) 30%, rgba(72,3,136,1) 100%);
+}
+
+main {
+  width: 500px;
+  height: 600px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 12px;
+  background-color: black;
+}
+
+#display {
+  width: 400px;
+  border: 1px solid black;  
+  padding: 10px 20px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+  font-size: 25px;
+  border-radius: 12px;
+  background-color: rgb(103, 74, 74);
+  color: rgb(253, 251, 255);
+}
+
+#buttons-container {
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+#row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-row {
+  width: 195px;
+  
+}
+
+button {
+  width: 95px;
+  height: 80px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(190, 184, 102);
+  border-radius: 30px;
+  font-size: 20px;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
