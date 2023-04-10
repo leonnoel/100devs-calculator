@@ -81,7 +81,7 @@ body {
   font-weight: bolder;
 }
 
-.number, .button {
+.number, .button, .operator {
   cursor: pointer;
 }
 
@@ -89,7 +89,11 @@ body {
 
   body {
   margin: 15vh 1vh;
-  
+  }
+
+  .number, .button, .operator {
+    text-align: center;
+    color: black;
   }
 
 }
