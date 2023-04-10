@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS calculator</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="calculator">
+
+        <div id="screen">
+            <input type="text" id="display">
+        </div>
+
+        <div id="buttons">
+            <div class="row">
+                <input class='number' type="button" value="7"/>
+                <input class='number' type="button" value="8"/>
+                <input class='number' type="button" value="9"/>
+                <input class='operator' type="button" value="/"/>
+            </div>
+            <div class="row">
+                <input class='number' type="button" value="4"/>
+                <input class='number' type="button" value="5"/>
+                <input class='number' type="button" value="6"/>
+                <input class='operator' type="button" value="x"/>
+            </div>
+            <div class="row">
+                <input class='number' type="button" value="1"/>
+                <input class='number' type="button" value="2"/>
+                <input class='number' type="button" value="3"/>
+                <input id='suma' class='operator' type="button" value="+"/>
+            </div>
+            <div class="row">
+                <input class='number' type="button" value="0"/>
+                <input id='punto' class='button' type="button" value="."/>
+                <input id='igual' class='button' type="button" value="="/>
+                <input class='operator' type="button" value="-"/>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="js/main.js"></script>
+</body>
+</html>
