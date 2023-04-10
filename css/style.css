@@ -52,7 +52,7 @@ body {
   width: 80%;
   height: 70%;
   text-align: right;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bolder;
 }
 
@@ -83,4 +83,13 @@ body {
 
 .number, .button {
   cursor: pointer;
+}
+
+@media(max-width:1024px){ 
+
+  body {
+  margin: 15vh 1vh;
+  
+  }
+
 }

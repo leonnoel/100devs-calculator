@@ -74,19 +74,40 @@ class Calculator {
             let num = Number(this.display.value)
             if (this.operatorValue === '+') {
                 this.add(num)
-                this.display.value = this.result
+                if (String(this.result).includes('.')) {
+                    this.display.value = this.result.toFixed(8)
+                }
+                else {
+                    this.display.value = this.result
+                }
+                   
             }
             else if (this.operatorValue === '-') {
                 this.substract(num)
-                this.display.value = this.result
+                if (String(this.result).includes('.')) {
+                    this.display.value = this.result.toFixed(8)
+                }
+                else {
+                    this.display.value = this.result
+                }
             }
             else if (this.operatorValue === 'x') {
                 this.multiply(num)
-                this.display.value = this.result
+                if (String(this.result).includes('.')) {
+                    this.display.value = this.result.toFixed(8)
+                }
+                else {
+                    this.display.value = this.result
+                }
             }
             else if (this.operatorValue === '/') {
                 this.divide(num)
-                this.display.value = this.result
+                if (String(this.result).includes('.')) {
+                    this.display.value = this.result.toFixed(8)
+                }
+                else {
+                    this.display.value = this.result
+                }
             }
                
         } )
