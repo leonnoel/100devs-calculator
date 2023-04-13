@@ -1,5 +1,14 @@
 # 🔢 #100Devs Push Project001: Calculator
 
+### My solution: 
+![Screenshot 2023-04-13 105309](https://user-images.githubusercontent.com/122644200/231799284-ddb313ae-7b1c-4816-8c80-08234efd598c.png)
+
+I designed my calculator to look sleek and modern. My plan is to improve it further by adding more operators, such as the % and ^ operators, and add a feature to view previous calculations.
+
+Information and instructions about this assignment are below.
+
+***
+
 ### Goal: Build a Simple Calculator using JS OOP best practices
 
 ### What it should look like:
