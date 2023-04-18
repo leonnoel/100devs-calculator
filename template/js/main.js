@@ -226,12 +226,20 @@ function Calculator() {
         let n = this.getValue()
         console.log(n)
         if(n.includes('(')) {
-            let bracket = n.splice(n.indexOf('('),n.indexOf(')') - n.indexOf('('))
-            console.log(bracket)
-            console.log(n)
-            bracket = bracket.join('').replace('x', '*')
-            console.log(eval(bracket + n.join('')))
-            inputBox.value = eval(bracket + n.join(''))
+            // let bracket = n.splice(n.indexOf('('),n.indexOf(')') - n.indexOf('('))
+            // console.log(bracket)
+            // console.log(n)
+            // bracket = bracket.join('').replace('x', '*')
+            // console.log(eval(bracket + n.join('')))
+            // inputBox.value = eval(bracket + n.join(''))
+
+            // Fixing a bug
+            // let bracket = n.splice(n.indexOf('('),n.indexOf(')') - n.indexOf('('))
+            // console.log(bracket)
+            // console.log(n)
+            n = n.join('').replace('x', '*')
+            // console.log(eval(n))
+            inputBox.value = eval(n)
         } else if (n.includes('%')) {
             n = n.join('').replace('%', '/100')
             console.log(eval(n))
