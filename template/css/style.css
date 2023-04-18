@@ -57,7 +57,6 @@ main {
 
 .main-section {
   height: 9vh;
-  /* border: 1px solid black; */
   width: 60%;
   margin: 0 auto;
   margin-bottom: 2%;
@@ -76,7 +75,6 @@ main {
   font-size: 3rem;
   border-radius: 4px;
   background: rgba(36, 41, 51, 0.8);
-  /* background: #2d333e; */
   color: #A6ADBB;
   text-align: right;
 }
@@ -131,7 +129,6 @@ main {
   justify-content: center;
   flex-wrap: wrap;
   gap: 3%;
-  /* border: 1px solid black; */
   border-radius: 4px;
   background: #242933;
 }
@@ -231,7 +228,7 @@ div.equal:active {
   }
 
   #message {
-    /* display: none;  */
+    display: none; 
     background-color: #5B7190;
     color: white;
     width: 36%;
@@ -262,7 +259,7 @@ div.equal:active {
   }
 
   /* main {
-    width: 100%;
+    width: 40%;
   } */
 
   .buttons-section {
@@ -274,7 +271,7 @@ div.equal:active {
   }
 
   #message {
-    /* display: none;  */
+    display: none; 
     background-color: #5B7190;
     color: white;
     width: 36%;

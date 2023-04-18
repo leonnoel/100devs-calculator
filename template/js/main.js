@@ -1,10 +1,6 @@
 // input
 let inputBox = document.querySelector("#inputBox");
 
-// // Set the value of the input element
-// inputElement.value = "Hello Worlsdsdfdg";
-// document.execCommand("Hello Worlsdsd");
-
 // numbers
 const one = document.querySelector('#one')
 const two = document.querySelector('#two')
@@ -198,10 +194,6 @@ console.log([ "2", "x", "6", "-", "8" ])
 
 
 
-
-
-
-
 function Calculator() {
     let replaceMult = function(){
         let str = inputBox.value
@@ -230,7 +222,7 @@ function Calculator() {
         return n
     }
 
-    this.checkOperation = function() {
+    this.operation = function() {
         let n = this.getValue()
         console.log(n)
         if(n.includes('(')) {
@@ -271,7 +263,7 @@ equal.addEventListener('click', equalFunc)
 
 function equalFunc() {
     const calc = new Calculator()
-    calc.checkOperation()
+    calc.operation()
 }
 
 let copyIcon = document.querySelector('#copyIcon').addEventListener('click', copyFunc)
