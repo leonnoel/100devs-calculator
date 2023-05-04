@@ -3,8 +3,6 @@ This is a calculator web application that performs basic arithmetic operations s
 
 **Link to project:** https://100devscalculator.netlify.app/
 
-![Calculator](../100devs-calculator/100devs-calculator/100Devs%20Calculator.png)
-
 ## How It&#39;s Made:
 
 **Tech used:**  HTML, CSS, and JavaScript
@@ -18,12 +16,4 @@ To optimize the calculator, I implemented a decimal point button to allow for mo
 
 Through building this calculator, I gained experience in working with JavaScript and manipulating the DOM. I learned how to structure code for a simple application, how to handle user input, and how to perform basic calculations using JavaScript. I also learned about the importance of testing and debugging, and how to use the console to find and fix errors.
 
-## Examples:
-Take a look at these couple examples that I have in my own portfolio:
-
-**Palettable:** https://github.com/alecortega/palettable
-
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
-
-**Patch Panel:** https://github.com/alecortega/patch-panel
 
