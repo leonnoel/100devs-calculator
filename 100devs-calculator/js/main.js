@@ -163,49 +163,11 @@ function rightBracketFunc() {
 
 console.log([ "2", "x", "6", "-", "8" ])
 
-// // equal
-// equal.addEventListener('click', equalFunc)
-
-// function equalFunc() {
-//     let str = inputBox.value
-//     if(str.includes('x')) {
-//         str = str.replaceAll('x', '*')
-//     }
-//     console.log(str)
-
-//     let n = str.split(' ')
-//     console.log(n)
-//     n = n.filter(e => e !== '')
-//     console.log(n)
-
-//     if(n.includes('(')) {
-//         let bracket = n.splice(n.indexOf('('),n.indexOf(')') - n.indexOf('('))
-//         console.log(bracket)
-//         console.log(n)
-//         bracket = bracket.join('').replace('x', '*')
-//         console.log(eval(bracket + n.join('')))
-//     } else if (n.includes('%')) {
-//         console.log(eval(n.join('')))
-//     } else {
-//         console.log(eval(n.join('')))
-//     }
-
-// }
-
-
 
 function Calculator() {
     let replaceMult = function(){
         let str = inputBox.value
-        // if (str !== '') {
-        //     acButton.innerHTML = '<Span>CE</Span>'
-        //     acButton.addEventListener('click', acButtonFunc)
 
-        //     function acButtonFunc() {
-        //         inputBox.value = str.slice(0, str.length -1 )
-        //     }
-
-        // }
         console.log(str)
         if(str.includes('x')) {
             str = str.replaceAll('x', '*')
@@ -226,19 +188,7 @@ function Calculator() {
         let n = this.getValue()
         console.log(n)
         if(n.includes('(')) {
-            // let bracket = n.splice(n.indexOf('('),n.indexOf(')') - n.indexOf('('))
-            // console.log(bracket)
-            // console.log(n)
-            // bracket = bracket.join('').replace('x', '*')
-            // console.log(eval(bracket + n.join('')))
-            // inputBox.value = eval(bracket + n.join(''))
-
-            // Fixing a bug
-            // let bracket = n.splice(n.indexOf('('),n.indexOf(')') - n.indexOf('('))
-            // console.log(bracket)
-            // console.log(n)
             n = n.join('').replace('x', '*')
-            // console.log(eval(n))
             inputBox.value = eval(n)
         } else if (n.includes('%')) {
             n = n.join('').replace('%', '/100')
@@ -261,7 +211,6 @@ function Calculator() {
       }
     
 }
-
 
 
 
