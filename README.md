@@ -1,26 +1,19 @@
-# 🔢 #100Devs Push Project001: Calculator
+# Calculator
+This is a calculator web application that performs basic arithmetic operations such as addition, subtraction, multiplication, and division. The application was built using HTML, CSS, and JavaScript.
 
-### Goal: Build a Simple Calculator using JS OOP best practices
+**Link to project:** https://100devscalculator.netlify.app/
 
-### What it should look like:
+## How It&#39;s Made:
 
-![Calculator](calculator.jpg)
+**Tech used:**  HTML, CSS, and JavaScript
 
-### How to submit your code for review:
+The calculator was built using HTML and CSS to create the user interface and JavaScript to implement the functionality. The calculator has a basic layout with buttons for numbers, operators, and the clear button. When a button is clicked, the JavaScript code updates the display with the corresponding value.
+## Optimizations
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+To optimize the calculator, I implemented a decimal point button to allow for more precise calculations. Additionally, I added a feature that allows the user to chain together multiple operations in a row, without having to hit the equals button after each one.
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+## Lessons Learned:
+
+Through building this calculator, I gained experience in working with JavaScript and manipulating the DOM. I learned how to structure code for a simple application, how to handle user input, and how to perform basic calculations using JavaScript. I also learned about the importance of testing and debugging, and how to use the console to find and fix errors.
+
+
