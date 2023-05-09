@@ -1,0 +1,108 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  background: #f4f4f4;
+  background: #41295a; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2f0743, #41295a); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2f0743,
+    #41295a
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.calculator {
+  background: #050f16;
+  width: 500px;
+  border-radius: 30px;
+  padding-block: 60px;
+  padding-inline: 40px;
+  box-shadow: 0 15px 35px 0 hsla(0, 0%, 0%);
+  /* border: 2px solid red; */
+}
+
+.calculator_display {
+  width: 100%;
+  background: #cce7d6;
+  color: #292d71;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  height: 120px;
+  font-size: 9rem;
+  text-align: right;
+  padding-top: 1rem;
+  padding-right: 2.6rem;
+  font-family: 'VT323', monospace;
+  box-shadow: inset 0 10px 1px hsla(0, 0%, 0%, 0.1), 0 1px 0 -2px hsla(0, 0%, 100%, 0.15);
+}
+
+.previous-operand {
+  font-size: 2rem;
+}
+
+.calculator_keys {
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  gap: 1rem;
+  row-gap: 2.4rem;
+  padding: 2.6rem;
+  padding-top: 4rem;
+  /* border: 1px solid yellow; */
+}
+
+button {
+  cursor: pointer;
+  background: hsl(222, 16%, 15%);
+  color: #dddddc;
+  font-size: 4rem;
+  height: 60px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border: none;
+  padding: 5px;
+  font-weight: bold;
+  flex: 1 0 20%;
+  transition: all 0.2s ease-out;
+  box-shadow: inset 0 1px 0 hsl(222, 16%, 50%), 0 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+button:hover {
+  background: hsl(222, 16%, 15%, 0.7);
+}
+
+button[data-all-clear],
+button[data-delete] {
+  font-size: 3rem;
+  color: #030200;
+  background: hsl(20, 81%, 58%, 0.9);
+  box-shadow: inset 0 1.5px 0 hsl(20, 81%, 70%), 0 1px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+button[data-all-clear]:hover,
+button[data-delete]:hover {
+  background: hsl(20, 81%, 58%);
+}
+
+button:active {
+  box-shadow: none;
+}
