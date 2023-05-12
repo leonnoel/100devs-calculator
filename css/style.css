@@ -1,0 +1,97 @@
+/* Box Model Hack */
+* {
+     font-size: 62.5%;
+     box-sizing: border-box;
+     font-family: source Sans Pro, sans-serif;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+.calculator{
+     position: absolute;
+     top: 25%;
+     left: 25%;
+     background-color: black;
+     width: 250px;
+     padding: 15px;
+     padding-top: 20px;
+     border-radius: 30px;
+}
+
+.calculator-screen{
+     width: 90%;
+     font-size: 5rem;
+     height: 60Px;
+     background-color: white;
+     text-align: right;
+     padding-right: 15px;
+     margin-left: 10px;
+     border: none;
+}
+#calculator-screen2{
+     height: 30px;
+     font-size: 2.5rem;
+     width: 90%;
+     background-color: white;
+     text-align: right;
+     margin-left: 10px;
+     border: none;
+}
+.calculator-buttons{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    padding-bottom: 5px;
+}
+
+button{
+     height: 30px;
+     background-color: beige;
+     border: none;
+     font-size: 2rem;
+     margin: 9px;
+     padding: 5px;
+     border-radius: 30px;
+     flex: 1 0 13%;
+}
+.all-clear {
+     font-size: 1.5rem;
+}
+button:hover{
+     background-color: gray;
+}
+
+
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
