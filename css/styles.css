@@ -1,0 +1,72 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+    box-sizing: border-box;
+  }
+
+html {
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  .calculator {
+    border: 1px solid black;
+    border-radius: 3rem;
+    height: 55rem;
+    width: 45rem;
+    background: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+  }
+
+  .screen {
+    display: flex;
+    height: 8rem;
+    width: 85%;
+    background: white;
+    margin: 8rem auto 0 auto;
+    color: black;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    cursor: default;
+    user-select: none;
+  }
+
+  .buttons {
+    height: 54%;
+    width: 78%;
+    margin: 3rem auto 0 auto;
+    border-spacing: 0.7rem;
+  }
+  
+  .button {
+    background: white;
+    color: black;
+    border-radius: 50%;
+    text-align: center;
+    width: 7rem;
+    height: 7rem;
+    box-sizing: border-box;
+    cursor: default;
+    user-select: none;
+  }
+
+  .button:hover {
+    background: rgb(224, 221, 221);
+  }
+  
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  
