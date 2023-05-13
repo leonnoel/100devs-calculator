@@ -1,0 +1,54 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.calc {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    padding: 70px 40px 20px 40px;
+    background-color: black;
+    border-radius: 30px;
+}
+
+.calc-screen {
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    font-size: 5rem;
+    color: black;
+    background: white;
+
+}
+
+.calc-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    width: 100%;
+}
+
+button {
+    height: 60px;
+    font-size: 4rem;
+    border-radius: 30px;
+    padding: 5px;
+    flex: 1 0 17%;
+    margin: 5px;
+}
+
+button:hover {
+    background: rgba(85, 83, 83, 0.338);
+    color: white;
+}
