@@ -26,7 +26,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .screen {
@@ -50,7 +50,7 @@ html {
     border-spacing: 0.7rem;
   }
   
-  td {
+  .button {
     background: white;
     color: black;
     border-radius: 50%;
@@ -62,7 +62,7 @@ html {
     user-select: none;
   }
 
-  td:hover {
+  .button:hover {
     background: rgb(224, 221, 221);
   }
   
