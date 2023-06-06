@@ -7,9 +7,9 @@ let Calculator = function(display, brand) {
   this.brand = brand
 
   let calculate = (expression) =>{
-    let output = eval(expression)
-    this.displayValue = output
-    updateDisplay(output)
+    let result = Function("return " + expression)()
+    this.displayValue = result
+    updateDisplay(result)
   }
 
   let updateDisplay = function(value) {
