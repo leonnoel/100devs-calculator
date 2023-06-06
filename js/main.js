@@ -6,7 +6,7 @@ let Calculator = function(display, brand) {
   this.displayValue = display
   this.brand = brand
 
-  let calculated = function(expression){
+  let calculate = function(expression){
     let output = eval(expression)
     this.displayValue = output
 
@@ -22,12 +22,11 @@ let Calculator = function(display, brand) {
     value = value === 'x' ? '*' : value
 
     if (value === '='){
-      calculated(this.displayValue)
+      calculate(this.displayValue)
     } else {
       this.displayValue += value;
       updateDisplay(this.displayValue)
     }
-
   } 
 }
 
