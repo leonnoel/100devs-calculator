@@ -19,7 +19,6 @@ let Calculator = function(display, brand) {
   this.enterValue = function(value){
     this.displayValue = this.displayValue === '0' ? '' : this.displayValue
     value = value === 'x' ? '*' : value
-    console.log(this.displayValue)
     if (value === '='){
       calculate(this.displayValue)
     } else {
