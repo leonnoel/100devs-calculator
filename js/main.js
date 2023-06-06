@@ -6,10 +6,9 @@ let Calculator = function(display, brand) {
   this.displayValue = display
   this.brand = brand
 
-  let calculate = function(expression){
+  let calculate = (expression) =>{
     let output = eval(expression)
     this.displayValue = output
-
     updateDisplay(output)
   }
 
@@ -20,14 +19,14 @@ let Calculator = function(display, brand) {
   this.enterValue = function(value){
     this.displayValue = this.displayValue === '0' ? '' : this.displayValue
     value = value === 'x' ? '*' : value
-
+    console.log(this.displayValue)
     if (value === '='){
       calculate(this.displayValue)
     } else {
       this.displayValue += value;
       updateDisplay(this.displayValue)
     }
-  } 
+  }
 }
 
 let basicCalculator = new Calculator(calculatorDisplay, 'Casio')
