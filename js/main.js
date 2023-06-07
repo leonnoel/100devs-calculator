@@ -1,7 +1,6 @@
 let buttons = document.querySelectorAll('.button')
 let calculatorDisplay = document.querySelector('.calc-result').innerText
 
-
 let Calculator = function(display, brand) {
   this.displayValue = display
   this.brand = brand
