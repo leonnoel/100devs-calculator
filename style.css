@@ -1,0 +1,88 @@
+html {
+    font-size: 150%;
+    font-weight: 300;
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ------------------ */
+
+.calculator {
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, .7);
+    padding: 20px;
+    background-color: black;
+    border-radius: 1.5rem;
+}
+
+.calculator_display {
+    background-color: white;
+    color: black;
+    width: 16.25rem;
+    padding: 0.75rem 1rem;
+    text-align: right;
+    font-size: calc(1rem * 1.2 * 1.2 * 1.2);
+    margin: 2rem 0.5rem 1rem 0.5rem;
+}
+
+.calculator_keys {
+    background-color: black;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-template-areas: 
+        "seven eight nine divide"
+        "four five six times"
+        "one two three plus"
+        "zero decimal equal minus"
+        "clear clear clear clear";
+}
+
+.calculator_keys > button {
+    border-radius: 50%;
+    height: 3.25rem;
+    width: 3.25rem;
+    margin: 0.25rem auto;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+    /* background-color: white; */
+}
+.calculator_keys > .clear {
+    border-radius: 0.5rem;
+    width: 15rem;
+    margin: 0.75rem auto;
+}
+.calculator_keys > button:hover {
+    background-color: lightgray;
+}
+.calculator_keys > button:active {
+    background-color: darkgray;
+    color: white;
+}
+[data-state='selected'] {
+    background: lightcoral;
+}
+
+.one {grid-area: one;}
+.two {grid-area: two;}
+.three {grid-area: three;}
+.four {grid-area: four;}
+.five {grid-area: five;}
+.six {grid-area: six;}
+.seven {grid-area: seven;}
+.eight {grid-area: eight;}
+.nine {grid-area: nine;}
+.zero {grid-area: zero;}
+[data-key='divide'] {grid-area: divide;}
+[data-key='times'] {grid-area: times;}
+[data-key='plus'] {grid-area: plus;}
+[data-key='minus'] {grid-area: minus;}
+.decimal {grid-area: decimal;}
+.equal {grid-area: equal;}
+.clear {grid-area: clear;}
