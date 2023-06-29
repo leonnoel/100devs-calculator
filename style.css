@@ -1,0 +1,206 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, #00AAFF, #00FF6C)
+}
+
+.calculator-grid {
+   display: grid;
+   justify-content: center;
+   align-content: center; 
+   min-height: 100vh;
+   grid-template-columns: repeat(4, 100px);
+   grid-template-rows: minmax(120px, auto) repeat(5,100px);
+   
+}
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+.calculator-grid > button:hover {
+    background-color: rgba(255, 255, 255, .9);
+}
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+    border: white 2px solid;
+}
+ .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+ }
+ .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+ }
+
+
+/* div {
+    width: 400px;
+    height: 600px;
+    background-color: black;
+    display: table;
+    margin: auto;
+}
+button {
+    
+} */
+
+
+
+
+/* CSS */
+.button-92 {
+  --c: #fff;
+  /* text color */
+  background: linear-gradient(90deg, #0000 33%, #fff5, #0000 67%) var(--_p,100%)/300% no-repeat,
+    #004dff;
+  /* background color */
+  color: #0000;
+  border: none;
+  transform: perspective(500px) rotateY(calc(20deg*var(--_i,-1)));
+  text-shadow: calc(var(--_i,-1)* 0.08em) -.01em 0   var(--c),
+    calc(var(--_i,-1)*-0.08em)  .01em 2px #0004;
+  outline-offset: .1em;
+  transition: 0.3s;
+}
+
+.button-92:hover,
+.button-92:focus-visible {
+  --_p: 0%;
+  --_i: 1;
+}
+
+.button-92:active {
+  text-shadow: none;
+  color: var(--c);
+  box-shadow: inset 0 0 9e9q #0005;
+  transition: 0s;
+}
+
+.button-92 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 0;
+  cursor: pointer;
+  padding: .1em .3em;
+}
+
+
+
+/* CSS */
+.button-55 {
+  align-self: center;
+  background-color: #fff;
+  background-image: none;
+  background-position: 0 90%;
+  background-repeat: repeat no-repeat;
+  background-size: 4px 3px;
+  border-radius: 15px 225px 255px 15px 15px 255px 225px 15px;
+  border-style: solid;
+  border-width: 2px;
+  box-shadow: rgba(0, 0, 0, .2) 15px 28px 25px -18px;
+  box-sizing: border-box;
+  color: #41403e;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Neucha, sans-serif;
+  font-size: 1rem;
+  line-height: 23px;
+  outline: none;
+  padding: .75rem;
+  text-decoration: none;
+  transition: all 235ms ease-in-out;
+  border-bottom-left-radius: 15px 255px;
+  border-bottom-right-radius: 225px 15px;
+  border-top-left-radius: 255px 15px;
+  border-top-right-radius: 15px 225px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-55:hover {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 8px -5px;
+  transform: translate3d(0, 2px, 0);
+}
+
+.button-55:focus {
+  box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
+}
+
+
+
+/* CSS */
+.button-53 {
+  background-color: #3DD1E7;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(-2deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-53:focus {
+  outline: 0;
+}
+
+.button-53:after {
+  content: '';
+  position: absolute;
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+.button-53:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+  .button-53 {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
