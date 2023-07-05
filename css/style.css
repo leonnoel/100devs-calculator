@@ -24,3 +24,7 @@ body{
   outline: none;
   background-color: rgba(255, 255, 255, .75);
 }
+
+.calculator-grid > button:hover {
+  background-color: rgba(255, 255, 255);
+} 
