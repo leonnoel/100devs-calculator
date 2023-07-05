@@ -1,0 +1,38 @@
+/******************************************
+/* HOT GARBAGE - PLEASE DON'T MIMIC THIS CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+h1, h2{
+  text-align: center;
+}
+img{
+  display: block;
+  height: 300px;
+  margin: 0 auto;
+}
+ul{
+  width: 100px;
+  height: 250px;
+  border: 3px solid black;
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+li{
+  text-align: center;
+  width: 94px;
+  height: 49px;
+  border: 1px solid black;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/

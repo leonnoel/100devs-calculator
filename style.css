@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+}
+.calculator {
+  padding: 1rem;
+  max-width: 18rem;
+  background: black;
+  border-radius: 1rem;
+}
+.btns {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+button {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  border: 0;
+  font-size: 2rem;
+}
+.prevInput,
+.currentInput {
+  min-height: 1rem;
+  text-align: end;
+  background: white;
+  padding: 0;
+  margin: 0;
+}
