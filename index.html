@@ -6,27 +6,30 @@
     <link rel="stylesheet" href="styles.css">
     <title>Calculator</title>
 </head>
-<body class="flex">
-    <main class="calculator flex">
-        <section class="display"></section>
-        <section class="keypad grid">
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span>/</span>
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span class="multiply">x</span>
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>+</span>
-            <span>0</span>
-            <span>.</span>
-            <span>=</span>
-            <span class="subtract">-</span>
+<body>
+    <main class="calculator grid">
+        <section class="output flex">
+            <div data-prev-operand class="previous-operand"></div>
+            <div data-curr-operand class="current-operand"></div>
         </section>
+        <button data-clear class="span-two">AC</button>
+        <button data-delete>DEL</button>
+        <button data-operation>÷</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>×</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-equals class="span-two">=</button>
     </main>
     <script src="script.js"></script>
 </body>
