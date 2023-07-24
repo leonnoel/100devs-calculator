@@ -1,0 +1,76 @@
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+body{
+  background-color: #d4fff2;
+}
+
+h1, h2{
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+section{
+  background-color: black;
+  padding: 15px;
+  margin: 0 20px;
+  border-radius: 10px;
+}
+
+#displayResults {
+  background-color: #1d222b;
+  color: white;
+  margin: 20px;
+  height: 200px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 100;
+}
+
+#displayNumbers {
+  background-color: #0d0f14;
+  color: white;
+  margin: 0 20px 0 20px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.numberColor{
+  background-color: #1d222b;
+}
+
+#displayNumbers div{
+  padding: 20px 35px;
+  margin: 10px;
+  border-radius: 6px;
+  font-size: 24px;
+  font-weight: 100;
+}
+
+#numPlus, #numMinus, #numMultiply, #numDivide {
+  background-color: #51eeac;
+  color: black;
+}
+
+#numEqual, #numAc, #numDel{
+  background-color: #009193;
+  color: black;
+  font-size: 8px;
+
+}
