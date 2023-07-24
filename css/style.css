@@ -27,23 +27,35 @@ img {
 
 .calculator {
     background: #111111;
-    border-radius: 10px;
-    padding: 6rem 3rem 2rem;
-    width: 35rem;
+    border-radius: 30px;
+    padding: 5rem 3rem 2rem;
+    width: 40rem;
 }
 
     .calculator form input {
-        border: 0;
-        outline: 0;
-        width: 100%;
-        height: 7rem;
         border-radius: 10px;
-        margin-bottom: 2rem;
+        border: 0;
         cursor: pointer;
+        height: 8rem;
+        margin-bottom: 2rem;
+        outline: 0;
         padding: 1rem;
-        font-size: 2rem;
-        
+        width: 100%;
     }
+
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+    
+    form .display input {
+        flex: 1;
+        font-size: 4rem;
+        text-align: right;
+    }
+
 
 
 .button-container {
@@ -52,9 +64,37 @@ img {
     gap: 1rem;
 }
 
+    .button-container.top input[type=button]{
+        border-radius: 10px;
+        flex: 1;
+        height: 5rem;
+    }
+    
+    .button-container.top input[type=button]:first-child {
+            background: orange;
+        }
+
+        .button-container.top input[type=button]:first-child:hover {
+            background: rgb(233, 140, 0);
+        }
+
+        .button-container.top input[type=button]:first-child:active {
+            background: rgb(206, 123, 0);
+        }
+
+    .button-container.top input[type=button]:last-child {
+        background: none;
+        color: white;
+        border: 2px solid white;
+    }
+
+        .button-container.top input[type=button]:last-child:hover {
+            background: #1f1f1f;
+        }
+
     .button-container input[type=button] {
-        width: 6rem;
-        height: 6rem;
+        width: 7rem;
+        height: 7rem;
         border-radius: 50px;
         font-size: 2.8rem;
         background: white;
@@ -70,3 +110,7 @@ img {
             background: #afafaf;
         }
 
+
+form input.operator {
+    color: orangered;
+}
