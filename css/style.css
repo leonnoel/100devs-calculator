@@ -6,6 +6,7 @@
 
 html {
     font-size: 62.5%;
+    font-family: sans-serif;
 }
 
 
@@ -24,93 +25,104 @@ img {
     justify-content: center;
 }
 
-
-.calculator {
-    background: #111111;
-    border-radius: 30px;
+.calculator-grid {
     padding: 5rem 3rem 2rem;
-    width: 40rem;
-}
-
-    .calculator form input {
-        border-radius: 10px;
-        border: 0;
-        cursor: pointer;
-        height: 8rem;
-        margin-bottom: 2rem;
-        outline: 0;
-        padding: 1rem;
-        width: 100%;
-    }
-
-
-form .display {
-    display: flex;
-    justify-content: flex-end;
-    margin: 20px 0;
-}
-    
-    form .display input {
-        flex: 1;
-        font-size: 4rem;
-        text-align: right;
-    }
-
-
-
-.button-container {
-    display: flex;
+    border-radius: 30px;
+    background: #111111;
+    display: grid;
     justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
     gap: 1rem;
 }
 
-    .button-container.top input[type=button]{
-        border-radius: 10px;
-        flex: 1;
-        height: 5rem;
-    }
-    
-    .button-container.top input[type=button]:first-child {
-            background: orange;
-        }
+/* BUTTON */
 
-        .button-container.top input[type=button]:first-child:hover {
+.span-two {
+    font-size: 3.5rem;
+    text-align: center;
+    grid-column: span 2;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+    .span-two.ac {
+            background: orange;
+            border: 2px solid rgb(245, 123, 52);
+
+        }
+    
+        .span-two.ac:hover {
             background: rgb(233, 140, 0);
         }
-
-        .button-container.top input[type=button]:first-child:active {
+    
+        .span-two.ac:active {
             background: rgb(206, 123, 0);
         }
-
-    .button-container.top input[type=button]:last-child {
+    
+    .span-two.del {
         background: none;
         color: white;
         border: 2px solid white;
     }
-
-        .button-container.top input[type=button]:last-child:hover {
+    
+        .span-two.del:hover {
             background: #1f1f1f;
         }
 
-    .button-container input[type=button] {
-        width: 7rem;
-        height: 7rem;
-        border-radius: 50px;
-        font-size: 2.8rem;
-        background: white;
-        font-weight: 700;
-        transition: background 0.2s;
+
+
+.calculator-grid > button:not(.span-two) {
+    cursor: pointer;
+    height: 100%;
+    border-radius: 50px;
+    font-size: 2.8rem;
+    background: white;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+    .calculator-grid > button:not(.span-two):hover {
+        background: #f3f3f3;
     }
 
-        .button-container input[type=button]:hover {
-            background: #f3f3f3;
-        }
-
-        .button-container input[type=button]:active {
-            background: #afafaf;
-        }
+    .calculator-grid > button:not(.span-two):active {
+        background: #afafaf;
+    }
 
 
+/* DISPLAY SCREEN */
+
+    
+.output {
+    grid-column: 1 / -1;
+    background: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+    border: 0;
+    height: 10rem;
+    outline: 0;
+    padding: 1.2rem;
+}
+
+    .output .previous-operand {
+        font-size: 1.3rem;
+        color: rgb(90, 90, 90);
+    }
+    
+    .output .current-operand {
+        font-size: 2.8rem;
+    }
+    
+ 
+
+/* 
 form input.operator {
     color: orangered;
-}
+} */
