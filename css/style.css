@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: sans-serif;
+}
+
+
+img {
+    opacity: 0.5;
+}
+
+/* STYLING */
+
+.calc-container {
+    width: 100%;
+    height: 100vh;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-grid {
+    padding: 5rem 3rem 2rem;
+    border-radius: 30px;
+    background: #111111;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 100px);
+    gap: 1rem;
+}
+
+/* BUTTON */
+
+.span-two {
+    font-size: 3.5rem;
+    text-align: center;
+    grid-column: span 2;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+    .span-two.ac {
+            background: orange;
+            border: 2px solid rgb(245, 123, 52);
+
+        }
+    
+        .span-two.ac:hover {
+            background: rgb(233, 140, 0);
+        }
+    
+        .span-two.ac:active {
+            background: rgb(206, 123, 0);
+        }
+    
+    .span-two.del {
+        background: none;
+        color: white;
+        border: 2px solid white;
+    }
+    
+        .span-two.del:hover {
+            background: #1f1f1f;
+        }
+
+
+
+.calculator-grid > button:not(.span-two) {
+    cursor: pointer;
+    height: 100%;
+    border-radius: 50px;
+    font-size: 2.8rem;
+    background: white;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+    .calculator-grid > button:not(.span-two):hover {
+        background: #f3f3f3;
+    }
+
+    .calculator-grid > button:not(.span-two):active {
+        background: #afafaf;
+    }
+
+
+/* DISPLAY SCREEN */
+
+    
+.output {
+    grid-column: 1 / -1;
+    background: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    border-radius: 10px;
+    border: 0;
+    height: 10rem;
+    outline: 0;
+    padding: 1.2rem;
+}
+
+    .output .previous-operand {
+        font-size: 1.3rem;
+        color: rgb(90, 90, 90);
+    }
+    
+    .output .current-operand {
+        font-size: 2.8rem;
+    }
+    
