@@ -70,11 +70,15 @@ ul{
     list-style-type: none;
 }
 .display{
-    display:block;
+    display:flex;
+    box-sizing: border-box;
+    align-items:center;
+    padding-left:2rem;
     background:#fff;
     color:#333;
     height:5rem;
     width:70%;
+    font-size:3rem;
 }
 .button-panel{
     display:flex;
@@ -95,4 +99,7 @@ ul{
 
 .operator {
     flex: 1 1 25%;
+}
+#equals{
+    flex: 1 1 100%;
 }
