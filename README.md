@@ -19,8 +19,24 @@
   - Anything specific on which you want feedback!
 
 Example:
+
 ```
 I completed the challenge: 5
 I feel good about my code: 4
 I'm not sure if my constructors are setup cleanly...
 ```
+
+I recently completed the 100 devs caculator. where I implemented a calcutator to do basic calculations. Though not a perfect calculator It can perform basic calculation we use in our daily lives.
+
+# also the reset == submit button
+
+# things I learnt
+
+- I further understood how the eval function works
+  link to mdn
+- I also used the setTimeout function to handle error output instead of bringing up an alert dialog which can disturb the UX.
+
+- I feel if i want to work on a more complex version the eval won't work well
+  open to ideas on improvement.
+
+Thanks
