@@ -1,0 +1,41 @@
+body{
+    min-height: 100vh;
+}
+
+#calc_body{
+    min-height: 50vh;
+    margin:10% auto ;
+    min-width: 200px;
+    width: 50vw;
+    padding: 10px;
+    background: #000;
+border-radius: 20px;
+}
+#display{
+    height: 45px;
+    width: 70%;
+    margin: 20px auto;
+    background: #fff;
+}
+
+.row{
+    margin: 20px auto;
+    width: 80%; 
+    display: flex;
+    align-content: space-around;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    height: 100%;
+    min-height: 200px;
+}
+
+.row > .cell{
+    flex: 0 1 23%;
+}
+.btn{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin: 10px 2px;
+    font-size: 2em
+}
