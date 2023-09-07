@@ -1,0 +1,56 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+    font-family:'Roboto', sans-serif;;
+}
+
+
+.calculator {
+    width: clamp(200px, 25%, 500px);
+    background: black;
+    padding: 5%;
+    border-radius: 5%;
+}
+
+.display {
+ height: 5.5vw;
+ width: 100%;
+ background: white;
+ margin-bottom: 1em;
+ outline: red;
+}
+
+.keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7em;   
+}
+
+.button {
+    width: 20%;
+    font-size: 4vw;
+    border-radius: 50%;
+    background: white;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    gap: 10%; 
+}
+
+.button:hover {
+    background: lightgray;
+}
+
+.button:active {
+    background: lightgreen;
+}
+
+.smaller {
+    font-size: 3vw;
+}
+
