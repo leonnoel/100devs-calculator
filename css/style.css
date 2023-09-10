@@ -10,20 +10,21 @@ body {
 
 .calculator {
     width: 26%;
-    max-width: 370px;
+    max-width: 300px;
     min-width: 70px;
+    max-height: 475px;
     background: black;
-    padding: 3%;
+    padding: 2%;
     border-radius: 5%;
 }
 
 .display {
- height: 7vw;
+ height: clamp(20px, 7vw, 90px);
  background: white;
- margin-bottom: 1em;
+ margin-bottom: 10%;
  margin-top: 10%;
  font-weight: 700;
- font-size: 3vw;
+ font-size: clamp(0.5rem, 3vw, 2.5rem);
  overflow-wrap: break-word;
  display: flex;
  flex-direction: column-reverse;
@@ -36,7 +37,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.7em;   
+    gap: 0.7em;
+    margin: 0 8%;
     
 }
 
@@ -49,8 +51,10 @@ body {
 }
 
 .button {
-    width: 5vw;
-    font-size: 4vw;
+    width: 24%;
+    max-width: 60px;
+   
+    font-size: clamp(0.5rem, 3.5vw, 2.8rem);
     border-radius: 50%;
     background: white;
     display: flex; 
@@ -68,8 +72,6 @@ body {
     background: lightgreen;
 }
 
-.smaller {
-    font-size: 3vw;
-}
+
 
 
