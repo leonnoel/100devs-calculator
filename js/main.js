@@ -1,9 +1,10 @@
 
 
 function Calculator() {
-    let display = "";
-    let calculate = "";
+    let display;
     let reset = false;
+    const displayElement = document.querySelector(".display");
+
 
     const input = {
         seven: "7",
@@ -25,17 +26,23 @@ function Calculator() {
 
     this.onClick = function() {
         if(reset) {
-            document.querySelector(".display").innerText = "";
+            displayElement.innerText = "";
         }
         display = input[this.id]
-        document.querySelector(".display").innerText += display;
+        displayElement.innerText += display;
         reset = false;
     }
 
     this.getResult = function() {
-        calculate = new Function(`return ${document.querySelector(".display").innerText}`)
-        document.querySelector(".display").innerText = calculate();
-        reset = true;
+        try {
+            const result = new Function(`return ${displayElement.innerText}`);
+            displayElement.innerText = result();
+            reset = true;
+        } catch {
+            displayElement.innerText = "Error: Incorrect input"
+            reset = true;
+        }
+        
 
     }
 
