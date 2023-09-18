@@ -62,6 +62,7 @@ body {
     justify-content: center;
     font-weight: 700;
     gap: 10%; 
+    cursor: pointer;
 }
 
 .button:hover {
