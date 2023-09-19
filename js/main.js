@@ -1,5 +1,7 @@
 
 
+//Constructor
+
 function Calculator() {
     let display;
     let reset = false;
@@ -56,6 +58,7 @@ document.querySelector("#sum").addEventListener("click", calc.getResult)
 
 
 //same code but using ES6 Classes:
+
 /* 
 
 class CalculatorClass {
@@ -117,5 +120,6 @@ document.querySelectorAll(".input").forEach(element => element.addEventListener(
 document.querySelector("#sum").addEventListener("click", () => {
     calcClass.getResult();
 });
- */
+
+*/
 
