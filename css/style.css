@@ -5,22 +5,23 @@ body {
     justify-content: center;
     height: 100dvh;
     font-family:'Roboto', sans-serif;;
+    background: linear-gradient(to left, rgb(39, 173, 235), rgb(37, 228, 37));
 }
 
 
 .calculator {
-    width: 26%;
-    max-width: 300px;
-    min-width: 70px;
+    width: clamp(80px, 26%, 300px);
     max-height: 475px;
     background: black;
     padding: 2%;
     border-radius: 5%;
+    border: 0.5vw solid rgba(255, 255, 255, 0.466);
+    box-shadow: 0 0 200px rgb(167, 157, 157);
 }
 
 .display {
  height: clamp(20px, 7vw, 90px);
- background: white;
+ background: rgb(255, 255, 255, 0.85);
  margin-bottom: 10%;
  margin-top: 10%;
  font-weight: 700;
@@ -28,18 +29,16 @@ body {
  overflow-wrap: break-word;
  display: flex;
  flex-direction: column-reverse;
- overflow-y: hidden; 
+ overflow-y:auto;
 }
 
 
 .keyboard {
-   
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.7em;
     margin: 0 8%;
-    
 }
 
 
@@ -53,7 +52,6 @@ body {
 .button {
     width: 24%;
     max-width: 60px;
-   
     font-size: clamp(0.5rem, 3.5vw, 2.8rem);
     border-radius: 50%;
     background: white;
