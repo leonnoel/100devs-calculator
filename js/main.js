@@ -55,8 +55,8 @@ document.querySelector("#sum").addEventListener("click", calc.getResult)
 
 
 
-//with Classes:
-
+//same code but using ES6 Classes:
+/* 
 
 class CalculatorClass {
 
@@ -117,5 +117,5 @@ document.querySelectorAll(".input").forEach(element => element.addEventListener(
 document.querySelector("#sum").addEventListener("click", () => {
     calcClass.getResult();
 });
-
+ */
 
