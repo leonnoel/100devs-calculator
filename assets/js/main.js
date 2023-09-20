@@ -1,8 +1,8 @@
-let final = 0
-let current = []
-let hold = ``
+// let final = 0
+// let current = []
+// let hold = ``
 let screen = []
-let operator = ""
+// let operator = ""
 
 function operate(input) {
     // if (screen.length === 0) {
