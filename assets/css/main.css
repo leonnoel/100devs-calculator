@@ -4,13 +4,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: fantasy;
+    font-family:'Courier New', Courier, monospace;
+    background-color: black;
 }
 
 #calc-body {
-    background-color: black;
+    background-color: darkgrey;
     width: 400px;
-    height: 500px;
+    height: 625px;
     border-radius: 40px;
 }
 
@@ -21,11 +22,13 @@ body {
     margin: 50px;
     border-radius: 10px;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
 }
 
-#calc-screen h1 {
+#calc-screen * {
+    border-color: black;
     margin: 0 10px;
 }
 
@@ -34,12 +37,24 @@ body {
     justify-content:space-evenly
 }
 
+#live-screen {
+    text-align: right;
+}
+#live-operator {
+    text-align: right;
+}
+
 .button {
     background-color: lightgrey;
     font-size: 30px;
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     text-align: center;
     font-size: 45px;
 }
+
+#clear, #enter {
+    border-radius: 20px;
+}
+
