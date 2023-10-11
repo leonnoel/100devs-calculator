@@ -1,106 +1,90 @@
-function Calculator() {
-    let display = '0';
-    
-    this.clear = function () {
-        display = '0';
-        document.querySelector('.display').innerText = display;
-    };
-
-    this.updateDisplay = function (char) {
-        if ( display === '0' ) {
-            if (String(char).includes('+') || String(char).includes('-') || 
-                String(char).includes('*') || String(char).includes('/') ) {
-                display += ` ${char} `;
-            } else {
-                display = String(char);
-            }
+// Define the Calculator class which will encapsulate all calculator operations and behaviors.
+class Calculator {
+    // Constructor initializes default state of the calculator.
+    constructor() {
+        // Set the default value of the calculator's display.
+        this.displayValue = '0'; 
+        // Cache the DOM element that displays the calculator's output to ensure efficient updates.
+        this.displayElement = document.querySelector('.display'); 
+        // Display the default value to the user.
+        this.updateUI();
+    }
+    // Utility method to synchronize the UI with the internal state of the calculator.
+    updateUI() {
+        this.displayElement.innerText = this.displayValue;
+    }
+    // Reset the calculator display to its initial state.
+    clear() {
+        this.displayValue = '0';
+        this.updateUI();
+    }
+    // Update the displayed value based on user input.
+    updateDisplay(char) {
+        // Handle the special case where the display is at its initial state.
+        // Allow arithmetic operators to be appended after 0.
+        // Otherwise, replace the initial 0 with the character or append the character.
+        // ...
+        if (this.displayValue === '0' && ['+', '-', '*', '/'].includes(char)) {
+            this.displayValue += ` ${char} `;
+        } else if (this.displayValue === '0') {
+            this.displayValue = String(char);
         } else {
-            display += char;
+            this.displayValue += char;
         }
-        document.querySelector('.display').innerText = display;
-    };
-
-    this.equals = function() {
-        let numbers = [];
-        let num1, num2;
-
-        if ( display.includes('+') ) {
-
-            numbers = display.split(' + ');
-            num1 = Number(numbers[0]);
-            num2 = Number(numbers[1]);
-            display = String(num1 + num2);
-            document.querySelector('.display').innerText = display ;
-
-        } else if ( display.includes('-') ) {
-
-            numbers = display.split(' - ');
-            num1 = Number(numbers[0]);
-            num2 = Number(numbers[1]);
-            display = String(num1 - num2);
-            document.querySelector('.display').innerText = display;
-
-        } else if ( display.includes('*') ) {
-
-            numbers = display.split(' * ');
-            num1 = Number(numbers[0]);
-            num2 = Number(numbers[1]);
-            display = String(num1 * num2);
-            document.querySelector('.display').innerText = display ;
-
-        }  else if ( display.includes('/') ) {
-
-            numbers = display.split(' / ');
-            num1 = Number(numbers[0]);
-            num2 = Number(numbers[1]);
-
-            num2 === 0  ? display = 'undefined': display = String(num1 / num2);
-           
-            document.querySelector('.display').innerText = display;
-
+        // Update the UI after modifying the internal state.
+        this.updateUI();
+    }
+    // Evaluate the arithmetic expression displayed on the calculator.
+    evaluate() {
+        // Attempt to evaluate the expression.
+        // If the expression is valid, display the result.
+        // If there's an error in evaluation, display an error message.
+        // ...
+        try {
+            this.displayValue = String(new Function(`return ${this.displayValue}`)());
+            this.updateUI();
+        } catch {
+            this.displayValue = 'Error';
+            this.updateUI();
         }
     }
-
-    Object.defineProperty( this, 'display', {
-        get: function() {
-            return display;
-        },
-    });
-
+    // Handle the addition of the decimal point to the display.
+    addDot() {
+        // Check how many decimal points are currently in the display.
+        // If there's less than 2 and the last character isn't a decimal point, add a new one.
+        // ...
+        const dotCount = (this.displayValue.match(/\./g) || []).length;
+        if (dotCount < 2 && this.displayValue[this.displayValue.length - 1] !== '.') {
+            this.updateDisplay('.');
+        }
+    }
 }
-
+// Create a new Calculator instance.
 const calc = new Calculator();
+// Attach event listeners for calculator functionalities:
 
-
+// Clear the calculator's display when the clear button is clicked.
 document.querySelector('.clear-btn').addEventListener('click', () => calc.clear());
+// Add a decimal point to the current number on the display.
+document.querySelector('#dot').addEventListener('click', () => calc.addDot());
+// Evaluate the current expression on the display when the equals button is clicked.
+document.querySelector('#equals').addEventListener('click', () => calc.evaluate());
 
-document.querySelector('#dot').addEventListener('click', () => {
-    let dotCount = 0;
-    
-    for (let i = 0; i < calc.display.length; i++ ) {
-        if ( calc.display[i] === '.' ) {
-            dotCount++;
-        }
-    }
+// Define a mapping of DOM elements to their respective arithmetic operations.
+const operators = {
+    '#add': ' + ',
+    '#subtract': ' - ',
+    '#multiply': ' * ',
+    '#divide': ' / '
+};
 
-    if ( dotCount < 2 && ( calc.display.indexOf('.') !== calc.display.length - 1 ) ) {
-        calc.updateDisplay('.');
-    }
-});
-
-document.querySelector('#add').addEventListener('click', () => calc.updateDisplay(' + '));
-document.querySelector('#subtract').addEventListener('click', () => calc.updateDisplay(' - '));
-document.querySelector('#multiply').addEventListener('click', () => calc.updateDisplay(' * '));
-document.querySelector('#divide').addEventListener('click', () => calc.updateDisplay(' / '));
-document.querySelector('#equals').addEventListener('click', () => calc.equals());
-
-document.querySelector('#zero').addEventListener('click', () => calc.updateDisplay(0));
-document.querySelector('#one').addEventListener('click', () => calc.updateDisplay(1));
-document.querySelector('#two').addEventListener('click', () => calc.updateDisplay(2));
-document.querySelector('#three').addEventListener('click', () => calc.updateDisplay(3));
-document.querySelector('#four').addEventListener('click', () => calc.updateDisplay(4));
-document.querySelector('#five').addEventListener('click', () => calc.updateDisplay(5));
-document.querySelector('#six').addEventListener('click', () => calc.updateDisplay(6));
-document.querySelector('#seven').addEventListener('click', () => calc.updateDisplay(7));
-document.querySelector('#eight').addEventListener('click', () => calc.updateDisplay(8));
-document.querySelector('#nine').addEventListener('click', () => calc.updateDisplay(9));
+// Loop through each operator button and attach an event listener.
+// On click, the respective arithmetic operation is appended to the display.
+for (const [key, value] of Object.entries(operators)) {
+    document.querySelector(key).addEventListener('click', () => calc.updateDisplay(value));
+}
+// For each numeric button (0-9), attach an event listener.
+// Append the respective number to the display when clicked.
+for (let i = 0; i <= 9; i++) {
+    document.querySelector(`#num${i}`).addEventListener('click', () => calc.updateDisplay(i));
+}
