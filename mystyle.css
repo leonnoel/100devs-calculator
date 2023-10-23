@@ -66,3 +66,17 @@ button{
     10px 15px 20px  rgba(0,  0, 0,  0.08),
     inset -20px -20px 15px rgba(7, 101, 163, 0.9);
 }
+
+.active{
+    color: #50adff;
+    z-index: 10px;
+}
+
+.delete{
+    color: #fff;
+    background-color: #f73838;
+    box-shadow: inset 6px 6px 7px  rgba(0,  0, 0, 0.08),
+    7px 8px 9px  rgba(218, 26, 26, 0.08),
+    10px 15px 20px  rgba(90, 25, 25, 0.08),
+    inset -20px -20px 15px rgba(186, 11, 192, 0.9);
+}
