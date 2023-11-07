@@ -1,0 +1,54 @@
+:root {
+  font-size: 62.5%;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(100% - 2rem, 1300px);
+}
+/* Here we are setting display flex for the children of the calculator, and allowing them to wrap. We are also setting up the calculators structure */
+
+.calculator {
+  display: flex;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2rem;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  gap: 1rem;
+  max-width: 350px;
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* To get the h1 to fill up the space for the result screen we can set a width of 100% on it and also adding some styles to it.*/
+
+.result {
+  border: 2px solid black;
+  border-radius: 1rem;
+  text-align: right;
+  line-height: 50px;
+  min-height: 70px;
+  min-width: 100%;
+  padding: 1rem;
+}
+
+/* Default Button styling */
+
+.button {
+  flex-basis: 20%;
+  font-size: 4rem;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+/* Getting the clear buttons to sit next to each other  */
+
+#clear {
+  margin-inline: auto 1rem;
+}
+
+#clear-entry {
+  font-size: 3rem;
+  padding-block: .5rem;
+}
