@@ -8,24 +8,58 @@ function Calculator() {
   //we need to set a conditional which will reset our current value to zero anytime an arithmetic operator is pressed
   //the current value h1 will also be where we print the result
   //lets first grab our buttons of number and operator into two seperate node lists
-  let currentValueAndResult = document.querySelector('#current-value')
-  let numButtons = document.querySelectorAll('.button_number');
-  numButtons = Array.from(numButtons);
-  console.log(numButtons);
+  //grabbing all the number and operator buttons
+  const currentValueAndResult = document.querySelector('#current-value')
+
+  const expression = document.querySelector('#expression')
+
+  const numButtons = Array.from(document.querySelectorAll('.button_number'));
+  
+  const opButtons = Array.from(document.querySelectorAll('.button_operator'));
+
+  this.evalButton = document.querySelector('#evaluate');
+  
+  //creating an array from both types of buttons to be able to use forEach on them
   //we can create a local function to be able to use in our event listener to add to our current value
   function inputNum(click) {
-    if (currentValueAndResult.innerText == '0') {
+    console.log(Number(currentValueAndResult.innerText))
+    if (currentValueAndResult.innerText == '0' || !(Number(currentValueAndResult.innerText))) {
       currentValueAndResult.innerText = '';
     }
     currentValueAndResult.innerText += click.target.innerText;
   }
+  
   numButtons.forEach(button => button.addEventListener('click', inputNum))
-  let opButton = document.querySelectorAll('.button_operator');
+  //we need to create a local function to handle the operator clicks
+  function inputOp(click) {
+    if (expression.innerText == '0') {
+      expression.innerText = '';
+    }
+    if (!Number(currentValueAndResult.innerText)) {
+      return;
+    }
+    expression.innerText += ` ${currentValueAndResult.innerText} ${click.target.innerText} `
+    currentValueAndResult.innerText = click.target.innerText
+  }
 
+  opButtons.forEach(button => button.addEventListener('click', inputOp))
+  
   //we need to set an event listener in that if a number button is pressed, we add it to our h1 string.
   // this.evaluate = function() {
-
-  // }
+// }
+  // we need to set up a click event on our evaluation button to return the result of the current expression
+  this.expression = expression
+  this.evaluate = function() {
+    this.evalButton.addEventListener('click', () => {
+      if (!Number(currentValueAndResult.innerText)) {
+        currentValueAndResult.innerText = 'Error!';
+      }
+      this.expression.innerText += currentValueAndResult.innerText;
+      currentValueAndResult.innerText = eval(this.expression.innerText);
+    })
+  }
+  this.evaluate();
 }
 
 const calculator = new Calculator();
+calculator.evaluate();
