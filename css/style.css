@@ -32,11 +32,11 @@
   min-width: 100%;
 }
 
-.expression {
+#expression {
   font-size: 1.5rem;
 }
 
-.current-value {
+#current-value {
   font-size: clamp(.5rem, 3rem, 4rem);
   margin-block: 0;
 }
