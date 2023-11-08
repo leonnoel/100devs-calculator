@@ -11,6 +11,7 @@ function Calculator() {
   //grabbing all the number and operator buttons
   let evaluated = false;
   let lastInputIsOp = false;
+  let errorState = false;
   const currentValueAndResult = document.querySelector('#current-value')
 
   const expression = document.querySelector('#expression')
@@ -29,7 +30,7 @@ function Calculator() {
   //we can create a local function to be able to use in our event listener to add to our current value
   function inputNum(click) {
     //we don't want the user to be able to click an input number if an expression has just been evaluated
-    if (evaluated || (currentValueAndResult.innerText.includes('.') && (click.target.classList.contains('decimal')))) {
+    if (errorState || evaluated || (currentValueAndResult.innerText.includes('.') && (click.target.classList.contains('decimal')))) {
       return;
     }//handling cases where the decimal button was pressed with the current value being 0
     if ((click.target.classList.contains('decimal')) && currentValueAndResult.innerText === '0' ) {
@@ -48,7 +49,7 @@ function Calculator() {
   numButtons.forEach(button => button.addEventListener('click', inputNum))
   //we need to create a local function to handle the operator clicks
   function inputOp(click) {
-    if (currentValueAndResult.innerText === 'Error!' || currentValueAndResult.innerText == click.target.innerText || (currentValueAndResult.innerText.endsWith('.')) || (lastInputIsOp)) {
+    if (errorState || currentValueAndResult.innerText == click.target.innerText || (currentValueAndResult.innerText.endsWith('.')) || (lastInputIsOp)) {
       return;
     }
     if (expression.innerText == '0' || (evaluated == true)) {
@@ -72,6 +73,7 @@ function Calculator() {
     this.evalButton.addEventListener('click', () => {
       if (!Number(currentValueAndResult.innerText)) {
         currentValueAndResult.innerText = 'Error!';
+        errorState = true;
         return;
       } else if (evaluated == true || expression.innerText === '0') {
         return;
@@ -92,6 +94,7 @@ function Calculator() {
       this.expression.innerText = '0';
       currentValueAndResult.innerText = '0';
       evaluated = false;
+      errorState = false;
     })
   }
   this.clearEntry()
