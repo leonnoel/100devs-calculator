@@ -19,6 +19,7 @@ function Calculator() {
   const opButtons = Array.from(document.querySelectorAll('.button_operator'));
 
   this.evalButton = document.querySelector('#evaluate');
+  this.clearEntryButton = document.querySelector('#clear-entry');
   
   //creating an array from both types of buttons to be able to use forEach on them
   //we can create a local function to be able to use in our event listener to add to our current value
@@ -66,8 +67,15 @@ function Calculator() {
       currentValueAndResult.innerText = eval(this.expression.innerText);
     })
   }
-  // this.evaluate();
+  this.evaluate();
+  this.clear = function() {
+    this.clearEntryButton.addEventListener('click', () => {
+      console.log(1);
+      this.expression.innerText = '0';
+      currentValueAndResult.innerText = '0';
+    })
+  }
+  this.clear()
 }
 
 const calculator = new Calculator();
-calculator.evaluate();
