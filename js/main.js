@@ -19,6 +19,7 @@ function Calculator() {
   const opButtons = Array.from(document.querySelectorAll('.button_operator'));
 
   this.evalButton = document.querySelector('#evaluate');
+  this.clearButton = document.querySelector('#clear')
   this.clearEntryButton = document.querySelector('#clear-entry');
   
   //creating an array from both types of buttons to be able to use forEach on them
@@ -35,7 +36,7 @@ function Calculator() {
   numButtons.forEach(button => button.addEventListener('click', inputNum))
   //we need to create a local function to handle the operator clicks
   function inputOp(click) {
-    if (expression.innerText == '0' || eval(expression.innerText) == currentValueAndResult.innerText) {
+    if (expression.innerText == '0' || (eval(expression.innerText + ' + 0') == currentValueAndResult.innerText)) {
       expression.innerText = '';
     }
     if (!Number(currentValueAndResult.innerText)) {
@@ -68,14 +69,33 @@ function Calculator() {
     })
   }
   this.evaluate();
-  this.clear = function() {
+
+//Setting up the clear entry button
+
+  this.clearEntry = function() {
     this.clearEntryButton.addEventListener('click', () => {
       console.log(1);
       this.expression.innerText = '0';
       currentValueAndResult.innerText = '0';
+      evaluated = false;
     })
   }
-  this.clear()
+  this.clearEntry()
+
+//Setting up the clear button
+  this.clear = function() {
+    this.clearButton.addEventListener('click', () => {
+      if (eval(expression.innerText + ' + 0') == currentValueAndResult.innerText) {
+        return;
+      } else if (currentValueAndResult.innerText.length <= 1) {
+        currentValueAndResult.innerText = '0';
+        return;
+      }
+      currentValueAndResult.innerText = currentValueAndResult.innerText.slice(0, -1);
+    })
+  }
+  this.clear();
 }
 
 const calculator = new Calculator();
+console.log(calculator);
