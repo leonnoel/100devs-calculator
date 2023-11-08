@@ -28,10 +28,11 @@ function Calculator() {
   //creating an array from both types of buttons to be able to use forEach on them
   //we can create a local function to be able to use in our event listener to add to our current value
   function inputNum(click) {
-    if (evaluated) {
+    //we don't want the user to be able to click an input number if an expression has just been evaluated
+    if (evaluated || (currentValueAndResult.innerText.includes('.') && (click.target.classList.contains('decimal')))) {
       return;
-    }
-    if (click.target.classList.contains('decimal') && (currentValueAndResult.innerText.length < 1)) {
+    }//handling cases where the decimal button was pressed with the current value being 0
+    if ((click.target.classList.contains('decimal')) && currentValueAndResult.innerText === '0' ) {
       evaluated = false;
       currentValueAndResult.innerText = 0 + click.target.innerText;
       return;
@@ -47,7 +48,7 @@ function Calculator() {
   numButtons.forEach(button => button.addEventListener('click', inputNum))
   //we need to create a local function to handle the operator clicks
   function inputOp(click) {
-    if (currentValueAndResult.innerText === 'Error!' || currentValueAndResult.innerText == click.target.innerText) {
+    if (currentValueAndResult.innerText === 'Error!' || currentValueAndResult.innerText == click.target.innerText || (currentValueAndResult.innerText.endsWith('.')) || (lastInputIsOp)) {
       return;
     }
     if (expression.innerText == '0' || (evaluated == true)) {
@@ -72,9 +73,10 @@ function Calculator() {
       if (!Number(currentValueAndResult.innerText)) {
         currentValueAndResult.innerText = 'Error!';
         return;
-      } else if (evaluated == true) {
+      } else if (evaluated == true || expression.innerText === '0') {
         return;
       }
+      lastInputIsOp = false;
       evaluated = true;
       this.expression.innerText += ` ${currentValueAndResult.innerText}`
       currentValueAndResult.innerText = eval(this.expression.innerText);
