@@ -10,6 +10,7 @@ function Calculator() {
   //lets first grab our buttons of number and operator into two seperate node lists
   //grabbing all the number and operator buttons
   let evaluated = false;
+  let lastInputIsOp = false;
   const currentValueAndResult = document.querySelector('#current-value')
 
   const expression = document.querySelector('#expression')
@@ -18,6 +19,8 @@ function Calculator() {
   
   const opButtons = Array.from(document.querySelectorAll('.button_operator'));
 
+  const decimalButton = document.querySelector('#decimal')
+
   this.evalButton = document.querySelector('#evaluate');
   this.clearButton = document.querySelector('#clear')
   this.clearEntryButton = document.querySelector('#clear-entry');
@@ -25,9 +28,17 @@ function Calculator() {
   //creating an array from both types of buttons to be able to use forEach on them
   //we can create a local function to be able to use in our event listener to add to our current value
   function inputNum(click) {
-    console.log(Number(currentValueAndResult.innerText))
-    if (currentValueAndResult.innerText == '0' || !(Number(currentValueAndResult.innerText))) {
+    if (evaluated) {
+      return;
+    }
+    if (click.target.classList.contains('decimal') && (currentValueAndResult.innerText.length < 1)) {
+      evaluated = false;
+      currentValueAndResult.innerText = 0 + click.target.innerText;
+      return;
+    }
+    if (((currentValueAndResult.innerText == '0') && !(click.target.classList.contains('decimal'))) || lastInputIsOp) {
       currentValueAndResult.innerText = '';
+      lastInputIsOp = false;
     }
     evaluated = false;
     currentValueAndResult.innerText += click.target.innerText;
@@ -36,12 +47,13 @@ function Calculator() {
   numButtons.forEach(button => button.addEventListener('click', inputNum))
   //we need to create a local function to handle the operator clicks
   function inputOp(click) {
+    if (currentValueAndResult.innerText === 'Error!' || currentValueAndResult.innerText == click.target.innerText) {
+      return;
+    }
     if (expression.innerText == '0' || (evaluated == true)) {
       expression.innerText = '';
     }
-    if (!Number(currentValueAndResult.innerText)) {
-      return;
-    }
+    lastInputIsOp = true;
     evaluated = false;
     expression.innerText += ` ${currentValueAndResult.innerText} ${click.target.innerText} `
     currentValueAndResult.innerText = click.target.innerText
@@ -85,7 +97,7 @@ function Calculator() {
 //Setting up the clear button
   this.clear = function() {
     this.clearButton.addEventListener('click', () => {
-      if ((evaluated == true)|| (currentValueAndResult.innerText == 'Error!')) {
+      if (evaluated == true|| currentValueAndResult.innerText == 'Error!') {
         return;
       } else if (currentValueAndResult.innerText.length <= 1) {
         currentValueAndResult.innerText = '0';

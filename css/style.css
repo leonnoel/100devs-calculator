@@ -19,6 +19,7 @@
   max-width: 350px;
   text-align: center;
   margin-inline: auto;
+  margin-block-start: 15rem;
 }
 
 /* To get the h1 to fill up the space for the result screen we can set a width of 100% on it and also adding some styles to it.*/
@@ -28,7 +29,7 @@
   border: 2px solid black;
   border-radius: 1rem;
   text-align: right;
-  max-height: 80px;
+  min-height: 80px;
   min-width: 100%;
 }
 
