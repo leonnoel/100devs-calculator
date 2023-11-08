@@ -36,7 +36,7 @@ function Calculator() {
   numButtons.forEach(button => button.addEventListener('click', inputNum))
   //we need to create a local function to handle the operator clicks
   function inputOp(click) {
-    if (expression.innerText == '0' || (eval(expression.innerText + ' + 0') == currentValueAndResult.innerText)) {
+    if (expression.innerText == '0' || (evaluated == true)) {
       expression.innerText = '';
     }
     if (!Number(currentValueAndResult.innerText)) {
@@ -85,7 +85,7 @@ function Calculator() {
 //Setting up the clear button
   this.clear = function() {
     this.clearButton.addEventListener('click', () => {
-      if (eval(expression.innerText + ' + 0') == currentValueAndResult.innerText) {
+      if ((evaluated == true)|| (currentValueAndResult.innerText == 'Error!')) {
         return;
       } else if (currentValueAndResult.innerText.length <= 1) {
         currentValueAndResult.innerText = '0';
