@@ -9,6 +9,7 @@ function Calculator() {
   //the current value h1 will also be where we print the result
   //lets first grab our buttons of number and operator into two seperate node lists
   //grabbing all the number and operator buttons
+  let evaluated = false;
   const currentValueAndResult = document.querySelector('#current-value')
 
   const expression = document.querySelector('#expression')
@@ -26,18 +27,20 @@ function Calculator() {
     if (currentValueAndResult.innerText == '0' || !(Number(currentValueAndResult.innerText))) {
       currentValueAndResult.innerText = '';
     }
+    evaluated = false;
     currentValueAndResult.innerText += click.target.innerText;
   }
   
   numButtons.forEach(button => button.addEventListener('click', inputNum))
   //we need to create a local function to handle the operator clicks
   function inputOp(click) {
-    if (expression.innerText == '0') {
+    if (expression.innerText == '0' || eval(expression.innerText) == currentValueAndResult.innerText) {
       expression.innerText = '';
     }
     if (!Number(currentValueAndResult.innerText)) {
       return;
     }
+    evaluated = false;
     expression.innerText += ` ${currentValueAndResult.innerText} ${click.target.innerText} `
     currentValueAndResult.innerText = click.target.innerText
   }
@@ -48,17 +51,22 @@ function Calculator() {
   // this.evaluate = function() {
 // }
   // we need to set up a click event on our evaluation button to return the result of the current expression
+  //if the eval button was clicked, lets set evaluated to true and set it false in our previous clicks of the opButtons and inputButtons
   this.expression = expression
   this.evaluate = function() {
     this.evalButton.addEventListener('click', () => {
       if (!Number(currentValueAndResult.innerText)) {
         currentValueAndResult.innerText = 'Error!';
+        return;
+      } else if (evaluated == true) {
+        return;
       }
-      this.expression.innerText += currentValueAndResult.innerText;
+      evaluated = true;
+      this.expression.innerText += ` ${currentValueAndResult.innerText}`
       currentValueAndResult.innerText = eval(this.expression.innerText);
     })
   }
-  this.evaluate();
+  // this.evaluate();
 }
 
 const calculator = new Calculator();
