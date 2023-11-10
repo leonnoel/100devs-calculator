@@ -1,5 +1,4 @@
-document.addEventListener("DOMContentLoaded", (event) => {
-  function Calculator() {
+function Calculator() {
   //lets write some pseudocode to see what is required of us
   //we must add any button clicked to the evaluation screen of the calculator.
   //in the case the equal sign is pressed we need to evaluate the expression inside the expression, innerText
@@ -125,4 +124,3 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
   const calculator = new Calculator();
   console.log(calculator);
-})
