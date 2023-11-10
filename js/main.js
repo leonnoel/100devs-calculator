@@ -31,13 +31,23 @@ function Calculator() {
   function inputNum(click) {
     //we don't want the user to be able to click an input number if an expression has just been evaluated
     if (errorState || evaluated || (currentValueAndResult.innerText.includes('.') && (click.target.classList.contains('decimal')))) {
+      return;    
+    }
+    //handling numbers that are too long
+
+    if (currentValueAndResult.innerText.length > 18) {
+      errorState = true;
+      currentValueAndResult.innerText = 'Too Many Numbers!'
       return;
-    }//handling cases where the decimal button was pressed with the current value being 0
+    }
+
+    //handling cases where the decimal button was pressed with the current value being 0
     if ((click.target.classList.contains('decimal')) && currentValueAndResult.innerText === '0' ) {
       evaluated = false;
       currentValueAndResult.innerText = 0 + click.target.innerText;
       return;
     }
+
     if (((currentValueAndResult.innerText == '0') && !(click.target.classList.contains('decimal'))) || lastInputIsOp) {
       currentValueAndResult.innerText = '';
       lastInputIsOp = false;
