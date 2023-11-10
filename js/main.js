@@ -81,7 +81,7 @@ function Calculator() {
       lastInputIsOp = false;
       evaluated = true;
       this.expression.innerText += ` ${currentValueAndResult.innerText}`
-      currentValueAndResult.innerText = eval(this.expression.innerText);
+      currentValueAndResult.innerText = eval(this.expression.innerText).toFixed(4);
     })
   }
   this.evaluate();
@@ -116,3 +116,4 @@ function Calculator() {
 
 const calculator = new Calculator();
 console.log(calculator);
+
