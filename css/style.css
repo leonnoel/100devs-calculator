@@ -45,9 +45,26 @@
 
 .button {
   flex-basis: 20%;
-  font-size: 4rem;
+  position: relative;
+  border: none;
   border-radius: 50%;
-  border: 2px solid black;
+  background: hsl(180, 100%, 90%);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  transition: background 200ms ease-in;
+}
+
+.button:hover {
+  background-color: hsl(180, 100%, 80%);
+}
+
+.button::after {
+  content: '';
+  display: block;
+  padding-block-end: 100%;
 }
 
 /* Getting the clear buttons to sit next to each other  */
@@ -57,6 +74,9 @@
 }
 
 #clear-entry {
-  font-size: 3rem;
-  padding-block: .5rem;
+  font-size: 2rem;
+}
+
+#clear-entry span {
+  left: 18%;
 }
