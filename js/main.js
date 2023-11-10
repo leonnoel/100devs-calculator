@@ -44,6 +44,7 @@ function Calculator() {
       currentValueAndResult.innerText = '';
       lastInputIsOp = false;
     }
+    console.log((click.target.classList));
     evaluated = false;
     currentValueAndResult.innerText += click.target.innerText;
   }
@@ -92,7 +93,6 @@ function Calculator() {
 
   this.clearEntry = function() {
     this.clearEntryButton.addEventListener('click', () => {
-      console.log(1);
       this.expression.innerText = '0';
       currentValueAndResult.innerText = '0';
       evaluated = false;
@@ -115,12 +115,6 @@ function Calculator() {
   }
   this.clear();
 
-//Setting up an animation event listener for all the buttons.
-  allButtons.forEach(button => button.addEventListener('click', () => {
-    button.classList.add('animate-button');
-    setTimeout(() => button.classList.remove('animate-button'), 100);
-    console.log(button);
-  }))
 }
 
 const calculator = new Calculator();

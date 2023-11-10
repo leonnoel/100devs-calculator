@@ -83,7 +83,7 @@
 }
 
 .button.animate-button {
-  transform: translateY(0px);
+  transform: translateY(-2px);
   box-shadow: -2px -4px 6px -4px rgba(0, 0, 0, 0.7);
 }
 
