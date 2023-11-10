@@ -115,6 +115,12 @@ function Calculator() {
   }
   this.clear();
 
+//Setting up an animation event listener for all the buttons.
+  allButtons.forEach(button => button.addEventListener('click', () => {
+    button.classList.add('animate-button');
+    setTimeout(() => button.classList.remove('animate-button'), 100);
+    console.log(button);
+  }))
 }
 
 const calculator = new Calculator();
