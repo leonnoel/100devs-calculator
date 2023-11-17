@@ -51,6 +51,5 @@ function run(btn) {
 
 function solve() {
     let answer = myCalculator.evaluate(display.value);
-    console.log(answer)
     display.value = answer;
 }
