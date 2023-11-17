@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    width: fit-content;
+    background: black;
+    padding: 3em 2em;
+    border-radius: 25px;
+}
+
+input {
+    display: block;
+    width: 90%;
+    max-width: 600px;
+    min-height: 10dvh;
+    margin: 0 auto 2em;
+    border: none;
+    font-size: 2.5rem;
+}
+
+input:focus {
+    border: none;
+}
+
+.buttons {
+    max-width: fit-content;
+    margin: 0 auto;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 1em;
+    column-gap: 1em;
+}
+
+.btn {
+    width: 2em;
+    height: 2em;
+    border: none;
+    font-size: 3rem;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgba(100, 100, 100, 0.5);
+    color: white;
+}

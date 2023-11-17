@@ -9,12 +9,12 @@
 ## JS
 - create calc class
     - props
-        - displayText
         - evalStr
         - result
     - methods
         - evaluate() -> uses this.result = Function("return" blah)
         - render() -> returns the result
+        - clear()
 - select buttons
 - select text field (show only)
 - declare displayText

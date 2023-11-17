@@ -7,6 +7,34 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="index.js"></script>
+    <main class="calculator">
+        <section class="main__display">
+            <label for="display"></label>
+            <input id="display" type="text" name="display" value="" readonly>
+        </section>
+        <section class="buttons__container">
+            <div class="buttons">
+                <button class="btn expr">7</button>
+                <button class="btn expr">8</button>
+                <button class="btn expr">9</button>
+                <button class="btn expr">/</button>
+                <button class="btn expr">4</button>
+                <button class="btn expr">5</button>
+                <button class="btn expr">6</button>
+                <button class="btn expr">x</button>
+                <button class="btn expr">1</button>
+                <button class="btn expr">2</button>
+                <button class="btn expr">3</button>
+                <button class="btn expr">+</button>
+                <button class="btn expr">0</button>
+                <button class="btn expr">.</button>
+                <button class="btn equal">=</button>
+                <button class="btn expr">-</button>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.0.0/math.js"></script>
+
+    <script type="module" src="index.js"></script>
 </body>
 </html>
