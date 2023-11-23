@@ -1,0 +1,16 @@
+{
+  "name": "100devs-calculator",
+  "version": "1.0.0",
+  "description": "### Goal: Build a Simple Calculator using JS OOP best practices",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^12.0.0"
+  }
+}
