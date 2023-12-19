@@ -2,6 +2,11 @@
   font-size: 62.5%;
 }
 
+span {
+  pointer-events: none;
+  /* This was literally all that was needed! It wasn't a bug in JavaScript at all! Rather a bug in my program, the issue was that the span click event was bubbling up to the button click listener and since sometimes i clicked the span the dom token list returned an empty list for class list, it wasn't JS bugging out at all and not being able to retrieve the classlist, rather we weren't even checking the button itself but the span! OMG*/
+}
+
 .container {
   margin-inline: auto;
   width: min(100% - 2rem, 1300px);
@@ -67,36 +72,36 @@
   transform 100ms ease-in;
 }
 
-/* .button_number,
+.button_number,
 .button_operator,
 .button_features {
   background-color: hsl(189, 84%, 85%);
   box-shadow: -2px -4px 10px -4px rgba(0, 0, 0, 0.7);
 } */
 
-/* .button_number:hover,
+.button_number:hover,
 .button_operator:hover,
 .button_features:hover {
   background-color: hsl(189, 84%, 75%);
   transform: translateY(-5px);
   box-shadow: -2px -4px 15px -4px rgba(0, 0, 0, 0.5);
-} */
+}
 
-/* .button.animate-button {
+.button.animate-button {
   transform: translateY(-2px);
   box-shadow: -2px -4px 6px -4px rgba(0, 0, 0, 0.7);
-} */
-/* 
+}
+
 .button::after {
   content: '';
   display: block;
   padding-block-end: 100%;
-} */
+}
 
-/* .flex-placeholder {
+.flex-placeholder {
   background: transparent;
-} */
-/* Getting the clear buttons to sit next to each other  */
+}
+/* Getting the clear buttons to sit next to each other */
 
 
 #clear-entry {

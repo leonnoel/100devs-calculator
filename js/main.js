@@ -22,6 +22,12 @@ function Calculator() {
     
     const opButtons = Array.from(document.querySelectorAll('.button_operator'));
 
+    
+    //So we found 3 fixes for the same issue, the issue was that on the click of the decimal, if the user clicked the span, that click event bubbled up to the listener of the parent button. What this means is our classList check for decimal would sometimes not work because the span itself is the click target. This is why sometimes when u clicked the button it would return the classList of the button but some other times when u clicked in the middle it would return the class list of the span which was empty.... It wasn't a bug in the language at all... So our first fix was simply adding the class of decimal to our span. The second fix was in CSS itself! using the pointer events property we can set that to none to not register events for that span(s). The third fix we'll test here
+    
+    // const bubblingHurtMe = Array.from(document.querySelectorAll('span'));
+    // bubblingHurtMe.forEach(span => span.addEventListener('click', (e) => e.stopPropagation()))
+    //Third fix works! BUT simply just prevents the button from being clicked in general when the span is clicked, so it seems pointerevents is truly the best fix. I'm glad I finally figured it out omg this bug has been in the back of my mind for the last month.
   
     this.evalButton = document.querySelector('#evaluate');
     this.clearButton = document.querySelector('#clear')
