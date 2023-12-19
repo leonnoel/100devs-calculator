@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Calculator</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <div class="screen">
+        <p id="expression">0</p>
+        <h1 id="current-value">0</h1>
+      </div>
+      <div class="buttons-wrapper">
+        <button class="button button_number"><span>7</span></button>
+        <button class="button button_number"><span>8</span></button>
+        <button class="button button_number"><span>9</span></button>
+        <button class="button button_operator" id="divide"><span>/</span></button>
+        <button class="button button_number"><span>4</span></button>
+        <button class="button button_number"><span>5</span></button>
+        <button class="button button_number"><span>6</span></button>
+        <button class="button button_operator" id="multiply"><span>*</span></button>
+        <button class="button button_number"><span>1</span></button>
+        <button class="button button_number"><span>2</span></button>
+        <button class="button button_number"><span>3</span></button>
+        <button class="button button_operator" id="add"><span>+</span></button>
+        <button class="button button_number"><span>0</span></button>
+        <button class="button button_number decimal"><span class="">.</span></button>
+        <button class="button button_features" id="evaluate"><span>=</span></button>
+        <button class="button button_operator" id="subtract"><span>-</span></button>
+        <div class="button flex-placeholder"></div>
+        <div class="button flex-placeholder"></div>
+        <button class="button button_features" id="clear"><span>C</span></button>
+        <button class="button button_features" id="clear-entry"><span>CE</span></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
