@@ -1,0 +1,12 @@
+body {
+  background: pink;
+}
+
+.calBody {
+  width: 500px;
+  height: 700px;
+  background: black;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 200px;
+}
