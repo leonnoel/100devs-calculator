@@ -1,0 +1,85 @@
+*{
+    box-sizing: border-box;
+}
+main{
+    margin: 70px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+@media only screen and (min-width: 768px){
+    main{
+        margin: 70px 10%;
+    }
+}
+
+@media only screen and (min-width: 992px){
+    main{
+        margin: 70px 20%;
+    }
+}
+
+
+.mainframe{
+    margin: auto;
+    padding: 50px;
+    width: 400px;
+    background-color: #000;
+    border-radius: 20px;
+    color: #000;
+    font-weight: bold;
+    font-size: 2.6rem;
+}
+.screen{
+    position: relative;
+    margin: 30px auto;
+    background-color: #fff;
+    height: 90px;
+}
+.result{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 2.2rem;
+    text-align: right;
+}
+
+.keyboard{
+    margin: 30px 0;
+}
+.keyboard > span{
+    display: inline-block;
+    padding: 6px;
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+    margin-top: 6px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+
+.error-message{
+    visibility: hidden;
+    margin: 40px auto;
+    padding: 15px;
+    width: 400px;
+    font-size: 1.5rem;
+    background-color: #fbb1a9;
+    border: 1px solid #efb9b4;
+    border-radius: 5px;
+    color: #7d4742;
+}
+
+.error-message--show{
+    visibility: visible;
+    animation: fadein 0.5s, fadeout 0.5s 3s;
+}
+@keyframes fadein {
+    from{opacity: 0;}to{opacity: 1;}
+}
+@keyframes fadeout {
+    from{opacity: 1;}to{opacity: 0;}
+}
