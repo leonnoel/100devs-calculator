@@ -1,15 +1,21 @@
 body {
+  display: flex;
+  justify-content: center;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 50px;
+  padding: 0;
+  background-color: wheat;
 }
 
 .calBody {
-  max-width: 450px;
-  height: 600px;
-  background: black;
-  border-radius: 20px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 20px 20px 1px;
+  padding: 20px;
+  border: 7px solid black;
 }
 
 /******  Top Half  ******/
@@ -17,13 +23,12 @@ body {
 .top {
   display: flex;
   justify-content: center;
-  padding: 20px;
 }
 
 .displayScreen {
   width: 80%;
   height: 70px;
-  background-color: white;
+  background-color: #D3D0C9;
   border-radius: 5px;
 }
 
@@ -32,16 +37,41 @@ body {
 .bottom {
   display: flex;
   flex-wrap: wrap;
-  width: 350px;
+  align-content: center;
+  width: 400px;
+  height: 100%;
+  margin-top: 30px;
 }
 
-.button {
+section div {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 75px;
   height: 75px;
-  border-radius: 50%;
-  background: white;
+  border-radius: 10%;
+  border: 7px solid black;
   margin: 5px;
+}
+
+/******  Colors  ******/
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: #FF800D;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: #86dc3d;
+}
+
+.blue {
+  background-color: #1aa7ec;
 }
