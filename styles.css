@@ -6,6 +6,12 @@ body {
   font-size: 50px;
   padding: 0;
   background-color: wheat;
+  margin-top: 200px;
+}
+
+@font-face {
+  font-family: calFont;
+  src: url(digital-7.ttf);
 }
 
 .calBody {
@@ -26,10 +32,22 @@ body {
 }
 
 .displayScreen {
-  width: 80%;
-  height: 70px;
-  background-color: #D3D0C9;
+  display: flex;
+  align-items: center;
+  width: 90%;
+  height: 80px;
+  background-color: #9bbc0f;
+  border: 7px solid black;
   border-radius: 5px;
+}
+
+.displayNumber {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  width: 100%;
+  font-family: calFont;
+  font-size: 1.34em;
 }
 
 /******  Bottom Half  ******/
@@ -43,7 +61,7 @@ body {
   margin-top: 30px;
 }
 
-section div {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
