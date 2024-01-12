@@ -1,10 +1,10 @@
 body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   font-family: sans-serif;
   font-weight: bold;
   font-size: 50px;
-  padding: 0;
   background-color: wheat;
   margin-top: 200px;
 }
@@ -12,6 +12,10 @@ body {
 @font-face {
   font-family: calFont;
   src: url(digital-7.ttf);
+}
+
+.calculator {
+  display: flex;
 }
 
 .calBody {
@@ -28,17 +32,16 @@ body {
 
 .top {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 
 .displayScreen {
-  display: flex;
-  align-items: center;
-  width: 90%;
   height: 80px;
-  background-color: #9bbc0f;
+  background-color: lightgrey;
   border: 7px solid black;
   border-radius: 5px;
+  margin: 5px 8px;
 }
 
 .displayNumber {
@@ -50,15 +53,27 @@ body {
   font-size: 1.34em;
 }
 
+.clearButton {
+  display: flex;
+  align-self: flex-end;
+  width: 42%;
+  justify-content: flex-end;
+  background-color: black;
+  font-size: .6em;
+  border: 7px solid black;
+  border-radius: 5px;
+  padding-right: 4px;
+  margin: 5px 8px;
+  color: white;
+}
+
 /******  Bottom Half  ******/
 
 .bottom {
   display: flex;
   flex-wrap: wrap;
-  align-content: center;
+  justify-content: center;
   width: 400px;
-  height: 100%;
-  margin-top: 30px;
 }
 
 .button {
@@ -92,4 +107,12 @@ body {
 
 .blue {
   background-color: #1aa7ec;
+}
+
+.bottomSection {
+  display: flex;
+  justify-content: flex-end;
+  width: 485px;
+  padding-top: 30px;
+  font-size: .4em;
 }

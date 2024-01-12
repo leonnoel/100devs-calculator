@@ -1,11 +1,16 @@
-document.getElementsByClassName('red button').addEventListener('click', function() {
-  updateDisplay('7');
-});
- 
 function updateDisplay(value) {
-  // Get the displayNumber element
   var displayNumber = document.querySelector('.displayNumber');
-
-  // Append the clicked value to the existing content
   displayNumber.textContent += value;
 }
+
+// Add a click event listener to the parent container
+document.querySelector('.bottom').addEventListener('click', function(event) {
+  // Check if the clicked element has the 'button' class
+  if (event.target.classList.contains('button')) {
+    // Extract the numeric value from the clicked button's text content
+    var value = parseFloat(event.target.textContent);
+    
+    // Call the updateDisplay function with the extracted value
+    updateDisplay(value);
+  }
+});
