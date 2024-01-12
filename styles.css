@@ -37,6 +37,8 @@ body {
 }
 
 .displayScreen {
+  display: flex;
+  align-items: center;
   height: 80px;
   background-color: lightgrey;
   border: 7px solid black;
