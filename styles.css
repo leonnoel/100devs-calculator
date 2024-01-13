@@ -1,12 +1,14 @@
 body {
   display: flex;
+  box-sizing: border-box;
   flex-direction: column;
   align-items: center;
   font-family: sans-serif;
   font-weight: bold;
-  font-size: 50px;
-  background-color: wheat;
-  margin-top: 200px;
+  background-color: #EBD7BD;
+  font-size: 2em;
+
+  margin: 50px;
 }
 
 @font-face {
@@ -16,16 +18,17 @@ body {
 
 .calculator {
   display: flex;
+  max-width: 400px;
 }
 
 .calBody {
   display: flex;
   flex-direction: column;
   background: white;
-  border-radius: 10px;
-  box-shadow: 20px 20px 1px;
-  padding: 20px;
   border: 7px solid black;
+  border-radius: 20px;
+  box-shadow: 20px 20px 0px;
+  padding: 10px;
 }
 
 /******  Top Half  ******/
@@ -38,12 +41,14 @@ body {
 
 .displayScreen {
   display: flex;
+  align-self: center;
   align-items: center;
-  height: 80px;
-  background-color: lightgrey;
-  border: 7px solid black;
-  border-radius: 5px;
-  margin: 5px 8px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 89%;
+  height: 75px;
+  margin: 30px;
 }
 
 .displayNumber {
@@ -51,22 +56,7 @@ body {
   justify-content: flex-end;
   padding-right: 10px;
   width: 100%;
-  font-family: calFont;
-  font-size: 1.34em;
-}
-
-.clearButton {
-  display: flex;
-  align-self: flex-end;
-  width: 42%;
-  justify-content: flex-end;
-  background-color: black;
-  font-size: .6em;
-  border: 7px solid black;
-  border-radius: 5px;
-  padding-right: 4px;
-  margin: 5px 8px;
-  color: white;
+  font-size: 1.5em;
 }
 
 /******  Bottom Half  ******/
@@ -75,46 +65,70 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 400px;
+  width: 300px;
 }
 
 .button {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 75px;
-  height: 75px;
-  border-radius: 10%;
-  border: 7px solid black;
+  align-items:center;
+  justify-content :center;
+  width: 60px;
+  height: 60px;
   margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+}
+
+.clearButton {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  background-color: white;
+  border: 7px solid black;
+  font-size: 1em;
+  border-radius: 10px 10px;
+  padding: 5px;
+  margin: 10px 13px 10px 10px;
+  width: 107px;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  background-color: black;
+  color: white;
+}
+
+.bottomSection {
+  width: 185px;
+  text-align: right;
+  padding: 30px 0 0 50px;
+  margin-left: 130px;
+  font-size: .6em;
 }
 
 /******  Colors  ******/
 
 .red {
-  background-color: red;
+  background-color: rgb(255,0,21);
 }
 
 .orange {
-  background-color: #FF800D;
+  background-color: rgb(255,111,0);
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: rgb(255,212,0);
 }
 
 .green {
-  background-color: #86dc3d;
+  background-color: rgb(4, 157, 22);
 }
 
 .blue {
-  background-color: #1aa7ec;
-}
-
-.bottomSection {
-  display: flex;
-  justify-content: flex-end;
-  width: 485px;
-  padding-top: 30px;
-  font-size: .4em;
+  background-color: rgb(0,78,255);
 }

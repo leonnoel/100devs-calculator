@@ -1,16 +1,27 @@
+// Function to update the display with the entered value
 function updateDisplay(value) {
-  var displayNumber = document.querySelector('.displayNumber');
+  let displayNumber = document.querySelector('.displayNumber');
+  if (displayNumber.textContent === '0') {
+    displayNumber.textContent = '';
+  }
   displayNumber.textContent += value;
 }
 
-// Add a click event listener to the parent container
 document.querySelector('.bottom').addEventListener('click', function(event) {
-  // Check if the clicked element has the 'button' class
   if (event.target.classList.contains('button')) {
-    // Extract the numeric value from the clicked button's text content
-    var value = parseFloat(event.target.textContent);
-    
-    // Call the updateDisplay function with the extracted value
+    let value = parseFloat(event.target.textContent);
     updateDisplay(value);
   }
+});
+
+// Function to clear the screen
+function clearScreen() {
+  let displayNumber = document.querySelector('.displayNumber');
+  if (displayNumber.textContent !== '0') {
+    displayNumber.textContent = '0';
+  }
+}
+
+document.querySelector('.clearButton').addEventListener('click', function() {
+  clearScreen();
 });
