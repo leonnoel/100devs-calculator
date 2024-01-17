@@ -9,8 +9,13 @@ let operation = null;
 let firstOperand = null;
 
 //////////  ADD NUMBER TO DISPLAY  //////////
+
 function addNumToScreen(value) {
-  displayNumber.innerText = value;
+  if(displayNumber.innerText.length < 8){
+    displayNumber.innerText = value;
+  } else {
+    displayNumber.innerText.slice(0,8)
+  }
 }
 
 document.querySelectorAll('.button').forEach((button) => {

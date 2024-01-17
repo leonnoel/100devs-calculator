@@ -18,7 +18,7 @@ body {
 
 .calculator {
   display: flex;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 .calBody {
