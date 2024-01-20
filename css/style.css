@@ -11,7 +11,61 @@
 /* LAYOUT
 /*******************************************/
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
+.cal {
+  background: black;
+  padding: 3rem 2rem 1rem 2rem;
+  border-radius: 1rem;
+  color: aliceblue;
+  max-width: 40vh;
+}
+
+.calculate {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculate section input {
+  height: 7vh;
+  border: none;
+  border-radius: .1rem;
+  width: 100%;
+}
+
+input::placeholder {
+  text-align: right;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.calculate section ul li {
+  padding: 1rem 1.5rem;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  list-style: none;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 1rem;
+  padding: 0;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
