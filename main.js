@@ -14,7 +14,9 @@ function addNumToScreen(value) {
   if(displayNumber.innerText.length < 8){
     displayNumber.innerText = value;
   } else {
-    displayNumber.innerText.slice(0,8)
+    displayNumber.innerText = value
+    displayNumber.style.fontSize = '1rem';
+    
   }
 }
 
@@ -31,6 +33,7 @@ document.querySelectorAll('.button').forEach((button) => {
 
 //////////  CLEAR SCREEN  //////////
 function clearScreen() {
+  displayNumber.style.fontSize = ''
   displayNumber.innerText = '0';
 }
 
