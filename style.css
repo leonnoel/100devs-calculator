@@ -3,3 +3,60 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+html {
+  font-size: 62.5%;
+}
+
+/* Padding */
+
+.p-8 {
+  padding: 0.8rem;
+}
+
+.p-16 {
+  padding: 1.6rem;
+}
+
+.p-24 {
+  padding: 2.4rem;
+}
+
+/* Margin */
+
+.m-8 {
+  margin: 0.8rem;
+}
+
+.m-16 {
+  margin: 1.6rem;
+}
+
+.m-24 {
+  margin: 2.4rem;
+}
+
+/* Font Color */
+
+.text-primary {
+  color: #93b1a6;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Colors */
+
+.bg-color {
+  color: #040d12;
+}
+.btn-bg--primary {
+  color: #183d3d;
+}
+
+/* Border-Radius */
+
+.btn-radius {
+  border-radius: 0.8rem;
+}
