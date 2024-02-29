@@ -8,6 +8,13 @@ html {
   font-size: 62.5%;
 }
 
+/* Container */
+.container {
+  width: 100%;
+  max-width: 25%;
+  height: 50rem;
+}
+
 /* Padding */
 
 .p-8 {
@@ -23,6 +30,10 @@ html {
 }
 
 /* Margin */
+
+.align-center {
+  margin: 5rem auto;
+}
 
 .m-8 {
   margin: 0.8rem;
@@ -42,21 +53,65 @@ html {
   color: #93b1a6;
 }
 
+.text-secondary {
+  color: #fff;
+}
+
 .text-center {
   text-align: center;
+}
+
+/* Font Size */
+
+.xxl {
+  font-size: 4.8rem;
+}
+
+.xl {
+  font-size: 4rem;
+}
+
+.lg {
+  font-size: 3.2rem;
+}
+
+.md {
+  font-size: 2.4rem;
+}
+
+.sm {
+  font-size: 1.6rem;
 }
 
 /* Colors */
 
 .bg-color {
-  color: #040d12;
+  background-color: #040d12;
 }
 .btn-bg--primary {
-  color: #183d3d;
+  background-color: #183d3d;
 }
 
 /* Border-Radius */
 
 .btn-radius {
   border-radius: 0.8rem;
+}
+
+.main-border-radius {
+  border-radius: 1.6rem;
+}
+
+/* Grid-Layout */
+
+.grid {
+  display: grid;
+}
+
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.row-4 {
+  grid-template-rows: repeat(4, 1fr);
 }
