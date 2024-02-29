@@ -11,7 +11,7 @@ html {
 /* Container */
 .container {
   width: 100%;
-  max-width: 25%;
+  max-width: 30%;
   height: 50rem;
 }
 
@@ -27,6 +27,10 @@ html {
 
 .p-24 {
   padding: 2.4rem;
+}
+
+.p-32 {
+  padding: 3.2rem;
 }
 
 /* Margin */
@@ -86,8 +90,13 @@ html {
 /* Colors */
 
 .bg-color {
-  background-color: #040d12;
+  background-color: #132b38;
 }
+
+.bg-screen {
+  background-color: #93b1a6;
+}
+
 .btn-bg--primary {
   background-color: #183d3d;
 }
@@ -114,4 +123,12 @@ html {
 
 .row-4 {
   grid-template-rows: repeat(4, 1fr);
+}
+
+/* Calculator Screen */
+
+.cal-screen {
+  height: 6rem;
+  width: 100%;
+  max-width: 100%;
 }
