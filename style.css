@@ -13,7 +13,7 @@ html {
 .container {
   width: 100%;
   max-width: 35rem;
-  height: 50rem;
+  height: 48rem;
 }
 
 /* Calculator Screen */
@@ -25,9 +25,13 @@ html {
 }
 
 .output {
-  /* height: 5rem;
-  width: 100%; */
   max-width: 100%;
+}
+
+button:hover {
+  background-color: #93b1a6;
+  color: #040d12;
+  cursor: pointer;
 }
 
 /* Padding */
@@ -74,6 +78,16 @@ html {
 
 .m-24 {
   margin: 2.4rem;
+}
+
+.mt-8 {
+  margin-top: 0.8rem;
+}
+.mt-16 {
+  margin-top: 1.6rem;
+}
+.mt-40 {
+  margin-top: 4rem;
 }
 
 /* Font Color */
@@ -137,10 +151,21 @@ html {
 }
 
 .btn-bg--primary {
-  background-color: #183d3d;
+  background-color: #50727b;
 }
 
 /* Border-Radius */
+
+.no-border {
+  border: none;
+}
+
+.round-btn-radius {
+  height: 6.5rem;
+  width: 6.5rem;
+  border-radius: 10%;
+  display: inline-block;
+}
 
 .btn-radius {
   border-radius: 0.8rem;
@@ -156,8 +181,18 @@ html {
 
 /* Grid-Layout */
 
+section {
+  width: 100%;
+  max-width: 100%;
+}
+
 .grid {
   display: grid;
+  /* width: 100%;
+  max-width: 100%; */
+  gap: 0.4rem;
+  align-content: center;
+  justify-items: center;
 }
 
 .col-4 {
