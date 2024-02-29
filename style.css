@@ -24,6 +24,11 @@ html {
   max-width: 100%;
 }
 
+.btn-container {
+  width: 100%;
+  max-width: 100%;
+}
+
 .output {
   max-width: 100%;
 }
@@ -188,11 +193,6 @@ section {
 
 .grid {
   display: grid;
-  /* width: 100%;
-  max-width: 100%; */
-  gap: 0.4rem;
-  align-content: center;
-  justify-items: center;
 }
 
 .col-4 {
