@@ -11,8 +11,16 @@ html {
 /* Container */
 .container {
   width: 100%;
-  max-width: 30%;
+  max-width: 50%;
   height: 50rem;
+}
+
+/* Calculator Screen */
+
+.cal-screen {
+  height: 5rem;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* Padding */
@@ -31,6 +39,16 @@ html {
 
 .p-32 {
   padding: 3.2rem;
+}
+
+.pr-8 {
+  padding-right: 0.8rem;
+}
+.pr-16 {
+  padding-right: 1.6rem;
+}
+.pr-24 {
+  padding-right: 2.4rem;
 }
 
 /* Margin */
@@ -61,8 +79,18 @@ html {
   color: #fff;
 }
 
+/* Text Alignment */
+
 .text-center {
   text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
 }
 
 /* Font Size */
@@ -123,12 +151,4 @@ html {
 
 .row-4 {
   grid-template-rows: repeat(4, 1fr);
-}
-
-/* Calculator Screen */
-
-.cal-screen {
-  height: 6rem;
-  width: 100%;
-  max-width: 100%;
 }
