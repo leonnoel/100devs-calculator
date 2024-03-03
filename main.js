@@ -47,16 +47,24 @@ let Calculator = {
     "=": document.querySelector("#btn-equal"),
   },
 
-  answer() {
-    this.output.innerText = "Answer";
-  },
-
-  sum() {
+  digitValue() {
     const { buttons } = this;
     for (let key in buttons) {
-      console.log(buttons[key]);
+      let button = buttons[key];
+      button.addEventListener("click", () => {
+        let value = Number(buttons[key].innerText);
+        console.log("This", this);
+        return this.answer(value);
+      });
     }
   },
+
+  answer(value) {
+    const { output } = this;
+    output.innerText = value;
+  },
+
+  sum() {},
 
   multiply() {},
 
