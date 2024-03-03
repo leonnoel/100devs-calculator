@@ -22,36 +22,48 @@
 
 // Button DOM //
 
-// let Calculator = {
-//   output: document.querySelector("#output"),
-//   num_7: document.querySelector("#btn-7"),
-//   num_8: document.querySelector("#btn-8"),
-//   num_9: document.querySelector("#btn-9"),
-//   addition: document.querySelector("#btn-plus"),
+let total = [];
+let display = "";
 
-//   num_4: document.querySelector("#btn-4"),
-//   num_5: document.querySelector("#btn-5"),
-//   num_6: document.querySelector("#btn-96"),
-//   multiply: document.querySelector("#btn-mul"),
+let Calculator = {
+  output: document.querySelector("#output"),
 
-//   num_1: document.querySelector("#btn-1"),
-//   num_2: document.querySelector("#btn-2"),
-//   num_3: document.querySelector("#btn-3"),
-//   division: document.querySelector("#btn-div"),
+  buttons: {
+    0: document.querySelector("#btn-0"),
+    1: document.querySelector("#btn-1"),
+    2: document.querySelector("#btn-2"),
+    3: document.querySelector("#btn-3"),
+    4: document.querySelector("#btn-4"),
+    5: document.querySelector("#btn-5"),
+    6: document.querySelector("#btn-6"),
+    7: document.querySelector("#btn-7"),
+    8: document.querySelector("#btn-8"),
+    9: document.querySelector("#btn-9"),
+    "+": document.querySelector("#btn-plus"),
+    "-": document.querySelector("#btn-sub"),
+    x: document.querySelector("#btn-mul"),
+    "÷": document.querySelector("#btn-div"),
+    ".": document.querySelector("#btn-dot"),
+    "=": document.querySelector("#btn-equal"),
+  },
 
-//   num_0: document.querySelector("#btn-0"),
-//   decimalPoint: document.querySelector("#btn-dot"),
-//   equalSign: document.querySelector("#btn-equal"),
-//   subtraction: document.querySelector("#btn-sub"),
+  answer() {
+    this.output.innerText = "Answer";
+  },
 
-//   sum() {},
+  sum() {
+    const { buttons } = this;
+    for (let key in buttons) {
+      console.log(buttons[key]);
+    }
+  },
 
-//   multiply() {},
+  multiply() {},
 
-//   subtract() {},
+  subtract() {},
 
-//   divide() {},
-// };
+  divide() {},
+};
 
 /* 
 
@@ -78,5 +90,9 @@ function Calculator(){
     this.method[name] = func
   };
 }
+
+// Updates background color -- Using rgb() method
+document.body.style.backgroundColor = color1.rgb();
+'rgb(255, 40, 100)'
 
 */
