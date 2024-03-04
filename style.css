@@ -2,17 +2,43 @@
   box-sizing: border-box;
 }
 .calculator {
-  height: 400px;
-  width: 300px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  width: 450px;
   background-color: black;
   border-radius: 30px;
 }
 
 .window {
-  height: 30%;
-  padding: 10% 10%;
+  flex: 2;
+  margin: 20% 10% 0 10%;
 }
 input {
   width: 100%;
+  height: 80%;
+}
+
+.button-container {
+  flex: 8;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-bottom: 10%;
+}
+
+.button-container div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
   height: 100%;
+  margin: 2.5% 12%;
+}
+
+button {
+  height: 100%;
+  width: 100%;
+  margin: 0 5px;
+  padding: 0px;
+  border-radius: 50%;
 }
