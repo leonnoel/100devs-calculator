@@ -2,8 +2,9 @@
 const btns = document.querySelectorAll(".button");
 const display = document.getElementById("display");
 let num1;
-let input = 0;
-let operator;
+let operator = null;
+let operator2 = null;
+display.value = "";
 //map through node list and add an eventListener that fires on click.
 // anonymous function so that the actual function with an argument (buttonPress) can be attached to the event listener
 btns.forEach((btn) =>
@@ -11,38 +12,47 @@ btns.forEach((btn) =>
     buttonPress(btn.textContent);
   })
 );
-
+function calculation() {
+  switch (operator) {
+    case "+":
+      display.value = num1 + Number(display.value);
+      break;
+    case "-":
+      display.value = num1 - Number(display.value);
+      break;
+    case "X":
+      display.value = num1 * Number(display.value);
+      break;
+    case "/":
+      display.value = num1 / Number(display.value);
+      break;
+  }
+  num1 = display.value;
+  operator = operator2;
+  operator2 = null;
+}
 function buttonPress(buttonValue) {
   if (buttonValue == "=") {
-    switch (operator) {
-      case "+":
-        alert(num1 + Number(input));
-        break;
-      case "-":
-        alert(num1 - Number(input));
-        break;
-      case "X":
-        alert(num1 * Number(input));
-        break;
-      case "/":
-        alert(num1 / Number(input));
-        break;
-        num1 = 0;
-        input = "";
-        operator = "";
-    }
+    calculation();
   } else if (
     buttonValue == "+" ||
     buttonValue == "-" ||
     buttonValue == "X" ||
     buttonValue == "/"
   ) {
-    operator = buttonValue;
-    num1 = Number(input);
-    input = "";
-    alert(num1);
+    if (operator == null) {
+      operator = buttonValue;
+      num1 = Number(display.value);
+      display.value = "";
+      //   isOperatorStored = true;
+    } else {
+      operator2 = buttonValue;
+      calculation();
+    }
   } else {
-    input += buttonValue;
-    alert(input);
+    if (operator != null) {
+      display.value = "";
+    }
+    display.value += buttonValue;
   }
 }
