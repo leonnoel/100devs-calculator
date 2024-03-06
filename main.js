@@ -20,12 +20,17 @@
 // let equalSign = document.querySelector("#btn-equal");
 // let subtraction = document.querySelector("#btn-sub");
 
+/* 
+
+
+
+*/
+
 // Button DOM //
 
-let total = [];
-let display = "";
-
 let Calculator = {
+  total: [],
+  display: "",
   output: document.querySelector("#output"),
 
   buttons: {
@@ -53,24 +58,19 @@ let Calculator = {
       let button = buttons[key];
       button.addEventListener("click", () => {
         let value = Number(buttons[key].innerText);
-        console.log("This", this);
-        return this.answer(value);
+        console.log("Value:", value);
+        this.answer(value);
       });
     }
   },
 
   answer(value) {
     const { output } = this;
-    output.innerText = value;
+    this.display += value;
+    output.innerText = this.display;
+    console.log("Output", output);
+    console.log("Value", value);
   },
-
-  sum() {},
-
-  multiply() {},
-
-  subtract() {},
-
-  divide() {},
 };
 
 /* 
