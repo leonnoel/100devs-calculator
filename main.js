@@ -1,33 +1,26 @@
-// Button DOM //
-
 class Calculator {
-  constructor(value) {
-    this.value = value;
+  constructor(value1, value2) {
+    this.value1 = value1;
+    this.value2 = value2;
     this.clear();
   }
-
-  // Clears display
   clear() {
     this.currentDisplay = "";
+    this.previousDisplay = "";
     this.operation = undefined;
   }
 
-  // Displays current value on screen
-  // If length is longer than 9 remove extra numbers
-  displayValue(number) {
+  appendValue(number) {
     if (number === "." && this.currentDisplay.includes(".")) return;
-    if (this.currentDisplay.length > 9) {
-      return this.currentDisplay.length - 1;
-    }
+    if (this.currentDisplay.length > 9) return;
     this.currentDisplay = this.currentDisplay.toString() + number.toString();
   }
 
-  // Updates value input
-  updateValue() {
-    this.value.innerText = this.currentDisplay;
+  updateDisplay() {
+    this.value1.innerText = this.currentDisplay;
   }
 
-  operations(operand) {
+  operation(operand) {
     if (operand === "") return;
     if (operand !== "") {
       this.compute();
@@ -37,42 +30,57 @@ class Calculator {
   }
 
   compute() {
-    let input;
-    const cur = Number(this.currentDisplay);
+    let total;
+    const current = Number(this.currentDisplay);
+    const previous = Number(this.previousDisplay);
 
-    if (isNaN(cur)) return;
+    if (isNaN(current) || isNaN(previous)) return;
+
     switch (this.operand) {
       case "+":
-        input = cur + cur;
+        total = current + previous;
+        break;
+      case "-":
+        total = current - previous;
+        break;
+      case "x":
+        total = current * previous;
+        break;
+      case "÷":
+        total = current / previous;
+        break;
+      default:
         break;
     }
-    this.currentDisplay = input;
+    this.currentDisplay = total;
+    this.previousDisplay = "";
     this.operand = undefined;
   }
 }
 
 let btnOperation = document.querySelectorAll("[data-operation]");
 let btnNumbers = document.querySelectorAll("[data-number]");
-let equal = document.querySelector("[data-equal]");
-let currentValue = document.querySelector("#output");
+let equalBtn = document.querySelector("[data-equal]");
+let currentValue = document.querySelector("#current-value");
+let previousValue = document.querySelector("#previous-value");
 
-const calculator = new Calculator(currentValue);
+const calculator = new Calculator(previousValue, currentValue);
 
 btnNumbers.forEach((button) => {
   button.addEventListener("click", function () {
-    calculator.displayValue(button.innerText);
-    calculator.updateValue();
+    calculator.appendValue(button.innerText);
+    calculator.updateDisplay();
   });
 });
 
 btnOperation.forEach((button) => {
   button.addEventListener("click", function () {
-    calculator.operations(button.innerText);
-    calculator.updateValue();
+    calculator.operation(button.innerText);
+    calculator.updateDisplay();
   });
 });
 
-equal.addEventListener("click", function () {
+equalBtn.addEventListener("click", function () {
   calculator.compute();
-  calculator.updateValue();
+  calculator.updateDisplay();
 });
