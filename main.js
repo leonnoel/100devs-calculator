@@ -39,11 +39,11 @@ class Calculator {
   compute() {
     let input;
     const cur = Number(this.currentDisplay);
-    // const prev = Number(this.currentDisplay);
+
     if (isNaN(cur)) return;
     switch (this.operand) {
       case "+":
-        input += cur;
+        input = cur + cur;
         break;
     }
     this.currentDisplay = input;
