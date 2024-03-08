@@ -18,6 +18,7 @@ class Calculator {
 
   updateDisplay() {
     this.value1.innerText = this.currentDisplay;
+    this.value2.innerText = this.previousDisplay;
   }
 
   operation(operator) {
