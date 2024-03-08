@@ -66,6 +66,7 @@ function displayScreen(buttonValue) {
   display.value = "";
   displayNumber += buttonValue;
   display.value = displayNumber;
+  if (equalEntered) equalEntered = false;
 }
 
 //evaluate button entered and call appropriate function
