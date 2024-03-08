@@ -22,8 +22,8 @@ class Calculator {
   }
 
   operation(operator) {
-    if (operator === "") return;
-    if (operator !== "") {
+    if (this.currentDisplay === "") return;
+    if (this.previousDisplay !== "") {
       this.compute();
     }
     this.operator = operator;
@@ -55,8 +55,8 @@ class Calculator {
         break;
     }
     this.currentDisplay = total;
-    this.previousDisplay = "";
     this.operator = undefined;
+    this.previousDisplay = "";
   }
 }
 
