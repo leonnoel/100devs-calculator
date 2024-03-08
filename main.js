@@ -7,7 +7,7 @@ class Calculator {
   clear() {
     this.currentDisplay = "";
     this.previousDisplay = "";
-    this.operation = undefined;
+    this.operator = undefined;
   }
 
   appendValue(number) {
@@ -20,12 +20,13 @@ class Calculator {
     this.value1.innerText = this.currentDisplay;
   }
 
-  operation(operand) {
-    if (operand === "") return;
-    if (operand !== "") {
+  operation(operator) {
+    if (operator === "") return;
+    if (operator !== "") {
       this.compute();
     }
-    this.operand = operand;
+    this.operator = operator;
+    this.previousDisplay = this.currentDisplay;
     this.currentDisplay = "";
   }
 
@@ -36,7 +37,7 @@ class Calculator {
 
     if (isNaN(current) || isNaN(previous)) return;
 
-    switch (this.operand) {
+    switch (this.operator) {
       case "+":
         total = current + previous;
         break;
@@ -54,7 +55,7 @@ class Calculator {
     }
     this.currentDisplay = total;
     this.previousDisplay = "";
-    this.operand = undefined;
+    this.operator = undefined;
   }
 }
 
