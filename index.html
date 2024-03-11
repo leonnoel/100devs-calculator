@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <main
+      class="container text-center bg-color align-center text-primary primary-border-radius xxl p-24"
+    >
+      <div class="cal-screen bg-screen flex secondary-border-radius">
+        <p
+          class="output text-secondary text-right xxl pr-8 text-ternary"
+          id="previous-value"
+        ></p>
+        <p
+          class="output text-secondary text-right xxl pr-8 text-ternary"
+          id="current-value"
+        ></p>
+      </div>
+
+      <div class="grid btn-container">
+        <section class="col-4 mt-40">
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-7"
+            data-number
+          >
+            7
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-8"
+            data-number
+          >
+            8
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-9"
+            data-number
+          >
+            9
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-plus"
+            data-operation
+          >
+            +
+          </button>
+        </section>
+
+        <section class="col-4 mt-16">
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-4"
+            data-number
+          >
+            4
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-5"
+            data-number
+          >
+            5
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-6"
+            data-number
+          >
+            6
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-mul"
+            data-operation
+          >
+            x
+          </button>
+        </section>
+
+        <section class="col-4 mt-16">
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-1"
+            data-number
+          >
+            1
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-2"
+            data-number
+          >
+            2
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-3"
+            data-number
+          >
+            3
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-div"
+            data-operation
+          >
+            ÷
+          </button>
+        </section>
+
+        <section class="col-4 mt-16">
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-0"
+            data-number
+          >
+            0
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-dot"
+            data-number
+          >
+            .
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-equal"
+            data-equal
+          >
+            =
+          </button>
+          <button
+            class="btn-bg--primary xl round-btn-radius text-secondary no-border"
+            id="btn-sub"
+            data-operation
+          >
+            -
+          </button>
+        </section>
+      </div>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
+
+<!-- cal-screen text-primary main-border-radius xxl p-24" -->

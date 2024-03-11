@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif, Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 35rem;
+  height: 48rem;
+}
+
+/* Calculator Screen */
+
+.cal-screen {
+  height: 7rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.btn-container {
+  width: 100%;
+  max-width: 100%;
+}
+
+.output {
+  max-width: 100%;
+}
+
+button:hover {
+  background-color: #93b1a6;
+  color: #040d12;
+  cursor: pointer;
+}
+
+/* Padding */
+
+.p-8 {
+  padding: 0.8rem;
+}
+
+.p-16 {
+  padding: 1.6rem;
+}
+
+.p-24 {
+  padding: 2.4rem;
+}
+
+.p-32 {
+  padding: 3.2rem;
+}
+
+.pr-8 {
+  padding-right: 0.8rem;
+}
+.pr-16 {
+  padding-right: 1.6rem;
+}
+.pr-24 {
+  padding-right: 2.4rem;
+}
+
+/* Margin */
+
+.align-center {
+  margin: 5rem auto;
+}
+
+.m-8 {
+  margin: 0.8rem;
+}
+
+.m-16 {
+  margin: 1.6rem;
+}
+
+.m-24 {
+  margin: 2.4rem;
+}
+
+.mt-8 {
+  margin-top: 0.8rem;
+}
+.mt-16 {
+  margin-top: 1.6rem;
+}
+.mt-40 {
+  margin-top: 4rem;
+}
+
+/* Font Color */
+
+.text-primary {
+  color: #93b1a6;
+}
+
+.text-secondary {
+  color: #fff;
+}
+
+.text-ternary {
+  color: #040d12;
+}
+
+/* Text Alignment */
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Font Size */
+
+.xxl {
+  font-size: 4.8rem;
+}
+
+.xl {
+  font-size: 4rem;
+}
+
+.lg {
+  font-size: 3.2rem;
+}
+
+.md {
+  font-size: 2.4rem;
+}
+
+.sm {
+  font-size: 1.6rem;
+}
+
+/* Colors */
+
+.bg-color {
+  background-color: #132b38;
+}
+
+.bg-screen {
+  background-color: #93b1a6;
+}
+
+.btn-bg--primary {
+  background-color: #50727b;
+}
+
+/* Border-Radius */
+
+.no-border {
+  border: none;
+}
+
+.round-btn-radius {
+  height: 6.5rem;
+  width: 6.5rem;
+  border-radius: 10%;
+  display: inline-block;
+}
+
+.btn-radius {
+  border-radius: 0.8rem;
+}
+
+.primary-border-radius {
+  border-radius: 1.6rem;
+}
+
+.secondary-border-radius {
+  border-radius: 0.4rem;
+}
+
+/* Grid-Layout */
+
+section {
+  width: 100%;
+  max-width: 100%;
+}
+
+.grid {
+  display: grid;
+}
+
+.col-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.row-4 {
+  grid-template-rows: repeat(4, 1fr);
+}
+
+/* Flex */
+
+.flex {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

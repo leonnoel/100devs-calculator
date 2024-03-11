@@ -4,8 +4,6 @@
 
 ### What it should look like:
 
-![Calculator](calculator.jpg)
-
 ### How to submit your code for review:
 
 - Fork and clone this repo
@@ -19,8 +17,9 @@
   - Anything specific on which you want feedback!
 
 Example:
+
 ```
 I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
+I feel good about my code: 3.9
+Methods need to be cleaned up and need to add a 'clear' button (A/C)
 ```
