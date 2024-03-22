@@ -1,8 +1,6 @@
 This is a Calculator made for the 100Devs Homework called:
 
-# 🔢 #100Devs Push Project001: Calculator
-
-### Goal: Build a Simple Calculator using JS OOP best practices
+Build a Simple Calculator using JS OOP best practices
 
 The Calculator file consists of 3 main files,
 
