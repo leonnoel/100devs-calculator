@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    width: 300px;
+    background: black;
+    padding: 20px;
+}
+
+.calculator input {
+    grid-column: span 4;
+    height: 50px;
+    text-align: right;
+    font-size: 24px;
+    border: none;
+    background: white;
+    color: black;
+}
+
+.calculator button {
+    height: 50px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.calculator button:hover {
+    background: #e0e0e0;
+}
