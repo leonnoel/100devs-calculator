@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.container {
+    display: flex;
+}
+
+.container.center {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    filter: brightness(0.8);
+}
+
+.calculator {
+    background-color: black;
+    border-radius: 2rem;
+    width: 400px;
+    padding: 2rem;
+}
+
+.calculator input {
+    background-color: white;
+    border: none;
+    font-size: 2rem;
+    margin: 0;
+    max-height: 5rem;
+    outline: none;
+    padding: 1rem;
+    text-align: right;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.calculator h2 {
+    background-color: white;
+    color: grey;
+    line-height: 2rem;
+    margin: 0;
+    margin-bottom: 2rem;
+    padding: 0 1rem 1rem 1rem;
+    text-align: right;
+    height: 3rem;
+}
+
+
+.calculator button {
+    aspect-ratio: 1;
+    width: 20%;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.calculator>.container {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.calculator>.container .container {
+    justify-content: space-between;
+    align-content: space-between;
+}
