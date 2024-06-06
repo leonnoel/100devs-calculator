@@ -1,0 +1,46 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calculator {
+  background-color: black;
+  width: 400px;
+  height: 500px;
+  border-radius: 40px;
+  padding: 30px;
+}
+
+.bar {
+  background-color: white;
+  height: 60px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  padding: 0 10px;
+  margin-bottom: 40px;
+}
+.operation-text {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.numbers {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.numbers > p {
+  flex: 1 0 20%;
+  background-color: white;
+  text-align: center;
+  padding: 16px 20px;
+  border-radius: 50%;
+  font-size: 36px;
+  font-weight: bold;
+}

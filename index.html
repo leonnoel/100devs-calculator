@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="calculator">
+        <div class="bar">
+          <p class="operation-text">0</p>
+        </div>
+        <div class="numbers">
+          <p data-value="7" class="button">7</p>
+          <p data-value="8" class="button">8</p>
+          <p data-value="9" class="button">9</p>
+          <p data-value="/" class="button">/</p>
+          <p data-value="4" class="button">4</p>
+          <p data-value="5" class="button">5</p>
+          <p data-value="6" class="button">6</p>
+          <p data-value="X" class="button">X</p>
+          <p data-value="1" class="button">1</p>
+          <p data-value="2" class="button">2</p>
+          <p data-value="3" class="button">3</p>
+          <p data-value="+" class="button">+</p>
+          <p data-value="0" class="button">0</p>
+          <p data-value="." class="button">.</p>
+          <p data-value="=" class="button">=</p>
+          <p data-value="-" class="button">-</p>
+        </div>
+      </div>
+      <script>
+        class Calculator {
+          constructor() {
+            this.num1 = "";
+            this.num2 = "";
+            this.op = null;
+            this.hasDecimal = false;
+            this.currentNumber = 0;
+            this.OPERATIONS = {
+              "+": this.add,
+              "-": this.subtract,
+              "X": this.multiply,
+              "/": this.divide,
+            };
+          }
+
+          handleClick(e) {
+            e.stopPropagation();
+            const value = e.target.dataset.value;
+
+            // no value clicked
+            if (!value) {
+              return;
+            } else if (Object.keys(this.OPERATIONS).includes(value)) {
+              // clicked on operation
+              // check if both numbers are present if so get result
+              if (this.op !== null) {
+                let result = this.OPERATIONS[value](
+                  parseInt(this.num1),
+                  parseInt(this.num2)
+                );
+                this.op = value;
+                this.num1 = result;
+                this.num2 = "";
+              } else {
+                this.op = value;
+              }
+            } else if (value === "=") {
+              if (this.num2 !== "") {
+                let result = this.equals(this.num1, this.num2);
+                this.num1 = result;
+                this.op = null;
+                this.num2 = "";
+              } else {
+                return;
+              }
+            } else {
+              if (Number.isInteger(parseInt(value))) {
+                if (this.op !== null) {
+                  this.num2 = this.num2 + value;
+                } else {
+                  this.num1 = this.num1 + value;
+                }
+              }
+            }
+            this.updateBar();
+            console.log({ num1: this.num1, num2: this.num2, op: this.op });
+          }
+
+          add(a, b) {
+            return a + b;
+          }
+
+          subtract(a, b) {
+            return a - b;
+          }
+          multiply(a, b) {
+            return a * b;
+          }
+          divide(a, b) {
+            return a / b;
+          }
+
+          equals(a, b) {
+            const op = this.op;
+
+            if (op && this.num2 !== "") {
+              let result = this.OPERATIONS[`${op}`](
+                parseInt(this.num1),
+                parseInt(this.num2)
+              );
+              this.op = null;
+              return result;
+            }
+            return;
+          }
+
+          updateBar() {
+            const operationText = document.querySelector(".operation-text");
+            operationText.innerHTML = `${this.num1 ? this.num1 : 0} ${
+              !this.op ? "" : this.op
+            } ${this.num2 ? this.num2 : ""}`;
+          }
+        }
+
+        const calc = new Calculator();
+        const buttons = document.querySelectorAll(".button");
+
+        buttons.forEach((elem) =>
+          elem.addEventListener("click", calc.handleClick.bind(calc))
+        );
+      </script>
+    </main>
+  </body>
+</html>
