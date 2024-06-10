@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  font-family: "Poppins";
+}
+
+.mainContainer {
+  background-color: #4d4855;
+  background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 300px;
+  height: 450px;
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+}
+
+.display {
+  width: 90%;
+  height: 100px;
+  background-color: white;
+  margin: 20px 10px 10px 10px;
+  border-radius: 8px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 3em;
+  padding-right: 20px;
+  overflow: hidden;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.3em;
+  transition: 0.1s all;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  user-select: none;
+}
+
+.zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 75%;
+  border-radius: 8px;
+}
+.clear {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  width: 85%;
+  border-radius: 8px;
+}
+
+.clear,
+.operation,
+.equals {
+  background-color: pink;
+}
+
+.number,
+.decimal {
+  background-color: white;
+}
+
+.button:active {
+  box-shadow: rgba(50, 50, 93, 0.5) 0px 60px 120px -20px,
+    rgba(0, 0, 0, 0.6) 0px 40px 80px -30px,
+    rgba(10, 37, 64, 0.7) 0px -2px 8px 0px inset;
+}
