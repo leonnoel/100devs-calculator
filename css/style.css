@@ -1,0 +1,96 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 200px 0;
+  
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+#calculator {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: black;
+  border-radius: 20px;
+  height: 500px;
+  width: 30%;
+}
+
+#output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  height: 50px;
+  width: 50%;
+  margin: 50px;
+  font-size: 20px;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 48px;
+  width: 300px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+button {
+  width: 50px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.clear {
+  margin-top: 20px;
+  align-self: center;
+  /* width: 100px; */
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
