@@ -1,0 +1,70 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background: lightgreen;
+  display: flex;
+  justify-content: center;
+  font-family:Arial, Helvetica, sans-serif;
+}
+input {
+  font-size: 36px;
+  margin-bottom: 16px;
+  text-align: right;
+}
+.outerCalc {
+  background: black;
+  width: 250px;
+  border-radius: 10px;
+  padding: 16px;
+}
+.innerCalc {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  row-gap: 16px;
+  margin: 16px auto
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  background: white;
+  font-size: 36px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  background-color: lightyellow;
+}
+
+.button:active, .button:focus {
+  background: yellow;
+}
+
+.clear {
+  font-size: 36px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  background: goldenrod;
+}
+
+.clear:hover {
+  background-color: tomato;
+}
+
+.clear:active, .button:focus {
+  background: red;
+}
