@@ -1,0 +1,56 @@
+* {
+  font-size: 62.5%;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.calculator {
+  margin-top: 15%;
+  height: 575px;
+  width: 450px;
+  background: black;
+  border-radius: 5%;
+}
+
+.display-container {
+  display: flex;
+  justify-content: center;
+}
+
+.display {
+  margin-top: 20%;
+  height: 100px;
+  width: 80%;
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.display > span {
+  font-size: 7rem;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 25px 15% 0 15%;
+  max-width: 100%;
+  justify-content: center;
+  align-content: center;
+}
+
+.button {
+  background: white;
+  height: 65px;
+  border-radius: 50%;
+  margin: 5px;
+  flex: 1 20%;
+  font-size: 5rem;
+  text-align: center;
+  cursor: pointer;
+}
