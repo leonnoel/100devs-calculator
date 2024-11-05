@@ -1,0 +1,102 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+  content: '.';
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+.container {
+  width: 75%;
+  margin: auto;
+}
+
+.calcBody {
+  width: 500px;
+  height: 600px;
+  background-color: black;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+
+.buttonRow {
+  display: flex;
+  justify-content: center;
+}
+
+.answerBox {
+  width: 375px;
+  height: 100px;
+  background-color: white;
+  color: black;
+  margin: 10px auto;
+  font-size: 50px;
+  border-radius: 5px;
+}
+
+.numberPlate {
+  margin: 10px auto;
+  width: 80%;
+  height: 80%;
+}
+
+.calcButton {
+  height: 75px;
+  width: 75px;
+  color: black;
+  background-color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+#equal,
+#clear,
+#multiply {
+  height: 75px;
+  width: 75px;
+  color: black;
+  background-color: white;
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+#clear {
+  width: 315px;
+  border-radius: 20px;
+  margin: 10px auto;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
