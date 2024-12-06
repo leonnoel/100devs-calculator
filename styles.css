@@ -1,0 +1,114 @@
+/* Normalize/Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Layout */
+header {
+  background-color: #333;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  background: grey;
+  width: 100%;
+}
+
+.calculator {
+  background: black;
+  border-radius: 10px;
+  width: 45%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+}
+
+.display {
+  background: white;
+  width: 70%;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Buttons */
+#buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 10px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: grey;
+}
+
+/* Used grid column to fill the empty space */
+#filler {
+  background: white;
+  grid-column: span 3;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section > mark {
+  display: inline-block;
+  background: #6c8bb2;
+  color: #d2dfef;
+  border: 1px solid #6c8bb2;
+  height: auto;
+  max-width: 80%;
+  margin: 10px;
+  padding: 10px;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}

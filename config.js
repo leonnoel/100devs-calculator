@@ -1,0 +1,2 @@
+// THIS IS NOT BEST PRACTICE. in a public config file due to lack of backend to securely store it and low need for security on this project. 
+const QUOTE_API_KEY = "i9L/u0+q9SM/TH/NmO7rbg==3qrswJNrDaCxVXRL";

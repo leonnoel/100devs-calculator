@@ -24,3 +24,11 @@ I completed the challenge: 5
 I feel good about my code: 4
 I'm not sure if my constructors are setup cleanly...
 ```
+
+@mjcaldev here. 
+
+I added a lot of extra to this project to use it as an excuse to go the simple "switch/case" method and to read up on modern, object-based approach with better error handling, modularity, and potential for features (better.js).
+
+I also needed to practice api hits so I did that too. One with classic .then logic and the other with modern async/await.
+
+I really had fun diving into the different approaches here and reading about the differences.
