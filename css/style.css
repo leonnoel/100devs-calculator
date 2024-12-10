@@ -1,0 +1,113 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+header {
+
+}
+
+footer {
+
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+/* Fonts */
+html {
+  font-size: 62.5%;
+}
+section {
+  margin: 5% auto;
+  background: black;
+  height: 420px;
+  width: 360px;
+  border: 5px solid black;
+  border-radius: 20px;
+}
+h1 {
+  color: white;
+  font-size: 4rem;
+  text-align: center;
+  /* margin-top: 4%;
+  margin-bottom: 5%; */
+  border: 3px solid white;
+  border-radius: 10px;
+  width: 50%;
+  margin: 4% auto 5% auto;
+}
+h2 {
+  height: 50px;
+  width: 80%;
+  border-radius: 5px;
+  margin: 3% auto;
+  background: white;
+  font-size: 3.5rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  padding: 0 1%;
+}
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 3.5rem;
+  height: 200px;
+  margin: 5% 5% 7% 5%;
+  padding: 0;
+}
+li {
+  color: black;
+  background: white;
+  flex-basis: 15%;
+  margin: 3.5% 4%;
+  text-align: center;
+  border-radius: 50%;
+}
+li:hover {
+  background: lightgray;
+}
+li:active {
+  background: rgb(73, 73, 73);
+  color: white;
+}
+.operators {
+  background: orange;
+  border: orange;
+}
+.operators:hover {
+  background: rgb(250, 170, 21);
+}
+.operators:active {
+  background: rgb(255, 182, 47);
+}
