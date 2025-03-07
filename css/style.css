@@ -1,0 +1,41 @@
+.cal {
+    background-color: black;
+    height: 650px;
+    width: 425px;
+    border-radius: 25px;
+    padding: 10px;
+}
+
+.bigScreen {
+    background-color: white;
+    width: 350px;
+    height: 75px;
+    margin: 5%;
+    margin-left: 9%;
+    margin-top: 10%;
+    text-align: right;
+    font-size: 4em;
+}
+
+button {
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.secondRow, 
+.thirdRow,
+.fourthRow,
+.fifthRow {
+    margin: 5% 10%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.firstRow {
+    display: flex;
+    align-self: flex-start;
+    margin: 5% 12%;
+}
