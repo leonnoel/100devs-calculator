@@ -1,0 +1,54 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+  font-size: 50%;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+#calculator{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 450px;
+  border: 1px solid black;
+  padding: 3rem;
+  background-color: black;
+  border-radius: 15%;
+  margin: 3rem;
+}
+
+#keypad{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+h1{
+  font-size: 5rem;
+  flex-basis: 100%;
+  background-color: white;
+  text-align: right;
+}
+
+h2{
+  font-size: 5rem;
+  background-color: white;
+  width: 20%;
+  border-radius: 50%;
+  margin: 1rem;
+  text-align: center;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+#clear{
+  text-align: center;
+  flex-basis: 50%;
+}
