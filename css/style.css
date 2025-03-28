@@ -1,0 +1,92 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+*{
+    box-sizing: border-box;
+  }
+  
+  /******************************************
+  /* LAYOUT
+  /*******************************************/
+  img{
+    display: block;
+    margin: 0 auto;
+  }
+
+
+  body {
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px;
+  }
+
+  #calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    width: 400px;
+    padding: 30px;
+    border-radius: 30px;
+  }
+
+  .screen {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    background-color: aliceblue;
+    font-size: 20px;
+    height: 60px;
+    margin: 20px 5px;
+    border-radius: 3px;
+  }
+
+  #input {
+    overflow: hidden;
+  }
+
+  .keys {
+    width: 80%;
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 10px 0;
+  }
+
+ 
+  .key, .key-operator, .key-decimal, .key-equals, .key-clear {
+    background-color: aliceblue;
+    width: 60px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .key-operator {
+    background-color: burlywood;
+  }
+
+  .key-equals {
+    background-color:antiquewhite;
+  }
+
+  .key-clear {
+    background-color: lightslategray;
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  /******************************************
+  /* ADDITIONAL STYLES
+  /*******************************************/
+  

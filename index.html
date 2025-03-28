@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="This s where your description goes">
+    <meta name="keywords" content="one, two, three">
+    <title>Calculator</title>
+
+    <!-- external CSS link -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section id="calculator">
+        <section class="screen"><p id="input">0</p></section>
+        <section class="keys">
+            <section class="row">
+                <button class="key">7</button>
+                <button class="key">8</button>
+                <button class="key">9</button>
+                <button class="key-operator" data-action="divide">/</button>
+            </section>
+            <section class="row">
+                <button class="key">4</button>
+                <button class="key">5</button>
+                <button class="key">6</button>
+                <button class="key-operator" data-action="multiply">*</button>
+            </section>
+            <section class="row">
+                <button class="key">1</button>
+                <button class="key">2</button>
+                <button class="key">3</button>
+                <button class="key-operator" data-action="add">+</button>
+            </section>
+            <section class="row">
+                <button class="key">0</button>
+                <button class="key-decimal">.</button>
+                <button class="key-equals">=</button>
+                <button class="key-operator" data-action="subtract">-</button>
+            </section>
+            <section class="row-5">
+                <button class="key-clear">C</button>
+            </section>
+        </section>
+    </section>
+
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
