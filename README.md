@@ -5,7 +5,7 @@
 ### What it should look like:
 
 ![Calculator](calculator.jpg)
-
+![New Calculator](The calculator-I-built.png)
 ### How to submit your code for review:
 
 - Fork and clone this repo
