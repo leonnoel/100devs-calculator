@@ -1,0 +1,79 @@
+:root{
+  --body-bg-color:rgba(214, 156, 209, 1);
+  --card-bg-color:rgba(48, 43, 49, 1);
+  --text-color-primary:#000;
+  --text-color:whitesmoke;
+}
+
+main{
+  padding: 1rem;
+}
+
+body{
+  background-color: var(--body-bg-color);
+}
+
+.calculator{
+  background-color:var(--card-bg-color) ;
+  width:fit-content;
+  padding:1.5rem;
+  border-radius: 2rem;
+  margin: 0 auto;
+}
+
+.result{
+  background-color: whitesmoke;
+  padding:0.8rem;
+  height:2rem;
+  margin:1rem auto;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size:1.2rem;
+  border-radius:1rem;
+}
+
+button{
+  border-radius: 50%;
+  border:none;
+  background: var(--body-bg-color);
+  font-size:2rem;
+  padding:1rem;
+  margin: 0 1rem;
+  font-weight: bold;
+}
+button:active{
+  background-color: gray;
+}
+p{
+  display:flex;
+  justify-content: space-around;
+  gap:0.5rem;
+}
+
+.toggleBar{
+  background-color:var(--body-bg-color);
+  width:5.4rem;
+  height:2.3rem;
+  border-radius:2rem;
+  margin:1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  font-size:1.4rem;
+}
+
+.moon{
+  transform: rotate(90deg);
+  transition: all 0.5s ease;
+  margin-left:3px;
+}
+
+.nightMode{
+  transform: translateX(50px);
+}
+
+
+
+
