@@ -107,6 +107,7 @@ section {
 }
 body {
   line-height: 1;
+  font-family: 'Orbitron', 'Roboto Mono', 'Consolas', 'monospace';
 }
 ol,
 ul {
@@ -150,6 +151,14 @@ table {
   width: 80%;
   margin: auto;
   margin-top: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#value {
+  padding-right: 12px;
+  font-size: 2.5em;
 }
 
 .button-container {
