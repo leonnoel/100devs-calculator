@@ -9,19 +9,11 @@ function Calculator() {
 
   this.handleOperation = function () {
     console.log('handle operation')
-    const operations = { plus: '+', subtract: '-', multiply: '*', divide: '/' }
-    let result = 0
-    let curNum = 0
-    let curOp = null
-    this.value.forEach((value) => {
-      if (typeof value === 'number') {
-        curNum.push(value)
-      } else {
-        if (!curOp) {
-          curOp = operations[inputvalue]
-        }
-      }
-    })
+
+    const result = eval(this.value.join('').replace(/x/g, '*'))
+
+    this.value = String(result).split('')
+    this.updateValue()
   }
 
   this.handleOperatorChange = function (inputVal) {
