@@ -26,7 +26,7 @@ function Calculator() {
     } else {
       console.log(this.value)
       this.operation = inputVal
-      this.value.splice(this.value.length - 1, 1, this.operation)
+      this.value.splice(this.value.length, 1, this.operation)
       this.updateValue()
     }
   }

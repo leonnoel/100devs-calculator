@@ -139,7 +139,7 @@ table {
 .frame {
   display: inline-block;
   background-color: black;
-  height: 500px;
+  height: 480px;
   width: 400px;
   border-radius: 28px;
   margin-top: 10em;
@@ -147,10 +147,10 @@ table {
 
 .screen {
   background-color: white;
-  height: 70px;
+  height: 80px;
   width: 80%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -165,11 +165,12 @@ table {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
-  padding-top: 10%;
+  padding-top: 8%;
   margin: auto;
 }
 
 .button {
+  font-weight: bold;
   margin: 5px;
   border-radius: 50%;
   width: 60px;
