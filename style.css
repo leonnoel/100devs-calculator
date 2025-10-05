@@ -1,0 +1,180 @@
+/* === Global & Layout === */
+:root {
+  --page-bg: #fff;
+  --panel-bg: #000;
+  --screen-bg: #fff;
+  --screen-text: #000;
+  --btn-bg: #fff;
+  --btn-text: #000;
+  --gap: 12px;
+  --btn-size: 64px;
+  --panel-padding: 28px;
+  --calc-width: 360px;
+  --ac-width: 96px;
+  --ac-height: 64px;
+  --cable-length: 90px;
+  --cable-thickness: 12px;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-bg);
+  font-family: system-ui, sans-serif;
+}
+.page {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  position: relative;
+}
+
+/* === AC Unit === */
+.ac-body {
+  width: var(--ac-width);
+  height: var(--ac-height);
+  background: var(--panel-bg);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,0.05),
+              0 10px 25px rgba(0,0,0,0.3);
+  position: relative;
+}
+.ac-btn {
+  width: 60px;
+  height: 38px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  transition: transform 0.08s ease;
+}
+.ac-btn:active {
+  transform: scale(0.95);
+}
+
+/* === Cable === */
+.cable {
+  position: relative;
+  width: var(--cable-length);
+  height: var(--cable-thickness);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cable-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #222, #000);
+  border-radius: calc(var(--cable-thickness)/2);
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.1),
+              0 4px 6px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+.cable-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 20%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  opacity: 0;
+}
+.cable.pulse .cable-inner::after {
+  animation: cablePulse 0.4s ease;
+}
+@keyframes cablePulse {
+  0% { left: -20%; opacity: 0; }
+  30% { opacity: 0.8; }
+  100% { left: 100%; opacity: 0; }
+}
+.plug {
+  width: 16px;
+  height: 20px;
+  background: var(--panel-bg);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,0.08),
+              0 3px 6px rgba(0,0,0,0.4);
+}
+.plug-left { left: -8px; }
+.plug-right { right: -8px; }
+
+/* === Calculator === */
+.calculator {
+  background: var(--panel-bg);
+  border-radius: 14px;
+  padding: var(--panel-padding);
+  width: var(--calc-width);
+  box-shadow: inset 0 -4px 0 rgba(255,255,255,0.05),
+              0 12px 32px rgba(0,0,0,0.4);
+}
+.screen {
+  background: var(--screen-bg);
+  color: var(--screen-text);
+  height: 72px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px 16px;
+  font-size: 28px;
+  font-weight: 700;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.06);
+}
+.keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  justify-items: center;
+}
+
+/* === Buttons === */
+.btn {
+  width: var(--btn-size);
+  height: var(--btn-size);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  user-select: none;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+.equals {
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 460px) {
+  :root {
+    --btn-size: 54px;
+    --calc-width: 320px;
+    --panel-padding: 20px;
+    --ac-width: 82px;
+    --ac-height: 56px;
+    --cable-length: 60px;
+  }
+  .screen { font-size: 22px; height: 60px; }
+}

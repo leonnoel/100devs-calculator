@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OOP Calculator with AC Cable</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <!-- AC Unit -->
+    <div class="ac-unit">
+      <div class="ac-body">
+        <button class="ac-btn" data-action="clear" aria-label="All clear">AC</button>
+      </div>
+    </div>
+
+    <!-- Cable connecting AC to Calculator -->
+    <div class="cable">
+      <div class="cable-inner"></div>
+      <div class="plug plug-left"></div>
+      <div class="plug plug-right"></div>
+    </div>
+
+    <!-- Calculator -->
+    <div class="calculator">
+      <div class="screen" id="display">0</div>
+      <div class="keys">
+        <button class="btn num" data-number="7">7</button>
+        <button class="btn num" data-number="8">8</button>
+        <button class="btn num" data-number="9">9</button>
+        <button class="btn op" data-operation="/">÷</button>
+
+        <button class="btn num" data-number="4">4</button>
+        <button class="btn num" data-number="5">5</button>
+        <button class="btn num" data-number="6">6</button>
+        <button class="btn op" data-operation="*">×</button>
+
+        <button class="btn num" data-number="1">1</button>
+        <button class="btn num" data-number="2">2</button>
+        <button class="btn num" data-number="3">3</button>
+        <button class="btn op" data-operation="+">+</button>
+
+        <button class="btn num" data-number="0">0</button>
+        <button class="btn num" data-number=".">.</button>
+        <button class="btn equals" data-action="equals">=</button>
+        <button class="btn op" data-operation="-">−</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
