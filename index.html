@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple OOP Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator" role="application" aria-label="Simple calculator">
+    <div class="screen" id="display" aria-live="polite">0</div>
+
+    <div class="keys" role="group" aria-label="Calculator buttons">
+      <button class="btn func" data-action="clear" aria-label="All clear">AC</button>
+      <button class="btn op" data-operation="/" aria-label="divide">÷</button>
+      <button class="btn op" data-operation="*" aria-label="multiply">×</button>
+      <button class="btn op" data-operation="-" aria-label="subtract">−</button>
+
+      <button class="btn num" data-number="7">7</button>
+      <button class="btn num" data-number="8">8</button>
+      <button class="btn num" data-number="9">9</button>
+      <button class="btn op" data-operation="+" aria-label="add">+</button>
+
+      <button class="btn num" data-number="4">4</button>
+      <button class="btn num" data-number="5">5</button>
+      <button class="btn num" data-number="6">6</button>
+      <div class="spacer" aria-hidden="true"></div>
+
+      <button class="btn num" data-number="1">1</button>
+      <button class="btn num" data-number="2">2</button>
+      <button class="btn num" data-number="3">3</button>
+      <div class="spacer" aria-hidden="true"></div>
+
+      <button class="btn num wide" data-number="0">0</button>
+      <button class="btn num" data-number=".">.</button>
+      <button class="btn equals" data-action="equals" aria-label="equals">=</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

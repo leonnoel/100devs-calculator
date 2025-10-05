@@ -1,0 +1,103 @@
+/* Visual: black body, white rectangular screen (black text), white circular buttons with black text */
+:root{
+  --bg: #000;
+  --panel: #000;      /* calculator body */
+  --screen-bg: #fff;  /* display background */
+  --screen-text: #000;
+  --btn-bg: #fff;
+  --btn-text: #000;
+  --gap: 12px;
+  --btn-size: 64px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#0a0a0a,#000);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  padding:20px;
+}
+
+/* calculator container */
+.calculator{
+  background:var(--panel);
+  padding:20px;
+  border-radius:12px;
+  width:340px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* screen (white rectangle) */
+.screen{
+  background:var(--screen-bg);
+  color:var(--screen-text);
+  height:72px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding:12px 16px;
+  font-size:28px;
+  font-weight:600;
+  overflow:hidden;
+  word-break:break-all;
+  margin-bottom:16px;
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.05);
+}
+
+/* keys grid */
+.keys{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:var(--gap);
+  align-items:center;
+}
+
+/* buttons */
+.btn{
+  width:var(--btn-size);
+  height:var(--btn-size);
+  background:var(--btn-bg);
+  color:var(--btn-text);
+  border:0;
+  border-radius:50%;
+  font-size:20px;
+  font-weight:600;
+  cursor:pointer;
+  display:inline-grid;
+  place-items:center;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  user-select:none;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+
+/* equals button slightly different shape for emphasis but still white */
+.equals{
+  border-radius:12px;
+  width:var(--btn-size);
+  height:var(--btn-size);
+}
+
+/* zero button wide */
+.wide{
+  grid-column: 1 / span 2;
+  width: calc(var(--btn-size)*2 + var(--gap));
+  border-radius:32px;
+}
+
+/* small spacer cells to keep layout consistent */
+.spacer{width:var(--btn-size);height:var(--btn-size);background:transparent;border-radius:50%}
+
+/* interaction */
+.btn:active{ transform: translateY(1px); box-shadow:0 3px 8px rgba(0,0,0,0.4) }
+.btn:focus{ outline:3px solid rgba(0,0,0,0.08) }
+
+/* responsive */
+@media (max-width:380px){
+  .calculator{width:100%}
+  :root{--btn-size:56px}
+  .screen{font-size:22px;height:60px}
+}
