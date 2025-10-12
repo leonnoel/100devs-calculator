@@ -1,0 +1,60 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#container {
+  width: 400px;
+  max-width: 500px;
+  min-width: 200px;
+  background-color: black;
+  height: 550px;
+  margin: 20% auto 20% auto;
+  border-radius: 20px;
+}
+
+#btn-layout {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  margin: 40px;
+}
+
+.btn-input,
+#equals,
+#mult {
+  margin: 3px 5px;
+  border-radius: 50%;
+  max-height: 70px;
+  height: 70px;
+  max-width: 70px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+#display {
+  width: 80%;
+  height: 70px;
+  margin: 20% 10% 0 10%;
+  border-radius: 5px;
+  text-align: right;
+  font-size: 45px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
