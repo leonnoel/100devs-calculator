@@ -1,0 +1,49 @@
+body {
+    background: lightgray;
+}
+
+.calc-bg {
+    background: rgb(10, 10, 10);
+}
+
+.calc-body {
+    width: 50%;
+    border: none;
+    border-radius: 18px;
+    margin: 0 auto;
+    padding: 50px 15px 25px 15px;
+    box-shadow: 5px 5px rgb(46, 46, 46);
+}
+
+.num-display {
+    width: 90%;
+    margin: 0 auto;
+    background: white;
+    height: 70px;
+}
+
+.num-pad {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    padding: 5px;
+    margin-top: 2em;
+}
+
+div {
+    background: white;
+    /* padding: 10px; */
+    border-radius: 100%;
+    text-align: center;
+    margin: 5%;
+}
+
+.num-display p {
+    text-align: right;
+    padding-right: 5px;
+    margin: 0;
+    font-size: 70px;
+}
+
+h3 {
+    font-size: 25px;
+}
