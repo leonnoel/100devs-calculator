@@ -1,0 +1,51 @@
+.calculatorWrapper {
+    position: relative; /* This makes it the anchor point for the overlay */
+    display: inline-block; /* Shrinks the container to wrap exactly around the image */
+}
+
+.calculatorWrapper img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#calcDisplay {
+    position: absolute; /* Positions it relative to the wrapper */
+    top: 20%; /* adjust the percentages to fit the screen right */
+    left: 15%; /* adjust to align perfectly with the white box in the image */
+    width: 70%;
+    height: 14%;
+
+    background-color: transparent;
+    z-index: 10;
+    border: none;
+    outline: none;
+
+    font-size: 3rem;
+    text-align: right; /* standard to align text on the right side of the calculator screen */
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.keypadOverlay {
+    position: absolute;
+
+    /* tweak percentages to match buttons correctly */
+    top: 39%;
+    left: 21%;
+    width: 57%;
+    height: 45%;
+
+    /* create 4x4 grid */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 4%; /* adjust to match spacing between circles */
+}
+
+.calcBtn {
+    border-radius: 50%; /* makes it round */
+    border: none;
+    cursor: pointer; /* Changes cursor to a pointer hand on hover */
+    background-color: transparent;
+}
