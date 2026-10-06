@@ -1,0 +1,39 @@
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: black;
+  border-radius: 12px;
+  padding: 40px;
+  gap: 2px;
+  width: 350px;
+  margin-left: 40px;
+  margin-top: 40px;
+
+
+}
+#display {
+  grid-column: 1 / -1;
+  background-color:white;
+  height: 90px;
+  margin-bottom: 30px;
+  font-size: 50px;
+   
+}
+
+button {
+width: 70px;
+  height: 70px;
+  border-radius: 50%;  
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.number {
+background-color: white;  
+color: black;
+}
+
+.operator {
+  background-color: white;  
+  color: black;
+}
