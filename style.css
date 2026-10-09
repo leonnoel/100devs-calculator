@@ -1,0 +1,41 @@
+.calculator {
+    background: black;
+    border-radius: 20px;
+    padding: 3px;
+    width: 300px;
+    height: 500px;
+    margin: 0 auto;
+    
+}
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    justify-items:center;
+    padding: 120px 10px;
+    
+}
+
+.buttons button {
+ border-radius: 50px;
+ width: 30px;
+ height:30px;
+ background:white;
+ border: 1px solid white;
+
+
+}
+
+.screen {
+    height: 50px;
+    width: 80%;
+    background: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content:flex-end;
+    box-sizing: border-box;
+    margin: 10px auto 40px;
+
+}
